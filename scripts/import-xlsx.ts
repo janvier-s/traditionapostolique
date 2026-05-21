@@ -131,6 +131,63 @@ function warn(msg: string) {
 	console.warn(msg);
 }
 
+function guessEra(name: string): Era {
+	const s = name.toLowerCase();
+	if (s.includes('apostol')) return 'apostolic';
+	if (s.includes('ante')) return 'ante-nicene';
+	if (s.includes('nic') || s.includes('nicé')) return 'nicene';
+	// "Anonyme", "Concile", "nan", everything else falls back to a safe default.
+	return 'post-nicene';
+}
+
+/**
+ * Walk the Citations and Œuvres sheets to collect every author-name string that
+ * does not resolve via the existing fuzzy resolver. Empty / NaN / "nan" cells
+ * are normalised to the literal "Anonyme".
+ */
+function collectUnmatchedAuthorNames(
+	wb: XLSX.WorkBook,
+	resolveAuthor: (name: string) => number | undefined
+): Set<string> {
+	const out = new Set<string>();
+	const normalize = (raw: unknown): string => {
+		const s = String(raw ?? '').trim();
+		if (!s || s.toLowerCase() === 'nan') return 'Anonyme';
+		return s;
+	};
+
+	// Citations sheet, author column at index 3 (matches importQuotes).
+	const cites = readSheet(wb, 'Citations').slice(2);
+	for (const r of cites) {
+		// Only consider rows that look like real quote rows: a non-empty cell in
+		// the original author column OR a non-empty ID. We mirror importQuotes's
+		// gating (it accepts rows with a non-empty raw author name), but we also
+		// recover rows where the cell was blank but other quote fields exist.
+		const rawAuthor = r[3];
+		const rawAuthorStr = String(rawAuthor ?? '').trim();
+		// Skip totally empty rows.
+		const hasAnyContent =
+			(r[2] != null && String(r[2]).trim() !== '') ||
+			rawAuthorStr !== '' ||
+			(r[4] != null && String(r[4]).trim() !== '') ||
+			(r[14] != null && String(r[14]).trim() !== '');
+		if (!hasAnyContent) continue;
+		const name = normalize(rawAuthor);
+		if (resolveAuthor(name) == null) out.add(name);
+	}
+
+	// Œuvres sheet, author column at index 2 (matches importWorks).
+	const works = readSheet(wb, 'Œuvres').slice(1);
+	for (const r of works) {
+		const title = String(r[1] ?? '').trim();
+		if (!title) continue;
+		const name = normalize(r[2]);
+		if (resolveAuthor(name) == null) out.add(name);
+	}
+
+	return out;
+}
+
 function importAuthors(wb: XLSX.WorkBook): Author[] {
 	// Headers at row 0: ID, Name, Ère, Page WikiSource, Page Wikipedia, Nom d'origine,
 	// Date, Fêté le, Fonction, Langue, Groupes d'auteurs, Page WikiMedia, Disciple de,
@@ -220,6 +277,12 @@ function importTopics(wb: XLSX.WorkBook): Topic[] {
 	return out;
 }
 
+function normalizeAuthorCell(raw: unknown): string {
+	const s = String(raw ?? '').trim();
+	if (!s || s.toLowerCase() === 'nan') return 'Anonyme';
+	return s;
+}
+
 function importWorks(wb: XLSX.WorkBook, resolveAuthor: (n: string) => number | undefined): Work[] {
 	// Headers at row 0: ID, Titre, Auteur ou Source, Titres Alternatifs, ID2, Description, Lien
 	const rows = readSheet(wb, 'Œuvres').slice(1);
@@ -249,7 +312,7 @@ function importWorks(wb: XLSX.WorkBook, resolveAuthor: (n: string) => number | u
 			id = rawId;
 		}
 		usedIds.add(id);
-		const authorName = String(r[2] ?? '').trim();
+		const authorName = normalizeAuthorCell(r[2]);
 		const authorId = resolveAuthor(authorName);
 		if (authorId == null) {
 			unknownAuthor++;
@@ -283,11 +346,17 @@ function importQuotes(
 	resolveTopic: (l: string) => number | undefined
 ): Quote[] {
 	const rows = readSheet(wb, 'Citations').slice(2);
-	// First pass: collect (rawId, row) for rows with a non-empty author name (cheap proxy for "real row").
+	// First pass: keep rows with any quote-bearing content. We no longer require
+	// a non-empty author cell since empty/NaN cells are normalised to "Anonyme"
+	// and resolved against a placeholder author.
 	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
 	for (const r of rows) {
-		const authorName = String(r[3] ?? '').trim();
-		if (!authorName) continue;
+		const hasContent =
+			(r[2] != null && String(r[2]).trim() !== '') ||
+			(r[3] != null && String(r[3]).trim() !== '') ||
+			(r[4] != null && String(r[4]).trim() !== '') ||
+			(r[14] != null && String(r[14]).trim() !== '');
+		if (!hasContent) continue;
 		const rawId = Number(r[2]);
 		accepted.push({ rawId, row: r });
 	}
@@ -310,7 +379,7 @@ function importQuotes(
 			id = rawId;
 		}
 		usedIds.add(id);
-		const authorName = String(r[3] ?? '').trim();
+		const authorName = normalizeAuthorCell(r[3]);
 		const authorId = resolveAuthor(authorName);
 		if (authorId == null) {
 			unknownAuthor++;
@@ -377,6 +446,35 @@ async function main() {
 	const wb = XLSX.read(buf, { type: 'buffer' });
 	const authors = importAuthors(wb);
 	const topics = importTopics(wb);
+
+	// Resolver built from canonical authors only. Used to detect names that
+	// don't yet resolve so we can synthesise placeholder authors for them.
+	const baseResolver = buildAuthorResolver(authors);
+	const unmatched = collectUnmatchedAuthorNames(wb, baseResolver);
+	const maxAuthorId = authors.reduce((m, a) => (a.id > m ? a.id : m), 0);
+	let nextPlaceholderId = Math.max(maxAuthorId, 1000) + 1;
+	const synthesised: Author[] = [];
+	for (const name of unmatched) {
+		const id = nextPlaceholderId++;
+		const candidate: Author = {
+			id,
+			slug: slugify(`${name}-${id}`),
+			name,
+			era: guessEra(name),
+			language: [],
+			sources: {}
+		};
+		const parsed = AuthorSchema.safeParse(candidate);
+		if (!parsed.success) {
+			warn(`skip placeholder author ${id}: ${JSON.stringify(parsed.error.issues)}`);
+			continue;
+		}
+		synthesised.push(parsed.data);
+	}
+	authors.push(...synthesised);
+	console.log(`authors: synthesised ${synthesised.length} placeholder author(s)`);
+
+	// Rebuild the resolver so it knows about the placeholders.
 	const resolveAuthor = buildAuthorResolver(authors);
 	const works = importWorks(wb, resolveAuthor);
 	const resolveWork = buildWorkResolver(works);

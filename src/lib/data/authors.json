@@ -1,1308 +1,1938 @@
 [
-	{
-		"id": 1,
-		"slug": "abercius-d-hierapolis-1",
-		"name": "Abercius d'Hiérapolis",
-		"era": "post-nicene",
-		"dates": "?-167",
-		"feastDay": "4 novembre",
-		"function": "Évêque",
-		"language": ["Grec"],
-		"groups": [],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Abercius_d%27Hi%C3%A9rapolis"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 2,
-		"slug": "ambroise-de-milan-2",
-		"name": "Ambroise de Milan",
-		"originalName": "Ambrosius Mediolanensis",
-		"era": "post-nicene",
-		"dates": "339-397",
-		"feastDay": "7 décembre",
-		"function": "Évêque,Écrivain,Philosophe,Theologien,Politicien",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Ambroise_de_Milan",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Ambrosius",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:_Saint_Ambrose"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 3,
-		"slug": "anatole-de-laodicee-3",
-		"name": "Anatole de Laodicée",
-		"originalName": "Ανατόλιος Λαοδικείας",
-		"era": "post-nicene",
-		"dates": "250-280",
-		"feastDay": "3 juillet",
-		"function": "Évêque",
-		"language": ["Grec"],
-		"region": "Tuquie Mediterranéenne",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Anatole_de_Laodic%C3%A9e",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Anatolius_of_Laodicea"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 4,
-		"slug": "antoine-le-grand-4",
-		"name": "Antoine le Grand",
-		"originalName": "Antonius Magnus Abbas",
-		"era": "post-nicene",
-		"dates": "251-357",
-		"feastDay": "13 janvier",
-		"function": "Moine,Écrivain",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Antoine_le_Grand",
-			"wikisource": "https://fr.wikisource.org/wiki/Vie_de_saint_Antoine",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Anthony_the_Great"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 5,
-		"slug": "aphraate-le-sage-persan-5",
-		"name": "Aphraate le Sage persan",
-		"originalName": "Aphrahat",
-		"era": "post-nicene",
-		"dates": "270-346",
-		"feastDay": "29 janvier",
-		"function": "Écrivain,Moine",
-		"language": ["Syriaque"],
-		"region": "Irak",
-		"groups": ["Monde Syriaque"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Aphraate_le_Sage_persan",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Afraate"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 6,
-		"slug": "aristide-d-athenes-6",
-		"name": "Aristide d'Athènes",
-		"originalName": "Marcianus Aristides Atheniensis",
-		"era": "post-nicene",
-		"dates": "?-134",
-		"feastDay": "13 septembre",
-		"function": "Philosophe",
-		"language": ["Grec"],
-		"region": "Grèce",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Aristide_d%27Ath%C3%A8nes",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Aristide_d%E2%80%99Ath%C3%A8nes",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Aristides_of_Athens"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 7,
-		"slug": "arnobe-de-sicca-7",
-		"name": "Arnobe de Sicca",
-		"originalName": "Arnobius",
-		"era": "post-nicene",
-		"dates": "240-327",
-		"function": "Écrivain,Philosophe",
-		"language": ["Latin"],
-		"region": "Tunisie,Algérie",
-		"groups": ["Afrique du Nord"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Arnobe",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Arnobius",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Arnobius"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 8,
-		"slug": "athanase-d-alexandrie-8",
-		"name": "Athanase d’Alexandrie",
-		"originalName": "Ἀθανάσιος",
-		"era": "post-nicene",
-		"dates": "297-373",
-		"feastDay": "2 mai",
-		"function": "Évêque,Theologien,Hagiographe,Écrivain",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Athanase_d%27Alexandrie",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Athanase_d%E2%80%99Alexandrie",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Athanasius_of_Alexandria"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 9,
-		"slug": "athenagore-d-athenes-9",
-		"name": "Athénagore d'Athènes",
-		"originalName": "Ἀθηναγόρας ὀ Ἀθηναῖος",
-		"era": "post-nicene",
-		"dates": "133-190",
-		"feastDay": "24 juillet",
-		"function": "Philosophe",
-		"language": ["Grec"],
-		"region": "Grèce",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Ath%C3%A9nagoras_d%27Ath%C3%A8nes",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Ath%C3%A9nagore_d%E2%80%99Ath%C3%A8nes"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 10,
-		"slug": "augustin-d-hippone-10",
-		"name": "Augustin d'Hippone",
-		"originalName": "Aurelius Augustinus",
-		"era": "post-nicene",
-		"dates": "345-430",
-		"feastDay": "29 août",
-		"function": "Évêque,Philosophe,Theologien,Écrivain,Poète,Historien,Prêcheur",
-		"language": ["Latin"],
-		"region": "Algérie",
-		"groups": ["Afrique du Nord"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Augustin_d'Hippone",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Augustin_d%E2%80%99Hippone",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Augustinus"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 11,
-		"slug": "barnabe-11",
-		"name": "Barnabé",
-		"originalName": "Βαρνάβας",
-		"era": "post-nicene",
-		"dates": "?-61",
-		"feastDay": "11 juin",
-		"function": "Évêque,Archévêque",
-		"language": ["Grec"],
-		"region": "Chypre,Israël/Palestine",
-		"groups": ["Textes scripturaires et apocryphes"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Barnab%C3%A9",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Barnab%C3%A9",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Barnabas"
-		},
-		"status": "Saint,Apôtre,Martyr"
-	},
-	{
-		"id": 12,
-		"slug": "basile-de-cesaree-12",
-		"name": "Basile de Césarée",
-		"originalName": "Βασίλειος Καισαρείας",
-		"era": "post-nicene",
-		"dates": "329-379",
-		"feastDay": "2 janvier",
-		"function": "Évêque,Theologien,Philosophe,Écrivain,Archévêque",
-		"language": ["Grec"],
-		"region": "Turquie centrale",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Basile_de_C%C3%A9sar%C3%A9e",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Basile_de_C%C3%A9sar%C3%A9e",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Basil_of_Caesarea"
-		},
-		"status": "Saint,Docteur,Père cappadocien,Docteur œcuménique"
-	},
-	{
-		"id": 13,
-		"slug": "caius-13",
-		"name": "Caïus",
-		"originalName": "Caius",
-		"era": "post-nicene",
-		"dates": "?-296",
-		"function": "Pape",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Ca%C3%AFus_(pape)",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Caius",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Caius_(pope)"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 14,
-		"slug": "clement-d-alexandrie-14",
-		"name": "Clément d'Alexandrie",
-		"originalName": "Κλήμης ὁ Ἀλεξανδρεύς",
-		"era": "post-nicene",
-		"dates": "150-215",
-		"feastDay": "4 décembre",
-		"function": "Theologien,Écrivain,Philosophe",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_d%27Alexandrie",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Cl%C3%A9ment_d%E2%80%99Alexandrie",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Clement_of_Alexandria"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 15,
-		"slug": "clement-de-rome-15",
-		"name": "Clément de Rome",
-		"originalName": "Clemens Romanus",
-		"era": "post-nicene",
-		"dates": "17-98",
-		"feastDay": "23 Novembre",
-		"function": "Pape,Theologien",
-		"language": ["Grec"],
-		"region": "Italie",
-		"groups": ["Occident hellénophone"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_de_Rome",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Cl%C3%A9ment_de_Rome",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Clemens_I"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 16,
-		"slug": "commodien-16",
-		"name": "Commodien",
-		"originalName": "Commodianus",
-		"era": "post-nicene",
-		"dates": "250",
-		"function": "Poète",
-		"language": ["Latin"],
-		"groups": ["Afrique du Nord"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Commodien",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Commodien"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 17,
-		"slug": "cyprien-de-carthage-17",
-		"name": "Cyprien de Carthage",
-		"originalName": "Cyprianus Carthaginiensis",
-		"era": "post-nicene",
-		"dates": "200-258",
-		"feastDay": "16 septembre",
-		"function": "Évêque,Philosophe,Écrivain",
-		"language": ["Latin"],
-		"region": "Algérie",
-		"groups": ["Carthage"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Cyprien_de_Carthage",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Cyprien_de_Carthage",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Cyprian"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 18,
-		"slug": "cyrille-d-alexandrie-18",
-		"name": "Cyrille d'Alexandrie",
-		"originalName": "Κύριλλος Ἀλεξανδρείας",
-		"era": "post-nicene",
-		"dates": "375-444",
-		"feastDay": "27 juin",
-		"function": "Évêque",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Cyrille_d%27Alexandrie",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Cyrillus_Alexandrinus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Cyril_of_Alexandria?uselang=fr"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 19,
-		"slug": "cyrille-de-jerusalem-19",
-		"name": "Cyrille de Jérusalem",
-		"originalName": "Κύριλλος Α΄ Ἱεροσολύμων",
-		"era": "post-nicene",
-		"dates": "315-387",
-		"feastDay": "18 mars",
-		"function": "Évêque,Theologien",
-		"language": ["Grec"],
-		"region": "Israël/Palestine",
-		"groups": ["Palestine - Chypre"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Cyrille_de_J%C3%A9rusalem",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Cyrille_de_J%C3%A9rusalem",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Cyril_of_Jerusalem"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 20,
-		"slug": "denys-d-alexandrie-20",
-		"name": "Denys d'Alexandrie",
-		"originalName": "Διονύσιος Ἀλεξανδρείας",
-		"era": "post-nicene",
-		"dates": "190-264",
-		"feastDay": "8 avril",
-		"function": "Évêque,Écrivain",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Denys_d%27Alexandrie",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Dionysius_Alexandrinus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Dionysius_of_Alexandria"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 21,
-		"slug": "didache-21",
-		"name": "Didachè",
-		"originalName": "Διδαχή",
-		"era": "post-nicene",
-		"dates": "50-90",
-		"language": ["Grec"],
-		"groups": ["Anonyme"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Didach%C3%A8",
-			"wikisource": "https://fr.wikisource.org/wiki/Doctrine_des_Ap%C3%B4tres_-_%C3%89pitre_de_Barnab%C3%A9/5"
-		},
-		"status": "Inconnu"
-	},
-	{
-		"id": 22,
-		"slug": "didyme-l-aveugle-22",
-		"name": "Didyme l’Aveugle",
-		"originalName": "Didimos",
-		"era": "post-nicene",
-		"dates": "313-398",
-		"feastDay": "18 octobre",
-		"function": "Écrivain,Prêtre,Theologien",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Didyme_l%27Aveugle",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Didymus_the_Blind?uselang=fr"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 23,
-		"slug": "diodore-de-tarse-23",
-		"name": "Diodore de Tarse",
-		"originalName": "Διόδωρος ὁ Ταρσεύς",
-		"era": "post-nicene",
-		"dates": "330-394",
-		"function": "Évêque,Écrivain,Apologète",
-		"language": ["Grec"],
-		"region": "Tuquie Mediterranéenne",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Diodore_de_Tarse",
-			"wikisource": "https://www.documentacatholicaomnia.eu/30_20_0330-0391-_Diodorus_Tarsus.html"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 24,
-		"slug": "ephrem-le-syriaque-24",
-		"name": "Éphrem le Syriaque",
-		"originalName": "Mâr Aphrêm Sûryâyâ",
-		"era": "post-nicene",
-		"dates": "306-373",
-		"feastDay": "8 juin",
-		"function": "Diacre,Theologien,Poète,Écrivain",
-		"language": ["Syriaque"],
-		"region": "Turquie Sud-Est",
-		"groups": ["Monde Syriaque"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/%C3%89phrem_le_Syriaque",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Ephrem_the_Syrian",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Ephrem_the_Syrian?uselang=fr"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 25,
-		"slug": "epiphane-de-salamine-25",
-		"name": "Épiphane de Salamine",
-		"originalName": "Epiphanius Constantiensis",
-		"era": "post-nicene",
-		"dates": "315-403",
-		"feastDay": "12 mai",
-		"function": "Évêque,Archévêque,Écrivain",
-		"language": ["Grec"],
-		"region": "Israël/Palestine",
-		"groups": ["Palestine - Chypre"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/%C3%89piphane_de_Salamine",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Epiphanius_of_Salamis",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Epiphanius_of_Salamis?uselang=fr"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 26,
-		"slug": "eusebe-de-cesaree-26",
-		"name": "Eusèbe de Césarée",
-		"originalName": "Ευσέβιος ο Καισαρείας",
-		"era": "post-nicene",
-		"dates": "265-340",
-		"function": "Évêque,Theologien,Écrivain,Historien,Hagiographe",
-		"language": ["Grec"],
-		"region": "Israël/Palestine",
-		"groups": ["Palestine - Chypre"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Eus%C3%A8be_de_C%C3%A9sar%C3%A9e",
-			"wikisource": "https://fr.wikipedia.org/wiki/Eus%C3%A8be_de_C%C3%A9sar%C3%A9e",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Eusebius_of_Caesarea"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 27,
-		"slug": "flavius-josephe-27",
-		"name": "Flavius Josèphe",
-		"era": "post-nicene",
-		"function": "Historien",
-		"language": ["Grec"],
-		"groups": [],
-		"disciples": [],
-		"sources": {
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Flavius_Jos%C3%A8phe"
-		}
-	},
-	{
-		"id": 28,
-		"slug": "gregoire-de-nazianze-28",
-		"name": "Grégoire de Nazianze",
-		"originalName": "Γρηγόριος ὁ Ναζιανζηνός",
-		"era": "post-nicene",
-		"dates": "329-390",
-		"feastDay": "2 janvier",
-		"function": "Évêque,Prêtre,Prêcheur,Poète",
-		"language": ["Grec"],
-		"region": "Turquie centrale",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_de_Nazianze",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_de_Nazianze",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Gregory_of_Nazianzus"
-		},
-		"status": "Saint,Docteur,Père cappadocien,Docteur œcuménique"
-	},
-	{
-		"id": 29,
-		"slug": "gregoire-de-nysse-29",
-		"name": "Grégoire de Nysse",
-		"originalName": "Γρηγόριος Νύσσης",
-		"era": "post-nicene",
-		"dates": "335-395",
-		"feastDay": "10 janvier",
-		"function": "Évêque,Theologien,Prêtre",
-		"language": ["Grec"],
-		"region": "Turquie centrale",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_de_Nysse",
-			"wikisource": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_de_Nysse",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Gregory_of_Nyssa"
-		},
-		"status": "Saint,Docteur,Père cappadocien"
-	},
-	{
-		"id": 30,
-		"slug": "gregoire-le-grand-30",
-		"name": "Grégoire le Grand",
-		"originalName": "Gregorius Magnus",
-		"era": "post-nicene",
-		"dates": "540-604",
-		"feastDay": "12 mars",
-		"function": "Pape,Écrivain,Politicien",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_Ier",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_Ier",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Gregorius_I_Magnus"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 31,
-		"slug": "gregoire-le-thaumaturge-31",
-		"name": "Grégoire le Thaumaturge",
-		"originalName": "Grēgórios ho Thaumatourgós",
-		"era": "post-nicene",
-		"dates": "213-270",
-		"feastDay": "17 novembre",
-		"function": "Évêque,Écrivain",
-		"language": ["Grec"],
-		"region": "Turquie Région de la mer Noire",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_le_Thaumaturge",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Gregory_Thaumaturgus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Gregory_of_Neocaesarea"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 32,
-		"slug": "hermas-32",
-		"name": "Hermas",
-		"originalName": "Ποιμὴν τοῦ Ἑρμᾶ",
-		"era": "post-nicene",
-		"language": [],
-		"region": "Italie",
-		"groups": ["Occident hellénophone"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Hermas",
-			"wikisource": "https://fr.wikipedia.org/wiki/Pasteur_d%27Hermas"
-		},
-		"status": "Inconnu"
-	},
-	{
-		"id": 33,
-		"slug": "hilaire-de-poitiers-33",
-		"name": "Hilaire de Poitiers",
-		"originalName": "Hilarius",
-		"era": "post-nicene",
-		"dates": "315-367",
-		"feastDay": "13 janvier",
-		"function": "Évêque,Theologien,Prêtre,Philosophe,Écrivain",
-		"language": ["Latin"],
-		"region": "France",
-		"groups": ["Gaule"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Hilaire_de_Poitiers",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Hilarius_Pictaviensis",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Hilary_of_Poitiers"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 34,
-		"slug": "hippolyte-de-rome-34",
-		"name": "Hippolyte de Rome",
-		"originalName": "Hippolytus Romanus",
-		"era": "post-nicene",
-		"dates": "?-170",
-		"feastDay": "13 août",
-		"function": "Évêque,Theologien,Écrivain",
-		"language": ["Grec"],
-		"region": "Italie",
-		"groups": ["Occident hellénophone"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Hippolyte_de_Rome",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Hippolyte_de_Rome",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Hippolytus"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 35,
-		"slug": "ignace-d-antioche-35",
-		"name": "Ignace d'Antioche",
-		"originalName": "Ἰγνάτιος Ἀντιοχείας",
-		"era": "post-nicene",
-		"dates": "35-110",
-		"feastDay": "17 février",
-		"function": "Évêque,Theologien",
-		"language": ["Grec"],
-		"region": "Tuquie Mediterranéenne",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Ignace_d%27Antioche",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Ignace_d%E2%80%99Antioche",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Ignatius_of_Antioch"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 36,
-		"slug": "irenee-de-lyon-36",
-		"name": "Irénée de Lyon",
-		"originalName": "Εἰρηναῖος Λουγδούνου",
-		"era": "post-nicene",
-		"dates": "130-202",
-		"feastDay": "28 juin",
-		"function": "Évêque,Theologien,Philosophe",
-		"language": ["Grec"],
-		"region": "France",
-		"groups": ["Occident hellénophone"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Ir%C3%A9n%C3%A9e_de_Lyon",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Ir%C3%A9n%C3%A9e_de_Lyon",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Irenaeus"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 37,
-		"slug": "jean-cassien-37",
-		"name": "Jean Cassien",
-		"originalName": "Ioannes Eremita Cassianus",
-		"era": "post-nicene",
-		"dates": "360-433",
-		"feastDay": "23 juillet",
-		"function": "Moine,Theologien,Écrivain,Prêtre",
-		"language": ["Latin"],
-		"region": "France",
-		"groups": ["Gaule"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Jean_Cassien",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Iohannes_Cassianus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:John_Cassian"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 38,
-		"slug": "jean-chrysostome-38",
-		"name": "Jean Chrysostome",
-		"originalName": "Ἰωάννης ὁ Χρυσόστομος",
-		"era": "post-nicene",
-		"dates": "344-407",
-		"feastDay": "13 septembre",
-		"function": "Évêque,Theologien,Écrivain",
-		"language": ["Grec"],
-		"region": "Turquie Région de la mer Noire",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Jean_Chrysostome",
-			"wikisource": "https://fr.wikipedia.org/wiki/Jean_Chrysostome",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:John_Chrysostom"
-		},
-		"status": "Saint,Docteur,Docteur œcuménique"
-	},
-	{
-		"id": 39,
-		"slug": "jean-damascene-39",
-		"name": "Jean Damascène",
-		"originalName": "Yaḥyā ibn Sarjūn",
-		"era": "post-nicene",
-		"dates": "675-749",
-		"feastDay": "4 decembre",
-		"function": "Theologien,Écrivain,Prêtre,Philosophe",
-		"language": ["Grec"],
-		"region": "Syrie",
-		"groups": ["Palestine - Chypre"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Jean_Damasc%C3%A8ne",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Iohannes_Damascenus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:John_of_Damascus"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 40,
-		"slug": "jerome-de-stridon-40",
-		"name": "Jérôme de Stridon",
-		"originalName": "Sophronius Eusebius Hieronymus",
-		"era": "post-nicene",
-		"dates": "345-420",
-		"feastDay": "30 septembre",
-		"function": "Traducteur,Écrivain,Theologien,Poète,Moine,Apologète,Bibliste",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:J%C3%A9r%C3%B4me_de_Stridon",
-			"wikisource": "https://fr.wikipedia.org/wiki/J%C3%A9r%C3%B4me_de_Stridon",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Jerome"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 41,
-		"slug": "jesus-41",
-		"name": "Jésus",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {},
-		"status": "Dieu"
-	},
-	{
-		"id": 42,
-		"slug": "jules-l-africain-42",
-		"name": "Jules l’Africain",
-		"originalName": "Sextus Julius Africanus",
-		"era": "post-nicene",
-		"dates": "160-240",
-		"function": "Écrivain",
-		"language": ["Latin"],
-		"region": "Israël/Palestine",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Sextus_Julius_Africanus",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Sextus_Julius_Africanus"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 43,
-		"slug": "justin-martyr-43",
-		"name": "Justin Martyr",
-		"originalName": "Ἰουστῖνος ὁ Μάρτυς",
-		"era": "post-nicene",
-		"dates": "100-160",
-		"feastDay": "1e Juin",
-		"function": "Philosophe,Theologien,Apologète",
-		"language": ["Grec"],
-		"region": "Italie,Turquie",
-		"groups": ["Occident hellénophone"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Justin_de_Naplouse",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Justin_de_Naplouse",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Justin_the_Philosopher"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 44,
-		"slug": "lactance-44",
-		"name": "Lactance",
-		"originalName": "Lactantius",
-		"era": "post-nicene",
-		"dates": "240-325",
-		"function": "Apologète,Écrivain",
-		"language": ["Latin"],
-		"region": "France",
-		"groups": ["Afrique du Nord"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Lactance",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Lactance"
-		}
-	},
-	{
-		"id": 45,
-		"slug": "leon-le-grand-45",
-		"name": "Léon le Grand",
-		"originalName": "Leo Magnus",
-		"era": "post-nicene",
-		"dates": "490-461",
-		"feastDay": "10 novembre",
-		"function": "Pape,Écrivain",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=L%C3%A9on_Ier_(pape)",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Leo_I_Papa",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Leo_I_Magnus"
-		},
-		"status": "Saint,Docteur"
-	},
-	{
-		"id": 46,
-		"slug": "mathete-46",
-		"name": "Mathète",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {
-			"wikisource": "https://fr.wikisource.org/wiki/Les_P%C3%A8res_de_l%E2%80%99%C3%89glise/Tome_2/%C3%89p%C3%AEtre_%C3%A0_Diogn%C3%A8te_(saint_Justin)"
-		}
-	},
-	{
-		"id": 47,
-		"slug": "meliton-de-sardes-47",
-		"name": "Méliton de Sardes",
-		"originalName": "Μελίτων Σάρδεων",
-		"era": "post-nicene",
-		"dates": "100-180",
-		"feastDay": "1 avril",
-		"function": "Évêque,Écrivain,Philosophe",
-		"language": ["Grec"],
-		"region": "Tuquie Mediterranéenne",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9liton_de_Sardes",
-			"wikisource": "https://www.documentacatholicaomnia.eu/30_20_0100-0200-_Melito_Sardum_in_Asia_Episcopus.html",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Melito_of_Sardis"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 48,
-		"slug": "methode-d-olympe-48",
-		"name": "Méthode d'Olympe",
-		"originalName": "Μεθόδιος Όλύμπου",
-		"era": "post-nicene",
-		"dates": "260-311",
-		"feastDay": "20 juin",
-		"function": "Évêque,Écrivain",
-		"language": ["Grec"],
-		"region": "Grèce",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9thode_d%27Olympe",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Methodius_of_Olympus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Methodius_of_Olympus"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 49,
-		"slug": "minucius-felix-49",
-		"name": "Minucius Félix",
-		"originalName": "Marcus Minucius Felix",
-		"era": "post-nicene",
-		"dates": "?-250",
-		"function": "Écrivain",
-		"language": ["Latin"],
-		"region": "Algérie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Minucius_F%C3%A9lix",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Minucius_F%C3%A9lix"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 50,
-		"slug": "novatien-50",
-		"name": "Novatien",
-		"originalName": "Novatianus",
-		"era": "post-nicene",
-		"dates": "220-258",
-		"function": "Theologien",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Novatien",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Novatianus"
-		},
-		"status": "Hérétique"
-	},
-	{
-		"id": 51,
-		"slug": "optat-de-mileve-51",
-		"name": "Optat de Milève",
-		"originalName": "Optatus episcopus Mileuitanus",
-		"era": "post-nicene",
-		"dates": "341-397",
-		"feastDay": "4 juin",
-		"function": "Évêque,Theologien,Écrivain",
-		"language": ["Latin"],
-		"groups": ["Afrique du Nord"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Optat_de_Mil%C3%A8ve",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Optatus_Milevitanus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Optatus"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 52,
-		"slug": "origene-52",
-		"name": "Origène",
-		"originalName": "Ὠριγένης",
-		"era": "post-nicene",
-		"dates": "185-254",
-		"function": "Theologien,Écrivain,Traducteur,Philosophe",
-		"language": ["Latin"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Orig%C3%A8ne",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Orig%C3%A8ne",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Origen"
-		}
-	},
-	{
-		"id": 53,
-		"slug": "pamphile-de-cesaree-53",
-		"name": "Pamphile de Césarée",
-		"originalName": "Pamphilos",
-		"era": "post-nicene",
-		"dates": "240-309",
-		"feastDay": "16 fevrier",
-		"function": "Prêtre,Bibliste",
-		"language": ["Grec"],
-		"region": "Israël/Palestine",
-		"groups": ["Palestine - Chypre"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Pamphile_de_C%C3%A9sar%C3%A9e",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Pamphilus_of_Caesarea",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Pamphilus_of_Caesarea"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 54,
-		"slug": "papias-de-hierapolis-54",
-		"name": "Papias de Hiérapolis",
-		"originalName": "Παπίας Ἱεραπόλεως",
-		"era": "post-nicene",
-		"dates": "60-140",
-		"feastDay": "22 février",
-		"function": "Évêque,Écrivain",
-		"language": ["Grec"],
-		"region": "Turquie Égéenne",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Papias_d%27Hi%C3%A9rapolis",
-			"wikisource": "https://en.wikisource.org/wiki/Author:Papias",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Papias_of_Hierapolis"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 55,
-		"slug": "polycarpe-de-smyrne-55",
-		"name": "Polycarpe de Smyrne",
-		"originalName": "Πολύκαρπος Σμύρνος",
-		"era": "post-nicene",
-		"dates": "69-155",
-		"feastDay": "23 février",
-		"function": "Évêque,Theologien,Écrivain",
-		"language": ["Grec"],
-		"region": "Turquie Égéenne",
-		"groups": ["Grèce - Asie mineure"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Polycarpe_de_Smyrne",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Polycarpe_de_Smyrne",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Polycarp_of_Smyrna"
-		},
-		"status": "Saint,Martyr"
-	},
-	{
-		"id": 56,
-		"slug": "pseudo-denys-l-areopagite-56",
-		"name": "Pseudo-Denys l'Aréopagite",
-		"originalName": "Διονύσιος ο Αρεοπαγίτης",
-		"era": "post-nicene",
-		"function": "Theologien,Philosophe,Historien",
-		"language": ["Grec"],
-		"region": "Egypte",
-		"groups": ["Alexandrie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Denys_l%27Ar%C3%A9opagite",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Pseudo-Denys_l%E2%80%99Ar%C3%A9opagite",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Dionysius_Areopagite?uselang=fr"
-		}
-	},
-	{
-		"id": 57,
-		"slug": "saint-jean-57",
-		"name": "Saint Jean",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {},
-		"status": "Saint,Apôtre"
-	},
-	{
-		"id": 58,
-		"slug": "saint-paul-58",
-		"name": "Saint Paul",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {},
-		"status": "Saint,Apôtre,Martyr"
-	},
-	{
-		"id": 59,
-		"slug": "saint-pierre-59",
-		"name": "Saint Pierre",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {},
-		"status": "Saint,Apôtre,Martyr"
-	},
-	{
-		"id": 60,
-		"slug": "sulpice-severe-60",
-		"name": "Sulpice Sévère",
-		"originalName": "Sulpicius Severus",
-		"era": "post-nicene",
-		"dates": "363-429",
-		"feastDay": "29 janvier",
-		"function": "Prêtre,Hagiographe,Écrivain,Historien",
-		"language": ["Latin"],
-		"region": "France",
-		"groups": ["Gaule"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Sulpice_S%C3%A9v%C3%A8re",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Sulpice-S%C3%A9v%C3%A8re",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Sulpitius_Severus"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 61,
-		"slug": "tatien-le-syrien-61",
-		"name": "Tatien le Syrien",
-		"originalName": "Tatianus",
-		"era": "post-nicene",
-		"dates": "120-185",
-		"function": "Theologien",
-		"language": ["Syriaque"],
-		"region": "Syrie",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Tatien_le_Syrien",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Tatien_le_Syrien"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 62,
-		"slug": "tertullien-62",
-		"name": "Tertullien",
-		"originalName": "Quintus Septimius Florens Tertullianus",
-		"era": "post-nicene",
-		"dates": "160-220",
-		"function": "Theologien,Écrivain,Philosophe",
-		"language": ["Latin"],
-		"region": "Tunisie",
-		"groups": ["Carthage"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Tertullien",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Tertullien",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Quintus_Septimius_Florens_Tertullianus"
-		},
-		"status": "Laïc"
-	},
-	{
-		"id": 63,
-		"slug": "theodoret-de-cyr-63",
-		"name": "Théodoret de Cyr",
-		"originalName": "Θεοδώρητος",
-		"era": "post-nicene",
-		"dates": "393-457",
-		"function": "Prêtre,Historien,Écrivain",
-		"language": ["Grec"],
-		"region": "Tuquie Mediterranéenne",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9odoret_de_Cyr",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Theodoretus",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Theodoret"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 64,
-		"slug": "theophile-d-antioche-64",
-		"name": "Théophile d'Antioche",
-		"originalName": "Θεόφιλος ὁ Ἀντιοχεύς",
-		"era": "post-nicene",
-		"dates": "169-183",
-		"feastDay": "13 octobre",
-		"function": "Évêque",
-		"language": ["Grec"],
-		"region": "Tuquie Mediterranéenne",
-		"groups": ["Antioche"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9ophile_d%27Antioche",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Th%C3%A9ophile_d%E2%80%99Antioche",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Theophilus_of_Antioch?uselang=fr"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 65,
-		"slug": "victorin-de-pettau-65",
-		"name": "Victorin de Pettau",
-		"originalName": "Victorinus Petavionensis",
-		"era": "post-nicene",
-		"dates": "250-303",
-		"feastDay": "2 novembre",
-		"function": "Évêque,Écrivain,Theologien,Bibliste,Philosophe,Pape",
-		"language": ["Latin"],
-		"region": "Italie",
-		"groups": ["Italie"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Victorin_de_Pettau",
-			"wikisource": "https://la.wikisource.org/wiki/Scriptor:Victorinus_Petavionensis",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Victorinus_of_Pettau"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 66,
-		"slug": "vincent-de-lerins-66",
-		"name": "Vincent de Lérins",
-		"originalName": "Vincent de Lérins",
-		"era": "post-nicene",
-		"dates": "?-450",
-		"feastDay": "24 mai",
-		"function": "Prêtre,Moine,Écrivain",
-		"language": ["Latin"],
-		"region": "France",
-		"groups": ["Gaule"],
-		"disciples": [],
-		"sources": {
-			"wikipedia": "https://fr.wikipedia.org/wiki/Vincent_de_L%C3%A9rins",
-			"wikisource": "https://fr.wikisource.org/wiki/Auteur:Vincent_de_L%C3%A9rins",
-			"wikimedia": "https://commons.wikimedia.org/wiki/Category:Vincent_of_L%C3%A9rins?uselang=fr"
-		},
-		"status": "Saint"
-	},
-	{
-		"id": 67,
-		"slug": "anonyme-67",
-		"name": "Anonyme",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 68,
-		"slug": "cesaire-d-arles-68",
-		"name": "Césaire d'Arles",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 1001,
-		"slug": "https-fr-wikipedia-org-wiki-c3-89p-c3-aetre-c3-a0-diogn-c3-a8te-grec-anonyme-tur",
-		"name": ",https://fr.wikipedia.org/wiki/%C3%89p%C3%AEtre_%C3%A0_Diogn%C3%A8te,,,,,Grec,Anonyme,,,Turquie,Inconnu,https://www.biblindex.org/fr/authors/anonymus-ad-diognetum",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 1002,
-		"slug": "pape-celestin-ier-1002",
-		"name": "Pape Célestin Ier",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 1003,
-		"slug": "constantin-1003",
-		"name": "Constantin",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 1004,
-		"slug": "pape-st-damase-1e-1004",
-		"name": "Pape St Damase 1e",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 1005,
-		"slug": "st-denis-de-corinthe-1005",
-		"name": "St Denis de Corinthe",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	},
-	{
-		"id": 1006,
-		"slug": "evagre-le-pontique-1006",
-		"name": "Évagre le Pontique",
-		"era": "post-nicene",
-		"language": [],
-		"groups": [],
-		"disciples": [],
-		"sources": {}
-	}
+  {
+    "id": 1,
+    "slug": "abercius-d-hierapolis-1",
+    "name": "Abercius d'Hiérapolis",
+    "era": "post-nicene",
+    "dates": "?-167",
+    "feastDay": "4 novembre",
+    "function": "Évêque",
+    "language": [
+      "Grec"
+    ],
+    "groups": [],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Abercius_d%27Hi%C3%A9rapolis"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 2,
+    "slug": "ambroise-de-milan-2",
+    "name": "Ambroise de Milan",
+    "originalName": "Ambrosius Mediolanensis",
+    "era": "post-nicene",
+    "dates": "339-397",
+    "feastDay": "7 décembre",
+    "function": "Évêque,Écrivain,Philosophe,Theologien,Politicien",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Ambroise_de_Milan",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Ambrosius",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:_Saint_Ambrose"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 3,
+    "slug": "anatole-de-laodicee-3",
+    "name": "Anatole de Laodicée",
+    "originalName": "Ανατόλιος Λαοδικείας",
+    "era": "post-nicene",
+    "dates": "250-280",
+    "feastDay": "3 juillet",
+    "function": "Évêque",
+    "language": [
+      "Grec"
+    ],
+    "region": "Tuquie Mediterranéenne",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/w/index.php?title=Anatole_de_Laodic%C3%A9e",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Anatolius_of_Laodicea"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 4,
+    "slug": "antoine-le-grand-4",
+    "name": "Antoine le Grand",
+    "originalName": "Antonius Magnus Abbas",
+    "era": "post-nicene",
+    "dates": "251-357",
+    "feastDay": "13 janvier",
+    "function": "Moine,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Antoine_le_Grand",
+      "wikisource": "https://fr.wikisource.org/wiki/Vie_de_saint_Antoine",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Anthony_the_Great"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 5,
+    "slug": "aphraate-le-sage-persan-5",
+    "name": "Aphraate le Sage persan",
+    "originalName": "Aphrahat",
+    "era": "post-nicene",
+    "dates": "270-346",
+    "feastDay": "29 janvier",
+    "function": "Écrivain,Moine",
+    "language": [
+      "Syriaque"
+    ],
+    "region": "Irak",
+    "groups": [
+      "Monde Syriaque"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Aphraate_le_Sage_persan",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Afraate"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 6,
+    "slug": "aristide-d-athenes-6",
+    "name": "Aristide d'Athènes",
+    "originalName": "Marcianus Aristides Atheniensis",
+    "era": "post-nicene",
+    "dates": "?-134",
+    "feastDay": "13 septembre",
+    "function": "Philosophe",
+    "language": [
+      "Grec"
+    ],
+    "region": "Grèce",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Aristide_d%27Ath%C3%A8nes",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Aristide_d%E2%80%99Ath%C3%A8nes",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Aristides_of_Athens"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 7,
+    "slug": "arnobe-de-sicca-7",
+    "name": "Arnobe de Sicca",
+    "originalName": "Arnobius",
+    "era": "post-nicene",
+    "dates": "240-327",
+    "function": "Écrivain,Philosophe",
+    "language": [
+      "Latin"
+    ],
+    "region": "Tunisie,Algérie",
+    "groups": [
+      "Afrique du Nord"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Arnobe",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Arnobius",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Arnobius"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 8,
+    "slug": "athanase-d-alexandrie-8",
+    "name": "Athanase d’Alexandrie",
+    "originalName": "Ἀθανάσιος",
+    "era": "post-nicene",
+    "dates": "297-373",
+    "feastDay": "2 mai",
+    "function": "Évêque,Theologien,Hagiographe,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Athanase_d%27Alexandrie",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Athanase_d%E2%80%99Alexandrie",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Athanasius_of_Alexandria"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 9,
+    "slug": "athenagore-d-athenes-9",
+    "name": "Athénagore d'Athènes",
+    "originalName": "Ἀθηναγόρας ὀ Ἀθηναῖος",
+    "era": "post-nicene",
+    "dates": "133-190",
+    "feastDay": "24 juillet",
+    "function": "Philosophe",
+    "language": [
+      "Grec"
+    ],
+    "region": "Grèce",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Ath%C3%A9nagoras_d%27Ath%C3%A8nes",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Ath%C3%A9nagore_d%E2%80%99Ath%C3%A8nes"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 10,
+    "slug": "augustin-d-hippone-10",
+    "name": "Augustin d'Hippone",
+    "originalName": "Aurelius Augustinus",
+    "era": "post-nicene",
+    "dates": "345-430",
+    "feastDay": "29 août",
+    "function": "Évêque,Philosophe,Theologien,Écrivain,Poète,Historien,Prêcheur",
+    "language": [
+      "Latin"
+    ],
+    "region": "Algérie",
+    "groups": [
+      "Afrique du Nord"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Augustin_d'Hippone",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Augustin_d%E2%80%99Hippone",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Augustinus"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 11,
+    "slug": "barnabe-11",
+    "name": "Barnabé",
+    "originalName": "Βαρνάβας",
+    "era": "post-nicene",
+    "dates": "?-61",
+    "feastDay": "11 juin",
+    "function": "Évêque,Archévêque",
+    "language": [
+      "Grec"
+    ],
+    "region": "Chypre,Israël/Palestine",
+    "groups": [
+      "Textes scripturaires et apocryphes"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Barnab%C3%A9",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Barnab%C3%A9",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Barnabas"
+    },
+    "status": "Saint,Apôtre,Martyr"
+  },
+  {
+    "id": 12,
+    "slug": "basile-de-cesaree-12",
+    "name": "Basile de Césarée",
+    "originalName": "Βασίλειος Καισαρείας",
+    "era": "post-nicene",
+    "dates": "329-379",
+    "feastDay": "2 janvier",
+    "function": "Évêque,Theologien,Philosophe,Écrivain,Archévêque",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie centrale",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/w/index.php?title=Basile_de_C%C3%A9sar%C3%A9e",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Basile_de_C%C3%A9sar%C3%A9e",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Basil_of_Caesarea"
+    },
+    "status": "Saint,Docteur,Père cappadocien,Docteur œcuménique"
+  },
+  {
+    "id": 13,
+    "slug": "caius-13",
+    "name": "Caïus",
+    "originalName": "Caius",
+    "era": "post-nicene",
+    "dates": "?-296",
+    "function": "Pape",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Ca%C3%AFus_(pape)",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Caius",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Caius_(pope)"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 14,
+    "slug": "clement-d-alexandrie-14",
+    "name": "Clément d'Alexandrie",
+    "originalName": "Κλήμης ὁ Ἀλεξανδρεύς",
+    "era": "post-nicene",
+    "dates": "150-215",
+    "feastDay": "4 décembre",
+    "function": "Theologien,Écrivain,Philosophe",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_d%27Alexandrie",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Cl%C3%A9ment_d%E2%80%99Alexandrie",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Clement_of_Alexandria"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 15,
+    "slug": "clement-de-rome-15",
+    "name": "Clément de Rome",
+    "originalName": "Clemens Romanus",
+    "era": "post-nicene",
+    "dates": "17-98",
+    "feastDay": "23 Novembre",
+    "function": "Pape,Theologien",
+    "language": [
+      "Grec"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Occident hellénophone"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_de_Rome",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Cl%C3%A9ment_de_Rome",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Clemens_I"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 16,
+    "slug": "commodien-16",
+    "name": "Commodien",
+    "originalName": "Commodianus",
+    "era": "post-nicene",
+    "dates": "250",
+    "function": "Poète",
+    "language": [
+      "Latin"
+    ],
+    "groups": [
+      "Afrique du Nord"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Commodien",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Commodien"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 17,
+    "slug": "cyprien-de-carthage-17",
+    "name": "Cyprien de Carthage",
+    "originalName": "Cyprianus Carthaginiensis",
+    "era": "post-nicene",
+    "dates": "200-258",
+    "feastDay": "16 septembre",
+    "function": "Évêque,Philosophe,Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "Algérie",
+    "groups": [
+      "Carthage"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Cyprien_de_Carthage",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Cyprien_de_Carthage",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Cyprian"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 18,
+    "slug": "cyrille-d-alexandrie-18",
+    "name": "Cyrille d'Alexandrie",
+    "originalName": "Κύριλλος Ἀλεξανδρείας",
+    "era": "post-nicene",
+    "dates": "375-444",
+    "feastDay": "27 juin",
+    "function": "Évêque",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Cyrille_d%27Alexandrie",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Cyrillus_Alexandrinus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Cyril_of_Alexandria?uselang=fr"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 19,
+    "slug": "cyrille-de-jerusalem-19",
+    "name": "Cyrille de Jérusalem",
+    "originalName": "Κύριλλος Α΄ Ἱεροσολύμων",
+    "era": "post-nicene",
+    "dates": "315-387",
+    "feastDay": "18 mars",
+    "function": "Évêque,Theologien",
+    "language": [
+      "Grec"
+    ],
+    "region": "Israël/Palestine",
+    "groups": [
+      "Palestine - Chypre"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Cyrille_de_J%C3%A9rusalem",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Cyrille_de_J%C3%A9rusalem",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Cyril_of_Jerusalem"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 20,
+    "slug": "denys-d-alexandrie-20",
+    "name": "Denys d'Alexandrie",
+    "originalName": "Διονύσιος Ἀλεξανδρείας",
+    "era": "post-nicene",
+    "dates": "190-264",
+    "feastDay": "8 avril",
+    "function": "Évêque,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Denys_d%27Alexandrie",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Dionysius_Alexandrinus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Dionysius_of_Alexandria"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 21,
+    "slug": "didache-21",
+    "name": "Didachè",
+    "originalName": "Διδαχή",
+    "era": "post-nicene",
+    "dates": "50-90",
+    "language": [
+      "Grec"
+    ],
+    "groups": [
+      "Anonyme"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Didach%C3%A8",
+      "wikisource": "https://fr.wikisource.org/wiki/Doctrine_des_Ap%C3%B4tres_-_%C3%89pitre_de_Barnab%C3%A9/5"
+    },
+    "status": "Inconnu"
+  },
+  {
+    "id": 22,
+    "slug": "didyme-l-aveugle-22",
+    "name": "Didyme l’Aveugle",
+    "originalName": "Didimos",
+    "era": "post-nicene",
+    "dates": "313-398",
+    "feastDay": "18 octobre",
+    "function": "Écrivain,Prêtre,Theologien",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/w/index.php?title=Didyme_l%27Aveugle",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Didymus_the_Blind?uselang=fr"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 23,
+    "slug": "diodore-de-tarse-23",
+    "name": "Diodore de Tarse",
+    "originalName": "Διόδωρος ὁ Ταρσεύς",
+    "era": "post-nicene",
+    "dates": "330-394",
+    "function": "Évêque,Écrivain,Apologète",
+    "language": [
+      "Grec"
+    ],
+    "region": "Tuquie Mediterranéenne",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Diodore_de_Tarse",
+      "wikisource": "https://www.documentacatholicaomnia.eu/30_20_0330-0391-_Diodorus_Tarsus.html"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 24,
+    "slug": "ephrem-le-syriaque-24",
+    "name": "Éphrem le Syriaque",
+    "originalName": "Mâr Aphrêm Sûryâyâ",
+    "era": "post-nicene",
+    "dates": "306-373",
+    "feastDay": "8 juin",
+    "function": "Diacre,Theologien,Poète,Écrivain",
+    "language": [
+      "Syriaque"
+    ],
+    "region": "Turquie Sud-Est",
+    "groups": [
+      "Monde Syriaque"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89phrem_le_Syriaque",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Ephrem_the_Syrian",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Ephrem_the_Syrian?uselang=fr"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 25,
+    "slug": "epiphane-de-salamine-25",
+    "name": "Épiphane de Salamine",
+    "originalName": "Epiphanius Constantiensis",
+    "era": "post-nicene",
+    "dates": "315-403",
+    "feastDay": "12 mai",
+    "function": "Évêque,Archévêque,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Israël/Palestine",
+    "groups": [
+      "Palestine - Chypre"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/%C3%89piphane_de_Salamine",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Epiphanius_of_Salamis",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Epiphanius_of_Salamis?uselang=fr"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 26,
+    "slug": "eusebe-de-cesaree-26",
+    "name": "Eusèbe de Césarée",
+    "originalName": "Ευσέβιος ο Καισαρείας",
+    "era": "post-nicene",
+    "dates": "265-340",
+    "function": "Évêque,Theologien,Écrivain,Historien,Hagiographe",
+    "language": [
+      "Grec"
+    ],
+    "region": "Israël/Palestine",
+    "groups": [
+      "Palestine - Chypre"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikisource.org/wiki/Auteur:Eus%C3%A8be_de_C%C3%A9sar%C3%A9e",
+      "wikisource": "https://fr.wikipedia.org/wiki/Eus%C3%A8be_de_C%C3%A9sar%C3%A9e",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Eusebius_of_Caesarea"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 27,
+    "slug": "flavius-josephe-27",
+    "name": "Flavius Josèphe",
+    "era": "post-nicene",
+    "function": "Historien",
+    "language": [
+      "Grec"
+    ],
+    "groups": [],
+    "disciples": [],
+    "sources": {
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Flavius_Jos%C3%A8phe"
+    }
+  },
+  {
+    "id": 28,
+    "slug": "gregoire-de-nazianze-28",
+    "name": "Grégoire de Nazianze",
+    "originalName": "Γρηγόριος ὁ Ναζιανζηνός",
+    "era": "post-nicene",
+    "dates": "329-390",
+    "feastDay": "2 janvier",
+    "function": "Évêque,Prêtre,Prêcheur,Poète",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie centrale",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_de_Nazianze",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_de_Nazianze",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Gregory_of_Nazianzus"
+    },
+    "status": "Saint,Docteur,Père cappadocien,Docteur œcuménique"
+  },
+  {
+    "id": 29,
+    "slug": "gregoire-de-nysse-29",
+    "name": "Grégoire de Nysse",
+    "originalName": "Γρηγόριος Νύσσης",
+    "era": "post-nicene",
+    "dates": "335-395",
+    "feastDay": "10 janvier",
+    "function": "Évêque,Theologien,Prêtre",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie centrale",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_de_Nysse",
+      "wikisource": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_de_Nysse",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Gregory_of_Nyssa"
+    },
+    "status": "Saint,Docteur,Père cappadocien"
+  },
+  {
+    "id": 30,
+    "slug": "gregoire-le-grand-30",
+    "name": "Grégoire le Grand",
+    "originalName": "Gregorius Magnus",
+    "era": "post-nicene",
+    "dates": "540-604",
+    "feastDay": "12 mars",
+    "function": "Pape,Écrivain,Politicien",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_Ier",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_Ier",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Gregorius_I_Magnus"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 31,
+    "slug": "gregoire-le-thaumaturge-31",
+    "name": "Grégoire le Thaumaturge",
+    "originalName": "Grēgórios ho Thaumatourgós",
+    "era": "post-nicene",
+    "dates": "213-270",
+    "feastDay": "17 novembre",
+    "function": "Évêque,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie Région de la mer Noire",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_le_Thaumaturge",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Gregory_Thaumaturgus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Gregory_of_Neocaesarea"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 32,
+    "slug": "hermas-32",
+    "name": "Hermas",
+    "originalName": "Ποιμὴν τοῦ Ἑρμᾶ",
+    "era": "post-nicene",
+    "language": [],
+    "region": "Italie",
+    "groups": [
+      "Occident hellénophone"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikisource.org/wiki/Auteur:Hermas",
+      "wikisource": "https://fr.wikipedia.org/wiki/Pasteur_d%27Hermas"
+    },
+    "status": "Inconnu"
+  },
+  {
+    "id": 33,
+    "slug": "hilaire-de-poitiers-33",
+    "name": "Hilaire de Poitiers",
+    "originalName": "Hilarius",
+    "era": "post-nicene",
+    "dates": "315-367",
+    "feastDay": "13 janvier",
+    "function": "Évêque,Theologien,Prêtre,Philosophe,Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "France",
+    "groups": [
+      "Gaule"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Hilaire_de_Poitiers",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Hilarius_Pictaviensis",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Hilary_of_Poitiers"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 34,
+    "slug": "hippolyte-de-rome-34",
+    "name": "Hippolyte de Rome",
+    "originalName": "Hippolytus Romanus",
+    "era": "post-nicene",
+    "dates": "?-170",
+    "feastDay": "13 août",
+    "function": "Évêque,Theologien,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Occident hellénophone"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Hippolyte_de_Rome",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Hippolyte_de_Rome",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Hippolytus"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 35,
+    "slug": "ignace-d-antioche-35",
+    "name": "Ignace d'Antioche",
+    "originalName": "Ἰγνάτιος Ἀντιοχείας",
+    "era": "post-nicene",
+    "dates": "35-110",
+    "feastDay": "17 février",
+    "function": "Évêque,Theologien",
+    "language": [
+      "Grec"
+    ],
+    "region": "Tuquie Mediterranéenne",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Ignace_d%27Antioche",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Ignace_d%E2%80%99Antioche",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Ignatius_of_Antioch"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 36,
+    "slug": "irenee-de-lyon-36",
+    "name": "Irénée de Lyon",
+    "originalName": "Εἰρηναῖος Λουγδούνου",
+    "era": "post-nicene",
+    "dates": "130-202",
+    "feastDay": "28 juin",
+    "function": "Évêque,Theologien,Philosophe",
+    "language": [
+      "Grec"
+    ],
+    "region": "France",
+    "groups": [
+      "Occident hellénophone"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Ir%C3%A9n%C3%A9e_de_Lyon",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Ir%C3%A9n%C3%A9e_de_Lyon",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Irenaeus"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 37,
+    "slug": "jean-cassien-37",
+    "name": "Jean Cassien",
+    "originalName": "Ioannes Eremita Cassianus",
+    "era": "post-nicene",
+    "dates": "360-433",
+    "feastDay": "23 juillet",
+    "function": "Moine,Theologien,Écrivain,Prêtre",
+    "language": [
+      "Latin"
+    ],
+    "region": "France",
+    "groups": [
+      "Gaule"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Cassien",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Iohannes_Cassianus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:John_Cassian"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 38,
+    "slug": "jean-chrysostome-38",
+    "name": "Jean Chrysostome",
+    "originalName": "Ἰωάννης ὁ Χρυσόστομος",
+    "era": "post-nicene",
+    "dates": "344-407",
+    "feastDay": "13 septembre",
+    "function": "Évêque,Theologien,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie Région de la mer Noire",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikisource.org/wiki/Auteur:Jean_Chrysostome",
+      "wikisource": "https://fr.wikipedia.org/wiki/Jean_Chrysostome",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:John_Chrysostom"
+    },
+    "status": "Saint,Docteur,Docteur œcuménique"
+  },
+  {
+    "id": 39,
+    "slug": "jean-damascene-39",
+    "name": "Jean Damascène",
+    "originalName": "Yaḥyā ibn Sarjūn",
+    "era": "post-nicene",
+    "dates": "675-749",
+    "feastDay": "4 decembre",
+    "function": "Theologien,Écrivain,Prêtre,Philosophe",
+    "language": [
+      "Grec"
+    ],
+    "region": "Syrie",
+    "groups": [
+      "Palestine - Chypre"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Jean_Damasc%C3%A8ne",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Iohannes_Damascenus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:John_of_Damascus"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 40,
+    "slug": "jerome-de-stridon-40",
+    "name": "Jérôme de Stridon",
+    "originalName": "Sophronius Eusebius Hieronymus",
+    "era": "post-nicene",
+    "dates": "345-420",
+    "feastDay": "30 septembre",
+    "function": "Traducteur,Écrivain,Theologien,Poète,Moine,Apologète,Bibliste",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikisource.org/wiki/Auteur:J%C3%A9r%C3%B4me_de_Stridon",
+      "wikisource": "https://fr.wikipedia.org/wiki/J%C3%A9r%C3%B4me_de_Stridon",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Jerome"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 41,
+    "slug": "jesus-41",
+    "name": "Jésus",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {},
+    "status": "Dieu"
+  },
+  {
+    "id": 42,
+    "slug": "jules-l-africain-42",
+    "name": "Jules l’Africain",
+    "originalName": "Sextus Julius Africanus",
+    "era": "post-nicene",
+    "dates": "160-240",
+    "function": "Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "Israël/Palestine",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Sextus_Julius_Africanus",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Sextus_Julius_Africanus"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 43,
+    "slug": "justin-martyr-43",
+    "name": "Justin Martyr",
+    "originalName": "Ἰουστῖνος ὁ Μάρτυς",
+    "era": "post-nicene",
+    "dates": "100-160",
+    "feastDay": "1e Juin",
+    "function": "Philosophe,Theologien,Apologète",
+    "language": [
+      "Grec"
+    ],
+    "region": "Italie,Turquie",
+    "groups": [
+      "Occident hellénophone"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Justin_de_Naplouse",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Justin_de_Naplouse",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Justin_the_Philosopher"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 44,
+    "slug": "lactance-44",
+    "name": "Lactance",
+    "originalName": "Lactantius",
+    "era": "post-nicene",
+    "dates": "240-325",
+    "function": "Apologète,Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "France",
+    "groups": [
+      "Afrique du Nord"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Lactance",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Lactance"
+    }
+  },
+  {
+    "id": 45,
+    "slug": "leon-le-grand-45",
+    "name": "Léon le Grand",
+    "originalName": "Leo Magnus",
+    "era": "post-nicene",
+    "dates": "490-461",
+    "feastDay": "10 novembre",
+    "function": "Pape,Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/w/index.php?title=L%C3%A9on_Ier_(pape)",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Leo_I_Papa",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Leo_I_Magnus"
+    },
+    "status": "Saint,Docteur"
+  },
+  {
+    "id": 46,
+    "slug": "mathete-46",
+    "name": "Mathète",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {
+      "wikisource": "https://fr.wikisource.org/wiki/Les_P%C3%A8res_de_l%E2%80%99%C3%89glise/Tome_2/%C3%89p%C3%AEtre_%C3%A0_Diogn%C3%A8te_(saint_Justin)"
+    }
+  },
+  {
+    "id": 47,
+    "slug": "meliton-de-sardes-47",
+    "name": "Méliton de Sardes",
+    "originalName": "Μελίτων Σάρδεων",
+    "era": "post-nicene",
+    "dates": "100-180",
+    "feastDay": "1 avril",
+    "function": "Évêque,Écrivain,Philosophe",
+    "language": [
+      "Grec"
+    ],
+    "region": "Tuquie Mediterranéenne",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9liton_de_Sardes",
+      "wikisource": "https://www.documentacatholicaomnia.eu/30_20_0100-0200-_Melito_Sardum_in_Asia_Episcopus.html",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Melito_of_Sardis"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 48,
+    "slug": "methode-d-olympe-48",
+    "name": "Méthode d'Olympe",
+    "originalName": "Μεθόδιος Όλύμπου",
+    "era": "post-nicene",
+    "dates": "260-311",
+    "feastDay": "20 juin",
+    "function": "Évêque,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Grèce",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9thode_d%27Olympe",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Methodius_of_Olympus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Methodius_of_Olympus"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 49,
+    "slug": "minucius-felix-49",
+    "name": "Minucius Félix",
+    "originalName": "Marcus Minucius Felix",
+    "era": "post-nicene",
+    "dates": "?-250",
+    "function": "Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "Algérie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Minucius_F%C3%A9lix",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Minucius_F%C3%A9lix"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 50,
+    "slug": "novatien-50",
+    "name": "Novatien",
+    "originalName": "Novatianus",
+    "era": "post-nicene",
+    "dates": "220-258",
+    "function": "Theologien",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/w/index.php?title=Novatien",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Novatianus"
+    },
+    "status": "Hérétique"
+  },
+  {
+    "id": 51,
+    "slug": "optat-de-mileve-51",
+    "name": "Optat de Milève",
+    "originalName": "Optatus episcopus Mileuitanus",
+    "era": "post-nicene",
+    "dates": "341-397",
+    "feastDay": "4 juin",
+    "function": "Évêque,Theologien,Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "groups": [
+      "Afrique du Nord"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Optat_de_Mil%C3%A8ve",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Optatus_Milevitanus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Saint_Optatus"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 52,
+    "slug": "origene-52",
+    "name": "Origène",
+    "originalName": "Ὠριγένης",
+    "era": "post-nicene",
+    "dates": "185-254",
+    "function": "Theologien,Écrivain,Traducteur,Philosophe",
+    "language": [
+      "Latin"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Orig%C3%A8ne",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Orig%C3%A8ne",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Origen"
+    }
+  },
+  {
+    "id": 53,
+    "slug": "pamphile-de-cesaree-53",
+    "name": "Pamphile de Césarée",
+    "originalName": "Pamphilos",
+    "era": "post-nicene",
+    "dates": "240-309",
+    "feastDay": "16 fevrier",
+    "function": "Prêtre,Bibliste",
+    "language": [
+      "Grec"
+    ],
+    "region": "Israël/Palestine",
+    "groups": [
+      "Palestine - Chypre"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Pamphile_de_C%C3%A9sar%C3%A9e",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Pamphilus_of_Caesarea",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Pamphilus_of_Caesarea"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 54,
+    "slug": "papias-de-hierapolis-54",
+    "name": "Papias de Hiérapolis",
+    "originalName": "Παπίας Ἱεραπόλεως",
+    "era": "post-nicene",
+    "dates": "60-140",
+    "feastDay": "22 février",
+    "function": "Évêque,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie Égéenne",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Papias_d%27Hi%C3%A9rapolis",
+      "wikisource": "https://en.wikisource.org/wiki/Author:Papias",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Papias_of_Hierapolis"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 55,
+    "slug": "polycarpe-de-smyrne-55",
+    "name": "Polycarpe de Smyrne",
+    "originalName": "Πολύκαρπος Σμύρνος",
+    "era": "post-nicene",
+    "dates": "69-155",
+    "feastDay": "23 février",
+    "function": "Évêque,Theologien,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Turquie Égéenne",
+    "groups": [
+      "Grèce - Asie mineure"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Polycarpe_de_Smyrne",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Polycarpe_de_Smyrne",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Polycarp_of_Smyrna"
+    },
+    "status": "Saint,Martyr"
+  },
+  {
+    "id": 56,
+    "slug": "pseudo-denys-l-areopagite-56",
+    "name": "Pseudo-Denys l'Aréopagite",
+    "originalName": "Διονύσιος ο Αρεοπαγίτης",
+    "era": "post-nicene",
+    "function": "Theologien,Philosophe,Historien",
+    "language": [
+      "Grec"
+    ],
+    "region": "Egypte",
+    "groups": [
+      "Alexandrie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Denys_l%27Ar%C3%A9opagite",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Pseudo-Denys_l%E2%80%99Ar%C3%A9opagite",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Dionysius_Areopagite?uselang=fr"
+    }
+  },
+  {
+    "id": 57,
+    "slug": "saint-jean-57",
+    "name": "Saint Jean",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {},
+    "status": "Saint,Apôtre"
+  },
+  {
+    "id": 58,
+    "slug": "saint-paul-58",
+    "name": "Saint Paul",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {},
+    "status": "Saint,Apôtre,Martyr"
+  },
+  {
+    "id": 59,
+    "slug": "saint-pierre-59",
+    "name": "Saint Pierre",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {},
+    "status": "Saint,Apôtre,Martyr"
+  },
+  {
+    "id": 60,
+    "slug": "sulpice-severe-60",
+    "name": "Sulpice Sévère",
+    "originalName": "Sulpicius Severus",
+    "era": "post-nicene",
+    "dates": "363-429",
+    "feastDay": "29 janvier",
+    "function": "Prêtre,Hagiographe,Écrivain,Historien",
+    "language": [
+      "Latin"
+    ],
+    "region": "France",
+    "groups": [
+      "Gaule"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Sulpice_S%C3%A9v%C3%A8re",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Sulpice-S%C3%A9v%C3%A8re",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Sulpitius_Severus"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 61,
+    "slug": "tatien-le-syrien-61",
+    "name": "Tatien le Syrien",
+    "originalName": "Tatianus",
+    "era": "post-nicene",
+    "dates": "120-185",
+    "function": "Theologien",
+    "language": [
+      "Syriaque"
+    ],
+    "region": "Syrie",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Tatien_le_Syrien",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Tatien_le_Syrien"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 62,
+    "slug": "tertullien-62",
+    "name": "Tertullien",
+    "originalName": "Quintus Septimius Florens Tertullianus",
+    "era": "post-nicene",
+    "dates": "160-220",
+    "function": "Theologien,Écrivain,Philosophe",
+    "language": [
+      "Latin"
+    ],
+    "region": "Tunisie",
+    "groups": [
+      "Carthage"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Tertullien",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Tertullien",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Quintus_Septimius_Florens_Tertullianus"
+    },
+    "status": "Laïc"
+  },
+  {
+    "id": 63,
+    "slug": "theodoret-de-cyr-63",
+    "name": "Théodoret de Cyr",
+    "originalName": "Θεοδώρητος",
+    "era": "post-nicene",
+    "dates": "393-457",
+    "function": "Prêtre,Historien,Écrivain",
+    "language": [
+      "Grec"
+    ],
+    "region": "Tuquie Mediterranéenne",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9odoret_de_Cyr",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Theodoretus",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Theodoret"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 64,
+    "slug": "theophile-d-antioche-64",
+    "name": "Théophile d'Antioche",
+    "originalName": "Θεόφιλος ὁ Ἀντιοχεύς",
+    "era": "post-nicene",
+    "dates": "169-183",
+    "feastDay": "13 octobre",
+    "function": "Évêque",
+    "language": [
+      "Grec"
+    ],
+    "region": "Tuquie Mediterranéenne",
+    "groups": [
+      "Antioche"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9ophile_d%27Antioche",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Th%C3%A9ophile_d%E2%80%99Antioche",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Theophilus_of_Antioch?uselang=fr"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 65,
+    "slug": "victorin-de-pettau-65",
+    "name": "Victorin de Pettau",
+    "originalName": "Victorinus Petavionensis",
+    "era": "post-nicene",
+    "dates": "250-303",
+    "feastDay": "2 novembre",
+    "function": "Évêque,Écrivain,Theologien,Bibliste,Philosophe,Pape",
+    "language": [
+      "Latin"
+    ],
+    "region": "Italie",
+    "groups": [
+      "Italie"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Victorin_de_Pettau",
+      "wikisource": "https://la.wikisource.org/wiki/Scriptor:Victorinus_Petavionensis",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Victorinus_of_Pettau"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 66,
+    "slug": "vincent-de-lerins-66",
+    "name": "Vincent de Lérins",
+    "originalName": "Vincent de Lérins",
+    "era": "post-nicene",
+    "dates": "?-450",
+    "feastDay": "24 mai",
+    "function": "Prêtre,Moine,Écrivain",
+    "language": [
+      "Latin"
+    ],
+    "region": "France",
+    "groups": [
+      "Gaule"
+    ],
+    "disciples": [],
+    "sources": {
+      "wikipedia": "https://fr.wikipedia.org/wiki/Vincent_de_L%C3%A9rins",
+      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Vincent_de_L%C3%A9rins",
+      "wikimedia": "https://commons.wikimedia.org/wiki/Category:Vincent_of_L%C3%A9rins?uselang=fr"
+    },
+    "status": "Saint"
+  },
+  {
+    "id": 67,
+    "slug": "anonyme-67",
+    "name": "Anonyme",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 68,
+    "slug": "cesaire-d-arles-68",
+    "name": "Césaire d'Arles",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1001,
+    "slug": "https-fr-wikipedia-org-wiki-c3-89p-c3-aetre-c3-a0-diogn-c3-a8te-grec-anonyme-tur",
+    "name": ",https://fr.wikipedia.org/wiki/%C3%89p%C3%AEtre_%C3%A0_Diogn%C3%A8te,,,,,Grec,Anonyme,,,Turquie,Inconnu,https://www.biblindex.org/fr/authors/anonymus-ad-diognetum",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1002,
+    "slug": "pape-celestin-ier-1002",
+    "name": "Pape Célestin Ier",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1003,
+    "slug": "constantin-1003",
+    "name": "Constantin",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1004,
+    "slug": "pape-st-damase-1e-1004",
+    "name": "Pape St Damase 1e",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1005,
+    "slug": "st-denis-de-corinthe-1005",
+    "name": "St Denis de Corinthe",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1006,
+    "slug": "evagre-le-pontique-1006",
+    "name": "Évagre le Pontique",
+    "era": "post-nicene",
+    "language": [],
+    "groups": [],
+    "disciples": [],
+    "sources": {}
+  },
+  {
+    "id": 1007,
+    "slug": "firmilien-de-cesaree-1007",
+    "name": "Firmilien de Césarée",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1008,
+    "slug": "st-fulgence-de-ruspe-1008",
+    "name": "St. Fulgence de Ruspe",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1009,
+    "slug": "pape-st-gregoire-ier-1009",
+    "name": "Pape St. Grégoire Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1010,
+    "slug": "st-hegesippe-1010",
+    "name": "St. Hégésippe",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1011,
+    "slug": "pape-st-innocent-ier-1011",
+    "name": "Pape St. Innocent Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1012,
+    "slug": "pape-st-jules-ier-1012",
+    "name": "Pape St. Jules Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1013,
+    "slug": "pape-st-leon-ier-1013",
+    "name": "Pape St. Léon Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1014,
+    "slug": "leporius-1014",
+    "name": "Léporius",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1015,
+    "slug": "st-pacien-de-barcelone-1015",
+    "name": "St. Pacien de Barcelone",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1016,
+    "slug": "st-patrick-1016",
+    "name": "St. Patrick",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1017,
+    "slug": "pectorius-d-autun-1017",
+    "name": "Pectorius d’Autun",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1018,
+    "slug": "st-pierre-chrysologue-1018",
+    "name": "St. Pierre Chrysologue",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1019,
+    "slug": "st-pion-de-smyrne-1019",
+    "name": "St. Pion de Smyrne",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1020,
+    "slug": "st-prosper-d-aquitaine-1020",
+    "name": "St. Prosper d’Aquitaine",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1021,
+    "slug": "pseudo-ignace-1021",
+    "name": "Pseudo-Ignace",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1022,
+    "slug": "pseudo-jean-1022",
+    "name": "Pseudo-Jean",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1023,
+    "slug": "pseudo-justin-1023",
+    "name": "Pseudo-Justin",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1024,
+    "slug": "pseudo-meliton-1024",
+    "name": "Pseudo-Méliton",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1025,
+    "slug": "st-sechnall-d-irlande-1025",
+    "name": "St. Sechnall d’Irlande",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1026,
+    "slug": "segond-clement-1026",
+    "name": "Segond Clément",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1027,
+    "slug": "st-serapion-de-thmuis-1027",
+    "name": "St. Sérapion de Thmuis",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1028,
+    "slug": "pape-st-siricius-ier-1028",
+    "name": "Pape St. Siricius Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1029,
+    "slug": "sozomene-de-constantinople-1029",
+    "name": "Sozomène de Constantinople",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1030,
+    "slug": "theodore-de-mopsueste-1030",
+    "name": "Théodore de Mopsueste",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1031,
+    "slug": "timothee-de-jerusalem-1031",
+    "name": "Timothée de Jérusalem",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1032,
+    "slug": "pape-saint-gregoire-vii-1032",
+    "name": "Pape Saint Gregoire VII",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1033,
+    "slug": "pape-st-agatho-1033",
+    "name": "Pape St. Agatho",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1034,
+    "slug": "st-alexandre-d-alexandrie-1034",
+    "name": "St. Alexandre d’Alexandrie",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1035,
+    "slug": "st-aphrahat-le-sage-persan-1035",
+    "name": "St. Aphrahat le Sage persan",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1036,
+    "slug": "athenagoras-d-athenes-1036",
+    "name": "Athénagoras d’Athènes",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1037,
+    "slug": "pape-st-clement-ier-1037",
+    "name": "Pape St. Clément Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1038,
+    "slug": "constantin-ier-1038",
+    "name": "Constantin Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1039,
+    "slug": "concile-d-ankara-1039",
+    "name": "Concile d’Ankara",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1040,
+    "slug": "concile-de-carthage-de-397-1040",
+    "name": "Concile de Carthage de 397",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1041,
+    "slug": "concile-de-carthage-de-418-1041",
+    "name": "Concile de Carthage de 418",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1042,
+    "slug": "concile-de-carthage-de-419-1042",
+    "name": "Concile de Carthage de 419",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1043,
+    "slug": "concile-de-chalcedoine-1043",
+    "name": "Concile de Chalcédoine",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1044,
+    "slug": "concile-de-constantinople-i-1044",
+    "name": "Concile de Constantinople I",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1045,
+    "slug": "concile-de-constantinople-ii-1045",
+    "name": "Concile de Constantinople II",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1046,
+    "slug": "concile-d-elvire-1046",
+    "name": "Concile d’Elvire",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1047,
+    "slug": "concile-d-ephese-1047",
+    "name": "Concile d’Éphèse",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1048,
+    "slug": "concile-d-hippone-1048",
+    "name": "Concile d’Hippone",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1049,
+    "slug": "concile-de-laodicee-1049",
+    "name": "Concile de Laodicée",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1050,
+    "slug": "concile-de-nicee-i-1050",
+    "name": "Concile de Nicée I",
+    "era": "nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1051,
+    "slug": "concile-de-rome-1051",
+    "name": "Concile de Rome",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1052,
+    "slug": "concile-de-sardique-1052",
+    "name": "Concile de Sardique",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1053,
+    "slug": "pape-st-damase-ier-1053",
+    "name": "Pape St. Damase Ier",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1054,
+    "slug": "inscriptions-chretiennes-1054",
+    "name": "Inscriptions chrétiennes",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  },
+  {
+    "id": 1055,
+    "slug": "c-1055",
+    "name": "c",
+    "era": "post-nicene",
+    "language": [],
+    "sources": {}
+  }
 ]
