@@ -1,0 +1,496 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Bold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Light-Italic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Medium-Italic.woff2') format('woff2');
+	font-weight: 500;
+	font-style: italic;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Gotham';
+	src: url('/fonts/Gotham-Bold-Italic.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: optional;
+}
+
+@font-face {
+	font-family: 'Libre Baskerville';
+	src: url('/fonts/LibreBaskerville-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Libre Baskerville';
+	src: url('/fonts/LibreBaskerville-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: optional;
+}
+@font-face {
+	font-family: 'Libre Baskerville';
+	src: url('/fonts/LibreBaskerville-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: optional;
+}
+
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Book.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Sentinel';
+	src: url('/fonts/Sentinel-Book-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Serif 4';
+	src: url('/fonts/SourceSerif4-Regular-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Serif 4';
+	src: url('/fonts/SourceSerif4-Italic-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url('/fonts/LibreFranklin-Regular-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url('/fonts/LibreFranklin-Italic-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/fonts/Montserrat-Regular-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('/fonts/Montserrat-Italic-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('/fonts/NotoSans-Regular-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Noto Sans';
+	src: url('/fonts/NotoSans-Italic-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Grace Dyslexic MD';
+	src: url('/fonts/dyslexia.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@layer base {
+	:root {
+		--color-bg: #f8f5ef;
+		--color-panel: #ffffff;
+		--color-fg: #1c1710;
+		--color-muted: #4a443e;
+		--color-subtle: #5e5650;
+		--color-accent: #a62c2c;
+		--color-accent-text: #b84848;
+		--color-border: #e4dcd0;
+		--color-bg-glass: rgba(248, 245, 239, 0.94);
+		--color-heading: var(--color-fg);
+
+		--font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+		--font-ui: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+		--font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+
+		/* Stacking-context tokens. Keep these in lockstep with the layered UI:
+		   topbar < sticky chapter nav < panels (study/sidebar) < click-away
+		   overlay < dropdown menus < FloatingNav (Bible book picker) <
+		   modal (header menus that must overlay page-level popups). */
+		--z-topbar: 30;
+		--z-sticky: 40;
+		--z-panel: 50;
+		--z-overlay: 57;
+		--z-dropdown: 60;
+		--z-floating: 65;
+		--z-modal: 70;
+	}
+
+	[data-theme='sepia'] {
+		--color-bg: #f2e8d8;
+		--color-panel: #f9f2e6;
+		--color-fg: #2c1e10;
+		--color-muted: #4e3520;
+		--color-subtle: #6a4830;
+		--color-accent: #8b2500;
+		--color-accent-text: #c15050;
+		--color-border: #d8c8b0;
+		--color-bg-glass: rgba(242, 232, 216, 0.94);
+	}
+
+	[data-theme='dark'] {
+		--color-bg: #111113;
+		--color-panel: #1c1c1f;
+		--color-fg: #e8ddd0;
+		--color-muted: #a5a4a6;
+		--color-subtle: #a09ca8;
+		--color-accent: #d45050;
+		--color-accent-text: #e15e5e;
+		--color-border: #2e2b32;
+		--color-bg-glass: rgba(17, 17, 19, 0.94);
+		--color-heading: #c5bbb0;
+	}
+
+	[data-theme='oled'] {
+		--color-bg: #000000;
+		--color-panel: #0f0f0f;
+		--color-fg: #e0e0e0;
+		--color-muted: #8a8a8a;
+		--color-subtle: #888888;
+		--color-accent: #d45050;
+		--color-accent-text: #e15e5e;
+		--color-border: #1f1f1f;
+		--color-bg-glass: rgba(0, 0, 0, 0.96);
+		--color-heading: #a8a4b0;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		[data-theme='auto'] {
+			--color-bg: #111113;
+			--color-panel: #1c1c1f;
+			--color-fg: #e8ddd0;
+			--color-muted: #a5a4a6;
+			--color-subtle: #a09ca8;
+			--color-accent: #d45050;
+			--color-accent-text: #e15e5e;
+			--color-border: #2e2b32;
+			--color-bg-glass: rgba(17, 17, 19, 0.94);
+			--color-heading: #c5bbb0;
+		}
+	}
+
+	html {
+		background: var(--color-bg);
+		color: var(--color-fg);
+		font-family: var(--font-body);
+		/* Smooth-scroll is intentionally NOT set on <html>. When cross-page
+		   nav restores scroll then SvelteKit jumps to top, smooth makes the
+		   user watch the page scroll up · jarring. Per-action smooth scrolls
+		   (panorama, anchor jumps) opt in via JS where needed. */
+		scroll-behavior: auto;
+		/* Offset anchor scrolls so targets clear the sticky topbar (~80px
+		   desktop, ~58px mobile). 6rem gives comfortable breathing room
+		   below the topbar without leaving the title at the scroll-spy
+		   activation line. Anchor targets must NOT also carry scroll-mt-*
+		   utilities · the values are additive for scrollIntoView, so doubling
+		   them pushes the title down to ~12rem, near the highlight threshold. */
+		scroll-padding-top: 6rem;
+		/* Reserve the vertical scrollbar gutter so locking <html> overflow
+		   (e.g. when the panorama modal opens) doesn't shift layout when
+		   the scrollbar disappears. */
+		scrollbar-gutter: stable;
+	}
+
+	/* Cancel scroll-padding-top for inputs inside the sticky topbar. Without
+	   this, every keystroke fires the browser's "scroll caret into the
+	   optimal viewing region" · and since the topbar's input sits in the
+	   top 6rem (which scroll-padding marks obscured), the page smooth-scrolls
+	   up ~50px per character. scroll-margin-top: -6rem cancels that out for
+	   the inputs themselves while preserving anchor-link offsets elsewhere.
+	   The :has() rule disables smooth-scroll entirely while the input is
+	   focused · belt-and-suspenders in case the caret algorithm still fires. */
+	.topbar input[type='search'],
+	.topbar input[type='text'] {
+		scroll-margin-top: -6rem;
+	}
+	html:has(.topbar input:focus) {
+		scroll-behavior: auto;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
+	body {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		text-rendering: optimizeLegibility;
+	}
+
+	/* Default Gotham UI text to Medium (500). Tailwind weight utilities
+	   like font-semibold / font-bold still override per-element. */
+	.font-ui {
+		font-weight: 500;
+	}
+
+	::selection {
+		background-color: color-mix(in srgb, var(--color-accent) 35%, transparent);
+		color: var(--color-fg);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+		border-radius: 2px;
+	}
+
+	:focus:not(:focus-visible) {
+		outline: none;
+	}
+}
+
+/* Reader prose: restore paragraph margins inside {@html ...} content blocks.
+   Tailwind's preflight zeroes all <p> margins; readers that render trusted
+   HTML opt into normal flow by adding `class="reader-prose"` to the
+   containing element. Cheap, global, and predictable. */
+.reader-prose p {
+	margin: 0 0 1em;
+}
+.reader-prose p:last-child {
+	margin-bottom: 0;
+}
+
+/* Reader prose: restore paragraph margins inside {@html ...} content blocks.
+   Tailwind's preflight zeroes all <p> margins; readers that render trusted
+   HTML opt into normal flow by adding `class="reader-prose"` to the
+   containing element. Cheap, global, and predictable. */
+.reader-prose p {
+	margin: 0 0 1em;
+}
+.reader-prose p:last-child {
+	margin-bottom: 0;
+}
+
+/* Translucent panel background for sticky overlays. The variable carries
+   alpha so the blur can show subtle content underneath in browsers that
+   support backdrop-filter. Firefox does NOT apply backdrop-filter on most
+   stable channels, so without a fallback the content beneath bleeds through
+   the sticky bar. The @supports rule swaps to a fully opaque panel colour
+   when backdrop-filter is unsupported. */
+.bg-glass {
+	background-color: var(--color-bg-glass);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+	.bg-glass {
+		background-color: var(--color-panel);
+	}
+}
+
+/* Logo theme swap · only show the right variant for the current theme. */
+.logo-light {
+	display: block;
+}
+.logo-dark {
+	display: none;
+}
+[data-theme='dark'] .logo-light,
+[data-theme='oled'] .logo-light {
+	display: none;
+}
+[data-theme='dark'] .logo-dark,
+[data-theme='oled'] .logo-dark {
+	display: block;
+}
+@media (prefers-color-scheme: dark) {
+	[data-theme='auto'] .logo-light {
+		display: none;
+	}
+	[data-theme='auto'] .logo-dark {
+		display: block;
+	}
+}
+/* Print: always render the black-on-light logo at full size regardless of
+   the active theme or the responsive size that happens to apply. */
+@media print {
+	.logo-light,
+	[data-theme='dark'] .logo-light,
+	[data-theme='oled'] .logo-light,
+	[data-theme='auto'] .logo-light {
+		display: block !important;
+	}
+	.logo-dark,
+	[data-theme='dark'] .logo-dark,
+	[data-theme='oled'] .logo-dark,
+	[data-theme='auto'] .logo-dark {
+		display: none !important;
+	}
+}
+
+/* Single-paragraph print: when the user triggers print from one paragraph's
+   action menu, the JS handler tags every non-target paragraph with
+   data-print-hidden so only the chosen one ends up on paper. */
+@media print {
+	[data-print-hidden] {
+		display: none !important;
+	}
+}
+
+/* Inked papal signatures (homepage + /a-propos): the SVGs render
+   black-on-transparent. Invert + brighten so they read as white on
+   dark backgrounds. Defined globally so explicit-dark, oled, and
+   auto+OS-dark cases all match without depending on Svelte's per-
+   component CSS scoping. */
+[data-theme='dark'] .founding-signature,
+[data-theme='oled'] .founding-signature,
+[data-theme='dark'] .papal-signature,
+[data-theme='oled'] .papal-signature {
+	filter: invert(1) brightness(1.4);
+	opacity: 0.92;
+}
+@media (prefers-color-scheme: dark) {
+	[data-theme='auto'] .founding-signature,
+	[data-theme='auto'] .papal-signature {
+		filter: invert(1) brightness(1.4);
+		opacity: 0.92;
+	}
+}
+
+/* Stylized scrollbars for internal scroll containers. Apply via the
+   `styled-scroll` utility · never on <html>/<body>. Firefox uses the
+   `scrollbar-*` properties; Webkit/Chromium uses ::-webkit-scrollbar.
+   Thumb is a themed grey via --color-muted so it stays neutral across
+   light / sepia / dark / oled regardless of the parent's currentColor
+   (which inside accent-tinted regions like the panorama would otherwise
+   bleed red into the scrollbar). */
+.styled-scroll {
+	scrollbar-width: thin;
+	scrollbar-color: color-mix(in srgb, var(--color-muted) 50%, transparent) transparent;
+}
+.styled-scroll::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+.styled-scroll::-webkit-scrollbar-track {
+	background: transparent;
+}
+.styled-scroll::-webkit-scrollbar-thumb {
+	background-color: color-mix(in srgb, var(--color-muted) 45%, transparent);
+	border-radius: 4px;
+}
+.styled-scroll::-webkit-scrollbar-thumb:hover {
+	background-color: color-mix(in srgb, var(--color-muted) 70%, transparent);
+}
+
+/* Accent variant · combine with `styled-scroll`. Used in places where the
+   scrollbar should read as a primary affordance (e.g. the Sommaire sidebar)
+   rather than a quiet utility. */
+.styled-scroll-accent {
+	scrollbar-color: color-mix(in srgb, var(--color-accent) 50%, transparent)
+		color-mix(in srgb, var(--color-border) 40%, transparent);
+}
+.styled-scroll-accent::-webkit-scrollbar-track {
+	background: color-mix(in srgb, var(--color-border) 40%, transparent);
+}
+.styled-scroll-accent::-webkit-scrollbar-thumb {
+	background-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+	background-clip: padding-box;
+	border: 1px solid transparent;
+	min-height: 40px;
+}
+.styled-scroll-accent::-webkit-scrollbar-thumb:hover {
+	background-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
+}
+
+
+
+/* Global page fade · same 280ms ease-out reveal the homepage uses, applied
+   to the layout's content wrapper so every route gets the same subtle
+   in-transition. The {#key page.url.pathname} block in +layout.svelte
+   remounts the wrapper on navigation so the animation re-triggers. */
+.page-fade {
+	opacity: 0;
+	animation: page-fade-in 280ms ease-out forwards;
+}
+@keyframes page-fade-in {
+	to {
+		opacity: 1;
+	}
+}
+@media (prefers-reduced-motion: reduce) {
+	.page-fade {
+		animation: none;
+		opacity: 1;
+	}
+}
+
+/* Make all text selectable, including links. Browsers default <a> to
+   draggable, which suppresses text selection on mousedown. */
+a {
+	-webkit-user-drag: none;
+	user-select: text;
+}
+
