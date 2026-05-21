@@ -7,6 +7,9 @@ node_modules
 /.wrangler
 /.cache
 
+# local agent state
+.claude/
+
 # editor / OS
 .DS_Store
 .idea
