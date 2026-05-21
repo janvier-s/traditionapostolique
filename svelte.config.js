@@ -50,7 +50,8 @@ const config = {
 					path.startsWith('/peres') ||
 					path.startsWith('/oeuvres') ||
 					path.startsWith('/recherche') ||
-					path.startsWith('/citation')
+					path.startsWith('/citation') ||
+					path.startsWith('/admin')
 				) {
 					return;
 				}
