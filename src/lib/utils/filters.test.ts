@@ -38,9 +38,9 @@ describe('applyFiltersAndSort', () => {
 		expect(r.map((q) => q.id)).toEqual([2]);
 	});
 	it('filters by language', () => {
-		expect(
-			applyFiltersAndSort(Q, A, { langue: ['latin'] }, 'date-asc').map((q) => q.id)
-		).toEqual([2]);
+		expect(applyFiltersAndSort(Q, A, { langue: ['latin'] }, 'date-asc').map((q) => q.id)).toEqual([
+			2
+		]);
 	});
 	it('sorts by date ascending', () => {
 		expect(applyFiltersAndSort(Q, A, {}, 'date-asc').map((q) => q.id)).toEqual([1, 2]);

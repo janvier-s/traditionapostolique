@@ -204,8 +204,8 @@
 									aria-label="Retirer le sujet"
 									onclick={() => removeTopic(tid)}
 									class="rounded px-1 text-muted hover:text-accent-text"
-									disabled={selected.topicIds.length <= 1}
-								>×</button>
+									disabled={selected.topicIds.length <= 1}>×</button
+								>
 							</li>
 						{/each}
 					</ul>
@@ -230,7 +230,8 @@
 								}
 							}}
 							class="rounded border border-border bg-panel px-2 py-1 text-sm hover:bg-subtle/10"
-						>Ajouter</button>
+							>Ajouter</button
+						>
 					</div>
 				</div>
 

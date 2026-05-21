@@ -16,11 +16,13 @@ export const AuthorSchema = z.object({
 	region: z.string().optional(),
 	groups: z.array(z.string()).optional(),
 	disciples: z.array(z.number().int()).optional(),
-	sources: z.object({
-		wikipedia: z.string().url().optional(),
-		wikisource: z.string().url().optional(),
-		wikimedia: z.string().url().optional()
-	}).default({}),
+	sources: z
+		.object({
+			wikipedia: z.string().url().optional(),
+			wikisource: z.string().url().optional(),
+			wikimedia: z.string().url().optional()
+		})
+		.default({}),
 	status: z.string().optional(),
 	bioShort: z.string().optional(),
 	bioLong: z.string().optional()

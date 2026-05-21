@@ -465,8 +465,6 @@
 	background-color: color-mix(in srgb, var(--color-accent) 70%, transparent);
 }
 
-
-
 /* Global page fade · same 280ms ease-out reveal the homepage uses, applied
    to the layout's content wrapper so every route gets the same subtle
    in-transition. The {#key page.url.pathname} block in +layout.svelte
@@ -493,4 +491,3 @@ a {
 	-webkit-user-drag: none;
 	user-select: text;
 }
-

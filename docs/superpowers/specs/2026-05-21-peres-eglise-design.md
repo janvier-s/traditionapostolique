@@ -24,6 +24,7 @@ Source corpus: `…/for-the-kingdom/fathers/excel/fathers_db.xlsx` (4 sheets: Au
 Four JSON files in `src/lib/data/`, validated by zod at build time.
 
 ### `authors.json` — `Author`
+
 ```ts
 {
   id: number;            // stable, from xlsx
@@ -50,6 +51,7 @@ Four JSON files in `src/lib/data/`, validated by zod at build time.
 ```
 
 ### `works.json` — `Work`
+
 ```ts
 {
   id: number;
@@ -68,6 +70,7 @@ Four JSON files in `src/lib/data/`, validated by zod at build time.
 ```
 
 ### `topics.json` — `Topic`
+
 ```ts
 {
   id: number;
@@ -80,6 +83,7 @@ Four JSON files in `src/lib/data/`, validated by zod at build time.
 ```
 
 ### `quotes.json` — `Quote`
+
 ```ts
 {
   id: number;
@@ -115,12 +119,14 @@ Four JSON files in `src/lib/data/`, validated by zod at build time.
 ## 5. Navigation
 
 ### Top header
+
 - Brand: "Pères de l'Église".
 - Links: `Sujets · Pères · Œuvres · Recherche`.
 - Theme toggle.
 - Sidebar toggle (mobile).
 
 ### Sidebar (persistent, collapsible)
+
 - Reuses the catechismecatholique sidebar (`Sidebar.svelte`, `SidebarItem.svelte`, `SidebarToggle.svelte`) verbatim.
 - Open by default on all pages, including homepage. Collapsible; state in localStorage.
 - Tree: 8 Sections (I–VIII) → their Sujets (49 leaves). Active sujet highlighted.
@@ -128,24 +134,25 @@ Four JSON files in `src/lib/data/`, validated by zod at build time.
 
 ## 6. Routes
 
-| Route | Purpose |
-| --- | --- |
-| `/` | Homepage. Hero, 8 Section tiles, featured Fathers strip, quote-of-the-page, search field. Sidebar visible. |
-| `/sujets` | Full Sections > Sujets browser (mirrors sidebar but full-page). |
-| `/sujets/[slug]` | All quotes on a topic. Filter bar + sort selector + quote cards. |
-| `/peres` | Author index. Sortable by era / region / alpha. Chronology strip header. |
-| `/peres/[slug]` | Author page: bio, era, region, dates, feast day, function, languages, disciples, sources, list of works, list of quotes (topic-filterable). |
-| `/oeuvres` | Work index, filterable by author / era. |
-| `/oeuvres/[slug]` | Work page: title, author, alt titles, description, link, all quotes from this work. |
-| `/recherche` | Minisearch UI across quotes, authors, works, topics. Facet by entity type, era, language. |
-| `/citation/[id]` | Single-quote permalink. Opens directly into StudyPanel view. |
-| `/a-propos` | About + provenance + contributors. |
-| `/mentions-legales` | Legal. |
-| `/admin/*` | **Dev-only**, see §9. |
+| Route               | Purpose                                                                                                                                     |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `/`                 | Homepage. Hero, 8 Section tiles, featured Fathers strip, quote-of-the-page, search field. Sidebar visible.                                  |
+| `/sujets`           | Full Sections > Sujets browser (mirrors sidebar but full-page).                                                                             |
+| `/sujets/[slug]`    | All quotes on a topic. Filter bar + sort selector + quote cards.                                                                            |
+| `/peres`            | Author index. Sortable by era / region / alpha. Chronology strip header.                                                                    |
+| `/peres/[slug]`     | Author page: bio, era, region, dates, feast day, function, languages, disciples, sources, list of works, list of quotes (topic-filterable). |
+| `/oeuvres`          | Work index, filterable by author / era.                                                                                                     |
+| `/oeuvres/[slug]`   | Work page: title, author, alt titles, description, link, all quotes from this work.                                                         |
+| `/recherche`        | Minisearch UI across quotes, authors, works, topics. Facet by entity type, era, language.                                                   |
+| `/citation/[id]`    | Single-quote permalink. Opens directly into StudyPanel view.                                                                                |
+| `/a-propos`         | About + provenance + contributors.                                                                                                          |
+| `/mentions-legales` | Legal.                                                                                                                                      |
+| `/admin/*`          | **Dev-only**, see §9.                                                                                                                       |
 
 ## 7. Quote card + StudyPanel
 
 ### Card (default state)
+
 Inspired by the patristic block on douayrheimsbible:
 
 - **Title row** (top): short caption in Gotham small caps uppercase. From `Quote.title` when present; v1 fallback in §7.1.
@@ -165,14 +172,15 @@ Real bespoke titles arrive in Phase 2 (see §13). For v1, `Quote.title` is optio
 The derivation lives in a single helper (`deriveQuoteTitle(quote, topics)`) so when real titles are filled in, the call site doesn't change.
 
 ### StudyPanel
+
 Port `StudyPanel.svelte` from douayrheimsbible (convert to runes syntax if not already). Replace the bible-specific tabs with:
 
-| Tab | Content |
-| --- | --- |
-| **Auteur** | Bio summary, era badge, region, dates, feast day, function, status, link to full author page. |
-| **Original** | Latin / Grec / Syriaque side-by-side (whichever exist). Per-language copy button. |
-| **Sources** | Migne ref (PL/PG) formatted citation with copy button + external Archive.org / primary source links. |
-| **Notes** | Editorial notes + context paragraph. |
+| Tab          | Content                                                                                              |
+| ------------ | ---------------------------------------------------------------------------------------------------- |
+| **Auteur**   | Bio summary, era badge, region, dates, feast day, function, status, link to full author page.        |
+| **Original** | Latin / Grec / Syriaque side-by-side (whichever exist). Per-language copy button.                    |
+| **Sources**  | Migne ref (PL/PG) formatted citation with copy button + external Archive.org / primary source links. |
+| **Notes**    | Editorial notes + context paragraph.                                                                 |
 
 A permalink `/citation/[id]` mounts the StudyPanel open by default.
 

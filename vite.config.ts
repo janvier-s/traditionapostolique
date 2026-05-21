@@ -11,7 +11,11 @@ export default defineConfig({
 				test: {
 					name: 'server',
 					environment: 'node',
-					include: ['src/**/*.{test,spec}.{js,ts}', 'src/**/*.svelte.test.ts', 'tests/unit/**/*.{test,spec}.{js,ts}']
+					include: [
+						'src/**/*.{test,spec}.{js,ts}',
+						'src/**/*.svelte.test.ts',
+						'tests/unit/**/*.{test,spec}.{js,ts}'
+					]
 				}
 			}
 		]

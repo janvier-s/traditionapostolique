@@ -21,9 +21,14 @@ test('toggle hides the sidebar and persists across reloads', async ({ page }) =>
 
 test('filter narrows the topic list', async ({ page }) => {
 	await page.goto('/');
+	const aside = page.locator('aside[aria-label="Plan des sujets"]');
+	await expect(aside).toBeVisible();
+	const visibleItems = aside.locator('li a:visible');
+	// Baseline: all 49 topics rendered before filtering.
+	await expect.poll(async () => visibleItems.count()).toBe(49);
 	await page.getByPlaceholder('Filtrer les sujets…').fill('dieu');
-	const visibleItems = page.locator('aside li a:visible');
-	await expect.poll(async () => visibleItems.count()).toBeGreaterThan(0);
+	// Filter is reactive; poll until the count drops.
+	await expect.poll(async () => visibleItems.count(), { timeout: 5000 }).toBeLessThan(49);
 	const count = await visibleItems.count();
-	expect(count).toBeLessThan(49);
+	expect(count).toBeGreaterThan(0);
 });

@@ -19,7 +19,10 @@
 				<ul class="mt-4 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 					{#each s.topics as t (t.id)}
 						<li>
-							<a href={t.href} class="block rounded border border-border bg-panel p-3 hover:border-accent">
+							<a
+								href={t.href}
+								class="block rounded border border-border bg-panel p-3 hover:border-accent"
+							>
 								<span>{t.label}</span>
 								<span class="ml-1 text-xs text-muted">({t.count})</span>
 							</a>

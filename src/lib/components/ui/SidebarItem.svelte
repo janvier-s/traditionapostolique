@@ -22,9 +22,7 @@
 	>
 		<span class="truncate">{label}</span>
 		{#if typeof count === 'number'}
-			<span
-				class="shrink-0 rounded bg-subtle/20 px-1.5 py-0.5 text-[10px] tabular-nums text-muted"
-			>
+			<span class="shrink-0 rounded bg-subtle/20 px-1.5 py-0.5 text-[10px] tabular-nums text-muted">
 				{count}
 			</span>
 		{/if}

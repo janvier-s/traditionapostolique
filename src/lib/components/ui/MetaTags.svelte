@@ -1,5 +1,9 @@
 <script lang="ts">
-	let { title, description, canonical }: { title: string; description?: string; canonical?: string } = $props();
+	let {
+		title,
+		description,
+		canonical
+	}: { title: string; description?: string; canonical?: string } = $props();
 	const full = $derived(`${title} · Pères de l'Église`);
 </script>
 

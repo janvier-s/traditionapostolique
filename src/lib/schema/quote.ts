@@ -14,10 +14,12 @@ export const QuoteSchema = z.object({
 	greek: z.string().optional(),
 	context: z.string().optional(),
 	migne: z.string().optional(),
-	links: z.object({
-		primary: z.string().url().optional(),
-		archive: z.string().url().optional()
-	}).default({}),
+	links: z
+		.object({
+			primary: z.string().url().optional(),
+			archive: z.string().url().optional()
+		})
+		.default({}),
 	notes: z.string().optional(),
 	status: QuoteStatusSchema.optional()
 });

@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { theme, cycleTheme } from '$lib/stores/theme.svelte';
 	const LABEL: Record<string, string> = {
-		light: 'Clair', sepia: 'Sépia', dark: 'Sombre', amoled: 'AMOLED'
+		light: 'Clair',
+		sepia: 'Sépia',
+		dark: 'Sombre',
+		amoled: 'AMOLED'
 	};
 </script>
 

@@ -19,9 +19,7 @@
 
 	let q = $state(page.url.searchParams.get('q') ?? '');
 	const results = $derived(
-		q.trim()
-			? ms.search(q, { prefix: true, fuzzy: 0.2, boost: { title: 2 } }).slice(0, 50)
-			: []
+		q.trim() ? ms.search(q, { prefix: true, fuzzy: 0.2, boost: { title: 2 } }).slice(0, 50) : []
 	);
 
 	const PATH: Record<string, (slug: string) => string> = {
@@ -56,7 +54,10 @@
 	<ul class="mt-6 space-y-2">
 		{#each results as r (r.id)}
 			<li>
-				<a href={href(r)} class="block rounded border border-border bg-panel p-3 hover:border-accent">
+				<a
+					href={href(r)}
+					class="block rounded border border-border bg-panel p-3 hover:border-accent"
+				>
 					<span class="font-ui text-xs uppercase text-muted">{r.type}</span>
 					<span class="ml-2 font-heading">{r.title}</span>
 				</a>

@@ -2,17 +2,27 @@ import * as XLSX from 'xlsx';
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import {
-	AuthorSchema, WorkSchema, TopicSchema, QuoteSchema,
-	type Author, type Work, type Topic, type Quote, type Era
+	AuthorSchema,
+	WorkSchema,
+	TopicSchema,
+	QuoteSchema,
+	type Author,
+	type Work,
+	type Topic,
+	type Quote,
+	type Era
 } from '../src/lib/schema';
 
-const XLSX_PATH = process.env.XLSX_PATH
-	?? '/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/fathers/excel/fathers_db.xlsx';
+const XLSX_PATH =
+	process.env.XLSX_PATH ??
+	'/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/fathers/excel/fathers_db.xlsx';
 const OUT_DIR = join(process.cwd(), 'src/lib/data');
 
 function slugify(s: string): string {
-	return s.toLowerCase()
-		.normalize('NFD').replace(/[̀-ͯ]/g, '')
+	return s
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[̀-ͯ]/g, '')
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '')
 		.slice(0, 80);
@@ -36,10 +46,15 @@ function readSheet(wb: XLSX.WorkBook, name: string): unknown[][] {
 
 function splitList(s: unknown): string[] {
 	if (!s) return [];
-	return String(s).split(/[;,]\s*/).map(x => x.trim()).filter(Boolean);
+	return String(s)
+		.split(/[;,]\s*/)
+		.map((x) => x.trim())
+		.filter(Boolean);
 }
 function splitIds(s: unknown): number[] {
-	return splitList(s).map(Number).filter(n => Number.isFinite(n));
+	return splitList(s)
+		.map(Number)
+		.filter((n) => Number.isFinite(n));
 }
 function maybeUrl(s: unknown): string | undefined {
 	if (!s) return undefined;
@@ -50,7 +65,8 @@ function maybeUrl(s: unknown): string | undefined {
 /** Aggressive name key for fuzzy author matching across sheets. */
 function nameKey(s: unknown): string {
 	return String(s ?? '')
-		.normalize('NFD').replace(/[̀-ͯ]/g, '')
+		.normalize('NFD')
+		.replace(/[̀-ͯ]/g, '')
 		.toLowerCase()
 		.replace(/[‘’ʼʻ`']/g, "'")
 		.replace(/^(st\.?|saint|sainte|pape)\s+/i, '')
@@ -81,10 +97,14 @@ function buildAuthorResolver(authors: Author[]): (name: string) => number | unde
 
 /** Resolver for topics, just lowercase + diacritics-strip + collapse whitespace. */
 function buildTopicResolver(topics: Topic[]): (label: string) => number | undefined {
-	const k = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
-		.toLowerCase()
-		.replace(/[‘’ʼʻ`']/g, "'")
-		.replace(/[^a-z0-9']+/g, ' ').trim();
+	const k = (s: string) =>
+		s
+			.normalize('NFD')
+			.replace(/[̀-ͯ]/g, '')
+			.toLowerCase()
+			.replace(/[‘’ʼʻ`']/g, "'")
+			.replace(/[^a-z0-9']+/g, ' ')
+			.trim();
 	const byKey = new Map<string, number>();
 	for (const t of topics) byKey.set(k(t.label), t.id);
 	return (label: string) => byKey.get(k(label));
@@ -92,10 +112,14 @@ function buildTopicResolver(topics: Topic[]): (label: string) => number | undefi
 
 /** Resolver for works: same as topic resolver. */
 function buildWorkResolver(works: Work[]): (title: string) => number | undefined {
-	const k = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '')
-		.toLowerCase()
-		.replace(/[‘’ʼʻ`']/g, "'")
-		.replace(/[^a-z0-9']+/g, ' ').trim();
+	const k = (s: string) =>
+		s
+			.normalize('NFD')
+			.replace(/[̀-ͯ]/g, '')
+			.toLowerCase()
+			.replace(/[‘’ʼʻ`']/g, "'")
+			.replace(/[^a-z0-9']+/g, ' ')
+			.trim();
 	const byKey = new Map<string, number>();
 	for (const w of works) byKey.set(k(w.title), w.id);
 	return (title: string) => byKey.get(k(title));
@@ -115,7 +139,8 @@ function importAuthors(wb: XLSX.WorkBook): Author[] {
 	// First pass: collect (rawId, row) for rows with a non-empty name.
 	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
 	for (const r of rows) {
-		const name = String(r[1] ?? '').trim(); if (!name) continue;
+		const name = String(r[1] ?? '').trim();
+		if (!name) continue;
 		const rawId = Number(r[0]);
 		accepted.push({ rawId, row: r });
 	}
@@ -138,7 +163,9 @@ function importAuthors(wb: XLSX.WorkBook): Author[] {
 		}
 		usedIds.add(id);
 		const candidate: Author = {
-			id, slug: slugify(name + '-' + id), name,
+			id,
+			slug: slugify(name + '-' + id),
+			name,
 			originalName: r[5] ? String(r[5]).trim() || undefined : undefined,
 			era: eraFromFr(r[2]),
 			dates: r[6] ? String(r[6]).trim() || undefined : undefined,
@@ -156,7 +183,10 @@ function importAuthors(wb: XLSX.WorkBook): Author[] {
 			status: r[14] ? String(r[14]).trim() || undefined : undefined
 		};
 		const parsed = AuthorSchema.safeParse(candidate);
-		if (!parsed.success) { warn(`skip author ${id}: ${JSON.stringify(parsed.error.issues)}`); continue; }
+		if (!parsed.success) {
+			warn(`skip author ${id}: ${JSON.stringify(parsed.error.issues)}`);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	return out;
@@ -167,17 +197,24 @@ function importTopics(wb: XLSX.WorkBook): Topic[] {
 	const rows = readSheet(wb, 'Sujets').slice(1);
 	const out: Topic[] = [];
 	for (const r of rows) {
-		const id = Number(r[0]); if (!Number.isFinite(id)) continue;
-		const label = String(r[1] ?? '').trim(); if (!label) continue;
+		const id = Number(r[0]);
+		if (!Number.isFinite(id)) continue;
+		const label = String(r[1] ?? '').trim();
+		if (!label) continue;
 		const section = String(r[2] ?? '').trim();
 		const candidate: Topic = {
-			id, slug: slugify(label + '-' + id), label,
+			id,
+			slug: slugify(label + '-' + id),
+			label,
 			section: section as Topic['section'],
 			groupe: String(r[3] ?? '').trim(),
 			description: r[4] ? String(r[4]).trim() || undefined : undefined
 		};
 		const parsed = TopicSchema.safeParse(candidate);
-		if (!parsed.success) { warn(`skip topic ${id}: ${JSON.stringify(parsed.error.issues)}`); continue; }
+		if (!parsed.success) {
+			warn(`skip topic ${id}: ${JSON.stringify(parsed.error.issues)}`);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	return out;
@@ -189,7 +226,8 @@ function importWorks(wb: XLSX.WorkBook, resolveAuthor: (n: string) => number | u
 	// First pass: collect (rawId, row) for rows with a non-empty title.
 	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
 	for (const r of rows) {
-		const title = String(r[1] ?? '').trim(); if (!title) continue;
+		const title = String(r[1] ?? '').trim();
+		if (!title) continue;
 		const rawId = Number(r[0]);
 		accepted.push({ rawId, row: r });
 	}
@@ -219,14 +257,19 @@ function importWorks(wb: XLSX.WorkBook, resolveAuthor: (n: string) => number | u
 			continue;
 		}
 		const candidate: Work = {
-			id, slug: slugify(title + '-' + id), title,
+			id,
+			slug: slugify(title + '-' + id),
+			title,
 			alternativeTitles: splitList(r[3]),
 			authorId,
 			description: r[5] ? String(r[5]).trim() || undefined : undefined,
 			link: maybeUrl(r[6])
 		};
 		const parsed = WorkSchema.safeParse(candidate);
-		if (!parsed.success) { warn(`skip work ${id}: ${JSON.stringify(parsed.error.issues)}`); continue; }
+		if (!parsed.success) {
+			warn(`skip work ${id}: ${JSON.stringify(parsed.error.issues)}`);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	console.log(`works: ${unknownAuthor} skipped for unknown author`);
@@ -243,7 +286,8 @@ function importQuotes(
 	// First pass: collect (rawId, row) for rows with a non-empty author name (cheap proxy for "real row").
 	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
 	for (const r of rows) {
-		const authorName = String(r[3] ?? '').trim(); if (!authorName) continue;
+		const authorName = String(r[3] ?? '').trim();
+		if (!authorName) continue;
 		const rawId = Number(r[2]);
 		accepted.push({ rawId, row: r });
 	}
@@ -276,8 +320,10 @@ function importQuotes(
 		const workTitle = String(r[4] ?? '').trim();
 		const workId = workTitle ? resolveWork(workTitle) : undefined;
 		const topicIds = String(r[5] ?? '')
-			.split(/[;,]\s*/).map(s => s.trim()).filter(Boolean)
-			.map(label => resolveTopic(label))
+			.split(/[;,]\s*/)
+			.map((s) => s.trim())
+			.filter(Boolean)
+			.map((label) => resolveTopic(label))
 			.filter((n): n is number => typeof n === 'number');
 		if (topicIds.length === 0) {
 			noTopic++;
@@ -285,8 +331,11 @@ function importQuotes(
 			continue;
 		}
 		const candidate: Quote = {
-			id, slug: `citation-${id}`,
-			authorId, workId, topicIds,
+			id,
+			slug: `citation-${id}`,
+			authorId,
+			workId,
+			topicIds,
 			reference: r[13] ? String(r[13]).trim() || undefined : undefined,
 			fr: r[14] ? String(r[14]).trim() || undefined : undefined,
 			en: r[6] ? String(r[6]).trim() || undefined : undefined,
@@ -296,7 +345,11 @@ function importQuotes(
 			migne: r[12] ? String(r[12]).trim() || undefined : undefined,
 			links: { primary: maybeUrl(r[10]), archive: maybeUrl(r[11]) },
 			notes: r[16] ? String(r[16]).trim() || undefined : undefined,
-			status: String(r[1] ?? '').toLowerCase().includes('ok') ? 'ok' : 'draft'
+			status: String(r[1] ?? '')
+				.toLowerCase()
+				.includes('ok')
+				? 'ok'
+				: 'draft'
 		};
 		const parsed = QuoteSchema.safeParse(candidate);
 		if (!parsed.success) {
@@ -306,7 +359,9 @@ function importQuotes(
 		}
 		out.push(parsed.data);
 	}
-	console.log(`quotes: ${unknownAuthor} unknown author, ${noTopic} no topic match, ${parseFail} parse fail`);
+	console.log(
+		`quotes: ${unknownAuthor} unknown author, ${noTopic} no topic match, ${parseFail} parse fail`
+	);
 	return out;
 }
 
@@ -336,4 +391,7 @@ async function main() {
 	console.log(`\nTotal warnings: ${warnings.length}`);
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch((e) => {
+	console.error(e);
+	process.exit(1);
+});

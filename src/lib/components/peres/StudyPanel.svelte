@@ -59,18 +59,24 @@
 			onclick={onClose}
 		></button>
 
-		<aside class="relative z-10 flex w-full max-w-lg flex-col overflow-y-auto bg-panel font-body shadow-2xl">
+		<aside
+			class="relative z-10 flex w-full max-w-lg flex-col overflow-y-auto bg-panel font-body shadow-2xl"
+		>
 			<header class="flex items-center justify-between border-b border-border p-4">
 				<h2 class="font-heading text-lg">{author.name}</h2>
 				<button
 					type="button"
 					onclick={onClose}
 					aria-label="Fermer"
-					class="rounded border border-border px-2 py-1 font-ui text-sm"
-				>×</button>
+					class="rounded border border-border px-2 py-1 font-ui text-sm">×</button
+				>
 			</header>
 
-			<div role="tablist" aria-label="Sections d'information" class="grid grid-cols-4 border-b border-border font-ui text-xs">
+			<div
+				role="tablist"
+				aria-label="Sections d'information"
+				class="grid grid-cols-4 border-b border-border font-ui text-xs"
+			>
 				{#each TABS as t (t.id)}
 					<button
 						type="button"
@@ -92,15 +98,32 @@
 							<dt class="font-ui text-xs uppercase text-muted">Nom</dt>
 							<dd>
 								{author.name}
-								{#if author.originalName}<span class="italic text-muted">({author.originalName})</span>{/if}
+								{#if author.originalName}<span class="italic text-muted"
+										>({author.originalName})</span
+									>{/if}
 							</dd>
 						</div>
-						{#if author.dates}<div><dt class="font-ui text-xs uppercase text-muted">Dates</dt><dd>{author.dates}</dd></div>{/if}
-						{#if author.region}<div><dt class="font-ui text-xs uppercase text-muted">Région</dt><dd>{author.region}</dd></div>{/if}
-						{#if author.function}<div><dt class="font-ui text-xs uppercase text-muted">Fonction</dt><dd>{author.function}</dd></div>{/if}
-						{#if author.language?.length}<div><dt class="font-ui text-xs uppercase text-muted">Langue(s)</dt><dd>{author.language.join(' · ')}</dd></div>{/if}
+						{#if author.dates}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Dates</dt>
+								<dd>{author.dates}</dd>
+							</div>{/if}
+						{#if author.region}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Région</dt>
+								<dd>{author.region}</dd>
+							</div>{/if}
+						{#if author.function}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Fonction</dt>
+								<dd>{author.function}</dd>
+							</div>{/if}
+						{#if author.language?.length}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Langue(s)</dt>
+								<dd>{author.language.join(' · ')}</dd>
+							</div>{/if}
 						{#if author.bioShort}<p class="mt-3 max-w-reader font-body">{author.bioShort}</p>{/if}
-						<a href={`/peres/${author.slug}`} class="mt-3 inline-block font-ui text-sm text-accent-text">Voir la page complète →</a>
+						<a
+							href={`/peres/${author.slug}`}
+							class="mt-3 inline-block font-ui text-sm text-accent-text">Voir la page complète →</a
+						>
 					</dl>
 				{:else if active === 'original'}
 					<div class="space-y-4">
@@ -127,7 +150,10 @@
 								<dt class="font-ui text-xs uppercase text-muted">Migne</dt>
 								<dd class="mt-1 flex flex-wrap items-center gap-2">
 									<code class="rounded bg-subtle/15 px-1.5 py-0.5">{quote.migne}</code>
-									<button onclick={() => copy(quote.migne!, 'migne')} class="rounded border border-border px-2 py-0.5 text-xs">
+									<button
+										onclick={() => copy(quote.migne!, 'migne')}
+										class="rounded border border-border px-2 py-0.5 text-xs"
+									>
 										{migneCopied ? 'Copié' : 'Copier'}
 									</button>
 								</dd>
@@ -137,18 +163,31 @@
 							<dt class="font-ui text-xs uppercase text-muted">Citation académique</dt>
 							<dd class="mt-1 flex flex-wrap items-center gap-2">
 								<span class="font-body">{citation}</span>
-								<button onclick={() => copy(citation, 'citation')} class="rounded border border-border px-2 py-0.5 text-xs">
+								<button
+									onclick={() => copy(citation, 'citation')}
+									class="rounded border border-border px-2 py-0.5 text-xs"
+								>
 									{citationCopied ? 'Copié' : 'Copier'}
 								</button>
 							</dd>
 						</div>
 						{#if quote.links.archive}
-							<a href={quote.links.archive} target="_blank" rel="noopener" class="block text-accent-text">
+							<a
+								href={quote.links.archive}
+								target="_blank"
+								rel="noopener"
+								class="block text-accent-text"
+							>
 								Voir sur Archive.org →
 							</a>
 						{/if}
 						{#if quote.links.primary}
-							<a href={quote.links.primary} target="_blank" rel="noopener" class="block text-accent-text">
+							<a
+								href={quote.links.primary}
+								target="_blank"
+								rel="noopener"
+								class="block text-accent-text"
+							>
 								Source primaire →
 							</a>
 						{/if}

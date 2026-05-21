@@ -1,5 +1,14 @@
 import { describe, it, expect } from 'vitest';
-import { authors, works, topics, quotes, authorById, workById, topicById, quoteById } from './index';
+import {
+	authors,
+	works,
+	topics,
+	quotes,
+	authorById,
+	workById,
+	topicById,
+	quoteById
+} from './index';
 
 describe('data loader', () => {
 	it('loads all four collections as non-empty arrays', () => {
@@ -12,17 +21,23 @@ describe('data loader', () => {
 	it('exposes lookup-by-id helpers', () => {
 		expect(authorById(authors[0]!.id)).toBe(authors[0]);
 		expect(authorById(-1)).toBeUndefined();
+		expect(workById(works[0]!.id)).toBe(works[0]);
+		expect(workById(-1)).toBeUndefined();
+		expect(topicById(topics[0]!.id)).toBe(topics[0]);
+		expect(topicById(-1)).toBeUndefined();
+		expect(quoteById(quotes[0]!.id)).toBe(quotes[0]);
+		expect(quoteById(-1)).toBeUndefined();
 	});
 
 	it('every quote.authorId points to an existing author', () => {
-		const ids = new Set(authors.map(a => a.id));
-		const orphans = quotes.filter(q => !ids.has(q.authorId));
+		const ids = new Set(authors.map((a) => a.id));
+		const orphans = quotes.filter((q) => !ids.has(q.authorId));
 		expect(orphans).toEqual([]);
 	});
 
 	it('every quote.topicIds member points to an existing topic', () => {
-		const ids = new Set(topics.map(t => t.id));
-		const bad = quotes.flatMap(q => q.topicIds.filter(t => !ids.has(t)));
+		const ids = new Set(topics.map((t) => t.id));
+		const bad = quotes.flatMap((q) => q.topicIds.filter((t) => !ids.has(t)));
 		expect(bad).toEqual([]);
 	});
 });

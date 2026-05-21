@@ -1,5 +1,5 @@
 import { z } from 'zod';
-export const SectionSchema = z.enum(['I','II','III','IV','V','VI','VII','VIII']);
+export const SectionSchema = z.enum(['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']);
 export type Section = z.infer<typeof SectionSchema>;
 
 export const TopicSchema = z.object({

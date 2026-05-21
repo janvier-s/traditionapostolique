@@ -12,9 +12,11 @@ test('topic page renders, filters by era, sorts by date', async ({ page }) => {
 
 	// Toggle the "Post-nicéens" era filter (post-nicene is the most populous era)
 	const eraButton = page.getByRole('button', { name: 'Post-nicéens' });
-	if (await eraButton.count() > 0) {
+	if ((await eraButton.count()) > 0) {
 		await eraButton.first().click();
-		await expect.poll(async () => await articles.count(), { timeout: 3000 }).toBeLessThanOrEqual(initialCount);
+		await expect
+			.poll(async () => await articles.count(), { timeout: 3000 })
+			.toBeLessThanOrEqual(initialCount);
 	}
 
 	// Switch sort

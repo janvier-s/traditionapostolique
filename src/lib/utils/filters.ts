@@ -38,8 +38,8 @@ export function applyFiltersAndSort(
 		if (sort === 'date-desc') return quoteEffectiveYear(aq) - quoteEffectiveYear(ap);
 		if (sort === 'author') return ap.name.localeCompare(aq.name, 'fr');
 		if (sort === 'work') {
-			const wp = p.workId ? byWork.get(p.workId)?.title ?? '' : '';
-			const wq = q.workId ? byWork.get(q.workId)?.title ?? '' : '';
+			const wp = p.workId ? (byWork.get(p.workId)?.title ?? '') : '';
+			const wq = q.workId ? (byWork.get(q.workId)?.title ?? '') : '';
 			return wp.localeCompare(wq, 'fr');
 		}
 		return 0;

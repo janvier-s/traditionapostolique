@@ -22,7 +22,10 @@
 	});
 </script>
 
-<MetaTags title="Pères" description="Pères de l'Église, organisés par époque ou alphabétiquement." />
+<MetaTags
+	title="Pères"
+	description="Pères de l'Église, organisés par époque ou alphabétiquement."
+/>
 
 <section class="px-6 py-10">
 	<div class="flex items-baseline justify-between">

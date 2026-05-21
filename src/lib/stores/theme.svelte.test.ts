@@ -7,10 +7,16 @@ describe('theme store', () => {
 		const storage: Record<string, string> = {};
 		vi.stubGlobal('localStorage', {
 			getItem: (k: string) => storage[k] ?? null,
-			setItem: (k: string, v: string) => { storage[k] = v; },
-			removeItem: (k: string) => { delete storage[k]; }
+			setItem: (k: string, v: string) => {
+				storage[k] = v;
+			},
+			removeItem: (k: string) => {
+				delete storage[k];
+			}
 		});
-		vi.stubGlobal('document', { documentElement: { classList: { add: vi.fn(), remove: vi.fn(), toggle: vi.fn() } } });
+		vi.stubGlobal('document', {
+			documentElement: { classList: { add: vi.fn(), remove: vi.fn(), toggle: vi.fn() } }
+		});
 	});
 
 	it('cycles through light / sepia / dark / amoled', async () => {

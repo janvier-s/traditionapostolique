@@ -9,11 +9,13 @@
 **Tech Stack:** SvelteKit 2 + Svelte 5 runes, Tailwind 3, TypeScript strict, zod, minisearch, vitest, playwright, @sveltejs/adapter-cloudflare, openpyxl-equivalent in Node (use `xlsx` package for the one-shot import).
 
 **Reference repos** (referenced often):
+
 - Sibling catechismecatholique repo: `/Users/Janvier/Documents/catechismecatholique`
 - Sibling douayrheimsbible repo: `/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/douayrheimsbible`
 - Source corpus xlsx: `/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/fathers/excel/fathers_db.xlsx`
 
 **House conventions** (enforced everywhere):
+
 - No em dashes (use middot `·`, comma, parentheses, or rewrite).
 - No `§` in user-facing copy.
 - No French thousand separators (`2865`, not `2 865`).
@@ -107,6 +109,7 @@ pereseglise/
 ### Task 1: Scaffold SvelteKit project
 
 **Files:**
+
 - Create: `package.json`, `svelte.config.js`, `vite.config.ts`, `tsconfig.json`, `eslint.config.js`, `.prettierrc`, `playwright.config.ts`, `wrangler.toml`, `_headers`, `_redirects`, `src/app.html`, `src/app.d.ts`, `src/hooks.server.ts`, `static/favicon.svg`
 
 - [ ] **Step 1: Copy configs verbatim from catechismecatholique, adapt names**
@@ -134,56 +137,56 @@ cp "$SRC/static/favicon.svg" "$DST/static/" 2>/dev/null || true
 
 ```json
 {
-  "name": "pereseglise",
-  "private": true,
-  "version": "0.1.0",
-  "description": "Anthologie patristique française organisée par sujets.",
-  "type": "module",
-  "engines": { "node": ">=20" },
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "preview": "vite preview",
-    "prebuild": "tsx scripts/prebuild.ts",
-    "import-xlsx": "tsx scripts/import-xlsx.ts",
-    "prepare": "svelte-kit sync || echo ''",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "lint": "prettier --check . && eslint .",
-    "format": "prettier --write .",
-    "test:unit": "vitest",
-    "test": "npm run test:unit -- --run && npm run test:e2e",
-    "test:e2e": "playwright install --with-deps chromium && playwright test"
-  },
-  "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@sveltejs/adapter-cloudflare": "^7.2.8",
-    "@sveltejs/kit": "^2.57.0",
-    "@sveltejs/vite-plugin-svelte": "^7.0.0",
-    "@types/node": "^20",
-    "autoprefixer": "^10.5.0",
-    "eslint": "^10.2.0",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-svelte": "^3.17.0",
-    "globals": "^17.4.0",
-    "postcss": "^8.5.13",
-    "prettier": "^3.8.1",
-    "prettier-plugin-svelte": "^3.5.1",
-    "sharp": "^0.34.5",
-    "svelte": "^5.55.2",
-    "svelte-check": "^4.4.6",
-    "tailwindcss": "^3.4.19",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2",
-    "typescript-eslint": "^8.58.1",
-    "vite": "^8.0.7",
-    "vitest": "^4.1.3",
-    "xlsx": "^0.20.3",
-    "zod": "^3.24.1"
-  },
-  "dependencies": {
-    "minisearch": "^7.2.0"
-  }
+	"name": "pereseglise",
+	"private": true,
+	"version": "0.1.0",
+	"description": "Anthologie patristique française organisée par sujets.",
+	"type": "module",
+	"engines": { "node": ">=20" },
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"prebuild": "tsx scripts/prebuild.ts",
+		"import-xlsx": "tsx scripts/import-xlsx.ts",
+		"prepare": "svelte-kit sync || echo ''",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"test:unit": "vitest",
+		"test": "npm run test:unit -- --run && npm run test:e2e",
+		"test:e2e": "playwright install --with-deps chromium && playwright test"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.59.1",
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
+		"@sveltejs/kit": "^2.57.0",
+		"@sveltejs/vite-plugin-svelte": "^7.0.0",
+		"@types/node": "^20",
+		"autoprefixer": "^10.5.0",
+		"eslint": "^10.2.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-svelte": "^3.17.0",
+		"globals": "^17.4.0",
+		"postcss": "^8.5.13",
+		"prettier": "^3.8.1",
+		"prettier-plugin-svelte": "^3.5.1",
+		"sharp": "^0.34.5",
+		"svelte": "^5.55.2",
+		"svelte-check": "^4.4.6",
+		"tailwindcss": "^3.4.19",
+		"tsx": "^4.21.0",
+		"typescript": "^6.0.2",
+		"typescript-eslint": "^8.58.1",
+		"vite": "^8.0.7",
+		"vitest": "^4.1.3",
+		"xlsx": "^0.20.3",
+		"zod": "^3.24.1"
+	},
+	"dependencies": {
+		"minisearch": "^7.2.0"
+	}
 }
 ```
 
@@ -207,6 +210,7 @@ Find the `name = "catechismecatholique"` line and change to `name = "pereseglise
 ```bash
 npm run check
 ```
+
 Expected: passes (zero errors). It's OK if `src/lib/` is empty so far — kit will sync types based on the empty routes tree.
 
 - [ ] **Step 7: Commit**
@@ -221,6 +225,7 @@ git commit -m "chore: scaffold SvelteKit project from catechismecatholique confi
 ### Task 2: Tailwind + PostCSS config
 
 **Files:**
+
 - Create: `tailwind.config.cjs`, `postcss.config.cjs`
 
 - [ ] **Step 1: Copy from catechismecatholique**
@@ -239,6 +244,7 @@ The config already extends colors from CSS variables (`bg/fg/panel/accent/accent
 ```bash
 npm run check
 ```
+
 Expected: passes.
 
 - [ ] **Step 3: Commit**
@@ -253,6 +259,7 @@ git commit -m "chore: add Tailwind 3 + PostCSS config from catechismecatholique"
 ### Task 3: Webfonts + app.css theme tokens
 
 **Files:**
+
 - Copy: `static/fonts/*.woff2` (Gotham 5 weights × roman/italic + Libre Baskerville 3 weights)
 - Create: `src/app.css`
 
@@ -272,6 +279,7 @@ cp "/Users/Janvier/Documents/catechismecatholique/src/app.css" \
 ```
 
 Then open `src/app.css` and remove these CCC-specific blocks if present:
+
 - Anything referencing `.cec-`, `.reader-prose`, CCC paragraph styles, print rules for CCC.
 - Keep: `@font-face` declarations, `:root` and `.dark` variable blocks (light + sepia + dark + AMOLED), `--font-body / --font-ui / --font-heading` definitions, base typography, focus-visible rules.
 
@@ -297,6 +305,7 @@ git commit -m "feat: add Libre Baskerville + Gotham webfonts and theme tokens"
 ### Task 4: Base layout shell
 
 **Files:**
+
 - Create: `src/routes/+layout.svelte`, `src/routes/+layout.ts`, `src/routes/+page.svelte`
 
 - [ ] **Step 1: Create `src/routes/+layout.ts`**
@@ -353,12 +362,14 @@ git commit -m "feat: add base layout shell and placeholder home page"
 ### Task 5: Theme store + ThemeToggle
 
 **Files:**
+
 - Create: `src/lib/stores/theme.ts`, `src/lib/components/ui/ThemeToggle.svelte`
 - Test: `src/lib/stores/theme.test.ts`
 
 - [ ] **Step 1: Write the failing test**
 
 `src/lib/stores/theme.svelte.test.ts`:
+
 ```ts
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 
@@ -369,10 +380,16 @@ describe('theme store', () => {
 		const storage: Record<string, string> = {};
 		vi.stubGlobal('localStorage', {
 			getItem: (k: string) => storage[k] ?? null,
-			setItem: (k: string, v: string) => { storage[k] = v; },
-			removeItem: (k: string) => { delete storage[k]; }
+			setItem: (k: string, v: string) => {
+				storage[k] = v;
+			},
+			removeItem: (k: string) => {
+				delete storage[k];
+			}
 		});
-		vi.stubGlobal('document', { documentElement: { classList: { add: vi.fn(), remove: vi.fn(), toggle: vi.fn() } } });
+		vi.stubGlobal('document', {
+			documentElement: { classList: { add: vi.fn(), remove: vi.fn(), toggle: vi.fn() } }
+		});
 	});
 
 	it('cycles through light / sepia / dark / amoled', async () => {
@@ -401,11 +418,13 @@ describe('theme store', () => {
 ```bash
 npm run test:unit -- src/lib/stores/theme.svelte.test.ts
 ```
+
 Expected: FAIL with "Cannot find module './theme.svelte'".
 
 - [ ] **Step 3: Implement the store**
 
 `src/lib/stores/theme.svelte.ts` (the `.svelte.ts` extension is required for runes in non-component files):
+
 ```ts
 export type Theme = 'light' | 'sepia' | 'dark' | 'amoled';
 const ORDER: Theme[] = ['light', 'sepia', 'dark', 'amoled'];
@@ -444,16 +463,21 @@ export function cycleTheme() {
 ```bash
 npm run test:unit -- src/lib/stores/theme.svelte.test.ts
 ```
+
 Expected: PASS.
 
 - [ ] **Step 5: Create the toggle component**
 
 `src/lib/components/ui/ThemeToggle.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { theme, cycleTheme } from '$lib/stores/theme.svelte';
 	const LABEL: Record<string, string> = {
-		light: 'Clair', sepia: 'Sépia', dark: 'Sombre', amoled: 'AMOLED'
+		light: 'Clair',
+		sepia: 'Sépia',
+		dark: 'Sombre',
+		amoled: 'AMOLED'
 	};
 </script>
 
@@ -485,12 +509,14 @@ git commit -m "feat: theme store + ThemeToggle (light/sepia/dark/amoled)"
 ### Task 6: Zod schemas for the four entities
 
 **Files:**
+
 - Create: `src/lib/schema/author.ts`, `work.ts`, `topic.ts`, `quote.ts`, `index.ts`
 - Test: `src/lib/schema/schema.test.ts`
 
 - [ ] **Step 1: Write the failing test**
 
 `src/lib/schema/schema.test.ts`:
+
 ```ts
 import { describe, it, expect } from 'vitest';
 import { AuthorSchema, WorkSchema, TopicSchema, QuoteSchema } from './index';
@@ -498,14 +524,23 @@ import { AuthorSchema, WorkSchema, TopicSchema, QuoteSchema } from './index';
 describe('AuthorSchema', () => {
 	it('accepts a minimal author', () => {
 		const ok = AuthorSchema.safeParse({
-			id: 1, slug: 'augustinus', name: 'Augustin', era: 'post-nicene',
-			language: ['latin'], sources: {}
+			id: 1,
+			slug: 'augustinus',
+			name: 'Augustin',
+			era: 'post-nicene',
+			language: ['latin'],
+			sources: {}
 		});
 		expect(ok.success).toBe(true);
 	});
 	it('rejects unknown era', () => {
 		const bad = AuthorSchema.safeParse({
-			id: 1, slug: 'x', name: 'X', era: 'unknown', language: ['latin'], sources: {}
+			id: 1,
+			slug: 'x',
+			name: 'X',
+			era: 'unknown',
+			language: ['latin'],
+			sources: {}
 		});
 		expect(bad.success).toBe(false);
 	});
@@ -520,27 +555,48 @@ describe('WorkSchema', () => {
 
 describe('TopicSchema', () => {
 	it('accepts roman section', () => {
-		expect(TopicSchema.safeParse({
-			id: 1, slug: 'foi', label: 'Foi', section: 'I', groupe: 'Sources'
-		}).success).toBe(true);
+		expect(
+			TopicSchema.safeParse({
+				id: 1,
+				slug: 'foi',
+				label: 'Foi',
+				section: 'I',
+				groupe: 'Sources'
+			}).success
+		).toBe(true);
 	});
 	it('rejects non-roman section', () => {
-		expect(TopicSchema.safeParse({
-			id: 1, slug: 'foi', label: 'Foi', section: '9', groupe: 'X'
-		}).success).toBe(false);
+		expect(
+			TopicSchema.safeParse({
+				id: 1,
+				slug: 'foi',
+				label: 'Foi',
+				section: '9',
+				groupe: 'X'
+			}).success
+		).toBe(false);
 	});
 });
 
 describe('QuoteSchema', () => {
 	it('accepts minimal quote', () => {
 		const ok = QuoteSchema.safeParse({
-			id: 1, slug: 'q-1', authorId: 1, topicIds: [1], fr: 'Bonjour', links: {}
+			id: 1,
+			slug: 'q-1',
+			authorId: 1,
+			topicIds: [1],
+			fr: 'Bonjour',
+			links: {}
 		});
 		expect(ok.success).toBe(true);
 	});
 	it('requires at least one topicId', () => {
 		const bad = QuoteSchema.safeParse({
-			id: 1, slug: 'q-1', authorId: 1, topicIds: [], links: {}
+			id: 1,
+			slug: 'q-1',
+			authorId: 1,
+			topicIds: [],
+			links: {}
 		});
 		expect(bad.success).toBe(false);
 	});
@@ -552,11 +608,13 @@ describe('QuoteSchema', () => {
 ```bash
 npm run test:unit -- src/lib/schema/schema.test.ts
 ```
+
 Expected: FAIL (cannot find module).
 
 - [ ] **Step 3: Implement schemas**
 
 `src/lib/schema/author.ts`:
+
 ```ts
 import { z } from 'zod';
 
@@ -576,11 +634,13 @@ export const AuthorSchema = z.object({
 	region: z.string().optional(),
 	groups: z.array(z.string()).optional(),
 	disciples: z.array(z.number().int()).optional(),
-	sources: z.object({
-		wikipedia: z.string().url().optional(),
-		wikisource: z.string().url().optional(),
-		wikimedia: z.string().url().optional()
-	}).default({}),
+	sources: z
+		.object({
+			wikipedia: z.string().url().optional(),
+			wikisource: z.string().url().optional(),
+			wikimedia: z.string().url().optional()
+		})
+		.default({}),
 	status: z.string().optional(),
 	bioShort: z.string().optional(),
 	bioLong: z.string().optional()
@@ -589,6 +649,7 @@ export type Author = z.infer<typeof AuthorSchema>;
 ```
 
 `src/lib/schema/work.ts`:
+
 ```ts
 import { z } from 'zod';
 export const WorkSchema = z.object({
@@ -608,9 +669,10 @@ export type Work = z.infer<typeof WorkSchema>;
 ```
 
 `src/lib/schema/topic.ts`:
+
 ```ts
 import { z } from 'zod';
-export const SectionSchema = z.enum(['I','II','III','IV','V','VI','VII','VIII']);
+export const SectionSchema = z.enum(['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']);
 export type Section = z.infer<typeof SectionSchema>;
 
 export const TopicSchema = z.object({
@@ -625,6 +687,7 @@ export type Topic = z.infer<typeof TopicSchema>;
 ```
 
 `src/lib/schema/quote.ts`:
+
 ```ts
 import { z } from 'zod';
 export const QuoteStatusSchema = z.enum(['draft', 'ok']);
@@ -642,10 +705,12 @@ export const QuoteSchema = z.object({
 	greek: z.string().optional(),
 	context: z.string().optional(),
 	migne: z.string().optional(),
-	links: z.object({
-		primary: z.string().url().optional(),
-		archive: z.string().url().optional()
-	}).default({}),
+	links: z
+		.object({
+			primary: z.string().url().optional(),
+			archive: z.string().url().optional()
+		})
+		.default({}),
 	notes: z.string().optional(),
 	status: QuoteStatusSchema.optional()
 });
@@ -653,6 +718,7 @@ export type Quote = z.infer<typeof QuoteSchema>;
 ```
 
 `src/lib/schema/index.ts`:
+
 ```ts
 export * from './author';
 export * from './work';
@@ -665,6 +731,7 @@ export * from './quote';
 ```bash
 npm run test:unit -- src/lib/schema/schema.test.ts
 ```
+
 Expected: PASS (4 tests, 8 assertions).
 
 - [ ] **Step 5: Commit**
@@ -679,10 +746,12 @@ git commit -m "feat: zod schemas for Author/Work/Topic/Quote"
 ### Task 7: xlsx → JSON import script
 
 **Files:**
+
 - Create: `scripts/import-xlsx.ts`
 - Test: `scripts/import-xlsx.test.ts`
 
 The xlsx layout (verified by inspection):
+
 - `Auteurs` sheet, header row 2: `ID, Name, Ère, Page WikiSource, Page Wikipedia, Nom d'origine, Date, Fêté le, Fonction, Langue, Groupes d'auteurs, Page WikiMedia, Disciple de, Région moderne, Status, Œuvres`. Column index 0 is empty padding; ID starts at column index 1.
 - `Sujets` sheet, header row 2: `ID, Topic, Section, Groupe, Description`.
 - `Œuvres` sheet, header row 2: `ID, Titre, Auteur ou Source, Titres Alternatifs, ID2, Description, Lien`.
@@ -691,22 +760,33 @@ The xlsx layout (verified by inspection):
 - [ ] **Step 1: Write the script**
 
 `scripts/import-xlsx.ts`:
+
 ```ts
 import * as XLSX from 'xlsx';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import {
-	AuthorSchema, WorkSchema, TopicSchema, QuoteSchema,
-	type Author, type Work, type Topic, type Quote, type Era
+	AuthorSchema,
+	WorkSchema,
+	TopicSchema,
+	QuoteSchema,
+	type Author,
+	type Work,
+	type Topic,
+	type Quote,
+	type Era
 } from '../src/lib/schema';
 
-const XLSX_PATH = process.env.XLSX_PATH
-	?? '/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/fathers/excel/fathers_db.xlsx';
+const XLSX_PATH =
+	process.env.XLSX_PATH ??
+	'/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdom/fathers/excel/fathers_db.xlsx';
 const OUT_DIR = join(process.cwd(), 'src/lib/data');
 
 function slugify(s: string): string {
-	return s.toLowerCase()
-		.normalize('NFD').replace(/[̀-ͯ]/g, '')
+	return s
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[̀-ͯ]/g, '')
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '')
 		.slice(0, 80);
@@ -730,21 +810,30 @@ function readSheet(wb: XLSX.WorkBook, name: string): unknown[][] {
 
 function splitList(s: unknown): string[] {
 	if (!s) return [];
-	return String(s).split(/[;,]\s*/).map(x => x.trim()).filter(Boolean);
+	return String(s)
+		.split(/[;,]\s*/)
+		.map((x) => x.trim())
+		.filter(Boolean);
 }
 
 function splitIds(s: unknown): number[] {
-	return splitList(s).map(Number).filter(n => Number.isFinite(n));
+	return splitList(s)
+		.map(Number)
+		.filter((n) => Number.isFinite(n));
 }
 
 function importAuthors(wb: XLSX.WorkBook): Author[] {
 	const rows = readSheet(wb, 'Auteurs').slice(2); // headers on rows 1-2
 	const out: Author[] = [];
 	for (const r of rows) {
-		const id = Number(r[1]); if (!Number.isFinite(id)) continue;
-		const name = String(r[2] ?? '').trim(); if (!name) continue;
+		const id = Number(r[1]);
+		if (!Number.isFinite(id)) continue;
+		const name = String(r[2] ?? '').trim();
+		if (!name) continue;
 		const author: Author = {
-			id, slug: slugify(name + '-' + id), name,
+			id,
+			slug: slugify(name + '-' + id),
+			name,
 			originalName: r[6] ? String(r[6]) : undefined,
 			era: eraFromFr(r[3]),
 			dates: r[7] ? String(r[7]) : undefined,
@@ -762,7 +851,10 @@ function importAuthors(wb: XLSX.WorkBook): Author[] {
 			status: r[15] ? String(r[15]) : undefined
 		};
 		const parsed = AuthorSchema.safeParse(author);
-		if (!parsed.success) { console.warn('skip author', id, parsed.error.issues); continue; }
+		if (!parsed.success) {
+			console.warn('skip author', id, parsed.error.issues);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	return out;
@@ -772,17 +864,24 @@ function importTopics(wb: XLSX.WorkBook): Topic[] {
 	const rows = readSheet(wb, 'Sujets').slice(2);
 	const out: Topic[] = [];
 	for (const r of rows) {
-		const id = Number(r[1]); if (!Number.isFinite(id)) continue;
-		const label = String(r[2] ?? '').trim(); if (!label) continue;
+		const id = Number(r[1]);
+		if (!Number.isFinite(id)) continue;
+		const label = String(r[2] ?? '').trim();
+		if (!label) continue;
 		const section = String(r[3] ?? '').trim();
 		const topic: Topic = {
-			id, slug: slugify(label + '-' + id), label,
+			id,
+			slug: slugify(label + '-' + id),
+			label,
 			section: section as Topic['section'],
 			groupe: String(r[4] ?? '').trim(),
 			description: r[5] ? String(r[5]) : undefined
 		};
 		const parsed = TopicSchema.safeParse(topic);
-		if (!parsed.success) { console.warn('skip topic', id, parsed.error.issues); continue; }
+		if (!parsed.success) {
+			console.warn('skip topic', id, parsed.error.issues);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	return out;
@@ -792,20 +891,30 @@ function importWorks(wb: XLSX.WorkBook, authorByName: Map<string, number>): Work
 	const rows = readSheet(wb, 'Œuvres').slice(2);
 	const out: Work[] = [];
 	for (const r of rows) {
-		const id = Number(r[1]); if (!Number.isFinite(id)) continue;
-		const title = String(r[2] ?? '').trim(); if (!title) continue;
+		const id = Number(r[1]);
+		if (!Number.isFinite(id)) continue;
+		const title = String(r[2] ?? '').trim();
+		if (!title) continue;
 		const authorName = String(r[3] ?? '').trim();
 		const authorId = authorByName.get(authorName) ?? -1;
-		if (authorId < 0) { console.warn('work', id, 'unknown author', authorName); continue; }
+		if (authorId < 0) {
+			console.warn('work', id, 'unknown author', authorName);
+			continue;
+		}
 		const work: Work = {
-			id, slug: slugify(title + '-' + id), title,
+			id,
+			slug: slugify(title + '-' + id),
+			title,
 			alternativeTitles: splitList(r[4]),
 			authorId,
 			description: r[6] ? String(r[6]) : undefined,
 			link: r[7] && /^https?:\/\//.test(String(r[7])) ? String(r[7]) : undefined
 		};
 		const parsed = WorkSchema.safeParse(work);
-		if (!parsed.success) { console.warn('skip work', id, parsed.error.issues); continue; }
+		if (!parsed.success) {
+			console.warn('skip work', id, parsed.error.issues);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	return out;
@@ -820,22 +929,34 @@ function importQuotes(
 	const rows = readSheet(wb, 'Citations').slice(2);
 	const out: Quote[] = [];
 	for (const r of rows) {
-		const id = Number(r[2]); if (!Number.isFinite(id)) continue;
+		const id = Number(r[2]);
+		if (!Number.isFinite(id)) continue;
 		const authorName = String(r[3] ?? '').trim();
 		const authorId = authorByName.get(authorName);
-		if (authorId == null) { console.warn('quote', id, 'unknown author', authorName); continue; }
+		if (authorId == null) {
+			console.warn('quote', id, 'unknown author', authorName);
+			continue;
+		}
 		const workTitle = String(r[4] ?? '').trim();
 		const workId = workTitle ? workByTitle.get(workTitle) : undefined;
 		const topicIds = String(r[5] ?? '')
-			.split(/[;,]\s*/).map(s => s.trim()).filter(Boolean)
-			.map(label => topicByLabel.get(label))
+			.split(/[;,]\s*/)
+			.map((s) => s.trim())
+			.filter(Boolean)
+			.map((label) => topicByLabel.get(label))
 			.filter((n): n is number => typeof n === 'number');
-		if (topicIds.length === 0) { console.warn('quote', id, 'no topics matched'); continue; }
+		if (topicIds.length === 0) {
+			console.warn('quote', id, 'no topics matched');
+			continue;
+		}
 		const linksPrimary = r[10] && /^https?:\/\//.test(String(r[10])) ? String(r[10]) : undefined;
 		const linksArchive = r[11] && /^https?:\/\//.test(String(r[11])) ? String(r[11]) : undefined;
 		const quote: Quote = {
-			id, slug: `citation-${id}`,
-			authorId, workId, topicIds,
+			id,
+			slug: `citation-${id}`,
+			authorId,
+			workId,
+			topicIds,
 			reference: r[13] ? String(r[13]) : undefined,
 			fr: r[14] ? String(r[14]) : undefined,
 			en: r[6] ? String(r[6]) : undefined,
@@ -845,10 +966,17 @@ function importQuotes(
 			migne: r[12] ? String(r[12]) : undefined,
 			links: { primary: linksPrimary, archive: linksArchive },
 			notes: r[16] ? String(r[16]) : undefined,
-			status: String(r[1] ?? '').toLowerCase().includes('ok') ? 'ok' : 'draft'
+			status: String(r[1] ?? '')
+				.toLowerCase()
+				.includes('ok')
+				? 'ok'
+				: 'draft'
 		};
 		const parsed = QuoteSchema.safeParse(quote);
-		if (!parsed.success) { console.warn('skip quote', id, parsed.error.issues); continue; }
+		if (!parsed.success) {
+			console.warn('skip quote', id, parsed.error.issues);
+			continue;
+		}
 		out.push(parsed.data);
 	}
 	return out;
@@ -864,10 +992,10 @@ async function main() {
 	const wb = XLSX.readFile(XLSX_PATH);
 	const authors = importAuthors(wb);
 	const topics = importTopics(wb);
-	const authorByName = new Map(authors.map(a => [a.name, a.id]));
+	const authorByName = new Map(authors.map((a) => [a.name, a.id]));
 	const works = importWorks(wb, authorByName);
-	const workByTitle = new Map(works.map(w => [w.title, w.id]));
-	const topicByLabel = new Map(topics.map(t => [t.label, t.id]));
+	const workByTitle = new Map(works.map((w) => [w.title, w.id]));
+	const topicByLabel = new Map(topics.map((t) => [t.label, t.id]));
 	const quotes = importQuotes(wb, authorByName, workByTitle, topicByLabel);
 
 	write(join(OUT_DIR, 'authors.json'), authors);
@@ -876,7 +1004,10 @@ async function main() {
 	write(join(OUT_DIR, 'quotes.json'), quotes);
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch((e) => {
+	console.error(e);
+	process.exit(1);
+});
 ```
 
 - [ ] **Step 2: Run the import**
@@ -884,6 +1015,7 @@ main().catch(e => { console.error(e); process.exit(1); });
 ```bash
 npm run import-xlsx
 ```
+
 Expected: warnings for any unmatched authors/topics, plus four `wrote …` lines.
 
 - [ ] **Step 3: Sanity check the output**
@@ -894,6 +1026,7 @@ node -e "const x=require('./src/lib/data/topics.json');console.log('topics:',x.l
 node -e "const x=require('./src/lib/data/works.json');console.log('works:',x.length)"
 node -e "const x=require('./src/lib/data/quotes.json');console.log('quotes:',x.length)"
 ```
+
 Expected: authors ≈ 76, topics = 49, works ≈ 320, quotes ≈ 700-800.
 
 - [ ] **Step 4: Commit**
@@ -908,15 +1041,26 @@ git commit -m "feat: xlsx importer + initial JSON dataset"
 ### Task 8: Data loader module
 
 **Files:**
+
 - Create: `src/lib/data/index.ts`
 - Test: `src/lib/data/index.test.ts`
 
 - [ ] **Step 1: Write the failing test**
 
 `src/lib/data/index.test.ts`:
+
 ```ts
 import { describe, it, expect } from 'vitest';
-import { authors, works, topics, quotes, authorById, workById, topicById, quoteById } from './index';
+import {
+	authors,
+	works,
+	topics,
+	quotes,
+	authorById,
+	workById,
+	topicById,
+	quoteById
+} from './index';
 
 describe('data loader', () => {
 	it('loads all four collections as non-empty arrays', () => {
@@ -932,14 +1076,14 @@ describe('data loader', () => {
 	});
 
 	it('every quote.authorId points to an existing author', () => {
-		const ids = new Set(authors.map(a => a.id));
-		const orphans = quotes.filter(q => !ids.has(q.authorId));
+		const ids = new Set(authors.map((a) => a.id));
+		const orphans = quotes.filter((q) => !ids.has(q.authorId));
 		expect(orphans).toEqual([]);
 	});
 
 	it('every quote.topicIds member points to an existing topic', () => {
-		const ids = new Set(topics.map(t => t.id));
-		const bad = quotes.flatMap(q => q.topicIds.filter(t => !ids.has(t)));
+		const ids = new Set(topics.map((t) => t.id));
+		const bad = quotes.flatMap((q) => q.topicIds.filter((t) => !ids.has(t)));
 		expect(bad).toEqual([]);
 	});
 });
@@ -950,14 +1094,25 @@ describe('data loader', () => {
 ```bash
 npm run test:unit -- src/lib/data/index.test.ts
 ```
+
 Expected: FAIL ("Cannot find module './index'").
 
 - [ ] **Step 3: Implement the loader**
 
 `src/lib/data/index.ts`:
+
 ```ts
 import { z } from 'zod';
-import { AuthorSchema, WorkSchema, TopicSchema, QuoteSchema, type Author, type Work, type Topic, type Quote } from '$lib/schema';
+import {
+	AuthorSchema,
+	WorkSchema,
+	TopicSchema,
+	QuoteSchema,
+	type Author,
+	type Work,
+	type Topic,
+	type Quote
+} from '$lib/schema';
 import authorsRaw from './authors.json';
 import worksRaw from './works.json';
 import topicsRaw from './topics.json';
@@ -965,7 +1120,8 @@ import quotesRaw from './quotes.json';
 
 function parseAll<T>(name: string, schema: z.ZodType<T>, raw: unknown): T[] {
 	const arr = z.array(schema).safeParse(raw);
-	if (!arr.success) throw new Error(`Invalid ${name}: ${JSON.stringify(arr.error.issues, null, 2)}`);
+	if (!arr.success)
+		throw new Error(`Invalid ${name}: ${JSON.stringify(arr.error.issues, null, 2)}`);
 	return arr.data;
 }
 
@@ -974,20 +1130,20 @@ export const works: Work[] = parseAll('works', WorkSchema, worksRaw);
 export const topics: Topic[] = parseAll('topics', TopicSchema, topicsRaw);
 export const quotes: Quote[] = parseAll('quotes', QuoteSchema, quotesRaw);
 
-const authorMap = new Map(authors.map(a => [a.id, a]));
-const workMap = new Map(works.map(w => [w.id, w]));
-const topicMap = new Map(topics.map(t => [t.id, t]));
-const quoteMap = new Map(quotes.map(q => [q.id, q]));
+const authorMap = new Map(authors.map((a) => [a.id, a]));
+const workMap = new Map(works.map((w) => [w.id, w]));
+const topicMap = new Map(topics.map((t) => [t.id, t]));
+const quoteMap = new Map(quotes.map((q) => [q.id, q]));
 
 export const authorById = (id: number) => authorMap.get(id);
 export const workById = (id: number) => workMap.get(id);
 export const topicById = (id: number) => topicMap.get(id);
 export const quoteById = (id: number) => quoteMap.get(id);
 
-export const authorBySlug = (slug: string) => authors.find(a => a.slug === slug);
-export const workBySlug = (slug: string) => works.find(w => w.slug === slug);
-export const topicBySlug = (slug: string) => topics.find(t => t.slug === slug);
-export const quoteBySlug = (slug: string) => quotes.find(q => q.slug === slug);
+export const authorBySlug = (slug: string) => authors.find((a) => a.slug === slug);
+export const workBySlug = (slug: string) => works.find((w) => w.slug === slug);
+export const topicBySlug = (slug: string) => topics.find((t) => t.slug === slug);
+export const quoteBySlug = (slug: string) => quotes.find((q) => q.slug === slug);
 ```
 
 - [ ] **Step 4: Run test to verify it passes**
@@ -995,6 +1151,7 @@ export const quoteBySlug = (slug: string) => quotes.find(q => q.slug === slug);
 ```bash
 npm run test:unit -- src/lib/data/index.test.ts
 ```
+
 Expected: PASS.
 
 - [ ] **Step 5: Commit**
@@ -1022,8 +1179,10 @@ describe('slugify', () => {
 	it('lowercases and dashes', () => expect(slugify('Hello World')).toBe('hello-world'));
 	it('strips accents', () => expect(slugify('Évangile')).toBe('evangile'));
 	it('strips punctuation', () => expect(slugify("L'Église")).toBe('l-eglise'));
-	it('truncates at 80 chars', () => expect(slugify('a'.repeat(200)).length).toBeLessThanOrEqual(80));
-	it('returns the input as-is when already a slug', () => expect(slugify('abc-123')).toBe('abc-123'));
+	it('truncates at 80 chars', () =>
+		expect(slugify('a'.repeat(200)).length).toBeLessThanOrEqual(80));
+	it('returns the input as-is when already a slug', () =>
+		expect(slugify('abc-123')).toBe('abc-123'));
 });
 ```
 
@@ -1037,8 +1196,10 @@ npm run test:unit -- src/lib/utils/slug.test.ts
 
 ```ts
 export function slugify(s: string): string {
-	return s.toLowerCase()
-		.normalize('NFD').replace(/[̀-ͯ]/g, '')
+	return s
+		.toLowerCase()
+		.normalize('NFD')
+		.replace(/[̀-ͯ]/g, '')
 		.replace(/[^a-z0-9]+/g, '-')
 		.replace(/^-+|-+$/g, '')
 		.slice(0, 80);
@@ -1081,7 +1242,7 @@ describe('era', () => {
 		expect(eraMidpoint('post-nicene')).toBeLessThan(eraMidpoint('medieval'));
 	});
 	it('orders the eras chronologically', () => {
-		expect(eraOrder).toEqual(['apostolic','ante-nicene','nicene','post-nicene','medieval']);
+		expect(eraOrder).toEqual(['apostolic', 'ante-nicene', 'nicene', 'post-nicene', 'medieval']);
 	});
 });
 ```
@@ -1093,7 +1254,7 @@ describe('era', () => {
 ```ts
 import type { Era } from '$lib/schema';
 
-export const eraOrder: Era[] = ['apostolic','ante-nicene','nicene','post-nicene','medieval'];
+export const eraOrder: Era[] = ['apostolic', 'ante-nicene', 'nicene', 'post-nicene', 'medieval'];
 
 const LABEL: Record<Era, string> = {
 	apostolic: 'Pères apostoliques',
@@ -1102,12 +1263,20 @@ const LABEL: Record<Era, string> = {
 	'post-nicene': 'Post-nicéens',
 	medieval: 'Médiévaux'
 };
-export function eraLabel(e: Era): string { return LABEL[e]; }
+export function eraLabel(e: Era): string {
+	return LABEL[e];
+}
 
 const MID: Record<Era, number> = {
-	apostolic: 75, 'ante-nicene': 225, nicene: 350, 'post-nicene': 500, medieval: 1100
+	apostolic: 75,
+	'ante-nicene': 225,
+	nicene: 350,
+	'post-nicene': 500,
+	medieval: 1100
 };
-export function eraMidpoint(e: Era): number { return MID[e]; }
+export function eraMidpoint(e: Era): number {
+	return MID[e];
+}
 ```
 
 - [ ] **Step 4: Run, expect PASS.**
@@ -1132,9 +1301,32 @@ import { describe, it, expect } from 'vitest';
 import { quoteEffectiveYear } from './quote-date';
 import type { Author } from '$lib/schema';
 
-const ag = { id: 1, slug:'a', name:'A', era:'post-nicene', language:[], sources:{}, dates:'c. 354 - 430' } as Author;
-const orig = { id: 2, slug:'o', name:'O', era:'ante-nicene', language:[], sources:{}, dates:'c. 185-c. 254' } as Author;
-const dateless = { id: 3, slug:'x', name:'X', era:'medieval', language:[], sources:{} } as Author;
+const ag = {
+	id: 1,
+	slug: 'a',
+	name: 'A',
+	era: 'post-nicene',
+	language: [],
+	sources: {},
+	dates: 'c. 354 - 430'
+} as Author;
+const orig = {
+	id: 2,
+	slug: 'o',
+	name: 'O',
+	era: 'ante-nicene',
+	language: [],
+	sources: {},
+	dates: 'c. 185-c. 254'
+} as Author;
+const dateless = {
+	id: 3,
+	slug: 'x',
+	name: 'X',
+	era: 'medieval',
+	language: [],
+	sources: {}
+} as Author;
 
 describe('quoteEffectiveYear', () => {
 	it('extracts the first century-ish year from dates', () => {
@@ -1187,17 +1379,24 @@ import { deriveQuoteTitle } from './derive-quote-title';
 import type { Quote, Topic } from '$lib/schema';
 
 const baseQ = (overrides: Partial<Quote>): Quote => ({
-	id: 1, slug:'q-1', authorId:1, topicIds:[10], links:{}, ...overrides
+	id: 1,
+	slug: 'q-1',
+	authorId: 1,
+	topicIds: [10],
+	links: {},
+	...overrides
 });
-const topics: Topic[] = [{ id:10, slug:'foi', label:'La foi', section:'I', groupe:'Sources' }];
+const topics: Topic[] = [{ id: 10, slug: 'foi', label: 'La foi', section: 'I', groupe: 'Sources' }];
 
 describe('deriveQuoteTitle', () => {
 	it('returns the explicit title when present', () => {
-		expect(deriveQuoteTitle(baseQ({ title:'Sur la foi' }), topics)).toBe('Sur la foi');
+		expect(deriveQuoteTitle(baseQ({ title: 'Sur la foi' }), topics)).toBe('Sur la foi');
 	});
 	it('falls back to first sentence of fr, truncated', () => {
 		const fr = 'La foi est la substance des choses espérées. Elle est aussi…';
-		expect(deriveQuoteTitle(baseQ({ fr }), topics)).toBe('La foi est la substance des choses espérées');
+		expect(deriveQuoteTitle(baseQ({ fr }), topics)).toBe(
+			'La foi est la substance des choses espérées'
+		);
 	});
 	it('truncates a single long sentence with an ellipsis', () => {
 		const long = 'a'.repeat(120);
@@ -1229,7 +1428,7 @@ export function deriveQuoteTitle(q: Quote, topics: Topic[]): string {
 		if (clean.length <= MAX) return clean;
 		return clean.slice(0, MAX).replace(/\s+\S*$/, '') + '…';
 	}
-	const t = topics.find(t => t.id === q.topicIds[0]);
+	const t = topics.find((t) => t.id === q.topicIds[0]);
 	return t?.label ?? '';
 }
 ```
@@ -1256,22 +1455,48 @@ import { describe, it, expect } from 'vitest';
 import { formatCitation } from './format-citation';
 import type { Author, Work, Quote } from '$lib/schema';
 
-const augustinus = { id:1, slug:'a', name:'Augustin', originalName:'Augustinus', era:'post-nicene', language:['latin'], sources:{} } as Author;
-const civDei = { id:1, slug:'w', title:'La Cité de Dieu', authorId:1, alternativeTitles:['De civitate Dei'] } as Work;
-const quote = { id:99, slug:'q', authorId:1, workId:1, topicIds:[1], reference:'XIV.28', migne:'PL 41:436', links:{} } as Quote;
+const augustinus = {
+	id: 1,
+	slug: 'a',
+	name: 'Augustin',
+	originalName: 'Augustinus',
+	era: 'post-nicene',
+	language: ['latin'],
+	sources: {}
+} as Author;
+const civDei = {
+	id: 1,
+	slug: 'w',
+	title: 'La Cité de Dieu',
+	authorId: 1,
+	alternativeTitles: ['De civitate Dei']
+} as Work;
+const quote = {
+	id: 99,
+	slug: 'q',
+	authorId: 1,
+	workId: 1,
+	topicIds: [1],
+	reference: 'XIV.28',
+	migne: 'PL 41:436',
+	links: {}
+} as Quote;
 
 describe('formatCitation', () => {
 	it('produces academic format with PL ref', () => {
-		expect(formatCitation(quote, augustinus, civDei))
-			.toBe('Augustinus, De civitate Dei XIV.28 (PL 41:436).');
+		expect(formatCitation(quote, augustinus, civDei)).toBe(
+			'Augustinus, De civitate Dei XIV.28 (PL 41:436).'
+		);
 	});
 	it('omits Migne segment when absent', () => {
-		expect(formatCitation({ ...quote, migne: undefined }, augustinus, civDei))
-			.toBe('Augustinus, De civitate Dei XIV.28.');
+		expect(formatCitation({ ...quote, migne: undefined }, augustinus, civDei)).toBe(
+			'Augustinus, De civitate Dei XIV.28.'
+		);
 	});
 	it('falls back to FR title if no Latin original title', () => {
-		expect(formatCitation(quote, augustinus, { ...civDei, alternativeTitles: [] }))
-			.toBe('Augustinus, La Cité de Dieu XIV.28 (PL 41:436).');
+		expect(formatCitation(quote, augustinus, { ...civDei, alternativeTitles: [] })).toBe(
+			'Augustinus, La Cité de Dieu XIV.28 (PL 41:436).'
+		);
 	});
 });
 ```
@@ -1285,7 +1510,9 @@ import type { Author, Work, Quote } from '$lib/schema';
 
 function pickWorkTitle(w: Work | undefined): string {
 	if (!w) return '';
-	const latin = w.alternativeTitles?.find(t => /^[A-Z][a-zæœ ,.'\-]+$/.test(t.split(' ')[0] ?? ''));
+	const latin = w.alternativeTitles?.find((t) =>
+		/^[A-Z][a-zæœ ,.'\-]+$/.test(t.split(' ')[0] ?? '')
+	);
 	return latin ?? w.title;
 }
 
@@ -1328,34 +1555,53 @@ import { applyFiltersAndSort, type QuoteFilters, type QuoteSort } from './filter
 import type { Author, Quote } from '$lib/schema';
 
 const A: Author[] = [
-	{ id:1, slug:'a', name:'Apo', era:'apostolic', language:['grec'], region:'Asie Mineure', sources:{} },
-	{ id:2, slug:'b', name:'Aug', era:'post-nicene', language:['latin'], region:'Afrique', sources:{}, dates:'354-430' }
+	{
+		id: 1,
+		slug: 'a',
+		name: 'Apo',
+		era: 'apostolic',
+		language: ['grec'],
+		region: 'Asie Mineure',
+		sources: {}
+	},
+	{
+		id: 2,
+		slug: 'b',
+		name: 'Aug',
+		era: 'post-nicene',
+		language: ['latin'],
+		region: 'Afrique',
+		sources: {},
+		dates: '354-430'
+	}
 ];
 const Q: Quote[] = [
-	{ id:1, slug:'q1', authorId:1, topicIds:[1], links:{}, fr:'A' },
-	{ id:2, slug:'q2', authorId:2, topicIds:[1], links:{}, fr:'B' }
+	{ id: 1, slug: 'q1', authorId: 1, topicIds: [1], links: {}, fr: 'A' },
+	{ id: 2, slug: 'q2', authorId: 2, topicIds: [1], links: {}, fr: 'B' }
 ];
 
 describe('applyFiltersAndSort', () => {
 	it('filters by era', () => {
-		const r = applyFiltersAndSort(Q, A, { ere:['apostolic'] }, 'date-asc');
-		expect(r.map(q => q.id)).toEqual([1]);
+		const r = applyFiltersAndSort(Q, A, { ere: ['apostolic'] }, 'date-asc');
+		expect(r.map((q) => q.id)).toEqual([1]);
 	});
 	it('filters by region', () => {
-		const r = applyFiltersAndSort(Q, A, { region:['Afrique'] }, 'date-asc');
-		expect(r.map(q => q.id)).toEqual([2]);
+		const r = applyFiltersAndSort(Q, A, { region: ['Afrique'] }, 'date-asc');
+		expect(r.map((q) => q.id)).toEqual([2]);
 	});
 	it('filters by language', () => {
-		expect(applyFiltersAndSort(Q, A, { langue:['latin'] }, 'date-asc').map(q=>q.id)).toEqual([2]);
+		expect(applyFiltersAndSort(Q, A, { langue: ['latin'] }, 'date-asc').map((q) => q.id)).toEqual([
+			2
+		]);
 	});
 	it('sorts by date ascending', () => {
-		expect(applyFiltersAndSort(Q, A, {}, 'date-asc').map(q=>q.id)).toEqual([1, 2]);
+		expect(applyFiltersAndSort(Q, A, {}, 'date-asc').map((q) => q.id)).toEqual([1, 2]);
 	});
 	it('sorts by date descending', () => {
-		expect(applyFiltersAndSort(Q, A, {}, 'date-desc').map(q=>q.id)).toEqual([2, 1]);
+		expect(applyFiltersAndSort(Q, A, {}, 'date-desc').map((q) => q.id)).toEqual([2, 1]);
 	});
 	it('sorts by author name', () => {
-		expect(applyFiltersAndSort(Q, A, {}, 'author').map(q=>q.id)).toEqual([1, 2]);
+		expect(applyFiltersAndSort(Q, A, {}, 'author').map((q) => q.id)).toEqual([1, 2]);
 	});
 });
 ```
@@ -1383,15 +1629,15 @@ export function applyFiltersAndSort(
 	sort: QuoteSort,
 	works: Work[] = []
 ): Quote[] {
-	const byAuthor = new Map(authors.map(a => [a.id, a]));
-	const byWork = new Map(works.map(w => [w.id, w]));
+	const byAuthor = new Map(authors.map((a) => [a.id, a]));
+	const byWork = new Map(works.map((w) => [w.id, w]));
 
-	const filtered = quotes.filter(q => {
+	const filtered = quotes.filter((q) => {
 		const a = byAuthor.get(q.authorId);
 		if (!a) return false;
 		if (f.ere?.length && !f.ere.includes(a.era)) return false;
 		if (f.region?.length && (!a.region || !f.region.includes(a.region))) return false;
-		if (f.langue?.length && !a.language.some(l => f.langue!.includes(l))) return false;
+		if (f.langue?.length && !a.language.some((l) => f.langue!.includes(l))) return false;
 		if (f.pere?.length && !f.pere.includes(a.id)) return false;
 		return true;
 	});
@@ -1405,8 +1651,8 @@ export function applyFiltersAndSort(
 		if (sort === 'date-desc') return quoteEffectiveYear(aq) - quoteEffectiveYear(ap);
 		if (sort === 'author') return ap.name.localeCompare(aq.name, 'fr');
 		if (sort === 'work') {
-			const wp = p.workId ? byWork.get(p.workId)?.title ?? '' : '';
-			const wq = q.workId ? byWork.get(q.workId)?.title ?? '' : '';
+			const wp = p.workId ? (byWork.get(p.workId)?.title ?? '') : '';
+			const wq = q.workId ? (byWork.get(q.workId)?.title ?? '') : '';
 			return wp.localeCompare(wq, 'fr');
 		}
 		return 0;
@@ -1435,13 +1681,20 @@ git commit -m "feat: quote filters + sort reducer"
 - [ ] **Step 1: Implement**
 
 `scripts/prebuild.ts`:
+
 ```ts
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import MiniSearch from 'minisearch';
 import {
-	AuthorSchema, WorkSchema, TopicSchema, QuoteSchema,
-	type Author, type Work, type Topic, type Quote
+	AuthorSchema,
+	WorkSchema,
+	TopicSchema,
+	QuoteSchema,
+	type Author,
+	type Work,
+	type Topic,
+	type Quote
 } from '../src/lib/schema';
 
 const DATA = join(process.cwd(), 'src/lib/data');
@@ -1449,11 +1702,16 @@ const OUT = join(process.cwd(), 'static/data');
 
 function loadArray<T>(name: string, schema: any): T[] {
 	const path = join(DATA, name);
-	if (!existsSync(path)) { console.error('Missing data file:', path); process.exit(1); }
+	if (!existsSync(path)) {
+		console.error('Missing data file:', path);
+		process.exit(1);
+	}
 	const raw = JSON.parse(readFileSync(path, 'utf-8'));
 	const parsed = schema.array().safeParse(raw);
 	if (!parsed.success) {
-		console.error(`Validation failed for ${name}:\n${JSON.stringify(parsed.error.issues, null, 2)}`);
+		console.error(
+			`Validation failed for ${name}:\n${JSON.stringify(parsed.error.issues, null, 2)}`
+		);
 		process.exit(1);
 	}
 	return parsed.data;
@@ -1461,25 +1719,32 @@ function loadArray<T>(name: string, schema: any): T[] {
 
 function buildIndex(authors: Author[], works: Work[], topics: Topic[], quotes: Quote[]) {
 	const docs = [
-		...quotes.map(q => ({
-			id: `quote-${q.id}`, type: 'quote',
+		...quotes.map((q) => ({
+			id: `quote-${q.id}`,
+			type: 'quote',
 			title: q.title ?? '',
 			body: [q.fr, q.en, q.latin, q.greek, q.context, q.notes].filter(Boolean).join(' '),
 			slug: q.slug
 		})),
-		...authors.map(a => ({
-			id: `author-${a.id}`, type: 'author',
-			title: a.name, body: [a.originalName, a.bioShort, a.region].filter(Boolean).join(' '),
+		...authors.map((a) => ({
+			id: `author-${a.id}`,
+			type: 'author',
+			title: a.name,
+			body: [a.originalName, a.bioShort, a.region].filter(Boolean).join(' '),
 			slug: a.slug
 		})),
-		...works.map(w => ({
-			id: `work-${w.id}`, type: 'work',
-			title: w.title, body: [w.description, (w.alternativeTitles ?? []).join(' ')].join(' '),
+		...works.map((w) => ({
+			id: `work-${w.id}`,
+			type: 'work',
+			title: w.title,
+			body: [w.description, (w.alternativeTitles ?? []).join(' ')].join(' '),
 			slug: w.slug
 		})),
-		...topics.map(t => ({
-			id: `topic-${t.id}`, type: 'topic',
-			title: t.label, body: t.description ?? '',
+		...topics.map((t) => ({
+			id: `topic-${t.id}`,
+			type: 'topic',
+			title: t.label,
+			body: t.description ?? '',
 			slug: t.slug
 		}))
 	];
@@ -1494,17 +1759,17 @@ function buildIndex(authors: Author[], works: Work[], topics: Topic[], quotes: Q
 }
 
 function gapsReport(authors: Author[], works: Work[], quotes: Quote[]) {
-	const authorIds = new Set(authors.map(a => a.id));
-	const workIds = new Set(works.map(w => w.id));
+	const authorIds = new Set(authors.map((a) => a.id));
+	const workIds = new Set(works.map((w) => w.id));
 
-	const noFr = quotes.filter(q => !q.fr?.trim()).length;
-	const noOriginal = quotes.filter(q => !q.latin && !q.greek).length;
-	const brokenAuthor = quotes.filter(q => !authorIds.has(q.authorId)).length;
-	const brokenWork = quotes.filter(q => q.workId != null && !workIds.has(q.workId)).length;
-	const noTitle = quotes.filter(q => !q.title?.trim()).length;
-	const noBio = authors.filter(a => !a.bioShort?.trim()).length;
-	const noWorkDescription = works.filter(w => !w.description?.trim()).length;
-	const noArchive = quotes.filter(q => !q.links.archive).length;
+	const noFr = quotes.filter((q) => !q.fr?.trim()).length;
+	const noOriginal = quotes.filter((q) => !q.latin && !q.greek).length;
+	const brokenAuthor = quotes.filter((q) => !authorIds.has(q.authorId)).length;
+	const brokenWork = quotes.filter((q) => q.workId != null && !workIds.has(q.workId)).length;
+	const noTitle = quotes.filter((q) => !q.title?.trim()).length;
+	const noBio = authors.filter((a) => !a.bioShort?.trim()).length;
+	const noWorkDescription = works.filter((w) => !w.description?.trim()).length;
+	const noArchive = quotes.filter((q) => !q.links.archive).length;
 
 	console.log('\n=== Gaps report ===');
 	console.log(`quotes without FR translation:   ${noFr}`);
@@ -1524,7 +1789,9 @@ function main() {
 	const topics = loadArray<Topic>('topics.json', TopicSchema);
 	const quotes = loadArray<Quote>('quotes.json', QuoteSchema);
 
-	console.log(`Validated: ${authors.length} authors, ${works.length} works, ${topics.length} topics, ${quotes.length} quotes`);
+	console.log(
+		`Validated: ${authors.length} authors, ${works.length} works, ${topics.length} topics, ${quotes.length} quotes`
+	);
 	buildIndex(authors, works, topics, quotes);
 	gapsReport(authors, works, quotes);
 }
@@ -1537,6 +1804,7 @@ main();
 ```bash
 npm run prebuild
 ```
+
 Expected: `Validated: …` line, then `search index: wrote N documents`, then the gaps report.
 
 - [ ] **Step 3: Verify build succeeds end-to-end**
@@ -1544,6 +1812,7 @@ Expected: `Validated: …` line, then `search index: wrote N documents`, then th
 ```bash
 npm run build
 ```
+
 Expected: vite produces a successful Cloudflare build.
 
 - [ ] **Step 4: Commit**
@@ -1571,8 +1840,12 @@ describe('sidebar store', () => {
 		const storage: Record<string, string> = {};
 		vi.stubGlobal('localStorage', {
 			getItem: (k: string) => storage[k] ?? null,
-			setItem: (k: string, v: string) => { storage[k] = v; },
-			removeItem: (k: string) => { delete storage[k]; }
+			setItem: (k: string, v: string) => {
+				storage[k] = v;
+			},
+			removeItem: (k: string) => {
+				delete storage[k];
+			}
 		});
 	});
 	it('defaults to open', async () => {
@@ -1602,7 +1875,8 @@ export const sidebar = $state({ open: load(), filter: '' });
 
 export function toggleSidebar() {
 	sidebar.open = !sidebar.open;
-	if (typeof localStorage !== 'undefined') localStorage.setItem('sidebar.open', String(sidebar.open));
+	if (typeof localStorage !== 'undefined')
+		localStorage.setItem('sidebar.open', String(sidebar.open));
 }
 ```
 
@@ -1620,6 +1894,7 @@ git commit -m "feat: sidebar store with localStorage persistence"
 ### Task 17: Sidebar component family + integrate into layout
 
 **Files:**
+
 - Create: `src/lib/components/ui/Sidebar.svelte`, `SidebarItem.svelte`, `SidebarToggle.svelte`
 - Modify: `src/routes/+layout.svelte`
 - E2E test: `e2e/sidebar.spec.ts`
@@ -1627,6 +1902,7 @@ git commit -m "feat: sidebar store with localStorage persistence"
 - [ ] **Step 1: Read the reference implementations**
 
 Open and study these files:
+
 - `/Users/Janvier/Documents/catechismecatholique/src/lib/components/ui/Sidebar.svelte` (1575 lines)
 - `/Users/Janvier/Documents/catechismecatholique/src/lib/components/ui/SidebarItem.svelte` (255 lines)
 - `/Users/Janvier/Documents/catechismecatholique/src/lib/components/ui/SidebarToggle.svelte` (28 lines)
@@ -1643,22 +1919,25 @@ import type { Section } from '$lib/schema';
 export interface TopicTreeNode {
 	section: Section;
 	groupe: string;
-	href: string;             // /sujets#section-I
+	href: string; // /sujets#section-I
 	topics: { id: number; slug: string; label: string; href: string; count: number }[];
 }
 
 export function buildTopicTree(): TopicTreeNode[] {
 	const counts = new Map<number, number>();
 	for (const q of quotes) for (const t of q.topicIds) counts.set(t, (counts.get(t) ?? 0) + 1);
-	const sections: Section[] = ['I','II','III','IV','V','VI','VII','VIII'];
-	return sections.map(section => {
-		const topicsInSection = topics.filter(t => t.section === section);
+	const sections: Section[] = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+	return sections.map((section) => {
+		const topicsInSection = topics.filter((t) => t.section === section);
 		const groupe = topicsInSection[0]?.groupe ?? '';
 		return {
-			section, groupe,
+			section,
+			groupe,
 			href: `/sujets#section-${section}`,
-			topics: topicsInSection.map(t => ({
-				id: t.id, slug: t.slug, label: t.label,
+			topics: topicsInSection.map((t) => ({
+				id: t.id,
+				slug: t.slug,
+				label: t.label,
 				href: `/sujets/${t.slug}`,
 				count: counts.get(t.id) ?? 0
 			}))
@@ -1678,6 +1957,7 @@ Copy `SidebarItem.svelte` from catechismecatholique. The component takes `href`,
 - [ ] **Step 5: Write Sidebar.svelte tailored to topic tree**
 
 `src/lib/components/ui/Sidebar.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { sidebar, toggleSidebar } from '$lib/stores/sidebar.svelte';
@@ -1689,10 +1969,12 @@ Copy `SidebarItem.svelte` from catechismecatholique. The component takes `href`,
 	const filtered = $derived.by(() => {
 		const f = sidebar.filter.trim().toLowerCase();
 		if (!f) return tree;
-		return tree.map(s => ({
-			...s,
-			topics: s.topics.filter(t => t.label.toLowerCase().includes(f))
-		})).filter(s => s.topics.length > 0);
+		return tree
+			.map((s) => ({
+				...s,
+				topics: s.topics.filter((t) => t.label.toLowerCase().includes(f))
+			}))
+			.filter((s) => s.topics.length > 0);
 	});
 	const currentPath = $derived(page.url.pathname);
 </script>
@@ -1736,6 +2018,7 @@ Copy `SidebarItem.svelte` from catechismecatholique. The component takes `href`,
 - [ ] **Step 6: Wire into layout**
 
 Update `src/routes/+layout.svelte`:
+
 ```svelte
 <script lang="ts">
 	import '../app.css';
@@ -1769,6 +2052,7 @@ Update `src/routes/+layout.svelte`:
 - [ ] **Step 7: Write e2e test**
 
 `e2e/sidebar.spec.ts`:
+
 ```ts
 import { test, expect } from '@playwright/test';
 
@@ -1776,7 +2060,7 @@ test('sidebar is open by default and lists all 8 sections', async ({ page }) => 
 	await page.goto('/');
 	const aside = page.locator('aside[aria-label="Plan des sujets"]');
 	await expect(aside).toBeVisible();
-	for (const s of ['I','II','III','IV','V','VI','VII','VIII']) {
+	for (const s of ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII']) {
 		await expect(aside.locator(`summary:has-text("${s}.")`)).toBeVisible();
 	}
 });
@@ -1801,6 +2085,7 @@ test('filter narrows the topic list', async ({ page }) => {
 ```bash
 npm run test:e2e -- e2e/sidebar.spec.ts
 ```
+
 Expected: all 3 pass.
 
 - [ ] **Step 9: Commit**
@@ -1817,6 +2102,7 @@ git commit -m "feat: persistent collapsible sidebar with topic tree + filter"
 ### Task 18: Homepage
 
 **Files:**
+
 - Modify: `src/routes/+page.svelte`
 - Create: `src/lib/components/peres/SectionTile.svelte`
 
@@ -1824,8 +2110,14 @@ git commit -m "feat: persistent collapsible sidebar with topic tree + filter"
 
 ```svelte
 <script lang="ts">
-	let { section, groupe, count, href }: { section: string; groupe: string; count: number; href: string } = $props();
+	let {
+		section,
+		groupe,
+		count,
+		href
+	}: { section: string; groupe: string; count: number; href: string } = $props();
 </script>
+
 <a {href} class="block rounded-lg border border-border bg-panel p-4 transition hover:border-accent">
 	<div class="font-ui text-xs uppercase tracking-widest text-muted">Section {section}</div>
 	<div class="mt-1 font-heading text-xl">{groupe}</div>
@@ -1836,6 +2128,7 @@ git commit -m "feat: persistent collapsible sidebar with topic tree + filter"
 - [ ] **Step 2: Rewrite the homepage**
 
 `src/routes/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { buildTopicTree, authors, quotes } from '$lib/data';
@@ -1880,7 +2173,10 @@ git commit -m "feat: persistent collapsible sidebar with topic tree + filter"
 	<ul class="mt-4 flex flex-wrap gap-3">
 		{#each featuredAuthors as a (a.id)}
 			<li>
-				<a href={`/peres/${a.slug}`} class="rounded-full border border-border bg-background px-3 py-1 font-ui text-sm hover:border-accent">
+				<a
+					href={`/peres/${a.slug}`}
+					class="rounded-full border border-border bg-background px-3 py-1 font-ui text-sm hover:border-accent"
+				>
 					{a.name}
 				</a>
 			</li>
@@ -1894,6 +2190,7 @@ git commit -m "feat: persistent collapsible sidebar with topic tree + filter"
 ```bash
 npm run dev
 ```
+
 Open http://localhost:5173. Expected: hero, 8 section tiles, fathers strip.
 
 - [ ] **Step 4: Commit**
@@ -1908,6 +2205,7 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 ### Task 19: QuoteCard component
 
 **Files:**
+
 - Create: `src/lib/components/peres/QuoteCard.svelte`, `TopicChip.svelte`, `EraBadge.svelte`
 
 - [ ] **Step 1: Create TopicChip**
@@ -1916,8 +2214,11 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 <script lang="ts">
 	let { topic }: { topic: { slug: string; label: string } } = $props();
 </script>
-<a href={`/sujets/${topic.slug}`}
-	class="rounded-full border border-border bg-panel px-2 py-0.5 font-ui text-xs text-muted hover:border-accent hover:text-foreground">
+
+<a
+	href={`/sujets/${topic.slug}`}
+	class="rounded-full border border-border bg-panel px-2 py-0.5 font-ui text-xs text-muted hover:border-accent hover:text-foreground"
+>
 	{topic.label}
 </a>
 ```
@@ -1930,7 +2231,10 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 	import type { Era } from '$lib/schema';
 	let { era }: { era: Era } = $props();
 </script>
-<span class="rounded border border-border bg-subtle/10 px-1.5 py-0.5 font-ui text-[10px] uppercase tracking-wider text-muted">
+
+<span
+	class="rounded border border-border bg-subtle/10 px-1.5 py-0.5 font-ui text-[10px] uppercase tracking-wider text-muted"
+>
 	{eraLabel(era)}
 </span>
 ```
@@ -1938,6 +2242,7 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 - [ ] **Step 3: Create QuoteCard**
 
 `src/lib/components/peres/QuoteCard.svelte`:
+
 ```svelte
 <script lang="ts">
 	import type { Quote } from '$lib/schema';
@@ -1951,12 +2256,18 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 
 	const author = $derived(authorById(quote.authorId)!);
 	const work = $derived(quote.workId ? workById(quote.workId) : undefined);
-	const topics = $derived(quote.topicIds.map(id => topicById(id)).filter(Boolean) as NonNullable<ReturnType<typeof topicById>>[]);
+	const topics = $derived(
+		quote.topicIds.map((id) => topicById(id)).filter(Boolean) as NonNullable<
+			ReturnType<typeof topicById>
+		>[]
+	);
 	const title = $derived(deriveQuoteTitle(quote, topics));
 	const citation = $derived(formatCitation(quote, author, work));
 
 	async function copyCitation() {
-		try { await navigator.clipboard.writeText(citation); } catch {}
+		try {
+			await navigator.clipboard.writeText(citation);
+		} catch {}
 	}
 </script>
 
@@ -1971,7 +2282,9 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 			<EraBadge era={author.era} />
 		</div>
 		{#if quote.reference}
-			<span class="rounded bg-subtle/15 px-2 py-0.5 font-ui text-xs text-muted">{quote.reference}</span>
+			<span class="rounded bg-subtle/15 px-2 py-0.5 font-ui text-xs text-muted"
+				>{quote.reference}</span
+			>
 		{/if}
 	</div>
 	{#if quote.fr}
@@ -1986,17 +2299,25 @@ git commit -m "feat: homepage with section tiles and featured fathers strip"
 		{#if work}<span class="font-body italic text-sm text-muted">{work.title}</span>{/if}
 	</footer>
 	<div class="mt-4 flex gap-2">
-		<button type="button" onclick={() => onOpenPanel?.(quote)}
-			class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10">
+		<button
+			type="button"
+			onclick={() => onOpenPanel?.(quote)}
+			class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10"
+		>
 			Plus d'infos
 		</button>
-		<button type="button" onclick={copyCitation}
+		<button
+			type="button"
+			onclick={copyCitation}
 			class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10"
-			aria-label="Copier la citation">
+			aria-label="Copier la citation"
+		>
 			Copier la citation
 		</button>
-		<a href={`/citation/${quote.id}`}
-			class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10">
+		<a
+			href={`/citation/${quote.id}`}
+			class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10"
+		>
 			Lien
 		</a>
 	</div>
@@ -2023,6 +2344,7 @@ Read `/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdo
 - [ ] **Step 2: Implement a runes-only port tailored to quotes**
 
 `src/lib/components/peres/StudyPanel.svelte`:
+
 ```svelte
 <script lang="ts">
 	import type { Quote } from '$lib/schema';
@@ -2038,7 +2360,11 @@ Read `/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdo
 	const work = $derived(quote?.workId ? workById(quote.workId) : undefined);
 	const citation = $derived(quote && author ? formatCitation(quote, author, work) : '');
 
-	async function copy(text: string) { try { await navigator.clipboard.writeText(text); } catch {} }
+	async function copy(text: string) {
+		try {
+			await navigator.clipboard.writeText(text);
+		} catch {}
+	}
 
 	$effect(() => {
 		function onKey(e: KeyboardEvent) {
@@ -2050,71 +2376,144 @@ Read `/Users/Janvier/Library/Mobile Documents/com~apple~CloudDocs/for-the-kingdo
 </script>
 
 {#if quote && author}
-<div role="dialog" aria-label="Plus d'infos sur la citation"
-	class="fixed inset-0 z-50 flex items-stretch justify-end bg-black/40">
-	<button type="button" class="absolute inset-0 cursor-default" aria-label="Fermer le panneau"
-		onclick={onClose}></button>
-	<aside class="relative z-10 flex w-full max-w-lg flex-col overflow-y-auto bg-panel font-body shadow-2xl">
-		<header class="flex items-center justify-between border-b border-border p-4">
-			<h2 class="font-heading text-lg">{author.name}</h2>
-			<button type="button" onclick={onClose} aria-label="Fermer"
-				class="rounded border border-border px-2 py-1 font-ui text-sm">×</button>
-		</header>
+	<div
+		role="dialog"
+		aria-label="Plus d'infos sur la citation"
+		class="fixed inset-0 z-50 flex items-stretch justify-end bg-black/40"
+	>
+		<button
+			type="button"
+			class="absolute inset-0 cursor-default"
+			aria-label="Fermer le panneau"
+			onclick={onClose}
+		></button>
+		<aside
+			class="relative z-10 flex w-full max-w-lg flex-col overflow-y-auto bg-panel font-body shadow-2xl"
+		>
+			<header class="flex items-center justify-between border-b border-border p-4">
+				<h2 class="font-heading text-lg">{author.name}</h2>
+				<button
+					type="button"
+					onclick={onClose}
+					aria-label="Fermer"
+					class="rounded border border-border px-2 py-1 font-ui text-sm">×</button
+				>
+			</header>
 
-		<nav role="tablist" class="grid grid-cols-4 border-b border-border font-ui text-xs">
-			{#each (['auteur','original','sources','notes'] as Tab[]) as t (t)}
-				<button type="button" role="tab" aria-selected={active === t}
-					onclick={() => active = t}
-					class="border-r border-border px-3 py-2 last:border-r-0"
-					class:bg-background={active === t}>
-					{t === 'auteur' ? 'Auteur' : t === 'original' ? 'Original' : t === 'sources' ? 'Sources' : 'Notes'}
-				</button>
-			{/each}
-		</nav>
+			<nav role="tablist" class="grid grid-cols-4 border-b border-border font-ui text-xs">
+				{#each ['auteur', 'original', 'sources', 'notes'] as Tab[] as t (t)}
+					<button
+						type="button"
+						role="tab"
+						aria-selected={active === t}
+						onclick={() => (active = t)}
+						class="border-r border-border px-3 py-2 last:border-r-0"
+						class:bg-background={active === t}
+					>
+						{t === 'auteur'
+							? 'Auteur'
+							: t === 'original'
+								? 'Original'
+								: t === 'sources'
+									? 'Sources'
+									: 'Notes'}
+					</button>
+				{/each}
+			</nav>
 
-		<div class="p-4">
-			{#if active === 'auteur'}
-				<dl class="space-y-2 text-sm">
-					<div><dt class="font-ui text-xs uppercase text-muted">Nom</dt><dd>{author.name}{#if author.originalName} <span class="italic text-muted">({author.originalName})</span>{/if}</dd></div>
-					{#if author.dates}<div><dt class="font-ui text-xs uppercase text-muted">Dates</dt><dd>{author.dates}</dd></div>{/if}
-					{#if author.region}<div><dt class="font-ui text-xs uppercase text-muted">Région</dt><dd>{author.region}</dd></div>{/if}
-					{#if author.function}<div><dt class="font-ui text-xs uppercase text-muted">Fonction</dt><dd>{author.function}</dd></div>{/if}
-					{#if author.bioShort}<p class="mt-3 max-w-reader font-body">{author.bioShort}</p>{/if}
-					<a href={`/peres/${author.slug}`} class="mt-3 inline-block font-ui text-sm text-accent-text">Voir la page complète →</a>
-				</dl>
-			{:else if active === 'original'}
-				<div class="space-y-4">
-					{#if quote.latin}<section><h3 class="font-ui text-xs uppercase text-muted">Latin</h3><p class="font-body italic">{quote.latin}</p></section>{/if}
-					{#if quote.greek}<section><h3 class="font-ui text-xs uppercase text-muted">Grec / Syriaque</h3><p class="font-body italic">{quote.greek}</p></section>{/if}
-					{#if !quote.latin && !quote.greek}<p class="italic text-muted">Texte original non disponible.</p>{/if}
-				</div>
-			{:else if active === 'sources'}
-				<div class="space-y-3 text-sm">
-					{#if quote.migne}
+			<div class="p-4">
+				{#if active === 'auteur'}
+					<dl class="space-y-2 text-sm">
 						<div>
-							<dt class="font-ui text-xs uppercase text-muted">Migne</dt>
-							<dd class="flex items-center gap-2"><code>{quote.migne}</code>
-								<button onclick={() => copy(quote.migne!)} class="rounded border border-border px-2 py-0.5 text-xs">Copier</button>
+							<dt class="font-ui text-xs uppercase text-muted">Nom</dt>
+							<dd>
+								{author.name}{#if author.originalName}
+									<span class="italic text-muted">({author.originalName})</span>{/if}
 							</dd>
 						</div>
-					{/if}
-					<div>
-						<dt class="font-ui text-xs uppercase text-muted">Citation</dt>
-						<dd class="flex items-center gap-2"><span>{citation}</span>
-							<button onclick={() => copy(citation)} class="rounded border border-border px-2 py-0.5 text-xs">Copier</button>
-						</dd>
+						{#if author.dates}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Dates</dt>
+								<dd>{author.dates}</dd>
+							</div>{/if}
+						{#if author.region}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Région</dt>
+								<dd>{author.region}</dd>
+							</div>{/if}
+						{#if author.function}<div>
+								<dt class="font-ui text-xs uppercase text-muted">Fonction</dt>
+								<dd>{author.function}</dd>
+							</div>{/if}
+						{#if author.bioShort}<p class="mt-3 max-w-reader font-body">{author.bioShort}</p>{/if}
+						<a
+							href={`/peres/${author.slug}`}
+							class="mt-3 inline-block font-ui text-sm text-accent-text">Voir la page complète →</a
+						>
+					</dl>
+				{:else if active === 'original'}
+					<div class="space-y-4">
+						{#if quote.latin}<section>
+								<h3 class="font-ui text-xs uppercase text-muted">Latin</h3>
+								<p class="font-body italic">{quote.latin}</p>
+							</section>{/if}
+						{#if quote.greek}<section>
+								<h3 class="font-ui text-xs uppercase text-muted">Grec / Syriaque</h3>
+								<p class="font-body italic">{quote.greek}</p>
+							</section>{/if}
+						{#if !quote.latin && !quote.greek}<p class="italic text-muted">
+								Texte original non disponible.
+							</p>{/if}
 					</div>
-					{#if quote.links.archive}<a href={quote.links.archive} target="_blank" rel="noopener" class="block text-accent-text">Voir sur Archive.org →</a>{/if}
-					{#if quote.links.primary}<a href={quote.links.primary} target="_blank" rel="noopener" class="block text-accent-text">Source primaire →</a>{/if}
-				</div>
-			{:else}
-				{#if quote.context}<section class="mb-3"><h3 class="font-ui text-xs uppercase text-muted">Contexte</h3><p class="font-body">{quote.context}</p></section>{/if}
-				{#if quote.notes}<section><h3 class="font-ui text-xs uppercase text-muted">Notes</h3><p class="font-body">{quote.notes}</p></section>{/if}
-				{#if !quote.context && !quote.notes}<p class="italic text-muted">Aucune note.</p>{/if}
-			{/if}
-		</div>
-	</aside>
-</div>
+				{:else if active === 'sources'}
+					<div class="space-y-3 text-sm">
+						{#if quote.migne}
+							<div>
+								<dt class="font-ui text-xs uppercase text-muted">Migne</dt>
+								<dd class="flex items-center gap-2">
+									<code>{quote.migne}</code>
+									<button
+										onclick={() => copy(quote.migne!)}
+										class="rounded border border-border px-2 py-0.5 text-xs">Copier</button
+									>
+								</dd>
+							</div>
+						{/if}
+						<div>
+							<dt class="font-ui text-xs uppercase text-muted">Citation</dt>
+							<dd class="flex items-center gap-2">
+								<span>{citation}</span>
+								<button
+									onclick={() => copy(citation)}
+									class="rounded border border-border px-2 py-0.5 text-xs">Copier</button
+								>
+							</dd>
+						</div>
+						{#if quote.links.archive}<a
+								href={quote.links.archive}
+								target="_blank"
+								rel="noopener"
+								class="block text-accent-text">Voir sur Archive.org →</a
+							>{/if}
+						{#if quote.links.primary}<a
+								href={quote.links.primary}
+								target="_blank"
+								rel="noopener"
+								class="block text-accent-text">Source primaire →</a
+							>{/if}
+					</div>
+				{:else}
+					{#if quote.context}<section class="mb-3">
+							<h3 class="font-ui text-xs uppercase text-muted">Contexte</h3>
+							<p class="font-body">{quote.context}</p>
+						</section>{/if}
+					{#if quote.notes}<section>
+							<h3 class="font-ui text-xs uppercase text-muted">Notes</h3>
+							<p class="font-body">{quote.notes}</p>
+						</section>{/if}
+					{#if !quote.context && !quote.notes}<p class="italic text-muted">Aucune note.</p>{/if}
+				{/if}
+			</div>
+		</aside>
+	</div>
 {/if}
 ```
 
@@ -2151,7 +2550,10 @@ git commit -m "feat: StudyPanel with Auteur / Original / Sources / Notes tabs"
 				<ul class="mt-4 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 					{#each s.topics as t (t.id)}
 						<li>
-							<a href={t.href} class="block rounded border border-border bg-panel p-3 hover:border-accent">
+							<a
+								href={t.href}
+								class="block rounded border border-border bg-panel p-3 hover:border-accent"
+							>
 								<span>{t.label}</span>
 								<span class="ml-1 text-xs text-muted">({t.count})</span>
 							</a>
@@ -2169,6 +2571,7 @@ git commit -m "feat: StudyPanel with Auteur / Original / Sources / Notes tabs"
 ```bash
 npm run dev
 ```
+
 Visit `/sujets`. Expected: all 8 sections rendered with their topics.
 
 - [ ] **Step 3: Commit**
@@ -2183,6 +2586,7 @@ git commit -m "feat: /sujets index grouped by section"
 ### Task 22: /sujets/[slug] topic page with filter + sort
 
 **Files:**
+
 - Create: `src/routes/sujets/[slug]/+page.svelte`, `+page.ts`
 - Create: `src/lib/components/ui/FilterChip.svelte`, `SortSelect.svelte`
 - E2E test: `e2e/topic-page.spec.ts`
@@ -2191,14 +2595,19 @@ git commit -m "feat: /sujets index grouped by section"
 
 ```svelte
 <script lang="ts">
-	let { label, active, onToggle }: { label: string; active: boolean; onToggle: () => void } = $props();
+	let { label, active, onToggle }: { label: string; active: boolean; onToggle: () => void } =
+		$props();
 </script>
-<button type="button" onclick={onToggle}
+
+<button
+	type="button"
+	onclick={onToggle}
 	class="rounded-full border px-2.5 py-0.5 font-ui text-xs transition"
 	class:border-accent={active}
 	class:bg-accent={active}
 	class:text-accent-text={active}
-	class:border-border={!active}>
+	class:border-border={!active}
+>
 	{label}
 </button>
 ```
@@ -2217,11 +2626,14 @@ git commit -m "feat: /sujets index grouped by section"
 		['canonical', 'Ordre canonique']
 	];
 </script>
+
 <label class="font-ui text-xs text-muted">
 	Tri
-	<select class="ml-2 rounded border border-border bg-panel px-2 py-1 font-ui text-sm"
-		value={value}
-		onchange={(e) => onChange((e.currentTarget as HTMLSelectElement).value as QuoteSort)}>
+	<select
+		class="ml-2 rounded border border-border bg-panel px-2 py-1 font-ui text-sm"
+		{value}
+		onchange={(e) => onChange((e.currentTarget as HTMLSelectElement).value as QuoteSort)}
+	>
 		{#each OPTIONS as [v, label] (v)}
 			<option value={v}>{label}</option>
 		{/each}
@@ -2232,6 +2644,7 @@ git commit -m "feat: /sujets index grouped by section"
 - [ ] **Step 3: +page.ts (load topic + quotes)**
 
 `src/routes/sujets/[slug]/+page.ts`:
+
 ```ts
 import { error } from '@sveltejs/kit';
 import { topicBySlug, quotes, authors, works } from '$lib/data';
@@ -2239,7 +2652,7 @@ import { topicBySlug, quotes, authors, works } from '$lib/data';
 export function load({ params }) {
 	const topic = topicBySlug(params.slug);
 	if (!topic) throw error(404, 'Sujet introuvable');
-	const matching = quotes.filter(q => q.topicIds.includes(topic.id));
+	const matching = quotes.filter((q) => q.topicIds.includes(topic.id));
 	return { topic, matching, authors, works };
 }
 ```
@@ -2247,6 +2660,7 @@ export function load({ params }) {
 - [ ] **Step 4: +page.svelte (filter + sort + render)**
 
 `src/routes/sujets/[slug]/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { applyFiltersAndSort, type QuoteFilters, type QuoteSort } from '$lib/utils/filters';
@@ -2263,14 +2677,26 @@ export function load({ params }) {
 	let sort = $state<QuoteSort>('date-asc');
 	let openQuote = $state<Quote | null>(null);
 
-	const allRegions = $derived(Array.from(new Set(data.authors.map(a => a.region).filter(Boolean))).sort());
-	const allLanguages = $derived(Array.from(new Set(data.authors.flatMap(a => a.language))).sort());
+	const allRegions = $derived(
+		Array.from(new Set(data.authors.map((a) => a.region).filter(Boolean))).sort()
+	);
+	const allLanguages = $derived(
+		Array.from(new Set(data.authors.flatMap((a) => a.language))).sort()
+	);
 
-	const filtered = $derived(applyFiltersAndSort(data.matching, data.authors, filters, sort, data.works));
+	const filtered = $derived(
+		applyFiltersAndSort(data.matching, data.authors, filters, sort, data.works)
+	);
 
-	function toggle<K extends keyof QuoteFilters>(key: K, value: NonNullable<QuoteFilters[K]>[number]) {
+	function toggle<K extends keyof QuoteFilters>(
+		key: K,
+		value: NonNullable<QuoteFilters[K]>[number]
+	) {
 		const arr = (filters[key] ?? []) as any[];
-		filters = { ...filters, [key]: arr.includes(value) ? arr.filter(v => v !== value) : [...arr, value] };
+		filters = {
+			...filters,
+			[key]: arr.includes(value) ? arr.filter((v) => v !== value) : [...arr, value]
+		};
 	}
 </script>
 
@@ -2280,48 +2706,63 @@ export function load({ params }) {
 			Section {data.topic.section} · {data.topic.groupe}
 		</div>
 		<h1 class="mt-1 font-heading text-3xl">{data.topic.label}</h1>
-		{#if data.topic.description}<p class="mt-2 max-w-reader text-muted">{data.topic.description}</p>{/if}
+		{#if data.topic.description}<p class="mt-2 max-w-reader text-muted">
+				{data.topic.description}
+			</p>{/if}
 	</header>
 
 	<div class="my-6 flex flex-wrap items-center gap-3 border-y border-border py-3">
 		<div class="flex flex-wrap items-center gap-1">
 			<span class="font-ui text-xs uppercase text-muted">Ère</span>
 			{#each eraOrder as e (e)}
-				<FilterChip label={eraLabel(e)} active={filters.ere!.includes(e)} onToggle={() => toggle('ere', e)} />
+				<FilterChip
+					label={eraLabel(e)}
+					active={filters.ere!.includes(e)}
+					onToggle={() => toggle('ere', e)}
+				/>
 			{/each}
 		</div>
 		<div class="flex flex-wrap items-center gap-1">
 			<span class="font-ui text-xs uppercase text-muted">Région</span>
 			{#each allRegions as r (r)}
-				<FilterChip label={r!} active={filters.region!.includes(r!)} onToggle={() => toggle('region', r!)} />
+				<FilterChip
+					label={r!}
+					active={filters.region!.includes(r!)}
+					onToggle={() => toggle('region', r!)}
+				/>
 			{/each}
 		</div>
 		<div class="flex flex-wrap items-center gap-1">
 			<span class="font-ui text-xs uppercase text-muted">Langue</span>
 			{#each allLanguages as l (l)}
-				<FilterChip label={l} active={filters.langue!.includes(l)} onToggle={() => toggle('langue', l)} />
+				<FilterChip
+					label={l}
+					active={filters.langue!.includes(l)}
+					onToggle={() => toggle('langue', l)}
+				/>
 			{/each}
 		</div>
-		<div class="ml-auto"><SortSelect value={sort} onChange={(v) => sort = v} /></div>
+		<div class="ml-auto"><SortSelect value={sort} onChange={(v) => (sort = v)} /></div>
 	</div>
 
 	<p class="mb-4 font-ui text-sm text-muted">{filtered.length} citations</p>
 
 	<div class="space-y-6">
 		{#each filtered as q (q.id)}
-			<QuoteCard quote={q} onOpenPanel={(qq) => openQuote = qq} />
+			<QuoteCard quote={q} onOpenPanel={(qq) => (openQuote = qq)} />
 		{:else}
 			<p class="italic text-muted">Aucune citation ne correspond à ces filtres.</p>
 		{/each}
 	</div>
 </section>
 
-<StudyPanel quote={openQuote} onClose={() => openQuote = null} />
+<StudyPanel quote={openQuote} onClose={() => (openQuote = null)} />
 ```
 
 - [ ] **Step 5: Write e2e test**
 
 `e2e/topic-page.spec.ts`:
+
 ```ts
 import { test, expect } from '@playwright/test';
 
@@ -2348,6 +2789,7 @@ test('topic page renders, filters by era, sorts by date', async ({ page }) => {
 ```bash
 npm run test:e2e -- e2e/topic-page.spec.ts
 ```
+
 Expected: PASS.
 
 - [ ] **Step 7: Commit**
@@ -2366,6 +2808,7 @@ git commit -m "feat: /sujets/[slug] with filter chips + sort selector"
 - [ ] **Step 1: Index page**
 
 `src/routes/peres/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { authors } from '$lib/data';
@@ -2373,17 +2816,28 @@ git commit -m "feat: /sujets/[slug] with filter chips + sort selector"
 	let sortMode = $state<'chrono' | 'alpha'>('chrono');
 	const grouped = $derived.by(() => {
 		if (sortMode === 'alpha') {
-			return [{ era: null, items: [...authors].sort((a, b) => a.name.localeCompare(b.name, 'fr')) }];
+			return [
+				{ era: null, items: [...authors].sort((a, b) => a.name.localeCompare(b.name, 'fr')) }
+			];
 		}
-		return eraOrder.map(era => ({ era, items: authors.filter(a => a.era === era).sort((a,b) => a.name.localeCompare(b.name,'fr')) }))
-			.filter(g => g.items.length > 0);
+		return eraOrder
+			.map((era) => ({
+				era,
+				items: authors
+					.filter((a) => a.era === era)
+					.sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+			}))
+			.filter((g) => g.items.length > 0);
 	});
 </script>
 
 <section class="px-6 py-10">
 	<div class="flex items-baseline justify-between">
 		<h1 class="font-heading text-3xl">Pères</h1>
-		<select bind:value={sortMode} class="rounded border border-border bg-panel px-2 py-1 font-ui text-sm">
+		<select
+			bind:value={sortMode}
+			class="rounded border border-border bg-panel px-2 py-1 font-ui text-sm"
+		>
 			<option value="chrono">Par époque</option>
 			<option value="alpha">Alphabétique</option>
 		</select>
@@ -2396,7 +2850,10 @@ git commit -m "feat: /sujets/[slug] with filter chips + sort selector"
 				<ul class="mt-3 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 					{#each g.items as a (a.id)}
 						<li>
-							<a href={`/peres/${a.slug}`} class="block rounded border border-border bg-panel p-3 hover:border-accent">
+							<a
+								href={`/peres/${a.slug}`}
+								class="block rounded border border-border bg-panel p-3 hover:border-accent"
+							>
 								<span class="font-heading">{a.name}</span>
 								{#if a.dates}<span class="ml-2 text-sm text-muted">{a.dates}</span>{/if}
 							</a>
@@ -2412,14 +2869,15 @@ git commit -m "feat: /sujets/[slug] with filter chips + sort selector"
 - [ ] **Step 2: Author detail load**
 
 `src/routes/peres/[slug]/+page.ts`:
+
 ```ts
 import { error } from '@sveltejs/kit';
 import { authorBySlug, quotes, works } from '$lib/data';
 export function load({ params }) {
 	const author = authorBySlug(params.slug);
 	if (!author) throw error(404, 'Père introuvable');
-	const authorQuotes = quotes.filter(q => q.authorId === author.id);
-	const authorWorks = works.filter(w => w.authorId === author.id);
+	const authorQuotes = quotes.filter((q) => q.authorId === author.id);
+	const authorWorks = works.filter((w) => w.authorId === author.id);
 	return { author, quotes: authorQuotes, works: authorWorks };
 }
 ```
@@ -2427,6 +2885,7 @@ export function load({ params }) {
 - [ ] **Step 3: Author detail page**
 
 `src/routes/peres/[slug]/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import EraBadge from '$lib/components/peres/EraBadge.svelte';
@@ -2447,7 +2906,9 @@ export function load({ params }) {
 			{#if data.author.region}<span>· {data.author.region}</span>{/if}
 			{#if data.author.function}<span>· {data.author.function}</span>{/if}
 		</div>
-		{#if data.author.bioShort}<p class="mt-4 max-w-reader font-body text-lg">{data.author.bioShort}</p>{/if}
+		{#if data.author.bioShort}<p class="mt-4 max-w-reader font-body text-lg">
+				{data.author.bioShort}
+			</p>{/if}
 	</header>
 
 	{#if data.works.length > 0}
@@ -2465,12 +2926,12 @@ export function load({ params }) {
 		<h2 class="font-heading text-2xl">Citations ({data.quotes.length})</h2>
 		<div class="mt-4 space-y-6">
 			{#each data.quotes as q (q.id)}
-				<QuoteCard quote={q} onOpenPanel={(qq) => openQuote = qq} />
+				<QuoteCard quote={q} onOpenPanel={(qq) => (openQuote = qq)} />
 			{/each}
 		</div>
 	</section>
 </section>
-<StudyPanel quote={openQuote} onClose={() => openQuote = null} />
+<StudyPanel quote={openQuote} onClose={() => (openQuote = null)} />
 ```
 
 - [ ] **Step 4: Verify**
@@ -2478,6 +2939,7 @@ export function load({ params }) {
 ```bash
 npm run dev
 ```
+
 Visit `/peres` and click into an author. Expected: bio + works + quotes render; StudyPanel opens via "Plus d'infos".
 
 - [ ] **Step 5: Commit**
@@ -2496,17 +2958,22 @@ git commit -m "feat: /peres index + /peres/[slug] detail with works and quotes"
 - [ ] **Step 1: Index**
 
 `src/routes/oeuvres/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { works, authorById } from '$lib/data';
 	const sorted = [...works].sort((a, b) => a.title.localeCompare(b.title, 'fr'));
 </script>
+
 <section class="px-6 py-10">
 	<h1 class="font-heading text-3xl">Œuvres</h1>
 	<ul class="mt-6 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
 		{#each sorted as w (w.id)}
 			<li>
-				<a href={`/oeuvres/${w.slug}`} class="block rounded border border-border bg-panel p-3 hover:border-accent">
+				<a
+					href={`/oeuvres/${w.slug}`}
+					class="block rounded border border-border bg-panel p-3 hover:border-accent"
+				>
 					<span class="font-heading">{w.title}</span>
 					<div class="text-sm text-muted">{authorById(w.authorId)?.name}</div>
 				</a>
@@ -2519,6 +2986,7 @@ git commit -m "feat: /peres index + /peres/[slug] detail with works and quotes"
 - [ ] **Step 2: Detail load**
 
 `src/routes/oeuvres/[slug]/+page.ts`:
+
 ```ts
 import { error } from '@sveltejs/kit';
 import { workBySlug, authorById, quotes } from '$lib/data';
@@ -2526,7 +2994,7 @@ export function load({ params }) {
 	const work = workBySlug(params.slug);
 	if (!work) throw error(404, 'Œuvre introuvable');
 	const author = authorById(work.authorId)!;
-	const workQuotes = quotes.filter(q => q.workId === work.id);
+	const workQuotes = quotes.filter((q) => q.workId === work.id);
 	return { work, author, quotes: workQuotes };
 }
 ```
@@ -2534,6 +3002,7 @@ export function load({ params }) {
 - [ ] **Step 3: Detail page**
 
 `src/routes/oeuvres/[slug]/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import QuoteCard from '$lib/components/peres/QuoteCard.svelte';
@@ -2546,22 +3015,33 @@ export function load({ params }) {
 <section class="px-6 py-10">
 	<header>
 		<h1 class="font-heading text-3xl">{data.work.title}</h1>
-		{#if data.work.alternativeTitles?.length}<p class="italic text-muted">{data.work.alternativeTitles.join(' · ')}</p>{/if}
-		<p class="mt-2 text-sm text-muted">par <a href={`/peres/${data.author.slug}`} class="hover:text-accent-text">{data.author.name}</a></p>
+		{#if data.work.alternativeTitles?.length}<p class="italic text-muted">
+				{data.work.alternativeTitles.join(' · ')}
+			</p>{/if}
+		<p class="mt-2 text-sm text-muted">
+			par <a href={`/peres/${data.author.slug}`} class="hover:text-accent-text"
+				>{data.author.name}</a
+			>
+		</p>
 		{#if data.work.description}<p class="mt-4 max-w-reader">{data.work.description}</p>{/if}
-		{#if data.work.link}<a href={data.work.link} target="_blank" rel="noopener" class="mt-2 inline-block text-accent-text">Source →</a>{/if}
+		{#if data.work.link}<a
+				href={data.work.link}
+				target="_blank"
+				rel="noopener"
+				class="mt-2 inline-block text-accent-text">Source →</a
+			>{/if}
 	</header>
 
 	<section class="mt-10">
 		<h2 class="font-heading text-2xl">Citations ({data.quotes.length})</h2>
 		<div class="mt-4 space-y-6">
 			{#each data.quotes as q (q.id)}
-				<QuoteCard quote={q} onOpenPanel={(qq) => openQuote = qq} />
+				<QuoteCard quote={q} onOpenPanel={(qq) => (openQuote = qq)} />
 			{/each}
 		</div>
 	</section>
 </section>
-<StudyPanel quote={openQuote} onClose={() => openQuote = null} />
+<StudyPanel quote={openQuote} onClose={() => (openQuote = null)} />
 ```
 
 - [ ] **Step 4: Commit**
@@ -2580,6 +3060,7 @@ git commit -m "feat: /oeuvres index and /oeuvres/[slug] detail"
 - [ ] **Step 1: Load**
 
 `src/routes/citation/[id]/+page.ts`:
+
 ```ts
 import { error } from '@sveltejs/kit';
 import { quoteById } from '$lib/data';
@@ -2594,6 +3075,7 @@ export function load({ params }) {
 - [ ] **Step 2: Page (auto-opens StudyPanel)**
 
 `src/routes/citation/[id]/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import QuoteCard from '$lib/components/peres/QuoteCard.svelte';
@@ -2603,9 +3085,9 @@ export function load({ params }) {
 </script>
 
 <section class="px-6 py-10">
-	<QuoteCard quote={data.quote} onOpenPanel={(q) => openQuote = q} />
+	<QuoteCard quote={data.quote} onOpenPanel={(q) => (openQuote = q)} />
 </section>
-<StudyPanel quote={openQuote} onClose={() => openQuote = null} />
+<StudyPanel quote={openQuote} onClose={() => (openQuote = null)} />
 ```
 
 - [ ] **Step 3: Commit**
@@ -2624,6 +3106,7 @@ git commit -m "feat: /citation/[id] permalink opens StudyPanel by default"
 - [ ] **Step 1: Load (fetch the index)**
 
 `src/routes/recherche/+page.ts`:
+
 ```ts
 export const ssr = false;
 export async function load({ fetch }) {
@@ -2636,16 +3119,20 @@ export async function load({ fetch }) {
 - [ ] **Step 2: Page**
 
 `src/routes/recherche/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import MiniSearch, { type SearchResult } from 'minisearch';
 	import { page } from '$app/state';
 	let { data } = $props();
 	const ms = MiniSearch.loadJSON(JSON.stringify(data.indexJson), {
-		fields: ['title', 'body'], storeFields: ['type', 'title', 'slug']
+		fields: ['title', 'body'],
+		storeFields: ['type', 'title', 'slug']
 	});
 	let q = $state(page.url.searchParams.get('q') ?? '');
-	const results = $derived(q.trim() ? ms.search(q, { prefix: true, fuzzy: 0.2, boost: { title: 2 } }).slice(0, 50) : []);
+	const results = $derived(
+		q.trim() ? ms.search(q, { prefix: true, fuzzy: 0.2, boost: { title: 2 } }).slice(0, 50) : []
+	);
 	const PATH: Record<string, (slug: string) => string> = {
 		quote: (s) => `/citation/${s.replace(/^citation-/, '')}`,
 		author: (s) => `/peres/${s}`,
@@ -2653,17 +3140,26 @@ export async function load({ fetch }) {
 		topic: (s) => `/sujets/${s}`
 	};
 </script>
+
 <section class="px-6 py-10">
 	<h1 class="font-heading text-3xl">Recherche</h1>
-	<input type="search" bind:value={q} placeholder="Chercher…"
-		class="mt-4 w-full max-w-reader rounded border border-border bg-panel px-3 py-2 font-ui" autofocus />
+	<input
+		type="search"
+		bind:value={q}
+		placeholder="Chercher…"
+		class="mt-4 w-full max-w-reader rounded border border-border bg-panel px-3 py-2 font-ui"
+		autofocus
+	/>
 	{#if q.trim() && results.length === 0}
 		<p class="mt-6 italic text-muted">Aucun résultat.</p>
 	{/if}
 	<ul class="mt-6 space-y-2">
 		{#each results as r (r.id)}
 			<li>
-				<a href={PATH[(r as any).type]?.((r as any).slug) ?? '/'} class="block rounded border border-border bg-panel p-3 hover:border-accent">
+				<a
+					href={PATH[(r as any).type]?.((r as any).slug) ?? '/'}
+					class="block rounded border border-border bg-panel p-3 hover:border-accent"
+				>
 					<span class="font-ui text-xs uppercase text-muted">{(r as any).type}</span>
 					<span class="ml-2 font-heading">{(r as any).title}</span>
 				</a>
@@ -2691,7 +3187,7 @@ git commit -m "feat: /recherche page with client-side minisearch"
 ```ts
 import { test, expect } from '@playwright/test';
 
-test('Plus d\'infos opens the StudyPanel with the four tabs', async ({ page }) => {
+test("Plus d'infos opens the StudyPanel with the four tabs", async ({ page }) => {
 	await page.goto('/sujets');
 	await page.locator('a[href^="/sujets/"]').first().click();
 	await page.getByRole('button', { name: "Plus d'infos" }).first().click();
@@ -2720,6 +3216,7 @@ test('/recherche returns results for a common term', async ({ page }) => {
 ```bash
 npm run test:e2e -- e2e/study-panel.spec.ts e2e/search.spec.ts
 ```
+
 Expected: both PASS.
 
 - [ ] **Step 4: Commit**
@@ -2738,19 +3235,31 @@ git commit -m "test: e2e for StudyPanel tabs/ESC and /recherche results"
 - [ ] **Step 1: Write the two pages**
 
 `src/routes/a-propos/+page.svelte`:
+
 ```svelte
 <section class="prose mx-auto max-w-reader px-6 py-10 font-body">
 	<h1 class="font-heading text-3xl">À propos</h1>
-	<p>Pères de l'Église est une anthologie patristique française, organisée par sujets. Le corpus est progressivement enrichi à partir de sources primaires (Patrologie Latine, Patrologie Grecque, Corpus Christianorum) et de traductions originales.</p>
-	<p>Inspiré dans sa structure thématique par <em>The Fathers Know Best</em> de Jimmy Akin, le site vise à présenter, en français, la continuité de l'enseignement de l'Église à travers les Pères.</p>
+	<p>
+		Pères de l'Église est une anthologie patristique française, organisée par sujets. Le corpus est
+		progressivement enrichi à partir de sources primaires (Patrologie Latine, Patrologie Grecque,
+		Corpus Christianorum) et de traductions originales.
+	</p>
+	<p>
+		Inspiré dans sa structure thématique par <em>The Fathers Know Best</em> de Jimmy Akin, le site vise
+		à présenter, en français, la continuité de l'enseignement de l'Église à travers les Pères.
+	</p>
 </section>
 ```
 
 `src/routes/mentions-legales/+page.svelte`:
+
 ```svelte
 <section class="prose mx-auto max-w-reader px-6 py-10 font-body">
 	<h1 class="font-heading text-3xl">Mentions légales</h1>
-	<p>Site personnel à but non commercial. Les citations sont reproduites à des fins d'érudition et de catéchèse.</p>
+	<p>
+		Site personnel à but non commercial. Les citations sont reproduites à des fins d'érudition et de
+		catéchèse.
+	</p>
 </section>
 ```
 
@@ -2773,9 +3282,14 @@ git commit -m "feat: à propos and mentions légales pages"
 
 ```svelte
 <script lang="ts">
-	let { title, description, canonical }: { title: string; description?: string; canonical?: string } = $props();
+	let {
+		title,
+		description,
+		canonical
+	}: { title: string; description?: string; canonical?: string } = $props();
 	const full = `${title} · Pères de l'Église`;
 </script>
+
 <svelte:head>
 	<title>{full}</title>
 	{#if description}<meta name="description" content={description} />{/if}
@@ -2809,21 +3323,29 @@ git commit -m "feat: MetaTags component wired into all routes"
 ```ts
 import { topics, authors, works, quotes } from '$lib/data';
 
-const STATIC = ['/', '/sujets', '/peres', '/oeuvres', '/recherche', '/a-propos', '/mentions-legales'];
+const STATIC = [
+	'/',
+	'/sujets',
+	'/peres',
+	'/oeuvres',
+	'/recherche',
+	'/a-propos',
+	'/mentions-legales'
+];
 
 export const prerender = true;
 
 export function GET() {
 	const urls: string[] = [
 		...STATIC,
-		...topics.map(t => `/sujets/${t.slug}`),
-		...authors.map(a => `/peres/${a.slug}`),
-		...works.map(w => `/oeuvres/${w.slug}`),
-		...quotes.map(q => `/citation/${q.id}`)
+		...topics.map((t) => `/sujets/${t.slug}`),
+		...authors.map((a) => `/peres/${a.slug}`),
+		...works.map((w) => `/oeuvres/${w.slug}`),
+		...quotes.map((q) => `/citation/${q.id}`)
 	];
 	const body = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url><loc>https://pereseglise.pages.dev${u}</loc></url>`).join('\n')}
+${urls.map((u) => `  <url><loc>https://pereseglise.pages.dev${u}</loc></url>`).join('\n')}
 </urlset>`;
 	return new Response(body, { headers: { 'Content-Type': 'application/xml' } });
 }
@@ -2851,7 +3373,7 @@ import { topics, authors, works, quotes } from '$lib/data';
 export const prerender = true;
 export function GET() {
 	const body = [
-		'# Pères de l\'Église',
+		"# Pères de l'Église",
 		'Anthologie patristique française organisée par sujets.',
 		'',
 		`## Stats`,
@@ -2892,6 +3414,7 @@ git commit -m "feat: llms.txt corpus summary"
 - [ ] **Step 1: Atomic writer + test**
 
 `src/lib/admin/atomic-write.ts`:
+
 ```ts
 import { writeFileSync, renameSync, mkdirSync } from 'node:fs';
 import { dirname } from 'node:path';
@@ -2905,6 +3428,7 @@ export function atomicWriteJson(path: string, data: unknown) {
 ```
 
 `src/lib/admin/atomic-write.test.ts`:
+
 ```ts
 import { describe, it, expect } from 'vitest';
 import { atomicWriteJson } from './atomic-write';
@@ -2923,6 +3447,7 @@ describe('atomicWriteJson', () => {
 ```
 
 Run:
+
 ```bash
 npm run test:unit -- src/lib/admin/atomic-write.test.ts
 ```
@@ -2930,6 +3455,7 @@ npm run test:unit -- src/lib/admin/atomic-write.test.ts
 - [ ] **Step 2: Guard**
 
 `src/routes/admin/+layout.server.ts`:
+
 ```ts
 import { error } from '@sveltejs/kit';
 import { dev } from '$app/environment';
@@ -2942,10 +3468,12 @@ export function load() {
 - [ ] **Step 3: Admin shell**
 
 `src/routes/admin/+layout.svelte`:
+
 ```svelte
 <script lang="ts">
 	let { children } = $props();
 </script>
+
 <div class="px-6 py-6">
 	<nav class="mb-6 flex gap-4 border-b border-border pb-2 font-ui text-sm">
 		<a href="/admin">Accueil</a>
@@ -2960,6 +3488,7 @@ export function load() {
 ```
 
 `src/routes/admin/+page.svelte`:
+
 ```svelte
 <h1 class="font-heading text-3xl">Admin</h1>
 <p class="mt-3 text-muted">Cette interface n'est accessible qu'en mode développement.</p>
@@ -2968,6 +3497,7 @@ export function load() {
 - [ ] **Step 4: E2E (dev-only assertion)**
 
 `e2e/admin-dev-only.spec.ts`:
+
 ```ts
 import { test, expect } from '@playwright/test';
 test('admin is reachable in dev', async ({ page }) => {
@@ -3008,7 +3538,10 @@ const FILE: Record<string, string> = {
 	quotes: 'quotes.json'
 };
 const SCHEMA: Record<string, any> = {
-	authors: AuthorSchema, works: WorkSchema, topics: TopicSchema, quotes: QuoteSchema
+	authors: AuthorSchema,
+	works: WorkSchema,
+	topics: TopicSchema,
+	quotes: QuoteSchema
 };
 
 function pathFor(entity: string) {
@@ -3019,8 +3552,12 @@ function loadAll(entity: string): any[] {
 	return JSON.parse(readFileSync(pathFor(entity), 'utf-8'));
 }
 
-function assertDev() { if (!dev) throw error(404); }
-function assertEntity(e: string) { if (!FILE[e]) throw error(404, 'Unknown entity'); }
+function assertDev() {
+	if (!dev) throw error(404);
+}
+function assertEntity(e: string) {
+	if (!FILE[e]) throw error(404, 'Unknown entity');
+}
 
 export async function GET({ params }) {
 	assertDev();
@@ -3045,6 +3582,7 @@ export async function PUT({ params, request }) {
 npm run dev
 curl http://localhost:5173/admin/api/topics | head -c 200
 ```
+
 Expected: JSON array of topics.
 
 - [ ] **Step 3: Commit**
@@ -3065,6 +3603,7 @@ These pages share a pattern: fetch the collection via `/admin/api/<entity>`, ren
 - [ ] **Step 1: Create a shared admin form helper**
 
 `src/lib/admin/form-state.svelte.ts`:
+
 ```ts
 export function createFormState<T>(initial: T[]) {
 	const state = $state({ items: initial, selectedIdx: -1, search: '', dirty: false });
@@ -3077,6 +3616,7 @@ export function createFormState<T>(initial: T[]) {
 Each follows this skeleton (example for `auteurs`):
 
 `src/routes/admin/auteurs/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	import { onMount } from 'svelte';
@@ -3166,6 +3706,7 @@ Each follows this skeleton (example for `auteurs`):
 ```
 
 Implement `/admin/oeuvres`, `/admin/sujets`, `/admin/citations` following the same skeleton, exposing the appropriate fields:
+
 - **Œuvres**: title, alternativeTitles (comma-input), authorId (select from authors), description, link.
 - **Sujets**: label, section (dropdown I-VIII), groupe, description.
 - **Citations** (the rich one): authorId (select), workId (select), topicIds (multi-select), reference, fr, en, latin, greek, context, migne, links.primary, links.archive, notes, status, title.
@@ -3175,6 +3716,7 @@ Implement `/admin/oeuvres`, `/admin/sujets`, `/admin/citations` following the sa
 ```bash
 npm run dev
 ```
+
 Open `/admin/auteurs`. Edit any author's `bioShort`, click Enregistrer. Reload — change persisted. Re-run `npm run prebuild` and confirm gaps report `authors missing bioShort` decreased.
 
 - [ ] **Step 4: Commit**
@@ -3193,23 +3735,24 @@ git commit -m "feat: admin edit forms for all four entities"
 - [ ] **Step 1: Load — compute gaps server-side**
 
 `src/routes/admin/gaps/+page.ts`:
+
 ```ts
 import { error } from '@sveltejs/kit';
 import { dev } from '$app/environment';
 import { authors, works, quotes } from '$lib/data';
 export function load() {
 	if (!dev) throw error(404);
-	const authorIds = new Set(authors.map(a => a.id));
-	const workIds = new Set(works.map(w => w.id));
+	const authorIds = new Set(authors.map((a) => a.id));
+	const workIds = new Set(works.map((w) => w.id));
 	return {
-		noFr: quotes.filter(q => !q.fr?.trim()).map(q => q.id),
-		noOriginal: quotes.filter(q => !q.latin && !q.greek).map(q => q.id),
-		noTitle: quotes.filter(q => !q.title?.trim()).map(q => q.id),
-		brokenAuthor: quotes.filter(q => !authorIds.has(q.authorId)).map(q => q.id),
-		brokenWork: quotes.filter(q => q.workId != null && !workIds.has(q.workId)).map(q => q.id),
-		noArchive: quotes.filter(q => !q.links.archive).map(q => q.id),
-		authorsMissingBio: authors.filter(a => !a.bioShort?.trim()).map(a => a.id),
-		worksMissingDescription: works.filter(w => !w.description?.trim()).map(w => w.id)
+		noFr: quotes.filter((q) => !q.fr?.trim()).map((q) => q.id),
+		noOriginal: quotes.filter((q) => !q.latin && !q.greek).map((q) => q.id),
+		noTitle: quotes.filter((q) => !q.title?.trim()).map((q) => q.id),
+		brokenAuthor: quotes.filter((q) => !authorIds.has(q.authorId)).map((q) => q.id),
+		brokenWork: quotes.filter((q) => q.workId != null && !workIds.has(q.workId)).map((q) => q.id),
+		noArchive: quotes.filter((q) => !q.links.archive).map((q) => q.id),
+		authorsMissingBio: authors.filter((a) => !a.bioShort?.trim()).map((a) => a.id),
+		worksMissingDescription: works.filter((w) => !w.description?.trim()).map((w) => w.id)
 	};
 }
 ```
@@ -3217,6 +3760,7 @@ export function load() {
 - [ ] **Step 2: Page**
 
 `src/routes/admin/gaps/+page.svelte`:
+
 ```svelte
 <script lang="ts">
 	let { data } = $props();
@@ -3231,6 +3775,7 @@ export function load() {
 		['Œuvres sans description', data.worksMissingDescription]
 	] as const;
 </script>
+
 <h1 class="font-heading text-2xl">Gaps</h1>
 <div class="mt-4 space-y-6">
 	{#each groups as [label, ids] (label)}
@@ -3239,8 +3784,15 @@ export function load() {
 			<ul class="mt-1 flex max-h-40 flex-wrap gap-1 overflow-y-auto">
 				{#each ids.slice(0, 200) as id (id)}
 					<li>
-						<a href={label.startsWith('Quotes') ? `/admin/citations#${id}` : label.startsWith('Auteurs') ? `/admin/auteurs#${id}` : `/admin/oeuvres#${id}`}
-							class="rounded border border-border bg-panel px-2 py-0.5 text-xs hover:border-accent">#{id}</a>
+						<a
+							href={label.startsWith('Quotes')
+								? `/admin/citations#${id}`
+								: label.startsWith('Auteurs')
+									? `/admin/auteurs#${id}`
+									: `/admin/oeuvres#${id}`}
+							class="rounded border border-border bg-panel px-2 py-0.5 text-xs hover:border-accent"
+							>#{id}</a
+						>
 					</li>
 				{/each}
 				{#if ids.length > 200}<li class="text-xs text-muted">… +{ids.length - 200}</li>{/if}
@@ -3279,11 +3831,13 @@ Edit the script: change the displayed title to "Pères de l'Église" and the sub
 ```bash
 node scripts/generate-og-image.mjs
 ```
+
 Expected: `static/og-image.png` created.
 
 - [ ] **Step 3: Reference in MetaTags**
 
 In `src/lib/components/ui/MetaTags.svelte`, add:
+
 ```svelte
 <meta property="og:image" content="/og-image.png" />
 ```
@@ -3305,6 +3859,7 @@ git commit -m "feat: generate OG image and reference in MetaTags"
 npm run format
 npm run lint
 ```
+
 Expected: clean.
 
 - [ ] **Step 2: Type check**
@@ -3312,6 +3867,7 @@ Expected: clean.
 ```bash
 npm run check
 ```
+
 Expected: 0 errors.
 
 - [ ] **Step 3: Full test suite**
@@ -3319,6 +3875,7 @@ Expected: 0 errors.
 ```bash
 npm test
 ```
+
 Expected: all unit tests + all e2e tests pass.
 
 - [ ] **Step 4: Production build**
@@ -3327,6 +3884,7 @@ Expected: all unit tests + all e2e tests pass.
 npm run build
 npm run preview
 ```
+
 Open the preview URL, click around, verify the site is functional.
 
 - [ ] **Step 5: Commit any formatting fixes**

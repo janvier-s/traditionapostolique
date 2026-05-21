@@ -1,1984 +1,1762 @@
 [
-  {
-    "id": 1,
-    "slug": "epitaphe-d-abercius-1",
-    "title": "Épitaphe d’Abercius",
-    "alternativeTitles": [
-      "Inscriptions chrétiennes no. [Épitaphe d’Abercius]"
-    ],
-    "authorId": 1
-  },
-  {
-    "id": 2,
-    "slug": "actes-de-paul-et-thecla-2",
-    "title": "Actes de Paul et Thecla",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 3,
-    "slug": "actes-de-xanthippe-et-polyxena-3",
-    "title": "Actes de Xanthippe et Polyxena",
-    "alternativeTitles": [
-      "Vie de Xanthippe Polyxena et Rebecca"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 4,
-    "slug": "code-africain-4",
-    "title": "Code africain",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 7,
-    "slug": "abraham-7",
-    "title": "Abraham",
-    "alternativeTitles": [],
-    "authorId": 2,
-    "link": "https://la.wikisource.org/wiki/De_Abraham_(Ambrosius)"
-  },
-  {
-    "id": 8,
-    "slug": "commentaire-sur-luc-8",
-    "title": "Commentaire sur Luc",
-    "alternativeTitles": [
-      "Commentaire sur l’Évangile de Luc"
-    ],
-    "authorId": 2,
-    "link": "https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/1"
-  },
-  {
-    "id": 9,
-    "slug": "commentaires-sur-les-psaumes-9",
-    "title": "Commentaires sur les Psaumes",
-    "alternativeTitles": [
-      "Commentaires sur douze Psaumes de David"
-    ],
-    "authorId": 2
-  },
-  {
-    "id": 10,
-    "slug": "foi-10",
-    "title": "Foi",
-    "alternativeTitles": [
-      "De Fide Exposition de la foi chrétienne Sur la foi Sur la foi chrétienne"
-    ],
-    "authorId": 2
-  },
-  {
-    "id": 11,
-    "slug": "lettres-11",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 2
-  },
-  {
-    "id": 12,
-    "slug": "les-mysteres-12",
-    "title": "Les Mystères",
-    "alternativeTitles": [
-      "Sur les Mystères"
-    ],
-    "authorId": 2
-  },
-  {
-    "id": 13,
-    "slug": "sur-la-mort-de-satyrus-13",
-    "title": "Sur la mort de Satyrus",
-    "alternativeTitles": [
-      "Sur la mort de son frère Satyrus Croyance en la résurrection La mort de son frère Satyrus"
-    ],
-    "authorId": 2
-  },
-  {
-    "id": 14,
-    "slug": "l-esprit-saint-14",
-    "title": "L’Esprit Saint",
-    "alternativeTitles": [
-      "De Spiritu Sancto Sur l’Esprit Saint"
-    ],
-    "authorId": 2,
-    "link": "https://la.wikisource.org/wiki/De_spiritu_sancto"
-  },
-  {
-    "id": 15,
-    "slug": "penitence-15",
-    "title": "Pénitence",
-    "alternativeTitles": [
-      "Sur la repentance Concernant la repentance"
-    ],
-    "authorId": 2
-  },
-  {
-    "id": 16,
-    "slug": "les-six-jours-de-la-creation-16",
-    "title": "Les six jours de la création",
-    "alternativeTitles": [
-      "Hexaemeron Hexaméron Les six jours"
-    ],
-    "authorId": 2
-  },
-  {
-    "id": 17,
-    "slug": "sympathie-a-la-mort-de-valentinien-17",
-    "title": "Sympathie à la mort de Valentinien",
-    "alternativeTitles": [],
-    "authorId": 2
-  },
-  {
-    "id": 18,
-    "slug": "vierges-18",
-    "title": "Vierges",
-    "alternativeTitles": [
-      "Concernant les vierges Concernant la virginité"
-    ],
-    "authorId": 2,
-    "link": "https://la.wikisource.org/wiki/De_virginibus/"
-  },
-  {
-    "id": 19,
-    "slug": "vie-de-st-antoine-19",
-    "title": "Vie de St. Antoine",
-    "alternativeTitles": [
-      "Cité dans la Vie de St. Antoine [vers 360 ap. J.-C.]"
-    ],
-    "authorId": 8
-  },
-  {
-    "id": 21,
-    "slug": "apocalypse-de-pierre-21",
-    "title": "Apocalypse de Pierre",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 22,
-    "slug": "constitutions-apostoliques-22",
-    "title": "Constitutions apostoliques",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 23,
-    "slug": "apologie-23",
-    "title": "Apologie",
-    "alternativeTitles": [
-      "L’Apologie L’Apologie d’Aristide"
-    ],
-    "authorId": 6
-  },
-  {
-    "id": 24,
-    "slug": "contre-les-paiens-24",
-    "title": "Contre les païens",
-    "alternativeTitles": [],
-    "authorId": 7
-  },
-  {
-    "id": 25,
-    "slug": "ascension-d-isaie-25",
-    "title": "Ascension d’Isaïe",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 26,
-    "slug": "credo-athanasien-26",
-    "title": "Credo athanasien",
-    "alternativeTitles": [
-      "Quicumque"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 27,
-    "slug": "sur-les-conciles-27",
-    "title": "Sur les conciles",
-    "alternativeTitles": [
-      "De Synodis Sur les synodes d’Ariminum et Séleucie Lettre concernant les conciles de Rimini et Séleucie"
-    ],
-    "authorId": 8
-  },
-  {
-    "id": 28,
-    "slug": "lettres-festales-28",
-    "title": "Lettres festales",
-    "alternativeTitles": [],
-    "authorId": 8
-  },
-  {
-    "id": 29,
-    "slug": "quatre-discours-contre-les-ariens-29",
-    "title": "Quatre discours contre les Ariens",
-    "alternativeTitles": [
-      "Discours contre les Ariens"
-    ],
-    "authorId": 8
-  },
-  {
-    "id": 30,
-    "slug": "quatre-lettres-a-serapion-de-thmuis-30",
-    "title": "Quatre lettres à Sérapion de Thmuis",
-    "alternativeTitles": [
-      "Lettres à Sérapion"
-    ],
-    "authorId": 8
-  },
-  {
-    "id": 31,
-    "slug": "incarnation-du-verbe-31",
-    "title": "Incarnation du Verbe",
-    "alternativeTitles": [
-      "L’Incarnation du Verbe de Dieu"
-    ],
-    "authorId": 8
-  },
-  {
-    "id": 34,
-    "slug": "mariages-adulteres-34",
-    "title": "Mariages adultères",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 35,
-    "slug": "contre-la-lettre-de-mani-appelee-la-fondation-35",
-    "title": "Contre la lettre de Mani appelée « La Fondation »",
-    "alternativeTitles": [
-      "Contre l’Épître fondamentale de Mani Contre l’Épître de Mani appelée « Fondamentale »"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 36,
-    "slug": "contre-deux-lettres-des-pelagiens-36",
-    "title": "Contre deux lettres des Pélagiens",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 37,
-    "slug": "reponse-aux-lettres-de-petillien-le-donatiste-37",
-    "title": "Réponse aux lettres de Pétillien le Donatiste",
-    "alternativeTitles": [
-      "Contre les lettres de Pétillien"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 38,
-    "slug": "soin-a-prendre-pour-les-morts-38",
-    "title": "Soin à prendre pour les morts",
-    "alternativeTitles": [
-      "Sur le soin des morts Le soin à prendre pour les morts"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 39,
-    "slug": "doctrine-chretienne-39",
-    "title": "Doctrine chrétienne",
-    "alternativeTitles": [
-      "Sur la doctrine chrétienne Sur l’instruction chrétienne Traité sur la doctrine chrétienne"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 40,
-    "slug": "cite-de-dieu-40",
-    "title": "Cité de Dieu",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 41,
-    "slug": "confessions-41",
-    "title": "Confessions",
-    "alternativeTitles": [
-      "Les Confessions"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 42,
-    "slug": "explications-des-psaumes-42",
-    "title": "Explications des Psaumes",
-    "alternativeTitles": [
-      "Ennarations des Psaumes"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 43,
-    "slug": "foi-et-le-credo-43",
-    "title": "Foi et le Credo",
-    "alternativeTitles": [
-      "Sur la foi et le Credo"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 44,
-    "slug": "le-don-de-la-perseverance-44",
-    "title": "Le don de la persévérance",
-    "alternativeTitles": [
-      "Sur la prédestination des saints et sur le don de la persévérance"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 45,
-    "slug": "bien-du-mariage-45",
-    "title": "Bien du mariage",
-    "alternativeTitles": [
-      "Sur le bien du mariage"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 46,
-    "slug": "manuel-sur-la-foi-l-esperance-et-la-charite-46",
-    "title": "Manuel sur la foi l’espérance et la charité",
-    "alternativeTitles": [
-      "L’Enchiridion L’Enchiridion sur la foi l’espérance et l’amour"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 47,
-    "slug": "sainte-virginite-47",
-    "title": "Sainte virginité",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 48,
-    "slug": "lettres-48",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 49,
-    "slug": "interpretation-litterale-de-la-genese-49",
-    "title": "Interprétation littérale de la Genèse",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 50,
-    "slug": "mariage-et-concupiscence-50",
-    "title": "Mariage et concupiscence",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 51,
-    "slug": "merites-et-remission-des-peches-et-bapteme-des-enfants-51",
-    "title": "Mérites et rémission des péchés et baptême des enfants",
-    "alternativeTitles": [
-      "Pardon et juste mérite du péché et baptême des enfants Sur le mérite et la rémission des péchés et le baptême des enfants [412 ap. J.-C.]"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 52,
-    "slug": "m-urs-des-manicheens-52",
-    "title": "Mœurs des Manichéens",
-    "alternativeTitles": [
-      "Mœurs des Manichéens"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 53,
-    "slug": "nature-et-grace-53",
-    "title": "Nature et grâce",
-    "alternativeTitles": [
-      "Sur la nature et la grâce"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 54,
-    "slug": "sur-le-bapteme-contre-les-donatistes-54",
-    "title": "Sur le baptême contre les Donatistes",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 55,
-    "slug": "reprimande-et-grace-55",
-    "title": "Réprimande et grâce",
-    "alternativeTitles": [
-      "Admonition et grâce"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 56,
-    "slug": "reponse-a-faustus-le-manicheen-56",
-    "title": "Réponse à Faustus le Manichéen",
-    "alternativeTitles": [
-      "Contre Faustum Contre Faustus"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 57,
-    "slug": "sermon-aux-catechumenes-sur-le-credo-57",
-    "title": "Sermon aux catéchumènes sur le Credo",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 58,
-    "slug": "sermons-58",
-    "title": "Sermons",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 59,
-    "slug": "l-esprit-et-la-lettre-59",
-    "title": "L’Esprit et la Lettre",
-    "alternativeTitles": [
-      "Sur l’Esprit et la Lettre"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 60,
-    "slug": "traites-sur-jean-60",
-    "title": "Traités sur Jean",
-    "alternativeTitles": [
-      "Homélies sur Jean Conférences sur Jean Traités sur l’Évangile de Jean [406–420 ap. J.-C.]"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 61,
-    "slug": "sur-la-trinite-61",
-    "title": "Sur la Trinité",
-    "alternativeTitles": [
-      "Sur la Sainte Trinité"
-    ],
-    "authorId": 10
-  },
-  {
-    "id": 62,
-    "slug": "la-vraie-religion-62",
-    "title": "La vraie religion",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 63,
-    "slug": "questions-diverses-a-simplicien-63",
-    "title": "Questions diverses à Simplicien",
-    "alternativeTitles": [],
-    "authorId": 10
-  },
-  {
-    "id": 64,
-    "slug": "eloges-des-martyrs-et-sermons-sur-des-sujets-moraux-et-pratiques-64",
-    "title": "Éloges des martyrs et sermons sur des sujets moraux et pratiques",
-    "alternativeTitles": [],
-    "authorId": 12
-  },
-  {
-    "id": 65,
-    "slug": "l-esprit-saint-65",
-    "title": "L’Esprit Saint",
-    "alternativeTitles": [
-      "De Spiritu Sancto Sur l’Esprit Saint"
-    ],
-    "authorId": 12
-  },
-  {
-    "id": 66,
-    "slug": "lettres-66",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 12
-  },
-  {
-    "id": 67,
-    "slug": "regles-brievement-traitees-67",
-    "title": "Règles brièvement traitées",
-    "alternativeTitles": [],
-    "authorId": 12
-  },
-  {
-    "id": 68,
-    "slug": "les-six-jours-de-la-creation-68",
-    "title": "Les six jours de la création",
-    "alternativeTitles": [
-      "Neuf homélies sur l’Hexaemeron Les six jours Le travail des six jours"
-    ],
-    "authorId": 12
-  },
-  {
-    "id": 69,
-    "slug": "sermons-69",
-    "title": "Sermons",
-    "alternativeTitles": [],
-    "authorId": 68
-  },
-  {
-    "id": 70,
-    "slug": "disputation-avec-proclus-70",
-    "title": "Disputation avec Proclus",
-    "alternativeTitles": [
-      "Dialogue contre Proclus Disputation contre Proclus"
-    ],
-    "authorId": 13
-  },
-  {
-    "id": 71,
-    "slug": "lettres-71",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 1002
-  },
-  {
-    "id": 73,
-    "slug": "homelies-clementines-73",
-    "title": "Homélies clémentines",
-    "alternativeTitles": [
-      "Homélies de Clément Partie des Clémentines Pseudo-Clémentines"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 74,
-    "slug": "reconnaissances-clementines-74",
-    "title": "Reconnaissances clémentines",
-    "alternativeTitles": [
-      "Reconnaissances de Clément Partie des Clémentines Pseudo-Clémentines"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 75,
-    "slug": "exhortation-aux-paiens-75",
-    "title": "Exhortation aux païens",
-    "alternativeTitles": [
-      "Exhortation aux Grecs Protreptikos"
-    ],
-    "authorId": 14
-  },
-  {
-    "id": 76,
-    "slug": "instructeur-des-enfants-76",
-    "title": "Instructeur des enfants",
-    "alternativeTitles": [
-      "L’Instructeur Paidagogos [vers 198 ap. J.-C.]"
-    ],
-    "authorId": 14
-  },
-  {
-    "id": 77,
-    "slug": "stromates-77",
-    "title": "Stromates",
-    "alternativeTitles": [
-      "Stromateis Stromata"
-    ],
-    "authorId": 14
-  },
-  {
-    "id": 78,
-    "slug": "esquisses-78",
-    "title": "Esquisses",
-    "alternativeTitles": [
-      "Hypotyposeis"
-    ],
-    "authorId": 14
-  },
-  {
-    "id": 79,
-    "slug": "qui-est-l-homme-riche-qui-sera-sauve-79",
-    "title": "Qui est l’homme riche qui sera sauvé ?",
-    "alternativeTitles": [],
-    "authorId": 14
-  },
-  {
-    "id": 80,
-    "slug": "fragment-sur-la-providence-80",
-    "title": "Fragment sur la Providence",
-    "alternativeTitles": [],
-    "authorId": 14
-  },
-  {
-    "id": 98,
-    "slug": "conferences-catechetiques-98",
-    "title": "Conférences catéchétiques",
-    "alternativeTitles": [],
-    "authorId": 17
-  },
-  {
-    "id": 99,
-    "slug": "exhortation-au-martyre-99",
-    "title": "Exhortation au martyre",
-    "alternativeTitles": [
-      "Exhortation au martyre à Fortunatus À Fortunatus [Traité 11]"
-    ],
-    "authorId": 17
-  },
-  {
-    "id": 100,
-    "slug": "les-dechus-100",
-    "title": "Les déchus",
-    "alternativeTitles": [
-      "[Traité 8]"
-    ],
-    "authorId": 17
-  },
-  {
-    "id": 101,
-    "slug": "lettres-101",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 17
-  },
-  {
-    "id": 102,
-    "slug": "temoignages-concernant-les-juifs-102",
-    "title": "Témoignages concernant les Juifs",
-    "alternativeTitles": [
-      "Témoignages contre les Juifs [Traité 12]"
-    ],
-    "authorId": 17
-  },
-  {
-    "id": 103,
-    "slug": "a-demetrien-103",
-    "title": "À Démétrien",
-    "alternativeTitles": [
-      "Adresse à Démétrien [Traité 5]"
-    ],
-    "authorId": 17
-  },
-  {
-    "id": 104,
-    "slug": "a-donatus-104",
-    "title": "À Donatus",
-    "alternativeTitles": [],
-    "authorId": 17
-  },
-  {
-    "id": 105,
-    "slug": "unite-de-l-eglise-catholique-105",
-    "title": "Unité de l’Église catholique",
-    "alternativeTitles": [
-      "Première édition [Traité 4]"
-    ],
-    "authorId": 17
-  },
-  {
-    "id": 106,
-    "slug": "uvres-et-aumones-106",
-    "title": "Œuvres et aumônes",
-    "alternativeTitles": [
-      "Sur les œuvres et l’aumône [Traité 9]"
-    ],
-    "authorId": 17
-  },
-  {
-    "id": 107,
-    "slug": "dialogues-sur-la-trinite-107",
-    "title": "Dialogues sur la Trinité",
-    "alternativeTitles": [],
-    "authorId": 18
-  },
-  {
-    "id": 108,
-    "slug": "lettre-aux-moines-d-egypte-108",
-    "title": "Lettre aux moines d’Égypte",
-    "alternativeTitles": [],
-    "authorId": 18
-  },
-  {
-    "id": 109,
-    "slug": "tresor-de-la-sainte-trinite-109",
-    "title": "Trésor de la Sainte Trinité",
-    "alternativeTitles": [
-      "Thèse 1–35"
-    ],
-    "authorId": 18
-  },
-  {
-    "id": 110,
-    "slug": "conferences-catechetiques-110",
-    "title": "Conférences catéchétiques",
-    "alternativeTitles": [],
-    "authorId": 19
-  },
-  {
-    "id": 112,
-    "slug": "didache-112",
-    "title": "Didachè",
-    "alternativeTitles": [
-      "Enseignement des douze apôtres"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 113,
-    "slug": "l-esprit-saint-113",
-    "title": "L’Esprit Saint",
-    "alternativeTitles": [
-      "De Spiritu Sancto Sur l’Esprit Saint [vers 380 ap. J.-C.]"
-    ],
-    "authorId": 22
-  },
-  {
-    "id": 114,
-    "slug": "contre-les-sabelliens-114",
-    "title": "Contre les Sabelliens",
-    "alternativeTitles": [
-      "Lettre à Denis d’Alexandrie"
-    ],
-    "authorId": 1005
-  },
-  {
-    "id": 115,
-    "slug": "lettre-a-pape-soter-115",
-    "title": "Lettre à Pape Soter",
-    "alternativeTitles": [],
-    "authorId": 1005
-  },
-  {
-    "id": 123,
-    "slug": "homelies-123",
-    "title": "Homélies",
-    "alternativeTitles": [],
-    "authorId": 24
-  },
-  {
-    "id": 124,
-    "slug": "hymnes-de-nisibe-124",
-    "title": "Hymnes de Nisibe",
-    "alternativeTitles": [],
-    "authorId": 24
-  },
-  {
-    "id": 125,
-    "slug": "homme-bien-ancre-125",
-    "title": "Homme bien ancré",
-    "alternativeTitles": [
-      "Anchoratus L’Homme bien ancré"
-    ],
-    "authorId": 25
-  },
-  {
-    "id": 126,
-    "slug": "panacee-contre-toutes-les-heresies-126",
-    "title": "Panacée contre toutes les hérésies",
-    "alternativeTitles": [
-      "Panarion Remède contre les hérésies Remède contre toutes les hérésies"
-    ],
-    "authorId": 25
-  },
-  {
-    "id": 127,
-    "slug": "histoire-de-l-eglise-127",
-    "title": "Histoire de l’Église",
-    "alternativeTitles": [
-      "Histoire ecclésiastique"
-    ],
-    "authorId": 26
-  },
-  {
-    "id": 128,
-    "slug": "lettre-sur-le-concile-de-nicee-128",
-    "title": "Lettre sur le concile de Nicée",
-    "alternativeTitles": [
-      "Lettre aux habitants de son diocèse"
-    ],
-    "authorId": 26
-  },
-  {
-    "id": 129,
-    "slug": "vie-de-constantin-129",
-    "title": "Vie de Constantin",
-    "alternativeTitles": [],
-    "authorId": 26
-  },
-  {
-    "id": 130,
-    "slug": "preuve-de-l-evangile-130",
-    "title": "Preuve de l’Évangile",
-    "alternativeTitles": [],
-    "authorId": 26
-  },
-  {
-    "id": 131,
-    "slug": "lettre-dogmatique-sur-la-tres-sainte-trinite-131",
-    "title": "Lettre dogmatique sur la Très Sainte Trinité",
-    "alternativeTitles": [],
-    "authorId": 1006
-  },
-  {
-    "id": 137,
-    "slug": "lettre-a-amphilochius-137",
-    "title": "Lettre à Amphilochius",
-    "alternativeTitles": [],
-    "authorId": 28
-  },
-  {
-    "id": 138,
-    "slug": "lettre-a-cledonius-le-pretre-138",
-    "title": "Lettre à Clédonius le prêtre",
-    "alternativeTitles": [],
-    "authorId": 28
-  },
-  {
-    "id": 139,
-    "slug": "orations-139",
-    "title": "Orations",
-    "alternativeTitles": [],
-    "authorId": 28
-  },
-  {
-    "id": 140,
-    "slug": "contre-eunomius-140",
-    "title": "Contre Eunomius",
-    "alternativeTitles": [],
-    "authorId": 29
-  },
-  {
-    "id": 141,
-    "slug": "le-bapteme-du-christ-141",
-    "title": "Le baptême du Christ",
-    "alternativeTitles": [
-      "Sermon pour le jour des lumières"
-    ],
-    "authorId": 29
-  },
-  {
-    "id": 142,
-    "slug": "fabrication-de-l-homme-142",
-    "title": "Fabrication de l’homme",
-    "alternativeTitles": [
-      "Sur la fabrication de l’homme"
-    ],
-    "authorId": 29
-  },
-  {
-    "id": 143,
-    "slug": "sermon-sur-les-morts-143",
-    "title": "Sermon sur les morts",
-    "alternativeTitles": [],
-    "authorId": 29
-  },
-  {
-    "id": 144,
-    "slug": "declaration-de-foi-144",
-    "title": "Déclaration de foi",
-    "alternativeTitles": [],
-    "authorId": 31
-  },
-  {
-    "id": 145,
-    "slug": "quatre-homelies-145",
-    "title": "Quatre homélies",
-    "alternativeTitles": [],
-    "authorId": 31
-  },
-  {
-    "id": 146,
-    "slug": "confession-sectionnelle-de-foi-146",
-    "title": "Confession sectionnelle de foi",
-    "alternativeTitles": [],
-    "authorId": 31
-  },
-  {
-    "id": 147,
-    "slug": "huit-livres-des-miracles-147",
-    "title": "Huit livres des miracles",
-    "alternativeTitles": [],
-    "authorId": 28
-  },
-  {
-    "id": 149,
-    "slug": "le-pasteur-149",
-    "title": "Le Pasteur",
-    "alternativeTitles": [
-      "Le Berger Le Berger d’Hermas Visions Commandements Similitudes"
-    ],
-    "authorId": 32
-  },
-  {
-    "id": 150,
-    "slug": "commentaires-sur-les-psaumes-150",
-    "title": "Commentaires sur les Psaumes",
-    "alternativeTitles": [
-      "Homélies sur les Psaumes"
-    ],
-    "authorId": 33
-  },
-  {
-    "id": 151,
-    "slug": "sur-la-trinite-151",
-    "title": "Sur la Trinité",
-    "alternativeTitles": [],
-    "authorId": 33
-  },
-  {
-    "id": 152,
-    "slug": "contre-platon-sur-la-cause-de-l-univers-152",
-    "title": "Contre Platon sur la cause de l’univers",
-    "alternativeTitles": [
-      "Contre les Grecs Adversus Graecos"
-    ],
-    "authorId": 34
-  },
-  {
-    "id": 153,
-    "slug": "l-antechrist-153",
-    "title": "L’Antéchrist",
-    "alternativeTitles": [
-      "Sur le Christ et l’Antéchrist De Antichristo"
-    ],
-    "authorId": 34
-  },
-  {
-    "id": 154,
-    "slug": "tradition-apostolique-154",
-    "title": "Tradition apostolique",
-    "alternativeTitles": [],
-    "authorId": 34
-  },
-  {
-    "id": 155,
-    "slug": "discours-sur-la-sainte-theophanie-155",
-    "title": "Discours sur la sainte Théophanie",
-    "alternativeTitles": [],
-    "authorId": 34
-  },
-  {
-    "id": 156,
-    "slug": "homelies-156",
-    "title": "Homélies",
-    "alternativeTitles": [],
-    "authorId": 34
-  },
-  {
-    "id": 157,
-    "slug": "refutation-de-toutes-les-heresies-157",
-    "title": "Réfutation de toutes les hérésies",
-    "alternativeTitles": [
-      "Philosophoumena"
-    ],
-    "authorId": 34
-  },
-  {
-    "id": 158,
-    "slug": "fragment-de-commentaire-sur-daniel-158",
-    "title": "Fragment de Commentaire sur Daniel",
-    "alternativeTitles": [],
-    "authorId": 34
-  },
-  {
-    "id": 159,
-    "slug": "fragment-de-sur-la-genese-159",
-    "title": "Fragment de Sur la Genèse",
-    "alternativeTitles": [],
-    "authorId": 34
-  },
-  {
-    "id": 160,
-    "slug": "fragment-de-sur-les-proverbes-160",
-    "title": "Fragment de Sur les Proverbes",
-    "alternativeTitles": [],
-    "authorId": 34
-  },
-  {
-    "id": 161,
-    "slug": "fragment-des-six-jours-de-la-creation-161",
-    "title": "Fragment des Six Jours de la Création",
-    "alternativeTitles": [
-      "Sur l’Hexaemeron Sur le travail des six jours"
-    ],
-    "authorId": 34
-  },
-  {
-    "id": 162,
-    "slug": "lettre-aux-ephesiens-162",
-    "title": "Lettre aux Éphésiens",
-    "alternativeTitles": [
-      "Salutation"
-    ],
-    "authorId": 35
-  },
-  {
-    "id": 163,
-    "slug": "lettre-aux-ephesiens-version-longue-163",
-    "title": "Lettre aux Éphésiens version longue",
-    "alternativeTitles": [],
-    "authorId": 35
-  },
-  {
-    "id": 164,
-    "slug": "lettre-aux-magnesiens-164",
-    "title": "Lettre aux Magnésiens",
-    "alternativeTitles": [],
-    "authorId": 35
-  },
-  {
-    "id": 165,
-    "slug": "lettre-aux-philadelphiens-165",
-    "title": "Lettre aux Philadelphiens",
-    "alternativeTitles": [],
-    "authorId": 35
-  },
-  {
-    "id": 166,
-    "slug": "lettre-a-st-polycarpe-de-smyrne-166",
-    "title": "Lettre à St. Polycarpe de Smyrne",
-    "alternativeTitles": [],
-    "authorId": 35
-  },
-  {
-    "id": 167,
-    "slug": "lettre-aux-romains-167",
-    "title": "Lettre aux Romains",
-    "alternativeTitles": [
-      "Salutation"
-    ],
-    "authorId": 35
-  },
-  {
-    "id": 168,
-    "slug": "lettre-aux-smyrneens-168",
-    "title": "Lettre aux Smyrnéens",
-    "alternativeTitles": [
-      "[vers 110 ap. J.-C.]"
-    ],
-    "authorId": 35
-  },
-  {
-    "id": 169,
-    "slug": "lettre-aux-tralliens-169",
-    "title": "Lettre aux Tralliens",
-    "alternativeTitles": [],
-    "authorId": 35
-  },
-  {
-    "id": 172,
-    "slug": "contre-les-heresies-172",
-    "title": "Contre les hérésies",
-    "alternativeTitles": [
-      "Détection et renversement de la fausse gnose Adversus Haereses"
-    ],
-    "authorId": 36
-  },
-  {
-    "id": 173,
-    "slug": "fragments-des-ecrits-perdus-d-irenee-173",
-    "title": "Fragments des écrits perdus d’Irénée",
-    "alternativeTitles": [],
-    "authorId": 36
-  },
-  {
-    "id": 174,
-    "slug": "contre-jovinien-174",
-    "title": "Contre Jovinien",
-    "alternativeTitles": [
-      "Contre Jovinian"
-    ],
-    "authorId": 40
-  },
-  {
-    "id": 175,
-    "slug": "contre-vigilance-175",
-    "title": "Contre Vigilance",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 176,
-    "slug": "apologie-contre-rufin-176",
-    "title": "Apologie contre Rufin",
-    "alternativeTitles": [
-      "Apologie pour lui-même contre les livres de Rufin"
-    ],
-    "authorId": 40
-  },
-  {
-    "id": 177,
-    "slug": "commentaires-sur-esaie-177",
-    "title": "Commentaires sur Ésaïe",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 178,
-    "slug": "commentaires-sur-matthieu-178",
-    "title": "Commentaires sur Matthieu",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 179,
-    "slug": "commentaires-sur-tite-179",
-    "title": "Commentaires sur Tite",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 180,
-    "slug": "commentaire-sur-l-ecclesiaste-180",
-    "title": "Commentaire sur l’Ecclésiaste",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 181,
-    "slug": "dialogue-contre-les-luciferiens-181",
-    "title": "Dialogue contre les Luciferiens",
-    "alternativeTitles": [
-      "Contre les Luciferiens"
-    ],
-    "authorId": 40
-  },
-  {
-    "id": 182,
-    "slug": "lettres-182",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 183,
-    "slug": "vie-de-st-hilarion-183",
-    "title": "Vie de St. Hilarion",
-    "alternativeTitles": [],
-    "authorId": 40
-  },
-  {
-    "id": 184,
-    "slug": "hommes-illustres-184",
-    "title": "Hommes illustres",
-    "alternativeTitles": [
-      "Vies des hommes illustres De Viris Illustribus"
-    ],
-    "authorId": 40
-  },
-  {
-    "id": 185,
-    "slug": "virginite-perpetuelle-de-la-bienheureuse-marie-185",
-    "title": "Virginité perpétuelle de la Bienheureuse Marie",
-    "alternativeTitles": [
-      "Contre Helvidius"
-    ],
-    "authorId": 40
-  },
-  {
-    "id": 186,
-    "slug": "l-incarnation-186",
-    "title": "L’Incarnation",
-    "alternativeTitles": [
-      "Sur l’Incarnation du Christ le Seigneur Contre Nestorius"
-    ],
-    "authorId": 37
-  },
-  {
-    "id": 187,
-    "slug": "catecheses-baptismales-187",
-    "title": "Catéchèses baptismales",
-    "alternativeTitles": [
-      "Cité dans St. Augustin Contre Julien"
-    ],
-    "authorId": 38
-  },
-  {
-    "id": 188,
-    "slug": "commentaire-sur-galates-188",
-    "title": "Commentaire sur Galates",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 189,
-    "slug": "homelies-sur-la-premiere-epitre-aux-corinthiens-189",
-    "title": "Homélies sur la Première Épître aux Corinthiens",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 190,
-    "slug": "homelies-sur-hebreux-190",
-    "title": "Homélies sur Hébreux",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 191,
-    "slug": "homelies-sur-jean-191",
-    "title": "Homélies sur Jean",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 192,
-    "slug": "homelies-sur-matthieu-192",
-    "title": "Homélies sur Matthieu",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 193,
-    "slug": "homelies-sur-philippiens-193",
-    "title": "Homélies sur Philippiens",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 194,
-    "slug": "homelies-sur-romains-194",
-    "title": "Homélies sur Romains",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 195,
-    "slug": "homelies-sur-la-deuxieme-epitre-aux-corinthiens-195",
-    "title": "Homélies sur la Deuxième Épître aux Corinthiens",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 196,
-    "slug": "homelies-sur-la-deuxieme-epitre-aux-thessaloniciens-196",
-    "title": "Homélies sur la Deuxième Épître aux Thessaloniciens",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 197,
-    "slug": "homelies-sur-les-statues-197",
-    "title": "Homélies sur les statues",
-    "alternativeTitles": [
-      "Homélies sur l’incident des statues"
-    ],
-    "authorId": 38
-  },
-  {
-    "id": 198,
-    "slug": "homelies-sur-tite-198",
-    "title": "Homélies sur Tite",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 199,
-    "slug": "sacerdoce-199",
-    "title": "Sacerdoce",
-    "alternativeTitles": [],
-    "authorId": 38
-  },
-  {
-    "id": 200,
-    "slug": "dialogue-contre-les-manicheens-200",
-    "title": "Dialogue contre les Manichéens",
-    "alternativeTitles": [],
-    "authorId": 57
-  },
-  {
-    "id": 201,
-    "slug": "exposition-de-la-foi-orthodoxe-201",
-    "title": "Exposition de la foi orthodoxe",
-    "alternativeTitles": [
-      "Exposition exacte de la foi orthodoxe Source de la connaissance Fontaine de la connaissance Fontaine de la sagesse"
-    ],
-    "authorId": 57
-  },
-  {
-    "id": 203,
-    "slug": "dialogue-avec-tryphon-203",
-    "title": "Dialogue avec Tryphon",
-    "alternativeTitles": [
-      "Dialogue avec Tryphon le Juif"
-    ],
-    "authorId": 43
-  },
-  {
-    "id": 204,
-    "slug": "premiere-apologie-204",
-    "title": "Première apologie",
-    "alternativeTitles": [],
-    "authorId": 43
-  },
-  {
-    "id": 205,
-    "slug": "resurrection-205",
-    "title": "Résurrection",
-    "alternativeTitles": [],
-    "authorId": 43
-  },
-  {
-    "id": 206,
-    "slug": "fragment-dans-contre-les-heresies-de-st-irenee-206",
-    "title": "Fragment dans Contre les hérésies de St. Irénée",
-    "alternativeTitles": [],
-    "authorId": 43
-  },
-  {
-    "id": 207,
-    "slug": "morts-des-persecuteurs-207",
-    "title": "Morts des persécuteurs",
-    "alternativeTitles": [],
-    "authorId": 44
-  },
-  {
-    "id": 208,
-    "slug": "instituts-divins-208",
-    "title": "Instituts divins",
-    "alternativeTitles": [],
-    "authorId": 44
-  },
-  {
-    "id": 209,
-    "slug": "epitome-des-instituts-divins-209",
-    "title": "Épitomé des Instituts divins",
-    "alternativeTitles": [],
-    "authorId": 44
-  },
-  {
-    "id": 214,
-    "slug": "lettre-de-barnabas-214",
-    "title": "Lettre de Barnabas",
-    "alternativeTitles": [
-      "Barnabas Épître de Barnabas Pseudo-Barnabas"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 215,
-    "slug": "lettre-de-clement-a-jacques-215",
-    "title": "Lettre de Clément à Jacques",
-    "alternativeTitles": [
-      "Incluse au début des Homélies clémentines"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 216,
-    "slug": "martyre-de-perpetue-et-felicite-216",
-    "title": "Martyre de Perpétue et Félicité",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 217,
-    "slug": "martyre-de-polycarpe-217",
-    "title": "Martyre de Polycarpe",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 218,
-    "slug": "fragment-dans-le-guide-d-anastase-du-sinai-218",
-    "title": "Fragment dans Le Guide d’Anastase du Sinaï",
-    "alternativeTitles": [],
-    "authorId": 47
-  },
-  {
-    "id": 219,
-    "slug": "discours-sur-la-resurrection-219",
-    "title": "Discours sur la résurrection",
-    "alternativeTitles": [],
-    "authorId": 48
-  },
-  {
-    "id": 220,
-    "slug": "oraison-sur-les-psaumes-220",
-    "title": "Oraison sur les Psaumes",
-    "alternativeTitles": [],
-    "authorId": 48
-  },
-  {
-    "id": 221,
-    "slug": "oraison-sur-simeon-et-anne-221",
-    "title": "Oraison sur Siméon et Anne",
-    "alternativeTitles": [],
-    "authorId": 48
-  },
-  {
-    "id": 222,
-    "slug": "octavius-222",
-    "title": "Octavius",
-    "alternativeTitles": [],
-    "authorId": 49
-  },
-  {
-    "id": 223,
-    "slug": "fragment-muratorien-223",
-    "title": "Fragment muratorien",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 224,
-    "slug": "nourritures-juives-224",
-    "title": "Nourritures juives",
-    "alternativeTitles": [
-      "Nourritures juives"
-    ],
-    "authorId": 50
-  },
-  {
-    "id": 225,
-    "slug": "sur-la-trinite-225",
-    "title": "Sur la Trinité",
-    "alternativeTitles": [
-      "Traité concernant la Trinité Traité sur la Trinité"
-    ],
-    "authorId": 50
-  },
-  {
-    "id": 226,
-    "slug": "odes-de-salomon-226",
-    "title": "Odes de Salomon",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 227,
-    "slug": "sur-la-fin-du-monde-227",
-    "title": "Sur la fin du monde",
-    "alternativeTitles": [
-      "Discours sur la fin du monde Pseudo-Hippolyte"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 228,
-    "slug": "schisme-des-donatistes-228",
-    "title": "Schisme des Donatistes",
-    "alternativeTitles": [],
-    "authorId": 51
-  },
-  {
-    "id": 229,
-    "slug": "contre-celse-229",
-    "title": "Contre Celse",
-    "alternativeTitles": [
-      "Contra Celsus"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 230,
-    "slug": "commentaire-sur-hebreux-230",
-    "title": "Commentaire sur Hébreux",
-    "alternativeTitles": [
-      "Commentaires sur Hébreux"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 231,
-    "slug": "commentaire-sur-jean-231",
-    "title": "Commentaire sur Jean",
-    "alternativeTitles": [
-      "Commentaires sur Jean Commentaire sur l’Évangile de Jean"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 232,
-    "slug": "commentaire-sur-matthieu-232",
-    "title": "Commentaire sur Matthieu",
-    "alternativeTitles": [
-      "Commentaires sur Matthieu Commentaire sur l’Évangile de Matthieu"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 233,
-    "slug": "commentaire-sur-romains-233",
-    "title": "Commentaire sur Romains",
-    "alternativeTitles": [
-      "Commentaires sur Romains"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 234,
-    "slug": "exhortation-au-martyre-234",
-    "title": "Exhortation au martyre",
-    "alternativeTitles": [
-      "Sur le martyre Exhortation aux martyrs"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 235,
-    "slug": "doctrines-fondamentales-235",
-    "title": "Doctrines fondamentales",
-    "alternativeTitles": [
-      "De Principiis Fondamentaux Premiers principes Débuts Enseignements de base"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 236,
-    "slug": "homelies-sur-l-exode-236",
-    "title": "Homélies sur l’Exode",
-    "alternativeTitles": [
-      "[vers 249 ap. J.-C.]"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 237,
-    "slug": "homelies-sur-la-genese-237",
-    "title": "Homélies sur la Genèse",
-    "alternativeTitles": [],
-    "authorId": 52
-  },
-  {
-    "id": 238,
-    "slug": "homelies-sur-josue-238",
-    "title": "Homélies sur Josué",
-    "alternativeTitles": [],
-    "authorId": 52
-  },
-  {
-    "id": 239,
-    "slug": "homelies-sur-levitique-239",
-    "title": "Homélies sur Lévitique",
-    "alternativeTitles": [
-      "[vers 249 ap. J.-C.]"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 240,
-    "slug": "homelies-sur-luc-240",
-    "title": "Homélies sur Luc",
-    "alternativeTitles": [],
-    "authorId": 52
-  },
-  {
-    "id": 241,
-    "slug": "homelies-sur-nombres-241",
-    "title": "Homélies sur Nombres",
-    "alternativeTitles": [
-      "[vers 249 ap. J.-C.]"
-    ],
-    "authorId": 52
-  },
-  {
-    "id": 244,
-    "slug": "fragment-dans-histoire-de-l-eglise-d-eusebe-244",
-    "title": "Fragment dans Histoire de l’Église d’Eusèbe",
-    "alternativeTitles": [],
-    "authorId": 54
-  },
-  {
-    "id": 250,
-    "slug": "penitence-250",
-    "title": "Pénitence",
-    "alternativeTitles": [
-      "Lettre canonique"
-    ],
-    "authorId": 59
-  },
-  {
-    "id": 251,
-    "slug": "actes-de-pierre-d-alexandrie-251",
-    "title": "Actes de Pierre d’Alexandrie",
-    "alternativeTitles": [
-      "Les véritables actes de Pierre d’Alexandrie"
-    ],
-    "authorId": 59
-  },
-  {
-    "id": 253,
-    "slug": "poeme-contre-les-marcionites-253",
-    "title": "Poème contre les Marcionites",
-    "alternativeTitles": [
-      "Pseudo-Tertullien"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 254,
-    "slug": "lettre-aux-philippiens-254",
-    "title": "Lettre aux Philippiens",
-    "alternativeTitles": [],
-    "authorId": 55
-  },
-  {
-    "id": 255,
-    "slug": "martyre-de-polycarpe-255",
-    "title": "Martyre de Polycarpe",
-    "alternativeTitles": [],
-    "authorId": 55
-  },
-  {
-    "id": 258,
-    "slug": "protoevangile-de-jacques-258",
-    "title": "Protoévangile de Jacques",
-    "alternativeTitles": [
-      "Évangile de Jacques Livre de Jacques Évangile de l’enfance de Jacques"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 263,
-    "slug": "papyrus-rylands-263",
-    "title": "Papyrus Rylands",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 268,
-    "slug": "adresse-aux-grecs-268",
-    "title": "Adresse aux Grecs",
-    "alternativeTitles": [],
-    "authorId": 61
-  },
-  {
-    "id": 269,
-    "slug": "diatessaron-269",
-    "title": "Diatessaron",
-    "alternativeTitles": [],
-    "authorId": 61
-  },
-  {
-    "id": 270,
-    "slug": "contre-hermogene-270",
-    "title": "Contre Hermogène",
-    "alternativeTitles": [
-      "Adversus Hermogenem"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 271,
-    "slug": "contre-marcion-271",
-    "title": "Contre Marcion",
-    "alternativeTitles": [
-      "Adversus Marcionem [vers 207 ap. J.-C.]"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 272,
-    "slug": "contre-praxeas-272",
-    "title": "Contre Praxéas",
-    "alternativeTitles": [
-      "Adversus Praxeum"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 273,
-    "slug": "reponse-aux-juifs-273",
-    "title": "Réponse aux Juifs",
-    "alternativeTitles": [
-      "Contre les Juifs Adversus Iudaeos"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 274,
-    "slug": "antidote-contre-le-venin-du-scorpion-274",
-    "title": "Antidote contre le venin du scorpion",
-    "alternativeTitles": [
-      "Antidote contre le scorpion Scorpiace Adversus Gnosticos Scorpiace"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 275,
-    "slug": "apologie-275",
-    "title": "Apologie",
-    "alternativeTitles": [
-      "Apologie pour les chrétiens Apologeticum Apologeticus pro Christianis"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 276,
-    "slug": "bapteme-276",
-    "title": "Baptême",
-    "alternativeTitles": [
-      "Sur le baptême De Baptismo"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 277,
-    "slug": "chapelet-277",
-    "title": "Chapelet",
-    "alternativeTitles": [
-      "Sur la couronne De Corona"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 278,
-    "slug": "la-chair-du-christ-278",
-    "title": "La chair du Christ",
-    "alternativeTitles": [
-      "Sur la chair du Christ De Carne Christi"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 279,
-    "slug": "idolatrie-279",
-    "title": "Idolâtrie",
-    "alternativeTitles": [
-      "Sur l’idolâtrie De Idolatria"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 280,
-    "slug": "modestie-280",
-    "title": "Modestie",
-    "alternativeTitles": [
-      "Sur la modestie De Pudicitia"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 281,
-    "slug": "monogamie-281",
-    "title": "Monogamie",
-    "alternativeTitles": [
-      "Sur la monogamie De Monogamia"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 282,
-    "slug": "prescription-contre-les-heretiques-282",
-    "title": "Prescription contre les hérétiques",
-    "alternativeTitles": [
-      "Opposition contre les hérétiques De prescriptione haereticorum"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 283,
-    "slug": "repentance-283",
-    "title": "Repentance",
-    "alternativeTitles": [
-      "Sur la repentance De Paenitentia"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 284,
-    "slug": "resurrection-de-la-chair-284",
-    "title": "Résurrection de la chair",
-    "alternativeTitles": [
-      "Sur la résurrection de la chair De Carnis Resurrectione Sur la résurrection des morts De Resurrectione Mortuorum"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 285,
-    "slug": "aux-nations-285",
-    "title": "Aux nations",
-    "alternativeTitles": [
-      "Ad Nationes"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 286,
-    "slug": "traite-sur-l-ame-286",
-    "title": "Traité sur l’âme",
-    "alternativeTitles": [
-      "Sur l’âme De Anima"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 287,
-    "slug": "voile-des-vierges-287",
-    "title": "Voile des vierges",
-    "alternativeTitles": [
-      "Sur le voile des vierges De Virginibus Velandis"
-    ],
-    "authorId": 62
-  },
-  {
-    "id": 290,
-    "slug": "lettres-290",
-    "title": "Lettres",
-    "alternativeTitles": [],
-    "authorId": 63
-  },
-  {
-    "id": 291,
-    "slug": "a-autolycus-291",
-    "title": "À Autolycus",
-    "alternativeTitles": [],
-    "authorId": 64
-  },
-  {
-    "id": 293,
-    "slug": "a-diognete-293",
-    "title": "À Diognète",
-    "alternativeTitles": [
-      "Lettre à Diognète Épître de Mathètes à Diognète"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 294,
-    "slug": "traite-sur-le-rebapteme-294",
-    "title": "Traité sur le rebaptême",
-    "alternativeTitles": [
-      "Sur le rebaptême"
-    ],
-    "authorId": 67
-  },
-  {
-    "id": 295,
-    "slug": "creation-du-monde-295",
-    "title": "Création du monde",
-    "alternativeTitles": [],
-    "authorId": 65
-  },
-  {
-    "id": 296,
-    "slug": "cahiers-296",
-    "title": "Cahiers",
-    "alternativeTitles": [
-      "Commonitoria Commonitory"
-    ],
-    "authorId": 66
-  },
-  {
-    "id": 10001,
-    "slug": "fragment-des-hypotyposes-10001",
-    "title": "Fragment des Hypotyposes",
-    "alternativeTitles": [],
-    "authorId": 14
-  },
-  {
-    "id": 10002,
-    "slug": "council-of-ankara-10002",
-    "title": "Council of Ankara",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10003,
-    "slug": "council-of-carthage-of-256-10003",
-    "title": "Council of Carthage of 256",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10004,
-    "slug": "council-of-carthage-of-397-10004",
-    "title": "Council of Carthage of 397",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10005,
-    "slug": "council-of-carthage-of-401-10005",
-    "title": "Council of Carthage of 401",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10006,
-    "slug": "council-of-carthage-of-419-10006",
-    "title": "Council of Carthage of 419",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10007,
-    "slug": "council-of-chalcedon-10007",
-    "title": "Council of Chalcedon",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10008,
-    "slug": "council-of-constantinople-i-10008",
-    "title": "Council of Constantinople I",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10009,
-    "slug": "nicene-creed-10009",
-    "title": "Nicene Creed",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10010,
-    "slug": "council-of-constantinople-ii-10010",
-    "title": "Council of Constantinople II",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10011,
-    "slug": "council-of-elvira-10011",
-    "title": "Council of Elvira",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10012,
-    "slug": "council-of-ephesus-10012",
-    "title": "Council of Ephesus",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10013,
-    "slug": "council-of-hippo-10013",
-    "title": "Council of Hippo",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10014,
-    "slug": "council-of-laodicea-10014",
-    "title": "Council of Laodicea",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10015,
-    "slug": "council-of-nicaea-i-10015",
-    "title": "Council of Nicaea I",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10016,
-    "slug": "council-of-rome-10016",
-    "title": "Council of Rome",
-    "alternativeTitles": [],
-    "authorId": 67
-  },
-  {
-    "id": 10017,
-    "slug": "council-of-sardica-10017",
-    "title": "Council of Sardica",
-    "alternativeTitles": [],
-    "authorId": 67
-  }
+	{
+		"id": 1,
+		"slug": "epitaphe-d-abercius-1",
+		"title": "Épitaphe d’Abercius",
+		"alternativeTitles": ["Inscriptions chrétiennes no. [Épitaphe d’Abercius]"],
+		"authorId": 1
+	},
+	{
+		"id": 2,
+		"slug": "actes-de-paul-et-thecla-2",
+		"title": "Actes de Paul et Thecla",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 3,
+		"slug": "actes-de-xanthippe-et-polyxena-3",
+		"title": "Actes de Xanthippe et Polyxena",
+		"alternativeTitles": ["Vie de Xanthippe Polyxena et Rebecca"],
+		"authorId": 67
+	},
+	{
+		"id": 4,
+		"slug": "code-africain-4",
+		"title": "Code africain",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 7,
+		"slug": "abraham-7",
+		"title": "Abraham",
+		"alternativeTitles": [],
+		"authorId": 2,
+		"link": "https://la.wikisource.org/wiki/De_Abraham_(Ambrosius)"
+	},
+	{
+		"id": 8,
+		"slug": "commentaire-sur-luc-8",
+		"title": "Commentaire sur Luc",
+		"alternativeTitles": ["Commentaire sur l’Évangile de Luc"],
+		"authorId": 2,
+		"link": "https://la.wikisource.org/wiki/Expositio_Evangelii_secundum_Lucam_(Ambrosius)/1"
+	},
+	{
+		"id": 9,
+		"slug": "commentaires-sur-les-psaumes-9",
+		"title": "Commentaires sur les Psaumes",
+		"alternativeTitles": ["Commentaires sur douze Psaumes de David"],
+		"authorId": 2
+	},
+	{
+		"id": 10,
+		"slug": "foi-10",
+		"title": "Foi",
+		"alternativeTitles": [
+			"De Fide Exposition de la foi chrétienne Sur la foi Sur la foi chrétienne"
+		],
+		"authorId": 2
+	},
+	{
+		"id": 11,
+		"slug": "lettres-11",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 2
+	},
+	{
+		"id": 12,
+		"slug": "les-mysteres-12",
+		"title": "Les Mystères",
+		"alternativeTitles": ["Sur les Mystères"],
+		"authorId": 2
+	},
+	{
+		"id": 13,
+		"slug": "sur-la-mort-de-satyrus-13",
+		"title": "Sur la mort de Satyrus",
+		"alternativeTitles": [
+			"Sur la mort de son frère Satyrus Croyance en la résurrection La mort de son frère Satyrus"
+		],
+		"authorId": 2
+	},
+	{
+		"id": 14,
+		"slug": "l-esprit-saint-14",
+		"title": "L’Esprit Saint",
+		"alternativeTitles": ["De Spiritu Sancto Sur l’Esprit Saint"],
+		"authorId": 2,
+		"link": "https://la.wikisource.org/wiki/De_spiritu_sancto"
+	},
+	{
+		"id": 15,
+		"slug": "penitence-15",
+		"title": "Pénitence",
+		"alternativeTitles": ["Sur la repentance Concernant la repentance"],
+		"authorId": 2
+	},
+	{
+		"id": 16,
+		"slug": "les-six-jours-de-la-creation-16",
+		"title": "Les six jours de la création",
+		"alternativeTitles": ["Hexaemeron Hexaméron Les six jours"],
+		"authorId": 2
+	},
+	{
+		"id": 17,
+		"slug": "sympathie-a-la-mort-de-valentinien-17",
+		"title": "Sympathie à la mort de Valentinien",
+		"alternativeTitles": [],
+		"authorId": 2
+	},
+	{
+		"id": 18,
+		"slug": "vierges-18",
+		"title": "Vierges",
+		"alternativeTitles": ["Concernant les vierges Concernant la virginité"],
+		"authorId": 2,
+		"link": "https://la.wikisource.org/wiki/De_virginibus/"
+	},
+	{
+		"id": 19,
+		"slug": "vie-de-st-antoine-19",
+		"title": "Vie de St. Antoine",
+		"alternativeTitles": ["Cité dans la Vie de St. Antoine [vers 360 ap. J.-C.]"],
+		"authorId": 8
+	},
+	{
+		"id": 21,
+		"slug": "apocalypse-de-pierre-21",
+		"title": "Apocalypse de Pierre",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 22,
+		"slug": "constitutions-apostoliques-22",
+		"title": "Constitutions apostoliques",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 23,
+		"slug": "apologie-23",
+		"title": "Apologie",
+		"alternativeTitles": ["L’Apologie L’Apologie d’Aristide"],
+		"authorId": 6
+	},
+	{
+		"id": 24,
+		"slug": "contre-les-paiens-24",
+		"title": "Contre les païens",
+		"alternativeTitles": [],
+		"authorId": 7
+	},
+	{
+		"id": 25,
+		"slug": "ascension-d-isaie-25",
+		"title": "Ascension d’Isaïe",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 26,
+		"slug": "credo-athanasien-26",
+		"title": "Credo athanasien",
+		"alternativeTitles": ["Quicumque"],
+		"authorId": 67
+	},
+	{
+		"id": 27,
+		"slug": "sur-les-conciles-27",
+		"title": "Sur les conciles",
+		"alternativeTitles": [
+			"De Synodis Sur les synodes d’Ariminum et Séleucie Lettre concernant les conciles de Rimini et Séleucie"
+		],
+		"authorId": 8
+	},
+	{
+		"id": 28,
+		"slug": "lettres-festales-28",
+		"title": "Lettres festales",
+		"alternativeTitles": [],
+		"authorId": 8
+	},
+	{
+		"id": 29,
+		"slug": "quatre-discours-contre-les-ariens-29",
+		"title": "Quatre discours contre les Ariens",
+		"alternativeTitles": ["Discours contre les Ariens"],
+		"authorId": 8
+	},
+	{
+		"id": 30,
+		"slug": "quatre-lettres-a-serapion-de-thmuis-30",
+		"title": "Quatre lettres à Sérapion de Thmuis",
+		"alternativeTitles": ["Lettres à Sérapion"],
+		"authorId": 8
+	},
+	{
+		"id": 31,
+		"slug": "incarnation-du-verbe-31",
+		"title": "Incarnation du Verbe",
+		"alternativeTitles": ["L’Incarnation du Verbe de Dieu"],
+		"authorId": 8
+	},
+	{
+		"id": 34,
+		"slug": "mariages-adulteres-34",
+		"title": "Mariages adultères",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 35,
+		"slug": "contre-la-lettre-de-mani-appelee-la-fondation-35",
+		"title": "Contre la lettre de Mani appelée « La Fondation »",
+		"alternativeTitles": [
+			"Contre l’Épître fondamentale de Mani Contre l’Épître de Mani appelée « Fondamentale »"
+		],
+		"authorId": 10
+	},
+	{
+		"id": 36,
+		"slug": "contre-deux-lettres-des-pelagiens-36",
+		"title": "Contre deux lettres des Pélagiens",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 37,
+		"slug": "reponse-aux-lettres-de-petillien-le-donatiste-37",
+		"title": "Réponse aux lettres de Pétillien le Donatiste",
+		"alternativeTitles": ["Contre les lettres de Pétillien"],
+		"authorId": 10
+	},
+	{
+		"id": 38,
+		"slug": "soin-a-prendre-pour-les-morts-38",
+		"title": "Soin à prendre pour les morts",
+		"alternativeTitles": ["Sur le soin des morts Le soin à prendre pour les morts"],
+		"authorId": 10
+	},
+	{
+		"id": 39,
+		"slug": "doctrine-chretienne-39",
+		"title": "Doctrine chrétienne",
+		"alternativeTitles": [
+			"Sur la doctrine chrétienne Sur l’instruction chrétienne Traité sur la doctrine chrétienne"
+		],
+		"authorId": 10
+	},
+	{
+		"id": 40,
+		"slug": "cite-de-dieu-40",
+		"title": "Cité de Dieu",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 41,
+		"slug": "confessions-41",
+		"title": "Confessions",
+		"alternativeTitles": ["Les Confessions"],
+		"authorId": 10
+	},
+	{
+		"id": 42,
+		"slug": "explications-des-psaumes-42",
+		"title": "Explications des Psaumes",
+		"alternativeTitles": ["Ennarations des Psaumes"],
+		"authorId": 10
+	},
+	{
+		"id": 43,
+		"slug": "foi-et-le-credo-43",
+		"title": "Foi et le Credo",
+		"alternativeTitles": ["Sur la foi et le Credo"],
+		"authorId": 10
+	},
+	{
+		"id": 44,
+		"slug": "le-don-de-la-perseverance-44",
+		"title": "Le don de la persévérance",
+		"alternativeTitles": ["Sur la prédestination des saints et sur le don de la persévérance"],
+		"authorId": 10
+	},
+	{
+		"id": 45,
+		"slug": "bien-du-mariage-45",
+		"title": "Bien du mariage",
+		"alternativeTitles": ["Sur le bien du mariage"],
+		"authorId": 10
+	},
+	{
+		"id": 46,
+		"slug": "manuel-sur-la-foi-l-esperance-et-la-charite-46",
+		"title": "Manuel sur la foi l’espérance et la charité",
+		"alternativeTitles": ["L’Enchiridion L’Enchiridion sur la foi l’espérance et l’amour"],
+		"authorId": 10
+	},
+	{
+		"id": 47,
+		"slug": "sainte-virginite-47",
+		"title": "Sainte virginité",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 48,
+		"slug": "lettres-48",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 49,
+		"slug": "interpretation-litterale-de-la-genese-49",
+		"title": "Interprétation littérale de la Genèse",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 50,
+		"slug": "mariage-et-concupiscence-50",
+		"title": "Mariage et concupiscence",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 51,
+		"slug": "merites-et-remission-des-peches-et-bapteme-des-enfants-51",
+		"title": "Mérites et rémission des péchés et baptême des enfants",
+		"alternativeTitles": [
+			"Pardon et juste mérite du péché et baptême des enfants Sur le mérite et la rémission des péchés et le baptême des enfants [412 ap. J.-C.]"
+		],
+		"authorId": 10
+	},
+	{
+		"id": 52,
+		"slug": "m-urs-des-manicheens-52",
+		"title": "Mœurs des Manichéens",
+		"alternativeTitles": ["Mœurs des Manichéens"],
+		"authorId": 10
+	},
+	{
+		"id": 53,
+		"slug": "nature-et-grace-53",
+		"title": "Nature et grâce",
+		"alternativeTitles": ["Sur la nature et la grâce"],
+		"authorId": 10
+	},
+	{
+		"id": 54,
+		"slug": "sur-le-bapteme-contre-les-donatistes-54",
+		"title": "Sur le baptême contre les Donatistes",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 55,
+		"slug": "reprimande-et-grace-55",
+		"title": "Réprimande et grâce",
+		"alternativeTitles": ["Admonition et grâce"],
+		"authorId": 10
+	},
+	{
+		"id": 56,
+		"slug": "reponse-a-faustus-le-manicheen-56",
+		"title": "Réponse à Faustus le Manichéen",
+		"alternativeTitles": ["Contre Faustum Contre Faustus"],
+		"authorId": 10
+	},
+	{
+		"id": 57,
+		"slug": "sermon-aux-catechumenes-sur-le-credo-57",
+		"title": "Sermon aux catéchumènes sur le Credo",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 58,
+		"slug": "sermons-58",
+		"title": "Sermons",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 59,
+		"slug": "l-esprit-et-la-lettre-59",
+		"title": "L’Esprit et la Lettre",
+		"alternativeTitles": ["Sur l’Esprit et la Lettre"],
+		"authorId": 10
+	},
+	{
+		"id": 60,
+		"slug": "traites-sur-jean-60",
+		"title": "Traités sur Jean",
+		"alternativeTitles": [
+			"Homélies sur Jean Conférences sur Jean Traités sur l’Évangile de Jean [406–420 ap. J.-C.]"
+		],
+		"authorId": 10
+	},
+	{
+		"id": 61,
+		"slug": "sur-la-trinite-61",
+		"title": "Sur la Trinité",
+		"alternativeTitles": ["Sur la Sainte Trinité"],
+		"authorId": 10
+	},
+	{
+		"id": 62,
+		"slug": "la-vraie-religion-62",
+		"title": "La vraie religion",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 63,
+		"slug": "questions-diverses-a-simplicien-63",
+		"title": "Questions diverses à Simplicien",
+		"alternativeTitles": [],
+		"authorId": 10
+	},
+	{
+		"id": 64,
+		"slug": "eloges-des-martyrs-et-sermons-sur-des-sujets-moraux-et-pratiques-64",
+		"title": "Éloges des martyrs et sermons sur des sujets moraux et pratiques",
+		"alternativeTitles": [],
+		"authorId": 12
+	},
+	{
+		"id": 65,
+		"slug": "l-esprit-saint-65",
+		"title": "L’Esprit Saint",
+		"alternativeTitles": ["De Spiritu Sancto Sur l’Esprit Saint"],
+		"authorId": 12
+	},
+	{
+		"id": 66,
+		"slug": "lettres-66",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 12
+	},
+	{
+		"id": 67,
+		"slug": "regles-brievement-traitees-67",
+		"title": "Règles brièvement traitées",
+		"alternativeTitles": [],
+		"authorId": 12
+	},
+	{
+		"id": 68,
+		"slug": "les-six-jours-de-la-creation-68",
+		"title": "Les six jours de la création",
+		"alternativeTitles": ["Neuf homélies sur l’Hexaemeron Les six jours Le travail des six jours"],
+		"authorId": 12
+	},
+	{
+		"id": 69,
+		"slug": "sermons-69",
+		"title": "Sermons",
+		"alternativeTitles": [],
+		"authorId": 68
+	},
+	{
+		"id": 70,
+		"slug": "disputation-avec-proclus-70",
+		"title": "Disputation avec Proclus",
+		"alternativeTitles": ["Dialogue contre Proclus Disputation contre Proclus"],
+		"authorId": 13
+	},
+	{
+		"id": 71,
+		"slug": "lettres-71",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 1002
+	},
+	{
+		"id": 73,
+		"slug": "homelies-clementines-73",
+		"title": "Homélies clémentines",
+		"alternativeTitles": ["Homélies de Clément Partie des Clémentines Pseudo-Clémentines"],
+		"authorId": 67
+	},
+	{
+		"id": 74,
+		"slug": "reconnaissances-clementines-74",
+		"title": "Reconnaissances clémentines",
+		"alternativeTitles": ["Reconnaissances de Clément Partie des Clémentines Pseudo-Clémentines"],
+		"authorId": 67
+	},
+	{
+		"id": 75,
+		"slug": "exhortation-aux-paiens-75",
+		"title": "Exhortation aux païens",
+		"alternativeTitles": ["Exhortation aux Grecs Protreptikos"],
+		"authorId": 14
+	},
+	{
+		"id": 76,
+		"slug": "instructeur-des-enfants-76",
+		"title": "Instructeur des enfants",
+		"alternativeTitles": ["L’Instructeur Paidagogos [vers 198 ap. J.-C.]"],
+		"authorId": 14
+	},
+	{
+		"id": 77,
+		"slug": "stromates-77",
+		"title": "Stromates",
+		"alternativeTitles": ["Stromateis Stromata"],
+		"authorId": 14
+	},
+	{
+		"id": 78,
+		"slug": "esquisses-78",
+		"title": "Esquisses",
+		"alternativeTitles": ["Hypotyposeis"],
+		"authorId": 14
+	},
+	{
+		"id": 79,
+		"slug": "qui-est-l-homme-riche-qui-sera-sauve-79",
+		"title": "Qui est l’homme riche qui sera sauvé ?",
+		"alternativeTitles": [],
+		"authorId": 14
+	},
+	{
+		"id": 80,
+		"slug": "fragment-sur-la-providence-80",
+		"title": "Fragment sur la Providence",
+		"alternativeTitles": [],
+		"authorId": 14
+	},
+	{
+		"id": 98,
+		"slug": "conferences-catechetiques-98",
+		"title": "Conférences catéchétiques",
+		"alternativeTitles": [],
+		"authorId": 17
+	},
+	{
+		"id": 99,
+		"slug": "exhortation-au-martyre-99",
+		"title": "Exhortation au martyre",
+		"alternativeTitles": ["Exhortation au martyre à Fortunatus À Fortunatus [Traité 11]"],
+		"authorId": 17
+	},
+	{
+		"id": 100,
+		"slug": "les-dechus-100",
+		"title": "Les déchus",
+		"alternativeTitles": ["[Traité 8]"],
+		"authorId": 17
+	},
+	{
+		"id": 101,
+		"slug": "lettres-101",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 17
+	},
+	{
+		"id": 102,
+		"slug": "temoignages-concernant-les-juifs-102",
+		"title": "Témoignages concernant les Juifs",
+		"alternativeTitles": ["Témoignages contre les Juifs [Traité 12]"],
+		"authorId": 17
+	},
+	{
+		"id": 103,
+		"slug": "a-demetrien-103",
+		"title": "À Démétrien",
+		"alternativeTitles": ["Adresse à Démétrien [Traité 5]"],
+		"authorId": 17
+	},
+	{
+		"id": 104,
+		"slug": "a-donatus-104",
+		"title": "À Donatus",
+		"alternativeTitles": [],
+		"authorId": 17
+	},
+	{
+		"id": 105,
+		"slug": "unite-de-l-eglise-catholique-105",
+		"title": "Unité de l’Église catholique",
+		"alternativeTitles": ["Première édition [Traité 4]"],
+		"authorId": 17
+	},
+	{
+		"id": 106,
+		"slug": "uvres-et-aumones-106",
+		"title": "Œuvres et aumônes",
+		"alternativeTitles": ["Sur les œuvres et l’aumône [Traité 9]"],
+		"authorId": 17
+	},
+	{
+		"id": 107,
+		"slug": "dialogues-sur-la-trinite-107",
+		"title": "Dialogues sur la Trinité",
+		"alternativeTitles": [],
+		"authorId": 18
+	},
+	{
+		"id": 108,
+		"slug": "lettre-aux-moines-d-egypte-108",
+		"title": "Lettre aux moines d’Égypte",
+		"alternativeTitles": [],
+		"authorId": 18
+	},
+	{
+		"id": 109,
+		"slug": "tresor-de-la-sainte-trinite-109",
+		"title": "Trésor de la Sainte Trinité",
+		"alternativeTitles": ["Thèse 1–35"],
+		"authorId": 18
+	},
+	{
+		"id": 110,
+		"slug": "conferences-catechetiques-110",
+		"title": "Conférences catéchétiques",
+		"alternativeTitles": [],
+		"authorId": 19
+	},
+	{
+		"id": 112,
+		"slug": "didache-112",
+		"title": "Didachè",
+		"alternativeTitles": ["Enseignement des douze apôtres"],
+		"authorId": 67
+	},
+	{
+		"id": 113,
+		"slug": "l-esprit-saint-113",
+		"title": "L’Esprit Saint",
+		"alternativeTitles": ["De Spiritu Sancto Sur l’Esprit Saint [vers 380 ap. J.-C.]"],
+		"authorId": 22
+	},
+	{
+		"id": 114,
+		"slug": "contre-les-sabelliens-114",
+		"title": "Contre les Sabelliens",
+		"alternativeTitles": ["Lettre à Denis d’Alexandrie"],
+		"authorId": 1005
+	},
+	{
+		"id": 115,
+		"slug": "lettre-a-pape-soter-115",
+		"title": "Lettre à Pape Soter",
+		"alternativeTitles": [],
+		"authorId": 1005
+	},
+	{
+		"id": 123,
+		"slug": "homelies-123",
+		"title": "Homélies",
+		"alternativeTitles": [],
+		"authorId": 24
+	},
+	{
+		"id": 124,
+		"slug": "hymnes-de-nisibe-124",
+		"title": "Hymnes de Nisibe",
+		"alternativeTitles": [],
+		"authorId": 24
+	},
+	{
+		"id": 125,
+		"slug": "homme-bien-ancre-125",
+		"title": "Homme bien ancré",
+		"alternativeTitles": ["Anchoratus L’Homme bien ancré"],
+		"authorId": 25
+	},
+	{
+		"id": 126,
+		"slug": "panacee-contre-toutes-les-heresies-126",
+		"title": "Panacée contre toutes les hérésies",
+		"alternativeTitles": ["Panarion Remède contre les hérésies Remède contre toutes les hérésies"],
+		"authorId": 25
+	},
+	{
+		"id": 127,
+		"slug": "histoire-de-l-eglise-127",
+		"title": "Histoire de l’Église",
+		"alternativeTitles": ["Histoire ecclésiastique"],
+		"authorId": 26
+	},
+	{
+		"id": 128,
+		"slug": "lettre-sur-le-concile-de-nicee-128",
+		"title": "Lettre sur le concile de Nicée",
+		"alternativeTitles": ["Lettre aux habitants de son diocèse"],
+		"authorId": 26
+	},
+	{
+		"id": 129,
+		"slug": "vie-de-constantin-129",
+		"title": "Vie de Constantin",
+		"alternativeTitles": [],
+		"authorId": 26
+	},
+	{
+		"id": 130,
+		"slug": "preuve-de-l-evangile-130",
+		"title": "Preuve de l’Évangile",
+		"alternativeTitles": [],
+		"authorId": 26
+	},
+	{
+		"id": 131,
+		"slug": "lettre-dogmatique-sur-la-tres-sainte-trinite-131",
+		"title": "Lettre dogmatique sur la Très Sainte Trinité",
+		"alternativeTitles": [],
+		"authorId": 1006
+	},
+	{
+		"id": 137,
+		"slug": "lettre-a-amphilochius-137",
+		"title": "Lettre à Amphilochius",
+		"alternativeTitles": [],
+		"authorId": 28
+	},
+	{
+		"id": 138,
+		"slug": "lettre-a-cledonius-le-pretre-138",
+		"title": "Lettre à Clédonius le prêtre",
+		"alternativeTitles": [],
+		"authorId": 28
+	},
+	{
+		"id": 139,
+		"slug": "orations-139",
+		"title": "Orations",
+		"alternativeTitles": [],
+		"authorId": 28
+	},
+	{
+		"id": 140,
+		"slug": "contre-eunomius-140",
+		"title": "Contre Eunomius",
+		"alternativeTitles": [],
+		"authorId": 29
+	},
+	{
+		"id": 141,
+		"slug": "le-bapteme-du-christ-141",
+		"title": "Le baptême du Christ",
+		"alternativeTitles": ["Sermon pour le jour des lumières"],
+		"authorId": 29
+	},
+	{
+		"id": 142,
+		"slug": "fabrication-de-l-homme-142",
+		"title": "Fabrication de l’homme",
+		"alternativeTitles": ["Sur la fabrication de l’homme"],
+		"authorId": 29
+	},
+	{
+		"id": 143,
+		"slug": "sermon-sur-les-morts-143",
+		"title": "Sermon sur les morts",
+		"alternativeTitles": [],
+		"authorId": 29
+	},
+	{
+		"id": 144,
+		"slug": "declaration-de-foi-144",
+		"title": "Déclaration de foi",
+		"alternativeTitles": [],
+		"authorId": 31
+	},
+	{
+		"id": 145,
+		"slug": "quatre-homelies-145",
+		"title": "Quatre homélies",
+		"alternativeTitles": [],
+		"authorId": 31
+	},
+	{
+		"id": 146,
+		"slug": "confession-sectionnelle-de-foi-146",
+		"title": "Confession sectionnelle de foi",
+		"alternativeTitles": [],
+		"authorId": 31
+	},
+	{
+		"id": 147,
+		"slug": "huit-livres-des-miracles-147",
+		"title": "Huit livres des miracles",
+		"alternativeTitles": [],
+		"authorId": 28
+	},
+	{
+		"id": 149,
+		"slug": "le-pasteur-149",
+		"title": "Le Pasteur",
+		"alternativeTitles": ["Le Berger Le Berger d’Hermas Visions Commandements Similitudes"],
+		"authorId": 32
+	},
+	{
+		"id": 150,
+		"slug": "commentaires-sur-les-psaumes-150",
+		"title": "Commentaires sur les Psaumes",
+		"alternativeTitles": ["Homélies sur les Psaumes"],
+		"authorId": 33
+	},
+	{
+		"id": 151,
+		"slug": "sur-la-trinite-151",
+		"title": "Sur la Trinité",
+		"alternativeTitles": [],
+		"authorId": 33
+	},
+	{
+		"id": 152,
+		"slug": "contre-platon-sur-la-cause-de-l-univers-152",
+		"title": "Contre Platon sur la cause de l’univers",
+		"alternativeTitles": ["Contre les Grecs Adversus Graecos"],
+		"authorId": 34
+	},
+	{
+		"id": 153,
+		"slug": "l-antechrist-153",
+		"title": "L’Antéchrist",
+		"alternativeTitles": ["Sur le Christ et l’Antéchrist De Antichristo"],
+		"authorId": 34
+	},
+	{
+		"id": 154,
+		"slug": "tradition-apostolique-154",
+		"title": "Tradition apostolique",
+		"alternativeTitles": [],
+		"authorId": 34
+	},
+	{
+		"id": 155,
+		"slug": "discours-sur-la-sainte-theophanie-155",
+		"title": "Discours sur la sainte Théophanie",
+		"alternativeTitles": [],
+		"authorId": 34
+	},
+	{
+		"id": 156,
+		"slug": "homelies-156",
+		"title": "Homélies",
+		"alternativeTitles": [],
+		"authorId": 34
+	},
+	{
+		"id": 157,
+		"slug": "refutation-de-toutes-les-heresies-157",
+		"title": "Réfutation de toutes les hérésies",
+		"alternativeTitles": ["Philosophoumena"],
+		"authorId": 34
+	},
+	{
+		"id": 158,
+		"slug": "fragment-de-commentaire-sur-daniel-158",
+		"title": "Fragment de Commentaire sur Daniel",
+		"alternativeTitles": [],
+		"authorId": 34
+	},
+	{
+		"id": 159,
+		"slug": "fragment-de-sur-la-genese-159",
+		"title": "Fragment de Sur la Genèse",
+		"alternativeTitles": [],
+		"authorId": 34
+	},
+	{
+		"id": 160,
+		"slug": "fragment-de-sur-les-proverbes-160",
+		"title": "Fragment de Sur les Proverbes",
+		"alternativeTitles": [],
+		"authorId": 34
+	},
+	{
+		"id": 161,
+		"slug": "fragment-des-six-jours-de-la-creation-161",
+		"title": "Fragment des Six Jours de la Création",
+		"alternativeTitles": ["Sur l’Hexaemeron Sur le travail des six jours"],
+		"authorId": 34
+	},
+	{
+		"id": 162,
+		"slug": "lettre-aux-ephesiens-162",
+		"title": "Lettre aux Éphésiens",
+		"alternativeTitles": ["Salutation"],
+		"authorId": 35
+	},
+	{
+		"id": 163,
+		"slug": "lettre-aux-ephesiens-version-longue-163",
+		"title": "Lettre aux Éphésiens version longue",
+		"alternativeTitles": [],
+		"authorId": 35
+	},
+	{
+		"id": 164,
+		"slug": "lettre-aux-magnesiens-164",
+		"title": "Lettre aux Magnésiens",
+		"alternativeTitles": [],
+		"authorId": 35
+	},
+	{
+		"id": 165,
+		"slug": "lettre-aux-philadelphiens-165",
+		"title": "Lettre aux Philadelphiens",
+		"alternativeTitles": [],
+		"authorId": 35
+	},
+	{
+		"id": 166,
+		"slug": "lettre-a-st-polycarpe-de-smyrne-166",
+		"title": "Lettre à St. Polycarpe de Smyrne",
+		"alternativeTitles": [],
+		"authorId": 35
+	},
+	{
+		"id": 167,
+		"slug": "lettre-aux-romains-167",
+		"title": "Lettre aux Romains",
+		"alternativeTitles": ["Salutation"],
+		"authorId": 35
+	},
+	{
+		"id": 168,
+		"slug": "lettre-aux-smyrneens-168",
+		"title": "Lettre aux Smyrnéens",
+		"alternativeTitles": ["[vers 110 ap. J.-C.]"],
+		"authorId": 35
+	},
+	{
+		"id": 169,
+		"slug": "lettre-aux-tralliens-169",
+		"title": "Lettre aux Tralliens",
+		"alternativeTitles": [],
+		"authorId": 35
+	},
+	{
+		"id": 172,
+		"slug": "contre-les-heresies-172",
+		"title": "Contre les hérésies",
+		"alternativeTitles": ["Détection et renversement de la fausse gnose Adversus Haereses"],
+		"authorId": 36
+	},
+	{
+		"id": 173,
+		"slug": "fragments-des-ecrits-perdus-d-irenee-173",
+		"title": "Fragments des écrits perdus d’Irénée",
+		"alternativeTitles": [],
+		"authorId": 36
+	},
+	{
+		"id": 174,
+		"slug": "contre-jovinien-174",
+		"title": "Contre Jovinien",
+		"alternativeTitles": ["Contre Jovinian"],
+		"authorId": 40
+	},
+	{
+		"id": 175,
+		"slug": "contre-vigilance-175",
+		"title": "Contre Vigilance",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 176,
+		"slug": "apologie-contre-rufin-176",
+		"title": "Apologie contre Rufin",
+		"alternativeTitles": ["Apologie pour lui-même contre les livres de Rufin"],
+		"authorId": 40
+	},
+	{
+		"id": 177,
+		"slug": "commentaires-sur-esaie-177",
+		"title": "Commentaires sur Ésaïe",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 178,
+		"slug": "commentaires-sur-matthieu-178",
+		"title": "Commentaires sur Matthieu",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 179,
+		"slug": "commentaires-sur-tite-179",
+		"title": "Commentaires sur Tite",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 180,
+		"slug": "commentaire-sur-l-ecclesiaste-180",
+		"title": "Commentaire sur l’Ecclésiaste",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 181,
+		"slug": "dialogue-contre-les-luciferiens-181",
+		"title": "Dialogue contre les Luciferiens",
+		"alternativeTitles": ["Contre les Luciferiens"],
+		"authorId": 40
+	},
+	{
+		"id": 182,
+		"slug": "lettres-182",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 183,
+		"slug": "vie-de-st-hilarion-183",
+		"title": "Vie de St. Hilarion",
+		"alternativeTitles": [],
+		"authorId": 40
+	},
+	{
+		"id": 184,
+		"slug": "hommes-illustres-184",
+		"title": "Hommes illustres",
+		"alternativeTitles": ["Vies des hommes illustres De Viris Illustribus"],
+		"authorId": 40
+	},
+	{
+		"id": 185,
+		"slug": "virginite-perpetuelle-de-la-bienheureuse-marie-185",
+		"title": "Virginité perpétuelle de la Bienheureuse Marie",
+		"alternativeTitles": ["Contre Helvidius"],
+		"authorId": 40
+	},
+	{
+		"id": 186,
+		"slug": "l-incarnation-186",
+		"title": "L’Incarnation",
+		"alternativeTitles": ["Sur l’Incarnation du Christ le Seigneur Contre Nestorius"],
+		"authorId": 37
+	},
+	{
+		"id": 187,
+		"slug": "catecheses-baptismales-187",
+		"title": "Catéchèses baptismales",
+		"alternativeTitles": ["Cité dans St. Augustin Contre Julien"],
+		"authorId": 38
+	},
+	{
+		"id": 188,
+		"slug": "commentaire-sur-galates-188",
+		"title": "Commentaire sur Galates",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 189,
+		"slug": "homelies-sur-la-premiere-epitre-aux-corinthiens-189",
+		"title": "Homélies sur la Première Épître aux Corinthiens",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 190,
+		"slug": "homelies-sur-hebreux-190",
+		"title": "Homélies sur Hébreux",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 191,
+		"slug": "homelies-sur-jean-191",
+		"title": "Homélies sur Jean",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 192,
+		"slug": "homelies-sur-matthieu-192",
+		"title": "Homélies sur Matthieu",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 193,
+		"slug": "homelies-sur-philippiens-193",
+		"title": "Homélies sur Philippiens",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 194,
+		"slug": "homelies-sur-romains-194",
+		"title": "Homélies sur Romains",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 195,
+		"slug": "homelies-sur-la-deuxieme-epitre-aux-corinthiens-195",
+		"title": "Homélies sur la Deuxième Épître aux Corinthiens",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 196,
+		"slug": "homelies-sur-la-deuxieme-epitre-aux-thessaloniciens-196",
+		"title": "Homélies sur la Deuxième Épître aux Thessaloniciens",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 197,
+		"slug": "homelies-sur-les-statues-197",
+		"title": "Homélies sur les statues",
+		"alternativeTitles": ["Homélies sur l’incident des statues"],
+		"authorId": 38
+	},
+	{
+		"id": 198,
+		"slug": "homelies-sur-tite-198",
+		"title": "Homélies sur Tite",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 199,
+		"slug": "sacerdoce-199",
+		"title": "Sacerdoce",
+		"alternativeTitles": [],
+		"authorId": 38
+	},
+	{
+		"id": 200,
+		"slug": "dialogue-contre-les-manicheens-200",
+		"title": "Dialogue contre les Manichéens",
+		"alternativeTitles": [],
+		"authorId": 57
+	},
+	{
+		"id": 201,
+		"slug": "exposition-de-la-foi-orthodoxe-201",
+		"title": "Exposition de la foi orthodoxe",
+		"alternativeTitles": [
+			"Exposition exacte de la foi orthodoxe Source de la connaissance Fontaine de la connaissance Fontaine de la sagesse"
+		],
+		"authorId": 57
+	},
+	{
+		"id": 203,
+		"slug": "dialogue-avec-tryphon-203",
+		"title": "Dialogue avec Tryphon",
+		"alternativeTitles": ["Dialogue avec Tryphon le Juif"],
+		"authorId": 43
+	},
+	{
+		"id": 204,
+		"slug": "premiere-apologie-204",
+		"title": "Première apologie",
+		"alternativeTitles": [],
+		"authorId": 43
+	},
+	{
+		"id": 205,
+		"slug": "resurrection-205",
+		"title": "Résurrection",
+		"alternativeTitles": [],
+		"authorId": 43
+	},
+	{
+		"id": 206,
+		"slug": "fragment-dans-contre-les-heresies-de-st-irenee-206",
+		"title": "Fragment dans Contre les hérésies de St. Irénée",
+		"alternativeTitles": [],
+		"authorId": 43
+	},
+	{
+		"id": 207,
+		"slug": "morts-des-persecuteurs-207",
+		"title": "Morts des persécuteurs",
+		"alternativeTitles": [],
+		"authorId": 44
+	},
+	{
+		"id": 208,
+		"slug": "instituts-divins-208",
+		"title": "Instituts divins",
+		"alternativeTitles": [],
+		"authorId": 44
+	},
+	{
+		"id": 209,
+		"slug": "epitome-des-instituts-divins-209",
+		"title": "Épitomé des Instituts divins",
+		"alternativeTitles": [],
+		"authorId": 44
+	},
+	{
+		"id": 214,
+		"slug": "lettre-de-barnabas-214",
+		"title": "Lettre de Barnabas",
+		"alternativeTitles": ["Barnabas Épître de Barnabas Pseudo-Barnabas"],
+		"authorId": 67
+	},
+	{
+		"id": 215,
+		"slug": "lettre-de-clement-a-jacques-215",
+		"title": "Lettre de Clément à Jacques",
+		"alternativeTitles": ["Incluse au début des Homélies clémentines"],
+		"authorId": 67
+	},
+	{
+		"id": 216,
+		"slug": "martyre-de-perpetue-et-felicite-216",
+		"title": "Martyre de Perpétue et Félicité",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 217,
+		"slug": "martyre-de-polycarpe-217",
+		"title": "Martyre de Polycarpe",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 218,
+		"slug": "fragment-dans-le-guide-d-anastase-du-sinai-218",
+		"title": "Fragment dans Le Guide d’Anastase du Sinaï",
+		"alternativeTitles": [],
+		"authorId": 47
+	},
+	{
+		"id": 219,
+		"slug": "discours-sur-la-resurrection-219",
+		"title": "Discours sur la résurrection",
+		"alternativeTitles": [],
+		"authorId": 48
+	},
+	{
+		"id": 220,
+		"slug": "oraison-sur-les-psaumes-220",
+		"title": "Oraison sur les Psaumes",
+		"alternativeTitles": [],
+		"authorId": 48
+	},
+	{
+		"id": 221,
+		"slug": "oraison-sur-simeon-et-anne-221",
+		"title": "Oraison sur Siméon et Anne",
+		"alternativeTitles": [],
+		"authorId": 48
+	},
+	{
+		"id": 222,
+		"slug": "octavius-222",
+		"title": "Octavius",
+		"alternativeTitles": [],
+		"authorId": 49
+	},
+	{
+		"id": 223,
+		"slug": "fragment-muratorien-223",
+		"title": "Fragment muratorien",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 224,
+		"slug": "nourritures-juives-224",
+		"title": "Nourritures juives",
+		"alternativeTitles": ["Nourritures juives"],
+		"authorId": 50
+	},
+	{
+		"id": 225,
+		"slug": "sur-la-trinite-225",
+		"title": "Sur la Trinité",
+		"alternativeTitles": ["Traité concernant la Trinité Traité sur la Trinité"],
+		"authorId": 50
+	},
+	{
+		"id": 226,
+		"slug": "odes-de-salomon-226",
+		"title": "Odes de Salomon",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 227,
+		"slug": "sur-la-fin-du-monde-227",
+		"title": "Sur la fin du monde",
+		"alternativeTitles": ["Discours sur la fin du monde Pseudo-Hippolyte"],
+		"authorId": 67
+	},
+	{
+		"id": 228,
+		"slug": "schisme-des-donatistes-228",
+		"title": "Schisme des Donatistes",
+		"alternativeTitles": [],
+		"authorId": 51
+	},
+	{
+		"id": 229,
+		"slug": "contre-celse-229",
+		"title": "Contre Celse",
+		"alternativeTitles": ["Contra Celsus"],
+		"authorId": 52
+	},
+	{
+		"id": 230,
+		"slug": "commentaire-sur-hebreux-230",
+		"title": "Commentaire sur Hébreux",
+		"alternativeTitles": ["Commentaires sur Hébreux"],
+		"authorId": 52
+	},
+	{
+		"id": 231,
+		"slug": "commentaire-sur-jean-231",
+		"title": "Commentaire sur Jean",
+		"alternativeTitles": ["Commentaires sur Jean Commentaire sur l’Évangile de Jean"],
+		"authorId": 52
+	},
+	{
+		"id": 232,
+		"slug": "commentaire-sur-matthieu-232",
+		"title": "Commentaire sur Matthieu",
+		"alternativeTitles": ["Commentaires sur Matthieu Commentaire sur l’Évangile de Matthieu"],
+		"authorId": 52
+	},
+	{
+		"id": 233,
+		"slug": "commentaire-sur-romains-233",
+		"title": "Commentaire sur Romains",
+		"alternativeTitles": ["Commentaires sur Romains"],
+		"authorId": 52
+	},
+	{
+		"id": 234,
+		"slug": "exhortation-au-martyre-234",
+		"title": "Exhortation au martyre",
+		"alternativeTitles": ["Sur le martyre Exhortation aux martyrs"],
+		"authorId": 52
+	},
+	{
+		"id": 235,
+		"slug": "doctrines-fondamentales-235",
+		"title": "Doctrines fondamentales",
+		"alternativeTitles": [
+			"De Principiis Fondamentaux Premiers principes Débuts Enseignements de base"
+		],
+		"authorId": 52
+	},
+	{
+		"id": 236,
+		"slug": "homelies-sur-l-exode-236",
+		"title": "Homélies sur l’Exode",
+		"alternativeTitles": ["[vers 249 ap. J.-C.]"],
+		"authorId": 52
+	},
+	{
+		"id": 237,
+		"slug": "homelies-sur-la-genese-237",
+		"title": "Homélies sur la Genèse",
+		"alternativeTitles": [],
+		"authorId": 52
+	},
+	{
+		"id": 238,
+		"slug": "homelies-sur-josue-238",
+		"title": "Homélies sur Josué",
+		"alternativeTitles": [],
+		"authorId": 52
+	},
+	{
+		"id": 239,
+		"slug": "homelies-sur-levitique-239",
+		"title": "Homélies sur Lévitique",
+		"alternativeTitles": ["[vers 249 ap. J.-C.]"],
+		"authorId": 52
+	},
+	{
+		"id": 240,
+		"slug": "homelies-sur-luc-240",
+		"title": "Homélies sur Luc",
+		"alternativeTitles": [],
+		"authorId": 52
+	},
+	{
+		"id": 241,
+		"slug": "homelies-sur-nombres-241",
+		"title": "Homélies sur Nombres",
+		"alternativeTitles": ["[vers 249 ap. J.-C.]"],
+		"authorId": 52
+	},
+	{
+		"id": 244,
+		"slug": "fragment-dans-histoire-de-l-eglise-d-eusebe-244",
+		"title": "Fragment dans Histoire de l’Église d’Eusèbe",
+		"alternativeTitles": [],
+		"authorId": 54
+	},
+	{
+		"id": 250,
+		"slug": "penitence-250",
+		"title": "Pénitence",
+		"alternativeTitles": ["Lettre canonique"],
+		"authorId": 59
+	},
+	{
+		"id": 251,
+		"slug": "actes-de-pierre-d-alexandrie-251",
+		"title": "Actes de Pierre d’Alexandrie",
+		"alternativeTitles": ["Les véritables actes de Pierre d’Alexandrie"],
+		"authorId": 59
+	},
+	{
+		"id": 253,
+		"slug": "poeme-contre-les-marcionites-253",
+		"title": "Poème contre les Marcionites",
+		"alternativeTitles": ["Pseudo-Tertullien"],
+		"authorId": 67
+	},
+	{
+		"id": 254,
+		"slug": "lettre-aux-philippiens-254",
+		"title": "Lettre aux Philippiens",
+		"alternativeTitles": [],
+		"authorId": 55
+	},
+	{
+		"id": 255,
+		"slug": "martyre-de-polycarpe-255",
+		"title": "Martyre de Polycarpe",
+		"alternativeTitles": [],
+		"authorId": 55
+	},
+	{
+		"id": 258,
+		"slug": "protoevangile-de-jacques-258",
+		"title": "Protoévangile de Jacques",
+		"alternativeTitles": ["Évangile de Jacques Livre de Jacques Évangile de l’enfance de Jacques"],
+		"authorId": 67
+	},
+	{
+		"id": 263,
+		"slug": "papyrus-rylands-263",
+		"title": "Papyrus Rylands",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 268,
+		"slug": "adresse-aux-grecs-268",
+		"title": "Adresse aux Grecs",
+		"alternativeTitles": [],
+		"authorId": 61
+	},
+	{
+		"id": 269,
+		"slug": "diatessaron-269",
+		"title": "Diatessaron",
+		"alternativeTitles": [],
+		"authorId": 61
+	},
+	{
+		"id": 270,
+		"slug": "contre-hermogene-270",
+		"title": "Contre Hermogène",
+		"alternativeTitles": ["Adversus Hermogenem"],
+		"authorId": 62
+	},
+	{
+		"id": 271,
+		"slug": "contre-marcion-271",
+		"title": "Contre Marcion",
+		"alternativeTitles": ["Adversus Marcionem [vers 207 ap. J.-C.]"],
+		"authorId": 62
+	},
+	{
+		"id": 272,
+		"slug": "contre-praxeas-272",
+		"title": "Contre Praxéas",
+		"alternativeTitles": ["Adversus Praxeum"],
+		"authorId": 62
+	},
+	{
+		"id": 273,
+		"slug": "reponse-aux-juifs-273",
+		"title": "Réponse aux Juifs",
+		"alternativeTitles": ["Contre les Juifs Adversus Iudaeos"],
+		"authorId": 62
+	},
+	{
+		"id": 274,
+		"slug": "antidote-contre-le-venin-du-scorpion-274",
+		"title": "Antidote contre le venin du scorpion",
+		"alternativeTitles": ["Antidote contre le scorpion Scorpiace Adversus Gnosticos Scorpiace"],
+		"authorId": 62
+	},
+	{
+		"id": 275,
+		"slug": "apologie-275",
+		"title": "Apologie",
+		"alternativeTitles": ["Apologie pour les chrétiens Apologeticum Apologeticus pro Christianis"],
+		"authorId": 62
+	},
+	{
+		"id": 276,
+		"slug": "bapteme-276",
+		"title": "Baptême",
+		"alternativeTitles": ["Sur le baptême De Baptismo"],
+		"authorId": 62
+	},
+	{
+		"id": 277,
+		"slug": "chapelet-277",
+		"title": "Chapelet",
+		"alternativeTitles": ["Sur la couronne De Corona"],
+		"authorId": 62
+	},
+	{
+		"id": 278,
+		"slug": "la-chair-du-christ-278",
+		"title": "La chair du Christ",
+		"alternativeTitles": ["Sur la chair du Christ De Carne Christi"],
+		"authorId": 62
+	},
+	{
+		"id": 279,
+		"slug": "idolatrie-279",
+		"title": "Idolâtrie",
+		"alternativeTitles": ["Sur l’idolâtrie De Idolatria"],
+		"authorId": 62
+	},
+	{
+		"id": 280,
+		"slug": "modestie-280",
+		"title": "Modestie",
+		"alternativeTitles": ["Sur la modestie De Pudicitia"],
+		"authorId": 62
+	},
+	{
+		"id": 281,
+		"slug": "monogamie-281",
+		"title": "Monogamie",
+		"alternativeTitles": ["Sur la monogamie De Monogamia"],
+		"authorId": 62
+	},
+	{
+		"id": 282,
+		"slug": "prescription-contre-les-heretiques-282",
+		"title": "Prescription contre les hérétiques",
+		"alternativeTitles": ["Opposition contre les hérétiques De prescriptione haereticorum"],
+		"authorId": 62
+	},
+	{
+		"id": 283,
+		"slug": "repentance-283",
+		"title": "Repentance",
+		"alternativeTitles": ["Sur la repentance De Paenitentia"],
+		"authorId": 62
+	},
+	{
+		"id": 284,
+		"slug": "resurrection-de-la-chair-284",
+		"title": "Résurrection de la chair",
+		"alternativeTitles": [
+			"Sur la résurrection de la chair De Carnis Resurrectione Sur la résurrection des morts De Resurrectione Mortuorum"
+		],
+		"authorId": 62
+	},
+	{
+		"id": 285,
+		"slug": "aux-nations-285",
+		"title": "Aux nations",
+		"alternativeTitles": ["Ad Nationes"],
+		"authorId": 62
+	},
+	{
+		"id": 286,
+		"slug": "traite-sur-l-ame-286",
+		"title": "Traité sur l’âme",
+		"alternativeTitles": ["Sur l’âme De Anima"],
+		"authorId": 62
+	},
+	{
+		"id": 287,
+		"slug": "voile-des-vierges-287",
+		"title": "Voile des vierges",
+		"alternativeTitles": ["Sur le voile des vierges De Virginibus Velandis"],
+		"authorId": 62
+	},
+	{
+		"id": 290,
+		"slug": "lettres-290",
+		"title": "Lettres",
+		"alternativeTitles": [],
+		"authorId": 63
+	},
+	{
+		"id": 291,
+		"slug": "a-autolycus-291",
+		"title": "À Autolycus",
+		"alternativeTitles": [],
+		"authorId": 64
+	},
+	{
+		"id": 293,
+		"slug": "a-diognete-293",
+		"title": "À Diognète",
+		"alternativeTitles": ["Lettre à Diognète Épître de Mathètes à Diognète"],
+		"authorId": 67
+	},
+	{
+		"id": 294,
+		"slug": "traite-sur-le-rebapteme-294",
+		"title": "Traité sur le rebaptême",
+		"alternativeTitles": ["Sur le rebaptême"],
+		"authorId": 67
+	},
+	{
+		"id": 295,
+		"slug": "creation-du-monde-295",
+		"title": "Création du monde",
+		"alternativeTitles": [],
+		"authorId": 65
+	},
+	{
+		"id": 296,
+		"slug": "cahiers-296",
+		"title": "Cahiers",
+		"alternativeTitles": ["Commonitoria Commonitory"],
+		"authorId": 66
+	},
+	{
+		"id": 10001,
+		"slug": "fragment-des-hypotyposes-10001",
+		"title": "Fragment des Hypotyposes",
+		"alternativeTitles": [],
+		"authorId": 14
+	},
+	{
+		"id": 10002,
+		"slug": "council-of-ankara-10002",
+		"title": "Council of Ankara",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10003,
+		"slug": "council-of-carthage-of-256-10003",
+		"title": "Council of Carthage of 256",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10004,
+		"slug": "council-of-carthage-of-397-10004",
+		"title": "Council of Carthage of 397",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10005,
+		"slug": "council-of-carthage-of-401-10005",
+		"title": "Council of Carthage of 401",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10006,
+		"slug": "council-of-carthage-of-419-10006",
+		"title": "Council of Carthage of 419",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10007,
+		"slug": "council-of-chalcedon-10007",
+		"title": "Council of Chalcedon",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10008,
+		"slug": "council-of-constantinople-i-10008",
+		"title": "Council of Constantinople I",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10009,
+		"slug": "nicene-creed-10009",
+		"title": "Nicene Creed",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10010,
+		"slug": "council-of-constantinople-ii-10010",
+		"title": "Council of Constantinople II",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10011,
+		"slug": "council-of-elvira-10011",
+		"title": "Council of Elvira",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10012,
+		"slug": "council-of-ephesus-10012",
+		"title": "Council of Ephesus",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10013,
+		"slug": "council-of-hippo-10013",
+		"title": "Council of Hippo",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10014,
+		"slug": "council-of-laodicea-10014",
+		"title": "Council of Laodicea",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10015,
+		"slug": "council-of-nicaea-i-10015",
+		"title": "Council of Nicaea I",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10016,
+		"slug": "council-of-rome-10016",
+		"title": "Council of Rome",
+		"alternativeTitles": [],
+		"authorId": 67
+	},
+	{
+		"id": 10017,
+		"slug": "council-of-sardica-10017",
+		"title": "Council of Sardica",
+		"alternativeTitles": [],
+		"authorId": 67
+	}
 ]

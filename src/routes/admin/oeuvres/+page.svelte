@@ -164,10 +164,7 @@
 						class={INPUT}
 						value={selected.compositionDate ?? ''}
 						oninput={(e) =>
-							update(
-								'compositionDate',
-								(e.currentTarget as HTMLInputElement).value || undefined
-							)}
+							update('compositionDate', (e.currentTarget as HTMLInputElement).value || undefined)}
 					/>
 				</label>
 				<button

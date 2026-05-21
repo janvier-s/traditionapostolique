@@ -11,9 +11,7 @@
 	const author = $derived(authorById(quote.authorId));
 	const work = $derived(quote.workId ? workById(quote.workId) : undefined);
 	const topics = $derived(
-		quote.topicIds
-			.map((id) => topicById(id))
-			.filter((t): t is NonNullable<typeof t> => t != null)
+		quote.topicIds.map((id) => topicById(id)).filter((t): t is NonNullable<typeof t> => t != null)
 	);
 	const title = $derived(author ? deriveQuoteTitle(quote, topics) : '');
 	const citation = $derived(author ? formatCitation(quote, author, work) : '');
@@ -44,7 +42,9 @@
 				<EraBadge era={author.era} />
 			</div>
 			{#if quote.reference}
-				<span class="rounded bg-subtle/15 px-2 py-0.5 font-ui text-xs text-muted">{quote.reference}</span>
+				<span class="rounded bg-subtle/15 px-2 py-0.5 font-ui text-xs text-muted"
+					>{quote.reference}</span
+				>
 			{/if}
 		</div>
 
@@ -61,7 +61,10 @@
 				{/each}
 			</div>
 			{#if work}
-				<a href={`/oeuvres/${work.slug}`} class="font-body text-sm italic text-muted hover:text-accent-text">
+				<a
+					href={`/oeuvres/${work.slug}`}
+					class="font-body text-sm italic text-muted hover:text-accent-text"
+				>
 					{work.title}
 				</a>
 			{/if}
@@ -73,18 +76,19 @@
 					type="button"
 					onclick={() => onOpenPanel?.(quote)}
 					class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10"
-				>Plus d'infos</button>
+					>Plus d'infos</button
+				>
 			{/if}
 			<button
 				type="button"
 				onclick={copyCitation}
 				class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10"
-				aria-label="Copier la citation"
-			>{copied ? 'Copié' : 'Copier la citation'}</button>
+				aria-label="Copier la citation">{copied ? 'Copié' : 'Copier la citation'}</button
+			>
 			<a
 				href={`/citation/${quote.id}`}
-				class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10"
-			>Lien</a>
+				class="rounded border border-border px-3 py-1 font-ui text-xs hover:bg-subtle/10">Lien</a
+			>
 		</div>
 	</article>
 {/if}

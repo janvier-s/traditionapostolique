@@ -59,19 +59,31 @@
 		<div class="flex flex-wrap items-center gap-1">
 			<span class="font-ui text-xs uppercase text-muted">Ère</span>
 			{#each eraOrder as e (e)}
-				<FilterChip label={eraLabel(e)} active={filters.ere?.includes(e) ?? false} onToggle={() => toggleEra(e)} />
+				<FilterChip
+					label={eraLabel(e)}
+					active={filters.ere?.includes(e) ?? false}
+					onToggle={() => toggleEra(e)}
+				/>
 			{/each}
 		</div>
 		<div class="flex flex-wrap items-center gap-1">
 			<span class="font-ui text-xs uppercase text-muted">Région</span>
 			{#each allRegions as r (r)}
-				<FilterChip label={r} active={filters.region?.includes(r) ?? false} onToggle={() => toggleRegion(r)} />
+				<FilterChip
+					label={r}
+					active={filters.region?.includes(r) ?? false}
+					onToggle={() => toggleRegion(r)}
+				/>
 			{/each}
 		</div>
 		<div class="flex flex-wrap items-center gap-1">
 			<span class="font-ui text-xs uppercase text-muted">Langue</span>
 			{#each allLanguages as l (l)}
-				<FilterChip label={l} active={filters.langue?.includes(l) ?? false} onToggle={() => toggleLangue(l)} />
+				<FilterChip
+					label={l}
+					active={filters.langue?.includes(l) ?? false}
+					onToggle={() => toggleLangue(l)}
+				/>
 			{/each}
 		</div>
 		<div class="ml-auto"><SortSelect value={sort} onChange={(v) => (sort = v)} /></div>

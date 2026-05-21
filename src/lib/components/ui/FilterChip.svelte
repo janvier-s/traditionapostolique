@@ -1,5 +1,6 @@
 <script lang="ts">
-	let { label, active, onToggle }: { label: string; active: boolean; onToggle: () => void } = $props();
+	let { label, active, onToggle }: { label: string; active: boolean; onToggle: () => void } =
+		$props();
 </script>
 
 <button
