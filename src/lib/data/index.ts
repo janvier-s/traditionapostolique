@@ -7,7 +7,8 @@ import {
 	type Author,
 	type Work,
 	type Topic,
-	type Quote
+	type Quote,
+	type Section
 } from '$lib/schema';
 import authorsRaw from './authors.json';
 import worksRaw from './works.json';
@@ -40,3 +41,32 @@ export const authorBySlug = (slug: string) => authors.find((a) => a.slug === slu
 export const workBySlug = (slug: string) => works.find((w) => w.slug === slug);
 export const topicBySlug = (slug: string) => topics.find((t) => t.slug === slug);
 export const quoteBySlug = (slug: string) => quotes.find((q) => q.slug === slug);
+
+export interface TopicTreeNode {
+	section: Section;
+	groupe: string;
+	href: string;
+	topics: { id: number; slug: string; label: string; href: string; count: number }[];
+}
+
+export function buildTopicTree(): TopicTreeNode[] {
+	const counts = new Map<number, number>();
+	for (const q of quotes) for (const t of q.topicIds) counts.set(t, (counts.get(t) ?? 0) + 1);
+	const sections: Section[] = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+	return sections.map((section) => {
+		const topicsInSection = topics.filter((t) => t.section === section);
+		const groupe = topicsInSection[0]?.groupe ?? '';
+		return {
+			section,
+			groupe,
+			href: `/sujets#section-${section}`,
+			topics: topicsInSection.map((t) => ({
+				id: t.id,
+				slug: t.slug,
+				label: t.label,
+				href: `/sujets/${t.slug}`,
+				count: counts.get(t.id) ?? 0
+			}))
+		};
+	});
+}

@@ -39,17 +39,17 @@ const config = {
 		// and og:url tags emitted from the layout point at the live host
 		// instead of the "https://sveltekit-prerender/" placeholder.
 		prerender: {
-			origin: 'https://catechismecatholique.fr',
-			// Some imported corpora (PGMR, Vatican II) contain footnote hrefs
-			// inherited from vatican.va that point at `/archive/…`,
-			// `/holy_father/…`, `/roman_curia/…`. The prerender crawler treats
-			// these as same-origin and 404s. Silently ignore those prefixes —
-			// any real same-origin miss still fails the build.
+			origin: 'https://pereseglise.fr',
+			// Sidebar + header link to routes that aren't implemented yet
+			// (topic detail pages, fathers, works, search). Ignore 404s for
+			// these prefixes until the route handlers land. Any other
+			// same-origin miss still fails the build.
 			handleHttpError: ({ path, referrer, message }) => {
 				if (
-					path.startsWith('/archive/') ||
-					path.startsWith('/holy_father/') ||
-					path.startsWith('/roman_curia/')
+					path.startsWith('/sujets') ||
+					path.startsWith('/peres') ||
+					path.startsWith('/oeuvres') ||
+					path.startsWith('/recherche')
 				) {
 					return;
 				}
