@@ -2,6 +2,7 @@
 	import MiniSearch from 'minisearch';
 	import { untrack } from 'svelte';
 	import { page } from '$app/state';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	const { data } = $props();
 
 	function buildIndex(json: unknown) {
@@ -36,6 +37,8 @@
 		return PATH[type]?.(slug) ?? '/';
 	}
 </script>
+
+<MetaTags title="Recherche" description="Rechercher dans le corpus patristique." />
 
 <section class="px-6 py-10">
 	<h1 class="font-heading text-3xl">Recherche</h1>

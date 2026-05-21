@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { works, authorById } from '$lib/data';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	const sorted = [...works].sort((a, b) => a.title.localeCompare(b.title, 'fr'));
 </script>
+
+<MetaTags title="Œuvres" description="Œuvres patristiques sources de notre anthologie." />
 
 <section class="px-6 py-10">
 	<h1 class="font-heading text-3xl">Œuvres</h1>

@@ -5,6 +5,7 @@
 	import StudyPanel from '$lib/components/peres/StudyPanel.svelte';
 	import FilterChip from '$lib/components/ui/FilterChip.svelte';
 	import SortSelect from '$lib/components/ui/SortSelect.svelte';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import type { Quote } from '$lib/schema';
 
 	let { data } = $props();
@@ -37,6 +38,11 @@
 		filters = { ...filters, langue: arr.includes(v) ? arr.filter((x) => x !== v) : [...arr, v] };
 	}
 </script>
+
+<MetaTags
+	title={data.topic.label}
+	description={data.topic.description ?? `Citations patristiques sur ${data.topic.label}`}
+/>
 
 <section class="px-6 py-10">
 	<header>

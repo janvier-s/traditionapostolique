@@ -1,11 +1,14 @@
 <script lang="ts">
 	import { buildTopicTree, authors, quotes } from '$lib/data';
 	import SectionTile from '$lib/components/peres/SectionTile.svelte';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 
 	const tree = buildTopicTree();
 	const featuredAuthors = authors.slice(0, 6);
 	const totalQuotes = quotes.length;
 </script>
+
+<MetaTags title="Accueil" description="Anthologie patristique française organisée par sujets." />
 
 <section class="border-b border-border px-6 py-12">
 	<h1 class="font-heading text-4xl text-heading md:text-5xl">Pères de l'Église</h1>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { authors } from '$lib/data';
 	import { eraLabel, eraOrder } from '$lib/utils/era';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 
 	let sortMode = $state<'chrono' | 'alpha'>('chrono');
 
@@ -20,6 +21,8 @@
 			.filter((g) => g.items.length > 0);
 	});
 </script>
+
+<MetaTags title="Pères" description="Pères de l'Église, organisés par époque ou alphabétiquement." />
 
 <section class="px-6 py-10">
 	<div class="flex items-baseline justify-between">

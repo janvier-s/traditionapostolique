@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { buildTopicTree } from '$lib/data';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	const tree = buildTopicTree();
 </script>
+
+<MetaTags title="Sujets" description="49 sujets patristiques organisés en 8 sections." />
 
 <section class="px-6 py-10">
 	<h1 class="font-heading text-3xl">Sujets</h1>

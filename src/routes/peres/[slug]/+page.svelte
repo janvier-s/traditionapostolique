@@ -2,11 +2,17 @@
 	import EraBadge from '$lib/components/peres/EraBadge.svelte';
 	import QuoteCard from '$lib/components/peres/QuoteCard.svelte';
 	import StudyPanel from '$lib/components/peres/StudyPanel.svelte';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import type { Quote } from '$lib/schema';
 
 	let { data } = $props();
 	let openQuote = $state<Quote | null>(null);
 </script>
+
+<MetaTags
+	title={data.author.name}
+	description={data.author.bioShort ?? `Citations de ${data.author.name}`}
+/>
 
 <section class="px-6 py-10">
 	<header>

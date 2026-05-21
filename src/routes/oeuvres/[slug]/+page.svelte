@@ -1,11 +1,17 @@
 <script lang="ts">
 	import QuoteCard from '$lib/components/peres/QuoteCard.svelte';
 	import StudyPanel from '$lib/components/peres/StudyPanel.svelte';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import type { Quote } from '$lib/schema';
 
 	let { data } = $props();
 	let openQuote = $state<Quote | null>(null);
 </script>
+
+<MetaTags
+	title={data.work.title}
+	description={data.work.description ?? `Citations tirées de ${data.work.title}`}
+/>
 
 <section class="px-6 py-10">
 	<header>

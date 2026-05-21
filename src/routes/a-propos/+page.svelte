@@ -1,3 +1,9 @@
+<script lang="ts">
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
+</script>
+
+<MetaTags title="À propos" />
+
 <section class="mx-auto max-w-reader px-6 py-10 font-body">
 	<h1 class="font-heading text-3xl">À propos</h1>
 	<p class="mt-4">
