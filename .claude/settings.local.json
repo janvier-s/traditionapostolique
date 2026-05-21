@@ -1,0 +1,12 @@
+{
+  "enabledMcpjsonServers": [
+    "svelte",
+    "mcp-svelte-docs",
+    "svelte-llm"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(brctl download *)"
+    ]
+  }
+}
