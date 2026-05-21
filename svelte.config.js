@@ -49,7 +49,8 @@ const config = {
 					path.startsWith('/sujets') ||
 					path.startsWith('/peres') ||
 					path.startsWith('/oeuvres') ||
-					path.startsWith('/recherche')
+					path.startsWith('/recherche') ||
+					path.startsWith('/citation')
 				) {
 					return;
 				}
