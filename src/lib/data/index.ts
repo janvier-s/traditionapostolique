@@ -14,7 +14,7 @@ import worksRaw from './works.json';
 import topicsRaw from './topics.json';
 import quotesRaw from './quotes.json';
 
-function parseAll<T>(name: string, schema: z.ZodType<T>, raw: unknown): T[] {
+function parseAll<S extends z.ZodTypeAny>(name: string, schema: S, raw: unknown): z.infer<S>[] {
 	const arr = z.array(schema).safeParse(raw);
 	if (!arr.success)
 		throw new Error(`Invalid ${name}: ${JSON.stringify(arr.error.issues, null, 2)}`);

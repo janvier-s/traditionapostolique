@@ -10,7 +10,7 @@ describe('data loader', () => {
 	});
 
 	it('exposes lookup-by-id helpers', () => {
-		expect(authorById(authors[0].id)).toBe(authors[0]);
+		expect(authorById(authors[0]!.id)).toBe(authors[0]);
 		expect(authorById(-1)).toBeUndefined();
 	});
 
