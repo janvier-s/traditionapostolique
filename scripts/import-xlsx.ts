@@ -112,10 +112,31 @@ function importAuthors(wb: XLSX.WorkBook): Author[] {
 	// Date, Fêté le, Fonction, Langue, Groupes d'auteurs, Page WikiMedia, Disciple de,
 	// Région moderne, Status, Œuvres
 	const rows = readSheet(wb, 'Auteurs').slice(1);
-	const out: Author[] = [];
+	// First pass: collect (rawId, row) for rows with a non-empty name.
+	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
 	for (const r of rows) {
-		const id = Number(r[0]); if (!Number.isFinite(id)) continue;
 		const name = String(r[1] ?? '').trim(); if (!name) continue;
+		const rawId = Number(r[0]);
+		accepted.push({ rawId, row: r });
+	}
+	// Compute next-auto-id baseline above max positive source id.
+	let maxSourceId = 0;
+	for (const { rawId } of accepted) {
+		if (Number.isFinite(rawId) && rawId > maxSourceId) maxSourceId = rawId;
+	}
+	let nextAutoId = Math.max(maxSourceId, 1000) + 1;
+	const usedIds = new Set<number>();
+	const out: Author[] = [];
+	for (const { rawId, row: r } of accepted) {
+		const name = String(r[1] ?? '').trim();
+		let id: number;
+		if (!Number.isFinite(rawId) || rawId === 0 || usedIds.has(rawId)) {
+			id = nextAutoId++;
+			while (usedIds.has(id)) id = nextAutoId++;
+		} else {
+			id = rawId;
+		}
+		usedIds.add(id);
 		const candidate: Author = {
 			id, slug: slugify(name + '-' + id), name,
 			originalName: r[5] ? String(r[5]).trim() || undefined : undefined,
@@ -165,11 +186,31 @@ function importTopics(wb: XLSX.WorkBook): Topic[] {
 function importWorks(wb: XLSX.WorkBook, resolveAuthor: (n: string) => number | undefined): Work[] {
 	// Headers at row 0: ID, Titre, Auteur ou Source, Titres Alternatifs, ID2, Description, Lien
 	const rows = readSheet(wb, 'Œuvres').slice(1);
+	// First pass: collect (rawId, row) for rows with a non-empty title.
+	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
+	for (const r of rows) {
+		const title = String(r[1] ?? '').trim(); if (!title) continue;
+		const rawId = Number(r[0]);
+		accepted.push({ rawId, row: r });
+	}
+	let maxSourceId = 0;
+	for (const { rawId } of accepted) {
+		if (Number.isFinite(rawId) && rawId > maxSourceId) maxSourceId = rawId;
+	}
+	let nextAutoId = Math.max(maxSourceId, 10000) + 1;
+	const usedIds = new Set<number>();
 	const out: Work[] = [];
 	let unknownAuthor = 0;
-	for (const r of rows) {
-		const id = Number(r[0]); if (!Number.isFinite(id)) continue;
-		const title = String(r[1] ?? '').trim(); if (!title) continue;
+	for (const { rawId, row: r } of accepted) {
+		const title = String(r[1] ?? '').trim();
+		let id: number;
+		if (!Number.isFinite(rawId) || rawId === 0 || usedIds.has(rawId)) {
+			id = nextAutoId++;
+			while (usedIds.has(id)) id = nextAutoId++;
+		} else {
+			id = rawId;
+		}
+		usedIds.add(id);
 		const authorName = String(r[2] ?? '').trim();
 		const authorId = resolveAuthor(authorName);
 		if (authorId == null) {
@@ -199,12 +240,32 @@ function importQuotes(
 	resolveTopic: (l: string) => number | undefined
 ): Quote[] {
 	const rows = readSheet(wb, 'Citations').slice(2);
+	// First pass: collect (rawId, row) for rows with a non-empty author name (cheap proxy for "real row").
+	const accepted: Array<{ rawId: number; row: unknown[] }> = [];
+	for (const r of rows) {
+		const authorName = String(r[3] ?? '').trim(); if (!authorName) continue;
+		const rawId = Number(r[2]);
+		accepted.push({ rawId, row: r });
+	}
+	let maxSourceId = 0;
+	for (const { rawId } of accepted) {
+		if (Number.isFinite(rawId) && rawId > maxSourceId) maxSourceId = rawId;
+	}
+	let nextAutoId = Math.max(maxSourceId, 100000) + 1;
+	const usedIds = new Set<number>();
 	const out: Quote[] = [];
 	let unknownAuthor = 0;
 	let noTopic = 0;
 	let parseFail = 0;
-	for (const r of rows) {
-		const id = Number(r[2]); if (!Number.isFinite(id)) continue;
+	for (const { rawId, row: r } of accepted) {
+		let id: number;
+		if (!Number.isFinite(rawId) || rawId === 0 || usedIds.has(rawId)) {
+			id = nextAutoId++;
+			while (usedIds.has(id)) id = nextAutoId++;
+		} else {
+			id = rawId;
+		}
+		usedIds.add(id);
 		const authorName = String(r[3] ?? '').trim();
 		const authorId = resolveAuthor(authorName);
 		if (authorId == null) {

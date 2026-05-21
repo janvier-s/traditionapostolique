@@ -1484,7 +1484,7 @@
     "sources": {}
   },
   {
-    "id": 0,
+    "id": 1001,
     "slug": "https-fr-wikipedia-org-wiki-c3-89p-c3-aetre-c3-a0-diogn-c3-a8te-grec-anonyme-tur",
     "name": ",https://fr.wikipedia.org/wiki/%C3%89p%C3%AEtre_%C3%A0_Diogn%C3%A8te,,,,,Grec,Anonyme,,,Turquie,Inconnu,https://www.biblindex.org/fr/authors/anonymus-ad-diognetum",
     "era": "post-nicene",
@@ -1494,8 +1494,8 @@
     "sources": {}
   },
   {
-    "id": 0,
-    "slug": "pape-celestin-ier-0",
+    "id": 1002,
+    "slug": "pape-celestin-ier-1002",
     "name": "Pape Célestin Ier",
     "era": "post-nicene",
     "language": [],
@@ -1504,8 +1504,8 @@
     "sources": {}
   },
   {
-    "id": 0,
-    "slug": "constantin-0",
+    "id": 1003,
+    "slug": "constantin-1003",
     "name": "Constantin",
     "era": "post-nicene",
     "language": [],
@@ -1514,8 +1514,8 @@
     "sources": {}
   },
   {
-    "id": 0,
-    "slug": "pape-st-damase-1e-0",
+    "id": 1004,
+    "slug": "pape-st-damase-1e-1004",
     "name": "Pape St Damase 1e",
     "era": "post-nicene",
     "language": [],
@@ -1524,8 +1524,8 @@
     "sources": {}
   },
   {
-    "id": 0,
-    "slug": "st-denis-de-corinthe-0",
+    "id": 1005,
+    "slug": "st-denis-de-corinthe-1005",
     "name": "St Denis de Corinthe",
     "era": "post-nicene",
     "language": [],
@@ -1534,8 +1534,8 @@
     "sources": {}
   },
   {
-    "id": 0,
-    "slug": "evagre-le-pontique-0",
+    "id": 1006,
+    "slug": "evagre-le-pontique-1006",
     "name": "Évagre le Pontique",
     "era": "post-nicene",
     "language": [],

@@ -3000,7 +3000,7 @@
   {
     "id": 184,
     "slug": "citation-184",
-    "authorId": 0,
+    "authorId": 1002,
     "workId": 290,
     "topicIds": [
       18
@@ -3296,7 +3296,7 @@
     "id": 201,
     "slug": "citation-201",
     "authorId": 14,
-    "workId": 0,
+    "workId": 10001,
     "topicIds": [
       16
     ],
@@ -3339,7 +3339,7 @@
   {
     "id": 204,
     "slug": "citation-204",
-    "authorId": 0,
+    "authorId": 1003,
     "workId": 129,
     "topicIds": [
       42
@@ -3356,7 +3356,7 @@
     "id": 207,
     "slug": "citation-207",
     "authorId": 17,
-    "workId": 0,
+    "workId": 10003,
     "topicIds": [
       29
     ],
@@ -4560,7 +4560,7 @@
   {
     "id": 318,
     "slug": "citation-318",
-    "authorId": 0,
+    "authorId": 1004,
     "topicIds": [
       16
     ],
@@ -4896,7 +4896,7 @@
   {
     "id": 355,
     "slug": "citation-355",
-    "authorId": 0,
+    "authorId": 1006,
     "workId": 131,
     "topicIds": [
       2

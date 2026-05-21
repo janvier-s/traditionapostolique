@@ -541,7 +541,7 @@
     "slug": "lettres-71",
     "title": "Lettres",
     "alternativeTitles": [],
-    "authorId": 0
+    "authorId": 1002
   },
   {
     "id": 73,
@@ -741,14 +741,14 @@
     "alternativeTitles": [
       "Lettre à Denis d’Alexandrie"
     ],
-    "authorId": 0
+    "authorId": 1005
   },
   {
     "id": 115,
     "slug": "lettre-a-pape-soter-115",
     "title": "Lettre à Pape Soter",
     "alternativeTitles": [],
-    "authorId": 0
+    "authorId": 1005
   },
   {
     "id": 123,
@@ -819,7 +819,7 @@
     "slug": "lettre-dogmatique-sur-la-tres-sainte-trinite-131",
     "title": "Lettre dogmatique sur la Très Sainte Trinité",
     "alternativeTitles": [],
-    "authorId": 0
+    "authorId": 1006
   },
   {
     "id": 137,
@@ -1863,120 +1863,120 @@
     "authorId": 66
   },
   {
-    "id": 0,
-    "slug": "fragment-des-hypotyposes-0",
+    "id": 10001,
+    "slug": "fragment-des-hypotyposes-10001",
     "title": "Fragment des Hypotyposes",
     "alternativeTitles": [],
     "authorId": 14
   },
   {
-    "id": 0,
-    "slug": "council-of-ankara-0",
+    "id": 10002,
+    "slug": "council-of-ankara-10002",
     "title": "Council of Ankara",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-carthage-of-256-0",
+    "id": 10003,
+    "slug": "council-of-carthage-of-256-10003",
     "title": "Council of Carthage of 256",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-carthage-of-397-0",
+    "id": 10004,
+    "slug": "council-of-carthage-of-397-10004",
     "title": "Council of Carthage of 397",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-carthage-of-401-0",
+    "id": 10005,
+    "slug": "council-of-carthage-of-401-10005",
     "title": "Council of Carthage of 401",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-carthage-of-419-0",
+    "id": 10006,
+    "slug": "council-of-carthage-of-419-10006",
     "title": "Council of Carthage of 419",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-chalcedon-0",
+    "id": 10007,
+    "slug": "council-of-chalcedon-10007",
     "title": "Council of Chalcedon",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-constantinople-i-0",
+    "id": 10008,
+    "slug": "council-of-constantinople-i-10008",
     "title": "Council of Constantinople I",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "nicene-creed-0",
+    "id": 10009,
+    "slug": "nicene-creed-10009",
     "title": "Nicene Creed",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-constantinople-ii-0",
+    "id": 10010,
+    "slug": "council-of-constantinople-ii-10010",
     "title": "Council of Constantinople II",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-elvira-0",
+    "id": 10011,
+    "slug": "council-of-elvira-10011",
     "title": "Council of Elvira",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-ephesus-0",
+    "id": 10012,
+    "slug": "council-of-ephesus-10012",
     "title": "Council of Ephesus",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-hippo-0",
+    "id": 10013,
+    "slug": "council-of-hippo-10013",
     "title": "Council of Hippo",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-laodicea-0",
+    "id": 10014,
+    "slug": "council-of-laodicea-10014",
     "title": "Council of Laodicea",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-nicaea-i-0",
+    "id": 10015,
+    "slug": "council-of-nicaea-i-10015",
     "title": "Council of Nicaea I",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-rome-0",
+    "id": 10016,
+    "slug": "council-of-rome-10016",
     "title": "Council of Rome",
     "alternativeTitles": [],
     "authorId": 67
   },
   {
-    "id": 0,
-    "slug": "council-of-sardica-0",
+    "id": 10017,
+    "slug": "council-of-sardica-10017",
     "title": "Council of Sardica",
     "alternativeTitles": [],
     "authorId": 67
