@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -159,22 +161,58 @@
 	font-display: swap;
 }
 
+/* Prototype display + body pair inspired by churchfathers.org. Single
+   weight each · hierarchy comes from size, tracking, and color rather
+   than synthesizing bold on Bodoni (which faux-bolds badly). */
+@font-face {
+	font-family: 'LTC Bodoni 175';
+	src:
+		url('/fonts/LTC-Bodoni175-Regular.woff2') format('woff2'),
+		url('/fonts/LTC-Bodoni175-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Proxima Nova';
+	src:
+		url('/fonts/ProximaNova-Light.woff2') format('woff2'),
+		url('/fonts/ProximaNova-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Proxima Nova';
+	src:
+		url('/fonts/ProximaNova-Regular.woff2') format('woff2'),
+		url('/fonts/ProximaNova-Regular.otf') format('opentype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 @layer base {
 	:root {
-		--color-bg: #f8f5ef;
+		--color-bg: #ffffff;
 		--color-panel: #ffffff;
-		--color-fg: #1c1710;
-		--color-muted: #4a443e;
-		--color-subtle: #5e5650;
-		--color-accent: #a62c2c;
-		--color-accent-text: #b84848;
-		--color-border: #e4dcd0;
-		--color-bg-glass: rgba(248, 245, 239, 0.94);
-		--color-heading: var(--color-fg);
+		/* Body text colour pulled from the churchfathers.org rendered CSS
+		   (#32383d · cool dark slate, not warm brown). */
+		--color-fg: #32383d;
+		--color-muted: #6e747a;
+		--color-subtle: #a0a4a8;
+		--color-accent: #6e4548;
+		--color-accent-text: #6e4548;
+		/* Sage-olive used for active and hover nav states (lifted directly
+		   from churchfathers.org's `.navigation a:hover { color: #bfb68c }`). */
+		--color-active: #bfb68c;
+		--color-border: #e6e3dd;
+		--color-bg-glass: rgba(255, 255, 255, 0.94);
+		--color-heading: var(--color-accent);
 
-		--font-body: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
-		--font-ui: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
-		--font-heading: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+		--font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+		--font-ui: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+		--font-heading: 'Playfair Display', 'Bodoni Moda', Didot, 'Times New Roman', serif;
 
 		/* Stacking-context tokens. Keep these in lockstep with the layered UI:
 		   topbar < sticky chapter nav < panels (study/sidebar) < click-away
@@ -227,20 +265,10 @@
 		--color-heading: #a8a4b0;
 	}
 
-	@media (prefers-color-scheme: dark) {
-		[data-theme='auto'] {
-			--color-bg: #111113;
-			--color-panel: #1c1c1f;
-			--color-fg: #e8ddd0;
-			--color-muted: #a5a4a6;
-			--color-subtle: #a09ca8;
-			--color-accent: #d45050;
-			--color-accent-text: #e15e5e;
-			--color-border: #2e2b32;
-			--color-bg-glass: rgba(17, 17, 19, 0.94);
-			--color-heading: #c5bbb0;
-		}
-	}
+	/* Auto / OS-driven dark mode intentionally disabled for the
+	   prototype. The dark/sepia/oled tokens above are preserved so the
+	   theme switching machinery (archived from v0.1-maximal) can be
+	   resurrected later without re-deriving palettes. */
 
 	html {
 		background: var(--color-bg);
@@ -289,11 +317,28 @@
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
+		/* Exact values pulled from the rendered churchfathers.org body
+		   paragraph: 16px Proxima Nova, weight 300, 1.5em line-height,
+		   .02em tracking, slate #32383d. We only have the Regular weight
+		   file · browsers can't synthesize lighter, so 300 falls back to
+		   400 until a Light weight is added. */
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 1.5;
+		letter-spacing: 0.02em;
+		color: var(--color-fg);
 	}
 
 	/* Default Gotham UI text to Medium (500). Tailwind weight utilities
 	   like font-semibold / font-bold still override per-element. */
 	.font-ui {
+		font-weight: 500;
+	}
+
+	/* Display headings ship at weight 500 by default · Playfair Display
+	   Medium gives the title and source-headers a touch more presence
+	   than Regular without looking heavy. */
+	.font-heading {
 		font-weight: 500;
 	}
 
@@ -429,6 +474,36 @@
 .styled-scroll {
 	scrollbar-width: thin;
 	scrollbar-color: color-mix(in srgb, var(--color-muted) 50%, transparent) transparent;
+}
+
+/* Rail scrollbar · narrower, rounded, with a subtle sage-olive thumb
+   matching the active-link colour. Hover lifts the contrast. The track
+   stays transparent so the rail stays visually quiet at rest. */
+.rail-scroll {
+	scrollbar-width: thin;
+	scrollbar-color: color-mix(in srgb, var(--color-active) 60%, transparent) transparent;
+	/* Reserve the scrollbar gutter so the rail's right edge (and the
+	   "+" / "−" glyphs) don't shift left when the scrollbar appears.
+	   Supported in Chrome 94+, Firefox 97+, Safari 16+. */
+	scrollbar-gutter: stable;
+}
+.rail-scroll::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+.rail-scroll::-webkit-scrollbar-track {
+	background: transparent;
+}
+.rail-scroll::-webkit-scrollbar-thumb {
+	background-color: color-mix(in srgb, var(--color-active) 55%, transparent);
+	background-clip: padding-box;
+	border: 1px solid transparent;
+	border-radius: 999px;
+	min-height: 32px;
+	transition: background-color 200ms ease;
+}
+.rail-scroll::-webkit-scrollbar-thumb:hover {
+	background-color: var(--color-active);
 }
 .styled-scroll::-webkit-scrollbar {
 	width: 8px;

@@ -28,13 +28,56 @@ function slugify(s: string): string {
 		.slice(0, 80);
 }
 
-function eraFromFr(raw: unknown): Era {
+// Canonical apostolic-fathers set · the traditional list (those who knew
+// the apostles or wrote in their immediate generation). Used to override
+// the date heuristic, which otherwise rounds them into "ante-nicene".
+const APOSTOLIC_FATHERS = new Set(
+	[
+		'clement de rome',
+		'ignace d antioche',
+		'polycarpe de smyrne',
+		'papias de hierapolis',
+		'barnabe',
+		'didache',
+		'hermas',
+		'diognete',
+		'mathetes a diognete'
+	].map((s) => s.normalize('NFD').replace(/\p{Diacritic}/gu, ''))
+);
+
+function eraFromDates(dates: unknown, name: string): Era | null {
+	const s = String(dates ?? '');
+	const ys = s.match(/\d{1,4}/g);
+	if (!ys) return null;
+	const death = Math.max(...ys.map(Number));
+	// Apostolic-fathers override · short list of authors traditionally
+	// labelled apostolic regardless of strict death-year cutoff.
+	const nameKey = name
+		.normalize('NFD')
+		.replace(/\p{Diacritic}/gu, '')
+		.toLowerCase()
+		.replace(/[^a-z0-9]+/g, ' ')
+		.trim();
+	if (APOSTOLIC_FATHERS.has(nameKey)) return 'apostolic';
+	if (death <= 100) return 'apostolic';
+	if (death <= 325) return 'ante-nicene';
+	if (death <= 451) return 'nicene';
+	if (death <= 800) return 'post-nicene';
+	return 'medieval';
+}
+
+function eraFromFr(raw: unknown, dates: unknown = '', name: string = ''): Era {
 	const s = String(raw ?? '').toLowerCase();
 	if (s.includes('apostol')) return 'apostolic';
 	if (s.includes('ante') || s.includes('avant')) return 'ante-nicene';
 	if (s.includes('nicen') || s.includes('nicée') || s.includes('nicee')) return 'nicene';
 	if (s.includes('post')) return 'post-nicene';
 	if (s.includes('méd') || s.includes('moyen')) return 'medieval';
+	// String didn't match · fall back to a date-based derivation rather
+	// than the previous "always post-nicene" default, which mislabelled
+	// every undated row and every row with an unrecognised era string.
+	const fromDates = eraFromDates(dates, name);
+	if (fromDates) return fromDates;
 	return 'post-nicene';
 }
 
@@ -224,7 +267,7 @@ function importAuthors(wb: XLSX.WorkBook): Author[] {
 			slug: slugify(name + '-' + id),
 			name,
 			originalName: r[5] ? String(r[5]).trim() || undefined : undefined,
-			era: eraFromFr(r[2]),
+			era: eraFromFr(r[2], r[6], String(r[1] ?? '').trim()),
 			dates: r[6] ? String(r[6]).trim() || undefined : undefined,
 			feastDay: r[7] ? String(r[7]).trim() || undefined : undefined,
 			function: r[8] ? String(r[8]).trim() || undefined : undefined,

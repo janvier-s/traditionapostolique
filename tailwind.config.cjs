@@ -9,6 +9,7 @@ module.exports = {
 				panel: 'var(--color-panel)',
 				accent: 'var(--color-accent)',
 				'accent-text': 'var(--color-accent-text)',
+				active: 'var(--color-active)',
 				muted: 'var(--color-muted)',
 				subtle: 'var(--color-subtle)',
 				border: 'var(--color-border)',

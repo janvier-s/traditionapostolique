@@ -1,30 +1,38 @@
 <script lang="ts">
 	import { buildTopicTree } from '$lib/data';
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
+
 	const tree = buildTopicTree();
 </script>
 
-<MetaTags title="Sujets" description="49 sujets patristiques organisés en 8 sections." />
+<MetaTags title="Sujets" description="Tous les sujets de l'anthologie patristique." />
 
-<section class="px-6 py-10">
-	<h1 class="font-heading text-3xl">Sujets</h1>
-	<p class="mt-2 max-w-reader text-muted">Organisés en {tree.length} sections.</p>
+<article>
+	<h1
+		class="font-heading italic text-accent text-[clamp(2.5rem,5vw,4rem)] leading-[1.05]"
+	>
+		Sujets
+	</h1>
 
-	<div class="mt-8 space-y-10">
+	<div class="mt-12 space-y-12">
 		{#each tree as s (s.section)}
 			<section id={`section-${s.section}`}>
-				<h2 class="font-heading text-2xl">
-					<span class="mr-1 text-muted">{s.section}.</span>{s.groupe}
+				<h2
+					class="font-heading text-base uppercase tracking-[0.18em] text-accent md:text-lg"
+				>
+					{s.groupe}
 				</h2>
-				<ul class="mt-4 grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3">
+				<ul class="mt-4 divide-y divide-border border-y border-border">
 					{#each s.topics as t (t.id)}
 						<li>
 							<a
 								href={t.href}
-								class="block rounded border border-border bg-panel p-3 hover:border-accent"
+								class="group flex items-baseline justify-between gap-6 py-2.5 font-body text-[15px] text-foreground hover:text-accent"
 							>
 								<span>{t.label}</span>
-								<span class="ml-1 text-xs text-muted">({t.count})</span>
+								<span class="shrink-0 font-ui text-xs uppercase tracking-[0.18em] text-subtle">
+									{t.count}
+								</span>
 							</a>
 						</li>
 					{/each}
@@ -32,4 +40,4 @@
 			</section>
 		{/each}
 	</div>
-</section>
+</article>
