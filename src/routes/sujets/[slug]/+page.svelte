@@ -462,7 +462,12 @@
 						class="font-heading uppercase leading-[1.15] tracking-[0.04em] text-accent"
 						style="font-size: var(--author-name-size); hyphens: auto;"
 					>
-						{g.author.name}
+						<!-- Author name links to the Père page · everything by
+						     this Father across topics. Hover transitions to the
+						     sage-olive active colour like the rail nav. -->
+						<a href={`/peres/${g.author.slug}`} class="hover:text-active">
+							{g.author.name}
+						</a>
 					</h2>
 					<!-- Author metadata is Study-mode-exclusive. Read mode shows
 					     just the name to keep the page quiet. Study mode adds
@@ -475,8 +480,17 @@
 							</p>
 						{/if}
 						{#if groupCentury}
+							<!-- Render the ordinal suffix ("er", "e") in lowercase
+							     even though the parent line is text-transform: uppercase.
+							     Otherwise "IVe siècle" becomes "IVE SIÈCLE" which reads
+							     as a typographic mistake. -->
+							{@const m = groupCentury.match(/^([IVXL]+)([a-z]+)\s+(\S+)$/)}
 							<p class="font-ui text-[12px] uppercase tracking-[0.05em] text-muted">
-								{groupCentury}
+								{#if m}
+									{m[1]}<span class="normal-case">{m[2]}</span> {m[3]}
+								{:else}
+									{groupCentury}
+								{/if}
 							</p>
 						{/if}
 						<p class="font-ui text-[12px] uppercase tracking-[0.05em] text-muted">
@@ -498,6 +512,7 @@
 						{/if}
 						{@const cite = citationOf(q)}
 						{@const isOpen = openQuote?.id === q.id}
+						{@const work = q.workId ? workById(q.workId) : null}
 						{@const otherTopics = q.topicIds
 							.filter((tid) => tid !== data.topic.id)
 							.map((tid) => topicById(tid))
@@ -525,10 +540,19 @@
 							{#if cite}
 								<!-- Attribution sits on its own line below the quote,
 								     led by an em dash · no parens, no trailing period.
-								     Reads as an editorial citation rather than an
-								     inline parenthetical. -->
+								     The work title (if any) is linked to the Œuvre
+								     page so a reader can pivot into "everything from
+								     this work". The reference tail stays plain text. -->
 								<p class="mt-2 font-body text-muted">
-									&mdash; <em class="italic">{cite}</em>
+									&mdash;
+									{#if work}
+										<a
+											href={`/oeuvres/${work.slug}`}
+											class="italic hover:text-active"
+										>{work.title}</a>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
+									{:else}
+										<em class="italic">{cite}</em>
+									{/if}
 								</p>
 							{/if}
 
@@ -866,6 +890,50 @@
 								{distinctions.length > 1 ? 'Distinctions' : 'Distinction'}
 							</dt>
 							<dd class="mt-1">{distinctions.join(' · ')}</dd>
+						</div>
+					{/if}
+					{#if openAuthor.feastDay}
+						<div>
+							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Fête le</dt>
+							<dd class="mt-1">{openAuthor.feastDay}</dd>
+						</div>
+					{/if}
+					{#if openAuthor.groups?.length}
+						<div>
+							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+								{openAuthor.groups.length > 1 ? 'Groupes' : 'Groupe'}
+							</dt>
+							<dd class="mt-1">{openAuthor.groups.join(' · ')}</dd>
+						</div>
+					{/if}
+					{#if openAuthor.sources?.wikipedia || openAuthor.sources?.wikisource}
+						<!-- External references · Wikipedia for the encyclopaedic
+						     entry, Wikisource for the author's works in original
+						     language when available. Both open in a new tab. -->
+						<div>
+							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Liens externes</dt>
+							<dd class="mt-1 flex flex-col gap-1">
+								{#if openAuthor.sources.wikipedia}
+									<a
+										href={openAuthor.sources.wikipedia}
+										target="_blank"
+										rel="noopener"
+										class="font-ui text-[12px] font-light uppercase tracking-[0.05em] text-active hover:underline"
+									>
+										Wikipédia <span aria-hidden="true">↗</span>
+									</a>
+								{/if}
+								{#if openAuthor.sources.wikisource}
+									<a
+										href={openAuthor.sources.wikisource}
+										target="_blank"
+										rel="noopener"
+										class="font-ui text-[12px] font-light uppercase tracking-[0.05em] text-active hover:underline"
+									>
+										Wikisource <span aria-hidden="true">↗</span>
+									</a>
+								{/if}
+							</dd>
 						</div>
 					{/if}
 				</dl>

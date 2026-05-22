@@ -4,7 +4,7 @@
 		description,
 		canonical
 	}: { title: string; description?: string; canonical?: string } = $props();
-	const full = $derived(`${title} · Pères de l'Église`);
+	const full = $derived(`${title} · Tradition Apostolique`);
 </script>
 
 <svelte:head>

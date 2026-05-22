@@ -4,8 +4,8 @@ export const prerender = true;
 
 export function GET() {
 	const body = [
-		"# Pères de l'Église",
-		'Anthologie patristique française organisée par sujets.',
+		'# Tradition Apostolique',
+		"Anthologie patristique française organisée par sujets · témoignage des Pères de l'Église.",
 		'',
 		'## Stats',
 		`- Auteurs: ${authors.length}`,

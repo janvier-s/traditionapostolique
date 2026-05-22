@@ -728,7 +728,8 @@
       "wikipedia": "https://fr.wikisource.org/wiki/Auteur:Hermas",
       "wikisource": "https://fr.wikipedia.org/wiki/Pasteur_d%27Hermas"
     },
-    "status": "Inconnu"
+    "status": "Inconnu",
+    "dates": "c. 100-160"
   },
   {
     "id": 33,
@@ -1268,19 +1269,20 @@
   },
   {
     "id": 57,
-    "slug": "saint-jean-57",
-    "name": "Saint Jean",
+    "slug": "st-jean-57",
+    "name": "St. Jean",
     "era": "post-nicene",
     "language": [],
     "groups": [],
     "disciples": [],
     "sources": {},
-    "status": "Saint,Apôtre"
+    "status": "Saint,Apôtre",
+    "dates": "c. 6-100"
   },
   {
     "id": 58,
-    "slug": "saint-paul-58",
-    "name": "Saint Paul",
+    "slug": "st-paul-58",
+    "name": "St. Paul",
     "era": "post-nicene",
     "language": [],
     "groups": [],
@@ -1290,14 +1292,15 @@
   },
   {
     "id": 59,
-    "slug": "saint-pierre-59",
-    "name": "Saint Pierre",
+    "slug": "st-pierre-59",
+    "name": "St. Pierre",
     "era": "post-nicene",
     "language": [],
     "groups": [],
     "disciples": [],
     "sources": {},
-    "status": "Saint,Apôtre,Martyr"
+    "status": "Saint,Apôtre,Martyr",
+    "dates": "c. 1-64"
   },
   {
     "id": 60,
@@ -1481,17 +1484,8 @@
     "language": [],
     "groups": [],
     "disciples": [],
-    "sources": {}
-  },
-  {
-    "id": 1001,
-    "slug": "https-fr-wikipedia-org-wiki-c3-89p-c3-aetre-c3-a0-diogn-c3-a8te-grec-anonyme-tur",
-    "name": ",https://fr.wikipedia.org/wiki/%C3%89p%C3%AEtre_%C3%A0_Diogn%C3%A8te,,,,,Grec,Anonyme,,,Turquie,Inconnu,https://www.biblindex.org/fr/authors/anonymus-ad-diognetum",
-    "era": "post-nicene",
-    "language": [],
-    "groups": [],
-    "disciples": [],
-    "sources": {}
+    "sources": {},
+    "dates": "470-543"
   },
   {
     "id": 1002,
@@ -1501,7 +1495,8 @@
     "language": [],
     "groups": [],
     "disciples": [],
-    "sources": {}
+    "sources": {},
+    "dates": "378-432"
   },
   {
     "id": 1003,
@@ -1511,22 +1506,24 @@
     "language": [],
     "groups": [],
     "disciples": [],
-    "sources": {}
+    "sources": {},
+    "dates": "272-337"
   },
   {
     "id": 1004,
-    "slug": "pape-st-damase-1e-1004",
-    "name": "Pape St Damase 1e",
+    "slug": "pape-st-damase-ier-1004",
+    "name": "Pape St. Damase Ier",
     "era": "post-nicene",
     "language": [],
     "groups": [],
     "disciples": [],
-    "sources": {}
+    "sources": {},
+    "dates": "305-384"
   },
   {
     "id": 1005,
     "slug": "st-denis-de-corinthe-1005",
-    "name": "St Denis de Corinthe",
+    "name": "St. Denis de Corinthe",
     "era": "post-nicene",
     "language": [],
     "groups": [],
@@ -1541,7 +1538,8 @@
     "language": [],
     "groups": [],
     "disciples": [],
-    "sources": {}
+    "sources": {},
+    "dates": "345-399"
   },
   {
     "id": 1007,
@@ -1549,7 +1547,8 @@
     "name": "Firmilien de Césarée",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 200-269"
   },
   {
     "id": 1008,
@@ -1557,7 +1556,8 @@
     "name": "St. Fulgence de Ruspe",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "462-533"
   },
   {
     "id": 1009,
@@ -1565,7 +1565,8 @@
     "name": "Pape St. Grégoire Ier",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "540-604"
   },
   {
     "id": 1010,
@@ -1573,7 +1574,8 @@
     "name": "St. Hégésippe",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 110-180"
   },
   {
     "id": 1011,
@@ -1581,7 +1583,8 @@
     "name": "Pape St. Innocent Ier",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "?-417"
   },
   {
     "id": 1012,
@@ -1589,7 +1592,8 @@
     "name": "Pape St. Jules Ier",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "?-352"
   },
   {
     "id": 1013,
@@ -1597,7 +1601,8 @@
     "name": "Pape St. Léon Ier",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 400-461"
   },
   {
     "id": 1014,
@@ -1605,7 +1610,8 @@
     "name": "Léporius",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 400-450"
   },
   {
     "id": 1015,
@@ -1613,7 +1619,8 @@
     "name": "St. Pacien de Barcelone",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 310-391"
   },
   {
     "id": 1016,
@@ -1621,7 +1628,8 @@
     "name": "St. Patrick",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 385-461"
   },
   {
     "id": 1017,
@@ -1629,7 +1637,8 @@
     "name": "Pectorius d’Autun",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 350"
   },
   {
     "id": 1018,
@@ -1637,7 +1646,8 @@
     "name": "St. Pierre Chrysologue",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "380-450"
   },
   {
     "id": 1019,
@@ -1645,7 +1655,8 @@
     "name": "St. Pion de Smyrne",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "?-250"
   },
   {
     "id": 1020,
@@ -1653,7 +1664,8 @@
     "name": "St. Prosper d’Aquitaine",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 390-455"
   },
   {
     "id": 1021,
@@ -1661,7 +1673,8 @@
     "name": "Pseudo-Ignace",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "4e siècle"
   },
   {
     "id": 1022,
@@ -1677,7 +1690,8 @@
     "name": "Pseudo-Justin",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "4e-5e siècle"
   },
   {
     "id": 1024,
@@ -1693,7 +1707,8 @@
     "name": "St. Sechnall d’Irlande",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 372-447"
   },
   {
     "id": 1026,
@@ -1701,7 +1716,8 @@
     "name": "Segond Clément",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 140-160"
   },
   {
     "id": 1027,
@@ -1709,7 +1725,8 @@
     "name": "St. Sérapion de Thmuis",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "?-360"
   },
   {
     "id": 1028,
@@ -1717,7 +1734,8 @@
     "name": "Pape St. Siricius Ier",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "334-399"
   },
   {
     "id": 1029,
@@ -1725,7 +1743,8 @@
     "name": "Sozomène de Constantinople",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 400-450"
   },
   {
     "id": 1030,
@@ -1733,7 +1752,8 @@
     "name": "Théodore de Mopsueste",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "350-428"
   },
   {
     "id": 1031,
@@ -1745,11 +1765,12 @@
   },
   {
     "id": 1032,
-    "slug": "pape-saint-gregoire-vii-1032",
-    "name": "Pape Saint Gregoire VII",
+    "slug": "pape-st-gregoire-vii-1032",
+    "name": "Pape St. Grégoire VII",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "1015-1085"
   },
   {
     "id": 1033,
@@ -1923,14 +1944,6 @@
     "id": 1054,
     "slug": "inscriptions-chretiennes-1054",
     "name": "Inscriptions chrétiennes",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {}
-  },
-  {
-    "id": 1055,
-    "slug": "c-1055",
-    "name": "c",
     "era": "post-nicene",
     "language": [],
     "sources": {}

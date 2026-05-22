@@ -39,7 +39,7 @@ const config = {
 		// and og:url tags emitted from the layout point at the live host
 		// instead of the "https://sveltekit-prerender/" placeholder.
 		prerender: {
-			origin: 'https://pereseglise.fr',
+			origin: 'https://traditionapostolique.fr',
 			// Sidebar + header link to routes that aren't implemented yet
 			// (topic detail pages, fathers, works, search). Ignore 404s for
 			// these prefixes until the route handlers land. Any other

@@ -304,7 +304,10 @@ function importTopics(wb: XLSX.WorkBook): Topic[] {
 		const section = String(r[2] ?? '').trim();
 		const candidate: Topic = {
 			id,
-			slug: slugify(label + '-' + id),
+			// Bare slug · the 49 topic labels are unique, so we don't need
+			// the id suffix that other entities (authors, works) still use
+			// to disambiguate identically-named rows.
+			slug: slugify(label),
 			label,
 			section: section as Topic['section'],
 			groupe: String(r[3] ?? '').trim(),

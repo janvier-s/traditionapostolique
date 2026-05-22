@@ -60,7 +60,7 @@
 						<rect x="2" y="34" width="36" height="3" stroke-width="1.5" />
 					</svg>
 					<div class="font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent">
-						Pères<br />de l'Église
+						Tradition<br />Apostolique
 					</div>
 				</div>
 			</a>
@@ -85,11 +85,13 @@
 			     The +/− glyph inherits the parent button colour so it
 			     tracks the section's hover / active state instead of
 			     staying a fixed muted grey. -->
-			<!-- Mode toggle · sits between the logo hairline and the section
-			     list. Two pill segments: Lecture (read) and Étude (study).
-			     Active segment fills with the sage-olive active colour;
-			     inactive segments are quiet outlines that read as muted
-			     parent-row labels. -->
+			<!-- Mode toggle · only visible on a topic-detail page
+			     (/sujets/<slug>) because that's the only surface where
+			     Lecture vs Étude actually changes the rendering. Showing
+			     it on the homepage, index, Pères / Œuvres pages would
+			     make it look like a global setting that does nothing on
+			     those routes. -->
+			{#if /^\/sujets\/[^/]+$/.test(page.url.pathname)}
 			<div
 				class="mb-8 inline-flex rounded-full border border-foreground/15 p-[2px] font-ui text-[11px] font-light uppercase tracking-[0.1em]"
 				role="group"
@@ -118,6 +120,7 @@
 					Étude
 				</button>
 			</div>
+			{/if}
 
 			<nav aria-label="Sujets" class="font-ui font-light">
 				<ul>
@@ -164,6 +167,31 @@
 					{/each}
 				</ul>
 			</nav>
+
+			<!-- Secondary indices · alternative entry points into the
+			     corpus. Kept visually quieter than the section list so the
+			     rail still reads as primarily a topic browser. -->
+			<div class="mt-8 mb-6 h-px w-10 bg-border"></div>
+			<ul class="font-ui font-light" style="font-size: 0.9em; line-height: 1.25em;">
+				<li>
+					<a
+						href="/peres"
+						class="block py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-active"
+						class:text-active={page.url.pathname.startsWith('/peres')}
+					>
+						Pères
+					</a>
+				</li>
+				<li>
+					<a
+						href="/oeuvres"
+						class="block py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-active"
+						class:text-active={page.url.pathname.startsWith('/oeuvres')}
+					>
+						Œuvres
+					</a>
+				</li>
+			</ul>
 		</aside>
 
 		<main class="min-w-0">

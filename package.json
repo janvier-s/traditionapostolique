@@ -1,8 +1,8 @@
 {
-	"name": "pereseglise",
+	"name": "tradition-apostolique",
 	"private": true,
 	"version": "0.1.0",
-	"description": "Anthologie patristique française organisée par sujets.",
+	"description": "Tradition Apostolique · anthologie patristique française organisée par sujets.",
 	"type": "module",
 	"engines": {
 		"node": ">=20"
@@ -14,6 +14,7 @@
 		"prebuild": "tsx scripts/prebuild.ts",
 		"import-xlsx": "tsx scripts/import-xlsx.ts",
 		"merge-translations": "tsx scripts/merge-translations.ts",
+		"investigate-orphans": "tsx scripts/investigate-orphans.ts",
 		"generate-og-image": "node scripts/generate-og-image.mjs",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

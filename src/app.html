@@ -4,37 +4,29 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="apple-mobile-web-app-title" content="Pères de l'Église" />
+		<meta name="apple-mobile-web-app-title" content="Tradition Apostolique" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="theme-color" content="#000000" />
+		<!-- Self-hosted Proxima Nova · the UI font · preloaded so the
+		     rail nav and small-caps source headers render without a flash
+		     of unstyled text. Playfair Display (headings) and Poppins
+		     (body) load via Google Fonts @import in app.css and don't
+		     need a preload tag here · their CDN handles its own
+		     resource-hint optimisation. -->
 		<link
 			rel="preload"
 			as="font"
 			type="font/woff2"
-			href="/fonts/Gotham-Regular.woff2"
+			href="/fonts/ProximaNova-Light.woff2"
 			crossorigin="anonymous"
 		/>
 		<link
 			rel="preload"
 			as="font"
 			type="font/woff2"
-			href="/fonts/Gotham-Medium.woff2"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			as="font"
-			type="font/woff2"
-			href="/fonts/Gotham-Bold.woff2"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="preload"
-			as="font"
-			type="font/woff2"
-			href="/fonts/LibreBaskerville-Regular.woff2"
+			href="/fonts/ProximaNova-Regular.woff2"
 			crossorigin="anonymous"
 		/>
 		%sveltekit.head%
