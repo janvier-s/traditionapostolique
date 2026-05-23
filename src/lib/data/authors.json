@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "slug": "abercius-d-hierapolis-1",
-    "name": "Abercius d'Hiérapolis",
+    "slug": "abercius-d-hierapolis",
+    "name": "St. Abercius d'Hiérapolis",
     "era": "ante-nicene",
     "dates": "?-167",
     "feastDay": "4 novembre",
@@ -19,8 +19,8 @@
   },
   {
     "id": 2,
-    "slug": "ambroise-de-milan-2",
-    "name": "Ambroise de Milan",
+    "slug": "ambroise-de-milan",
+    "name": "St. Ambroise de Milan",
     "originalName": "Ambrosius Mediolanensis",
     "era": "nicene",
     "dates": "339-397",
@@ -43,8 +43,8 @@
   },
   {
     "id": 3,
-    "slug": "anatole-de-laodicee-3",
-    "name": "Anatole de Laodicée",
+    "slug": "anatole-de-laodicee",
+    "name": "St. Anatole de Laodicée",
     "originalName": "Ανατόλιος Λαοδικείας",
     "era": "ante-nicene",
     "dates": "250-280",
@@ -66,8 +66,8 @@
   },
   {
     "id": 4,
-    "slug": "antoine-le-grand-4",
-    "name": "Antoine le Grand",
+    "slug": "antoine-le-grand",
+    "name": "St. Antoine le Grand",
     "originalName": "Antonius Magnus Abbas",
     "era": "nicene",
     "dates": "251-357",
@@ -89,32 +89,9 @@
     "status": "Saint"
   },
   {
-    "id": 5,
-    "slug": "aphraate-le-sage-persan-5",
-    "name": "Aphraate le Sage persan",
-    "originalName": "Aphrahat",
-    "era": "nicene",
-    "dates": "270-346",
-    "feastDay": "29 janvier",
-    "function": "Écrivain,Moine",
-    "language": [
-      "Syriaque"
-    ],
-    "region": "Irak",
-    "groups": [
-      "Monde Syriaque"
-    ],
-    "disciples": [],
-    "sources": {
-      "wikipedia": "https://fr.wikipedia.org/wiki/Aphraate_le_Sage_persan",
-      "wikisource": "https://fr.wikisource.org/wiki/Auteur:Afraate"
-    },
-    "status": "Saint"
-  },
-  {
     "id": 6,
-    "slug": "aristide-d-athenes-6",
-    "name": "Aristide d'Athènes",
+    "slug": "aristide-d-athenes",
+    "name": "St. Aristide d'Athènes",
     "originalName": "Marcianus Aristides Atheniensis",
     "era": "ante-nicene",
     "dates": "?-134",
@@ -137,7 +114,7 @@
   },
   {
     "id": 7,
-    "slug": "arnobe-de-sicca-7",
+    "slug": "arnobe-de-sicca",
     "name": "Arnobe de Sicca",
     "originalName": "Arnobius",
     "era": "nicene",
@@ -160,8 +137,8 @@
   },
   {
     "id": 8,
-    "slug": "athanase-d-alexandrie-8",
-    "name": "Athanase d’Alexandrie",
+    "slug": "athanase-d-alexandrie",
+    "name": "St. Athanase d’Alexandrie",
     "originalName": "Ἀθανάσιος",
     "era": "nicene",
     "dates": "297-373",
@@ -184,8 +161,8 @@
   },
   {
     "id": 9,
-    "slug": "athenagore-d-athenes-9",
-    "name": "Athénagore d'Athènes",
+    "slug": "athenagore-d-athenes",
+    "name": "St. Athénagore d'Athènes",
     "originalName": "Ἀθηναγόρας ὀ Ἀθηναῖος",
     "era": "ante-nicene",
     "dates": "133-190",
@@ -207,8 +184,8 @@
   },
   {
     "id": 10,
-    "slug": "augustin-d-hippone-10",
-    "name": "Augustin d'Hippone",
+    "slug": "augustin-d-hippone",
+    "name": "St. Augustin d'Hippone",
     "originalName": "Aurelius Augustinus",
     "era": "nicene",
     "dates": "345-430",
@@ -231,8 +208,8 @@
   },
   {
     "id": 11,
-    "slug": "barnabe-11",
-    "name": "Barnabé",
+    "slug": "barnabe",
+    "name": "St. Barnabé",
     "originalName": "Βαρνάβας",
     "era": "apostolic",
     "dates": "?-61",
@@ -255,8 +232,8 @@
   },
   {
     "id": 12,
-    "slug": "basile-de-cesaree-12",
-    "name": "Basile de Césarée",
+    "slug": "basile-de-cesaree",
+    "name": "St. Basile de Césarée",
     "originalName": "Βασίλειος Καισαρείας",
     "era": "nicene",
     "dates": "329-379",
@@ -279,7 +256,7 @@
   },
   {
     "id": 13,
-    "slug": "caius-13",
+    "slug": "caius",
     "name": "Caïus",
     "originalName": "Caius",
     "era": "ante-nicene",
@@ -302,8 +279,8 @@
   },
   {
     "id": 14,
-    "slug": "clement-d-alexandrie-14",
-    "name": "Clément d'Alexandrie",
+    "slug": "clement-d-alexandrie",
+    "name": "St. Clément d'Alexandrie",
     "originalName": "Κλήμης ὁ Ἀλεξανδρεύς",
     "era": "ante-nicene",
     "dates": "150-215",
@@ -326,8 +303,8 @@
   },
   {
     "id": 15,
-    "slug": "clement-de-rome-15",
-    "name": "Clément de Rome",
+    "slug": "clement-de-rome",
+    "name": "St. Clément de Rome",
     "originalName": "Clemens Romanus",
     "era": "apostolic",
     "dates": "17-98",
@@ -350,7 +327,7 @@
   },
   {
     "id": 16,
-    "slug": "commodien-16",
+    "slug": "commodien",
     "name": "Commodien",
     "originalName": "Commodianus",
     "era": "ante-nicene",
@@ -371,8 +348,8 @@
   },
   {
     "id": 17,
-    "slug": "cyprien-de-carthage-17",
-    "name": "Cyprien de Carthage",
+    "slug": "cyprien-de-carthage",
+    "name": "St. Cyprien de Carthage",
     "originalName": "Cyprianus Carthaginiensis",
     "era": "ante-nicene",
     "dates": "200-258",
@@ -395,8 +372,8 @@
   },
   {
     "id": 18,
-    "slug": "cyrille-d-alexandrie-18",
-    "name": "Cyrille d'Alexandrie",
+    "slug": "cyrille-d-alexandrie",
+    "name": "St. Cyrille d'Alexandrie",
     "originalName": "Κύριλλος Ἀλεξανδρείας",
     "era": "nicene",
     "dates": "375-444",
@@ -419,8 +396,8 @@
   },
   {
     "id": 19,
-    "slug": "cyrille-de-jerusalem-19",
-    "name": "Cyrille de Jérusalem",
+    "slug": "cyrille-de-jerusalem",
+    "name": "St. Cyrille de Jérusalem",
     "originalName": "Κύριλλος Α΄ Ἱεροσολύμων",
     "era": "nicene",
     "dates": "315-387",
@@ -443,8 +420,8 @@
   },
   {
     "id": 20,
-    "slug": "denys-d-alexandrie-20",
-    "name": "Denys d'Alexandrie",
+    "slug": "denys-d-alexandrie",
+    "name": "St. Denys d'Alexandrie",
     "originalName": "Διονύσιος Ἀλεξανδρείας",
     "era": "ante-nicene",
     "dates": "190-264",
@@ -467,7 +444,7 @@
   },
   {
     "id": 21,
-    "slug": "didache-21",
+    "slug": "didache",
     "name": "Didachè",
     "originalName": "Διδαχή",
     "era": "apostolic",
@@ -487,8 +464,8 @@
   },
   {
     "id": 22,
-    "slug": "didyme-l-aveugle-22",
-    "name": "Didyme l’Aveugle",
+    "slug": "didyme-l-aveugle",
+    "name": "St. Didyme l’Aveugle",
     "originalName": "Didimos",
     "era": "nicene",
     "dates": "313-398",
@@ -510,8 +487,8 @@
   },
   {
     "id": 23,
-    "slug": "diodore-de-tarse-23",
-    "name": "Diodore de Tarse",
+    "slug": "diodore-de-tarse",
+    "name": "St. Diodore de Tarse",
     "originalName": "Διόδωρος ὁ Ταρσεύς",
     "era": "nicene",
     "dates": "330-394",
@@ -532,8 +509,8 @@
   },
   {
     "id": 24,
-    "slug": "ephrem-le-syriaque-24",
-    "name": "Éphrem le Syriaque",
+    "slug": "ephrem-le-syriaque",
+    "name": "St. Éphrem le Syriaque",
     "originalName": "Mâr Aphrêm Sûryâyâ",
     "era": "nicene",
     "dates": "306-373",
@@ -556,8 +533,8 @@
   },
   {
     "id": 25,
-    "slug": "epiphane-de-salamine-25",
-    "name": "Épiphane de Salamine",
+    "slug": "epiphane-de-salamine",
+    "name": "St. Épiphane de Salamine",
     "originalName": "Epiphanius Constantiensis",
     "era": "nicene",
     "dates": "315-403",
@@ -580,7 +557,7 @@
   },
   {
     "id": 26,
-    "slug": "eusebe-de-cesaree-26",
+    "slug": "eusebe-de-cesaree",
     "name": "Eusèbe de Césarée",
     "originalName": "Ευσέβιος ο Καισαρείας",
     "era": "nicene",
@@ -603,7 +580,7 @@
   },
   {
     "id": 27,
-    "slug": "flavius-josephe-27",
+    "slug": "flavius-josephe",
     "name": "Flavius Josèphe",
     "era": "post-nicene",
     "function": "Historien",
@@ -618,8 +595,8 @@
   },
   {
     "id": 28,
-    "slug": "gregoire-de-nazianze-28",
-    "name": "Grégoire de Nazianze",
+    "slug": "gregoire-de-nazianze",
+    "name": "St. Grégoire de Nazianze",
     "originalName": "Γρηγόριος ὁ Ναζιανζηνός",
     "era": "nicene",
     "dates": "329-390",
@@ -642,8 +619,8 @@
   },
   {
     "id": 29,
-    "slug": "gregoire-de-nysse-29",
-    "name": "Grégoire de Nysse",
+    "slug": "gregoire-de-nysse",
+    "name": "St. Grégoire de Nysse",
     "originalName": "Γρηγόριος Νύσσης",
     "era": "nicene",
     "dates": "335-395",
@@ -666,8 +643,8 @@
   },
   {
     "id": 30,
-    "slug": "gregoire-le-grand-30",
-    "name": "Grégoire le Grand",
+    "slug": "gregoire-le-grand",
+    "name": "St. Grégoire le Grand",
     "originalName": "Gregorius Magnus",
     "era": "post-nicene",
     "dates": "540-604",
@@ -690,8 +667,8 @@
   },
   {
     "id": 31,
-    "slug": "gregoire-le-thaumaturge-31",
-    "name": "Grégoire le Thaumaturge",
+    "slug": "gregoire-le-thaumaturge",
+    "name": "St. Grégoire le Thaumaturge",
     "originalName": "Grēgórios ho Thaumatourgós",
     "era": "ante-nicene",
     "dates": "213-270",
@@ -714,7 +691,7 @@
   },
   {
     "id": 32,
-    "slug": "hermas-32",
+    "slug": "hermas",
     "name": "Hermas",
     "originalName": "Ποιμὴν τοῦ Ἑρμᾶ",
     "era": "post-nicene",
@@ -733,8 +710,8 @@
   },
   {
     "id": 33,
-    "slug": "hilaire-de-poitiers-33",
-    "name": "Hilaire de Poitiers",
+    "slug": "hilaire-de-poitiers",
+    "name": "St. Hilaire de Poitiers",
     "originalName": "Hilarius",
     "era": "nicene",
     "dates": "315-367",
@@ -757,8 +734,8 @@
   },
   {
     "id": 34,
-    "slug": "hippolyte-de-rome-34",
-    "name": "Hippolyte de Rome",
+    "slug": "hippolyte-de-rome",
+    "name": "St. Hippolyte de Rome",
     "originalName": "Hippolytus Romanus",
     "era": "ante-nicene",
     "dates": "?-170",
@@ -781,8 +758,8 @@
   },
   {
     "id": 35,
-    "slug": "ignace-d-antioche-35",
-    "name": "Ignace d'Antioche",
+    "slug": "ignace-d-antioche",
+    "name": "St. Ignace d'Antioche",
     "originalName": "Ἰγνάτιος Ἀντιοχείας",
     "era": "apostolic",
     "dates": "35-110",
@@ -805,8 +782,8 @@
   },
   {
     "id": 36,
-    "slug": "irenee-de-lyon-36",
-    "name": "Irénée de Lyon",
+    "slug": "irenee-de-lyon",
+    "name": "St. Irénée de Lyon",
     "originalName": "Εἰρηναῖος Λουγδούνου",
     "era": "ante-nicene",
     "dates": "130-202",
@@ -829,8 +806,8 @@
   },
   {
     "id": 37,
-    "slug": "jean-cassien-37",
-    "name": "Jean Cassien",
+    "slug": "jean-cassien",
+    "name": "St. Jean Cassien",
     "originalName": "Ioannes Eremita Cassianus",
     "era": "nicene",
     "dates": "360-433",
@@ -853,8 +830,8 @@
   },
   {
     "id": 38,
-    "slug": "jean-chrysostome-38",
-    "name": "Jean Chrysostome",
+    "slug": "jean-chrysostome",
+    "name": "St. Jean Chrysostome",
     "originalName": "Ἰωάννης ὁ Χρυσόστομος",
     "era": "nicene",
     "dates": "344-407",
@@ -877,8 +854,8 @@
   },
   {
     "id": 39,
-    "slug": "jean-damascene-39",
-    "name": "Jean Damascène",
+    "slug": "jean-damascene",
+    "name": "St. Jean Damascène",
     "originalName": "Yaḥyā ibn Sarjūn",
     "era": "post-nicene",
     "dates": "675-749",
@@ -901,8 +878,8 @@
   },
   {
     "id": 40,
-    "slug": "jerome-de-stridon-40",
-    "name": "Jérôme de Stridon",
+    "slug": "jerome-de-stridon",
+    "name": "St. Jérôme de Stridon",
     "originalName": "Sophronius Eusebius Hieronymus",
     "era": "nicene",
     "dates": "345-420",
@@ -924,19 +901,8 @@
     "status": "Saint,Docteur"
   },
   {
-    "id": 41,
-    "slug": "jesus-41",
-    "name": "Jésus",
-    "era": "post-nicene",
-    "language": [],
-    "groups": [],
-    "disciples": [],
-    "sources": {},
-    "status": "Dieu"
-  },
-  {
     "id": 42,
-    "slug": "jules-l-africain-42",
+    "slug": "jules-l-africain",
     "name": "Jules l’Africain",
     "originalName": "Sextus Julius Africanus",
     "era": "ante-nicene",
@@ -958,8 +924,8 @@
   },
   {
     "id": 43,
-    "slug": "justin-martyr-43",
-    "name": "Justin Martyr",
+    "slug": "justin-martyr",
+    "name": "St. Justin Martyr",
     "originalName": "Ἰουστῖνος ὁ Μάρτυς",
     "era": "ante-nicene",
     "dates": "100-160",
@@ -982,7 +948,7 @@
   },
   {
     "id": 44,
-    "slug": "lactance-44",
+    "slug": "lactance",
     "name": "Lactance",
     "originalName": "Lactantius",
     "era": "ante-nicene",
@@ -1003,11 +969,11 @@
   },
   {
     "id": 45,
-    "slug": "leon-le-grand-45",
-    "name": "Léon le Grand",
+    "slug": "leon-le-grand",
+    "name": "St. Léon le Grand",
     "originalName": "Leo Magnus",
     "era": "post-nicene",
-    "dates": "490-461",
+    "dates": "c. 400-461",
     "feastDay": "10 novembre",
     "function": "Pape,Écrivain",
     "language": [
@@ -1027,7 +993,7 @@
   },
   {
     "id": 46,
-    "slug": "mathete-46",
+    "slug": "mathete",
     "name": "Mathète",
     "era": "post-nicene",
     "language": [],
@@ -1039,8 +1005,8 @@
   },
   {
     "id": 47,
-    "slug": "meliton-de-sardes-47",
-    "name": "Méliton de Sardes",
+    "slug": "meliton-de-sardes",
+    "name": "St. Méliton de Sardes",
     "originalName": "Μελίτων Σάρδεων",
     "era": "ante-nicene",
     "dates": "100-180",
@@ -1063,8 +1029,8 @@
   },
   {
     "id": 48,
-    "slug": "methode-d-olympe-48",
-    "name": "Méthode d'Olympe",
+    "slug": "methode-d-olympe",
+    "name": "St. Méthode d'Olympe",
     "originalName": "Μεθόδιος Όλύμπου",
     "era": "ante-nicene",
     "dates": "260-311",
@@ -1087,7 +1053,7 @@
   },
   {
     "id": 49,
-    "slug": "minucius-felix-49",
+    "slug": "minucius-felix",
     "name": "Minucius Félix",
     "originalName": "Marcus Minucius Felix",
     "era": "ante-nicene",
@@ -1109,7 +1075,7 @@
   },
   {
     "id": 50,
-    "slug": "novatien-50",
+    "slug": "novatien",
     "name": "Novatien",
     "originalName": "Novatianus",
     "era": "ante-nicene",
@@ -1131,8 +1097,8 @@
   },
   {
     "id": 51,
-    "slug": "optat-de-mileve-51",
-    "name": "Optat de Milève",
+    "slug": "optat-de-mileve",
+    "name": "St. Optat de Milève",
     "originalName": "Optatus episcopus Mileuitanus",
     "era": "nicene",
     "dates": "341-397",
@@ -1154,7 +1120,7 @@
   },
   {
     "id": 52,
-    "slug": "origene-52",
+    "slug": "origene",
     "name": "Origène",
     "originalName": "Ὠριγένης",
     "era": "ante-nicene",
@@ -1176,8 +1142,8 @@
   },
   {
     "id": 53,
-    "slug": "pamphile-de-cesaree-53",
-    "name": "Pamphile de Césarée",
+    "slug": "pamphile-de-cesaree",
+    "name": "St. Pamphile de Césarée",
     "originalName": "Pamphilos",
     "era": "ante-nicene",
     "dates": "240-309",
@@ -1200,8 +1166,8 @@
   },
   {
     "id": 54,
-    "slug": "papias-de-hierapolis-54",
-    "name": "Papias de Hiérapolis",
+    "slug": "papias-de-hierapolis",
+    "name": "St. Papias de Hiérapolis",
     "originalName": "Παπίας Ἱεραπόλεως",
     "era": "apostolic",
     "dates": "60-140",
@@ -1224,8 +1190,8 @@
   },
   {
     "id": 55,
-    "slug": "polycarpe-de-smyrne-55",
-    "name": "Polycarpe de Smyrne",
+    "slug": "polycarpe-de-smyrne",
+    "name": "St. Polycarpe de Smyrne",
     "originalName": "Πολύκαρπος Σμύρνος",
     "era": "apostolic",
     "dates": "69-155",
@@ -1248,7 +1214,7 @@
   },
   {
     "id": 56,
-    "slug": "pseudo-denys-l-areopagite-56",
+    "slug": "pseudo-denys-l-areopagite",
     "name": "Pseudo-Denys l'Aréopagite",
     "originalName": "Διονύσιος ο Αρεοπαγίτης",
     "era": "post-nicene",
@@ -1268,44 +1234,24 @@
     }
   },
   {
-    "id": 57,
-    "slug": "st-jean-57",
-    "name": "St. Jean",
-    "era": "post-nicene",
-    "language": [],
-    "groups": [],
-    "disciples": [],
-    "sources": {},
-    "status": "Saint,Apôtre",
-    "dates": "c. 6-100"
-  },
-  {
-    "id": 58,
-    "slug": "st-paul-58",
-    "name": "St. Paul",
-    "era": "post-nicene",
-    "language": [],
-    "groups": [],
-    "disciples": [],
-    "sources": {},
-    "status": "Saint,Apôtre,Martyr"
-  },
-  {
     "id": 59,
-    "slug": "st-pierre-59",
-    "name": "St. Pierre",
-    "era": "post-nicene",
-    "language": [],
+    "slug": "pierre-d-alexandrie",
+    "name": "St. Pierre d'Alexandrie",
+    "era": "ante-nicene",
+    "language": [
+      "Grec"
+    ],
     "groups": [],
     "disciples": [],
     "sources": {},
-    "status": "Saint,Apôtre,Martyr",
-    "dates": "c. 1-64"
+    "status": "Saint,Martyr",
+    "dates": "?-311",
+    "function": "Évêque"
   },
   {
     "id": 60,
-    "slug": "sulpice-severe-60",
-    "name": "Sulpice Sévère",
+    "slug": "sulpice-severe",
+    "name": "St. Sulpice Sévère",
     "originalName": "Sulpicius Severus",
     "era": "nicene",
     "dates": "363-429",
@@ -1328,7 +1274,7 @@
   },
   {
     "id": 61,
-    "slug": "tatien-le-syrien-61",
+    "slug": "tatien-le-syrien",
     "name": "Tatien le Syrien",
     "originalName": "Tatianus",
     "era": "ante-nicene",
@@ -1350,7 +1296,7 @@
   },
   {
     "id": 62,
-    "slug": "tertullien-62",
+    "slug": "tertullien",
     "name": "Tertullien",
     "originalName": "Quintus Septimius Florens Tertullianus",
     "era": "ante-nicene",
@@ -1373,8 +1319,8 @@
   },
   {
     "id": 63,
-    "slug": "theodoret-de-cyr-63",
-    "name": "Théodoret de Cyr",
+    "slug": "theodoret-de-cyr",
+    "name": "St. Théodoret de Cyr",
     "originalName": "Θεοδώρητος",
     "era": "post-nicene",
     "dates": "393-457",
@@ -1396,8 +1342,8 @@
   },
   {
     "id": 64,
-    "slug": "theophile-d-antioche-64",
-    "name": "Théophile d'Antioche",
+    "slug": "theophile-d-antioche",
+    "name": "St. Théophile d'Antioche",
     "originalName": "Θεόφιλος ὁ Ἀντιοχεύς",
     "era": "ante-nicene",
     "dates": "169-183",
@@ -1420,8 +1366,8 @@
   },
   {
     "id": 65,
-    "slug": "victorin-de-pettau-65",
-    "name": "Victorin de Pettau",
+    "slug": "victorin-de-pettau",
+    "name": "St. Victorin de Pettau",
     "originalName": "Victorinus Petavionensis",
     "era": "ante-nicene",
     "dates": "250-303",
@@ -1444,8 +1390,8 @@
   },
   {
     "id": 66,
-    "slug": "vincent-de-lerins-66",
-    "name": "Vincent de Lérins",
+    "slug": "vincent-de-lerins",
+    "name": "St. Vincent de Lérins",
     "originalName": "Vincent de Lérins",
     "era": "nicene",
     "dates": "?-450",
@@ -1468,7 +1414,7 @@
   },
   {
     "id": 67,
-    "slug": "anonyme-67",
+    "slug": "anonyme",
     "name": "Anonyme",
     "era": "post-nicene",
     "language": [],
@@ -1478,7 +1424,7 @@
   },
   {
     "id": 68,
-    "slug": "cesaire-d-arles-68",
+    "slug": "cesaire-d-arles",
     "name": "Césaire d'Arles",
     "era": "post-nicene",
     "language": [],
@@ -1489,7 +1435,7 @@
   },
   {
     "id": 1002,
-    "slug": "pape-celestin-ier-1002",
+    "slug": "pape-celestin-ier",
     "name": "Pape Célestin Ier",
     "era": "post-nicene",
     "language": [],
@@ -1500,7 +1446,7 @@
   },
   {
     "id": 1003,
-    "slug": "constantin-1003",
+    "slug": "constantin",
     "name": "Constantin",
     "era": "post-nicene",
     "language": [],
@@ -1511,7 +1457,7 @@
   },
   {
     "id": 1004,
-    "slug": "pape-st-damase-ier-1004",
+    "slug": "pape-st-damase-ier",
     "name": "Pape St. Damase Ier",
     "era": "post-nicene",
     "language": [],
@@ -1522,7 +1468,7 @@
   },
   {
     "id": 1005,
-    "slug": "st-denis-de-corinthe-1005",
+    "slug": "st-denis-de-corinthe",
     "name": "St. Denis de Corinthe",
     "era": "post-nicene",
     "language": [],
@@ -1532,7 +1478,7 @@
   },
   {
     "id": 1006,
-    "slug": "evagre-le-pontique-1006",
+    "slug": "evagre-le-pontique",
     "name": "Évagre le Pontique",
     "era": "post-nicene",
     "language": [],
@@ -1543,7 +1489,7 @@
   },
   {
     "id": 1007,
-    "slug": "firmilien-de-cesaree-1007",
+    "slug": "firmilien-de-cesaree",
     "name": "Firmilien de Césarée",
     "era": "post-nicene",
     "language": [],
@@ -1552,7 +1498,7 @@
   },
   {
     "id": 1008,
-    "slug": "st-fulgence-de-ruspe-1008",
+    "slug": "st-fulgence-de-ruspe",
     "name": "St. Fulgence de Ruspe",
     "era": "post-nicene",
     "language": [],
@@ -1560,17 +1506,8 @@
     "dates": "462-533"
   },
   {
-    "id": 1009,
-    "slug": "pape-st-gregoire-ier-1009",
-    "name": "Pape St. Grégoire Ier",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {},
-    "dates": "540-604"
-  },
-  {
     "id": 1010,
-    "slug": "st-hegesippe-1010",
+    "slug": "st-hegesippe",
     "name": "St. Hégésippe",
     "era": "post-nicene",
     "language": [],
@@ -1579,7 +1516,7 @@
   },
   {
     "id": 1011,
-    "slug": "pape-st-innocent-ier-1011",
+    "slug": "pape-st-innocent-ier",
     "name": "Pape St. Innocent Ier",
     "era": "post-nicene",
     "language": [],
@@ -1588,7 +1525,7 @@
   },
   {
     "id": 1012,
-    "slug": "pape-st-jules-ier-1012",
+    "slug": "pape-st-jules-ier",
     "name": "Pape St. Jules Ier",
     "era": "post-nicene",
     "language": [],
@@ -1596,17 +1533,8 @@
     "dates": "?-352"
   },
   {
-    "id": 1013,
-    "slug": "pape-st-leon-ier-1013",
-    "name": "Pape St. Léon Ier",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {},
-    "dates": "c. 400-461"
-  },
-  {
     "id": 1014,
-    "slug": "leporius-1014",
+    "slug": "leporius",
     "name": "Léporius",
     "era": "post-nicene",
     "language": [],
@@ -1615,7 +1543,7 @@
   },
   {
     "id": 1015,
-    "slug": "st-pacien-de-barcelone-1015",
+    "slug": "st-pacien-de-barcelone",
     "name": "St. Pacien de Barcelone",
     "era": "post-nicene",
     "language": [],
@@ -1624,7 +1552,7 @@
   },
   {
     "id": 1016,
-    "slug": "st-patrick-1016",
+    "slug": "st-patrick",
     "name": "St. Patrick",
     "era": "post-nicene",
     "language": [],
@@ -1633,7 +1561,7 @@
   },
   {
     "id": 1017,
-    "slug": "pectorius-d-autun-1017",
+    "slug": "pectorius-d-autun",
     "name": "Pectorius d’Autun",
     "era": "post-nicene",
     "language": [],
@@ -1642,7 +1570,7 @@
   },
   {
     "id": 1018,
-    "slug": "st-pierre-chrysologue-1018",
+    "slug": "st-pierre-chrysologue",
     "name": "St. Pierre Chrysologue",
     "era": "post-nicene",
     "language": [],
@@ -1651,7 +1579,7 @@
   },
   {
     "id": 1019,
-    "slug": "st-pion-de-smyrne-1019",
+    "slug": "st-pion-de-smyrne",
     "name": "St. Pion de Smyrne",
     "era": "post-nicene",
     "language": [],
@@ -1660,7 +1588,7 @@
   },
   {
     "id": 1020,
-    "slug": "st-prosper-d-aquitaine-1020",
+    "slug": "st-prosper-d-aquitaine",
     "name": "St. Prosper d’Aquitaine",
     "era": "post-nicene",
     "language": [],
@@ -1669,7 +1597,7 @@
   },
   {
     "id": 1021,
-    "slug": "pseudo-ignace-1021",
+    "slug": "pseudo-ignace",
     "name": "Pseudo-Ignace",
     "era": "post-nicene",
     "language": [],
@@ -1678,7 +1606,7 @@
   },
   {
     "id": 1022,
-    "slug": "pseudo-jean-1022",
+    "slug": "pseudo-jean",
     "name": "Pseudo-Jean",
     "era": "post-nicene",
     "language": [],
@@ -1686,7 +1614,7 @@
   },
   {
     "id": 1023,
-    "slug": "pseudo-justin-1023",
+    "slug": "pseudo-justin",
     "name": "Pseudo-Justin",
     "era": "post-nicene",
     "language": [],
@@ -1695,7 +1623,7 @@
   },
   {
     "id": 1024,
-    "slug": "pseudo-meliton-1024",
+    "slug": "pseudo-meliton",
     "name": "Pseudo-Méliton",
     "era": "post-nicene",
     "language": [],
@@ -1703,7 +1631,7 @@
   },
   {
     "id": 1025,
-    "slug": "st-sechnall-d-irlande-1025",
+    "slug": "st-sechnall-d-irlande",
     "name": "St. Sechnall d’Irlande",
     "era": "post-nicene",
     "language": [],
@@ -1711,17 +1639,8 @@
     "dates": "c. 372-447"
   },
   {
-    "id": 1026,
-    "slug": "segond-clement-1026",
-    "name": "Segond Clément",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {},
-    "dates": "c. 140-160"
-  },
-  {
     "id": 1027,
-    "slug": "st-serapion-de-thmuis-1027",
+    "slug": "st-serapion-de-thmuis",
     "name": "St. Sérapion de Thmuis",
     "era": "post-nicene",
     "language": [],
@@ -1730,7 +1649,7 @@
   },
   {
     "id": 1028,
-    "slug": "pape-st-siricius-ier-1028",
+    "slug": "pape-st-siricius-ier",
     "name": "Pape St. Siricius Ier",
     "era": "post-nicene",
     "language": [],
@@ -1739,7 +1658,7 @@
   },
   {
     "id": 1029,
-    "slug": "sozomene-de-constantinople-1029",
+    "slug": "sozomene-de-constantinople",
     "name": "Sozomène de Constantinople",
     "era": "post-nicene",
     "language": [],
@@ -1748,7 +1667,7 @@
   },
   {
     "id": 1030,
-    "slug": "theodore-de-mopsueste-1030",
+    "slug": "theodore-de-mopsueste",
     "name": "Théodore de Mopsueste",
     "era": "post-nicene",
     "language": [],
@@ -1757,7 +1676,7 @@
   },
   {
     "id": 1031,
-    "slug": "timothee-de-jerusalem-1031",
+    "slug": "timothee-de-jerusalem",
     "name": "Timothée de Jérusalem",
     "era": "post-nicene",
     "language": [],
@@ -1765,7 +1684,7 @@
   },
   {
     "id": 1032,
-    "slug": "pape-st-gregoire-vii-1032",
+    "slug": "pape-st-gregoire-vii",
     "name": "Pape St. Grégoire VII",
     "era": "post-nicene",
     "language": [],
@@ -1774,7 +1693,7 @@
   },
   {
     "id": 1033,
-    "slug": "pape-st-agatho-1033",
+    "slug": "pape-st-agatho",
     "name": "Pape St. Agatho",
     "era": "post-nicene",
     "language": [],
@@ -1782,7 +1701,7 @@
   },
   {
     "id": 1034,
-    "slug": "st-alexandre-d-alexandrie-1034",
+    "slug": "st-alexandre-d-alexandrie",
     "name": "St. Alexandre d’Alexandrie",
     "era": "post-nicene",
     "language": [],
@@ -1790,47 +1709,25 @@
   },
   {
     "id": 1035,
-    "slug": "st-aphrahat-le-sage-persan-1035",
+    "slug": "st-aphrahat-le-sage-persan",
     "name": "St. Aphrahat le Sage persan",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
-  },
-  {
-    "id": 1036,
-    "slug": "athenagoras-d-athenes-1036",
-    "name": "Athénagoras d’Athènes",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {}
-  },
-  {
-    "id": 1037,
-    "slug": "pape-st-clement-ier-1037",
-    "name": "Pape St. Clément Ier",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {}
-  },
-  {
-    "id": 1038,
-    "slug": "constantin-ier-1038",
-    "name": "Constantin Ier",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "270-346"
   },
   {
     "id": 1039,
-    "slug": "concile-d-ankara-1039",
+    "slug": "concile-d-ankara",
     "name": "Concile d’Ankara",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "314"
   },
   {
     "id": 1040,
-    "slug": "concile-de-carthage-de-397-1040",
+    "slug": "concile-de-carthage-de-397",
     "name": "Concile de Carthage de 397",
     "era": "post-nicene",
     "language": [],
@@ -1838,7 +1735,7 @@
   },
   {
     "id": 1041,
-    "slug": "concile-de-carthage-de-418-1041",
+    "slug": "concile-de-carthage-de-418",
     "name": "Concile de Carthage de 418",
     "era": "post-nicene",
     "language": [],
@@ -1846,7 +1743,7 @@
   },
   {
     "id": 1042,
-    "slug": "concile-de-carthage-de-419-1042",
+    "slug": "concile-de-carthage-de-419",
     "name": "Concile de Carthage de 419",
     "era": "post-nicene",
     "language": [],
@@ -1854,98 +1751,209 @@
   },
   {
     "id": 1043,
-    "slug": "concile-de-chalcedoine-1043",
+    "slug": "concile-de-chalcedoine",
     "name": "Concile de Chalcédoine",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "451"
   },
   {
     "id": 1044,
-    "slug": "concile-de-constantinople-i-1044",
+    "slug": "concile-de-constantinople-i",
     "name": "Concile de Constantinople I",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "381"
   },
   {
     "id": 1045,
-    "slug": "concile-de-constantinople-ii-1045",
+    "slug": "concile-de-constantinople-ii",
     "name": "Concile de Constantinople II",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "553"
   },
   {
     "id": 1046,
-    "slug": "concile-d-elvire-1046",
+    "slug": "concile-d-elvire",
     "name": "Concile d’Elvire",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 305"
   },
   {
     "id": 1047,
-    "slug": "concile-d-ephese-1047",
+    "slug": "concile-d-ephese",
     "name": "Concile d’Éphèse",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "431"
   },
   {
     "id": 1048,
-    "slug": "concile-d-hippone-1048",
+    "slug": "concile-d-hippone",
     "name": "Concile d’Hippone",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "393"
   },
   {
     "id": 1049,
-    "slug": "concile-de-laodicee-1049",
+    "slug": "concile-de-laodicee",
     "name": "Concile de Laodicée",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 363"
   },
   {
     "id": 1050,
-    "slug": "concile-de-nicee-i-1050",
+    "slug": "concile-de-nicee-i",
     "name": "Concile de Nicée I",
     "era": "nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "325"
   },
   {
     "id": 1051,
-    "slug": "concile-de-rome-1051",
+    "slug": "concile-de-rome",
     "name": "Concile de Rome",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "c. 382"
   },
   {
     "id": 1052,
-    "slug": "concile-de-sardique-1052",
+    "slug": "concile-de-sardique",
     "name": "Concile de Sardique",
     "era": "post-nicene",
     "language": [],
-    "sources": {}
-  },
-  {
-    "id": 1053,
-    "slug": "pape-st-damase-ier-1053",
-    "name": "Pape St. Damase Ier",
-    "era": "post-nicene",
-    "language": [],
-    "sources": {}
+    "sources": {},
+    "dates": "343"
   },
   {
     "id": 1054,
-    "slug": "inscriptions-chretiennes-1054",
+    "slug": "inscriptions-chretiennes",
     "name": "Inscriptions chrétiennes",
     "era": "post-nicene",
     "language": [],
     "sources": {}
+  },
+  {
+    "id": 1055,
+    "slug": "concile-de-carthage-de",
+    "name": "Concile de Carthage de 256",
+    "era": "ante-nicene",
+    "function": "Concile"
+  },
+  {
+    "id": 1056,
+    "slug": "concile-de-carthage-de",
+    "name": "Concile de Carthage de 401",
+    "era": "nicene",
+    "function": "Concile"
+  },
+  {
+    "id": 1057,
+    "slug": "constitutions-apostoliques",
+    "name": "Constitutions apostoliques",
+    "era": "nicene",
+    "dates": "c. 380",
+    "function": "Compilation canonique"
+  },
+  {
+    "id": 1058,
+    "slug": "pseudo-pierre",
+    "name": "Pseudo-Pierre",
+    "era": "ante-nicene",
+    "function": "Apocryphe"
+  },
+  {
+    "id": 1059,
+    "slug": "pseudo-clement",
+    "name": "Pseudo-Clément",
+    "era": "ante-nicene",
+    "function": "Apocryphe"
+  },
+  {
+    "id": 1060,
+    "slug": "pseudo-jacques",
+    "name": "Pseudo-Jacques",
+    "era": "ante-nicene",
+    "function": "Apocryphe"
+  },
+  {
+    "id": 1061,
+    "slug": "eglise-de-smyrne",
+    "name": "Église de Smyrne",
+    "era": "ante-nicene",
+    "dates": "c. 155",
+    "function": "Communauté ecclésiale"
+  },
+  {
+    "id": 1062,
+    "slug": "didascalie-des-apotres",
+    "name": "Didascalie des apôtres",
+    "era": "ante-nicene",
+    "dates": "c. 230",
+    "function": "Compilation canonique"
+  },
+  {
+    "id": 1063,
+    "slug": "ascension-d-isaie",
+    "name": "Ascension d’Isaïe",
+    "era": "ante-nicene",
+    "dates": "c. 150"
+  },
+  {
+    "id": 1064,
+    "slug": "martyre-de-perpetue-et-felicite",
+    "name": "Martyre de Perpétue et Félicité",
+    "era": "ante-nicene",
+    "dates": "c. 203"
+  },
+  {
+    "id": 1065,
+    "slug": "fragment-muratorien",
+    "name": "Fragment muratorien",
+    "era": "ante-nicene",
+    "dates": "c. 170-200"
+  },
+  {
+    "id": 1066,
+    "slug": "odes-de-salomon",
+    "name": "Odes de Salomon",
+    "era": "ante-nicene",
+    "dates": "c. 100-125"
+  },
+  {
+    "id": 1067,
+    "slug": "pseudo-hippolyte",
+    "name": "Pseudo-Hippolyte",
+    "era": "ante-nicene",
+    "dates": "IIIe-IVe s.",
+    "function": "Apocryphe"
+  },
+  {
+    "id": 1068,
+    "slug": "papyrus-rylands",
+    "name": "Papyrus Rylands",
+    "era": "ante-nicene",
+    "dates": "c. 125"
+  },
+  {
+    "id": 1069,
+    "slug": "traite-sur-le-rebapteme",
+    "name": "Traité sur le rebaptême",
+    "era": "ante-nicene",
+    "dates": "c. 256"
   }
 ]

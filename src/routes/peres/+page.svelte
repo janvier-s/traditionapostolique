@@ -5,14 +5,61 @@
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import type { Author, Era } from '$lib/schema';
 
-	type SortKey = 'alpha' | 'chrono' | 'era' | 'count';
-	let sortBy = $state<SortKey>('alpha');
+	type SortKey = 'alpha' | 'chrono' | 'era' | 'role' | 'count';
+	const SORT_STORAGE_KEY = 'peres:sortBy';
+	const VALID_SORTS: SortKey[] = ['alpha', 'chrono', 'era', 'role', 'count'];
+	function initialSort(): SortKey {
+		if (typeof localStorage === 'undefined') return 'alpha';
+		const v = localStorage.getItem(SORT_STORAGE_KEY) as SortKey | null;
+		return v && VALID_SORTS.includes(v) ? v : 'alpha';
+	}
+	let sortBy = $state<SortKey>(initialSort());
+	$effect(() => {
+		if (typeof localStorage !== 'undefined') localStorage.setItem(SORT_STORAGE_KEY, sortBy);
+	});
 	const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 		{ value: 'alpha', label: 'Alphabétique' },
 		{ value: 'chrono', label: 'Chronologique' },
 		{ value: 'era', label: 'Par ère' },
+		{ value: 'role', label: 'Par rôle' },
 		{ value: 'count', label: 'Par fréquence' }
 	];
+
+	// Assign each author a single canonical "role" bucket. Order of the
+	// checks below is the display order on the grouped index.
+	const ROLE_ORDER = [
+		'Apôtres',
+		'Papes',
+		'Docteurs de l’Église',
+		'Pères cappadociens',
+		'Évêques',
+		'Martyrs',
+		'Saints',
+		'Conciles',
+		'Théologiens & écrivains',
+		'Écrits anonymes & pseudonymes',
+		'Laïcs',
+		'Autres'
+	] as const;
+	type Role = (typeof ROLE_ORDER)[number];
+	function roleOf(a: Author): Role {
+		const status = (a.status ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+		const fn = (a.function ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+		const name = a.name;
+		const hasSaintPrefix = /^(St\.?|Ste\.?|Saint|Sainte)\s+/i.test(name);
+		if (status.includes('Apôtre')) return 'Apôtres';
+		if (/^Concile/i.test(name)) return 'Conciles';
+		if (/^Pape/i.test(name) || fn.includes('Pape')) return 'Papes';
+		if (status.includes('Docteur') || status.includes('Docteur œcuménique')) return 'Docteurs de l’Église';
+		if (status.includes('Père cappadocien')) return 'Pères cappadociens';
+		if (fn.includes('Évêque') || fn.includes('Archévêque')) return 'Évêques';
+		if (status.includes('Martyr')) return 'Martyrs';
+		if (status.includes('Saint') || hasSaintPrefix) return 'Saints';
+		if (/^(Pseudo-|Anonyme|Inscriptions|Didachè|Hermas|Mathète|Segond Clément)/i.test(name)) return 'Écrits anonymes & pseudonymes';
+		if (status.includes('Laïc')) return 'Laïcs';
+		if (fn.some((f) => ['Theologien', 'Écrivain', 'Apologète', 'Philosophe', 'Historien', 'Moine', 'Prêtre', 'Hagiographe', 'Bibliste', 'Poète', 'Prêcheur'].includes(f))) return 'Théologiens & écrivains';
+		return 'Autres';
+	}
 
 	function deathYear(a: Author): number {
 		if (!a.dates) return 9999;
@@ -133,6 +180,15 @@
 				.filter((g) => g.items.length > 0);
 		}
 
+		if (sortBy === 'role') {
+			return ROLE_ORDER.map<Group>((r) => ({
+				label: r,
+				items: authors
+					.filter((a) => roleOf(a) === r)
+					.sort((x, y) => sortKey(x.name).localeCompare(sortKey(y.name), 'fr'))
+			})).filter((g) => g.items.length > 0);
+		}
+
 		// count
 		const arr = [...authors].sort(
 			(a, b) => (quoteCounts.get(b.id) ?? 0) - (quoteCounts.get(a.id) ?? 0)
@@ -210,7 +266,7 @@
 								<a href={`/peres/${a.slug}`} class="font-body text-foreground hover:text-active">
 									{split.core}
 									{#if split.titles.length > 0}
-										<span class="ml-1 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
+										<span class="ml-1 font-ui text-[11px] font-light normal-case tracking-[0.05em] text-muted">
 											({split.titles.join(', ')})
 										</span>
 									{/if}

@@ -412,7 +412,7 @@
   {
     "id": 25,
     "slug": "citation-25",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       21
@@ -429,7 +429,7 @@
   {
     "id": 26,
     "slug": "citation-26",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       25
@@ -447,7 +447,7 @@
   {
     "id": 27,
     "slug": "citation-27",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       28
@@ -463,7 +463,7 @@
   {
     "id": 28,
     "slug": "citation-28",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       20
@@ -480,7 +480,7 @@
   {
     "id": 29,
     "slug": "citation-29",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       10
@@ -497,7 +497,7 @@
   {
     "id": 30,
     "slug": "citation-30",
-    "authorId": 67,
+    "authorId": 1063,
     "workId": 25,
     "topicIds": [
       37
@@ -515,7 +515,7 @@
   {
     "id": 31,
     "slug": "citation-31",
-    "authorId": 67,
+    "authorId": 1058,
     "workId": 21,
     "topicIds": [
       20
@@ -532,7 +532,7 @@
   {
     "id": 32,
     "slug": "citation-32",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       29
@@ -550,7 +550,7 @@
   {
     "id": 33,
     "slug": "citation-33",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       36
@@ -568,7 +568,7 @@
   {
     "id": 35,
     "slug": "citation-35",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       34
@@ -585,7 +585,7 @@
   {
     "id": 36,
     "slug": "citation-36",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       34
@@ -599,7 +599,7 @@
   {
     "id": 37,
     "slug": "citation-37",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       34
@@ -617,7 +617,7 @@
   {
     "id": 38,
     "slug": "citation-38",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       8
@@ -634,7 +634,7 @@
   {
     "id": 39,
     "slug": "citation-39",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 22,
     "topicIds": [
       8
@@ -651,7 +651,7 @@
   {
     "id": 40,
     "slug": "citation-40",
-    "authorId": 5,
+    "authorId": 1035,
     "workId": 20,
     "topicIds": [
       24
@@ -668,7 +668,7 @@
   {
     "id": 41,
     "slug": "citation-41",
-    "authorId": 5,
+    "authorId": 1035,
     "workId": 20,
     "topicIds": [
       6
@@ -685,7 +685,7 @@
   {
     "id": 42,
     "slug": "citation-42",
-    "authorId": 5,
+    "authorId": 1035,
     "workId": 20,
     "topicIds": [
       48
@@ -702,7 +702,7 @@
   {
     "id": 43,
     "slug": "citation-43",
-    "authorId": 5,
+    "authorId": 1035,
     "workId": 20,
     "topicIds": [
       30
@@ -3421,7 +3421,7 @@
   {
     "id": 205,
     "slug": "citation-205",
-    "authorId": 67,
+    "authorId": 1039,
     "workId": 10002,
     "topicIds": [
       20
@@ -3437,7 +3437,7 @@
   {
     "id": 206,
     "slug": "citation-206",
-    "authorId": 67,
+    "authorId": 1055,
     "workId": 10003,
     "topicIds": [
       25
@@ -3469,7 +3469,7 @@
   {
     "id": 208,
     "slug": "citation-208",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 10019,
     "topicIds": [
       10
@@ -3487,7 +3487,7 @@
   {
     "id": 209,
     "slug": "citation-209",
-    "authorId": 67,
+    "authorId": 1057,
     "workId": 10018,
     "topicIds": [
       10
@@ -3505,7 +3505,7 @@
   {
     "id": 210,
     "slug": "citation-210",
-    "authorId": 67,
+    "authorId": 1040,
     "workId": 10004,
     "topicIds": [
       10
@@ -3523,7 +3523,7 @@
   {
     "id": 211,
     "slug": "citation-211",
-    "authorId": 67,
+    "authorId": 1056,
     "workId": 10005,
     "topicIds": [
       28
@@ -3540,7 +3540,7 @@
   {
     "id": 212,
     "slug": "citation-212",
-    "authorId": 67,
+    "authorId": 1056,
     "workId": 10005,
     "topicIds": [
       10
@@ -3555,7 +3555,7 @@
   {
     "id": 213,
     "slug": "citation-213",
-    "authorId": 67,
+    "authorId": 1042,
     "workId": 10006,
     "topicIds": [
       10
@@ -3568,7 +3568,7 @@
   {
     "id": 214,
     "slug": "citation-214",
-    "authorId": 67,
+    "authorId": 1043,
     "workId": 10007,
     "topicIds": [
       18
@@ -3587,7 +3587,7 @@
   {
     "id": 215,
     "slug": "citation-215",
-    "authorId": 67,
+    "authorId": 1043,
     "workId": 10007,
     "topicIds": [
       18
@@ -3605,7 +3605,7 @@
   {
     "id": 216,
     "slug": "citation-216",
-    "authorId": 67,
+    "authorId": 1043,
     "workId": 10007,
     "topicIds": [
       14
@@ -3623,7 +3623,7 @@
   {
     "id": 217,
     "slug": "citation-217",
-    "authorId": 67,
+    "authorId": 1043,
     "workId": 10007,
     "topicIds": [
       12
@@ -3640,7 +3640,7 @@
   {
     "id": 218,
     "slug": "citation-218",
-    "authorId": 67,
+    "authorId": 1044,
     "workId": 10008,
     "topicIds": [
       18
@@ -3658,7 +3658,7 @@
   {
     "id": 219,
     "slug": "citation-219",
-    "authorId": 67,
+    "authorId": 1044,
     "workId": 10008,
     "topicIds": [
       12
@@ -3676,7 +3676,7 @@
   {
     "id": 220,
     "slug": "citation-220",
-    "authorId": 67,
+    "authorId": 1045,
     "workId": 10010,
     "topicIds": [
       39
@@ -3694,7 +3694,7 @@
   {
     "id": 221,
     "slug": "citation-221",
-    "authorId": 67,
+    "authorId": 1046,
     "workId": 10011,
     "topicIds": [
       35
@@ -3711,7 +3711,7 @@
   {
     "id": 222,
     "slug": "citation-222",
-    "authorId": 67,
+    "authorId": 1046,
     "workId": 10011,
     "topicIds": [
       33
@@ -3728,7 +3728,7 @@
   {
     "id": 223,
     "slug": "citation-223",
-    "authorId": 67,
+    "authorId": 1047,
     "workId": 10012,
     "topicIds": [
       30
@@ -3746,7 +3746,7 @@
   {
     "id": 224,
     "slug": "citation-224",
-    "authorId": 67,
+    "authorId": 1047,
     "workId": 10012,
     "topicIds": [
       15
@@ -3764,7 +3764,7 @@
   {
     "id": 225,
     "slug": "citation-225",
-    "authorId": 67,
+    "authorId": 1047,
     "workId": 10012,
     "topicIds": [
       14
@@ -3776,7 +3776,7 @@
   {
     "id": 226,
     "slug": "citation-226",
-    "authorId": 67,
+    "authorId": 1047,
     "workId": 10012,
     "topicIds": [
       15
@@ -3788,7 +3788,7 @@
   {
     "id": 227,
     "slug": "citation-227",
-    "authorId": 67,
+    "authorId": 1047,
     "workId": 10012,
     "topicIds": [
       17
@@ -3800,7 +3800,7 @@
   {
     "id": 228,
     "slug": "citation-228",
-    "authorId": 67,
+    "authorId": 1048,
     "workId": 10013,
     "topicIds": [
       10
@@ -3817,7 +3817,7 @@
   {
     "id": 229,
     "slug": "citation-229",
-    "authorId": 67,
+    "authorId": 1049,
     "workId": 10014,
     "topicIds": [
       34
@@ -3835,7 +3835,7 @@
   {
     "id": 230,
     "slug": "citation-230",
-    "authorId": 67,
+    "authorId": 1049,
     "workId": 10014,
     "topicIds": [
       36
@@ -3853,7 +3853,7 @@
   {
     "id": 231,
     "slug": "citation-231",
-    "authorId": 67,
+    "authorId": 1049,
     "workId": 10014,
     "topicIds": [
       23
@@ -3871,7 +3871,7 @@
   {
     "id": 232,
     "slug": "citation-232",
-    "authorId": 67,
+    "authorId": 1049,
     "workId": 10014,
     "topicIds": [
       29
@@ -3889,7 +3889,7 @@
   {
     "id": 233,
     "slug": "citation-233",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       21
@@ -3907,7 +3907,7 @@
   {
     "id": 234,
     "slug": "citation-234",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       12
@@ -3925,7 +3925,7 @@
   {
     "id": 235,
     "slug": "citation-235",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       30
@@ -3940,7 +3940,7 @@
   {
     "id": 236,
     "slug": "citation-236",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       12
@@ -3952,7 +3952,7 @@
   {
     "id": 237,
     "slug": "citation-237",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       34
@@ -3964,7 +3964,7 @@
   {
     "id": 238,
     "slug": "citation-238",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       33
@@ -3976,7 +3976,7 @@
   {
     "id": 239,
     "slug": "citation-239",
-    "authorId": 67,
+    "authorId": 1050,
     "workId": 10015,
     "topicIds": [
       12
@@ -4019,7 +4019,7 @@
   {
     "id": 243,
     "slug": "citation-243",
-    "authorId": 67,
+    "authorId": 1052,
     "workId": 10017,
     "topicIds": [
       17
@@ -4037,7 +4037,7 @@
   {
     "id": 244,
     "slug": "citation-244",
-    "authorId": 67,
+    "authorId": 1052,
     "workId": 10017,
     "topicIds": [
       18
@@ -5321,9 +5321,9 @@
   {
     "id": 321,
     "slug": "citation-321",
-    "authorId": 67,
+    "authorId": 21,
     "topicIds": [
-      22
+      20
     ],
     "en": "And the second commandment of the teaching: You shall not commit murder, you shall not commit adultery [Ex 20:13–14], you shall not commit pederasty, you shall not commit fornication, you shall not steal [Ex 20:15], you shall not practice magic, you shall not practice witchcraft, you shall not murder a child by abortion nor kill what is begotten. You shall not covet the things of your neighbor [Ex 20:17], you shall not forswear yourself [Mt 5:34], you shall not bear false witness [Ex 20:16] [Didache 2 (c. A.D. 50)]. LETTER OF BARNABA",
     "greek": "1. Δευτέρα δὲ ἐντολὴ τῆς διδαχῆς· 2. οὐ φονεύσεις, οὐ μοιχεύσεις, οὐ παιδοφθορήσεις, οὐ πορνεύσεις, οὐ κλέψεις, οὐ μαγεύσεις, οὐ φαρμακεύσεις, οὐ φονεύσεις τ́κνον ἐν φθορᾷ, οὐδὲ γεννηθὲν ἀποκτενεῖς, οὐκ ἐπιθυμήσεις τὰ τοῦ πλησίον. 3. οὐκ ἐπιορκήσεις, οὐ ψευδομαρτυρήσεις, οὐ κακολογήσεις, οὐ μνησικακήσεις. 4. οὐκ ἔσῃ διγνώμων οὐδὲ δίγλωσσος· παγὶς γὰρ θανάτου ἡ διγλωσσία. 5. οὐκ ἔσται ὁ λόγος σου ψευδής, οὐ κενός, ἀλλὰ μεμεστωμένος πράξει. 6. οὐκ ἔσῃ πλεονέκτης οὐδὲ ἅρπαξ οὐδὲ ὑποκριτὴς οὐδὲ κακοήθης οὐδὲ ὑπερήφανος. οὐ λήψῃ βουλὴν πονηρὰν κατὰ τοῦ πλησίον σου. 7. οὐ μισήσεις πάντα ἄνθρώπον, ἀλλὰ οὓς μὲν ἐλέγξεις, περὶ δὲ ὧν προσεύξῃ, οὓς δὲ ἀγαπήσεις ὑπὲρ τὴν ψυχήν σου.",
@@ -5332,7 +5332,8 @@
       "primary": "https://www.ccel.org/l/lake/fathers/didache.htm"
     },
     "status": "draft",
-    "fr": "Voici le second commandement de l'enseignement :\n\nTu ne commettras pas de meurtre, tu ne commettras pas d’adultère, tu n'abuseras pas des enfants, tu ne te livreras pas à la débauche, tu ne voleras pas, tu ne pratiqueras pas la magie, tu ne pratiqueras pas la sorcellerie. Tu ne feras pas périr l'enfant par avortement, ni ne le mettras à mort une fois né. Tu ne convoiteras rien de ce qui appartient à ton prochain.\n\nTu ne te parjureras pas, tu ne porteras pas de faux témoignage, tu ne calomnieras pas, tu ne garderas pas de rancune.\n\nTu n'auras ni le cœur double, ni la langue double, car la duplicité est un piège mortel.\n\nTa parole ne sera ni mensongère, ni vaine, mais confirmée par les actes.\n\nTu ne seras ni cupide, ni rapace, ni hypocrite, ni malveillant, ni orgueilleux. Tu ne formeras pas de mauvais projet contre ton prochain.\n\nTu ne haïras personne. Au contraire : les uns, tu les reprendras ; pour d'autres, tu prieras ; et d'autres encore, tu les aimeras plus que ta propre vie."
+    "fr": "Voici le second commandement de l'enseignement :\n\nTu ne commettras pas de meurtre, tu ne commettras pas d’adultère, tu n'abuseras pas des enfants, tu ne te livreras pas à la débauche, tu ne voleras pas, tu ne pratiqueras pas la magie, tu ne pratiqueras pas la sorcellerie. Tu ne feras pas périr l'enfant par avortement, ni ne le mettras à mort une fois né. Tu ne convoiteras rien de ce qui appartient à ton prochain.\n\nTu ne te parjureras pas, tu ne porteras pas de faux témoignage, tu ne calomnieras pas, tu ne garderas pas de rancune.\n\nTu n'auras ni le cœur double, ni la langue double, car la duplicité est un piège mortel.\n\nTa parole ne sera ni mensongère, ni vaine, mais confirmée par les actes.\n\nTu ne seras ni cupide, ni rapace, ni hypocrite, ni malveillant, ni orgueilleux. Tu ne formeras pas de mauvais projet contre ton prochain.\n\nTu ne haïras personne. Au contraire : les uns, tu les reprendras ; pour d'autres, tu prieras ; et d'autres encore, tu les aimeras plus que ta propre vie.",
+    "workId": 112
   },
   {
     "id": 322,
@@ -5371,7 +5372,7 @@
   {
     "id": 325,
     "slug": "citation-325",
-    "authorId": 67,
+    "authorId": 21,
     "topicIds": [
       27
     ],
@@ -5380,7 +5381,8 @@
     "migne": "7",
     "links": {},
     "status": "draft",
-    "fr": "1. Concernant le baptême, voici comment vous baptiserez : après avoir enseigné tout ce qui précède, baptisez au nom du Père, et du Fils, et du Saint-Esprit, dans de l'eau vive. 2. Si vous n'avez pas d'eau vive, baptisez dans une autre eau ; et s'il n'est pas possible de le faire dans l'eau froide, faites-le dans l'eau chaude. 3. Mais si vous n'avez ni l'une ni l'autre, versez par trois fois de l'eau sur la tête au nom du Père, et du Fils, et du Saint-Esprit. 4. Avant le baptême, que celui qui baptise et celui qui est baptisé jeûnent, ainsi que d’autres s’ils le peuvent. Vous prescrirez à celui qui doit être baptisé de jeûner un ou deux jours auparavant."
+    "fr": "1. Concernant le baptême, voici comment vous baptiserez : après avoir enseigné tout ce qui précède, baptisez au nom du Père, et du Fils, et du Saint-Esprit, dans de l'eau vive. \n\n2. Si vous n'avez pas d'eau vive, baptisez dans une autre eau ; et s'il n'est pas possible de le faire dans l'eau froide, faites-le dans l'eau chaude. \n\n3. Mais si vous n'avez ni l'une ni l'autre, versez par trois fois de l'eau sur la tête au nom du Père, et du Fils, et du Saint-Esprit. \n\n4. Avant le baptême, que celui qui baptise et celui qui est baptisé jeûnent, ainsi que d’autres s’ils le peuvent. Vous prescrirez à celui qui doit être baptisé de jeûner un ou deux jours auparavant.",
+    "workId": 112
   },
   {
     "id": 326,
@@ -5443,7 +5445,7 @@
   {
     "id": 331,
     "slug": "citation-331",
-    "authorId": 67,
+    "authorId": 1062,
     "workId": 10020,
     "topicIds": [
       34
@@ -5499,7 +5501,7 @@
   {
     "id": 336,
     "slug": "citation-336",
-    "authorId": 67,
+    "authorId": 1054,
     "workId": 116,
     "topicIds": [
       40
@@ -5517,7 +5519,7 @@
   {
     "id": 337,
     "slug": "citation-337",
-    "authorId": 67,
+    "authorId": 1054,
     "workId": 117,
     "topicIds": [
       40
@@ -5535,7 +5537,7 @@
   {
     "id": 338,
     "slug": "citation-338",
-    "authorId": 67,
+    "authorId": 1054,
     "workId": 117,
     "topicIds": [
       28
@@ -5553,7 +5555,7 @@
   {
     "id": 339,
     "slug": "citation-339",
-    "authorId": 67,
+    "authorId": 1054,
     "workId": 118,
     "topicIds": [
       28
@@ -5571,7 +5573,7 @@
   {
     "id": 340,
     "slug": "citation-340",
-    "authorId": 67,
+    "authorId": 1054,
     "workId": 118,
     "topicIds": [
       45
@@ -5589,7 +5591,7 @@
   {
     "id": 341,
     "slug": "citation-341",
-    "authorId": 67,
+    "authorId": 1054,
     "workId": 118,
     "topicIds": [
       40
@@ -5975,7 +5977,7 @@
   {
     "id": 362,
     "slug": "citation-362",
-    "authorId": 1009,
+    "authorId": 30,
     "workId": 290,
     "topicIds": [
       18
@@ -9084,7 +9086,7 @@
   {
     "id": 535,
     "slug": "citation-535",
-    "authorId": 57,
+    "authorId": 39,
     "workId": 200,
     "topicIds": [
       7
@@ -9101,7 +9103,7 @@
   {
     "id": 536,
     "slug": "citation-536",
-    "authorId": 57,
+    "authorId": 39,
     "workId": 201,
     "topicIds": [
       7
@@ -9118,7 +9120,7 @@
   {
     "id": 537,
     "slug": "citation-537",
-    "authorId": 57,
+    "authorId": 39,
     "workId": 201,
     "topicIds": [
       7
@@ -9846,7 +9848,7 @@
   {
     "id": 580,
     "slug": "citation-580",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 290,
     "topicIds": [
       16
@@ -9864,7 +9866,7 @@
   {
     "id": 581,
     "slug": "citation-581",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 290,
     "topicIds": [
       18
@@ -9882,7 +9884,7 @@
   {
     "id": 582,
     "slug": "citation-582",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 290,
     "topicIds": [
       18
@@ -9900,7 +9902,7 @@
   {
     "id": 583,
     "slug": "citation-583",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 290,
     "topicIds": [
       26
@@ -9918,7 +9920,7 @@
   {
     "id": 584,
     "slug": "citation-584",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 290,
     "topicIds": [
       18
@@ -9936,7 +9938,7 @@
   {
     "id": 585,
     "slug": "citation-585",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 211,
     "topicIds": [
       39
@@ -9953,7 +9955,7 @@
   {
     "id": 586,
     "slug": "citation-586",
-    "authorId": 1013,
+    "authorId": 45,
     "workId": 212,
     "topicIds": [
       17
@@ -9988,7 +9990,7 @@
   {
     "id": 588,
     "slug": "citation-588",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       4
@@ -10005,7 +10007,7 @@
   {
     "id": 589,
     "slug": "citation-589",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       10
@@ -10022,7 +10024,7 @@
   {
     "id": 590,
     "slug": "citation-590",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       21
@@ -10039,7 +10041,7 @@
   {
     "id": 591,
     "slug": "citation-591",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       24
@@ -10057,7 +10059,7 @@
   {
     "id": 592,
     "slug": "citation-592",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       36
@@ -10074,7 +10076,7 @@
   {
     "id": 593,
     "slug": "citation-593",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       20
@@ -10092,7 +10094,7 @@
   {
     "id": 594,
     "slug": "citation-594",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       22
@@ -10109,7 +10111,7 @@
   {
     "id": 595,
     "slug": "citation-595",
-    "authorId": 67,
+    "authorId": 11,
     "workId": 214,
     "topicIds": [
       32
@@ -10127,7 +10129,7 @@
   {
     "id": 596,
     "slug": "citation-596",
-    "authorId": 67,
+    "authorId": 1059,
     "workId": 215,
     "topicIds": [
       14
@@ -10143,7 +10145,7 @@
   {
     "id": 597,
     "slug": "citation-597",
-    "authorId": 67,
+    "authorId": 1064,
     "workId": 216,
     "topicIds": [
       45
@@ -10161,7 +10163,7 @@
   {
     "id": 598,
     "slug": "citation-598",
-    "authorId": 67,
+    "authorId": 1061,
     "workId": 255,
     "topicIds": [
       46
@@ -10178,7 +10180,7 @@
   {
     "id": 599,
     "slug": "citation-599",
-    "authorId": 67,
+    "authorId": 1061,
     "workId": 255,
     "topicIds": [
       42
@@ -10196,7 +10198,7 @@
   {
     "id": 600,
     "slug": "citation-600",
-    "authorId": 67,
+    "authorId": 1061,
     "workId": 255,
     "topicIds": [
       41
@@ -10214,7 +10216,7 @@
   {
     "id": 601,
     "slug": "citation-601",
-    "authorId": 67,
+    "authorId": 1061,
     "workId": 255,
     "topicIds": [
       42
@@ -10231,7 +10233,7 @@
   {
     "id": 602,
     "slug": "citation-602",
-    "authorId": 67,
+    "authorId": 1061,
     "workId": 255,
     "topicIds": [
       12
@@ -10431,7 +10433,7 @@
   {
     "id": 613,
     "slug": "citation-613",
-    "authorId": 67,
+    "authorId": 1065,
     "workId": 223,
     "topicIds": [
       12
@@ -10551,7 +10553,7 @@
   {
     "id": 620,
     "slug": "citation-620",
-    "authorId": 67,
+    "authorId": 1066,
     "workId": 226,
     "topicIds": [
       37
@@ -10569,7 +10571,7 @@
   {
     "id": 621,
     "slug": "citation-621",
-    "authorId": 67,
+    "authorId": 1067,
     "workId": 227,
     "topicIds": [
       49
@@ -10589,7 +10591,7 @@
   {
     "id": 622,
     "slug": "citation-622",
-    "authorId": 67,
+    "authorId": 1067,
     "workId": 227,
     "topicIds": [
       8
@@ -11671,7 +11673,7 @@
   {
     "id": 682,
     "slug": "citation-682",
-    "authorId": 67,
+    "authorId": 1060,
     "workId": 258,
     "topicIds": [
       39
@@ -11689,7 +11691,7 @@
   {
     "id": 683,
     "slug": "citation-683",
-    "authorId": 67,
+    "authorId": 1060,
     "workId": 258,
     "topicIds": [
       39
@@ -11707,7 +11709,7 @@
   {
     "id": 684,
     "slug": "citation-684",
-    "authorId": 67,
+    "authorId": 1060,
     "workId": 258,
     "topicIds": [
       39
@@ -11816,7 +11818,7 @@
   {
     "id": 690,
     "slug": "citation-690",
-    "authorId": 67,
+    "authorId": 1068,
     "workId": 263,
     "topicIds": [
       40
@@ -11905,7 +11907,7 @@
   {
     "id": 695,
     "slug": "citation-695",
-    "authorId": 1026,
+    "authorId": 15,
     "workId": 10021,
     "topicIds": [
       46
@@ -11922,7 +11924,7 @@
   {
     "id": 696,
     "slug": "citation-696",
-    "authorId": 1026,
+    "authorId": 15,
     "workId": 10021,
     "topicIds": [
       24
@@ -11939,7 +11941,7 @@
   {
     "id": 697,
     "slug": "citation-697",
-    "authorId": 1026,
+    "authorId": 15,
     "workId": 10021,
     "topicIds": [
       48
@@ -11956,7 +11958,7 @@
   {
     "id": 698,
     "slug": "citation-698",
-    "authorId": 1026,
+    "authorId": 15,
     "workId": 10021,
     "topicIds": [
       46
@@ -13499,7 +13501,7 @@
   {
     "id": 787,
     "slug": "citation-787",
-    "authorId": 67,
+    "authorId": 46,
     "workId": 293,
     "topicIds": [
       46
@@ -13518,7 +13520,7 @@
   {
     "id": 788,
     "slug": "citation-788",
-    "authorId": 67,
+    "authorId": 46,
     "workId": 293,
     "topicIds": [
       4
@@ -13537,7 +13539,7 @@
   {
     "id": 789,
     "slug": "citation-789",
-    "authorId": 67,
+    "authorId": 46,
     "workId": 293,
     "topicIds": [
       11
@@ -13556,7 +13558,7 @@
   {
     "id": 790,
     "slug": "citation-790",
-    "authorId": 67,
+    "authorId": 1069,
     "workId": 294,
     "topicIds": [
       29
@@ -13573,7 +13575,7 @@
   {
     "id": 791,
     "slug": "citation-791",
-    "authorId": 67,
+    "authorId": 1069,
     "workId": 294,
     "topicIds": [
       29
@@ -13590,7 +13592,7 @@
   {
     "id": 792,
     "slug": "citation-792",
-    "authorId": 67,
+    "authorId": 1069,
     "workId": 294,
     "topicIds": [
       43

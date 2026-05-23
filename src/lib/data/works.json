@@ -174,14 +174,14 @@
     "slug": "apocalypse-de-pierre-21",
     "title": "Apocalypse de Pierre",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1058
   },
   {
     "id": 22,
     "slug": "constitutions-apostoliques-22",
     "title": "Constitutions apostoliques",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1057
   },
   {
     "id": 23,
@@ -204,7 +204,7 @@
     "slug": "ascension-d-isaie-25",
     "title": "Ascension d’Isaïe",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1063
   },
   {
     "id": 26,
@@ -257,24 +257,6 @@
       "L’Incarnation du Verbe de Dieu"
     ],
     "authorId": 8
-  },
-  {
-    "id": 32,
-    "slug": "plaidoyer-pour-les-chretiens-32",
-    "title": "Plaidoyer pour les chrétiens",
-    "alternativeTitles": [
-      "Supplication pour les chrétiens"
-    ],
-    "authorId": 1036
-  },
-  {
-    "id": 33,
-    "slug": "resurrection-des-morts-33",
-    "title": "Résurrection des morts",
-    "alternativeTitles": [
-      "Sur la résurrection des morts"
-    ],
-    "authorId": 1036
   },
   {
     "id": 34,
@@ -591,7 +573,7 @@
     "alternativeTitles": [
       "I Corinthiens Première lettre aux Corinthiens"
     ],
-    "authorId": 1037
+    "authorId": 15
   },
   {
     "id": 73,
@@ -600,7 +582,7 @@
     "alternativeTitles": [
       "Homélies de Clément Partie des Clémentines Pseudo-Clémentines"
     ],
-    "authorId": 67
+    "authorId": 1059
   },
   {
     "id": 74,
@@ -609,7 +591,7 @@
     "alternativeTitles": [
       "Reconnaissances de Clément Partie des Clémentines Pseudo-Clémentines"
     ],
-    "authorId": 67
+    "authorId": 1059
   },
   {
     "id": 75,
@@ -668,7 +650,7 @@
     "alternativeTitles": [
       "Cité dans Eusèbe Vie de Constantin"
     ],
-    "authorId": 1038
+    "authorId": 1003
   },
   {
     "id": 82,
@@ -902,16 +884,16 @@
     "alternativeTitles": [
       "Décret de Damase"
     ],
-    "authorId": 1053
+    "authorId": 1004
   },
   {
     "id": 112,
-    "slug": "didache-112",
+    "slug": "didache",
     "title": "Didachè",
     "alternativeTitles": [
       "Enseignement des douze apôtres"
     ],
-    "authorId": 67
+    "authorId": 21
   },
   {
     "id": 113,
@@ -1091,7 +1073,7 @@
     "slug": "lettres-136",
     "title": "Lettres",
     "alternativeTitles": [],
-    "authorId": 1009
+    "authorId": 30
   },
   {
     "id": 137,
@@ -1581,7 +1563,7 @@
     "slug": "dialogue-contre-les-manicheens-200",
     "title": "Dialogue contre les Manichéens",
     "alternativeTitles": [],
-    "authorId": 57
+    "authorId": 39
   },
   {
     "id": 201,
@@ -1590,7 +1572,7 @@
     "alternativeTitles": [
       "Exposition exacte de la foi orthodoxe Source de la connaissance Fontaine de la connaissance Fontaine de la sagesse"
     ],
-    "authorId": 57
+    "authorId": 39
   },
   {
     "id": 202,
@@ -1655,21 +1637,21 @@
     "slug": "lettres-210",
     "title": "Lettres",
     "alternativeTitles": [],
-    "authorId": 1013
+    "authorId": 45
   },
   {
     "id": 211,
     "slug": "sermons-211",
     "title": "Sermons",
     "alternativeTitles": [],
-    "authorId": 1013
+    "authorId": 45
   },
   {
     "id": 212,
     "slug": "tome-de-leon-212",
     "title": "Tome de Léon",
     "alternativeTitles": [],
-    "authorId": 1013
+    "authorId": 45
   },
   {
     "id": 213,
@@ -1685,7 +1667,7 @@
     "alternativeTitles": [
       "Barnabas Épître de Barnabas Pseudo-Barnabas"
     ],
-    "authorId": 67
+    "authorId": 11
   },
   {
     "id": 215,
@@ -1694,21 +1676,21 @@
     "alternativeTitles": [
       "Incluse au début des Homélies clémentines"
     ],
-    "authorId": 67
+    "authorId": 1059
   },
   {
     "id": 216,
     "slug": "martyre-de-perpetue-et-felicite-216",
     "title": "Martyre de Perpétue et Félicité",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1064
   },
   {
     "id": 217,
     "slug": "martyre-de-polycarpe-217",
     "title": "Martyre de Polycarpe",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1061
   },
   {
     "id": 218,
@@ -1750,7 +1732,7 @@
     "slug": "fragment-muratorien-223",
     "title": "Fragment muratorien",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1065
   },
   {
     "id": 224,
@@ -1775,7 +1757,7 @@
     "slug": "odes-de-salomon-226",
     "title": "Odes de Salomon",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1066
   },
   {
     "id": 227,
@@ -1784,7 +1766,7 @@
     "alternativeTitles": [
       "Discours sur la fin du monde Pseudo-Hippolyte"
     ],
-    "authorId": 67
+    "authorId": 1067
   },
   {
     "id": 228,
@@ -2012,7 +1994,7 @@
     "slug": "martyre-de-polycarpe-255",
     "title": "Martyre de Polycarpe",
     "alternativeTitles": [],
-    "authorId": 55
+    "authorId": 1061
   },
   {
     "id": 256,
@@ -2035,7 +2017,7 @@
     "alternativeTitles": [
       "Évangile de Jacques Livre de Jacques Évangile de l’enfance de Jacques"
     ],
-    "authorId": 67
+    "authorId": 1060
   },
   {
     "id": 259,
@@ -2070,7 +2052,7 @@
     "slug": "papyrus-rylands-263",
     "title": "Papyrus Rylands",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1068
   },
   {
     "id": 264,
@@ -2318,7 +2300,7 @@
     "alternativeTitles": [
       "Lettre à Diognète Épître de Mathètes à Diognète"
     ],
-    "authorId": 67
+    "authorId": 46
   },
   {
     "id": 294,
@@ -2327,7 +2309,7 @@
     "alternativeTitles": [
       "Sur le rebaptême"
     ],
-    "authorId": 67
+    "authorId": 1069
   },
   {
     "id": 295,
@@ -2357,98 +2339,98 @@
     "slug": "council-of-ankara-10002",
     "title": "Concile d'Ancyre",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1039
   },
   {
     "id": 10003,
     "slug": "council-of-carthage-of-256-10003",
     "title": "Concile de Carthage de 256",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1055
   },
   {
     "id": 10004,
     "slug": "council-of-carthage-of-397-10004",
     "title": "Concile de Carthage de 397",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1040
   },
   {
     "id": 10005,
     "slug": "council-of-carthage-of-401-10005",
     "title": "Concile de Carthage de 401",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1056
   },
   {
     "id": 10006,
     "slug": "council-of-carthage-of-419-10006",
     "title": "Concile de Carthage de 419",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1042
   },
   {
     "id": 10007,
     "slug": "council-of-chalcedon-10007",
     "title": "Concile de Chalcédoine",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1043
   },
   {
     "id": 10008,
     "slug": "council-of-constantinople-i-10008",
     "title": "Concile de Constantinople I",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1044
   },
   {
     "id": 10009,
     "slug": "nicene-creed-10009",
     "title": "Nicene Creed",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1050
   },
   {
     "id": 10010,
     "slug": "council-of-constantinople-ii-10010",
     "title": "Concile de Constantinople II",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1045
   },
   {
     "id": 10011,
     "slug": "council-of-elvira-10011",
     "title": "Concile d'Elvira",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1046
   },
   {
     "id": 10012,
     "slug": "council-of-ephesus-10012",
     "title": "Concile d'Éphèse",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1047
   },
   {
     "id": 10013,
     "slug": "council-of-hippo-10013",
     "title": "Concile d'Hippone",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1048
   },
   {
     "id": 10014,
     "slug": "council-of-laodicea-10014",
     "title": "Concile de Laodicée",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1049
   },
   {
     "id": 10015,
     "slug": "council-of-nicaea-i-10015",
     "title": "Concile de Nicée I",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1050
   },
   {
     "id": 10016,
@@ -2462,35 +2444,35 @@
     "slug": "council-of-sardica-10017",
     "title": "Concile de Sardique",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1052
   },
   {
     "id": 10018,
     "slug": "canon-apostolique-10018",
     "title": "Canon apostolique",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1057
   },
   {
     "id": 10019,
     "slug": "apostolic-constitutions-book-ii-10019",
     "title": "Apostolic Constitutions (Livre II)",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1057
   },
   {
     "id": 10020,
     "slug": "didascalie-10020",
     "title": "Didascalie",
     "alternativeTitles": [],
-    "authorId": 67
+    "authorId": 1062
   },
   {
     "id": 10021,
     "slug": "second-epitre-aux-corinthiens-10021",
     "title": "Second Epitre aux Corinthiens",
     "alternativeTitles": [],
-    "authorId": 1026
+    "authorId": 15
   },
   {
     "id": 10022,
@@ -2498,5 +2480,17 @@
     "title": "EPISTOLA XXI. AD ANZI BEGBM MAURITANIS.",
     "alternativeTitles": [],
     "authorId": 1032
+  },
+  {
+    "id": 10023,
+    "slug": "plaidoyer-pour-les-chretiens",
+    "title": "Plaidoyer pour les chrétiens",
+    "authorId": 9
+  },
+  {
+    "id": 10024,
+    "slug": "resurrection-des-morts",
+    "title": "Résurrection des morts",
+    "authorId": 9
   }
 ]

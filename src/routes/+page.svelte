@@ -31,7 +31,7 @@
 			class="font-heading italic text-accent leading-[1.15]"
 			style="font-size: 1.75rem;"
 		>
-			Le projet
+			Aux sources de la foi
 		</h2>
 		<div class="mt-4 space-y-4 max-w-prose font-body text-base leading-[1.75]">
 			<p>
@@ -63,7 +63,7 @@
 			class="font-heading italic text-accent leading-[1.15]"
 			style="font-size: 1.75rem;"
 		>
-			Le besoin
+			Pourquoi les Pères&nbsp;?
 		</h2>
 		<div class="mt-4 space-y-4 max-w-prose font-body text-base leading-[1.75]">
 			<p>
@@ -91,7 +91,7 @@
 				(<em class="italic">semper, ubique et ab omnibus</em>), selon la
 				formule classique de
 				<a
-					href="/peres/vincent-de-lerins-66"
+					href="/peres/vincent-de-lerins"
 					class="border-b border-foreground/20 hover:border-active hover:text-active"
 					>saint Vincent de Lérins</a
 				>.
@@ -104,7 +104,7 @@
 			class="font-heading italic text-accent leading-[1.15]"
 			style="font-size: 1.75rem;"
 		>
-			Les Pères
+			Les trois âges patristiques
 		</h2>
 		<div class="mt-4 space-y-4 max-w-prose font-body text-base leading-[1.75]">
 			<p>
@@ -117,11 +117,11 @@
 				l’Église du Nouveau Testament. Ils ont reçu et transmis
 				l’enseignement de la première génération chrétienne. C’est l’époque
 				de
-				<a href="/peres/clement-de-rome-15" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Clément de Rome</a>,
+				<a href="/peres/clement-de-rome" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Clément de Rome</a>,
 				de
-				<a href="/peres/ignace-d-antioche-35" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Ignace d’Antioche</a>
+				<a href="/peres/ignace-d-antioche" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Ignace d’Antioche</a>
 				et de
-				<a href="/peres/polycarpe-de-smyrne-55" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Polycarpe de Smyrne</a>.
+				<a href="/peres/polycarpe-de-smyrne" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Polycarpe de Smyrne</a>.
 			</p>
 			<p>
 				Les Pères pré-nicéens ont écrit entre la période apostolique et le
@@ -129,26 +129,26 @@
 				naissantes, ils ont défendu la règle de foi
 				(<em class="italic">regula fidei</em>) transmise par l’Église. Parmi
 				eux figurent
-				<a href="/peres/irenee-de-lyon-36" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Irénée de Lyon</a>,
-				<a href="/peres/justin-martyr-43" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Justin Martyr</a>,
-				<a href="/peres/tertullien-62" class="border-b border-foreground/20 hover:border-active hover:text-active">Tertullien</a>,
-				<a href="/peres/origene-52" class="border-b border-foreground/20 hover:border-active hover:text-active">Origène</a>
+				<a href="/peres/irenee-de-lyon" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Irénée de Lyon</a>,
+				<a href="/peres/justin-martyr" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Justin Martyr</a>,
+				<a href="/peres/tertullien" class="border-b border-foreground/20 hover:border-active hover:text-active">Tertullien</a>,
+				<a href="/peres/origene" class="border-b border-foreground/20 hover:border-active hover:text-active">Origène</a>
 				et
-				<a href="/peres/cyprien-de-carthage-17" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Cyprien de Carthage</a>.
+				<a href="/peres/cyprien-de-carthage" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Cyprien de Carthage</a>.
 			</p>
 			<p>
 				Les Pères nicéens et post-nicéens, enfin, ont contribué à la
 				formulation dogmatique de la foi chrétienne lors des grands conciles
 				de l’Antiquité. Leurs écrits ont profondément façonné la théologie
 				Catholique et la doctrine trinitaire. On y trouve
-				<a href="/peres/augustin-d-hippone-10" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Augustin d’Hippone</a>,
-				<a href="/peres/jean-chrysostome-38" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Jean Chrysostome</a>,
-				<a href="/peres/jerome-de-stridon-40" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Jérôme</a>,
-				<a href="/peres/basile-de-cesaree-12" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Basile de Césarée</a>,
+				<a href="/peres/augustin-d-hippone" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Augustin d’Hippone</a>,
+				<a href="/peres/jean-chrysostome" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Jean Chrysostome</a>,
+				<a href="/peres/jerome-de-stridon" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Jérôme</a>,
+				<a href="/peres/basile-de-cesaree" class="border-b border-foreground/20 hover:border-active hover:text-active">saint Basile de Césarée</a>,
 				ainsi que les deux Grégoires,
-				<a href="/peres/gregoire-de-nazianze-28" class="border-b border-foreground/20 hover:border-active hover:text-active">de Nazianze</a>
+				<a href="/peres/gregoire-de-nazianze" class="border-b border-foreground/20 hover:border-active hover:text-active">de Nazianze</a>
 				et
-				<a href="/peres/gregoire-de-nysse-29" class="border-b border-foreground/20 hover:border-active hover:text-active">de Nysse</a>.
+				<a href="/peres/gregoire-de-nysse" class="border-b border-foreground/20 hover:border-active hover:text-active">de Nysse</a>.
 			</p>
 		</div>
 	</section>
@@ -158,7 +158,7 @@
 			class="font-heading italic text-accent leading-[1.15]"
 			style="font-size: 1.75rem;"
 		>
-			Magistère
+			La voix de l’Église
 		</h2>
 		<div class="mt-6 space-y-8 max-w-prose font-body text-base leading-[1.75]">
 			<div>

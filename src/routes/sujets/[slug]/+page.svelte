@@ -41,6 +41,16 @@
 		return `${ROMAN[c - 1] ?? c}e siècle`;
 	}
 
+	// Insert a line break before short connector words ("de", "d'", "of",
+	// etc.) so author names wrap on a natural particle in the narrow
+	// marginal column.
+	function breakName(name: string): string {
+		return name
+			.split(' ')
+			.map((w, i) => (i > 0 && w.replace(/['’]/g, '').length <= 2 ? `<br/>${w}` : w))
+			.join(' ');
+	}
+
 	// Group quotes by author so each author/source gets a single marginal
 	// header (cf. churchfathers.org), with all of that author's quotes
 	// flowing alongside in the right column. Within each group, quotes
@@ -334,7 +344,7 @@
 	class={anyPanelOpen
 		? 'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] lg:gap-x-12'
 		: ''}
-	style={`--author-col: ${anyPanelOpen ? '140px' : '200px'}; --quote-gap: ${anyPanelOpen ? '0px' : '3rem'}; --author-name-size: ${anyPanelOpen ? '20px' : '24px'};`}
+	style={`--author-col: ${anyPanelOpen ? '140px' : '200px'}; --quote-gap: ${anyPanelOpen ? '0px' : '1rem'}; --author-name-size: ${anyPanelOpen ? '20px' : '24px'};`}
 >
 <div class="min-w-0">
 	<!-- Description intentionally omitted · the topic label and the
@@ -466,7 +476,7 @@
 						     this Father across topics. Hover transitions to the
 						     sage-olive active colour like the rail nav. -->
 						<a href={`/peres/${g.author.slug}`} class="hover:text-active">
-							{g.author.name}
+							{@html breakName(g.author.name)}
 						</a>
 					</h2>
 					<!-- Author metadata is Study-mode-exclusive. Read mode shows

@@ -42,24 +42,13 @@
 		<aside class="lg:sticky lg:top-10 lg:max-h-[calc(100vh-3rem)] lg:self-start lg:overflow-y-auto rail-scroll lg:pr-3">
 			<!-- Logo · architectural mark + tracked small-caps wordmark. -->
 			<a href="/" class="block" aria-label="Accueil">
-				<div class="flex items-start gap-3">
-					<svg
-						class="mt-1 h-10 w-10 flex-shrink-0 text-accent"
-						viewBox="0 0 40 40"
+				<div class="flex items-end gap-3">
+					<div
+						class="h-20 flex-shrink-0 bg-accent"
+						style="width:3.3rem;mask:url(/logo.svg) center/contain no-repeat;-webkit-mask:url(/logo.svg) center/contain no-repeat"
 						aria-hidden="true"
-						fill="none"
-						stroke="currentColor"
-					>
-						<!-- Three minimal columns evoking a classical portico. -->
-						<rect x="4" y="4" width="32" height="3" stroke-width="1.5" />
-						<line x1="6" y1="9" x2="6" y2="32" stroke-width="1.5" />
-						<line x1="14" y1="9" x2="14" y2="32" stroke-width="1.5" />
-						<line x1="22" y1="9" x2="22" y2="32" stroke-width="1.5" />
-						<line x1="30" y1="9" x2="30" y2="32" stroke-width="1.5" />
-						<line x1="34" y1="9" x2="34" y2="32" stroke-width="1.5" />
-						<rect x="2" y="34" width="36" height="3" stroke-width="1.5" />
-					</svg>
-					<div class="font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent">
+					></div>
+					<div class="pb-1 font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent">
 						Tradition<br />Apostolique
 					</div>
 				</div>
