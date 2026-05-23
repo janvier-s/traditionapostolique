@@ -2,9 +2,10 @@
 	let {
 		title,
 		description,
-		canonical
-	}: { title: string; description?: string; canonical?: string } = $props();
-	const full = $derived(`${title} · Tradition Apostolique`);
+		canonical,
+		separator = '·'
+	}: { title: string; description?: string; canonical?: string; separator?: string } = $props();
+	const full = $derived(`${title} ${separator} Tradition Apostolique`);
 </script>
 
 <svelte:head>

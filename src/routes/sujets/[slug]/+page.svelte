@@ -337,6 +337,7 @@
 
 <MetaTags
 	title={data.topic.label}
+	separator="d'après la"
 	description={data.topic.description ?? `Citations patristiques sur ${data.topic.label}.`}
 />
 
