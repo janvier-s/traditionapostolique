@@ -379,7 +379,7 @@
 						aria-expanded={topicPanelOpen}
 						class="inline-flex items-baseline gap-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
 					>
-						{topicPanelOpen ? 'Fermer' : 'À propos du sujet'}
+						À propos du sujet
 						<span aria-hidden="true">{topicPanelOpen ? '×' : '→'}</span>
 					</button>
 				{/if}
@@ -665,11 +665,11 @@
 			{/each}
 		</div>
 
-		<div class="font-body text-[15px] leading-[1.6]">
+		<div class="font-body text-[14px] leading-[1.5]">
 			{#if topicActiveTab === 'presentation'}
 				{#if data.topic.description}
 					<section class="mb-8">
-						<p class="leading-[1.7]">{data.topic.description}</p>
+						<p style="white-space: pre-line;">{@html renderFr(data.topic.description)}</p>
 					</section>
 				{/if}
 
