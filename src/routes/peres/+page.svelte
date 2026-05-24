@@ -215,9 +215,25 @@
 		</div>
 	</header>
 
+	{#if groups.length > 1 && groups.some((g) => g.label)}
+		<nav aria-label="Sauter à un groupe" class="mb-8 flex flex-wrap gap-1">
+			{#each groups as g (g.label || 'all')}
+				{#if g.label}
+					<a
+						href={`#g-${encodeURIComponent(g.label)}`}
+						class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-active"
+					>{g.label}</a>
+				{/if}
+			{/each}
+		</nav>
+	{/if}
+
 	<div class="source-list">
 		{#each groups as g (g.label || 'all')}
-			<section class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
+			<section
+				id={g.label ? `g-${encodeURIComponent(g.label)}` : undefined}
+				class="source-block grid scroll-mt-24 grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]"
+			>
 				<!-- Marginal heading · letter (alphabetical), era label,
 				     or blank for the single-list sorts. -->
 				<div class="min-w-0">

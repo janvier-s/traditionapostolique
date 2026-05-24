@@ -177,4 +177,17 @@
 			{@render children()}
 		</main>
 	</div>
+
+	<footer class="border-t border-border mt-16 px-6 py-8 lg:px-12">
+		<nav aria-label="Pied de page" class="flex flex-wrap items-baseline gap-x-6 gap-y-2 label-meta">
+			<a href="/" class="hover:text-active hover:underline underline-offset-4">Accueil</a>
+			<a href="/sujets" class="hover:text-active hover:underline underline-offset-4">Sujets</a>
+			<a href="/peres" class="hover:text-active hover:underline underline-offset-4">Pères</a>
+			<a href="/oeuvres" class="hover:text-active hover:underline underline-offset-4">Œuvres</a>
+			<a href="/recherche" class="hover:text-active hover:underline underline-offset-4">Recherche</a>
+			<a href="/a-propos" class="hover:text-active hover:underline underline-offset-4">À propos</a>
+			<a href="/mentions-legales" class="hover:text-active hover:underline underline-offset-4">Mentions légales</a>
+		</nav>
+		<p class="mt-4 label-meta">Tradition Apostolique &middot; anthologie patristique</p>
+	</footer>
 </div>

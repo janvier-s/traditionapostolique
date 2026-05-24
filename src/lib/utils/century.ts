@@ -35,6 +35,18 @@ export function centuryLabel(dates: string | null | undefined): string {
 	return `${r}${ordinalSuffix(c)} siècle`;
 }
 
+// Machine-readable year for the HTML `<time datetime>` attribute.
+// Returns a 4-digit zero-padded year drawn from the earliest year
+// present in the string (typical for an author's birth or a work's
+// composition date), or null when no year is recoverable.
+export function isoYear(dates: string | null | undefined): string | null {
+	if (!dates) return null;
+	const matches = dates.match(/\d{1,4}/g);
+	if (!matches) return null;
+	const earliest = Math.min(...matches.map(Number));
+	return String(earliest).padStart(4, '0');
+}
+
 // Bare ordinal ("IVe", "Ier") with no "siècle" suffix.
 export function centuryOrdinal(dates: string | null | undefined): string {
 	const c = centuryNumber(dates);

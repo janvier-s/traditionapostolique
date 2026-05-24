@@ -3,7 +3,7 @@
 	import { workById, topicById } from '$lib/data';
 	import { eraLabelSingular } from '$lib/utils/era';
 	import { renderFr } from '$lib/utils/render-fr';
-	import { centuryLabel } from '$lib/utils/century';
+	import { centuryLabel, isoYear } from '$lib/utils/century';
 	import { inlineCitation } from '$lib/utils/format-citation';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
 	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
@@ -123,7 +123,7 @@
 			     marginal info column. Reads as page metadata, not as a
 			     bio paragraph. -->
 			<div class="mt-4 flex flex-wrap gap-x-3 gap-y-1 label-meta">
-				{#if data.author.dates}<span>{data.author.dates}</span>{/if}
+				{#if data.author.dates}{@const dt = isoYear(data.author.dates)}<span><time datetime={dt ?? undefined}>{data.author.dates}</time></span>{/if}
 				{#if century}
 					{@const cm = century.match(/^([IVXL]+)([a-z]+)\s+(\S+)$/)}
 					<span>·</span>
@@ -147,7 +147,7 @@
 
 	<div class="source-list">
 		{#each groups as g (g.topic.id)}
-			<section class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
+			<section aria-label={`Citations sur ${g.topic.label}`} class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
 				<!-- Marginal topic header · the role the author's name plays
 				     on the topic page is filled here by the topic's name.
 				     Links back to the topic page so a reader can jump from

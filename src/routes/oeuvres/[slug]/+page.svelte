@@ -147,7 +147,7 @@
 
 	<div class="source-list">
 		{#each groups as g (g.topic.id)}
-			<section class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
+			<section aria-label={`Citations sur ${g.topic.label}`} class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
 				<div class="min-w-0">
 					<h2
 						class="font-heading uppercase leading-[1.15] tracking-[0.04em] text-accent"

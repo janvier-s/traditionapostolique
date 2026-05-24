@@ -407,7 +407,7 @@
 		{/if}
 		{#each groups as g (g.authorId)}
 			{@const groupCentury = centuryLabel(g.author.dates)}
-			<section class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
+			<section aria-label={`Citations de ${g.author.name}`} class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
 				<!-- Marginal source header: small-caps oxblood, the author's
 				     name standing in for the source the way "THE PROTO-
 				     EVANGELIUM OF JAMES" does in the reference. -->

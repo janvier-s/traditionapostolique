@@ -4,7 +4,7 @@
 	import { formatCitation } from '$lib/utils/format-citation';
 	import { renderFr } from '$lib/utils/render-fr';
 	import { eraLabelFeminine } from '$lib/utils/era';
-	import { centuryLabel } from '$lib/utils/century';
+	import { centuryLabel, isoYear } from '$lib/utils/century';
 	import { looksLikeMigne } from '$lib/utils/migne';
 
 	let { quote, onClose }: { quote: Quote; onClose: () => void } = $props();
@@ -157,10 +157,10 @@
 					<dd class="mt-1 italic">{author.originalName}</dd>
 				</div>
 			{/if}
-			{#if author.dates}
+			{#if author.dates}{@const dt = isoYear(author.dates)}
 				<div>
 					<dt class="label-meta">Dates</dt>
-					<dd class="mt-1">{author.dates}</dd>
+					<dd class="mt-1"><time datetime={dt ?? undefined}>{author.dates}</time></dd>
 				</div>
 			{/if}
 			{#if century}
