@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "slug": "le-seul-vrai-dieu",
+    "slug": "seul-vrai-dieu",
     "label": "Le seul vrai Dieu",
     "section": "I",
     "groupe": "Dieu",
@@ -17,7 +17,7 @@
   },
   {
     "id": 3,
-    "slug": "la-trinite",
+    "slug": "trinite",
     "label": "La Trinité",
     "section": "I",
     "groupe": "Dieu",
@@ -25,7 +25,7 @@
   },
   {
     "id": 4,
-    "slug": "les-trois-personnes-de-la-trinite",
+    "slug": "trois-personnes-de-la-trinite",
     "label": "Les trois Personnes de la Trinité",
     "section": "I",
     "groupe": "Dieu",
@@ -33,7 +33,7 @@
   },
   {
     "id": 5,
-    "slug": "la-divinite-du-christ",
+    "slug": "divinite-du-christ",
     "label": "La divinité du Christ",
     "section": "I",
     "groupe": "Dieu",
@@ -41,7 +41,7 @@
   },
   {
     "id": 6,
-    "slug": "la-filiation-eternelle-du-christ",
+    "slug": "filiation-eternelle-du-christ",
     "label": "La filiation éternelle du Christ",
     "section": "I",
     "groupe": "Dieu",
@@ -49,7 +49,7 @@
   },
   {
     "id": 7,
-    "slug": "le-filioque",
+    "slug": "filioque",
     "label": "Le Filioque",
     "section": "I",
     "groupe": "Dieu",
@@ -57,7 +57,7 @@
   },
   {
     "id": 8,
-    "slug": "la-creation-ex-nihilo",
+    "slug": "creation-ex-nihilo",
     "label": "La création ex nihilo",
     "section": "II",
     "groupe": "La Création",
@@ -65,7 +65,7 @@
   },
   {
     "id": 9,
-    "slug": "la-creation-dans-la-genese",
+    "slug": "creation-dans-la-genese",
     "label": "La création dans la Genèse",
     "section": "II",
     "groupe": "La Création",
@@ -73,7 +73,7 @@
   },
   {
     "id": 10,
-    "slug": "le-canon-des-ecritures",
+    "slug": "canon-des-ecritures",
     "label": "Le canon des Écritures",
     "section": "III",
     "groupe": "Les sources de la foi",
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "slug": "la-tradition-apostolique",
+    "slug": "tradition-apostolique",
     "label": "La Tradition apostolique",
     "section": "III",
     "groupe": "Les sources de la foi",
@@ -89,7 +89,7 @@
   },
   {
     "id": 12,
-    "slug": "l-eglise-catholique",
+    "slug": "eglise-catholique",
     "label": "L'Église catholique",
     "section": "IV",
     "groupe": "L'Église et le Pape",
@@ -97,7 +97,7 @@
   },
   {
     "id": 13,
-    "slug": "la-succession-apostolique",
+    "slug": "succession-apostolique",
     "label": "La succession apostolique",
     "section": "IV",
     "groupe": "L'Église et le Pape",
@@ -113,7 +113,7 @@
   },
   {
     "id": 15,
-    "slug": "la-primaute-de-pierre",
+    "slug": "primaute-de-pierre",
     "label": "La primauté de Pierre",
     "section": "IV",
     "groupe": "L'Église et le Pape",
@@ -129,7 +129,7 @@
   },
   {
     "id": 17,
-    "slug": "les-successeurs-de-pierre",
+    "slug": "successeurs-de-pierre",
     "label": "Les successeurs de Pierre",
     "section": "IV",
     "groupe": "L'Église et le Pape",
@@ -137,7 +137,7 @@
   },
   {
     "id": 18,
-    "slug": "l-autorite-du-pape",
+    "slug": "autorite-du-pape",
     "label": "L'autorité du Pape",
     "section": "IV",
     "groupe": "L'Église et le Pape",
@@ -145,7 +145,7 @@
   },
   {
     "id": 19,
-    "slug": "le-peche-mortel",
+    "slug": "peche-mortel",
     "label": "Le péché mortel",
     "section": "V",
     "groupe": "La morale",
@@ -153,7 +153,7 @@
   },
   {
     "id": 20,
-    "slug": "l-avortement",
+    "slug": "avortement",
     "label": "L'avortement",
     "section": "V",
     "groupe": "La morale",
@@ -161,7 +161,7 @@
   },
   {
     "id": 21,
-    "slug": "la-contraception-et-la-sterilisation",
+    "slug": "contraception-et-la-sterilisation",
     "label": "La contraception et la stérilisation",
     "section": "V",
     "groupe": "La morale",
@@ -169,7 +169,7 @@
   },
   {
     "id": 22,
-    "slug": "l-homosexualite",
+    "slug": "homosexualite",
     "label": "L'homosexualité",
     "section": "V",
     "groupe": "La morale",
@@ -177,7 +177,7 @@
   },
   {
     "id": 23,
-    "slug": "l-astrologie",
+    "slug": "astrologie",
     "label": "L'astrologie",
     "section": "V",
     "groupe": "La morale",
@@ -185,7 +185,7 @@
   },
   {
     "id": 24,
-    "slug": "le-bapteme-comme-moyen-de-grace",
+    "slug": "bapteme-comme-moyen-de-grace",
     "label": "Le baptême comme moyen de grâce",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -193,7 +193,7 @@
   },
   {
     "id": 25,
-    "slug": "la-regeneration-baptismale",
+    "slug": "regeneration-baptismale",
     "label": "La régénération baptismale",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -201,7 +201,7 @@
   },
   {
     "id": 26,
-    "slug": "la-necessite-du-bapteme",
+    "slug": "necessite-du-bapteme",
     "label": "La nécessité du baptême",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -209,7 +209,7 @@
   },
   {
     "id": 27,
-    "slug": "le-bapteme-trinitaire",
+    "slug": "bapteme-trinitaire",
     "label": "Le baptême trinitaire",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -217,7 +217,7 @@
   },
   {
     "id": 28,
-    "slug": "le-bapteme-des-enfants",
+    "slug": "bapteme-des-enfants",
     "label": "Le baptême des enfants",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -225,7 +225,7 @@
   },
   {
     "id": 29,
-    "slug": "la-confirmation",
+    "slug": "confirmation",
     "label": "La confirmation",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -233,7 +233,7 @@
   },
   {
     "id": 30,
-    "slug": "la-presence-reelle",
+    "slug": "presence-reelle",
     "label": "La présence réelle",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -241,7 +241,7 @@
   },
   {
     "id": 31,
-    "slug": "le-sacrifice-de-la-messe",
+    "slug": "sacrifice-de-la-messe",
     "label": "Le sacrifice de la messe",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -249,7 +249,7 @@
   },
   {
     "id": 32,
-    "slug": "la-confession",
+    "slug": "confession",
     "label": "La confession",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -264,7 +264,7 @@
   },
   {
     "id": 34,
-    "slug": "les-femmes-pretres",
+    "slug": "femmes-pretres",
     "label": "Les femmes prêtres",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -272,7 +272,7 @@
   },
   {
     "id": 35,
-    "slug": "la-permanence-du-mariage",
+    "slug": "permanence-du-mariage",
     "label": "La permanence du mariage",
     "section": "VI",
     "groupe": "Les sacrements et le culte",
@@ -312,7 +312,7 @@
   },
   {
     "id": 40,
-    "slug": "l-intercession-des-saints",
+    "slug": "intercession-des-saints",
     "label": "L'intercession des saints",
     "section": "VII",
     "groupe": "Marie les saints le miraculeux",
@@ -320,7 +320,7 @@
   },
   {
     "id": 41,
-    "slug": "les-miracles-continus",
+    "slug": "miracles-continus",
     "label": "Les miracles continus",
     "section": "VII",
     "groupe": "Marie les saints le miraculeux",
@@ -328,7 +328,7 @@
   },
   {
     "id": 42,
-    "slug": "la-revelation-privee",
+    "slug": "revelation-privee",
     "label": "La révélation privée",
     "section": "VII",
     "groupe": "Marie les saints le miraculeux",
@@ -336,7 +336,7 @@
   },
   {
     "id": 43,
-    "slug": "le-salut-en-dehors-de-l-eglise",
+    "slug": "salut-en-dehors-de-l-eglise",
     "label": "Le salut en dehors de l'Église",
     "section": "VIII",
     "groupe": "Les fins dernières",
@@ -344,7 +344,7 @@
   },
   {
     "id": 44,
-    "slug": "la-recompense-et-le-merite",
+    "slug": "recompense-et-le-merite",
     "label": "La récompense et le mérite",
     "section": "VIII",
     "groupe": "Les fins dernières",
@@ -352,7 +352,7 @@
   },
   {
     "id": 45,
-    "slug": "le-purgatoire",
+    "slug": "purgatoire",
     "label": "Le purgatoire",
     "section": "VIII",
     "groupe": "Les fins dernières",
@@ -360,7 +360,7 @@
   },
   {
     "id": 46,
-    "slug": "l-enfer",
+    "slug": "enfer",
     "label": "L'enfer",
     "section": "VIII",
     "groupe": "Les fins dernières",
@@ -368,14 +368,14 @@
   },
   {
     "id": 47,
-    "slug": "la-reincarnation",
+    "slug": "reincarnation",
     "label": "La réincarnation",
     "section": "VIII",
     "groupe": "Les fins dernières"
   },
   {
     "id": 48,
-    "slug": "la-resurrection-des-corps",
+    "slug": "resurrection-des-corps",
     "label": "La résurrection des corps",
     "section": "VIII",
     "groupe": "Les fins dernières",
@@ -383,7 +383,7 @@
   },
   {
     "id": 49,
-    "slug": "l-antechrist",
+    "slug": "antechrist",
     "label": "L'antéchrist",
     "section": "VIII",
     "groupe": "Les fins dernières",
