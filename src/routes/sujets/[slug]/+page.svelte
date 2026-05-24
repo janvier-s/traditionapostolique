@@ -6,7 +6,7 @@
 	import { renderFr } from '$lib/utils/render-fr';
 	import type { Quote, Era, Author } from '$lib/schema';
 	import { eraOrder, eraLabel, eraLabelSingular, eraLabelFeminine } from '$lib/utils/era';
-	import { mode } from '$lib/stores/mode.svelte';
+	import { mode, setMode } from '$lib/stores/mode.svelte';
 
 	let { data } = $props();
 
@@ -63,20 +63,24 @@
 		quotes: Quote[];
 	};
 
-	// Study-mode era filter. Empty Set = "no filter, show everything";
-	// otherwise show only authors whose era is in the set. Reset on
-	// navigation since era picks rarely make sense across topics.
-	let eraFilter = $state<Set<Era>>(new Set());
+	// Study-mode century filter. Empty Set = "no filter, show everything";
+	// otherwise show only authors whose century is in the set.
+	let centuryFilter = $state<Set<number>>(new Set());
 
-	function toggleEra(e: Era) {
-		const next = new Set(eraFilter);
-		if (next.has(e)) next.delete(e);
-		else next.add(e);
-		eraFilter = next;
+	function authorCentury(a: Author): number {
+		const y = latestYear(a.dates);
+		return y === 9999 ? 0 : Math.ceil(y / 100);
 	}
 
-	function clearEraFilter() {
-		eraFilter = new Set();
+	function toggleCentury(c: number) {
+		const next = new Set(centuryFilter);
+		if (next.has(c)) next.delete(c);
+		else next.add(c);
+		centuryFilter = next;
+	}
+
+	function clearCenturyFilter() {
+		centuryFilter = new Set();
 	}
 
 	// Sort options for the Study filter bar. Default chronological-asc
@@ -90,25 +94,26 @@
 		{ value: 'author-az', label: 'Auteur (A–Z)' }
 	];
 
-	// Available eras for the filter bar · only show chips for eras that
-	// actually appear on this topic's authors. Keeps the bar relevant and
-	// avoids dead options (e.g. "Médiévaux" on a purely apostolic topic).
-	const erasOnPage = $derived.by<Era[]>(() => {
-		const seen = new Set<Era>();
+	// Available centuries for the filter bar · only show chips for
+	// centuries that actually appear on this topic's authors.
+	const centuriesOnPage = $derived.by<number[]>(() => {
+		const seen = new Set<number>();
 		for (const q of data.matching) {
 			const a = authorById(q.authorId);
-			if (a) seen.add(a.era);
+			if (!a) continue;
+			const c = authorCentury(a);
+			if (c > 0) seen.add(c);
 		}
-		return eraOrder.filter((e) => seen.has(e));
+		return [...seen].sort((x, y) => x - y);
 	});
 
 	const groups = $derived.by<Group[]>(() => {
 		const byAuthor = new Map<number, Group>();
-		const activeEraFilter = mode.value === 'study' && eraFilter.size > 0 ? eraFilter : null;
+		const activeCenturyFilter = mode.value === 'study' && centuryFilter.size > 0 ? centuryFilter : null;
 		for (const q of data.matching) {
 			const a = authorById(q.authorId);
 			if (!a) continue;
-			if (activeEraFilter && !activeEraFilter.has(a.era)) continue;
+			if (activeCenturyFilter && !activeCenturyFilter.has(authorCentury(a))) continue;
 			let g = byAuthor.get(a.id);
 			if (!g) {
 				g = { authorId: a.id, author: a, quotes: [] };
@@ -387,24 +392,55 @@
 		</div>
 	</header>
 
-	{#if mode.value === 'study'}
-		<!-- Study-mode filter bar · sits in the right grid column so it
-		     aligns with the quotes (not the source headers). Keeps the
-		     Read-mode aesthetic: small uppercase Proxima labels, hairline
-		     borders, sage-olive active state. -->
-		<div class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
-			<div></div>
+	<!-- Mode toggle (marginal column) + Siècle filter (main column) on the
+	     same row, both bottom-aligned so the toggle baseline meets the
+	     'Siècle' label baseline. -->
+	<div class="mb-12 grid grid-cols-1 items-end gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+		<div class="flex items-baseline gap-2">
+			<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Mode</span>
+			<div
+				class="inline-flex rounded-full border border-foreground/15 p-[2px] font-ui text-[11px] font-light uppercase tracking-[0.1em]"
+				role="group"
+				aria-label="Mode de lecture"
+			>
+				<button
+					type="button"
+					onclick={() => setMode('read')}
+					aria-pressed={mode.value === 'read'}
+					class="rounded-full px-3 py-1 transition-colors hover:text-active"
+					class:bg-active={mode.value === 'read'}
+					class:text-foreground={mode.value === 'read'}
+					class:text-muted={mode.value !== 'read'}
+				>
+					Lecture
+				</button>
+				<button
+					type="button"
+					onclick={() => setMode('study')}
+					aria-pressed={mode.value === 'study'}
+					class="rounded-full px-3 py-1 transition-colors hover:text-active"
+					class:bg-active={mode.value === 'study'}
+					class:text-foreground={mode.value === 'study'}
+					class:text-muted={mode.value !== 'study'}
+				>
+					Étude
+				</button>
+			</div>
+		</div>
+
+		{#if mode.value === 'study'}
+			<div>
 			<div
 				class="flex flex-wrap items-baseline gap-x-2 gap-y-2 border-b border-border pb-4"
 			>
 				<span
 					class="mr-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted"
-				>Ère</span>
-				{#each erasOnPage as e (e)}
-					{@const active = eraFilter.has(e)}
+				>Siècle</span>
+				{#each centuriesOnPage as c (c)}
+					{@const active = centuryFilter.has(c)}
 					<button
 						type="button"
-						onclick={() => toggleEra(e)}
+						onclick={() => toggleCentury(c)}
 						aria-pressed={active}
 						class="rounded-full border border-foreground/15 px-3 py-[3px] font-ui text-[12px] font-light uppercase tracking-[0.05em] transition-colors hover:border-active"
 						class:bg-active={active}
@@ -412,13 +448,13 @@
 						class:text-background={active}
 						class:text-foreground={!active}
 					>
-						{eraLabel(e)}
+						{ROMAN[c - 1] ?? c}<span class="lowercase">e</span>
 					</button>
 				{/each}
-				{#if eraFilter.size > 0}
+				{#if centuryFilter.size > 0}
 					<button
 						type="button"
-						onclick={clearEraFilter}
+						onclick={clearCenturyFilter}
 						class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
 					>
 						Réinitialiser
@@ -447,7 +483,8 @@
 				</label>
 			</div>
 		</div>
-	{/if}
+		{/if}
+	</div>
 
 	<div class="source-list">
 		{#if groups.length === 0}

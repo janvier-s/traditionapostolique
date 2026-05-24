@@ -3,7 +3,6 @@
 	import { page } from '$app/state';
 	import { buildTopicTree, topicBySlug } from '$lib/data';
 	import type { Section } from '$lib/schema';
-	import { mode, setMode } from '$lib/stores/mode.svelte';
 
 	let { children } = $props();
 
@@ -39,7 +38,7 @@
 
 <div class="min-h-screen bg-background font-body text-foreground">
 	<div class="grid grid-cols-1 gap-x-12 px-6 py-8 lg:grid-cols-[330px_1fr] lg:gap-x-12 lg:px-12 lg:py-10">
-		<aside class="lg:sticky lg:top-10 lg:max-h-[calc(100vh-3rem)] lg:self-start lg:overflow-y-auto rail-scroll lg:pr-3">
+		<aside class="lg:sticky lg:top-10 lg:max-h-[calc(100vh-3rem)] lg:self-start lg:pr-3 lg:flex lg:flex-col">
 			<!-- Logo · architectural mark + tracked small-caps wordmark. -->
 			<a href="/" class="block" aria-label="Accueil">
 				<div class="flex items-end gap-3">
@@ -55,7 +54,9 @@
 			</a>
 
 			<!-- Short hairline matching the reference. -->
-			<div class="mt-10 mb-6 h-px w-10 bg-border"></div>
+			<div class="mt-10 mb-6 h-px w-10 bg-border flex-shrink-0"></div>
+
+			<div class="lg:min-h-0 lg:flex-1 lg:overflow-y-auto rail-scroll">
 
 			<!--
 				Rail nav styled to churchfathers.org's `.navigation`:
@@ -74,43 +75,6 @@
 			     The +/− glyph inherits the parent button colour so it
 			     tracks the section's hover / active state instead of
 			     staying a fixed muted grey. -->
-			<!-- Mode toggle · only visible on a topic-detail page
-			     (/sujets/<slug>) because that's the only surface where
-			     Lecture vs Étude actually changes the rendering. Showing
-			     it on the homepage, index, Pères / Œuvres pages would
-			     make it look like a global setting that does nothing on
-			     those routes. -->
-			{#if /^\/sujets\/[^/]+$/.test(page.url.pathname)}
-			<div
-				class="mb-8 inline-flex rounded-full border border-foreground/15 p-[2px] font-ui text-[11px] font-light uppercase tracking-[0.1em]"
-				role="group"
-				aria-label="Mode de lecture"
-			>
-				<button
-					type="button"
-					onclick={() => setMode('read')}
-					aria-pressed={mode.value === 'read'}
-					class="rounded-full px-3 py-1 transition-colors hover:text-active"
-					class:bg-active={mode.value === 'read'}
-					class:text-foreground={mode.value === 'read'}
-					class:text-muted={mode.value !== 'read'}
-				>
-					Lecture
-				</button>
-				<button
-					type="button"
-					onclick={() => setMode('study')}
-					aria-pressed={mode.value === 'study'}
-					class="rounded-full px-3 py-1 transition-colors hover:text-active"
-					class:bg-active={mode.value === 'study'}
-					class:text-foreground={mode.value === 'study'}
-					class:text-muted={mode.value !== 'study'}
-				>
-					Étude
-				</button>
-			</div>
-			{/if}
-
 			<nav aria-label="Sujets" class="font-ui font-light">
 				<ul>
 					{#each tree as s (s.section)}
@@ -181,6 +145,7 @@
 					</a>
 				</li>
 			</ul>
+			</div>
 		</aside>
 
 		<main class="min-w-0">
