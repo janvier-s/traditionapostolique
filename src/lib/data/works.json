@@ -773,13 +773,6 @@
     "authorId": 1052
   },
   {
-    "id": 98,
-    "slug": "conferences-catechetiques-98",
-    "title": "Conférences catéchétiques",
-    "alternativeTitles": [],
-    "authorId": 17
-  },
-  {
     "id": 99,
     "slug": "exhortation-au-martyre-99",
     "title": "Exhortation au martyre",
@@ -1686,13 +1679,6 @@
     "authorId": 1064
   },
   {
-    "id": 217,
-    "slug": "martyre-de-polycarpe-217",
-    "title": "Martyre de Polycarpe",
-    "alternativeTitles": [],
-    "authorId": 1061
-  },
-  {
     "id": 218,
     "slug": "fragment-dans-le-guide-d-anastase-du-sinai-218",
     "title": "Fragment dans Le Guide d’Anastase du Sinaï",
@@ -1972,15 +1958,6 @@
       "Note du copiste"
     ],
     "authorId": 1019
-  },
-  {
-    "id": 253,
-    "slug": "poeme-contre-les-marcionites-253",
-    "title": "Poème contre les Marcionites",
-    "alternativeTitles": [
-      "Pseudo-Tertullien"
-    ],
-    "authorId": 67
   },
   {
     "id": 254,
@@ -2431,13 +2408,6 @@
     "title": "Concile de Nicée I",
     "alternativeTitles": [],
     "authorId": 1050
-  },
-  {
-    "id": 10016,
-    "slug": "council-of-rome-10016",
-    "title": "Concile de Rome",
-    "alternativeTitles": [],
-    "authorId": 67
   },
   {
     "id": 10017,
