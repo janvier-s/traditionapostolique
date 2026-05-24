@@ -204,7 +204,7 @@
 					<button
 						type="submit"
 						disabled={!dirty || saving}
-						class="rounded border border-border bg-accent px-4 py-1 font-ui text-sm text-accent-text disabled:opacity-50"
+						class="rounded border border-border bg-accent px-4 py-1 font-ui text-sm text-white disabled:opacity-50"
 					>
 						{saving ? 'Enregistrement…' : 'Enregistrer'}
 					</button>
