@@ -8,6 +8,11 @@ export const QuoteSchema = z.object({
 	workId: z.number().int().nonnegative().optional(),
 	topicIds: z.array(z.number().int().nonnegative()).min(1),
 	reference: z.string().optional(),
+	// Optional precise source for study-mode display. When the work is a
+	// generic container (e.g. 'Lettres', 'Sermons') this carries the
+	// specific letter/sermon and its addressee/topic, e.g.
+	// 'Lettre 15. Au pape Damase.' Read-mode keeps the short work title.
+	studyTitle: z.string().optional(),
 	fr: z.string().optional(),
 	en: z.string().optional(),
 	latin: z.string().optional(),

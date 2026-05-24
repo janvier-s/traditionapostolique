@@ -194,7 +194,9 @@
 										<a
 											href={`/oeuvres/${work.slug}`}
 											class="italic hover:text-active"
-										>{work.title}</a>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
+										>{mode.value === 'study' && q.studyTitle ? q.studyTitle : work.title}</a>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
+									{:else if q.studyTitle && mode.value === 'study'}
+										<em class="italic">{q.studyTitle}</em>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
 									{:else}
 										<em class="italic">{cite}</em>
 									{/if}

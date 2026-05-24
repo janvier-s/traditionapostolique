@@ -3,6 +3,7 @@
 
 	let {
 		title,
+		fullTitle,
 		description,
 		type = 'website',
 		image,
@@ -11,6 +12,11 @@
 		noindex = false
 	}: {
 		title: string;
+		// When passed, bypasses the `{title} {separator} {SITE_NAME}`
+		// template entirely so a page can author the whole <title>
+		// organically (the sujet page does this via `separator`, but other
+		// pages need full freedom).
+		fullTitle?: string;
 		description?: string;
 		type?: 'website' | 'article';
 		image?: string;
@@ -23,7 +29,7 @@
 	const DEFAULT_IMAGE = '/og-image.png';
 	const DEFAULT_IMAGE_ALT = 'Tradition Apostolique · anthologie patristique';
 
-	const full = $derived(`${title} ${separator} ${SITE_NAME}`);
+	const full = $derived(fullTitle ?? `${title} ${separator} ${SITE_NAME}`);
 
 	// Self-canonical URL derived from the current route. Strips trailing
 	// slashes (except root) and drops query/hash so duplicate-form URLs

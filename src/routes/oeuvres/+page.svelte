@@ -76,7 +76,8 @@
 </script>
 
 <MetaTags
-	title="Œuvres patristiques"
+	title="Œuvres"
+	fullTitle="Les œuvres patristiques sources de la Tradition Apostolique"
 	description="Liste des œuvres sources de la Tradition Apostolique : épîtres, traités, homélies, conciles, canons et écrits apocryphes des cinq premiers siècles du christianisme."
 />
 

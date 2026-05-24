@@ -47,6 +47,16 @@ describe('data loader', () => {
 		expect(bad).toEqual([]);
 	});
 
+	it('quote.authorId matches the work.authorId of its workId', () => {
+		const workMap = new Map(works.map((w) => [w.id, w]));
+		const bad = quotes.filter((q) => {
+			if (q.workId == null) return false;
+			const w = workMap.get(q.workId);
+			return w?.authorId != null && w.authorId !== q.authorId;
+		});
+		expect(bad.map((q) => q.id)).toEqual([]);
+	});
+
 	it('every defined work.authorId points to an existing author', () => {
 		const ids = new Set(authors.map((a) => a.id));
 		const bad = works.filter((w) => w.authorId !== undefined && !ids.has(w.authorId));

@@ -175,7 +175,8 @@
 </script>
 
 <MetaTags
-	title="Les Pères de l'Église"
+	title="Les Pères"
+	fullTitle="Les Pères de l'Église cités dans la Tradition Apostolique"
 	description="Index complet des Pères, docteurs, papes, conciles et auteurs anonymes cités dans la Tradition Apostolique. Triables par ère, siècle, rôle ou fréquence de citation."
 />
 

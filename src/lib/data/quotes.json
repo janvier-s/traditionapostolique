@@ -20,7 +20,7 @@
     "id": 2,
     "slug": "citation-2",
     "authorId": 2,
-    "workId": 113,
+    "workId": 14,
     "topicIds": [
       25
     ],
@@ -105,7 +105,7 @@
     "id": 7,
     "slug": "citation-7",
     "authorId": 2,
-    "workId": 150,
+    "workId": 9,
     "topicIds": [
       37
     ],
@@ -207,7 +207,7 @@
     "id": 13,
     "slug": "citation-13",
     "authorId": 2,
-    "workId": 290,
+    "workId": 11,
     "topicIds": [
       41
     ],
@@ -219,13 +219,14 @@
       "primary": "https://la.wikisource.org/wiki/Epistolarum_classis_I_(Ambrosius)/3",
       "archive": "https://archive.ph/D5Zy3"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 22. À sa sœur Marcelline."
   },
   {
     "id": 14,
     "slug": "citation-14",
     "authorId": 2,
-    "workId": 290,
+    "workId": 11,
     "topicIds": [
       39
     ],
@@ -237,7 +238,8 @@
       "primary": "https://la.wikisource.org/wiki/Epistolarum_classis_I_(Ambrosius)/7",
       "archive": "https://archive.ph/3JjYp"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 63. À l'Église de Vercelli."
   },
   {
     "id": 15,
@@ -296,7 +298,7 @@
     "id": 18,
     "slug": "citation-18",
     "authorId": 2,
-    "workId": 113,
+    "workId": 14,
     "topicIds": [
       7
     ],
@@ -313,7 +315,7 @@
     "id": 19,
     "slug": "citation-19",
     "authorId": 2,
-    "workId": 113,
+    "workId": 14,
     "topicIds": [
       7
     ],
@@ -330,7 +332,7 @@
     "id": 20,
     "slug": "citation-20",
     "authorId": 2,
-    "workId": 250,
+    "workId": 15,
     "topicIds": [
       6
     ],
@@ -347,7 +349,7 @@
     "id": 21,
     "slug": "citation-21",
     "authorId": 2,
-    "workId": 250,
+    "workId": 15,
     "topicIds": [
       17
     ],
@@ -364,7 +366,7 @@
     "id": 22,
     "slug": "citation-22",
     "authorId": 2,
-    "workId": 68,
+    "workId": 16,
     "topicIds": [
       9
     ],
@@ -381,7 +383,7 @@
     "id": 23,
     "slug": "citation-23",
     "authorId": 2,
-    "workId": 113,
+    "workId": 14,
     "topicIds": [
       3
     ],
@@ -723,7 +725,7 @@
     "id": 44,
     "slug": "citation-44",
     "authorId": 6,
-    "workId": 275,
+    "workId": 23,
     "topicIds": [
       8
     ],
@@ -739,7 +741,7 @@
     "id": 45,
     "slug": "citation-45",
     "authorId": 6,
-    "workId": 275,
+    "workId": 23,
     "topicIds": [
       5
     ],
@@ -755,7 +757,7 @@
     "id": 46,
     "slug": "citation-46",
     "authorId": 6,
-    "workId": 275,
+    "workId": 23,
     "topicIds": [
       48
     ],
@@ -1865,7 +1867,7 @@
     "id": 112,
     "slug": "citation-112",
     "authorId": 10,
-    "workId": 290,
+    "workId": 48,
     "topicIds": [
       43
     ],
@@ -1882,7 +1884,7 @@
     "id": 113,
     "slug": "citation-113",
     "authorId": 10,
-    "workId": 290,
+    "workId": 48,
     "topicIds": [
       14
     ],
@@ -2109,7 +2111,7 @@
     "id": 127,
     "slug": "citation-127",
     "authorId": 10,
-    "workId": 211,
+    "workId": 58,
     "topicIds": [
       18
     ],
@@ -2126,7 +2128,7 @@
     "id": 128,
     "slug": "citation-128",
     "authorId": 10,
-    "workId": 211,
+    "workId": 58,
     "topicIds": [
       45
     ],
@@ -2142,7 +2144,7 @@
     "id": 129,
     "slug": "citation-129",
     "authorId": 10,
-    "workId": 211,
+    "workId": 58,
     "topicIds": [
       30
     ],
@@ -2156,7 +2158,7 @@
     "id": 130,
     "slug": "citation-130",
     "authorId": 10,
-    "workId": 211,
+    "workId": 58,
     "topicIds": [
       30
     ],
@@ -2167,13 +2169,14 @@
     "links": {
       "primary": "https://catholiclibrary.org/library/view?docId=Fathers-OR/PL.038.html;chunk.id=00003535"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Sermon 272. Aux nouveaux baptisés, sur le sacrement."
   },
   {
     "id": 131,
     "slug": "citation-131",
     "authorId": 10,
-    "workId": 211,
+    "workId": 58,
     "topicIds": [
       15
     ],
@@ -2272,7 +2275,7 @@
     "id": 137,
     "slug": "citation-137",
     "authorId": 10,
-    "workId": 225,
+    "workId": 61,
     "topicIds": [
       3
     ],
@@ -2289,7 +2292,7 @@
     "id": 138,
     "slug": "citation-138",
     "authorId": 10,
-    "workId": 225,
+    "workId": 61,
     "topicIds": [
       7
     ],
@@ -2305,7 +2308,7 @@
     "id": 139,
     "slug": "citation-139",
     "authorId": 10,
-    "workId": 225,
+    "workId": 61,
     "topicIds": [
       2
     ],
@@ -2321,7 +2324,7 @@
     "id": 140,
     "slug": "citation-140",
     "authorId": 10,
-    "workId": 225,
+    "workId": 61,
     "topicIds": [
       7
     ],
@@ -2337,7 +2340,7 @@
     "id": 141,
     "slug": "citation-141",
     "authorId": 10,
-    "workId": 225,
+    "workId": 61,
     "topicIds": [
       27
     ],
@@ -2572,7 +2575,7 @@
     "id": 157,
     "slug": "citation-157",
     "authorId": 12,
-    "workId": 113,
+    "workId": 65,
     "topicIds": [
       25
     ],
@@ -2590,7 +2593,7 @@
     "id": 158,
     "slug": "citation-158",
     "authorId": 12,
-    "workId": 113,
+    "workId": 65,
     "topicIds": [
       7
     ],
@@ -2608,7 +2611,7 @@
     "id": 159,
     "slug": "citation-159",
     "authorId": 12,
-    "workId": 113,
+    "workId": 65,
     "topicIds": [
       7
     ],
@@ -2627,7 +2630,7 @@
     "id": 160,
     "slug": "citation-160",
     "authorId": 12,
-    "workId": 113,
+    "workId": 65,
     "topicIds": [
       11
     ],
@@ -2644,7 +2647,7 @@
     "id": 161,
     "slug": "citation-161",
     "authorId": 12,
-    "workId": 113,
+    "workId": 65,
     "topicIds": [
       41
     ],
@@ -2663,7 +2666,7 @@
     "id": 162,
     "slug": "citation-162",
     "authorId": 12,
-    "workId": 290,
+    "workId": 66,
     "topicIds": [
       27
     ],
@@ -2682,7 +2685,7 @@
     "id": 163,
     "slug": "citation-163",
     "authorId": 12,
-    "workId": 290,
+    "workId": 66,
     "topicIds": [
       20
     ],
@@ -2700,7 +2703,7 @@
     "id": 164,
     "slug": "citation-164",
     "authorId": 12,
-    "workId": 290,
+    "workId": 66,
     "topicIds": [
       19
     ],
@@ -2712,13 +2715,14 @@
     "links": {
       "primary": "https://scholarios.graeca.org/public/pgfront/index.html?vol=32&page=727"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 199. 2e canonique à Amphiloque d'Iconium."
   },
   {
     "id": 165,
     "slug": "citation-165",
     "authorId": 12,
-    "workId": 290,
+    "workId": 66,
     "topicIds": [
       35
     ],
@@ -2735,7 +2739,7 @@
     "id": 166,
     "slug": "citation-166",
     "authorId": 12,
-    "workId": 290,
+    "workId": 66,
     "topicIds": [
       22
     ],
@@ -2747,13 +2751,14 @@
     "links": {
       "primary": "https://scholarios.graeca.org/public/pgfront/index.html?vol=32&page=799"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 217. 3e canonique à Amphiloque d'Iconium."
   },
   {
     "id": 167,
     "slug": "citation-167",
     "authorId": 12,
-    "workId": 290,
+    "workId": 66,
     "topicIds": [
       2
     ],
@@ -2846,7 +2851,7 @@
     "id": 172,
     "slug": "citation-172",
     "authorId": 68,
-    "workId": 211,
+    "workId": 69,
     "topicIds": [
       19
     ],
@@ -2985,7 +2990,7 @@
   {
     "id": 180,
     "slug": "citation-180",
-    "authorId": 15,
+    "authorId": 1059,
     "workId": 73,
     "topicIds": [
       26
@@ -3003,7 +3008,7 @@
   {
     "id": 181,
     "slug": "citation-181",
-    "authorId": 15,
+    "authorId": 1059,
     "workId": 73,
     "topicIds": [
       1
@@ -3022,7 +3027,7 @@
   {
     "id": 182,
     "slug": "citation-182",
-    "authorId": 15,
+    "authorId": 1059,
     "workId": 74,
     "topicIds": [
       23
@@ -3039,7 +3044,7 @@
   {
     "id": 183,
     "slug": "citation-183",
-    "authorId": 15,
+    "authorId": 1059,
     "workId": 74,
     "topicIds": [
       23
@@ -3054,7 +3059,7 @@
     "id": 184,
     "slug": "citation-184",
     "authorId": 1002,
-    "workId": 290,
+    "workId": 71,
     "topicIds": [
       18
     ],
@@ -3410,7 +3415,7 @@
   {
     "id": 204,
     "slug": "citation-204",
-    "authorId": 1003,
+    "authorId": 26,
     "workId": 129,
     "topicIds": [
       42
@@ -3461,7 +3466,7 @@
   {
     "id": 207,
     "slug": "citation-207",
-    "authorId": 17,
+    "authorId": 1055,
     "workId": 10003,
     "topicIds": [
       29
@@ -3995,7 +4000,6 @@
     "id": 241,
     "slug": "citation-241",
     "authorId": 39,
-    "workId": 290,
     "topicIds": [
       4
     ],
@@ -4012,7 +4016,6 @@
     "id": 242,
     "slug": "citation-242",
     "authorId": 39,
-    "workId": 290,
     "topicIds": [
       6
     ],
@@ -4078,7 +4081,7 @@
     "id": 246,
     "slug": "citation-246",
     "authorId": 17,
-    "workId": 234,
+    "workId": 99,
     "topicIds": [
       8
     ],
@@ -4095,7 +4098,7 @@
     "id": 247,
     "slug": "citation-247",
     "authorId": 17,
-    "workId": 234,
+    "workId": 99,
     "topicIds": [
       44
     ],
@@ -4146,7 +4149,7 @@
     "id": 250,
     "slug": "citation-250",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       32
     ],
@@ -4163,7 +4166,7 @@
     "id": 251,
     "slug": "citation-251",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       14
     ],
@@ -4180,7 +4183,7 @@
     "id": 252,
     "slug": "citation-252",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       18
     ],
@@ -4197,7 +4200,7 @@
     "id": 253,
     "slug": "citation-253",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       18
     ],
@@ -4214,7 +4217,7 @@
     "id": 254,
     "slug": "citation-254",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       18
     ],
@@ -4231,7 +4234,7 @@
     "id": 255,
     "slug": "citation-255",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       32
     ],
@@ -4243,7 +4246,7 @@
     "id": 256,
     "slug": "citation-256",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       45
     ],
@@ -4260,7 +4263,7 @@
     "id": 257,
     "slug": "citation-257",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       32
     ],
@@ -4277,7 +4280,7 @@
     "id": 258,
     "slug": "citation-258",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       17
     ],
@@ -4294,7 +4297,7 @@
     "id": 259,
     "slug": "citation-259",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       49
     ],
@@ -4311,7 +4314,7 @@
     "id": 260,
     "slug": "citation-260",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       10
     ],
@@ -4328,7 +4331,7 @@
     "id": 261,
     "slug": "citation-261",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       40
     ],
@@ -4345,7 +4348,7 @@
     "id": 262,
     "slug": "citation-262",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       28
     ],
@@ -4362,7 +4365,7 @@
     "id": 263,
     "slug": "citation-263",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       28
     ],
@@ -4379,7 +4382,7 @@
     "id": 264,
     "slug": "citation-264",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       43
     ],
@@ -4396,7 +4399,7 @@
     "id": 265,
     "slug": "citation-265",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       31
     ],
@@ -4413,7 +4416,7 @@
     "id": 266,
     "slug": "citation-266",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       12
     ],
@@ -4430,7 +4433,7 @@
     "id": 267,
     "slug": "citation-267",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       29
     ],
@@ -4447,7 +4450,7 @@
     "id": 268,
     "slug": "citation-268",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       43
     ],
@@ -4459,7 +4462,7 @@
     "id": 269,
     "slug": "citation-269",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       49
     ],
@@ -4476,7 +4479,7 @@
     "id": 270,
     "slug": "citation-270",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       49
     ],
@@ -4493,7 +4496,7 @@
     "id": 271,
     "slug": "citation-271",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       25
     ],
@@ -4510,7 +4513,7 @@
     "id": 272,
     "slug": "citation-272",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       29
     ],
@@ -4527,7 +4530,7 @@
     "id": 273,
     "slug": "citation-273",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       5
     ],
@@ -4544,7 +4547,7 @@
     "id": 274,
     "slug": "citation-274",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       27
     ],
@@ -4561,7 +4564,7 @@
     "id": 275,
     "slug": "citation-275",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       43
     ],
@@ -4578,7 +4581,7 @@
     "id": 276,
     "slug": "citation-276",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       26
     ],
@@ -4595,7 +4598,7 @@
     "id": 277,
     "slug": "citation-277",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       29
     ],
@@ -4612,7 +4615,7 @@
     "id": 278,
     "slug": "citation-278",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       29
     ],
@@ -4629,7 +4632,7 @@
     "id": 279,
     "slug": "citation-279",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       43
     ],
@@ -4646,7 +4649,7 @@
     "id": 280,
     "slug": "citation-280",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       11
     ],
@@ -4746,7 +4749,7 @@
     "id": 286,
     "slug": "citation-286",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       24
     ],
@@ -4763,7 +4766,7 @@
     "id": 287,
     "slug": "citation-287",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       22
     ],
@@ -4780,7 +4783,7 @@
     "id": 288,
     "slug": "citation-288",
     "authorId": 17,
-    "workId": 290,
+    "workId": 101,
     "topicIds": [
       22
     ],
@@ -5545,7 +5548,7 @@
     "id": 342,
     "slug": "citation-342",
     "authorId": 24,
-    "workId": 156,
+    "workId": 123,
     "topicIds": [
       15
     ],
@@ -5616,7 +5619,7 @@
     "id": 346,
     "slug": "citation-346",
     "authorId": 26,
-    "workId": 267,
+    "workId": 127,
     "topicIds": [
       36
     ],
@@ -5636,7 +5639,7 @@
     "id": 347,
     "slug": "citation-347",
     "authorId": 26,
-    "workId": 267,
+    "workId": 127,
     "topicIds": [
       17
     ],
@@ -5656,7 +5659,7 @@
     "id": 348,
     "slug": "citation-348",
     "authorId": 26,
-    "workId": 267,
+    "workId": 127,
     "topicIds": [
       11
     ],
@@ -5676,7 +5679,7 @@
     "id": 349,
     "slug": "citation-349",
     "authorId": 26,
-    "workId": 267,
+    "workId": 127,
     "topicIds": [
       18
     ],
@@ -5694,7 +5697,7 @@
     "id": 350,
     "slug": "citation-350",
     "authorId": 26,
-    "workId": 267,
+    "workId": 127,
     "topicIds": [
       17
     ],
@@ -5713,7 +5716,7 @@
     "id": 351,
     "slug": "citation-351",
     "authorId": 26,
-    "workId": 267,
+    "workId": 127,
     "topicIds": [
       41
     ],
@@ -5847,7 +5850,7 @@
     "id": 358,
     "slug": "citation-358",
     "authorId": 1008,
-    "workId": 290,
+    "workId": 133,
     "topicIds": [
       1
     ],
@@ -5913,7 +5916,7 @@
     "id": 362,
     "slug": "citation-362",
     "authorId": 30,
-    "workId": 290,
+    "workId": 136,
     "topicIds": [
       18
     ],
@@ -5924,7 +5927,8 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Gregorius_Magnus)/VII"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre VII. 40. À Euloge d'Alexandrie."
   },
   {
     "id": 363,
@@ -6519,7 +6523,7 @@
     "id": 396,
     "slug": "citation-396",
     "authorId": 33,
-    "workId": 225,
+    "workId": 151,
     "topicIds": [
       7
     ],
@@ -6537,7 +6541,7 @@
     "id": 397,
     "slug": "citation-397",
     "authorId": 33,
-    "workId": 225,
+    "workId": 151,
     "topicIds": [
       7
     ],
@@ -7526,7 +7530,7 @@
     "id": 452,
     "slug": "citation-452",
     "authorId": 1011,
-    "workId": 290,
+    "workId": 170,
     "topicIds": [
       18
     ],
@@ -8312,7 +8316,7 @@
     "id": 496,
     "slug": "citation-496",
     "authorId": 40,
-    "workId": 290,
+    "workId": 182,
     "topicIds": [
       13
     ],
@@ -8331,7 +8335,7 @@
     "id": 497,
     "slug": "citation-497",
     "authorId": 40,
-    "workId": 290,
+    "workId": 182,
     "topicIds": [
       17
     ],
@@ -8344,13 +8348,14 @@
       "primary": "https://mlat.uzh.ch/browser/7132:15",
       "archive": "https://archive.org/details/patrologiaecurs165unkngoog/page/n232/mode/2up"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 15. Au pape Damase."
   },
   {
     "id": 498,
     "slug": "citation-498",
     "authorId": 40,
-    "workId": 290,
+    "workId": 182,
     "topicIds": [
       16
     ],
@@ -8363,13 +8368,14 @@
       "primary": "https://mlat.uzh.ch/browser/7132:15",
       "archive": "https://archive.org/details/patrologiaecurs165unkngoog/page/n232/mode/2up"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 15. Au pape Damase."
   },
   {
     "id": 499,
     "slug": "citation-499",
     "authorId": 40,
-    "workId": 290,
+    "workId": 182,
     "topicIds": [
       17
     ],
@@ -8388,7 +8394,7 @@
     "id": 500,
     "slug": "citation-500",
     "authorId": 40,
-    "workId": 290,
+    "workId": 182,
     "topicIds": [
       20
     ],
@@ -8401,13 +8407,14 @@
       "primary": "https://mlat.uzh.ch/browser/7132:22",
       "archive": "https://archive.org/details/patrologiaecurs165unkngoog/page/n232/mode/2up"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 22. À Eustochium."
   },
   {
     "id": 501,
     "slug": "citation-501",
     "authorId": 40,
-    "workId": 290,
+    "workId": 182,
     "topicIds": [
       35
     ],
@@ -8419,7 +8426,8 @@
     "links": {
       "primary": "https://mlat.uzh.ch/browser/7132:55"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 22. À Eustochium."
   },
   {
     "id": 502,
@@ -8515,7 +8523,7 @@
     "id": 507,
     "slug": "citation-507",
     "authorId": 37,
-    "workId": 289,
+    "workId": 186,
     "topicIds": [
       38
     ],
@@ -8534,7 +8542,7 @@
     "id": 508,
     "slug": "citation-508",
     "authorId": 37,
-    "workId": 289,
+    "workId": 186,
     "topicIds": [
       38
     ],
@@ -9784,7 +9792,7 @@
     "id": 580,
     "slug": "citation-580",
     "authorId": 45,
-    "workId": 290,
+    "workId": 210,
     "topicIds": [
       16
     ],
@@ -9796,13 +9804,14 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Leo_I)/1"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 10. Aux évêques de la province de Vienne."
   },
   {
     "id": 581,
     "slug": "citation-581",
     "authorId": 45,
-    "workId": 290,
+    "workId": 210,
     "topicIds": [
       18
     ],
@@ -9814,13 +9823,14 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Leo_I)/1"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 10. Aux évêques de la province de Vienne."
   },
   {
     "id": 582,
     "slug": "citation-582",
     "authorId": 45,
-    "workId": 290,
+    "workId": 210,
     "topicIds": [
       18
     ],
@@ -9832,13 +9842,14 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Leo_I)/2"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 14. À Anastase de Thessalonique."
   },
   {
     "id": 583,
     "slug": "citation-583",
     "authorId": 45,
-    "workId": 290,
+    "workId": 210,
     "topicIds": [
       26
     ],
@@ -9850,13 +9861,14 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Leo_I)/2"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 15. À Turibius d'Astorga."
   },
   {
     "id": 584,
     "slug": "citation-584",
     "authorId": 45,
-    "workId": 290,
+    "workId": 210,
     "topicIds": [
       18
     ],
@@ -9868,7 +9880,8 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Leo_I)/11"
     },
-    "status": "draft"
+    "status": "draft",
+    "studyTitle": "Lettre 105. À l'impératrice Pulchérie."
   },
   {
     "id": 585,
@@ -11430,7 +11443,7 @@
     "id": 672,
     "slug": "citation-672",
     "authorId": 1018,
-    "workId": 290,
+    "workId": 249,
     "topicIds": [
       18
     ],
@@ -11486,7 +11499,7 @@
     "id": 675,
     "slug": "citation-675",
     "authorId": 1019,
-    "workId": 255,
+    "workId": 252,
     "topicIds": [
       42
     ],
@@ -11504,7 +11517,7 @@
   {
     "id": 676,
     "slug": "citation-676",
-    "authorId": 1019,
+    "authorId": 1020,
     "workId": 257,
     "topicIds": [
       16
@@ -11523,7 +11536,7 @@
     "id": 677,
     "slug": "citation-677",
     "authorId": 55,
-    "workId": 259,
+    "workId": 254,
     "topicIds": [
       48
     ],
@@ -11540,7 +11553,7 @@
     "id": 678,
     "slug": "citation-678",
     "authorId": 55,
-    "workId": 259,
+    "workId": 254,
     "topicIds": [
       49
     ],
@@ -11557,7 +11570,7 @@
     "id": 679,
     "slug": "citation-679",
     "authorId": 55,
-    "workId": 259,
+    "workId": 254,
     "topicIds": [
       10
     ],
@@ -11574,7 +11587,7 @@
   {
     "id": 680,
     "slug": "citation-680",
-    "authorId": 55,
+    "authorId": 1061,
     "workId": 255,
     "topicIds": [
       4

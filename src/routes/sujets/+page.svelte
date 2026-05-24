@@ -6,7 +6,8 @@
 </script>
 
 <MetaTags
-	title="Sujets théologiques"
+	title="Sujets"
+	fullTitle="Les sujets traités dans la Tradition Apostolique"
 	description="Index thématique de la Tradition Apostolique : les principaux articles de la foi chrétienne traités par les Pères de l'Église — Dieu, le Christ, l'Église, les sacrements, la morale, la fin des temps."
 />
 

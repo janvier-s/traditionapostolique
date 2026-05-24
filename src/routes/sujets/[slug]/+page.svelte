@@ -137,6 +137,7 @@
 	// the panel on the right · pushing rather than overlaying (cf.
 	// catechismecatholique.com).
 	let openQuote = $state<Quote | null>(null);
+	let descExpanded = $state(false);
 
 	// Topic-level panel · shares the right-column slot with the quote
 	// panel. Opening one closes the other (only one can be visible at
@@ -309,6 +310,27 @@
 			>
 				{data.topic.label}
 			</h1>
+			{#if data.topic.description}
+				{@const desc = data.topic.description.trim()}
+				{@const cut = desc.indexOf('\n\n')}
+				{@const teaserEnd = cut > 0 && cut < 320 ? cut : Math.min(280, desc.length)}
+				{@const teaser = desc.slice(0, teaserEnd).trim()}
+				{@const hasMore = desc.length > teaser.length}
+				<div class="mt-4 max-w-prose font-body text-[14px] leading-[1.6] text-muted">
+					{#if descExpanded || !hasMore}
+						<p style="white-space: pre-line;">{@html renderFr(desc)}</p>
+					{:else}
+						<p>{@html renderFr(teaser)}{#if hasMore}…{/if}</p>
+					{/if}
+					{#if hasMore}
+						<button
+							type="button"
+							onclick={() => (descExpanded = !descExpanded)}
+							class="mt-2 label-meta-link"
+						>{descExpanded ? 'Réduire' : 'Lire la suite'} <span aria-hidden="true">{descExpanded ? '↑' : '↓'}</span></button>
+					{/if}
+				</div>
+			{/if}
 			<!-- Sub-title row · citation count on the left, study-mode
 			     "À propos du sujet" trigger on the right. Sits directly
 			     under the title so the topic metadata reads as a property
@@ -509,7 +531,9 @@
 										<a
 											href={`/oeuvres/${work.slug}`}
 											class="italic hover:text-active"
-										>{work.title}</a>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
+										>{mode.value === 'study' && q.studyTitle ? q.studyTitle : work.title}</a>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
+									{:else if q.studyTitle && mode.value === 'study'}
+										<em class="italic">{q.studyTitle}</em>{#if q.reference}<span class="italic">, {q.reference}</span>{/if}
 									{:else}
 										<em class="italic">{cite}</em>
 									{/if}
@@ -615,12 +639,9 @@
 
 		<div class="font-body text-[14px] leading-[1.5]">
 			{#if topicActiveTab === 'presentation'}
-				{#if data.topic.description}
-					<section class="mb-8">
-						<p style="white-space: pre-line;">{@html renderFr(data.topic.description)}</p>
-					</section>
-				{/if}
-
+				<!-- Description rendered inline under the H1 (visible in both
+				     modes for SEO + first-pass readers). Panel keeps the
+				     analytical stats only. -->
 				<section>
 					<h3 class="label-meta">Répartition</h3>
 					<dl class="mt-3 space-y-1 text-[14px]">
@@ -636,10 +657,6 @@
 						</div>
 					</dl>
 				</section>
-
-				{#if !data.topic.description}
-					<p class="italic text-muted">Aucune description disponible pour ce sujet.</p>
-				{/if}
 			{:else if topicActiveTab === 'auteurs'}
 				<ul class="space-y-1 text-[14px]">
 					{#each topicAuthors as { author, n } (author.id)}
