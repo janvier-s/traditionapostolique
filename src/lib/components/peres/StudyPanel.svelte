@@ -2,6 +2,7 @@
 	import type { Quote } from '$lib/schema';
 	import { authorById, workById } from '$lib/data';
 	import { formatCitation } from '$lib/utils/format-citation';
+	import { renderFr } from '$lib/utils/render-fr';
 
 	let { quote, onClose }: { quote: Quote | null; onClose: () => void } = $props();
 
@@ -199,13 +200,13 @@
 					{#if quote.context}
 						<section class="mb-4">
 							<h3 class="font-ui text-xs uppercase text-muted">Contexte</h3>
-							<p class="mt-1 font-body">{quote.context}</p>
+							<p class="mt-1 font-body" style="white-space: pre-line;">{@html renderFr(quote.context)}</p>
 						</section>
 					{/if}
 					{#if quote.notes}
 						<section>
 							<h3 class="font-ui text-xs uppercase text-muted">Notes</h3>
-							<p class="mt-1 font-body">{quote.notes}</p>
+							<p class="mt-1 font-body" style="white-space: pre-line;">{@html renderFr(quote.notes)}</p>
 						</section>
 					{/if}
 					{#if !quote.context && !quote.notes}

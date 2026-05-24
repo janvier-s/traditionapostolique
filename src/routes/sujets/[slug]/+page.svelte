@@ -1018,13 +1018,13 @@
 					{#if openQuote.context}
 						<section>
 							<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Contexte</h3>
-							<p class="mt-2">{openQuote.context}</p>
+							<p class="mt-2" style="white-space: pre-line;">{@html renderFr(openQuote.context)}</p>
 						</section>
 					{/if}
 					{#if openQuote.notes}
 						<section>
 							<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Notes</h3>
-							<p class="mt-2">{openQuote.notes}</p>
+							<p class="mt-2" style="white-space: pre-line;">{@html renderFr(openQuote.notes)}</p>
 						</section>
 					{/if}
 					{#if !openQuote.context && !openQuote.notes}
