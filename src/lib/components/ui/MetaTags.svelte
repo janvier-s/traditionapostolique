@@ -7,7 +7,8 @@
 		type = 'website',
 		image,
 		imageAlt,
-		separator = '·'
+		separator = '·',
+		noindex = false
 	}: {
 		title: string;
 		description?: string;
@@ -15,6 +16,7 @@
 		image?: string;
 		imageAlt?: string;
 		separator?: string;
+		noindex?: boolean;
 	} = $props();
 
 	const SITE_NAME = 'Tradition Apostolique';
@@ -45,6 +47,7 @@
 	<title>{full}</title>
 	{#if description}<meta name="description" content={description} />{/if}
 	<link rel="canonical" href={canonical} />
+	{#if noindex}<meta name="robots" content="noindex,follow" />{/if}
 
 	<!-- Open Graph -->
 	<meta property="og:title" content={full} />

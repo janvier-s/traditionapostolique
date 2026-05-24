@@ -5,7 +5,10 @@
 	const tree = buildTopicTree();
 </script>
 
-<MetaTags title="Sujets" description="Tous les sujets de l'anthologie patristique." />
+<MetaTags
+	title="Sujets théologiques"
+	description="Index thématique de la Tradition Apostolique : les principaux articles de la foi chrétienne traités par les Pères de l'Église — Dieu, le Christ, l'Église, les sacrements, la morale, la fin des temps."
+/>
 
 <article>
 	<h1

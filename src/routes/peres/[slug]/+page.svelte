@@ -78,6 +78,7 @@
 <MetaTags
 	title={data.author.dates ? `${data.author.name} (${data.author.dates})` : data.author.name}
 	type="article"
+	noindex={data.quotes.length === 0}
 	description={`Citations patristiques de ${data.author.name}${data.author.dates ? ` (${data.author.dates})` : ''}${data.author.region ? `, ${data.author.region}` : ''}.`}
 />
 <JsonLd

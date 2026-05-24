@@ -57,6 +57,7 @@
 <section class="px-6 py-10">
 	<Breadcrumbs items={[
 		{ label: 'Accueil', href: '/' },
+		...(data.topics[0] ? [{ label: 'Sujets', href: '/sujets' }, { label: data.topics[0].label, href: `/sujets/${data.topics[0].slug}` }] : []),
 		...(data.author ? [{ label: data.author.name, href: `/peres/${data.author.slug}` }] : []),
 		{ label: `Citation #${data.quote.id}` }
 	]} />
