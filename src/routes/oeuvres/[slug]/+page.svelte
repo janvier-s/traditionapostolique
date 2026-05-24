@@ -5,6 +5,8 @@
 	import { renderFr } from '$lib/utils/render-fr';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
 	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
+	import JsonLd from '$lib/components/ui/JsonLd.svelte';
 	import { mode } from '$lib/stores/mode.svelte';
 	import { onMount } from 'svelte';
 
@@ -65,7 +67,25 @@
 
 <MetaTags
 	title={data.work.title}
-	description={data.work.description ?? `Citations tirées de ${data.work.title}.`}
+	type="article"
+	description={data.work.description ?? `Citations tirées de ${data.work.title} (${data.author.name}).`}
+/>
+<JsonLd
+	data={{
+		'@context': 'https://schema.org',
+		'@type': 'CreativeWork',
+		name: data.work.title,
+		alternateName: data.work.alternativeTitles ?? undefined,
+		inLanguage: 'fr-FR',
+		description: data.work.description ?? undefined,
+		author: {
+			'@type': 'Person',
+			name: data.author.name,
+			url: `https://traditionapostolique.fr/peres/${data.author.slug}`
+		},
+		url: `https://traditionapostolique.fr/oeuvres/${data.work.slug}`,
+		about: groups.map((g) => ({ '@type': 'Thing', name: g.topic.label }))
+	}}
 />
 
 <article
@@ -78,12 +98,7 @@
 			<ModeToggle />
 		</div>
 		<div>
-			<a
-				href="/oeuvres"
-				class="mb-4 inline-flex items-baseline gap-1 label-meta hover:text-active"
-			>
-				<span aria-hidden="true">←</span> Toutes les œuvres
-			</a>
+			<Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Œuvres', href: '/oeuvres' }, { label: `${data.author.name}`, href: `/peres/${data.author.slug}` }, { label: data.work.title }]} />
 			<h1
 				class="font-heading italic text-accent leading-[1.1]"
 				style="font-size: clamp(2.25rem, 3.6vw, 3rem);"

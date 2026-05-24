@@ -7,6 +7,8 @@
 	import { inlineCitation } from '$lib/utils/format-citation';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
 	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
+	import JsonLd from '$lib/components/ui/JsonLd.svelte';
 	import { mode } from '$lib/stores/mode.svelte';
 	import type { Quote, Topic } from '$lib/schema';
 
@@ -74,8 +76,25 @@
 </script>
 
 <MetaTags
-	title={data.author.name}
-	description={`Citations patristiques de ${data.author.name}.`}
+	title={data.author.dates ? `${data.author.name} (${data.author.dates})` : data.author.name}
+	type="article"
+	description={`Citations patristiques de ${data.author.name}${data.author.dates ? ` (${data.author.dates})` : ''}${data.author.region ? `, ${data.author.region}` : ''}.`}
+/>
+<JsonLd
+	data={{
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: data.author.name,
+		alternateName: data.author.originalName ?? undefined,
+		description: data.author.region
+			? `Père de l'Église, ${data.author.region}`
+			: `Père de l'Église`,
+		url: `https://traditionapostolique.fr/peres/${data.author.slug}`,
+		sameAs: [data.author.sources?.wikipedia, data.author.sources?.wikisource].filter(Boolean),
+		jobTitle: data.author.function?.split(',').map((s) => s.trim()).filter(Boolean) ?? undefined,
+		knowsAbout: groups.map((g) => g.topic.label),
+		nationality: data.author.region ?? undefined
+	}}
 />
 
 <article
@@ -88,15 +107,7 @@
 			<ModeToggle />
 		</div>
 		<div>
-			<!-- Back link · returns to the Père index so a reader can keep
-			     browsing other Fathers from the same starting point. Sage-
-			     olive on hover, matching the rail-nav register. -->
-			<a
-				href="/peres"
-				class="mb-4 inline-flex items-baseline gap-1 label-meta hover:text-active"
-			>
-				<span aria-hidden="true">←</span> Tous les Pères
-			</a>
+			<Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Pères', href: '/peres' }, { label: data.author.name }]} />
 			<h1
 				class="font-heading italic text-accent leading-[1.1]"
 				style="font-size: clamp(2.25rem, 3.6vw, 3rem);"

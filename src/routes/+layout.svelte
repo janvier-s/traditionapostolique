@@ -3,8 +3,31 @@
 	import { page } from '$app/state';
 	import { buildTopicTree, topicBySlug } from '$lib/data';
 	import type { Section } from '$lib/schema';
+	import JsonLd from '$lib/components/ui/JsonLd.svelte';
 
 	let { children } = $props();
+
+	const SITE_URL = 'https://traditionapostolique.fr';
+	// Site-wide WebSite + SearchAction · enables Google's sitelinks
+	// searchbox and registers the site name canonically across all routes.
+	const websiteSchema = {
+		'@context': 'https://schema.org',
+		'@type': 'WebSite',
+		name: 'Tradition Apostolique',
+		alternateName: 'Tradition Apostolique · anthologie patristique',
+		url: SITE_URL,
+		inLanguage: 'fr-FR',
+		description:
+			"Anthologie française du témoignage des Pères de l'Église, sujet par sujet.",
+		potentialAction: {
+			'@type': 'SearchAction',
+			target: {
+				'@type': 'EntryPoint',
+				urlTemplate: `${SITE_URL}/recherche?q={search_term_string}`
+			},
+			'query-input': 'required name=search_term_string'
+		}
+	};
 
 	const tree = buildTopicTree();
 
@@ -35,6 +58,8 @@
 		return manuallyOpen.has(section) || section === activeSection;
 	}
 </script>
+
+<JsonLd data={websiteSchema} />
 
 <div class="min-h-screen bg-background font-body text-foreground">
 	<div class="grid grid-cols-1 gap-x-8 px-6 py-8 lg:grid-cols-[330px_1fr] lg:gap-x-8 lg:px-12 lg:py-10">

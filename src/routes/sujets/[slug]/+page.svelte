@@ -11,6 +11,8 @@
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
 	import { fitHeading } from '$lib/utils/fit-heading';
 	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
+	import Breadcrumbs from '$lib/components/ui/Breadcrumbs.svelte';
+	import JsonLd from '$lib/components/ui/JsonLd.svelte';
 	import {
 		ROMAN_NUMERALS,
 		ordinalSuffix,
@@ -269,7 +271,19 @@
 <MetaTags
 	title={data.topic.label}
 	separator="d'après la"
+	type="article"
 	description={data.topic.description ?? `Citations patristiques sur ${data.topic.label}.`}
+/>
+<JsonLd
+	data={{
+		'@context': 'https://schema.org',
+		'@type': 'Article',
+		headline: `${data.topic.label} d'après la Tradition Apostolique`,
+		description: data.topic.description ?? `Citations patristiques sur ${data.topic.label}.`,
+		inLanguage: 'fr-FR',
+		isPartOf: { '@type': 'WebSite', name: 'Tradition Apostolique', url: 'https://traditionapostolique.fr' },
+		about: { '@type': 'Thing', name: data.topic.label }
+	}}
 />
 
 <article
@@ -288,6 +302,7 @@
 	<header class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
 		<div></div>
 		<div>
+			<Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Sujets', href: '/sujets' }, { label: data.topic.label }]} />
 			<h1
 				class="font-heading italic text-accent leading-[1.1]"
 				style="font-size: clamp(2.25rem, 3.6vw, 3rem);"
