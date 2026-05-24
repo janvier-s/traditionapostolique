@@ -115,7 +115,12 @@
 		{#if selected}
 			<nav class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-muted">
 				<span class="font-ui uppercase tracking-wider">Auteur #{selected.id}</span>
-				<a href={`/peres/${selected.slug}`} target="_blank" rel="noopener" class="underline-offset-4 hover:text-active hover:underline">Voir publique ↗</a>
+				<a
+					href={`/peres/${selected.slug}`}
+					target="_blank"
+					rel="noopener"
+					class="underline-offset-4 hover:text-accent hover:underline">Voir publique ↗</a
+				>
 				<span>·</span>
 				<span>{selectedQuotes.length} citation{selectedQuotes.length > 1 ? 's' : ''}</span>
 				<span>·</span>
@@ -209,7 +214,9 @@
 							update('bioLong', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
 					></textarea>
 				</label>
-				<div class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur">
+				<div
+					class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur"
+				>
 					<button
 						type="submit"
 						disabled={!dirty || saving}
@@ -218,21 +225,26 @@
 						{saving ? 'Enregistrement…' : 'Enregistrer'}
 					</button>
 					<span class="text-xs text-muted">⌘/Ctrl + S</span>
-					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span>{/if}
+					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span
+						>{/if}
 					{#if savedFlash}<span class="text-xs text-emerald-600">✓ Enregistré</span>{/if}
 				</div>
 				{#if saveError}<p class="mt-2 text-sm text-red-600">{saveError}</p>{/if}
 			</form>
 
 			<section class="mt-8 border-t border-border pt-6">
-				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">Œuvres ({selectedWorks.length})</h2>
+				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">
+					Œuvres ({selectedWorks.length})
+				</h2>
 				{#if selectedWorks.length === 0}
 					<p class="mt-2 text-sm italic text-muted">Aucune œuvre rattachée.</p>
 				{:else}
 					<ul class="mt-2 space-y-1 text-sm">
 						{#each selectedWorks as w (w.id)}
 							<li>
-								<a href={`/admin/oeuvres#${w.id}`} class="hover:text-active hover:underline">{w.title}</a>
+								<a href={`/admin/oeuvres#${w.id}`} class="hover:text-accent hover:underline"
+									>{w.title}</a
+								>
 								<span class="ml-1 text-xs text-muted">#{w.id}</span>
 							</li>
 						{/each}
@@ -241,14 +253,16 @@
 			</section>
 
 			<section class="mt-8 border-t border-border pt-6">
-				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">Citations ({selectedQuotes.length})</h2>
+				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">
+					Citations ({selectedQuotes.length})
+				</h2>
 				{#if selectedQuotes.length === 0}
 					<p class="mt-2 text-sm italic text-muted">Aucune citation.</p>
 				{:else}
 					<ul class="mt-2 max-h-[40vh] space-y-1 overflow-y-auto text-sm">
 						{#each selectedQuotes as q (q.id)}
 							<li class="truncate">
-								<a href={`/admin/citations#${q.id}`} class="hover:text-active hover:underline">
+								<a href={`/admin/citations#${q.id}`} class="hover:text-accent hover:underline">
 									<span class="text-xs text-muted">#{q.id}</span>
 									{(q.fr ?? q.en ?? '(vide)').replace(/\s+/g, ' ').slice(0, 80)}
 								</a>

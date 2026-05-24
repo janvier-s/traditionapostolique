@@ -19,16 +19,20 @@
 	// every permalink has unique <title> + <meta description> + H1.
 	const authorName = $derived(data.author?.name ?? 'Père de l’Église');
 	const firstTopic = $derived(data.topics[0]?.label ?? '');
-	const titleText = $derived(firstTopic ? `${authorName} sur ${firstTopic}` : `Citation de ${authorName}`);
+	const titleText = $derived(
+		firstTopic ? `${authorName} sur ${firstTopic}` : `Citation de ${authorName}`
+	);
 	const excerpt = $derived(
 		(data.quote.fr ?? data.quote.en ?? '').replace(/\s+/g, ' ').trim().slice(0, 200)
 	);
 	const description = $derived(
-		excerpt ? `« ${excerpt}${excerpt.length >= 200 ? '…' : ''} »` : `Citation patristique de ${authorName}.`
+		excerpt
+			? `« ${excerpt}${excerpt.length >= 200 ? '…' : ''} »`
+			: `Citation patristique de ${authorName}.`
 	);
 </script>
 
-<MetaTags title={titleText} type="article" description={description} />
+<MetaTags title={titleText} type="article" {description} />
 
 <JsonLd
 	data={{
@@ -55,13 +59,23 @@
 />
 
 <section class="px-6 py-10">
-	<Breadcrumbs items={[
-		{ label: 'Accueil', href: '/' },
-		...(data.topics[0] ? [{ label: 'Sujets', href: '/sujets' }, { label: data.topics[0].label, href: `/sujets/${data.topics[0].slug}` }] : []),
-		...(data.author ? [{ label: data.author.name, href: `/peres/${data.author.slug}` }] : []),
-		{ label: `Citation #${data.quote.id}` }
-	]} />
-	<h1 class="font-heading italic text-accent leading-[1.1]" style="font-size: clamp(1.75rem, 3vw, 2.25rem);">
+	<Breadcrumbs
+		items={[
+			{ label: 'Accueil', href: '/' },
+			...(data.topics[0]
+				? [
+						{ label: 'Sujets', href: '/sujets' },
+						{ label: data.topics[0].label, href: `/sujets/${data.topics[0].slug}` }
+					]
+				: []),
+			...(data.author ? [{ label: data.author.name, href: `/peres/${data.author.slug}` }] : []),
+			{ label: `Citation #${data.quote.id}` }
+		]}
+	/>
+	<h1
+		class="font-heading italic text-accent leading-[1.1]"
+		style="font-size: clamp(1.75rem, 3vw, 2.25rem);"
+	>
 		{titleText}
 	</h1>
 	<QuoteCard quote={data.quote} onOpenPanel={(q) => (openQuote = q)} />

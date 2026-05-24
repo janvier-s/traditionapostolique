@@ -40,7 +40,9 @@
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
 	const selectedQuotes = $derived(selected ? quotes.filter((q) => q.workId === selected.id) : []);
-	const selectedAuthor = $derived(selected ? authors.find((a) => a.id === selected.authorId) : null);
+	const selectedAuthor = $derived(
+		selected ? authors.find((a) => a.id === selected.authorId) : null
+	);
 
 	function update<K extends keyof Work>(key: K, value: Work[K]) {
 		if (!selected) return;
@@ -107,10 +109,10 @@
 							selectedIdx === i && 'bg-subtle/20'
 						]}
 					>
-					<span class="flex items-baseline justify-between gap-2">
-						<span class="min-w-0 truncate" class:text-muted={n === 0}>{w.title}</span>
-						<span class="shrink-0 font-ui text-[11px] font-light text-muted">{n || '—'}</span>
-					</span>
+						<span class="flex items-baseline justify-between gap-2">
+							<span class="min-w-0 truncate" class:text-muted={n === 0}>{w.title}</span>
+							<span class="shrink-0 font-ui text-[11px] font-light text-muted">{n || '—'}</span>
+						</span>
 					</button>
 				</li>
 			{/each}
@@ -121,9 +123,18 @@
 		{#if selected}
 			<nav class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-muted">
 				<span class="font-ui uppercase tracking-wider">Œuvre #{selected.id}</span>
-				<a href={`/oeuvres/${selected.slug}`} target="_blank" rel="noopener" class="underline-offset-4 hover:text-active hover:underline">Voir publique ↗</a>
+				<a
+					href={`/oeuvres/${selected.slug}`}
+					target="_blank"
+					rel="noopener"
+					class="underline-offset-4 hover:text-accent hover:underline">Voir publique ↗</a
+				>
 				{#if selectedAuthor}
-					<a href={`/admin/auteurs#${selectedAuthor.id}`} class="underline-offset-4 hover:text-active hover:underline">Auteur · {selectedAuthor.name}</a>
+					<a
+						href={`/admin/auteurs#${selectedAuthor.id}`}
+						class="underline-offset-4 hover:text-accent hover:underline"
+						>Auteur · {selectedAuthor.name}</a
+					>
 				{/if}
 				<span>·</span>
 				<span>{selectedQuotes.length} citation{selectedQuotes.length > 1 ? 's' : ''}</span>
@@ -200,7 +211,9 @@
 							update('compositionDate', (e.currentTarget as HTMLInputElement).value || undefined)}
 					/>
 				</label>
-				<div class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur">
+				<div
+					class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur"
+				>
 					<button
 						type="submit"
 						disabled={!dirty || saving}
@@ -209,21 +222,24 @@
 						{saving ? 'Enregistrement…' : 'Enregistrer'}
 					</button>
 					<span class="text-xs text-muted">⌘/Ctrl + S</span>
-					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span>{/if}
+					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span
+						>{/if}
 					{#if savedFlash}<span class="text-xs text-emerald-600">✓ Enregistré</span>{/if}
 				</div>
 				{#if saveError}<p class="mt-2 text-sm text-red-600">{saveError}</p>{/if}
 			</form>
 
 			<section class="mt-8 border-t border-border pt-6">
-				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">Citations ({selectedQuotes.length})</h2>
+				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">
+					Citations ({selectedQuotes.length})
+				</h2>
 				{#if selectedQuotes.length === 0}
 					<p class="mt-2 text-sm italic text-muted">Aucune citation rattachée.</p>
 				{:else}
 					<ul class="mt-2 max-h-[40vh] space-y-1 overflow-y-auto text-sm">
 						{#each selectedQuotes as q (q.id)}
 							<li class="truncate">
-								<a href={`/admin/citations#${q.id}`} class="hover:text-active hover:underline">
+								<a href={`/admin/citations#${q.id}`} class="hover:text-accent hover:underline">
 									<span class="text-xs text-muted">#{q.id}</span>
 									{(q.fr ?? q.en ?? '(vide)').replace(/\s+/g, ' ').slice(0, 80)}
 								</a>

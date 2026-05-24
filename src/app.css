@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,194 +14,77 @@
 	/* Interactive variant · adds the active-link hover affordance used
 	   on the rail and the panel triggers ("Plus d'info →", etc.). */
 	.label-meta-link {
-		@apply label-meta underline-offset-4 hover:text-active hover:underline;
+		@apply label-meta underline-offset-4 hover:text-accent hover:underline;
+	}
+	/* Primary action variant · carries a persistent underline so the
+	   trigger reads as an affordance at rest, not just as a label. Use
+	   for the dominant action in a region (Plus d'info, Index du sujet);
+	   reserve `.label-meta-link` for quieter cousins (Réinitialiser,
+	   Lire la suite, footnote-style toggles).
+	   Decoration uses the subtle slate-grey directly (no opacity
+	   modifier) because our colour tokens are raw CSS variables in
+	   tailwind.config — Tailwind can't compose alpha on those. */
+	.label-meta-action {
+		@apply label-meta underline decoration-subtle underline-offset-4 transition-colors hover:text-accent hover:decoration-accent;
 	}
 }
 
+/* Self-hosted Poppins (body + UI) and Playfair Display (headings).
+   Only the weights/styles actually used by the codebase are loaded ·
+   font-display: swap shows a system fallback until the woff2 is ready. */
 @font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Light.woff2') format('woff2');
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Light.woff2') format('woff2');
 	font-weight: 300;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
 }
 @font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Regular.woff2') format('woff2');
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Regular.woff2') format('woff2');
 	font-weight: 400;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
 }
 @font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Medium.woff2') format('woff2');
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Medium.woff2') format('woff2');
 	font-weight: 500;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
 }
 @font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Bold.woff2') format('woff2');
-	font-weight: 600;
-	font-style: normal;
-	font-display: optional;
-}
-@font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Light-Italic.woff2') format('woff2');
-	font-weight: 300;
-	font-style: italic;
-	font-display: optional;
-}
-@font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Italic.woff2') format('woff2');
-	font-weight: 400;
-	font-style: italic;
-	font-display: optional;
-}
-@font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Medium-Italic.woff2') format('woff2');
-	font-weight: 500;
-	font-style: italic;
-	font-display: optional;
-}
-@font-face {
-	font-family: 'Gotham';
-	src: url('/fonts/Gotham-Bold-Italic.woff2') format('woff2');
-	font-weight: 600;
-	font-style: italic;
-	font-display: optional;
-}
-
-@font-face {
-	font-family: 'Libre Baskerville';
-	src: url('/fonts/LibreBaskerville-Regular.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: optional;
-}
-@font-face {
-	font-family: 'Libre Baskerville';
-	src: url('/fonts/LibreBaskerville-Italic.woff2') format('woff2');
-	font-weight: 400;
-	font-style: italic;
-	font-display: optional;
-}
-@font-face {
-	font-family: 'Libre Baskerville';
-	src: url('/fonts/LibreBaskerville-Bold.woff2') format('woff2');
+	font-family: 'Poppins';
+	src: url('/fonts/Poppins-Bold.woff2') format('woff2');
 	font-weight: 700;
 	font-style: normal;
-	font-display: optional;
+	font-display: swap;
 }
-
 @font-face {
-	font-family: 'Sentinel';
-	src: url('/fonts/Sentinel-Book.woff2') format('woff2');
-	font-weight: 400;
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-Medium.woff2') format('woff2');
+	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Sentinel';
-	src: url('/fonts/Sentinel-Book-Italic.woff2') format('woff2');
-	font-weight: 400;
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2');
+	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Source Serif 4';
-	src: url('/fonts/SourceSerif4-Regular-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Source Serif 4';
-	src: url('/fonts/SourceSerif4-Italic-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Libre Franklin';
-	src: url('/fonts/LibreFranklin-Regular-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Libre Franklin';
-	src: url('/fonts/LibreFranklin-Italic-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-Regular-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-Italic-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Noto Sans';
-	src: url('/fonts/NotoSans-Regular-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Noto Sans';
-	src: url('/fonts/NotoSans-Italic-latin.woff2') format('woff2');
-	font-weight: 400 700;
-	font-style: italic;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Grace Dyslexic MD';
-	src: url('/fonts/dyslexia.woff2') format('woff2');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-
-/* Prototype display + body pair inspired by churchfathers.org. Single
-   weight each · hierarchy comes from size, tracking, and color rather
-   than synthesizing bold on Bodoni (which faux-bolds badly). */
-@font-face {
-	font-family: 'LTC Bodoni 175';
-	src:
-		url('/fonts/LTC-Bodoni175-Regular.woff2') format('woff2'),
-		url('/fonts/LTC-Bodoni175-Regular.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Proxima Nova';
-	src:
-		url('/fonts/ProximaNova-Light.woff2') format('woff2'),
-		url('/fonts/ProximaNova-Light.ttf') format('truetype');
-	font-weight: 300;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Proxima Nova';
-	src:
-		url('/fonts/ProximaNova-Regular.woff2') format('woff2'),
-		url('/fonts/ProximaNova-Regular.otf') format('opentype');
-	font-weight: 400;
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
 }
@@ -226,9 +107,12 @@
 		--color-bg-glass: rgba(255, 255, 255, 0.94);
 		--color-heading: var(--color-accent);
 
-		--font-body: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-		--font-ui: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-		--font-heading: 'Playfair Display', 'Bodoni Moda', Didot, 'Times New Roman', serif;
+		/* Two-family stack: Poppins covers body + UI, Playfair covers
+		   display headings. Fallbacks are kept minimal · system-ui
+		   gives a graceful pre-load while the self-hosted woff2 loads. */
+		--font-body: 'Poppins', system-ui, sans-serif;
+		--font-ui: 'Poppins', system-ui, sans-serif;
+		--font-heading: 'Playfair Display', Georgia, serif;
 
 		/* Stacking-context tokens. Keep these in lockstep with the layered UI:
 		   topbar < sticky chapter nav < panels (study/sidebar) < click-away
@@ -372,17 +256,6 @@
 	:focus:not(:focus-visible) {
 		outline: none;
 	}
-}
-
-/* Reader prose: restore paragraph margins inside {@html ...} content blocks.
-   Tailwind's preflight zeroes all <p> margins; readers that render trusted
-   HTML opt into normal flow by adding `class="reader-prose"` to the
-   containing element. Cheap, global, and predictable. */
-.reader-prose p {
-	margin: 0 0 1em;
-}
-.reader-prose p:last-child {
-	margin-bottom: 0;
 }
 
 /* Reader prose: restore paragraph margins inside {@html ...} content blocks.

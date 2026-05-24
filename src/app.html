@@ -9,24 +9,21 @@
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 		<meta name="theme-color" content="#000000" />
-		<!-- Self-hosted Proxima Nova · the UI font · preloaded so the
-		     rail nav and small-caps source headers render without a flash
-		     of unstyled text. Playfair Display (headings) and Poppins
-		     (body) load via Google Fonts @import in app.css and don't
-		     need a preload tag here · their CDN handles its own
-		     resource-hint optimisation. -->
+		<!-- Self-hosted critical fonts preloaded so the first paint
+		     doesn't show a flash of unstyled text. Poppins-Light is the
+		     body default; Playfair italic carries every H1. -->
 		<link
 			rel="preload"
 			as="font"
 			type="font/woff2"
-			href="/fonts/ProximaNova-Light.woff2"
+			href="/fonts/Poppins-Light.woff2"
 			crossorigin="anonymous"
 		/>
 		<link
 			rel="preload"
 			as="font"
 			type="font/woff2"
-			href="/fonts/ProximaNova-Regular.woff2"
+			href="/fonts/PlayfairDisplay-MediumItalic.woff2"
 			crossorigin="anonymous"
 		/>
 		%sveltekit.head%

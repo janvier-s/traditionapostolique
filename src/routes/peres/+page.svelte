@@ -44,21 +44,46 @@
 	] as const;
 	type Role = (typeof ROLE_ORDER)[number];
 	function roleOf(a: Author): Role {
-		const status = (a.status ?? '').split(',').map((s) => s.trim()).filter(Boolean);
-		const fn = (a.function ?? '').split(',').map((s) => s.trim()).filter(Boolean);
+		const status = (a.status ?? '')
+			.split(',')
+			.map((s) => s.trim())
+			.filter(Boolean);
+		const fn = (a.function ?? '')
+			.split(',')
+			.map((s) => s.trim())
+			.filter(Boolean);
 		const name = a.name;
 		const hasSaintPrefix = /^(St\.?|Ste\.?|Saint|Sainte)\s+/i.test(name);
 		if (status.includes('Apôtre')) return 'Apôtres';
 		if (/^Concile/i.test(name)) return 'Conciles';
 		if (/^Pape/i.test(name) || fn.includes('Pape')) return 'Papes';
-		if (status.includes('Docteur') || status.includes('Docteur œcuménique')) return 'Docteurs de l’Église';
+		if (status.includes('Docteur') || status.includes('Docteur œcuménique'))
+			return 'Docteurs de l’Église';
 		if (status.includes('Père cappadocien')) return 'Pères cappadociens';
 		if (fn.includes('Évêque') || fn.includes('Archévêque')) return 'Évêques';
 		if (status.includes('Martyr')) return 'Martyrs';
 		if (status.includes('Saint') || hasSaintPrefix) return 'Saints';
-		if (/^(Pseudo-|Anonyme|Inscriptions|Didachè|Hermas|Mathète|Segond Clément)/i.test(name)) return 'Écrits anonymes & pseudonymes';
+		if (/^(Pseudo-|Anonyme|Inscriptions|Didachè|Hermas|Mathète|Segond Clément)/i.test(name))
+			return 'Écrits anonymes & pseudonymes';
 		if (status.includes('Laïc')) return 'Laïcs';
-		if (fn.some((f) => ['Theologien', 'Écrivain', 'Apologète', 'Philosophe', 'Historien', 'Moine', 'Prêtre', 'Hagiographe', 'Bibliste', 'Poète', 'Prêcheur'].includes(f))) return 'Théologiens & écrivains';
+		if (
+			fn.some((f) =>
+				[
+					'Theologien',
+					'Écrivain',
+					'Apologète',
+					'Philosophe',
+					'Historien',
+					'Moine',
+					'Prêtre',
+					'Hagiographe',
+					'Bibliste',
+					'Poète',
+					'Prêcheur'
+				].includes(f)
+			)
+		)
+			return 'Théologiens & écrivains';
 		return 'Autres';
 	}
 
@@ -121,7 +146,8 @@
 				if (!buckets.has(b)) buckets.set(b, []);
 				buckets.get(b)!.push(a);
 			}
-			for (const arr of buckets.values()) arr.sort((x, y) => sortKey(x.name).localeCompare(sortKey(y.name), 'fr'));
+			for (const arr of buckets.values())
+				arr.sort((x, y) => sortKey(x.name).localeCompare(sortKey(y.name), 'fr'));
 			return [...buckets.entries()]
 				.sort(([x], [y]) => x.localeCompare(y, 'fr'))
 				.map(([label, items]) => ({ label, items }));
@@ -181,7 +207,9 @@
 />
 
 <article style="--author-col: 200px; --quote-gap: 3rem;">
-	<header class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+	<header
+		class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]"
+	>
 		<div></div>
 		<div>
 			<h1
@@ -191,16 +219,19 @@
 				Les Pères
 			</h1>
 
-			<p class="mt-4 max-w-prose font-body text-base leading-[1.6] text-foreground">
-				Cette liste rassemble les témoins de la Tradition apostolique cités sur le site. Outre les Pères de l’Église au sens strict, certains papes, conciles, ainsi que d’autres auteurs et écrits de l’Antiquité chrétienne y figurent également.
+			<p class="mt-3 label-meta">
+				{totalAuthors} pères
 			</p>
 
-			<!-- Sub-title row · count on the left, sort selector on the
-			     right. Sort UI matches the topic page's Tri control. -->
-			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-				<p class="label-meta">
-					{totalAuthors} pères
-				</p>
+			<p class="mt-3 max-w-prose font-body text-base leading-[1.6] text-foreground">
+				Cette liste rassemble les témoins de la Tradition apostolique cités sur le site. Outre les
+				Pères de l’Église au sens strict, certains papes, conciles, ainsi que d’autres auteurs et
+				écrits de l’Antiquité chrétienne y figurent également.
+			</p>
+
+			<!-- Sort selector · right-aligned on its own row below the
+			     description so the count can read as an eyebrow stat. -->
+			<div class="mt-4 flex justify-end">
 				<label class="flex items-baseline gap-2">
 					<span class="label-meta">Tri</span>
 					<select
@@ -217,15 +248,18 @@
 	</header>
 
 	{#if groups.length > 1 && groups.some((g) => g.label)}
-		<div class="mb-8 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+		<div
+			class="mb-8 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]"
+		>
 			<div></div>
 			<nav aria-label="Sauter à un groupe" class="flex flex-wrap gap-1">
 				{#each groups as g (g.label || 'all')}
 					{#if g.label}
 						<a
 							href={`#g-${encodeURIComponent(g.label)}`}
-							class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-active"
-						>{g.label}</a>
+							class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-accent"
+							>{g.label}</a
+						>
 					{/if}
 				{/each}
 			</nav>
@@ -262,22 +296,28 @@
 						{@const split = splitHonorifics(a.name)}
 						<li class="flex items-baseline justify-between gap-4">
 							<span class="min-w-0">
-								<a href={`/peres/${a.slug}`} class="font-body text-foreground hover:text-active">
+								<a href={`/peres/${a.slug}`} class="font-body text-foreground hover:text-accent">
 									{split.core}
 									{#if split.titles.length > 0}
-										<span class="ml-1 font-ui text-[11px] font-light normal-case tracking-[0.05em] text-muted">
+										<span
+											class="ml-1 font-ui text-[11px] font-light normal-case tracking-[0.05em] text-muted"
+										>
 											({split.titles.join(', ')})
 										</span>
 									{/if}
 								</a>
 								{#if a.dates}
-									<span class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
+									<span
+										class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
+									>
 										{a.dates}
 									</span>
 								{/if}
 							</span>
 							{#if n > 0}
-								<span class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
+								<span
+									class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
+								>
 									{n}
 								</span>
 							{/if}

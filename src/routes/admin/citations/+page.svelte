@@ -190,24 +190,33 @@
 		}
 	}
 
-	$effect(() => bindEditorShortcuts({
-		isDirty: () => dirty,
-		isSaving: () => saving,
-		save
-	}));
+	$effect(() =>
+		bindEditorShortcuts({
+			isDirty: () => dirty,
+			isSaving: () => saving,
+			save
+		})
+	);
 
 	function selectByOffset(delta: number) {
 		if (filtered.length === 0) return;
 		const visible = filtered.map((f) => f.i);
 		const pos = visible.indexOf(selectedIdx);
-		const next = pos < 0 ? (delta > 0 ? 0 : visible.length - 1) : (pos + delta + visible.length) % visible.length;
+		const next =
+			pos < 0
+				? delta > 0
+					? 0
+					: visible.length - 1
+				: (pos + delta + visible.length) % visible.length;
 		const target = visible[next];
 		if (target == null) return;
 		selectedIdx = target;
 		const id = items[target]?.id;
 		if (id != null) {
 			history.replaceState(null, '', `#${id}`);
-			queueMicrotask(() => document.getElementById(`row-${id}`)?.scrollIntoView({ block: 'center' }));
+			queueMicrotask(() =>
+				document.getElementById(`row-${id}`)?.scrollIntoView({ block: 'center' })
+			);
 		}
 	}
 
@@ -249,8 +258,8 @@
 					class:bg-active={active}
 					class:border-active={active}
 					class:text-background={active}
-					class:text-foreground={!active}
-				>{f.label}</button>
+					class:text-foreground={!active}>{f.label}</button
+				>
 			{/each}
 		</div>
 		<ul class="mt-2 max-h-[70vh] overflow-y-auto">
@@ -270,8 +279,11 @@
 						<div class="flex items-baseline gap-1.5 text-[11px] text-muted">
 							<span>#{q.id}</span>
 							{#if a}<span class="truncate">· {a.name}</span>{/if}
-							{#if q.status === 'draft'}<span class="ml-auto rounded bg-amber-100 px-1 text-[10px] text-amber-700">draft</span>{/if}
-							{#if !q.fr}<span class="rounded bg-red-100 px-1 text-[10px] text-red-700">no fr</span>{/if}
+							{#if q.status === 'draft'}<span
+									class="ml-auto rounded bg-amber-100 px-1 text-[10px] text-amber-700">draft</span
+								>{/if}
+							{#if !q.fr}<span class="rounded bg-red-100 px-1 text-[10px] text-red-700">no fr</span
+								>{/if}
 						</div>
 						<span class="line-clamp-2">{listLabel(q)}</span>
 					</button>
@@ -286,19 +298,43 @@
 			{@const sw = selected.workId ? works.find((w) => w.id === selected!.workId) : null}
 			<nav class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-muted">
 				<span class="font-ui uppercase tracking-wider">Citation #{selected.id}</span>
-				<button type="button" onclick={() => selectByOffset(-1)} class="underline-offset-4 hover:text-active hover:underline" title="Précédent">← Préc</button>
-				<button type="button" onclick={() => selectByOffset(1)} class="underline-offset-4 hover:text-active hover:underline" title="Suivant">Suiv →</button>
-				<a href={`/citation/${selected.id}`} target="_blank" rel="noopener" class="underline-offset-4 hover:text-active hover:underline">Voir publique ↗</a>
+				<button
+					type="button"
+					onclick={() => selectByOffset(-1)}
+					class="underline-offset-4 hover:text-accent hover:underline"
+					title="Précédent">← Préc</button
+				>
+				<button
+					type="button"
+					onclick={() => selectByOffset(1)}
+					class="underline-offset-4 hover:text-accent hover:underline"
+					title="Suivant">Suiv →</button
+				>
+				<a
+					href={`/citation/${selected.id}`}
+					target="_blank"
+					rel="noopener"
+					class="underline-offset-4 hover:text-accent hover:underline">Voir publique ↗</a
+				>
 				{#if sa}
-					<a href={`/admin/auteurs#${sa.id}`} class="underline-offset-4 hover:text-active hover:underline">Auteur · {sa.name}</a>
+					<a
+						href={`/admin/auteurs#${sa.id}`}
+						class="underline-offset-4 hover:text-accent hover:underline">Auteur · {sa.name}</a
+					>
 				{/if}
 				{#if sw}
-					<a href={`/admin/oeuvres#${sw.id}`} class="underline-offset-4 hover:text-active hover:underline">Œuvre · {sw.title}</a>
+					<a
+						href={`/admin/oeuvres#${sw.id}`}
+						class="underline-offset-4 hover:text-accent hover:underline">Œuvre · {sw.title}</a
+					>
 				{/if}
 				{#each selected.topicIds as tid (tid)}
 					{@const t = topicById.get(tid)}
 					{#if t}
-						<a href={`/admin/sujets#${t.id}`} class="underline-offset-4 hover:text-active hover:underline">Sujet · {t.label}</a>
+						<a
+							href={`/admin/sujets#${t.id}`}
+							class="underline-offset-4 hover:text-accent hover:underline">Sujet · {t.label}</a
+						>
 					{/if}
 				{/each}
 			</nav>
@@ -416,7 +452,8 @@
 							update('studyTitle', (e.currentTarget as HTMLInputElement).value || undefined)}
 					/>
 					<p class="mt-1 text-xs text-muted">
-						Affiché en mode Étude à la place du titre court de l'œuvre. À utiliser quand le titre de l'œuvre est générique (« Lettres », « Sermons »…) et que l'on connaît la pièce précise.
+						Affiché en mode Étude à la place du titre court de l'œuvre. À utiliser quand le titre de
+						l'œuvre est générique (« Lettres », « Sermons »…) et que l'on connaît la pièce précise.
 					</p>
 				</label>
 
@@ -536,7 +573,9 @@
 					></textarea>
 				</label>
 
-				<div class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur">
+				<div
+					class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur"
+				>
 					<button
 						type="submit"
 						disabled={!dirty || saving}
@@ -545,7 +584,8 @@
 						{saving ? 'Enregistrement…' : 'Enregistrer'}
 					</button>
 					<span class="text-xs text-muted">⌘/Ctrl + S</span>
-					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span>{/if}
+					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span
+						>{/if}
 					{#if savedFlash}<span class="text-xs text-emerald-600">✓ Enregistré</span>{/if}
 				</div>
 				{#if saveError}<p class="mt-2 text-sm text-red-600">{saveError}</p>{/if}

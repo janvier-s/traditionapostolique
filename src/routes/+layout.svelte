@@ -17,8 +17,7 @@
 		alternateName: 'Tradition Apostolique · anthologie patristique',
 		url: SITE_URL,
 		inLanguage: 'fr-FR',
-		description:
-			"Anthologie française du témoignage des Pères de l'Église, sujet par sujet.",
+		description: "Anthologie française du témoignage des Pères de l'Église, sujet par sujet.",
 		potentialAction: {
 			'@type': 'SearchAction',
 			target: {
@@ -62,8 +61,14 @@
 <JsonLd data={websiteSchema} />
 
 <div class="min-h-screen bg-background font-body text-foreground">
-	<div class="grid grid-cols-1 gap-x-8 px-6 py-8 lg:grid-cols-[330px_1fr] lg:gap-x-8 lg:px-12 lg:py-10">
-		<aside class="lg:sticky lg:top-10 lg:max-h-[calc(100vh-3rem)] lg:self-start lg:pr-3 lg:flex lg:flex-col">
+	<div
+		class="grid grid-cols-1 gap-x-4 px-6 py-8 lg:grid-cols-[330px_1fr] lg:px-12 lg:py-10"
+		class:lg:gap-x-16={page.url.pathname === '/'}
+		class:lg:gap-x-4={page.url.pathname !== '/'}
+	>
+		<aside
+			class="lg:sticky lg:top-10 lg:max-h-[calc(100vh-3rem)] lg:self-start lg:pr-3 lg:flex lg:flex-col"
+		>
 			<!-- Logo · architectural mark + tracked small-caps wordmark. -->
 			<a href="/" class="block" aria-label="Tradition Apostolique · Accueil">
 				<div class="flex items-end gap-3">
@@ -72,104 +77,128 @@
 						style="width:3.3rem;mask:url(/logo.svg) center/contain no-repeat;-webkit-mask:url(/logo.svg) center/contain no-repeat"
 						aria-hidden="true"
 					></div>
-					<div class="pb-1 font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent">
+					<div
+						class="pb-1 font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent"
+					>
 						Tradition<br />Apostolique
 					</div>
 				</div>
 			</a>
 
-			<!-- Short hairline matching the reference. -->
-			<div class="mt-10 mb-6 h-px w-10 bg-border flex-shrink-0"></div>
+			<!-- Secondary indices · alternative entry points into the
+			     corpus. Sits ABOVE the scrollable region so it stays
+			     anchored when the topic accordion scrolls. The hairline
+			     below is full-width of the rail (not the w-10 short rule)
+			     so it reads as a section divider rather than an underline
+			     attached to "Pères". -->
+			<nav
+				aria-label="Index alternatifs"
+				class="mt-10 flex items-baseline gap-3 font-ui font-light flex-shrink-0"
+				style="font-size: 0.9em; line-height: 1.25em;"
+			>
+				<a
+					href="/peres"
+					class="py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-accent"
+					class:text-accent={page.url.pathname.startsWith('/peres')}
+					class:font-medium={page.url.pathname.startsWith('/peres')}
+				>
+					Pères
+				</a>
+				<span aria-hidden="true">·</span>
+				<a
+					href="/oeuvres"
+					class="py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-accent"
+					class:text-accent={page.url.pathname.startsWith('/oeuvres')}
+					class:font-medium={page.url.pathname.startsWith('/oeuvres')}
+				>
+					Œuvres
+				</a>
+				<span aria-hidden="true">·</span>
+				<a
+					href="/sujets"
+					class="py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-accent"
+					class:text-accent={page.url.pathname === '/sujets'}
+					class:font-medium={page.url.pathname === '/sujets'}
+				>
+					Sujets
+				</a>
+			</nav>
+
+			<div class="mt-2 mb-4 h-px w-full bg-border flex-shrink-0"></div>
 
 			<div class="lg:min-h-0 lg:flex-1 lg:overflow-y-auto rail-scroll">
-
-			<!--
+				<!--
 				Rail nav styled to churchfathers.org's `.navigation`:
 				· font-family: Poppins (their Proxima Nova analogue)
 				· uppercase, weight 300, letter-spacing .05em
 				· each section row has 9px vertical padding
-				· hover/active state → sage-olive #bfb68c (--color-active)
+				· active state → oxblood accent + medium weight (color
+				  alone is too quiet at body-text size)
 				· expanded children get a left hairline border and step
 				  down to ~12px (their .folder-child a { font-size: .75em })
 			-->
-			<!-- Sidebar typography per spec:
-			     · whole rail uses Proxima Nova Light (300)
-			     · parent (section) labels: font-size 1em, letter-spacing
-			       .05em, line-height 1.25em
-			     · child (topic) links: font-size .75em
-			     The +/− glyph inherits the parent button colour so it
-			     tracks the section's hover / active state instead of
-			     staying a fixed muted grey. -->
-			<nav aria-label="Sujets" class="font-ui font-light">
-				<ul>
-					{#each tree as s (s.section)}
-						{@const open = isOpen(s.section)}
-						<li>
-							<button
-								type="button"
-								onclick={() => toggleSection(s.section)}
-								aria-expanded={open}
-								aria-controls={`section-${s.section}-children`}
-								class="flex w-full items-baseline justify-between gap-2 py-[9px] text-left uppercase transition-colors hover:text-active"
-								class:text-active={open}
-								style="font-size: 1em; line-height: 1.25em; letter-spacing: 0.05em;"
-							>
-								<span>{s.groupe}</span>
-								<span
-									aria-hidden="true"
-									class="font-heading text-[22px] leading-none"
-								>{open ? '−' : '+'}</span>
-							</button>
-
-							{#if open}
-								<ul
-									id={`section-${s.section}-children`}
-									class="mb-2 border-l border-foreground/15 pl-4 normal-case tracking-normal"
-									style="font-size: 0.9em;"
+				<nav aria-label="Sujets" class="font-ui font-light">
+					<ul>
+						{#each tree as s (s.section)}
+							{@const open = isOpen(s.section)}
+							{@const hasActiveChild = s.section === activeSection}
+							<li>
+								<button
+									type="button"
+									onclick={() => toggleSection(s.section)}
+									aria-expanded={open}
+									aria-controls={`section-${s.section}-children`}
+									class="flex w-full items-baseline justify-between gap-2 py-[9px] text-left uppercase transition-colors hover:text-accent"
+									class:text-accent={hasActiveChild}
+									class:font-medium={hasActiveChild}
+									style="font-size: 1em; line-height: 1.25em; letter-spacing: 0.05em;"
 								>
-									{#each s.topics as t (t.id)}
-										{@const isActive = t.slug === activeSlug}
-										<li>
-											<a
-												href={t.href}
-												class="block py-[7px] transition-colors hover:text-active"
-												class:text-active={isActive}
-											>
-												{t.label}
-											</a>
-										</li>
-									{/each}
-								</ul>
-							{/if}
-						</li>
-					{/each}
-				</ul>
-			</nav>
+									<span>{s.groupe}</span>
+									<span aria-hidden="true" class="font-heading text-[22px] leading-none"
+										>{open ? '−' : '+'}</span
+									>
+								</button>
 
-			<!-- Secondary indices · alternative entry points into the
-			     corpus. Kept visually quieter than the section list so the
-			     rail still reads as primarily a topic browser. -->
-			<div class="mt-8 mb-6 h-px w-10 bg-border"></div>
-			<ul class="font-ui font-light" style="font-size: 0.9em; line-height: 1.25em;">
-				<li>
-					<a
-						href="/peres"
-						class="block py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-active"
-						class:text-active={page.url.pathname.startsWith('/peres')}
-					>
-						Pères
-					</a>
-				</li>
-				<li>
-					<a
-						href="/oeuvres"
-						class="block py-[7px] uppercase tracking-[0.05em] transition-colors hover:text-active"
-						class:text-active={page.url.pathname.startsWith('/oeuvres')}
-					>
-						Œuvres
-					</a>
-				</li>
-			</ul>
+								{#if open}
+									<ul
+										id={`section-${s.section}-children`}
+										class="mb-2 border-l border-foreground/15 pl-4 normal-case tracking-normal"
+										style="font-size: 0.9em;"
+									>
+										{#each s.topics as t (t.id)}
+											{@const isActive = t.slug === activeSlug}
+											<li class="relative">
+												{#if isActive}
+													<!-- Guillemet · oxblood › sits in the rail's
+												     left gutter as a directional "you are
+												     reading this" marker. Native French
+												     typography, lighter than a fleuron.
+												     Optical alignment: nudged up 2px from
+												     true center since the › glyph's visual
+												     mass sits below its em-box midline. -->
+													<span
+														aria-hidden="true"
+														class="absolute text-accent leading-none"
+														style="font-size: 22px; right: calc(100% + 4px); top: calc(50% - 1px); transform: translateY(-50%);"
+														>›</span
+													>
+												{/if}
+												<a
+													href={t.href}
+													class="block py-[7px] transition-colors hover:text-accent"
+													class:text-accent={isActive}
+													class:font-medium={isActive}
+												>
+													{t.label}
+												</a>
+											</li>
+										{/each}
+									</ul>
+								{/if}
+							</li>
+						{/each}
+					</ul>
+				</nav>
 			</div>
 		</aside>
 
@@ -180,13 +209,16 @@
 
 	<footer class="border-t border-border mt-16 px-6 py-8 lg:px-12">
 		<nav aria-label="Pied de page" class="flex flex-wrap items-baseline gap-x-6 gap-y-2 label-meta">
-			<a href="/" class="hover:text-active hover:underline underline-offset-4">Accueil</a>
-			<a href="/sujets" class="hover:text-active hover:underline underline-offset-4">Sujets</a>
-			<a href="/peres" class="hover:text-active hover:underline underline-offset-4">Pères</a>
-			<a href="/oeuvres" class="hover:text-active hover:underline underline-offset-4">Œuvres</a>
-			<a href="/recherche" class="hover:text-active hover:underline underline-offset-4">Recherche</a>
-			<a href="/a-propos" class="hover:text-active hover:underline underline-offset-4">À propos</a>
-			<a href="/mentions-legales" class="hover:text-active hover:underline underline-offset-4">Mentions légales</a>
+			<a href="/" class="hover:text-accent hover:underline underline-offset-4">Accueil</a>
+			<a href="/sujets" class="hover:text-accent hover:underline underline-offset-4">Sujets</a>
+			<a href="/peres" class="hover:text-accent hover:underline underline-offset-4">Pères</a>
+			<a href="/oeuvres" class="hover:text-accent hover:underline underline-offset-4">Œuvres</a>
+			<a href="/recherche" class="hover:text-accent hover:underline underline-offset-4">Recherche</a
+			>
+			<a href="/a-propos" class="hover:text-accent hover:underline underline-offset-4">À propos</a>
+			<a href="/mentions-legales" class="hover:text-accent hover:underline underline-offset-4"
+				>Mentions légales</a
+			>
 		</nav>
 		<p class="mt-4 label-meta">Tradition Apostolique &middot; anthologie patristique</p>
 	</footer>

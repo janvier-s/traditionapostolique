@@ -19,10 +19,13 @@
 	});
 </script>
 
-<nav aria-label="Fil d'Ariane" class="mb-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 label-meta">
+<nav
+	aria-label="Fil d'Ariane"
+	class="mb-4 flex flex-wrap items-baseline gap-x-2 gap-y-1 label-meta"
+>
 	{#each items as c, i (i)}
 		{#if c.href && i < items.length - 1}
-			<a href={c.href} class="hover:text-active hover:underline underline-offset-4">{c.label}</a>
+			<a href={c.href} class="hover:text-accent hover:underline underline-offset-4">{c.label}</a>
 			<span aria-hidden="true">/</span>
 		{:else}
 			<span aria-current={i === items.length - 1 ? 'page' : undefined}>{c.label}</span>

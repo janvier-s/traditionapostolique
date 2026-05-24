@@ -82,7 +82,9 @@
 />
 
 <article style="--author-col: 200px; --quote-gap: 3rem;">
-	<header class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+	<header
+		class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]"
+	>
 		<div></div>
 		<div>
 			<h1
@@ -92,10 +94,19 @@
 				Les Œuvres
 			</h1>
 
-			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-				<p class="label-meta">
-					{totalWorks} œuvres
-				</p>
+			<p class="mt-3 label-meta">
+				{totalWorks} œuvres
+			</p>
+
+			<p class="mt-3 max-w-prose font-body text-base leading-[1.6] text-foreground">
+				Cette liste recense les œuvres patristiques d’où proviennent les citations rassemblées sur
+				ce site : épîtres, traités, homélies, conciles, canons et écrits apocryphes des premiers
+				siècles chrétiens.
+			</p>
+
+			<!-- Sort selector · right-aligned on its own row below the
+			     description so the count can read as an eyebrow stat. -->
+			<div class="mt-4 flex justify-end">
 				<label class="flex items-baseline gap-2">
 					<span class="label-meta">Tri</span>
 					<select
@@ -111,8 +122,12 @@
 		</div>
 	</header>
 
-	{#if groups.length > 1 && groups.some((g) => g.label)}
-		<div class="mb-8 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+	<!-- Quick-jump chips only in alpha sort (compact letter buckets);
+	     "Par auteur" produces 80+ chips which overwhelm the header. -->
+	{#if sortBy === 'alpha' && groups.length > 1 && groups.some((g) => g.label)}
+		<div
+			class="mb-8 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]"
+		>
 			<div></div>
 			<nav aria-label="Sauter à un groupe" class="flex flex-wrap gap-1">
 				{#each groups as g (g.label || 'all')}
@@ -120,8 +135,9 @@
 						{@const head = g.label.split('\n')[0]}
 						<a
 							href={`#g-${encodeURIComponent(head ?? '')}`}
-							class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-active"
-						>{head}</a>
+							class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-accent"
+							>{head}</a
+						>
 					{/if}
 				{/each}
 			</nav>
@@ -145,7 +161,9 @@
 							{parts[0]}
 						</h2>
 						{#if parts[1]}
-							<p class="mt-1 font-ui text-[11px] font-light uppercase not-italic tracking-[0.05em] text-muted">
+							<p
+								class="mt-1 font-ui text-[11px] font-light uppercase not-italic tracking-[0.05em] text-muted"
+							>
 								{parts[1]}
 							</p>
 						{/if}
@@ -158,17 +176,21 @@
 						{@const a = authorById(w.authorId)}
 						<li class="flex items-baseline justify-between gap-4">
 							<span class="min-w-0">
-								<a href={`/oeuvres/${w.slug}`} class="font-body text-foreground hover:text-active">
+								<a href={`/oeuvres/${w.slug}`} class="font-body text-foreground hover:text-accent">
 									{w.title}
 								</a>
 								{#if a && sortBy !== 'author'}
-									<span class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
+									<span
+										class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
+									>
 										{a.name}
 									</span>
 								{/if}
 							</span>
 							{#if n > 0}
-								<span class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
+								<span
+									class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
+								>
 									{n}
 								</span>
 							{/if}
