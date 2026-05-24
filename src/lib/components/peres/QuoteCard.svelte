@@ -3,6 +3,7 @@
 	import { authorById, workById, topicById } from '$lib/data';
 	import { deriveQuoteTitle } from '$lib/utils/derive-quote-title';
 	import { formatCitation } from '$lib/utils/format-citation';
+	import { renderFr } from '$lib/utils/render-fr';
 	import TopicChip from './TopicChip.svelte';
 	import EraBadge from './EraBadge.svelte';
 
@@ -49,7 +50,7 @@
 		</div>
 
 		{#if quote.fr}
-			<p class="mt-4 max-w-reader font-body text-lg leading-relaxed">{quote.fr}</p>
+			<p class="mt-4 max-w-reader font-body text-lg leading-relaxed">{@html renderFr(quote.fr)}</p>
 		{:else}
 			<p class="mt-4 italic text-muted">Traduction française à venir.</p>
 		{/if}

@@ -2,6 +2,7 @@
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import { workById, topicById } from '$lib/data';
 	import { eraLabelSingular } from '$lib/utils/era';
+	import { renderFr } from '$lib/utils/render-fr';
 	import type { Quote, Topic } from '$lib/schema';
 
 	let { data } = $props();
@@ -144,7 +145,7 @@
 								style="white-space: pre-line;"
 							>
 								{#if q.fr}
-									<span>&ldquo;{q.fr}&rdquo;</span>
+									<span>&ldquo;{@html renderFr(q.fr)}&rdquo;</span>
 								{:else}
 									<span class="italic text-muted">Traduction française à venir.</span>
 								{/if}

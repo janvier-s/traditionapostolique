@@ -27,7 +27,47 @@
 		works = await w.json();
 		topics = await t.json();
 		items.sort((x, y) => x.id - y.id);
+		selectFromHash();
 	});
+
+	function selectFromHash() {
+		if (typeof window === 'undefined') return;
+		const h = window.location.hash.replace(/^#/, '');
+		const id = Number(h);
+		if (!Number.isFinite(id)) return;
+		const idx = items.findIndex((q) => q.id === id);
+		if (idx >= 0) {
+			selectedIdx = idx;
+			queueMicrotask(() => {
+				document.getElementById(`row-${id}`)?.scrollIntoView({ block: 'center' });
+			});
+		}
+	}
+
+	$effect(() => {
+		if (typeof window === 'undefined') return;
+		const onHash = () => selectFromHash();
+		window.addEventListener('hashchange', onHash);
+		return () => window.removeEventListener('hashchange', onHash);
+	});
+
+	function wrapItalics(field: 'fr' | 'en' | 'latin' | 'greek' | 'context') {
+		if (!selected) return;
+		const el = document.getElementById(`ta-${field}`) as HTMLTextAreaElement | null;
+		if (!el) return;
+		const v = el.value;
+		const s = el.selectionStart ?? 0;
+		const e = el.selectionEnd ?? 0;
+		const before = v.slice(0, s);
+		const sel = v.slice(s, e) || 'texte';
+		const after = v.slice(e);
+		const nv = `${before}*${sel}*${after}`;
+		update(field, nv);
+		queueMicrotask(() => {
+			el.focus();
+			el.setSelectionRange(s + 1, s + 1 + sel.length);
+		});
+	}
 
 	const topicById = $derived(new Map(topics.map((t) => [t.id, t])));
 
@@ -120,7 +160,7 @@
 		/>
 		<ul class="mt-2 max-h-[75vh] overflow-y-auto">
 			{#each filtered as { q, i } (q.id)}
-				<li>
+				<li id={`row-${q.id}`}>
 					<button
 						type="button"
 						onclick={() => {
@@ -245,15 +285,27 @@
 					/>
 				</label>
 
-				<label class="block">
-					Français
+				<div class="block">
+					<div class="flex items-baseline justify-between">
+						<label for="ta-fr">Français</label>
+						<button
+							type="button"
+							onclick={() => wrapItalics('fr')}
+							class="rounded border border-border bg-panel px-2 py-0.5 text-xs italic hover:bg-subtle/10"
+							title="Entoure la sélection de * * (italique)">I</button
+						>
+					</div>
 					<textarea
+						id="ta-fr"
 						class={TA_LG}
 						value={selected.fr ?? ''}
 						oninput={(e) =>
 							update('fr', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
 					></textarea>
-				</label>
+					<p class="mt-1 text-xs text-muted">
+						Astuce&nbsp;: entourez un texte de <code>*</code> pour le rendre en italique.
+					</p>
+				</div>
 
 				<label class="block">
 					Anglais

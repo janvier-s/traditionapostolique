@@ -215,6 +215,10 @@
 				Les Pères
 			</h1>
 
+			<p class="mt-4 max-w-prose font-body text-base leading-[1.6] text-foreground">
+				Cette liste rassemble les témoins de la Tradition apostolique cités sur le site. Outre les Pères de l’Église au sens strict, certains papes, conciles, ainsi que d’autres auteurs et écrits de l’Antiquité chrétienne y figurent également.
+			</p>
+
 			<!-- Sub-title row · count on the left, sort selector on the
 			     right. Sort UI matches the topic page's Tri control. -->
 			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
