@@ -11,10 +11,7 @@
 //     output is safe to inject via `{@html}`.
 export function renderFr(text: string | undefined | null): string {
 	if (!text) return '';
-	const esc = text
-		.replace(/&/g, '&amp;')
-		.replace(/</g, '&lt;')
-		.replace(/>/g, '&gt;');
+	const esc = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	return esc.replace(/\*(\S(?:[^*\n]*\S)?)\*/g, '<em>$1</em>');
 }
 

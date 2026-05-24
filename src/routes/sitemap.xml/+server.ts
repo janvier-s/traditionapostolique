@@ -24,10 +24,26 @@ export const prerender = true;
 export function GET() {
 	const entries: Entry[] = [
 		...STATIC_ROUTES,
-		...topics.map((t) => ({ loc: `/sujets/${t.slug}`, changefreq: 'weekly' as const, priority: '0.8' })),
-		...authors.map((a) => ({ loc: `/peres/${a.slug}`, changefreq: 'monthly' as const, priority: '0.7' })),
-		...works.map((w) => ({ loc: `/oeuvres/${w.slug}`, changefreq: 'monthly' as const, priority: '0.6' })),
-		...quotes.map((q) => ({ loc: `/citation/${q.id}`, changefreq: 'yearly' as const, priority: '0.4' }))
+		...topics.map((t) => ({
+			loc: `/sujets/${t.slug}`,
+			changefreq: 'weekly' as const,
+			priority: '0.8'
+		})),
+		...authors.map((a) => ({
+			loc: `/peres/${a.slug}`,
+			changefreq: 'monthly' as const,
+			priority: '0.7'
+		})),
+		...works.map((w) => ({
+			loc: `/oeuvres/${w.slug}`,
+			changefreq: 'monthly' as const,
+			priority: '0.6'
+		})),
+		...quotes.map((q) => ({
+			loc: `/citation/${q.id}`,
+			changefreq: 'yearly' as const,
+			priority: '0.4'
+		}))
 	];
 
 	const body =

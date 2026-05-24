@@ -13,10 +13,30 @@
 		{
 			title: 'Intégrité des données',
 			groups: [
-				{ label: 'Quotes auteur inexistant', ids: data.brokenAuthor, base: '/admin/citations', tone: 'integrity' },
-				{ label: 'Quotes œuvre inexistante', ids: data.brokenWork, base: '/admin/citations', tone: 'integrity' },
-				{ label: 'Quote auteur ≠ œuvre auteur', ids: data.mismatchedQuoteAuthor, base: '/admin/citations', tone: 'integrity' },
-				{ label: 'Quotes sans topicIds', ids: data.brokenTopicId, base: '/admin/citations', tone: 'integrity' }
+				{
+					label: 'Quotes auteur inexistant',
+					ids: data.brokenAuthor,
+					base: '/admin/citations',
+					tone: 'integrity'
+				},
+				{
+					label: 'Quotes œuvre inexistante',
+					ids: data.brokenWork,
+					base: '/admin/citations',
+					tone: 'integrity'
+				},
+				{
+					label: 'Quote auteur ≠ œuvre auteur',
+					ids: data.mismatchedQuoteAuthor,
+					base: '/admin/citations',
+					tone: 'integrity'
+				},
+				{
+					label: 'Quotes sans topicIds',
+					ids: data.brokenTopicId,
+					base: '/admin/citations',
+					tone: 'integrity'
+				}
 			]
 		},
 		{
@@ -26,7 +46,11 @@
 				{ label: 'Sans texte original', ids: data.noOriginal, base: '/admin/citations' },
 				{ label: 'Sans référence', ids: data.noReference, base: '/admin/citations' },
 				{ label: 'Sans contexte', ids: data.noContext, base: '/admin/citations' },
-				{ label: 'Sans titre étude (œuvre générique)', ids: data.missingStudyTitle, base: '/admin/citations' },
+				{
+					label: 'Sans titre étude (œuvre générique)',
+					ids: data.missingStudyTitle,
+					base: '/admin/citations'
+				},
 				{ label: 'Sans archive', ids: data.noArchive, base: '/admin/citations' },
 				{ label: 'Sans titre court', ids: data.noTitle, base: '/admin/citations' },
 				{ label: 'Statut « brouillon »', ids: data.draftStatus, base: '/admin/citations' }
@@ -37,22 +61,44 @@
 			groups: [
 				{ label: 'Auteurs sans bio', ids: data.authorsMissingBio, base: '/admin/auteurs' },
 				{ label: 'Auteurs sans dates', ids: data.authorsMissingDates, base: '/admin/auteurs' },
-				{ label: 'Auteurs sans citation', ids: data.authorsNoQuotes, base: '/admin/auteurs', tone: 'warn' },
+				{
+					label: 'Auteurs sans citation',
+					ids: data.authorsNoQuotes,
+					base: '/admin/auteurs',
+					tone: 'warn'
+				},
 				{ label: 'Auteurs sans œuvre', ids: data.authorsNoWorks, base: '/admin/auteurs' }
 			]
 		},
 		{
 			title: 'Œuvres',
 			groups: [
-				{ label: 'Œuvres sans description', ids: data.worksMissingDescription, base: '/admin/oeuvres' },
-				{ label: 'Œuvres sans date de composition', ids: data.worksMissingCompositionDate, base: '/admin/oeuvres' },
-				{ label: 'Œuvres sans citation', ids: data.worksNoQuotes, base: '/admin/oeuvres', tone: 'warn' }
+				{
+					label: 'Œuvres sans description',
+					ids: data.worksMissingDescription,
+					base: '/admin/oeuvres'
+				},
+				{
+					label: 'Œuvres sans date de composition',
+					ids: data.worksMissingCompositionDate,
+					base: '/admin/oeuvres'
+				},
+				{
+					label: 'Œuvres sans citation',
+					ids: data.worksNoQuotes,
+					base: '/admin/oeuvres',
+					tone: 'warn'
+				}
 			]
 		},
 		{
 			title: 'Sujets',
 			groups: [
-				{ label: 'Sujets sans description', ids: data.topicsMissingDescription, base: '/admin/sujets' }
+				{
+					label: 'Sujets sans description',
+					ids: data.topicsMissingDescription,
+					base: '/admin/sujets'
+				}
 			]
 		}
 	]);
@@ -93,7 +139,8 @@
 										<a
 											href={`${g.base}#${id}`}
 											class={`rounded border px-2 py-0.5 text-xs transition-colors ${toneClass(g.tone)}`}
-										>#{id}</a>
+											>#{id}</a
+										>
 									</li>
 								{/each}
 								{#if g.ids.length > 300}

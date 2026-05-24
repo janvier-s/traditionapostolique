@@ -11,15 +11,24 @@ const SITE = 'https://traditionapostolique.fr';
 export function GET() {
 	const sectionLabel = (s: string): string => {
 		switch (s) {
-			case 'I': return 'Dieu';
-			case 'II': return 'La création';
-			case 'III': return 'Le Christ';
-			case 'IV': return "L'Église";
-			case 'V': return 'La morale';
-			case 'VI': return 'Les sacrements et le culte';
-			case 'VII': return 'La fin des temps';
-			case 'VIII': return 'Divers';
-			default: return s;
+			case 'I':
+				return 'Dieu';
+			case 'II':
+				return 'La création';
+			case 'III':
+				return 'Le Christ';
+			case 'IV':
+				return "L'Église";
+			case 'V':
+				return 'La morale';
+			case 'VI':
+				return 'Les sacrements et le culte';
+			case 'VII':
+				return 'La fin des temps';
+			case 'VIII':
+				return 'Divers';
+			default:
+				return s;
 		}
 	};
 
@@ -43,7 +52,8 @@ export function GET() {
 
 	// Most-cited works · same idea.
 	const workCounts = new Map<number, number>();
-	for (const q of quotes) if (q.workId != null) workCounts.set(q.workId, (workCounts.get(q.workId) ?? 0) + 1);
+	for (const q of quotes)
+		if (q.workId != null) workCounts.set(q.workId, (workCounts.get(q.workId) ?? 0) + 1);
 	const headlineWorks = [...works]
 		.map((w) => ({ w, n: workCounts.get(w.id) ?? 0 }))
 		.filter(({ n }) => n > 0)
@@ -54,8 +64,8 @@ export function GET() {
 		'# Tradition Apostolique',
 		'',
 		"> Anthologie française du témoignage des Pères de l'Église, organisée par sujets. " +
-			"Chaque citation est traduite directement du grec, du latin ou du syriaque, souvent " +
-			"pour la première fois en français, et reliée à son auteur, à son œuvre source et " +
+			'Chaque citation est traduite directement du grec, du latin ou du syriaque, souvent ' +
+			'pour la première fois en français, et reliée à son auteur, à son œuvre source et ' +
 			'aux sujets théologiques qu’elle éclaire.',
 		'',
 		`Corpus actuel : **${authors.length} auteurs**, **${works.length} œuvres**, ` +
@@ -112,10 +122,10 @@ export function GET() {
 	lines.push('');
 	lines.push(
 		"Les Pères de l'Église sont les évêques, théologiens, martyrs et témoins privilégiés du " +
-			"premier millénaire chrétien. Quand leur enseignement converge de manière large et " +
+			'premier millénaire chrétien. Quand leur enseignement converge de manière large et ' +
 			'constante, ce que la théologie catholique appelle le *consensus patrum*, leur accord ' +
 			'possède une autorité doctrinale singulière. Le corpus inclut également des conciles ' +
-			"locaux et œcuméniques, des papes, et plusieurs écrits anonymes ou pseudonymes de " +
+			'locaux et œcuméniques, des papes, et plusieurs écrits anonymes ou pseudonymes de ' +
 			"l'Antiquité chrétienne (Didachè, Constitutions apostoliques, lettres, martyrologes, " +
 			'inscriptions épigraphiques).'
 	);

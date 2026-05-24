@@ -17,8 +17,7 @@ export function load() {
 		if (q.workId != null) quotesByWork.set(q.workId, (quotesByWork.get(q.workId) ?? 0) + 1);
 	}
 	for (const w of works) {
-		if (w.authorId != null)
-			worksByAuthor.set(w.authorId, (worksByAuthor.get(w.authorId) ?? 0) + 1);
+		if (w.authorId != null) worksByAuthor.set(w.authorId, (worksByAuthor.get(w.authorId) ?? 0) + 1);
 	}
 
 	// Quote↔work author mismatch (the integrity issue that turned up
@@ -38,13 +37,13 @@ export function load() {
 	// Surfaces only quotes that don't already have studyTitle filled in.
 	const GENERIC_TITLE =
 		/^(Lettres?|Hom[ée]lies?|Sermons?|Discours|Trait[ée]s?|Commentaires?|Œuvres|Hymnes|Opuscules?|Apologie|Apologies?)$/i;
-	const genericWorkIds = new Set(
-		works.filter((w) => GENERIC_TITLE.test(w.title)).map((w) => w.id)
-	);
+	const genericWorkIds = new Set(works.filter((w) => GENERIC_TITLE.test(w.title)).map((w) => w.id));
 	const missingStudyTitle = quotes
 		.filter(
 			(q) =>
-				q.workId != null && genericWorkIds.has(q.workId) && !(q as { studyTitle?: string }).studyTitle
+				q.workId != null &&
+				genericWorkIds.has(q.workId) &&
+				!(q as { studyTitle?: string }).studyTitle
 		)
 		.map((q) => q.id);
 
@@ -61,30 +60,21 @@ export function load() {
 
 		// Integrity issues
 		brokenAuthor: quotes.filter((q) => !authorIds.has(q.authorId)).map((q) => q.id),
-		brokenWork: quotes
-			.filter((q) => q.workId != null && !workIds.has(q.workId))
-			.map((q) => q.id),
+		brokenWork: quotes.filter((q) => q.workId != null && !workIds.has(q.workId)).map((q) => q.id),
 		mismatchedQuoteAuthor,
-		brokenTopicId: quotes
-			.flatMap((q) =>
-				q.topicIds.length === 0 || q.topicIds.some((t) => !Number.isFinite(t)) ? [q.id] : []
-			),
+		brokenTopicId: quotes.flatMap((q) =>
+			q.topicIds.length === 0 || q.topicIds.some((t) => !Number.isFinite(t)) ? [q.id] : []
+		),
 
 		// Author-level gaps
 		authorsMissingBio: authors.filter((a) => !a.bioShort?.trim()).map((a) => a.id),
 		authorsMissingDates: authors.filter((a) => !a.dates?.trim()).map((a) => a.id),
-		authorsNoQuotes: authors
-			.filter((a) => (quotesByAuthor.get(a.id) ?? 0) === 0)
-			.map((a) => a.id),
-		authorsNoWorks: authors
-			.filter((a) => (worksByAuthor.get(a.id) ?? 0) === 0)
-			.map((a) => a.id),
+		authorsNoQuotes: authors.filter((a) => (quotesByAuthor.get(a.id) ?? 0) === 0).map((a) => a.id),
+		authorsNoWorks: authors.filter((a) => (worksByAuthor.get(a.id) ?? 0) === 0).map((a) => a.id),
 
 		// Work-level gaps
 		worksMissingDescription: works.filter((w) => !w.description?.trim()).map((w) => w.id),
-		worksMissingCompositionDate: works
-			.filter((w) => !w.compositionDate?.trim())
-			.map((w) => w.id),
+		worksMissingCompositionDate: works.filter((w) => !w.compositionDate?.trim()).map((w) => w.id),
 		worksNoQuotes: works.filter((w) => (quotesByWork.get(w.id) ?? 0) === 0).map((w) => w.id),
 
 		// Topic-level gaps

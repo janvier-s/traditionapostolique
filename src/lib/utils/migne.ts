@@ -9,9 +9,7 @@ export function looksLikeMigne(s: string): boolean {
 
 // Parse a Migne reference into its series, volume, and column. Returns
 // null when the string isn't a recognisable Migne reference.
-export function parseMigne(
-	s: string
-): { series: 'PG' | 'PL'; volume: number; col: number } | null {
+export function parseMigne(s: string): { series: 'PG' | 'PL'; volume: number; col: number } | null {
 	const m = s.match(/\b(PG|PL)\b[\s.]*(?:vol\.?\s*)?(\d+)[\s,]*(?:col\.?\s*)?(\d+)?/i);
 	if (!m || !m[1] || !m[2]) return null;
 	return {

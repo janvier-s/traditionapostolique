@@ -71,9 +71,15 @@ function normalizeName(raw) {
 	s = s.replace(/\bSainte /g, 'Ste. ');
 	s = s.replace(/\bSt /g, 'St. ');
 	// Trailing French ordinal forms · "Damase 1e" / "Damase 1er" / "Pierre 2e" → "Damase Ier"
-	s = s.replace(/\s(\d{1,2})(?:e|er|ère|eme|ème|nd)?\b\s*$/i, (m, n) => ' ' + (ROMAN[Number(n)] || `${n}e`));
+	s = s.replace(
+		/\s(\d{1,2})(?:e|er|ère|eme|ème|nd)?\b\s*$/i,
+		(m, n) => ' ' + (ROMAN[Number(n)] || `${n}e`)
+	);
 	// Collapse double spaces / period-period sequences left by the above.
-	s = s.replace(/\.{2,}/g, '.').replace(/\s+/g, ' ').trim();
+	s = s
+		.replace(/\.{2,}/g, '.')
+		.replace(/\s+/g, ' ')
+		.trim();
 	return s;
 }
 

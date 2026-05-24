@@ -2,8 +2,27 @@
 // ordinal suffix themselves (e.g. a chip that wraps the lowercase suffix
 // in its own span to escape an uppercase parent).
 export const ROMAN_NUMERALS = [
-	'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X',
-	'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX', 'XXI'
+	'I',
+	'II',
+	'III',
+	'IV',
+	'V',
+	'VI',
+	'VII',
+	'VIII',
+	'IX',
+	'X',
+	'XI',
+	'XII',
+	'XIII',
+	'XIV',
+	'XV',
+	'XVI',
+	'XVII',
+	'XVIII',
+	'XIX',
+	'XX',
+	'XXI'
 ] as const;
 
 // French ordinal suffix for a century number: `er` for the 1st, `e` for

@@ -82,6 +82,4 @@ for (const fix of fixes) {
 }
 
 writeFileSync(QUOTES_PATH, JSON.stringify(quotes, null, 2) + '\n');
-process.stdout.write(
-	JSON.stringify({ applied, skipped, notFound }, null, 2) + '\n'
-);
+process.stdout.write(JSON.stringify({ applied, skipped, notFound }, null, 2) + '\n');
