@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Author, Work } from '$lib/schema';
+	import type { Author, Quote, Work } from '$lib/schema';
+	import { watchHashSelection } from '../hash-select';
+	import { bindEditorShortcuts } from '../editor-utils.svelte';
 
 	let items = $state<Work[]>([]);
 	let authors = $state<Author[]>([]);
+	let quotes = $state<Quote[]>([]);
 	let selectedIdx = $state(-1);
 	let dirty = $state(false);
 	let search = $state('');
@@ -11,12 +14,22 @@
 	let saving = $state(false);
 
 	onMount(async () => {
-		const [worksRes, authorsRes] = await Promise.all([
-			fetch('/admin/api/works'),
-			fetch('/admin/api/authors')
+		const [w, a, q] = await Promise.all([
+			fetch('/admin/api/works').then((r) => r.json()),
+			fetch('/admin/api/authors').then((r) => r.json()),
+			fetch('/admin/api/quotes').then((r) => r.json())
 		]);
-		items = await worksRes.json();
-		authors = await authorsRes.json();
+		items = w;
+		authors = a;
+		quotes = q;
+	});
+
+	$effect(() => watchHashSelection(items, (idx) => (selectedIdx = idx)));
+
+	const quoteCountByWork = $derived.by(() => {
+		const m = new Map<number, number>();
+		for (const q of quotes) if (q.workId != null) m.set(q.workId, (m.get(q.workId) ?? 0) + 1);
+		return m;
 	});
 
 	const filtered = $derived(
@@ -26,6 +39,8 @@
 	);
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
+	const selectedQuotes = $derived(selected ? quotes.filter((q) => q.workId === selected.id) : []);
+	const selectedAuthor = $derived(selected ? authors.find((a) => a.id === selected.authorId) : null);
 
 	function update<K extends keyof Work>(key: K, value: Work[K]) {
 		if (!selected) return;
@@ -41,6 +56,7 @@
 		update('alternativeTitles', list.length ? list : undefined);
 	}
 
+	let savedFlash = $state(false);
 	async function save() {
 		saving = true;
 		saveError = '';
@@ -55,10 +71,14 @@
 				return;
 			}
 			dirty = false;
+			savedFlash = true;
+			setTimeout(() => (savedFlash = false), 1500);
 		} finally {
 			saving = false;
 		}
 	}
+
+	$effect(() => bindEditorShortcuts({ isDirty: () => dirty, isSaving: () => saving, save }));
 
 	const INPUT = 'mt-1 w-full rounded border border-border bg-panel px-2 py-1';
 </script>
@@ -75,7 +95,8 @@
 		/>
 		<ul class="mt-2 max-h-[70vh] overflow-y-auto">
 			{#each filtered as { w, i } (w.id)}
-				<li>
+				{@const n = quoteCountByWork.get(w.id) ?? 0}
+				<li id={`row-${w.id}`}>
 					<button
 						type="button"
 						onclick={() => {
@@ -86,7 +107,10 @@
 							selectedIdx === i && 'bg-subtle/20'
 						]}
 					>
-						{w.title} <span class="text-xs text-muted">#{w.id}</span>
+					<span class="flex items-baseline justify-between gap-2">
+						<span class="min-w-0 truncate" class:text-muted={n === 0}>{w.title}</span>
+						<span class="shrink-0 font-ui text-[11px] font-light text-muted">{n || '—'}</span>
+					</span>
 					</button>
 				</li>
 			{/each}
@@ -95,6 +119,15 @@
 
 	<div>
 		{#if selected}
+			<nav class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-muted">
+				<span class="font-ui uppercase tracking-wider">Œuvre #{selected.id}</span>
+				<a href={`/oeuvres/${selected.slug}`} target="_blank" rel="noopener" class="underline-offset-4 hover:text-active hover:underline">Voir publique ↗</a>
+				{#if selectedAuthor}
+					<a href={`/admin/auteurs#${selectedAuthor.id}`} class="underline-offset-4 hover:text-active hover:underline">Auteur · {selectedAuthor.name}</a>
+				{/if}
+				<span>·</span>
+				<span>{selectedQuotes.length} citation{selectedQuotes.length > 1 ? 's' : ''}</span>
+			</nav>
 			<form
 				class="space-y-3"
 				onsubmit={(e) => {
@@ -167,15 +200,38 @@
 							update('compositionDate', (e.currentTarget as HTMLInputElement).value || undefined)}
 					/>
 				</label>
-				<button
-					type="submit"
-					disabled={!dirty || saving}
-					class="rounded border border-border bg-accent px-4 py-1 font-ui text-sm text-accent-text disabled:opacity-50"
-				>
-					{saving ? 'Enregistrement…' : 'Enregistrer'}
-				</button>
+				<div class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur">
+					<button
+						type="submit"
+						disabled={!dirty || saving}
+						class="rounded border border-border bg-accent px-4 py-1 font-ui text-sm text-accent-text disabled:opacity-50"
+					>
+						{saving ? 'Enregistrement…' : 'Enregistrer'}
+					</button>
+					<span class="text-xs text-muted">⌘/Ctrl + S</span>
+					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span>{/if}
+					{#if savedFlash}<span class="text-xs text-emerald-600">✓ Enregistré</span>{/if}
+				</div>
 				{#if saveError}<p class="mt-2 text-sm text-red-600">{saveError}</p>{/if}
 			</form>
+
+			<section class="mt-8 border-t border-border pt-6">
+				<h2 class="font-ui text-xs uppercase tracking-wider text-muted">Citations ({selectedQuotes.length})</h2>
+				{#if selectedQuotes.length === 0}
+					<p class="mt-2 text-sm italic text-muted">Aucune citation rattachée.</p>
+				{:else}
+					<ul class="mt-2 max-h-[40vh] space-y-1 overflow-y-auto text-sm">
+						{#each selectedQuotes as q (q.id)}
+							<li class="truncate">
+								<a href={`/admin/citations#${q.id}`} class="hover:text-active hover:underline">
+									<span class="text-xs text-muted">#{q.id}</span>
+									{(q.fr ?? q.en ?? '(vide)').replace(/\s+/g, ' ').slice(0, 80)}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				{/if}
+			</section>
 		{:else}
 			<p class="italic text-muted">Sélectionnez une œuvre.</p>
 		{/if}

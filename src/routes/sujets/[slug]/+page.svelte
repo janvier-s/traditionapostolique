@@ -142,13 +142,14 @@
 	// Topic-level panel · shares the right-column slot with the quote
 	// panel. Opening one closes the other (only one can be visible at
 	// once · they fight for the same physical space).
-	type TopicTab = 'presentation' | 'auteurs' | 'migne';
+	type TopicTab = 'presentation' | 'auteurs' | 'oeuvres' | 'migne';
 	let topicPanelOpen = $state(false);
-	let topicActiveTab = $state<TopicTab>('presentation');
+	let topicActiveTab = $state<TopicTab>('auteurs');
 	const TOPIC_TABS: { id: TopicTab; label: string }[] = [
-		{ id: 'presentation', label: 'Présentation' },
 		{ id: 'auteurs', label: 'Auteurs' },
-		{ id: 'migne', label: 'Migne' }
+		{ id: 'oeuvres', label: 'Œuvres' },
+		{ id: 'migne', label: 'Migne' },
+		{ id: 'presentation', label: 'Statistiques' }
 	];
 
 	function openPanel(q: Quote) {
@@ -169,7 +170,7 @@
 	}
 	function openTopicPanel() {
 		topicPanelOpen = true;
-		topicActiveTab = 'presentation';
+		topicActiveTab = 'auteurs';
 		openQuote = null;
 		if (typeof history !== 'undefined') {
 			history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -190,6 +191,29 @@
 			.map(([id, n]) => ({ author: authorById(id), n }))
 			.filter((x): x is { author: Author; n: number } => x.author != null)
 			.sort((x, y) => (latestYear(x.author.dates) ?? 9999) - (latestYear(y.author.dates) ?? 9999));
+	});
+
+	// Works cited on this topic · grouped by workId with quote counts,
+	// sorted chronologically by the author's earliest year then by title.
+	const topicWorks = $derived.by(() => {
+		const counts = new Map<number, number>();
+		for (const q of data.matching) {
+			if (q.workId == null) continue;
+			counts.set(q.workId, (counts.get(q.workId) ?? 0) + 1);
+		}
+		return [...counts.entries()]
+			.map(([id, n]) => {
+				const w = workById(id);
+				const a = w ? authorById(w.authorId) : null;
+				return w ? { work: w, author: a, n } : null;
+			})
+			.filter((x): x is { work: NonNullable<ReturnType<typeof workById>>; author: Author | null; n: number } => x != null)
+			.sort((x, y) => {
+				const ay = x.author ? (latestYear(x.author.dates) ?? 9999) : 9999;
+				const by = y.author ? (latestYear(y.author.dates) ?? 9999) : 9999;
+				if (ay !== by) return ay - by;
+				return x.work.title.localeCompare(y.work.title, 'fr');
+			});
 	});
 
 	const topicEraBreakdown = $derived.by(() => {
@@ -300,8 +324,10 @@
 	     our minds later. The title sits in the right grid column so it
 	     left-aligns with the quote paragraphs, not with the source
 	     headers · matches the reference. -->
-	<header class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
-		<div></div>
+	<header class="mb-12 grid grid-cols-1 items-end gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+		<div>
+			<ModeToggle />
+		</div>
 		<div>
 			<Breadcrumbs items={[{ label: 'Accueil', href: '/' }, { label: 'Sujets', href: '/sujets' }, { label: data.topic.label }]} />
 			<h1
@@ -310,9 +336,22 @@
 			>
 				{data.topic.label}
 			</h1>
-			<p class="mt-3 label-meta">
-				{totalShown} citation{totalShown > 1 ? 's' : ''}
-			</p>
+			<div class="mt-3 flex max-w-prose flex-wrap items-baseline justify-between gap-x-4 gap-y-2 text-[14px]">
+				<p class="label-meta">
+					{totalShown} citation{totalShown > 1 ? 's' : ''}
+				</p>
+				{#if mode.value === 'study' && !topicPanelOpen}
+					<button
+						type="button"
+						onclick={openTopicPanel}
+						aria-expanded={topicPanelOpen}
+						class="inline-flex items-baseline gap-2 label-meta-link"
+					>
+						Index du sujet
+						<span aria-hidden="true">→</span>
+					</button>
+				{/if}
+			</div>
 			{#if data.topic.description}
 				{@const desc = data.topic.description.trim()}
 				{@const cut = desc.indexOf('\n\n')}
@@ -334,32 +373,16 @@
 					{/if}
 				</div>
 			{/if}
-			<!-- Study-mode 'À propos du sujet' trigger · opens the right-
-			     column panel with Répartition / Auteurs / Migne tabs. -->
-			{#if mode.value === 'study' && !topicPanelOpen}
-				<div class="mt-4">
-					<button
-						type="button"
-						onclick={openTopicPanel}
-						aria-expanded={topicPanelOpen}
-						class="inline-flex items-baseline gap-2 label-meta-link"
-					>
-						À propos du sujet
-						<span aria-hidden="true">→</span>
-					</button>
-				</div>
-			{/if}
 		</div>
 	</header>
 
-	<!-- Mode toggle (marginal column) + Siècle filter (main column) on the
-	     same row, both bottom-aligned so the toggle baseline meets the
-	     'Siècle' label baseline. -->
-	<div class="mb-12 grid grid-cols-1 items-baseline gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
-		<ModeToggle />
 
-		{#if mode.value === 'study'}
-			<div>
+	<!-- Siècle filter (Étude-only) · sits in the main column with an empty
+	     marginal placeholder so it aligns with the quotes below. -->
+	{#if mode.value === 'study'}
+	<div class="mb-12 grid grid-cols-1 items-baseline gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+		<div></div>
+		<div>
 			<div
 				class="flex flex-wrap items-baseline gap-x-2 gap-y-2 border-b border-border pb-4"
 			>
@@ -413,8 +436,8 @@
 				</label>
 			</div>
 		</div>
-		{/if}
 	</div>
+	{/if}
 
 	<div class="source-list">
 		{#if groups.length === 0}
@@ -594,7 +617,7 @@
 	     quote panel. Mutually exclusive with `openQuote` (opening one
 	     closes the other) so they never compete for the same slot. -->
 	<aside
-		aria-label="À propos du sujet"
+		aria-label="Index du sujet"
 		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
 	>
 		<header class="mb-6 flex items-baseline justify-between gap-4">
@@ -659,16 +682,37 @@
 				<ul class="space-y-1 text-[14px]">
 					{#each topicAuthors as { author, n } (author.id)}
 						<li class="flex items-baseline justify-between gap-4">
-							<span>
+							<a
+								href={`/peres/${author.slug}`}
+								class="min-w-0 hover:text-active"
+							>
 								{author.name}
 								{#if author.dates}
 									<span class="ml-1 font-ui text-[11px] font-light text-muted">{author.dates}</span>
 								{/if}
-							</span>
+							</a>
 							<span class="font-ui text-[12px] font-light text-muted">{n}</span>
 						</li>
 					{/each}
 				</ul>
+			{:else if topicActiveTab === 'oeuvres'}
+				{#if topicWorks.length === 0}
+					<p class="italic text-muted">Aucune œuvre rattachée à ce sujet.</p>
+				{:else}
+					<ul class="space-y-3 text-[14px]">
+						{#each topicWorks as { work, author, n } (work.id)}
+							<li class="flex items-baseline justify-between gap-4">
+								<a href={`/oeuvres/${work.slug}`} class="min-w-0 hover:text-active">
+									<em class="italic">{work.title}</em>
+									{#if author}
+										<span class="block font-ui text-[11px] font-light text-muted">{author.name}</span>
+									{/if}
+								</a>
+								<span class="font-ui text-[12px] font-light text-muted">{n}</span>
+							</li>
+						{/each}
+					</ul>
+				{/if}
 			{:else}
 				<!-- Migne tab · collated PG / PL index for the topic. Each
 				     row links to the first quote that uses that ref via

@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { Author, Quote, Topic, Work } from '$lib/schema';
+	import { watchHashSelection } from '../hash-select';
+	import { bindEditorShortcuts } from '../editor-utils.svelte';
 
 	let items = $state<Quote[]>([]);
 	let authors = $state<Author[]>([]);
@@ -12,6 +14,30 @@
 	let saveError = $state('');
 	let saving = $state(false);
 	let topicPick = $state<number | ''>('');
+
+	type SortKey = 'id' | 'author' | 'topic' | 'status' | 'missing-fr';
+	const SORT_OPTIONS: { value: SortKey; label: string }[] = [
+		{ value: 'id', label: 'ID' },
+		{ value: 'author', label: 'Auteur (A→Z)' },
+		{ value: 'topic', label: 'Sujet' },
+		{ value: 'status', label: 'Statut (brouillons d’abord)' },
+		{ value: 'missing-fr', label: 'Sans traduction française' }
+	];
+	let sortBy = $state<SortKey>('id');
+	type FilterKey = 'no-fr' | 'no-work' | 'no-ref' | 'draft';
+	const FILTER_OPTIONS: { value: FilterKey; label: string }[] = [
+		{ value: 'no-fr', label: 'Sans fr' },
+		{ value: 'no-work', label: 'Sans œuvre' },
+		{ value: 'no-ref', label: 'Sans référence' },
+		{ value: 'draft', label: 'Brouillon' }
+	];
+	let activeFilters = $state<Set<FilterKey>>(new Set());
+	function toggleFilter(f: FilterKey) {
+		const next = new Set(activeFilters);
+		if (next.has(f)) next.delete(f);
+		else next.add(f);
+		activeFilters = next;
+	}
 
 	const STATUSES: Array<'draft' | 'ok'> = ['draft', 'ok'];
 
@@ -27,29 +53,9 @@
 		works = await w.json();
 		topics = await t.json();
 		items.sort((x, y) => x.id - y.id);
-		selectFromHash();
 	});
 
-	function selectFromHash() {
-		if (typeof window === 'undefined') return;
-		const h = window.location.hash.replace(/^#/, '');
-		const id = Number(h);
-		if (!Number.isFinite(id)) return;
-		const idx = items.findIndex((q) => q.id === id);
-		if (idx >= 0) {
-			selectedIdx = idx;
-			queueMicrotask(() => {
-				document.getElementById(`row-${id}`)?.scrollIntoView({ block: 'center' });
-			});
-		}
-	}
-
-	$effect(() => {
-		if (typeof window === 'undefined') return;
-		const onHash = () => selectFromHash();
-		window.addEventListener('hashchange', onHash);
-		return () => window.removeEventListener('hashchange', onHash);
-	});
+	$effect(() => watchHashSelection(items, (idx) => (selectedIdx = idx)));
 
 	function wrapItalics(field: 'fr' | 'en' | 'latin' | 'greek' | 'context') {
 		if (!selected) return;
@@ -71,19 +77,58 @@
 
 	const topicById = $derived(new Map(topics.map((t) => [t.id, t])));
 
-	const filtered = $derived(
-		items
+	const authorById = $derived(new Map(authors.map((a) => [a.id, a])));
+
+	const filtered = $derived.by(() => {
+		const needle = search.toLowerCase();
+		const passes = items
 			.map((q, i) => ({ q, i }))
 			.filter(({ q }) => {
-				const needle = search.toLowerCase();
-				if (!needle) return true;
-				return (
-					(q.fr ?? '').toLowerCase().includes(needle) ||
-					(q.title ?? '').toLowerCase().includes(needle) ||
-					(q.reference ?? '').toLowerCase().includes(needle)
-				);
-			})
-	);
+				if (needle) {
+					const a = authorById.get(q.authorId);
+					if (
+						!(q.fr ?? '').toLowerCase().includes(needle) &&
+						!(q.title ?? '').toLowerCase().includes(needle) &&
+						!(q.reference ?? '').toLowerCase().includes(needle) &&
+						!(a?.name ?? '').toLowerCase().includes(needle)
+					)
+						return false;
+				}
+				if (activeFilters.has('no-fr') && q.fr) return false;
+				if (activeFilters.has('no-work') && q.workId != null) return false;
+				if (activeFilters.has('no-ref') && q.reference) return false;
+				if (activeFilters.has('draft') && q.status !== 'draft') return false;
+				return true;
+			});
+
+		const cmp = (a: (typeof passes)[number], b: (typeof passes)[number]) => {
+			switch (sortBy) {
+				case 'author': {
+					const na = authorById.get(a.q.authorId)?.name ?? '';
+					const nb = authorById.get(b.q.authorId)?.name ?? '';
+					return na.localeCompare(nb, 'fr') || a.q.id - b.q.id;
+				}
+				case 'topic': {
+					const ta = topicById.get(a.q.topicIds[0] ?? -1)?.label ?? '';
+					const tb = topicById.get(b.q.topicIds[0] ?? -1)?.label ?? '';
+					return ta.localeCompare(tb, 'fr') || a.q.id - b.q.id;
+				}
+				case 'status': {
+					const sa = a.q.status === 'draft' ? 0 : 1;
+					const sb = b.q.status === 'draft' ? 0 : 1;
+					return sa - sb || a.q.id - b.q.id;
+				}
+				case 'missing-fr': {
+					const ma = a.q.fr ? 1 : 0;
+					const mb = b.q.fr ? 1 : 0;
+					return ma - mb || a.q.id - b.q.id;
+				}
+				default:
+					return a.q.id - b.q.id;
+			}
+		};
+		return passes.slice().sort(cmp);
+	});
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
 
@@ -123,6 +168,7 @@
 		return fr.length > 60 ? fr.slice(0, 60) + '…' : fr || '(vide)';
 	}
 
+	let savedFlash = $state(false);
 	async function save() {
 		saving = true;
 		saveError = '';
@@ -137,8 +183,31 @@
 				return;
 			}
 			dirty = false;
+			savedFlash = true;
+			setTimeout(() => (savedFlash = false), 1500);
 		} finally {
 			saving = false;
+		}
+	}
+
+	$effect(() => bindEditorShortcuts({
+		isDirty: () => dirty,
+		isSaving: () => saving,
+		save
+	}));
+
+	function selectByOffset(delta: number) {
+		if (filtered.length === 0) return;
+		const visible = filtered.map((f) => f.i);
+		const pos = visible.indexOf(selectedIdx);
+		const next = pos < 0 ? (delta > 0 ? 0 : visible.length - 1) : (pos + delta + visible.length) % visible.length;
+		const target = visible[next];
+		if (target == null) return;
+		selectedIdx = target;
+		const id = items[target]?.id;
+		if (id != null) {
+			history.replaceState(null, '', `#${id}`);
+			queueMicrotask(() => document.getElementById(`row-${id}`)?.scrollIntoView({ block: 'center' }));
 		}
 	}
 
@@ -148,18 +217,45 @@
 	const TA_SM = 'mt-1 h-20 w-full rounded border border-border bg-panel px-2 py-1';
 </script>
 
-<h1 class="font-heading text-2xl">Citations ({items.length})</h1>
+<h1 class="font-heading text-2xl">Citations ({filtered.length} / {items.length})</h1>
 
 <div class="mt-4 grid grid-cols-[320px_1fr] gap-6">
 	<aside class="border-r border-border pr-4">
 		<input
 			type="search"
-			placeholder="Filtrer (fr, titre, référence)…"
+			placeholder="Filtrer (fr, titre, référence, auteur)…"
 			bind:value={search}
 			class="w-full rounded border border-border bg-panel px-2 py-1"
 		/>
-		<ul class="mt-2 max-h-[75vh] overflow-y-auto">
+		<label class="mt-2 flex items-center gap-2 text-xs text-muted">
+			<span>Tri</span>
+			<select
+				bind:value={sortBy}
+				class="flex-1 rounded border border-border bg-panel px-2 py-1 text-foreground"
+			>
+				{#each SORT_OPTIONS as o (o.value)}
+					<option value={o.value}>{o.label}</option>
+				{/each}
+			</select>
+		</label>
+		<div class="mt-2 flex flex-wrap gap-1">
+			{#each FILTER_OPTIONS as f (f.value)}
+				{@const active = activeFilters.has(f.value)}
+				<button
+					type="button"
+					onclick={() => toggleFilter(f.value)}
+					aria-pressed={active}
+					class="rounded-full border border-border px-2 py-[2px] text-[11px] transition-colors hover:border-active"
+					class:bg-active={active}
+					class:border-active={active}
+					class:text-background={active}
+					class:text-foreground={!active}
+				>{f.label}</button>
+			{/each}
+		</div>
+		<ul class="mt-2 max-h-[70vh] overflow-y-auto">
 			{#each filtered as { q, i } (q.id)}
+				{@const a = authorById.get(q.authorId)}
 				<li id={`row-${q.id}`}>
 					<button
 						type="button"
@@ -171,8 +267,13 @@
 							selectedIdx === i && 'bg-subtle/20'
 						]}
 					>
-						<span class="text-xs text-muted">#{q.id}</span>
-						{listLabel(q)}
+						<div class="flex items-baseline gap-1.5 text-[11px] text-muted">
+							<span>#{q.id}</span>
+							{#if a}<span class="truncate">· {a.name}</span>{/if}
+							{#if q.status === 'draft'}<span class="ml-auto rounded bg-amber-100 px-1 text-[10px] text-amber-700">draft</span>{/if}
+							{#if !q.fr}<span class="rounded bg-red-100 px-1 text-[10px] text-red-700">no fr</span>{/if}
+						</div>
+						<span class="line-clamp-2">{listLabel(q)}</span>
 					</button>
 				</li>
 			{/each}
@@ -181,6 +282,26 @@
 
 	<div>
 		{#if selected}
+			{@const sa = authors.find((a) => a.id === selected!.authorId)}
+			{@const sw = selected.workId ? works.find((w) => w.id === selected!.workId) : null}
+			<nav class="mb-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-xs text-muted">
+				<span class="font-ui uppercase tracking-wider">Citation #{selected.id}</span>
+				<button type="button" onclick={() => selectByOffset(-1)} class="underline-offset-4 hover:text-active hover:underline" title="Précédent">← Préc</button>
+				<button type="button" onclick={() => selectByOffset(1)} class="underline-offset-4 hover:text-active hover:underline" title="Suivant">Suiv →</button>
+				<a href={`/citation/${selected.id}`} target="_blank" rel="noopener" class="underline-offset-4 hover:text-active hover:underline">Voir publique ↗</a>
+				{#if sa}
+					<a href={`/admin/auteurs#${sa.id}`} class="underline-offset-4 hover:text-active hover:underline">Auteur · {sa.name}</a>
+				{/if}
+				{#if sw}
+					<a href={`/admin/oeuvres#${sw.id}`} class="underline-offset-4 hover:text-active hover:underline">Œuvre · {sw.title}</a>
+				{/if}
+				{#each selected.topicIds as tid (tid)}
+					{@const t = topicById.get(tid)}
+					{#if t}
+						<a href={`/admin/sujets#${t.id}`} class="underline-offset-4 hover:text-active hover:underline">Sujet · {t.label}</a>
+					{/if}
+				{/each}
+			</nav>
 			<form
 				class="space-y-3"
 				onsubmit={(e) => {
@@ -283,6 +404,20 @@
 						oninput={(e) =>
 							update('reference', (e.currentTarget as HTMLInputElement).value || undefined)}
 					/>
+				</label>
+
+				<label class="block">
+					Titre étude (précision en mode Étude)
+					<input
+						class={INPUT}
+						placeholder="ex. Lettre 15. Au pape Damase."
+						value={selected.studyTitle ?? ''}
+						oninput={(e) =>
+							update('studyTitle', (e.currentTarget as HTMLInputElement).value || undefined)}
+					/>
+					<p class="mt-1 text-xs text-muted">
+						Affiché en mode Étude à la place du titre court de l'œuvre. À utiliser quand le titre de l'œuvre est générique (« Lettres », « Sermons »…) et que l'on connaît la pièce précise.
+					</p>
 				</label>
 
 				<div class="block">
@@ -401,13 +536,18 @@
 					></textarea>
 				</label>
 
-				<button
-					type="submit"
-					disabled={!dirty || saving}
-					class="rounded border border-border bg-accent px-4 py-1 font-ui text-sm text-accent-text disabled:opacity-50"
-				>
-					{saving ? 'Enregistrement…' : 'Enregistrer'}
-				</button>
+				<div class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur">
+					<button
+						type="submit"
+						disabled={!dirty || saving}
+						class="rounded border border-border bg-accent px-4 py-1 font-ui text-sm text-accent-text disabled:opacity-50"
+					>
+						{saving ? 'Enregistrement…' : 'Enregistrer'}
+					</button>
+					<span class="text-xs text-muted">⌘/Ctrl + S</span>
+					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span>{/if}
+					{#if savedFlash}<span class="text-xs text-emerald-600">✓ Enregistré</span>{/if}
+				</div>
 				{#if saveError}<p class="mt-2 text-sm text-red-600">{saveError}</p>{/if}
 			</form>
 		{:else}
