@@ -372,15 +372,15 @@
 				<p class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
 					{totalShown} citation{totalShown > 1 ? 's' : ''}
 				</p>
-				{#if mode.value === 'study'}
+				{#if mode.value === 'study' && !topicPanelOpen}
 					<button
 						type="button"
-						onclick={() => (topicPanelOpen ? closeTopicPanel() : openTopicPanel())}
+						onclick={openTopicPanel}
 						aria-expanded={topicPanelOpen}
 						class="inline-flex items-baseline gap-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
 					>
 						À propos du sujet
-						<span aria-hidden="true">{topicPanelOpen ? '×' : '→'}</span>
+						<span aria-hidden="true">→</span>
 					</button>
 				{/if}
 			</div>
