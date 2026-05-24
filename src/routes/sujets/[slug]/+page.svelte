@@ -310,6 +310,9 @@
 			>
 				{data.topic.label}
 			</h1>
+			<p class="mt-3 label-meta">
+				{totalShown} citation{totalShown > 1 ? 's' : ''}
+			</p>
 			{#if data.topic.description}
 				{@const desc = data.topic.description.trim()}
 				{@const cut = desc.indexOf('\n\n')}
@@ -331,15 +334,10 @@
 					{/if}
 				</div>
 			{/if}
-			<!-- Sub-title row · citation count on the left, study-mode
-			     "À propos du sujet" trigger on the right. Sits directly
-			     under the title so the topic metadata reads as a property
-			     of the topic itself. -->
-			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-				<p class="label-meta">
-					{totalShown} citation{totalShown > 1 ? 's' : ''}
-				</p>
-				{#if mode.value === 'study' && !topicPanelOpen}
+			<!-- Study-mode 'À propos du sujet' trigger · opens the right-
+			     column panel with Répartition / Auteurs / Migne tabs. -->
+			{#if mode.value === 'study' && !topicPanelOpen}
+				<div class="mt-4">
 					<button
 						type="button"
 						onclick={openTopicPanel}
@@ -349,8 +347,8 @@
 						À propos du sujet
 						<span aria-hidden="true">→</span>
 					</button>
-				{/if}
-			</div>
+				</div>
+			{/if}
 		</div>
 	</header>
 

@@ -10,7 +10,7 @@
 
 <MetaTags
 	title="Accueil"
-	fullTitle="Tradition Apostolique — le témoignage des Pères de l'Église, sujet par sujet"
+	fullTitle="Tradition Apostolique · le témoignage des Pères de l'Église, sujet par sujet"
 	description="Anthologie française du témoignage des Pères de l'Église, organisée thème par thème : baptême, eucharistie, Tradition, succession apostolique, sacrifice de la messe, Marie, et plus. Traductions directes du grec, du latin et du syriaque."
 />
 
