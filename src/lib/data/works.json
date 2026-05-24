@@ -2462,5 +2462,15 @@
     "slug": "resurrection-des-morts",
     "title": "Résurrection des morts",
     "authorId": 9
+  },
+  {
+    "id": 10025,
+    "slug": "tome-de-damase",
+    "title": "Tome de Damase",
+    "alternativeTitles": [
+      "Anathèmes du Concile de Rome (382)"
+    ],
+    "authorId": 1051,
+    "compositionDate": "382"
   }
 ]

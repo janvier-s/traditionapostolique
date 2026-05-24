@@ -112,17 +112,20 @@
 	</header>
 
 	{#if groups.length > 1 && groups.some((g) => g.label)}
-		<nav aria-label="Sauter à un groupe" class="mb-8 flex flex-wrap gap-1">
-			{#each groups as g (g.label || 'all')}
-				{#if g.label}
-					{@const head = g.label.split('\n')[0]}
-					<a
-						href={`#g-${encodeURIComponent(head ?? '')}`}
-						class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-active"
-					>{head}</a>
-				{/if}
-			{/each}
-		</nav>
+		<div class="mb-8 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+			<div></div>
+			<nav aria-label="Sauter à un groupe" class="flex flex-wrap gap-1">
+				{#each groups as g (g.label || 'all')}
+					{#if g.label}
+						{@const head = g.label.split('\n')[0]}
+						<a
+							href={`#g-${encodeURIComponent(head ?? '')}`}
+							class="rounded-full border border-foreground/15 px-2 py-[2px] font-ui text-[11px] font-light tracking-[0.05em] text-foreground transition-colors hover:border-active hover:text-active"
+						>{head}</a>
+					{/if}
+				{/each}
+			</nav>
+		</div>
 	{/if}
 
 	<div class="source-list">

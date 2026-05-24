@@ -4003,8 +4003,9 @@
   {
     "id": 241,
     "slug": "citation-241",
-    "authorId": 39,
+    "authorId": 1051,
     "topicIds": [
+      3,
       4
     ],
     "fr": "Nous anathématisons également ceux qui suivent l'erreur de Sabellius, affirmant que le Père est le même que le Fils.",
@@ -4014,20 +4015,25 @@
     "links": {
       "primary": "https://la.wikisource.org/wiki/Epistolae_(Damasus_I)"
     },
-    "status": "draft"
+    "status": "draft",
+    "workId": 10025,
+    "studyTitle": "Canon 2."
   },
   {
     "id": 242,
     "slug": "citation-242",
-    "authorId": 39,
+    "authorId": 1051,
     "topicIds": [
-      6
+      3,
+      4
     ],
     "fr": "Si quelqu'un ne confesse pas que le Fils est né du Père, c'est-à-dire de sa propre substance divine, qu'il soit anathème.",
     "en": "If anyone does not say that the Son was begotten of the Father, that is, of the divine substance of him himself, he is a heretic [Canon 11 (A.D. 382)].",
     "latin": "Si quis non dixerit Filium natum de Patre, id est de divina substantia ipsius, anathema sit.",
     "links": {},
-    "status": "draft"
+    "status": "draft",
+    "workId": 10025,
+    "studyTitle": "Canon 11."
   },
   {
     "id": 243,
