@@ -2,36 +2,24 @@
 	import { onMount } from 'svelte';
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import { authorById, workById, topicById } from '$lib/data';
-	import { renderFr } from '$lib/utils/render-fr';
+	import { renderFr, escapeHtml } from '$lib/utils/render-fr';
+	import { inlineCitation } from '$lib/utils/format-citation';
+	import { looksLikeMigne, parseMigne } from '$lib/utils/migne';
 	import type { Quote, Era, Author } from '$lib/schema';
 	import { eraOrder, eraLabel, eraLabelSingular } from '$lib/utils/era';
 	import { mode } from '$lib/stores/mode.svelte';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
 	import { fitHeading } from '$lib/utils/fit-heading';
-	import QuotePanel from '$lib/components/ui/QuotePanel.svelte';
+	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
+	import {
+		ROMAN_NUMERALS,
+		ordinalSuffix,
+		latestYear,
+		centuryNumber,
+		centuryLabel
+	} from '$lib/utils/century';
 
 	let { data } = $props();
-
-	function latestYear(dates: string | undefined): number {
-		if (!dates) return 9999;
-		const matches = dates.match(/\d{1,4}/g);
-		if (!matches) return 9999;
-		return Math.max(...matches.map((m) => Number(m)));
-	}
-
-	// French-style century label from a year (e.g. 384 → "IVe siècle").
-	// Roman-numeral ordinal followed by lowercase "e siècle" is the
-	// conventional form in academic French.
-	const ROMAN = [
-		'I','II','III','IV','V','VI','VII','VIII','IX','X',
-		'XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI'
-	];
-	function centuryLabel(author: Author): string {
-		const y = latestYear(author.dates);
-		if (y === 9999) return '';
-		const c = Math.ceil(y / 100);
-		return `${ROMAN[c - 1] ?? c}e siècle`;
-	}
 
 	// Insert a single line break before the first short connector word
 	// ("de", "d'") so names like "Augustin d'Hippone" wrap as
@@ -40,12 +28,16 @@
 	// "de" would shred a name that reads better on one or two lines and
 	// would let the surrounding year fall off on its own.
 	function breakName(name: string): string {
-		if (/^Concile/i.test(name)) return name;
-		const parts = name.split(' ');
+		// The output is injected via `{@html}`, so every text segment has
+		// to be HTML-escaped before we splice in `<br/>` markers · today
+		// the data is hand-curated and safe, but a future import could
+		// otherwise become an injection vector.
+		if (/^Concile/i.test(name)) return escapeHtml(name);
+		const parts = name.split(' ').map(escapeHtml);
 		for (let i = 1; i < parts.length; i++) {
 			const w = parts[i];
 			if (!w) continue;
-			if (w.replace(/['’]/g, '').length <= 2) {
+			if (w.replace(/['’]|&#39;/g, '').length <= 2) {
 				parts[i] = `<br/>${w}`;
 				break;
 			}
@@ -69,8 +61,7 @@
 	let centuryFilter = $state<Set<number>>(new Set());
 
 	function authorCentury(a: Author): number {
-		const y = latestYear(a.dates);
-		return y === 9999 ? 0 : Math.ceil(y / 100);
+		return centuryNumber(a.dates) ?? 0;
 	}
 
 	function toggleCentury(c: number) {
@@ -131,7 +122,7 @@
 			arr.sort((x, y) => x.author.name.localeCompare(y.author.name, 'fr'));
 		} else {
 			const dir = activeSort === 'chrono-desc' ? -1 : 1;
-			arr.sort((x, y) => dir * (latestYear(x.author.dates) - latestYear(y.author.dates)));
+			arr.sort((x, y) => dir * ((latestYear(x.author.dates) ?? 9999) - (latestYear(y.author.dates) ?? 9999)));
 		}
 		return arr;
 	});
@@ -195,7 +186,7 @@
 		return [...counts.entries()]
 			.map(([id, n]) => ({ author: authorById(id), n }))
 			.filter((x): x is { author: Author; n: number } => x.author != null)
-			.sort((x, y) => latestYear(x.author.dates) - latestYear(y.author.dates));
+			.sort((x, y) => (latestYear(x.author.dates) ?? 9999) - (latestYear(y.author.dates) ?? 9999));
 	});
 
 	const topicEraBreakdown = $derived.by(() => {
@@ -221,15 +212,6 @@
 		col: number;
 		quoteIds: number[];
 	};
-	function parseMigne(s: string): { series: 'PG' | 'PL'; volume: number; col: number } | null {
-		const m = s.match(/\b(PG|PL)\b[\s.]*(?:vol\.?\s*)?(\d+)[\s,]*(?:col\.?\s*)?(\d+)?/i);
-		if (!m || !m[1] || !m[2]) return null;
-		return {
-			series: m[1].toUpperCase() as 'PG' | 'PL',
-			volume: Number(m[2]),
-			col: m[3] ? Number(m[3]) : 0
-		};
-	}
 	const topicMigneIndex = $derived.by<MigneRow[]>(() => {
 		const byRef = new Map<string, MigneRow>();
 		for (const q of data.matching) {
@@ -281,25 +263,7 @@
 		return () => document.removeEventListener('keydown', onKey);
 	});
 
-	// Migne reference detector · used by the topic-level Migne index.
-	function looksLikeMigne(s: string): boolean {
-		return /\b(PG|PL)\b[\s.]*(vol\.?\s*)?\d/i.test(s);
-	}
-
-	function citationOf(q: Quote): string {
-		// Inline italic-parenthesised citation appended after the quote
-		// text, e.g. "(Protoevangelium de Jacques, Livre 4, Chapitre 7)".
-		// Built from work title + reference. Author dates appear in the
-		// marginal source header, not in the citation. The underlying
-		// data was already translated and Excel-artifact references
-		// stripped by `scripts/clean-references.ts` · this function
-		// just composes what's there.
-		const parts: string[] = [];
-		const work = q.workId ? workById(q.workId) : undefined;
-		if (work) parts.push(work.title);
-		if (q.reference) parts.push(q.reference);
-		return parts.join(', ');
-	}
+	const citationOf = (q: Quote) => inlineCitation(q, q.workId ? workById(q.workId) ?? undefined : undefined);
 </script>
 
 <MetaTags
@@ -335,7 +299,7 @@
 			     under the title so the topic metadata reads as a property
 			     of the topic itself. -->
 			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-				<p class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+				<p class="label-meta">
 					{totalShown} citation{totalShown > 1 ? 's' : ''}
 				</p>
 				{#if mode.value === 'study' && !topicPanelOpen}
@@ -343,7 +307,7 @@
 						type="button"
 						onclick={openTopicPanel}
 						aria-expanded={topicPanelOpen}
-						class="inline-flex items-baseline gap-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
+						class="inline-flex items-baseline gap-2 label-meta-link"
 					>
 						À propos du sujet
 						<span aria-hidden="true">→</span>
@@ -365,7 +329,7 @@
 				class="flex flex-wrap items-baseline gap-x-2 gap-y-2 border-b border-border pb-4"
 			>
 				<span
-					class="mr-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted"
+					class="mr-2 label-meta"
 				>Siècle</span>
 				{#each centuriesOnPage as c (c)}
 					{@const active = centuryFilter.has(c)}
@@ -379,14 +343,14 @@
 						class:text-background={active}
 						class:text-foreground={!active}
 					>
-						{ROMAN[c - 1] ?? c}<span class="lowercase">e</span>
+						{ROMAN_NUMERALS[c - 1] ?? c}<span class="lowercase">{ordinalSuffix(c)}</span>
 					</button>
 				{/each}
 				{#if centuryFilter.size > 0}
 					<button
 						type="button"
 						onclick={clearCenturyFilter}
-						class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
+						class="ml-2 label-meta-link"
 					>
 						Réinitialiser
 					</button>
@@ -402,7 +366,7 @@
 				     in that case so Tri flows immediately after the era
 				     chips / Réinitialiser link. -->
 				<label class="flex items-baseline gap-2" class:ml-auto={!anyPanelOpen}>
-					<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Tri</span>
+					<span class="label-meta">Tri</span>
 					<select
 						bind:value={sortBy}
 						class="border-b border-foreground/15 bg-transparent py-[2px] pr-2 font-ui text-[12px] font-light uppercase tracking-[0.05em] text-foreground hover:border-active focus:border-active focus:outline-none"
@@ -427,7 +391,7 @@
 			</p>
 		{/if}
 		{#each groups as g (g.authorId)}
-			{@const groupCentury = centuryLabel(g.author)}
+			{@const groupCentury = centuryLabel(g.author.dates)}
 			<section class="source-block grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-4 md:grid-cols-[var(--author-col)_1fr]">
 				<!-- Marginal source header: small-caps oxblood, the author's
 				     name standing in for the source the way "THE PROTO-
@@ -554,7 +518,7 @@
 									     navigational intent was being missed. -->
 									{#if otherTopics.length > 0}
 										<div class="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-											<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+											<span class="label-meta">
 												Voir aussi
 											</span>
 											{#each otherTopics as t (t.id)}
@@ -574,7 +538,7 @@
 										type="button"
 										onclick={() => (isOpen ? closePanel() : openPanel(q))}
 										aria-expanded={isOpen}
-										class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
+										class="label-meta-link"
 									>
 										{isOpen ? 'Fermer' : "Plus d'info"} <span aria-hidden="true">&rarr;</span>
 									</button>
@@ -643,7 +607,7 @@
 				{/if}
 
 				<section>
-					<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Répartition</h3>
+					<h3 class="label-meta">Répartition</h3>
 					<dl class="mt-3 space-y-1 text-[14px]">
 						{#each topicEraBreakdown as row (row.era)}
 							<div class="flex items-baseline justify-between gap-4">
@@ -652,7 +616,7 @@
 							</div>
 						{/each}
 						<div class="flex items-baseline justify-between gap-4 border-t border-border pt-1">
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Total</dt>
+							<dt class="label-meta">Total</dt>
 							<dd class="font-ui text-[12px] font-light text-muted">{data.matching.length}</dd>
 						</div>
 					</dl>
@@ -719,14 +683,7 @@
 {/if}
 
 {#if openQuote}
-	<!-- Per-quote study panel · sits in the right grid column when an
-	     openQuote is set. Sticky on desktop, stacks below quotes on mobile. -->
-	<aside
-		aria-label="Plus d'infos sur la citation"
-		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
-	>
-		<QuotePanel quote={openQuote} onClose={closePanel} />
-	</aside>
+	<QuotePanelAside quote={openQuote} onClose={closePanel} />
 {/if}
 
 </article>

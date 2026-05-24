@@ -1,13 +1,18 @@
 <script lang="ts">
-	import type { Quote, Author } from '$lib/schema';
+	import type { Quote } from '$lib/schema';
 	import { authorById, workById } from '$lib/data';
 	import { formatCitation } from '$lib/utils/format-citation';
 	import { renderFr } from '$lib/utils/render-fr';
 	import { eraLabelFeminine } from '$lib/utils/era';
+	import { centuryLabel } from '$lib/utils/century';
+	import { looksLikeMigne } from '$lib/utils/migne';
 
 	let { quote, onClose }: { quote: Quote; onClose: () => void } = $props();
 
 	type Tab = 'auteur' | 'original' | 'sources' | 'notes';
+	// Always opens on the Auteur tab. Parent re-keys the component on
+	// quote.id (via QuotePanelAside / {#key}) so a fresh instance is
+	// mounted per quote · no manual reset effect needed.
 	let activeTab = $state<Tab>('auteur');
 	const TABS: Array<{ id: Tab; label: string }> = [
 		{ id: 'auteur', label: 'Auteur' },
@@ -16,32 +21,10 @@
 		{ id: 'notes', label: 'Notes' }
 	];
 
-	// Reset to first tab whenever the open quote changes.
-	$effect(() => {
-		quote.id;
-		activeTab = 'auteur';
-	});
-
 	const author = $derived(authorById(quote.authorId));
 	const work = $derived(quote.workId ? workById(quote.workId) : null);
 
-	// Roman-numeral century derived from the author's latest dated year.
-	const ROMAN = [
-		'','Ier','IIe','IIIe','IVe','Ve','VIe','VIIe','VIIIe','IXe','Xe',
-		'XIe','XIIe','XIIIe','XIVe','XVe'
-	];
-	function latestYear(dates: string | undefined): number {
-		if (!dates) return 9999;
-		const ys = dates.match(/\d{1,4}/g);
-		return ys ? Math.max(...ys.map(Number)) : 9999;
-	}
-	function centuryLabel(a: Author): string {
-		const y = latestYear(a.dates);
-		if (y === 9999) return '';
-		const c = Math.ceil(y / 100);
-		return `${ROMAN[c] ?? `${c}e`} siècle`;
-	}
-	const century = $derived(author ? centuryLabel(author) : '');
+	const century = $derived(author ? centuryLabel(author.dates) : '');
 
 	// Greek vs Syriac detection so the Original tab labels the script
 	// accurately (Coptic/Aramaic fall back to the generic label).
@@ -51,11 +34,6 @@
 		return 'Grec / Syriaque';
 	}
 
-	// Migne references are noisy in the data · only show the field when
-	// it actually looks like "PG <vol>, col. <num>" / "PL …".
-	function looksLikeMigne(s: string): boolean {
-		return /\b(PG|PL)\b[\s.]*(vol\.?\s*)?\d/i.test(s);
-	}
 	const migne = $derived(quote.migne && looksLikeMigne(quote.migne) ? quote.migne : null);
 	const citation = $derived(author ? formatCitation(quote, author, work ?? undefined) : '');
 
@@ -120,14 +98,34 @@
 <div
 	role="tablist"
 	aria-label="Sections d'information"
+	tabindex="-1"
 	class="mb-6 flex gap-1 border-b border-border"
+	onkeydown={(e) => {
+		// WAI-ARIA APG: ←/→ cycle through tabs; Home/End jump to first/last.
+		const i = TABS.findIndex((t) => t.id === activeTab);
+		if (i < 0) return;
+		let next = i;
+		if (e.key === 'ArrowRight') next = (i + 1) % TABS.length;
+		else if (e.key === 'ArrowLeft') next = (i - 1 + TABS.length) % TABS.length;
+		else if (e.key === 'Home') next = 0;
+		else if (e.key === 'End') next = TABS.length - 1;
+		else return;
+		e.preventDefault();
+		const nt = TABS[next];
+		if (!nt) return;
+		activeTab = nt.id;
+		document.getElementById(`qp-tab-${nt.id}`)?.focus();
+	}}
 >
 	{#each TABS as t (t.id)}
 		{@const isActive = activeTab === t.id}
 		<button
+			id={`qp-tab-${t.id}`}
 			type="button"
 			role="tab"
 			aria-selected={isActive}
+			aria-controls={`qp-panel-${t.id}`}
+			tabindex={isActive ? 0 : -1}
 			onclick={() => (activeTab = t.id)}
 			class="-mb-px border-b px-3 py-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] transition-colors"
 			class:border-active={isActive}
@@ -140,33 +138,39 @@
 	{/each}
 </div>
 
-<div class="font-body text-[15px] leading-[1.6]">
+<div
+	id={`qp-panel-${activeTab}`}
+	role="tabpanel"
+	aria-labelledby={`qp-tab-${activeTab}`}
+	tabindex="0"
+	class="font-body text-[15px] leading-[1.6]"
+>
 	{#if activeTab === 'auteur'}
 		<dl class="space-y-4">
 			<div>
-				<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Nom</dt>
+				<dt class="label-meta">Nom</dt>
 				<dd class="mt-1">{author.name}</dd>
 			</div>
 			{#if author.originalName}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Nom d'origine</dt>
+					<dt class="label-meta">Nom d'origine</dt>
 					<dd class="mt-1 italic">{author.originalName}</dd>
 				</div>
 			{/if}
 			{#if author.dates}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Dates</dt>
+					<dt class="label-meta">Dates</dt>
 					<dd class="mt-1">{author.dates}</dd>
 				</div>
 			{/if}
 			{#if century}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Siècle</dt>
+					<dt class="label-meta">Siècle</dt>
 					<dd class="mt-1">{century}</dd>
 				</div>
 			{/if}
 			<div>
-				<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Ère</dt>
+				<dt class="label-meta">Ère</dt>
 				<dd class="mt-1">{eraLabelFeminine(author.era)}</dd>
 			</div>
 			{#if author.region}
@@ -175,7 +179,7 @@
 					.map((s) => s.trim())
 					.filter(Boolean)}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+					<dt class="label-meta">
 						{regions.length > 1 ? 'Régions' : 'Région'}
 					</dt>
 					<dd class="mt-1">{regions.join(' · ')}</dd>
@@ -187,7 +191,7 @@
 					.map((s) => s.trim())
 					.filter(Boolean)}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+					<dt class="label-meta">
 						{roles.length > 1 ? 'Rôles' : 'Rôle'}
 					</dt>
 					<dd class="mt-1">{roles.join(' · ')}</dd>
@@ -195,7 +199,7 @@
 			{/if}
 			{#if author.language?.length}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+					<dt class="label-meta">
 						{author.language.length > 1 ? 'Langues' : 'Langue'}
 					</dt>
 					<dd class="mt-1">{author.language.join(' · ')}</dd>
@@ -207,7 +211,7 @@
 					.map((s) => s.trim())
 					.filter(Boolean)}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+					<dt class="label-meta">
 						{distinctions.length > 1 ? 'Distinctions' : 'Distinction'}
 					</dt>
 					<dd class="mt-1">{distinctions.join(' · ')}</dd>
@@ -215,13 +219,13 @@
 			{/if}
 			{#if author.feastDay}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Fête le</dt>
+					<dt class="label-meta">Fête le</dt>
 					<dd class="mt-1">{author.feastDay}</dd>
 				</div>
 			{/if}
 			{#if author.groups?.length}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+					<dt class="label-meta">
 						{author.groups.length > 1 ? 'Groupes' : 'Groupe'}
 					</dt>
 					<dd class="mt-1">{author.groups.join(' · ')}</dd>
@@ -229,7 +233,7 @@
 			{/if}
 			{#if author.sources?.wikipedia || author.sources?.wikisource}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Liens externes</dt>
+					<dt class="label-meta">Liens externes</dt>
 					<dd class="mt-1 flex flex-col gap-1">
 						{#if author.sources.wikipedia}
 							<a
@@ -259,13 +263,13 @@
 		<div class="space-y-5">
 			{#if quote.latin}
 				<section>
-					<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Latin</h3>
+					<h3 class="label-meta">Latin</h3>
 					<p class="mt-2 italic">{quote.latin}</p>
 				</section>
 			{/if}
 			{#if quote.greek}
 				<section>
-					<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+					<h3 class="label-meta">
 						{originalLanguageLabel(quote.greek)}
 					</h3>
 					<p class="mt-2 italic">{quote.greek}</p>
@@ -279,26 +283,26 @@
 		<div class="space-y-5">
 			{#if migne}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Migne</dt>
+					<dt class="label-meta">Migne</dt>
 					<dd class="mt-2 flex flex-wrap items-center gap-2">
 						<code class="border border-border px-2 py-0.5 font-ui text-[13px]">{migne}</code>
 						<button
 							type="button"
 							onclick={() => copy(migne, 'migne')}
-							class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
+							class="label-meta hover:text-active"
 						>{copiedKey === 'migne' ? 'Copié' : 'Copier'}</button>
 					</dd>
 				</div>
 			{/if}
 			{#if citation}
 				<div>
-					<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Citation académique</dt>
+					<dt class="label-meta">Citation académique</dt>
 					<dd class="mt-2">
 						<span class="italic">{citation}</span>
 						<button
 							type="button"
 							onclick={() => copy(citation, 'citation')}
-							class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
+							class="ml-2 label-meta hover:text-active"
 						>{copiedKey === 'citation' ? 'Copié' : 'Copier'}</button>
 					</dd>
 				</div>
@@ -323,13 +327,13 @@
 		<div class="space-y-5">
 			{#if quote.context}
 				<section>
-					<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Contexte</h3>
+					<h3 class="label-meta">Contexte</h3>
 					<p class="mt-2" style="white-space: pre-line;">{@html renderFr(quote.context)}</p>
 				</section>
 			{/if}
 			{#if quote.notes}
 				<section>
-					<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Notes</h3>
+					<h3 class="label-meta">Notes</h3>
 					<p class="mt-2" style="white-space: pre-line;">{@html renderFr(quote.notes)}</p>
 				</section>
 			{/if}

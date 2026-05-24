@@ -5,8 +5,13 @@
 	import type { Quote } from '$lib/schema';
 
 	let { data } = $props();
-	// svelte-ignore state_referenced_locally
-	let openQuote = $state<Quote | null>(data.quote);
+	let openQuote = $state<Quote | null>(null);
+	// Sync the open quote with the route param. SvelteKit reuses the
+	// component across /citation/1 → /citation/2 navigation, so without
+	// this effect the panel would stay pinned to the first quote.
+	$effect(() => {
+		openQuote = data.quote;
+	});
 </script>
 
 <MetaTags title="Citation" />
@@ -16,5 +21,7 @@
 </section>
 
 {#if openQuote}
-	<QuotePanel quote={openQuote} onClose={() => (openQuote = null)} />
+	{#key openQuote.id}
+		<QuotePanel quote={openQuote} onClose={() => (openQuote = null)} />
+	{/key}
 {/if}

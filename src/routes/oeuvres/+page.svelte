@@ -92,11 +92,11 @@
 			</h1>
 
 			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-				<p class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+				<p class="label-meta">
 					{totalWorks} œuvres
 				</p>
 				<label class="flex items-baseline gap-2">
-					<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Tri</span>
+					<span class="label-meta">Tri</span>
 					<select
 						bind:value={sortBy}
 						class="border-b border-foreground/15 bg-transparent py-[2px] pr-2 font-ui text-[12px] font-light uppercase tracking-[0.05em] text-foreground hover:border-active focus:border-active focus:outline-none"

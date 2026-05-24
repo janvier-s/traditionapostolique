@@ -4,6 +4,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	/* Tiny uppercase label used as eyebrow text on counts, sidebar
+	   headers, marginal metadata, and field captions throughout the
+	   reader. Originally repeated as a 6-class Tailwind string in 40+
+	   places · this gathers it in one selector so the typographic
+	   register only has to be tuned once. */
+	.label-meta {
+		@apply font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted;
+	}
+	/* Interactive variant · adds the active-link hover affordance used
+	   on the rail and the panel triggers ("Plus d'info →", etc.). */
+	.label-meta-link {
+		@apply label-meta underline-offset-4 hover:text-active hover:underline;
+	}
+}
+
 @font-face {
 	font-family: 'Gotham';
 	src: url('/fonts/Gotham-Light.woff2') format('woff2');

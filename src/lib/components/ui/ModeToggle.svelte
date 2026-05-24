@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex items-baseline gap-2">
-	<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Mode</span>
+	<span class="label-meta">Mode</span>
 	<div
 		class="inline-flex rounded-full border border-foreground/15 p-[2px] font-ui text-[11px] font-light uppercase tracking-[0.1em]"
 		role="group"

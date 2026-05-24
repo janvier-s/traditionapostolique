@@ -27,20 +27,25 @@ export const works: Work[] = parseAll('works', WorkSchema, worksRaw);
 export const topics: Topic[] = parseAll('topics', TopicSchema, topicsRaw);
 export const quotes: Quote[] = parseAll('quotes', QuoteSchema, quotesRaw);
 
-const authorMap = new Map(authors.map((a) => [a.id, a]));
-const workMap = new Map(works.map((w) => [w.id, w]));
-const topicMap = new Map(topics.map((t) => [t.id, t]));
-const quoteMap = new Map(quotes.map((q) => [q.id, q]));
+const authorById_ = new Map(authors.map((a) => [a.id, a]));
+const workById_ = new Map(works.map((w) => [w.id, w]));
+const topicById_ = new Map(topics.map((t) => [t.id, t]));
+const quoteById_ = new Map(quotes.map((q) => [q.id, q]));
 
-export const authorById = (id: number) => authorMap.get(id);
-export const workById = (id: number) => workMap.get(id);
-export const topicById = (id: number) => topicMap.get(id);
-export const quoteById = (id: number) => quoteMap.get(id);
+const authorBySlug_ = new Map(authors.map((a) => [a.slug, a]));
+const workBySlug_ = new Map(works.map((w) => [w.slug, w]));
+const topicBySlug_ = new Map(topics.map((t) => [t.slug, t]));
+const quoteBySlug_ = new Map(quotes.map((q) => [q.slug, q]));
 
-export const authorBySlug = (slug: string) => authors.find((a) => a.slug === slug);
-export const workBySlug = (slug: string) => works.find((w) => w.slug === slug);
-export const topicBySlug = (slug: string) => topics.find((t) => t.slug === slug);
-export const quoteBySlug = (slug: string) => quotes.find((q) => q.slug === slug);
+export const authorById = (id: number) => authorById_.get(id);
+export const workById = (id: number) => workById_.get(id);
+export const topicById = (id: number) => topicById_.get(id);
+export const quoteById = (id: number) => quoteById_.get(id);
+
+export const authorBySlug = (slug: string) => authorBySlug_.get(slug);
+export const workBySlug = (slug: string) => workBySlug_.get(slug);
+export const topicBySlug = (slug: string) => topicBySlug_.get(slug);
+export const quoteBySlug = (slug: string) => quoteBySlug_.get(slug);
 
 export interface TopicTreeNode {
 	section: Section;

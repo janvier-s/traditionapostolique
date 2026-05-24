@@ -3,31 +3,45 @@
 	import { workById, topicById } from '$lib/data';
 	import { eraLabelSingular } from '$lib/utils/era';
 	import { renderFr } from '$lib/utils/render-fr';
+	import { centuryLabel } from '$lib/utils/century';
+	import { inlineCitation } from '$lib/utils/format-citation';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
-	import QuotePanel from '$lib/components/ui/QuotePanel.svelte';
+	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
 	import { mode } from '$lib/stores/mode.svelte';
-
-	let openQuote = $state<Quote | null>(null);
-	function openPanel(q: Quote) { openQuote = q; }
-	function closePanel() { openQuote = null; }
 	import type { Quote, Topic } from '$lib/schema';
 
 	let { data } = $props();
-
-	// French Roman-numeral century from death year · same helper as the
-	// topic page. Kept inline to avoid a circular import for what is
-	// effectively two lines.
-	const ROMAN = [
-		'I','II','III','IV','V','VI','VII','VIII','IX','X',
-		'XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI'
-	];
-	function centuryLabel(dates: string | undefined): string {
-		if (!dates) return '';
-		const ys = dates.match(/\d{1,4}/g);
-		if (!ys) return '';
-		const c = Math.ceil(Math.max(...ys.map(Number)) / 100);
-		return `${ROMAN[c - 1] ?? c}e siècle`;
+	import { onMount } from 'svelte';
+	let openQuote = $state<Quote | null>(null);
+	function openPanel(q: Quote) {
+		openQuote = q;
+		if (typeof history !== 'undefined') history.replaceState(null, '', `#q-${q.id}`);
 	}
+	function closePanel() {
+		openQuote = null;
+		if (typeof history !== 'undefined')
+			history.replaceState(null, '', window.location.pathname + window.location.search);
+	}
+	// Open from #q-N hash on mount.
+	onMount(() => {
+		const m = window.location.hash.match(/^#q-(\d+)$/);
+		if (!m) return;
+		const id = Number(m[1]);
+		const q = data.quotes.find((x) => x.id === id);
+		if (q) {
+			openQuote = q;
+			requestAnimationFrame(() => {
+				document.getElementById(`q-${id}`)?.scrollIntoView({ block: 'center' });
+			});
+		}
+	});
+	// Escape closes the panel.
+	$effect(() => {
+		if (!openQuote) return;
+		function onKey(e: KeyboardEvent) { if (e.key === 'Escape') closePanel(); }
+		document.addEventListener('keydown', onKey);
+		return () => document.removeEventListener('keydown', onKey);
+	});
 
 	// Group this Father's quotes by topic · the marginal column then
 	// becomes a topic header (small-caps oxblood) and the right column
@@ -54,13 +68,7 @@
 		return [...byTopic.values()].sort((x, y) => x.topic.id - y.topic.id);
 	});
 
-	function citationOf(q: Quote): string {
-		const parts: string[] = [];
-		const work = q.workId ? workById(q.workId) : undefined;
-		if (work) parts.push(work.title);
-		if (q.reference) parts.push(q.reference);
-		return parts.join(', ');
-	}
+	const citationOf = (q: Quote) => inlineCitation(q, q.workId ? workById(q.workId) ?? undefined : undefined);
 
 	const century = $derived(centuryLabel(data.author.dates));
 </script>
@@ -85,7 +93,7 @@
 			     olive on hover, matching the rail-nav register. -->
 			<a
 				href="/peres"
-				class="mb-4 inline-flex items-baseline gap-1 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
+				class="mb-4 inline-flex items-baseline gap-1 label-meta hover:text-active"
 			>
 				<span aria-hidden="true">←</span> Tous les Pères
 			</a>
@@ -103,7 +111,7 @@
 			     in the same uppercase Proxima register as the topic page's
 			     marginal info column. Reads as page metadata, not as a
 			     bio paragraph. -->
-			<div class="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+			<div class="mt-4 flex flex-wrap gap-x-3 gap-y-1 label-meta">
 				{#if data.author.dates}<span>{data.author.dates}</span>{/if}
 				{#if century}
 					{@const cm = century.match(/^([IVXL]+)([a-z]+)\s+(\S+)$/)}
@@ -118,7 +126,7 @@
 				{/if}
 			</div>
 
-			<p class="mt-4 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+			<p class="mt-4 label-meta">
 				{data.quotes.length} citation{data.quotes.length > 1 ? 's' : ''}
 				·
 				{groups.length} sujet{groups.length > 1 ? 's' : ''}
@@ -186,7 +194,7 @@
 										type="button"
 										onclick={() => (openQuote?.id === q.id ? closePanel() : openPanel(q))}
 										aria-expanded={openQuote?.id === q.id}
-										class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
+										class="label-meta-link"
 									>
 										{openQuote?.id === q.id ? 'Fermer' : "Plus d'info"} <span aria-hidden="true">&rarr;</span>
 									</button>
@@ -201,12 +209,7 @@
 </div>
 
 {#if openQuote}
-	<aside
-		aria-label="À propos de la citation"
-		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
-	>
-		<QuotePanel quote={openQuote} onClose={closePanel} />
-	</aside>
+	<QuotePanelAside quote={openQuote} onClose={closePanel} label="À propos de la citation" />
 {/if}
 </article>
 

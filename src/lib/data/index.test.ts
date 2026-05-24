@@ -40,4 +40,37 @@ describe('data loader', () => {
 		const bad = quotes.flatMap((q) => q.topicIds.filter((t) => !ids.has(t)));
 		expect(bad).toEqual([]);
 	});
+
+	it('every defined quote.workId points to an existing work', () => {
+		const ids = new Set(works.map((w) => w.id));
+		const bad = quotes.filter((q) => q.workId !== undefined && !ids.has(q.workId));
+		expect(bad).toEqual([]);
+	});
+
+	it('every defined work.authorId points to an existing author', () => {
+		const ids = new Set(authors.map((a) => a.id));
+		const bad = works.filter((w) => w.authorId !== undefined && !ids.has(w.authorId));
+		expect(bad).toEqual([]);
+	});
+
+	it('author slugs are unique', () => {
+		const counts = new Map<string, number>();
+		for (const a of authors) counts.set(a.slug, (counts.get(a.slug) ?? 0) + 1);
+		const dups = [...counts.entries()].filter(([, n]) => n > 1);
+		expect(dups).toEqual([]);
+	});
+
+	it('work slugs are unique', () => {
+		const counts = new Map<string, number>();
+		for (const w of works) counts.set(w.slug, (counts.get(w.slug) ?? 0) + 1);
+		const dups = [...counts.entries()].filter(([, n]) => n > 1);
+		expect(dups).toEqual([]);
+	});
+
+	it('topic slugs are unique', () => {
+		const counts = new Map<string, number>();
+		for (const t of topics) counts.set(t.slug, (counts.get(t.slug) ?? 0) + 1);
+		const dups = [...counts.entries()].filter(([, n]) => n > 1);
+		expect(dups).toEqual([]);
+	});
 });

@@ -2,6 +2,7 @@
 	import { authors, quotes } from '$lib/data';
 	import { eraLabel, eraOrder } from '$lib/utils/era';
 	import { sortKey, letterBucket } from '$lib/utils/sort-name';
+	import { latestYear, centuryLabel } from '$lib/utils/century';
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import type { Author, Era } from '$lib/schema';
 
@@ -61,38 +62,12 @@
 		return 'Autres';
 	}
 
+	const SANS_DATE = 'Sans date';
 	function deathYear(a: Author): number {
-		if (!a.dates) return 9999;
-		const ys = a.dates.match(/\d{1,4}/g);
-		return ys ? Math.max(...ys.map(Number)) : 9999;
+		return latestYear(a.dates) ?? 9999;
 	}
-
-	// Roman-numeral century label for the chronological grouping.
-	const ROMAN = [
-		'',
-		'Ier',
-		'IIe',
-		'IIIe',
-		'IVe',
-		'Ve',
-		'VIe',
-		'VIIe',
-		'VIIIe',
-		'IXe',
-		'Xe',
-		'XIe',
-		'XIIe',
-		'XIIIe',
-		'XIVe',
-		'XVe'
-	];
 	function centuryOf(a: Author): string {
-		const y = deathYear(a);
-		if (y === 9999) return 'Sans date';
-		const c = Math.ceil(y / 100);
-		// ROMAN[c] already carries the ordinal suffix ("Ier", "IIe", ...).
-		// Appending another "e" was the bug · produced "IIee siècle".
-		return `${ROMAN[c] ?? `${c}e`} siècle`;
+		return centuryLabel(a.dates) || SANS_DATE;
 	}
 
 	// Split an author's name into (core, honorifics[]) so the index can
@@ -222,11 +197,11 @@
 			<!-- Sub-title row · count on the left, sort selector on the
 			     right. Sort UI matches the topic page's Tri control. -->
 			<div class="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
-				<p class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+				<p class="label-meta">
 					{totalAuthors} pères
 				</p>
 				<label class="flex items-baseline gap-2">
-					<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Tri</span>
+					<span class="label-meta">Tri</span>
 					<select
 						bind:value={sortBy}
 						class="border-b border-foreground/15 bg-transparent py-[2px] pr-2 font-ui text-[12px] font-light uppercase tracking-[0.05em] text-foreground hover:border-active focus:border-active focus:outline-none"

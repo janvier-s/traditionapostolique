@@ -4,14 +4,39 @@
 	import type { Quote, Topic } from '$lib/schema';
 	import { renderFr } from '$lib/utils/render-fr';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
-	import QuotePanel from '$lib/components/ui/QuotePanel.svelte';
+	import QuotePanelAside from '$lib/components/ui/QuotePanelAside.svelte';
 	import { mode } from '$lib/stores/mode.svelte';
-
-	let openQuote = $state<Quote | null>(null);
-	function openPanel(q: Quote) { openQuote = q; }
-	function closePanel() { openQuote = null; }
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
+	let openQuote = $state<Quote | null>(null);
+	function openPanel(q: Quote) {
+		openQuote = q;
+		if (typeof history !== 'undefined') history.replaceState(null, '', `#q-${q.id}`);
+	}
+	function closePanel() {
+		openQuote = null;
+		if (typeof history !== 'undefined')
+			history.replaceState(null, '', window.location.pathname + window.location.search);
+	}
+	onMount(() => {
+		const m = window.location.hash.match(/^#q-(\d+)$/);
+		if (!m) return;
+		const id = Number(m[1]);
+		const q = data.quotes.find((x) => x.id === id);
+		if (q) {
+			openQuote = q;
+			requestAnimationFrame(() => {
+				document.getElementById(`q-${id}`)?.scrollIntoView({ block: 'center' });
+			});
+		}
+	});
+	$effect(() => {
+		if (!openQuote) return;
+		function onKey(e: KeyboardEvent) { if (e.key === 'Escape') closePanel(); }
+		document.addEventListener('keydown', onKey);
+		return () => document.removeEventListener('keydown', onKey);
+	});
 
 	// Group the work's quotes by topic · the marginal column shows the
 	// topic, the right column holds the actual quote text. Same shape
@@ -55,7 +80,7 @@
 		<div>
 			<a
 				href="/oeuvres"
-				class="mb-4 inline-flex items-baseline gap-1 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
+				class="mb-4 inline-flex items-baseline gap-1 label-meta hover:text-active"
 			>
 				<span aria-hidden="true">←</span> Toutes les œuvres
 			</a>
@@ -74,7 +99,7 @@
 			<!-- Attribution + meta strip. The author name is a link to
 			     the Père page so a reader can pivot from "this work" to
 			     "everything by this author". -->
-			<p class="mt-4 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+			<p class="mt-4 label-meta">
 				<a href={`/peres/${data.author.slug}`} class="hover:text-active">
 					{data.author.name}
 				</a>
@@ -97,7 +122,7 @@
 				</a>
 			{/if}
 
-			<p class="mt-4 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
+			<p class="mt-4 label-meta">
 				{data.quotes.length} citation{data.quotes.length > 1 ? 's' : ''}
 				·
 				{groups.length} sujet{groups.length > 1 ? 's' : ''}
@@ -146,7 +171,7 @@
 										type="button"
 										onclick={() => (openQuote?.id === q.id ? closePanel() : openPanel(q))}
 										aria-expanded={openQuote?.id === q.id}
-										class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
+										class="label-meta-link"
 									>
 										{openQuote?.id === q.id ? 'Fermer' : "Plus d'info"} <span aria-hidden="true">&rarr;</span>
 									</button>
@@ -161,12 +186,7 @@
 </div>
 
 {#if openQuote}
-	<aside
-		aria-label="À propos de la citation"
-		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
-	>
-		<QuotePanel quote={openQuote} onClose={closePanel} />
-	</aside>
+	<QuotePanelAside quote={openQuote} onClose={closePanel} label="À propos de la citation" />
 {/if}
 </article>
 
