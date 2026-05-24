@@ -6,7 +6,9 @@
 	import { renderFr } from '$lib/utils/render-fr';
 	import type { Quote, Era, Author } from '$lib/schema';
 	import { eraOrder, eraLabel, eraLabelSingular, eraLabelFeminine } from '$lib/utils/era';
-	import { mode, setMode } from '$lib/stores/mode.svelte';
+	import { mode } from '$lib/stores/mode.svelte';
+	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
+	import { fitHeading } from '$lib/utils/fit-heading';
 
 	let { data } = $props();
 
@@ -42,14 +44,22 @@
 		return `${ROMAN[c - 1] ?? c}e siècle`;
 	}
 
-	// Insert a line break before short connector words ("de", "d'", "of",
-	// etc.) so author names wrap on a natural particle in the narrow
-	// marginal column.
+	// Insert a single line break before the first short connector word
+	// ("de", "d'") so names like "Augustin d'Hippone" wrap as
+	// "Augustin / d'Hippone" in the narrow marginal column. Skipped for
+	// councils ("Concile de Carthage de 397") because repeated breaks on
+	// "de" would shred a name that reads better on one or two lines and
+	// would let the surrounding year fall off on its own.
 	function breakName(name: string): string {
-		return name
-			.split(' ')
-			.map((w, i) => (i > 0 && w.replace(/['’]/g, '').length <= 2 ? `<br/>${w}` : w))
-			.join(' ');
+		if (/^Concile/i.test(name)) return name;
+		const parts = name.split(' ');
+		for (let i = 1; i < parts.length; i++) {
+			if (parts[i].replace(/['’]/g, '').length <= 2) {
+				parts[i] = `<br/>${parts[i]}`;
+				break;
+			}
+		}
+		return parts.join(' ');
 	}
 
 	// Group quotes by author so each author/source gets a single marginal
@@ -395,38 +405,8 @@
 	<!-- Mode toggle (marginal column) + Siècle filter (main column) on the
 	     same row, both bottom-aligned so the toggle baseline meets the
 	     'Siècle' label baseline. -->
-	<div class="mb-12 grid grid-cols-1 items-end gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
-		<div class="flex items-baseline gap-2">
-			<span class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Mode</span>
-			<div
-				class="inline-flex rounded-full border border-foreground/15 p-[2px] font-ui text-[11px] font-light uppercase tracking-[0.1em]"
-				role="group"
-				aria-label="Mode de lecture"
-			>
-				<button
-					type="button"
-					onclick={() => setMode('read')}
-					aria-pressed={mode.value === 'read'}
-					class="rounded-full px-3 py-1 transition-colors hover:text-active"
-					class:bg-active={mode.value === 'read'}
-					class:text-foreground={mode.value === 'read'}
-					class:text-muted={mode.value !== 'read'}
-				>
-					Lecture
-				</button>
-				<button
-					type="button"
-					onclick={() => setMode('study')}
-					aria-pressed={mode.value === 'study'}
-					class="rounded-full px-3 py-1 transition-colors hover:text-active"
-					class:bg-active={mode.value === 'study'}
-					class:text-foreground={mode.value === 'study'}
-					class:text-muted={mode.value !== 'study'}
-				>
-					Étude
-				</button>
-			</div>
-		</div>
+	<div class="mb-12 grid grid-cols-1 items-baseline gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+		<ModeToggle />
 
 		{#if mode.value === 'study'}
 			<div>
@@ -508,6 +488,7 @@
 					     Relies on `lang="fr"` set on <html>; browsers use
 					     French syllable-break rules to insert soft hyphens. -->
 					<h2
+						use:fitHeading={{ shrunkPx: 20 }}
 						class="font-heading uppercase leading-[1.15] tracking-[0.04em] text-accent"
 						style="font-size: var(--author-name-size); hyphens: auto;"
 					>

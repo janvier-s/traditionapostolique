@@ -37,7 +37,7 @@
 </script>
 
 <div class="min-h-screen bg-background font-body text-foreground">
-	<div class="grid grid-cols-1 gap-x-12 px-6 py-8 lg:grid-cols-[330px_1fr] lg:gap-x-12 lg:px-12 lg:py-10">
+	<div class="grid grid-cols-1 gap-x-8 px-6 py-8 lg:grid-cols-[330px_1fr] lg:gap-x-8 lg:px-12 lg:py-10">
 		<aside class="lg:sticky lg:top-10 lg:max-h-[calc(100vh-3rem)] lg:self-start lg:pr-3 lg:flex lg:flex-col">
 			<!-- Logo · architectural mark + tracked small-caps wordmark. -->
 			<a href="/" class="block" aria-label="Accueil">

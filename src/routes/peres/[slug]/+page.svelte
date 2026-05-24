@@ -3,6 +3,13 @@
 	import { workById, topicById } from '$lib/data';
 	import { eraLabelSingular } from '$lib/utils/era';
 	import { renderFr } from '$lib/utils/render-fr';
+	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
+	import StudyPanel from '$lib/components/peres/StudyPanel.svelte';
+	import { mode } from '$lib/stores/mode.svelte';
+
+	let openQuote = $state<Quote | null>(null);
+	function openPanel(q: Quote) { openQuote = q; }
+	function closePanel() { openQuote = null; }
 	import type { Quote, Topic } from '$lib/schema';
 
 	let { data } = $props();
@@ -63,9 +70,15 @@
 	description={`Citations patristiques de ${data.author.name}.`}
 />
 
-<article style="--author-col: 200px; --quote-gap: 3rem;">
-	<header class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
-		<div></div>
+<article
+	style={`--author-col: ${openQuote ? '140px' : '210px'}; --quote-gap: ${openQuote ? '1rem' : '3rem'};`}
+	class={openQuote ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] lg:gap-x-8' : ''}
+>
+<div class="min-w-0">
+	<header class="mb-12 grid grid-cols-1 items-end gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]">
+		<div>
+			<ModeToggle />
+		</div>
 		<div>
 			<!-- Back link · returns to the Père index so a reader can keep
 			     browsing other Fathers from the same starting point. Sage-
@@ -167,12 +180,34 @@
 									{/if}
 								</p>
 							{/if}
+							{#if mode.value === 'study'}
+								<div class="mt-3">
+									<button
+										type="button"
+										onclick={() => (openQuote?.id === q.id ? closePanel() : openPanel(q))}
+										aria-expanded={openQuote?.id === q.id}
+										class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted underline-offset-4 hover:text-active hover:underline"
+									>
+										{openQuote?.id === q.id ? 'Fermer' : "Plus d'info"} <span aria-hidden="true">&rarr;</span>
+									</button>
+								</div>
+							{/if}
 						</div>
 					{/each}
 				</div>
 			</section>
 		{/each}
 	</div>
+</div>
+
+{#if openQuote}
+	<aside
+		aria-label="À propos de la citation"
+		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
+	>
+		<StudyPanel quote={openQuote} onClose={closePanel} />
+	</aside>
+{/if}
 </article>
 
 <style>
