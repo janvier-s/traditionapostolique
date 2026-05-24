@@ -724,13 +724,6 @@
     "authorId": 1047
   },
   {
-    "id": 91,
-    "slug": "system-91",
-    "title": "System:",
-    "alternativeTitles": [],
-    "authorId": 1048
-  },
-  {
     "id": 92,
     "slug": "canon-1-60-92",
     "title": "Canon 1–60",
@@ -1949,15 +1942,6 @@
       "Les véritables actes de Pierre d’Alexandrie"
     ],
     "authorId": 59
-  },
-  {
-    "id": 252,
-    "slug": "martyre-de-polycarpe-252",
-    "title": "Martyre de Polycarpe",
-    "alternativeTitles": [
-      "Note du copiste"
-    ],
-    "authorId": 1019
   },
   {
     "id": 254,
