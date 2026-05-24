@@ -4,7 +4,7 @@
 	import { eraLabelSingular } from '$lib/utils/era';
 	import { renderFr } from '$lib/utils/render-fr';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
-	import StudyPanel from '$lib/components/peres/StudyPanel.svelte';
+	import QuotePanel from '$lib/components/ui/QuotePanel.svelte';
 	import { mode } from '$lib/stores/mode.svelte';
 
 	let openQuote = $state<Quote | null>(null);
@@ -205,7 +205,7 @@
 		aria-label="À propos de la citation"
 		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
 	>
-		<StudyPanel quote={openQuote} onClose={closePanel} />
+		<QuotePanel quote={openQuote} onClose={closePanel} />
 	</aside>
 {/if}
 </article>

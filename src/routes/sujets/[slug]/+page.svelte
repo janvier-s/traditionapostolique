@@ -2,13 +2,13 @@
 	import { onMount } from 'svelte';
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import { authorById, workById, topicById } from '$lib/data';
-	import { formatCitation } from '$lib/utils/format-citation';
 	import { renderFr } from '$lib/utils/render-fr';
 	import type { Quote, Era, Author } from '$lib/schema';
-	import { eraOrder, eraLabel, eraLabelSingular, eraLabelFeminine } from '$lib/utils/era';
+	import { eraOrder, eraLabel, eraLabelSingular } from '$lib/utils/era';
 	import { mode } from '$lib/stores/mode.svelte';
 	import ModeToggle from '$lib/components/ui/ModeToggle.svelte';
 	import { fitHeading } from '$lib/utils/fit-heading';
+	import QuotePanel from '$lib/components/ui/QuotePanel.svelte';
 
 	let { data } = $props();
 
@@ -26,17 +26,6 @@
 		'I','II','III','IV','V','VI','VII','VIII','IX','X',
 		'XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI'
 	];
-	// The schema stores Greek and Syriac in a single `greek` field. Detect
-	// which one it actually is from the script range so the panel can
-	// label it accurately. Coptic (U+2C80–2CFF) and Aramaic (U+10840+) are
-	// rare enough that we lump them under "Grec / Syriaque" if we can't
-	// tell, but the two common cases land on a single clear label.
-	function originalLanguageLabel(text: string): string {
-		if (/[܀-ݏ]/.test(text)) return 'Syriaque';
-		if (/[Ͱ-Ͽἀ-῿]/.test(text)) return 'Grec';
-		return 'Grec / Syriaque';
-	}
-
 	function centuryLabel(author: Author): string {
 		const y = latestYear(author.dates);
 		if (y === 9999) return '';
@@ -54,8 +43,10 @@
 		if (/^Concile/i.test(name)) return name;
 		const parts = name.split(' ');
 		for (let i = 1; i < parts.length; i++) {
-			if (parts[i].replace(/['’]/g, '').length <= 2) {
-				parts[i] = `<br/>${parts[i]}`;
+			const w = parts[i];
+			if (!w) continue;
+			if (w.replace(/['’]/g, '').length <= 2) {
+				parts[i] = `<br/>${w}`;
 				break;
 			}
 		}
@@ -152,9 +143,7 @@
 	// splits into a two-column grid · the quotes column on the left,
 	// the panel on the right · pushing rather than overlaying (cf.
 	// catechismecatholique.com).
-	type Tab = 'auteur' | 'original' | 'sources' | 'notes';
 	let openQuote = $state<Quote | null>(null);
-	let activeTab = $state<Tab>('auteur');
 
 	// Topic-level panel · shares the right-column slot with the quote
 	// panel. Opening one closes the other (only one can be visible at
@@ -171,7 +160,6 @@
 	function openPanel(q: Quote) {
 		openQuote = q;
 		topicPanelOpen = false;
-		activeTab = 'auteur';
 		// Reflect the open quote in the URL hash so the panel state is
 		// linkable and shareable. `replaceState` keeps the back-button
 		// behaviour quiet · we don't want every open to add a history entry.
@@ -235,7 +223,7 @@
 	};
 	function parseMigne(s: string): { series: 'PG' | 'PL'; volume: number; col: number } | null {
 		const m = s.match(/\b(PG|PL)\b[\s.]*(?:vol\.?\s*)?(\d+)[\s,]*(?:col\.?\s*)?(\d+)?/i);
-		if (!m) return null;
+		if (!m || !m[1] || !m[2]) return null;
 		return {
 			series: m[1].toUpperCase() as 'PG' | 'PL',
 			volume: Number(m[2]),
@@ -269,7 +257,6 @@
 		const q = data.matching.find((x) => x.id === id);
 		if (!q) return;
 		openQuote = q;
-		activeTab = 'auteur';
 		// Defer the scroll until after the panel has rendered, otherwise
 		// the layout is still single-column and the target's final
 		// position is wrong.
@@ -294,45 +281,9 @@
 		return () => document.removeEventListener('keydown', onKey);
 	});
 
-	// Derived bits for the open quote · keeps the template tidy.
-	const openAuthor = $derived(openQuote ? authorById(openQuote.authorId) : null);
-	const openWork = $derived(openQuote?.workId ? workById(openQuote.workId) : null);
-	const openCentury = $derived(openAuthor ? centuryLabel(openAuthor) : '');
-
-	// Migne should only display when the value is a real PG (Patrologia
-	// Graeca) or PL (Patrologia Latina) reference. The data has stray
-	// non-Migne values left over from the spreadsheet (footnotes, URLs,
-	// running text) · this regex matches `PG <volume>, col. <num>` and
-	// `PL <volume>, col. <num>` with tolerance for spacing and the
-	// `vol.` token.
+	// Migne reference detector · used by the topic-level Migne index.
 	function looksLikeMigne(s: string): boolean {
 		return /\b(PG|PL)\b[\s.]*(vol\.?\s*)?\d/i.test(s);
-	}
-	const openMigne = $derived(
-		openQuote?.migne && looksLikeMigne(openQuote.migne) ? openQuote.migne : null
-	);
-	const openCitation = $derived(
-		openQuote && openAuthor
-			? formatCitation(openQuote, openAuthor, openWork ?? undefined)
-			: ''
-	);
-
-	const TABS: Array<{ id: Tab; label: string }> = [
-		{ id: 'auteur', label: 'Auteur' },
-		{ id: 'original', label: 'Original' },
-		{ id: 'sources', label: 'Sources' },
-		{ id: 'notes', label: 'Notes' }
-	];
-
-	let copiedKey = $state<string | null>(null);
-	async function copy(text: string, key: string) {
-		try {
-			await navigator.clipboard.writeText(text);
-			copiedKey = key;
-			setTimeout(() => (copiedKey = null), 1500);
-		} catch {
-			/* noop */
-		}
 	}
 
 	function citationOf(q: Quote): string {
@@ -767,292 +718,17 @@
 	</aside>
 {/if}
 
-{#if openQuote && openAuthor}
-	<!-- Inline study panel · sits in the right grid column when an
-	     openQuote is set. Pushes the main content rather than overlaying
-	     (per user direction: "function like the catechismecatholique one").
-	     Sticky positioning so the panel stays in view as the reader
-	     scrolls through quotes. On mobile (no `lg:` prefix) it stacks
-	     below the quotes. -->
+{#if openQuote}
+	<!-- Per-quote study panel · sits in the right grid column when an
+	     openQuote is set. Sticky on desktop, stacks below quotes on mobile. -->
 	<aside
 		aria-label="Plus d'infos sur la citation"
 		class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
 	>
-		<header class="mb-6">
-			<div class="flex items-baseline justify-between gap-4">
-				<h2
-					class="font-heading italic text-accent leading-[1.1]"
-					style="font-size: 1.5rem;"
-				>
-					{openAuthor.name}
-				</h2>
-				<button
-					type="button"
-					onclick={closePanel}
-					aria-label="Fermer"
-					class="font-heading text-[28px] leading-none text-muted hover:text-active"
-				>×</button>
-			</div>
-			<!-- Subtle permalink under the title · single-click copy with
-			     a brief "Copié" confirmation. Lives in the header so it
-			     reads as panel metadata, not as a Sources sub-field. -->
-			<button
-				type="button"
-				onclick={() =>
-					copy(
-						`${window.location.origin}${window.location.pathname}#q-${openQuote!.id}`,
-						'permalink'
-					)}
-				class="mt-1 inline-flex items-baseline gap-1 font-ui text-[10px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
-			>
-				<!-- Stacked-squares copy glyph · `currentColor` lets it pick
-				     up the button's text colour (muted → sage-olive on hover). -->
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					aria-hidden="true"
-					width="13"
-					height="13"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-				>
-					<path d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z" />
-					<path d="M4.012 16.737A2 2 0 0 1 3 15V5c0-1.1.9-2 2-2h10c.75 0 1.158.385 1.5 1" />
-				</svg>
-				{copiedKey === 'permalink' ? 'Lien copié' : 'Copier le lien vers cette citation'}
-			</button>
-		</header>
-
-		<div
-			role="tablist"
-			aria-label="Sections d'information"
-			class="mb-6 flex gap-1 border-b border-border"
-		>
-			{#each TABS as t (t.id)}
-				{@const isActive = activeTab === t.id}
-				<button
-					type="button"
-					role="tab"
-					aria-selected={isActive}
-					onclick={() => (activeTab = t.id)}
-					class="-mb-px border-b px-3 py-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] transition-colors"
-					class:border-active={isActive}
-					class:text-active={isActive}
-					class:border-transparent={!isActive}
-					class:text-muted={!isActive}
-				>
-					{t.label}
-				</button>
-			{/each}
-		</div>
-
-		<div class="font-body text-[15px] leading-[1.6]">
-			{#if activeTab === 'auteur'}
-				<dl class="space-y-4">
-					<div>
-						<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Nom</dt>
-						<dd class="mt-1">{openAuthor.name}</dd>
-					</div>
-					{#if openAuthor.originalName}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Nom d'origine</dt>
-							<dd class="mt-1 italic">{openAuthor.originalName}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.dates}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Dates</dt>
-							<dd class="mt-1">{openAuthor.dates}</dd>
-						</div>
-					{/if}
-					{#if openCentury}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Siècle</dt>
-							<dd class="mt-1">{openCentury}</dd>
-						</div>
-					{/if}
-					<div>
-						<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Ère</dt>
-						<dd class="mt-1">{eraLabelFeminine(openAuthor.era)}</dd>
-					</div>
-					{#if openAuthor.region}
-						{@const regions = openAuthor.region
-							.split(',')
-							.map((s) => s.trim())
-							.filter(Boolean)}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
-								{regions.length > 1 ? 'Régions' : 'Région'}
-							</dt>
-							<dd class="mt-1">{regions.join(' · ')}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.function}
-						{@const roles = openAuthor.function
-							.split(',')
-							.map((s) => s.trim())
-							.filter(Boolean)}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
-								{roles.length > 1 ? 'Rôles' : 'Rôle'}
-							</dt>
-							<dd class="mt-1">{roles.join(' · ')}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.language?.length}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
-								{openAuthor.language.length > 1 ? 'Langues' : 'Langue'}
-							</dt>
-							<dd class="mt-1">{openAuthor.language.join(' · ')}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.status}
-						{@const distinctions = openAuthor.status
-							.split(',')
-							.map((s) => s.trim())
-							.filter(Boolean)}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
-								{distinctions.length > 1 ? 'Distinctions' : 'Distinction'}
-							</dt>
-							<dd class="mt-1">{distinctions.join(' · ')}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.feastDay}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Fête le</dt>
-							<dd class="mt-1">{openAuthor.feastDay}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.groups?.length}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
-								{openAuthor.groups.length > 1 ? 'Groupes' : 'Groupe'}
-							</dt>
-							<dd class="mt-1">{openAuthor.groups.join(' · ')}</dd>
-						</div>
-					{/if}
-					{#if openAuthor.sources?.wikipedia || openAuthor.sources?.wikisource}
-						<!-- External references · Wikipedia for the encyclopaedic
-						     entry, Wikisource for the author's works in original
-						     language when available. Both open in a new tab. -->
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Liens externes</dt>
-							<dd class="mt-1 flex flex-col gap-1">
-								{#if openAuthor.sources.wikipedia}
-									<a
-										href={openAuthor.sources.wikipedia}
-										target="_blank"
-										rel="noopener"
-										class="font-ui text-[12px] font-light uppercase tracking-[0.05em] text-active hover:underline"
-									>
-										Wikipédia <span aria-hidden="true">↗</span>
-									</a>
-								{/if}
-								{#if openAuthor.sources.wikisource}
-									<a
-										href={openAuthor.sources.wikisource}
-										target="_blank"
-										rel="noopener"
-										class="font-ui text-[12px] font-light uppercase tracking-[0.05em] text-active hover:underline"
-									>
-										Wikisource <span aria-hidden="true">↗</span>
-									</a>
-								{/if}
-							</dd>
-						</div>
-					{/if}
-				</dl>
-			{:else if activeTab === 'original'}
-				<div class="space-y-5">
-					{#if openQuote.latin}
-						<section>
-							<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Latin</h3>
-							<p class="mt-2 italic">{openQuote.latin}</p>
-						</section>
-					{/if}
-					{#if openQuote.greek}
-						<section>
-							<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">
-								{originalLanguageLabel(openQuote.greek)}
-							</h3>
-							<p class="mt-2 italic">{openQuote.greek}</p>
-						</section>
-					{/if}
-					{#if !openQuote.latin && !openQuote.greek}
-						<p class="italic text-muted">Texte original non disponible.</p>
-					{/if}
-				</div>
-			{:else if activeTab === 'sources'}
-				<div class="space-y-5">
-					{#if openMigne}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Migne</dt>
-							<dd class="mt-2 flex flex-wrap items-center gap-2">
-								<code class="border border-border px-2 py-0.5 font-ui text-[13px]">{openMigne}</code>
-								<button
-									type="button"
-									onclick={() => copy(openMigne!, 'migne')}
-									class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
-								>{copiedKey === 'migne' ? 'Copié' : 'Copier'}</button>
-							</dd>
-						</div>
-					{/if}
-					{#if openCitation}
-						<div>
-							<dt class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Citation académique</dt>
-							<dd class="mt-2">
-								<span class="italic">{openCitation}</span>
-								<button
-									type="button"
-									onclick={() => copy(openCitation, 'citation')}
-									class="ml-2 font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted hover:text-active"
-								>{copiedKey === 'citation' ? 'Copié' : 'Copier'}</button>
-							</dd>
-						</div>
-					{/if}
-					{#if openQuote.links?.primary}
-						<a href={openQuote.links.primary} target="_blank" rel="noopener"
-							class="block font-ui text-[12px] font-light uppercase tracking-[0.1em] text-active hover:underline">
-							Source primaire <span aria-hidden="true">↗</span>
-						</a>
-					{/if}
-					{#if openQuote.links?.archive}
-						<a href={openQuote.links.archive} target="_blank" rel="noopener"
-							class="block font-ui text-[12px] font-light uppercase tracking-[0.1em] text-active hover:underline">
-							Archive.org <span aria-hidden="true">↗</span>
-						</a>
-					{/if}
-					{#if !openMigne && !openCitation && !openQuote.links?.primary && !openQuote.links?.archive}
-						<p class="italic text-muted">Aucune source externe.</p>
-					{/if}
-				</div>
-			{:else}
-				<div class="space-y-5">
-					{#if openQuote.context}
-						<section>
-							<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Contexte</h3>
-							<p class="mt-2" style="white-space: pre-line;">{@html renderFr(openQuote.context)}</p>
-						</section>
-					{/if}
-					{#if openQuote.notes}
-						<section>
-							<h3 class="font-ui text-[11px] font-light uppercase tracking-[0.1em] text-muted">Notes</h3>
-							<p class="mt-2" style="white-space: pre-line;">{@html renderFr(openQuote.notes)}</p>
-						</section>
-					{/if}
-					{#if !openQuote.context && !openQuote.notes}
-						<p class="italic text-muted">Aucune note.</p>
-					{/if}
-				</div>
-			{/if}
-		</div>
+		<QuotePanel quote={openQuote} onClose={closePanel} />
 	</aside>
 {/if}
+
 </article>
 
 <style>

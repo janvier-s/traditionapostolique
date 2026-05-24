@@ -1,6 +1,6 @@
 <script lang="ts">
 	import QuoteCard from '$lib/components/peres/QuoteCard.svelte';
-	import StudyPanel from '$lib/components/peres/StudyPanel.svelte';
+	import QuotePanel from '$lib/components/ui/QuotePanel.svelte';
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 	import type { Quote } from '$lib/schema';
 
@@ -15,4 +15,6 @@
 	<QuoteCard quote={data.quote} onOpenPanel={(q) => (openQuote = q)} />
 </section>
 
-<StudyPanel quote={openQuote} onClose={() => (openQuote = null)} />
+{#if openQuote}
+	<QuotePanel quote={openQuote} onClose={() => (openQuote = null)} />
+{/if}
