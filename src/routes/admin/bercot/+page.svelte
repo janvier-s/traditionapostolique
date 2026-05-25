@@ -323,6 +323,7 @@
 		entries={activeSiblings}
 		topics={data.topics}
 		authors={data.authors}
+		works={data.works}
 		onClose={() => {
 			activeId = null;
 			lastTrigger?.focus();

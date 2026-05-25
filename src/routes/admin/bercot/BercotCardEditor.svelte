@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Author, BercotEntry, BercotStatus, Topic } from '$lib/schema';
+	import type { Author, BercotEntry, BercotStatus, Topic, Work } from '$lib/schema';
 	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
 
 	type Props = {
@@ -7,12 +7,13 @@
 		entries: BercotEntry[]; // siblings (for prev/next within current filter)
 		topics: Topic[];
 		authors: Author[];
+		works: Work[];
 		onClose: () => void;
 		onSaved: (updated: BercotEntry) => void;
 		onPublished: (updated: BercotEntry, newQuoteId: number) => void;
 		onNavigate: (delta: -1 | 1) => void;
 	};
-	let { entry, entries, topics, authors, onClose, onSaved, onPublished, onNavigate }: Props =
+	let { entry, entries, topics, authors, works, onClose, onSaved, onPublished, onNavigate }: Props =
 		$props();
 
 	let dialogEl = $state<HTMLDivElement | null>(null);
@@ -42,6 +43,7 @@
 
 	const topicFlat = $derived(flattenTree(buildTopicTree(topics)));
 	const authorOptions = $derived(authors.slice().sort((a, b) => a.name.localeCompare(b.name, 'fr')));
+	const workOptions = $derived(works.slice().sort((a, b) => a.title.localeCompare(b.title, 'fr')));
 
 	function update<K extends keyof BercotEntry>(key: K, value: BercotEntry[K]) {
 		draft = { ...draft, [key]: value };
@@ -161,10 +163,10 @@
 		<header class="flex items-center justify-between gap-3 border-b border-border px-4 py-2.5">
 			<div class="flex min-w-0 flex-col gap-0.5">
 				<p class="truncate font-ui text-[11px] uppercase tracking-wider text-muted">
-					{entry.sourceEntry}{entry.subsection ? ` · ${entry.subsection}` : ''}
+					{draft.sourceEntry}{draft.subsection ? ` · ${draft.subsection}` : ''}
 				</p>
 				<div class="flex flex-wrap items-center gap-2">
-					<p class="truncate text-xs text-muted">{entry.attribution}</p>
+					<p class="truncate text-xs text-muted">{draft.attribution}</p>
 					{#if entry.dedupMatch != null}
 						<a
 							class="inline-flex items-center gap-1 rounded border border-sky-500/40 bg-sky-500/10 px-1.5 py-0.5 font-ui text-[10px] text-sky-700 hover:bg-sky-500/20"
@@ -221,25 +223,42 @@
 			</section>
 
 			<!-- RIGHT: editable form -->
-			<section class="space-y-4 p-5">
-				<!-- Primary: FR translation — most important field -->
+			<section class="space-y-4 overflow-y-auto p-5">
+				<!-- ── Group 1: Traductions ── -->
 				<div>
-					<label
-						for="bercot-fr"
-						class="block font-ui text-[10px] uppercase tracking-wider text-muted"
-					>
+					<label for="bercot-fr" class="block font-ui text-[10px] uppercase tracking-wider text-muted">
 						Traduction française
 					</label>
 					<textarea
 						id="bercot-fr"
-						class="mt-2 h-44 w-full rounded border border-border bg-panel px-3 py-2 text-[15px] leading-relaxed text-foreground"
+						class="mt-2 h-48 w-full rounded border border-border bg-panel px-3 py-2 text-[15px] leading-relaxed text-foreground"
 						value={draft.fr ?? ''}
 						oninput={(e) => update('fr', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
 					></textarea>
 				</div>
 
-				<!-- Divider: secondary fields below -->
-				<div class="border-t border-border pt-4">
+				<label class="block">
+					<span class="font-ui text-[10px] uppercase tracking-wider text-muted">Latin</span>
+					<textarea
+						class="mt-1 h-32 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+						value={draft.latin ?? ''}
+						oninput={(e) =>
+							update('latin', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
+					></textarea>
+				</label>
+
+				<label class="block">
+					<span class="font-ui text-[10px] uppercase tracking-wider text-muted">Grec</span>
+					<textarea
+						class="mt-1 h-32 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+						value={draft.greek ?? ''}
+						oninput={(e) =>
+							update('greek', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
+					></textarea>
+				</label>
+
+				<!-- ── Group 2: Métadonnées de citation ── -->
+				<div class="border-t border-border pt-4 space-y-3">
 					<!-- Author -->
 					<label class="block">
 						<span class="font-ui text-[10px] uppercase tracking-wider text-muted"
@@ -260,44 +279,145 @@
 						</select>
 					</label>
 
-					<!-- Source URL -->
-					<label class="mt-3 block">
+					<!-- Work -->
+					<label class="block">
+						<span class="font-ui text-[10px] uppercase tracking-wider text-muted">Œuvre</span>
+						<select
+							class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+							value={draft.workId ?? ''}
+							onchange={(e) => {
+								const v = (e.currentTarget as HTMLSelectElement).value;
+								update('workId', v === '' ? undefined : Number(v));
+							}}
+						>
+							<option value="">(non assignée)</option>
+							{#each workOptions as w (w.id)}
+								<option value={w.id}>{w.title}</option>
+							{/each}
+						</select>
+					</label>
+
+					<!-- Study title -->
+					<label class="block">
 						<span class="font-ui text-[10px] uppercase tracking-wider text-muted"
-							>Source originale (URL)</span
+							>Référence d'étude</span
 						>
 						<input
-							type="url"
-							placeholder="https://…"
+							type="text"
 							class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
-							value={draft.linksPrimary ?? ''}
+							value={draft.studyTitle ?? ''}
 							oninput={(e) =>
-								update('linksPrimary', (e.currentTarget as HTMLInputElement).value || undefined)}
+								update('studyTitle', (e.currentTarget as HTMLInputElement).value || undefined)}
 						/>
 					</label>
 
-					<!-- Status chips -->
-					<div class="mt-3">
-						<p class="font-ui text-[10px] uppercase tracking-wider text-muted">Statut</p>
-						<div class="mt-1.5 flex flex-wrap gap-1.5 text-xs">
-							{#each STATUS as s (s)}
-								<button
-									type="button"
-									onclick={() => update('status', s)}
-									class={[
-										'rounded border px-2.5 py-1 font-ui text-[11px] transition-colors',
-										draft.status === s
-											? STATUS_ACTIVE[s]
-											: 'border-border text-muted hover:bg-subtle/10'
-									]}
-								>
-									{STATUS_LABEL[s]}
-								</button>
-							{/each}
-						</div>
-					</div>
+					<!-- Migne -->
+					<label class="block">
+						<span class="font-ui text-[10px] uppercase tracking-wider text-muted"
+							>Référence Migne</span
+						>
+						<input
+							type="text"
+							placeholder="ex. PL 14, 423"
+							class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+							value={draft.migne ?? ''}
+							oninput={(e) =>
+								update('migne', (e.currentTarget as HTMLInputElement).value || undefined)}
+						/>
+					</label>
 
+					<!-- Context -->
+					<label class="block">
+						<span class="font-ui text-[10px] uppercase tracking-wider text-muted">Contexte</span>
+						<textarea
+							class="mt-1 h-20 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+							value={draft.context ?? ''}
+							oninput={(e) =>
+								update('context', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
+						></textarea>
+					</label>
+
+					<!-- Links -->
+					<div>
+						<p class="font-ui text-[10px] uppercase tracking-wider text-muted">Liens</p>
+						<label class="mt-2 block">
+							<span class="font-ui text-[10px] text-muted">Source primaire (URL)</span>
+							<input
+								type="url"
+								placeholder="https://…"
+								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+								value={draft.linksPrimary ?? ''}
+								oninput={(e) =>
+									update('linksPrimary', (e.currentTarget as HTMLInputElement).value || undefined)}
+							/>
+						</label>
+						<label class="mt-2 block">
+							<span class="font-ui text-[10px] text-muted">Archive (URL)</span>
+							<input
+								type="url"
+								placeholder="https://…"
+								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+								value={draft.linksArchive ?? ''}
+								oninput={(e) =>
+									update('linksArchive', (e.currentTarget as HTMLInputElement).value || undefined)}
+							/>
+						</label>
+					</div>
+				</div>
+
+				<!-- ── Group 3: Source Bercot originale ── -->
+				<div class="border-t border-border pt-4">
+					<p class="mb-2 font-ui text-[10px] uppercase tracking-wider text-muted">
+						Source Bercot originale
+					</p>
+					<fieldset class="rounded border border-amber-500/30 bg-amber-500/5 p-3 space-y-3">
+						<legend class="sr-only">Métadonnées Bercot originales</legend>
+
+						<label class="block">
+							<span class="font-ui text-[10px] uppercase tracking-wider text-muted"
+								>Entrée du dictionnaire</span
+							>
+							<input
+								type="text"
+								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+								value={draft.sourceEntry}
+								oninput={(e) =>
+									update('sourceEntry', (e.currentTarget as HTMLInputElement).value)}
+							/>
+						</label>
+
+						<label class="block">
+							<span class="font-ui text-[10px] uppercase tracking-wider text-muted"
+								>Sous-section</span
+							>
+							<input
+								type="text"
+								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+								value={draft.subsection ?? ''}
+								oninput={(e) =>
+									update('subsection', (e.currentTarget as HTMLInputElement).value || undefined)}
+							/>
+						</label>
+
+						<label class="block">
+							<span class="font-ui text-[10px] uppercase tracking-wider text-muted"
+								>Attribution brute Bercot</span
+							>
+							<input
+								type="text"
+								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
+								value={draft.attribution}
+								oninput={(e) =>
+									update('attribution', (e.currentTarget as HTMLInputElement).value)}
+							/>
+						</label>
+					</fieldset>
+				</div>
+
+				<!-- ── Group 4: Classification ── -->
+				<div class="border-t border-border pt-4 space-y-3">
 					<!-- Topics -->
-					<div class="mt-3">
+					<div>
 						<p class="font-ui text-[10px] uppercase tracking-wider text-muted">Sujets rattachés</p>
 						<div class="mt-1 max-h-40 overflow-y-auto rounded border border-border bg-panel p-2">
 							{#each topicFlat as { topic: t, depth } (t.id)}
@@ -318,8 +438,29 @@
 						</div>
 					</div>
 
+					<!-- Status chips -->
+					<div>
+						<p class="font-ui text-[10px] uppercase tracking-wider text-muted">Statut</p>
+						<div class="mt-1.5 flex flex-wrap gap-1.5 text-xs">
+							{#each STATUS as s (s)}
+								<button
+									type="button"
+									onclick={() => update('status', s)}
+									class={[
+										'rounded border px-2.5 py-1 font-ui text-[11px] transition-colors',
+										draft.status === s
+											? STATUS_ACTIVE[s]
+											: 'border-border text-muted hover:bg-subtle/10'
+									]}
+								>
+									{STATUS_LABEL[s]}
+								</button>
+							{/each}
+						</div>
+					</div>
+
 					<!-- Notes -->
-					<label class="mt-3 block">
+					<label class="block">
 						<span class="font-ui text-[10px] uppercase tracking-wider text-muted">Notes</span>
 						<textarea
 							class="mt-1 h-16 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
