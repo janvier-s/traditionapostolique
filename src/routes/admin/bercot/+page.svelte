@@ -1,6 +1,7 @@
 <script lang="ts">
-	import type { BercotEntry, BercotStatus } from '$lib/schema';
+	import type { BercotEntry, BercotStatus, Topic } from '$lib/schema';
 	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
+	import BercotCardEditor from './BercotCardEditor.svelte';
 
 	let { data } = $props();
 
@@ -86,6 +87,36 @@
 	};
 
 	const STATUSES: (BercotStatus | 'all')[] = ['all', 'pending', 'kept', 'rejected', 'published'];
+
+	let activeId = $state<string | null>(null);
+	let lastTrigger = $state<HTMLElement | null>(null);
+	const activeEntry = $derived(
+		activeId ? data.bercot.find((b) => b.id === activeId) ?? null : null
+	);
+	const activeSiblings = $derived(view === 'topic' ? candidatesForTopic : ungroupedEntries);
+	const activeIndex = $derived.by(() => {
+		if (!activeId) return -1;
+		return activeSiblings.findIndex((b) => b.id === activeId);
+	});
+
+	function navigate(delta: -1 | 1) {
+		if (activeIndex === -1) return;
+		const next = activeSiblings[activeIndex + delta];
+		if (next) activeId = next.id;
+	}
+
+	function onEditorSaved(updated: BercotEntry) {
+		const i = data.bercot.findIndex((b) => b.id === updated.id);
+		if (i !== -1) data.bercot[i] = updated;
+	}
+
+	function onEditorPublished(updated: BercotEntry, _newQuoteId: number) {
+		onEditorSaved(updated);
+		// Refresh quotes list lazily so any other view that uses it sees the new draft
+		void fetch('/admin/api/quotes')
+			.then((r) => r.json())
+			.then((qs) => (data.quotes = qs));
+	}
 </script>
 
 <h1 class="font-heading text-2xl">Bercot ({stats.total})</h1>
@@ -200,8 +231,14 @@
 
 				<div class="grid grid-cols-1 gap-2 lg:grid-cols-2">
 					{#each candidatesForTopic as b (b.id)}
-						<!-- TODO T11: wrap in <button onclick={() => (activeId = b.id)}> to open editor -->
-						<article class="rounded border border-border bg-panel/30 p-3 text-sm">
+						<button
+							type="button"
+							onclick={(e) => {
+								lastTrigger = e.currentTarget as HTMLElement;
+								activeId = b.id;
+							}}
+							class="block w-full rounded border border-border bg-panel/30 p-3 text-left text-sm hover:bg-subtle/10"
+						>
 							<div class="mb-1 flex items-center justify-between gap-2">
 								<span class="text-[10px] uppercase tracking-wider text-muted">
 									{b.sourceEntry}{b.subsection ? ` · ${b.subsection}` : ''}
@@ -214,10 +251,10 @@
 							<p class="mt-2 text-[11px] text-muted">{b.attribution}</p>
 							{#if b.siteQuoteId != null}
 								<p class="mt-1 text-[11px] text-sky-700">
-									→ <a class="underline" href={`/admin/citations#${b.siteQuoteId}`}>quote #{b.siteQuoteId}</a>
+									→ quote #{b.siteQuoteId}
 								</p>
 							{/if}
-						</article>
+						</button>
 					{/each}
 					{#if candidatesForTopic.length === 0}
 						<p class="text-sm italic text-muted">Aucun candidat Bercot pour ce filtre.</p>
@@ -252,4 +289,21 @@
 			{/each}
 		</ul>
 	</div>
+{/if}
+
+{#if activeEntry}
+	<BercotCardEditor
+		entry={activeEntry}
+		entries={activeSiblings}
+		topics={data.topics}
+		authors={data.authors}
+		onClose={() => {
+			activeId = null;
+			lastTrigger?.focus();
+			lastTrigger = null;
+		}}
+		onSaved={onEditorSaved}
+		onPublished={onEditorPublished}
+		onNavigate={navigate}
+	/>
 {/if}
