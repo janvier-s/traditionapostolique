@@ -8,7 +8,9 @@
 		<a href="/admin/auteurs">Auteurs</a>
 		<a href="/admin/oeuvres">Œuvres</a>
 		<a href="/admin/sujets">Sujets</a>
+		<a href="/admin/hierarchie">Hiérarchie</a>
 		<a href="/admin/citations">Citations</a>
+		<a href="/admin/bercot">Bercot</a>
 		<a href="/admin/gaps">Gaps</a>
 	</nav>
 	{@render children()}
