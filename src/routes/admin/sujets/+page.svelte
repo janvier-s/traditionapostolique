@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Quote, Section, Topic } from '$lib/schema';
+	import type { Quote, Section, Topic, Pillar } from '$lib/schema';
 	import { watchHashSelection } from '../hash-select';
 	import { bindEditorShortcuts } from '../editor-utils.svelte';
+	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
 
 	let items = $state<Topic[]>([]);
 	let quotes = $state<Quote[]>([]);
@@ -13,6 +14,12 @@
 	let saving = $state(false);
 
 	const SECTIONS: Section[] = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
+	const PILLARS: { value: Pillar; label: string }[] = [
+		{ value: 'credo', label: 'Credo — Profession de la foi (CCC I)' },
+		{ value: 'sacrements', label: 'Sacrements et liturgie (CCC II)' },
+		{ value: 'vie', label: 'Vie en Christ — Morale (CCC III)' },
+		{ value: 'priere', label: 'Prière (CCC IV)' }
+	];
 
 	onMount(async () => {
 		const [t, q] = await Promise.all([
@@ -31,13 +38,28 @@
 		return m;
 	});
 
-	const filtered = $derived(
-		items
-			.map((t, i) => ({ t, i }))
-			.filter(({ t }) => t.label.toLowerCase().includes(search.toLowerCase()))
+	// Sidebar list: tree-flattened, search filters at any depth
+	const flat = $derived.by(() =>
+		flattenTree(buildTopicTree(items)).map((n) => ({
+			...n,
+			idx: items.findIndex((t) => t.id === n.topic.id)
+		}))
 	);
+	const filtered = $derived.by(() => {
+		const q = search.trim().toLowerCase();
+		if (!q) return flat;
+		return flat.filter((n) => n.topic.label.toLowerCase().includes(q));
+	});
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
+	const selectedIsTopLevel = $derived(selected?.parentId == null);
+
+	// Available parents: only top-level topics, excluding the current one
+	const parentOptions = $derived.by(() => {
+		if (!selected) return items.filter((t) => t.parentId == null);
+		return items.filter((t) => t.parentId == null && t.id !== selected.id);
+	});
+
 	const selectedQuotes = $derived(
 		selected ? quotes.filter((q) => q.topicIds.includes(selected.id)) : []
 	);
@@ -86,21 +108,23 @@
 			class="w-full rounded border border-border bg-panel px-2 py-1"
 		/>
 		<ul class="mt-2 max-h-[70vh] overflow-y-auto">
-			{#each filtered as { t, i } (t.id)}
+			{#each filtered as { topic: t, depth, idx } (t.id)}
 				{@const n = quoteCountByTopic.get(t.id) ?? 0}
 				<li id={`row-${t.id}`}>
 					<button
 						type="button"
 						onclick={() => {
-							selectedIdx = i;
+							selectedIdx = idx;
 						}}
 						class={[
 							'block w-full rounded px-2 py-1 text-left hover:bg-subtle/10',
-							selectedIdx === i && 'bg-subtle/20'
+							selectedIdx === idx && 'bg-subtle/20'
 						]}
+						style={depth > 0 ? `padding-left: ${0.5 + depth * 1}rem` : ''}
 					>
 						<span class="flex items-baseline justify-between gap-2">
 							<span class="min-w-0 truncate" class:text-muted={n === 0}>
+								{#if depth > 0}<span class="mr-1 text-muted" aria-hidden="true">↳</span>{/if}
 								{t.label}
 								<span class="ml-1 text-xs text-muted">{t.section}</span>
 							</span>
@@ -157,6 +181,56 @@
 						class={INPUT}
 						value={selected.groupe}
 						oninput={(e) => update('groupe', (e.currentTarget as HTMLInputElement).value)}
+					/>
+				</label>
+				<label class="block">
+					Parent
+					<select
+						class={INPUT}
+						value={selected.parentId ?? ''}
+						onchange={(e) => {
+							const v = (e.currentTarget as HTMLSelectElement).value;
+							update('parentId', v === '' ? undefined : Number(v));
+						}}
+					>
+						<option value="">(racine — sujet de premier niveau)</option>
+						{#each parentOptions as p (p.id)}
+							<option value={p.id}>{p.label}</option>
+						{/each}
+					</select>
+				</label>
+				{#if selectedIsTopLevel}
+					<label class="block">
+						Pilier (CCC)
+						<select
+							class={INPUT}
+							value={selected.pillar ?? ''}
+							onchange={(e) => {
+								const v = (e.currentTarget as HTMLSelectElement).value as Pillar | '';
+								update('pillar', v === '' ? undefined : v);
+							}}
+						>
+							<option value="">(non classé)</option>
+							{#each PILLARS as p (p.value)}
+								<option value={p.value}>{p.label}</option>
+							{/each}
+						</select>
+					</label>
+				{:else}
+					<p class="text-xs italic text-muted">
+						Pilier hérité du sujet parent.
+					</p>
+				{/if}
+				<label class="block">
+					Ordre
+					<input
+						type="number"
+						class={INPUT}
+						value={selected.order ?? ''}
+						oninput={(e) => {
+							const v = (e.currentTarget as HTMLInputElement).value;
+							update('order', v === '' ? undefined : Number(v));
+						}}
 					/>
 				</label>
 				<label class="block">
