@@ -134,7 +134,7 @@ export async function POST({ request }) {
 		}
 	}
 
-	const v = validateParentRefs(topics, quotes);
+	const v = validateParentRefs(topics);
 	if (!v.ok) throw error(400, `validation failed: ${v.error}`);
 
 	const root = process.cwd();

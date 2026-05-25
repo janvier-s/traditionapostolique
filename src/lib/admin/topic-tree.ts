@@ -102,8 +102,9 @@ export function validateParentRefs(topics: Topic[], quotes?: Quote[]): ValidateR
 	}
 	const themeIds = new Set(childrenByParent.keys());
 
-	// Invariant 2: theme has zero direct quote refs (cross-collection)
+	// Invariants 2 & 3: end-state invariants — only checked when quotes are provided
 	if (quotes) {
+		// Invariant 2: theme has zero direct quote refs (cross-collection)
 		for (const q of quotes) {
 			for (const tid of q.topicIds) {
 				if (themeIds.has(tid)) {
@@ -115,24 +116,24 @@ export function validateParentRefs(topics: Topic[], quotes?: Quote[]): ValidateR
 				}
 			}
 		}
-	}
 
-	// Invariant 3: each theme has exactly one primary aspect
-	for (const [themeId, children] of childrenByParent) {
-		const primaries = children.filter((c) => c.primary === true);
-		if (primaries.length === 0) {
-			const theme = byId.get(themeId)!;
-			return {
-				ok: false,
-				error: `Theme ${themeId} (${theme.slug}) has no primary aspect — exactly one child must have primary: true`
-			};
-		}
-		if (primaries.length > 1) {
-			const theme = byId.get(themeId)!;
-			return {
-				ok: false,
-				error: `Theme ${themeId} (${theme.slug}) has ${primaries.length} primary aspects — only one is allowed`
-			};
+		// Invariant 3: each theme has exactly one primary aspect
+		for (const [themeId, children] of childrenByParent) {
+			const primaries = children.filter((c) => c.primary === true);
+			if (primaries.length === 0) {
+				const theme = byId.get(themeId)!;
+				return {
+					ok: false,
+					error: `Theme ${themeId} (${theme.slug}) has no primary aspect — exactly one child must have primary: true`
+				};
+			}
+			if (primaries.length > 1) {
+				const theme = byId.get(themeId)!;
+				return {
+					ok: false,
+					error: `Theme ${themeId} (${theme.slug}) has ${primaries.length} primary aspects — only one is allowed`
+				};
+			}
 		}
 	}
 

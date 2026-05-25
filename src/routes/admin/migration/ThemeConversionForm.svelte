@@ -18,7 +18,7 @@
   // svelte-ignore state_referenced_locally
   let primaryLabel = $state(root.label);
   // svelte-ignore state_referenced_locally
-  let primarySlug = $state(root.slug + '-general');
+  let primarySlug = $state(root.slug);
   let busy = $state(false);
   let applied = $state(false);
 
