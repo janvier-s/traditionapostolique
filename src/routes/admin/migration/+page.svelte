@@ -164,7 +164,44 @@
       </p>
     {/if}
   {:else if activeBucket === 3}
-    <p class="italic text-muted">Bucket 3 (Orphelins) — implémenté dans Task 15.</p>
+    {@const ORPHAN_PROPOSALS = [
+      { orphanId: 88, targetThemeLabel: 'Hérésies', targetThemeSlug: 'heresies' },
+      { orphanId: 89, targetThemeLabel: 'Hérésies', targetThemeSlug: 'heresies' },
+      { orphanId: 90, targetThemeLabel: 'Hérésies', targetThemeSlug: 'heresies' },
+      { orphanId: 91, targetThemeLabel: 'Hérésies', targetThemeSlug: 'heresies' },
+      { orphanId: 92, targetThemeLabel: 'Hérésies', targetThemeSlug: 'heresies' },
+      { orphanId: 93, targetThemeLabel: 'Hérésies', targetThemeSlug: 'heresies' },
+      { orphanId: 136, targetThemeLabel: 'Discipline chrétienne', targetThemeSlug: 'discipline-chretienne' },
+      { orphanId: 137, targetThemeLabel: 'Discipline chrétienne', targetThemeSlug: 'discipline-chretienne' },
+      { orphanId: 135, targetThemeLabel: 'Discipline chrétienne', targetThemeSlug: 'discipline-chretienne' },
+      { orphanId: 133, targetThemeLabel: 'Justice et devoir', targetThemeSlug: 'justice-et-devoir' },
+      { orphanId: 134, targetThemeLabel: 'Justice et devoir', targetThemeSlug: 'justice-et-devoir' },
+      { orphanId: 132, targetThemeLabel: 'Loi morale', targetThemeSlug: 'loi-morale' },
+      { orphanId: 130, targetThemeLabel: 'Superstition', targetThemeSlug: 'superstition' },
+      { orphanId: 131, targetThemeLabel: 'Marie et les saints', targetThemeSlug: 'marie-et-les-saints' },
+      { orphanId: 142, targetThemeLabel: 'Les sacrements', targetThemeSlug: 'les-sacrements' },
+      { orphanId: 146, targetThemeLabel: 'Anthropologie chrétienne', targetThemeSlug: 'anthropologie-chretienne' }
+    ]}
+    <p class="text-sm text-muted">
+      Suggestions de placement pour les racines orphelines (ajoutées récemment, encore sans thème).
+      Vue en lecture seule en v1.
+    </p>
+    <p class="mt-2 text-xs text-amber-700">
+      ⚠️ Ce bucket nécessite que les thèmes cibles existent. Exécuter d'abord les conversions du
+      Bucket 4 qui créent ces thèmes via leurs aspects principaux. Ensuite, re-parenter chaque
+      orphelin manuellement via <a class="underline" href="/admin/sujets">/admin/sujets</a>.
+    </p>
+    <ul class="mt-4 space-y-2">
+      {#each ORPHAN_PROPOSALS as p (p.orphanId)}
+        {@const orphan = topics.find((t) => t.id === p.orphanId)}
+        {#if orphan && orphan.parentId == null}
+          <li class="rounded border border-border bg-panel/30 p-2 text-sm">
+            <span class="font-semibold">{orphan.label}</span>
+            <span class="text-muted"> → thème « {p.targetThemeLabel} »</span>
+          </li>
+        {/if}
+      {/each}
+    </ul>
   {:else if activeBucket === 4}
     <p class="italic text-muted">Bucket 4 (Thèmes) — implémenté dans Task 16.</p>
   {:else}
