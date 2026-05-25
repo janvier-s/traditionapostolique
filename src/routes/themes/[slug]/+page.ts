@@ -6,13 +6,18 @@ export const prerender = true;
 
 export function entries() {
   return topics
-    .filter((t) => topics.some((x) => x.parentId === t.id))
+    .filter((t) => {
+      const hasChildren = topics.some((x) => x.parentId === t.id);
+      const hasDirectQuotes = quotes.some((q) => q.topicIds.includes(t.id));
+      return hasChildren && !hasDirectQuotes;
+    })
     .map((t) => ({ slug: t.slug }));
 }
 
 export function load({ params }) {
   const theme = topicBySlug(params.slug);
-  if (!theme || !isTheme(theme.id, topics)) {
+  // A topic is a theme when it has children AND no direct quote refs (spec invariant #2).
+  if (!theme || !isTheme(theme.id, topics) || quotes.some((q) => q.topicIds.includes(theme.id))) {
     throw error(404, 'Thème introuvable');
   }
   const counts = new Map<number, number>();

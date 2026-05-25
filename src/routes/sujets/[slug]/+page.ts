@@ -4,7 +4,10 @@ import { isTheme, primaryAspectOf } from '$lib/data/topic-helpers';
 
 export function load({ params }) {
 	const _t = topicBySlug(params.slug);
-	if (_t && isTheme(_t.id, topics)) {
+	// A topic is a theme when it has children AND no direct quote refs (spec invariant #2).
+	// Pre-migration, no parent satisfies this — every parent still holds direct quotes.
+	const hasDirectQuotes = quotes.some((q) => q.topicIds.includes(_t?.id ?? -1));
+	if (_t && isTheme(_t.id, topics) && !hasDirectQuotes) {
 		const primary = primaryAspectOf(_t.id, topics);
 		if (primary) throw redirect(307, `/sujets/${primary.slug}`);
 		throw redirect(307, `/themes/${_t.slug}`);

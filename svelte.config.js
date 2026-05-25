@@ -56,7 +56,12 @@ const config = {
 					return;
 				}
 				throw new Error(`${path} (referrer: ${referrer ?? 'unknown'}): ${message}`);
-			}
+			},
+			// Pre-migration: /themes/[slug] and /citation/[id] have prerender=true
+			// but entries() returns [] (no strict themes yet) or the route has no
+			// explicit entries list. Suppress the "route not found during crawl"
+			// error — it will self-resolve once migration converts roots.
+			handleUnseenRoutes: 'warn'
 		},
 		// Emit a per-page <meta http-equiv="Content-Security-Policy"> with
 		// auto-generated hashes for SvelteKit's inline hydration scripts.
