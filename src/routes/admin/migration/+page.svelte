@@ -244,7 +244,38 @@
         </li>
       {/each}
     </ul>
-  {:else}
-    <p class="italic text-muted">Bucket 5 (Piliers) — implémenté dans Task 17.</p>
+  {:else if activeBucket === 5}
+    {@const PILLARS = [
+      { value: 'credo' as const, label: 'Credo' },
+      { value: 'sacrements' as const, label: 'Sacrements' },
+      { value: 'vie' as const, label: 'Vie en Christ' },
+      { value: 'priere' as const, label: 'Prière' }
+    ]}
+    {@const noPillar = topics.filter((t) => t.parentId == null && t.pillar == null)}
+    {#if noPillar.length === 0}
+      <p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
+        ✓ Toutes les racines ont un pilier.
+      </p>
+    {:else}
+      <p class="text-sm text-muted">{noPillar.length} racine(s) sans pilier.</p>
+      <ul class="mt-4 space-y-2">
+        {#each noPillar as t (t.id)}
+          <li class="flex items-center gap-3 rounded border border-border bg-panel/30 p-2 text-sm">
+            <span class="grow">{t.label}</span>
+            {#each PILLARS as p (p.value)}
+              <button
+                type="button"
+                disabled={busy}
+                class="rounded border border-border px-2 py-1 text-xs hover:bg-subtle/10 disabled:opacity-50"
+                onclick={() =>
+                  applyStep({ kind: 'set-pillar', topicId: t.id, pillar: p.value })}
+              >
+                {p.label}
+              </button>
+            {/each}
+          </li>
+        {/each}
+      </ul>
+    {/if}
   {/if}
 </section>
