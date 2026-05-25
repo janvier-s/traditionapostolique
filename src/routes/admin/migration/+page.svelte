@@ -107,7 +107,62 @@
       </ul>
     {/if}
   {:else if activeBucket === 2}
-    <p class="italic text-muted">Bucket 2 (Inversions) — implémenté dans Task 14.</p>
+    {@const KNOWN_INVERSIONS = [
+      {
+        parentId: 10,
+        childId: 71,
+        reason: '« Les Saintes Écritures » est plus général que « Le canon des Écritures »'
+      },
+      {
+        parentId: 19,
+        childId: 97,
+        reason: '« Le péché » est plus général que « Le péché mortel »'
+      }
+    ]}
+    {@const stillInverted = KNOWN_INVERSIONS.filter((inv) => {
+      const child = topics.find((t) => t.id === inv.childId);
+      return child != null && child.parentId === inv.parentId;
+    })}
+    {#if stillInverted.length === 0}
+      <p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
+        ✓ Aucune inversion détectée parmi celles connues.
+      </p>
+    {:else}
+      <ul class="mt-4 space-y-3">
+        {#each stillInverted as inv (inv.childId)}
+          {@const parent = topics.find((t) => t.id === inv.parentId)}
+          {@const child = topics.find((t) => t.id === inv.childId)}
+          <li class="rounded border border-border bg-panel/30 p-3">
+            <p class="text-sm">
+              <strong>{child?.label}</strong> est enfant de <strong>{parent?.label}</strong>.
+            </p>
+            <p class="mt-1 text-xs text-muted">{inv.reason}</p>
+            <p class="mt-1 text-xs text-muted">
+              Proposition : permuter — {child?.label} devient parent ; {parent?.label} devient son
+              aspect.
+            </p>
+            <button
+              type="button"
+              disabled={busy}
+              class="mt-2 rounded border border-border bg-accent px-3 py-1 font-ui text-sm text-white disabled:opacity-50"
+              onclick={() =>
+                applyStep({
+                  kind: 'swap-parent-child',
+                  parentId: inv.parentId,
+                  childId: inv.childId
+                })}
+            >
+              Permuter
+            </button>
+          </li>
+        {/each}
+      </ul>
+      <p class="mt-3 text-xs italic text-amber-700">
+        Note : la permutation déclenche la validation stricte (un thème ne peut pas porter de
+        citations directes). Si l'opération échoue, il faudra d'abord convertir le parent en thème
+        via le Bucket 4.
+      </p>
+    {/if}
   {:else if activeBucket === 3}
     <p class="italic text-muted">Bucket 3 (Orphelins) — implémenté dans Task 15.</p>
   {:else if activeBucket === 4}
