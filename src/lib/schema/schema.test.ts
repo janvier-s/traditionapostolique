@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { AuthorSchema, WorkSchema, TopicSchema, QuoteSchema } from './index';
+import { AuthorSchema, WorkSchema, TopicSchema, QuoteSchema, BercotEntrySchema } from './index';
 
 describe('AuthorSchema', () => {
 	it('accepts a minimal author', () => {
@@ -156,5 +156,55 @@ describe('QuoteSchema', () => {
 			links: {}
 		});
 		expect(bad.success).toBe(false);
+	});
+});
+
+describe('BercotEntrySchema', () => {
+	const base = {
+		id: 'a1b2c3d4e5f6',
+		sourceEntry: 'ABORTION, INFANTICIDE',
+		attribution: 'Tertullian (c. 197, W), 3.25.',
+		en: 'In our case, murder is once for all forbidden.'
+	};
+	it('accepts a minimal pending entry', () => {
+		const r = BercotEntrySchema.safeParse(base);
+		expect(r.success).toBe(true);
+		if (r.success) {
+			expect(r.data.status).toBe('pending');
+			expect(r.data.mappedTopicIds).toEqual([]);
+		}
+	});
+	it('accepts all optional fields filled', () => {
+		const r = BercotEntrySchema.safeParse({
+			...base,
+			subsection: 'I. Meaning of baptism',
+			fr: 'Le meurtre…',
+			authorId: 7,
+			sourceUrl: 'https://example.com/x',
+			notes: 'check vol 3',
+			mappedTopicIds: [20],
+			siteQuoteId: 142,
+			status: 'published',
+			dedupMatch: 142
+		});
+		expect(r.success).toBe(true);
+		if (r.success) {
+			expect(r.data.status).toBe('published');
+			expect(r.data.mappedTopicIds).toEqual([20]);
+			expect(r.data.authorId).toBe(7);
+			expect(r.data.dedupMatch).toBe(142);
+		}
+	});
+	it('rejects non-hex id', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, id: 'NOT-A-HASH' }).success).toBe(false);
+	});
+	it('rejects unknown status', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, status: 'foo' }).success).toBe(false);
+	});
+	it('rejects malformed sourceUrl', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, sourceUrl: 'not a url' }).success).toBe(false);
+	});
+	it('rejects negative dedupMatch', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, dedupMatch: -1 }).success).toBe(false);
 	});
 });
