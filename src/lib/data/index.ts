@@ -151,3 +151,111 @@ export function buildPublicTree(): PublicPillarColumn[] {
 
 	return columns;
 }
+
+// ── Nested tree for the rail nav ─────────────────────────────────────────────
+
+export interface PublicTopicNode {
+	id: number;
+	slug: string;
+	label: string;
+	href: string;
+	count: number;
+	isTheme: boolean;
+	children?: PublicTopicNode[]; // non-primary aspects of a theme
+}
+
+export interface PublicPillarNode {
+	pillar: Pillar | 'none';
+	label: string;
+	subtitle: string;
+	topics: PublicTopicNode[]; // root-level: themes (with children) + standalone sujets
+}
+
+export function buildPublicTreeNested(): PublicPillarNode[] {
+	const counts = new Map<number, number>();
+	for (const q of quotes) for (const t of q.topicIds) counts.set(t, (counts.get(t) ?? 0) + 1);
+
+	const childrenByParent = new Map<number, Topic[]>();
+	for (const t of topics) {
+		if (t.parentId != null) {
+			const arr = childrenByParent.get(t.parentId) ?? [];
+			arr.push(t);
+			childrenByParent.set(t.parentId, arr);
+		}
+	}
+
+	function descendantCount(themeId: number): number {
+		let n = counts.get(themeId) ?? 0;
+		for (const c of childrenByParent.get(themeId) ?? []) n += descendantCount(c.id);
+		return n;
+	}
+
+	function buildNode(root: Topic): PublicTopicNode {
+		const children = childrenByParent.get(root.id) ?? [];
+		const isTheme = children.length > 0;
+
+		if (!isTheme) {
+			return {
+				id: root.id,
+				slug: root.slug,
+				label: root.label,
+				href: `/sujets/${root.slug}`,
+				count: counts.get(root.id) ?? 0,
+				isTheme: false
+			};
+		}
+
+		// Theme: find primary aspect for href, collect non-primary children
+		const primaryAspect = children.find((c) => c.primary === true);
+		const href = primaryAspect ? `/sujets/${primaryAspect.slug}` : `/sujets/${root.slug}`;
+
+		const sortedChildren = children
+			.slice()
+			.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
+
+		const childNodes: PublicTopicNode[] = sortedChildren
+			.filter((c) => c.primary !== true)
+			.map((c) => ({
+				id: c.id,
+				slug: c.slug,
+				label: c.label,
+				href: `/sujets/${c.slug}`,
+				count: counts.get(c.id) ?? 0,
+				isTheme: false
+			}));
+
+		return {
+			id: root.id,
+			slug: root.slug,
+			label: root.label,
+			href,
+			count: descendantCount(root.id),
+			isTheme: true,
+			children: childNodes.length > 0 ? childNodes : undefined
+		};
+	}
+
+	const pillars: Pillar[] = ['credo', 'sacrements', 'vie', 'priere'];
+	const columns: PublicPillarNode[] = pillars.map((p) => {
+		const roots = topics
+			.filter((t) => t.parentId == null && t.pillar === p)
+			.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
+
+		return { pillar: p, ...PILLAR_META[p], topics: roots.map(buildNode) };
+	});
+
+	// Append 'Non classé' column if any root lacks a pillar
+	const noneRoots = topics
+		.filter((t) => t.parentId == null && t.pillar == null)
+		.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
+	if (noneRoots.length > 0) {
+		columns.push({
+			pillar: 'none',
+			label: 'Non classé',
+			subtitle: 'Sujets sans pilier',
+			topics: noneRoots.map(buildNode)
+		});
+	}
+
+	return columns;
+}
