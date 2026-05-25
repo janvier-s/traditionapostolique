@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Topic, Quote, BercotEntry } from '$lib/schema';
+  import ThemeConversionForm from './ThemeConversionForm.svelte';
 
   let { data } = $props();
   // svelte-ignore state_referenced_locally
@@ -203,7 +204,46 @@
       {/each}
     </ul>
   {:else if activeBucket === 4}
-    <p class="italic text-muted">Bucket 4 (Thèmes) — implémenté dans Task 16.</p>
+    {@const rootsToConvert = topics
+      .filter((t) => {
+        if (t.parentId != null) return false;
+        const hasChildren = topics.some((x) => x.parentId === t.id);
+        const directQuoteCount = quotes.filter((q) => q.topicIds.includes(t.id)).length;
+        return hasChildren && directQuoteCount > 0;
+      })
+      .sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id)}
+    <p class="text-sm text-muted">
+      {rootsToConvert.length} racines avec enfants ET citations directes — à convertir en thèmes.
+      Chaque conversion crée un « aspect principal » qui prendra les citations directes du parent.
+    </p>
+    <ul class="mt-4 space-y-4">
+      {#each rootsToConvert as root (root.id)}
+        {@const directQuoteCount = quotes.filter((q) => q.topicIds.includes(root.id)).length}
+        {@const childCount = topics.filter((t) => t.parentId === root.id).length}
+        <li class="rounded border border-border bg-panel/30 p-3">
+          <p class="font-semibold">
+            {root.label} <span class="text-xs font-normal text-muted">(id {root.id})</span>
+          </p>
+          <p class="mt-1 text-xs text-muted">
+            {directQuoteCount} citation(s) directe(s) · {childCount} enfant(s) actuel(s)
+          </p>
+          <ThemeConversionForm
+            {root}
+            onApply={async (form) =>
+              applyStep({
+                kind: 'convert-root-to-theme',
+                rootId: root.id,
+                primaryAspect: {
+                  slug: form.primarySlug,
+                  label: form.primaryLabel
+                },
+                themeSlugOverride: form.themeSlug !== root.slug ? form.themeSlug : undefined,
+                themeLabel: form.themeLabel !== root.label ? form.themeLabel : undefined
+              })}
+          />
+        </li>
+      {/each}
+    </ul>
   {:else}
     <p class="italic text-muted">Bucket 5 (Piliers) — implémenté dans Task 17.</p>
   {/if}
