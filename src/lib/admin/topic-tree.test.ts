@@ -1,13 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import type { Topic } from '$lib/schema';
+import type { Topic, Quote } from '$lib/schema';
 import { buildTopicTree, flattenTree, validateParentRefs } from './topic-tree';
 
 const t = (id: number, label: string, extras: Partial<Topic> = {}): Topic => ({
 	id,
 	slug: `t${id}`,
 	label,
-	section: 'I',
-	groupe: 'g',
 	...extras
 });
 
@@ -60,7 +58,7 @@ describe('flattenTree', () => {
 
 describe('validateParentRefs', () => {
 	it('passes when parents are top-level', () => {
-		const r = validateParentRefs([t(1, 'A'), t(2, 'A1', { parentId: 1 })]);
+		const r = validateParentRefs([t(1, 'A'), t(2, 'A1', { parentId: 1, primary: true })]);
 		expect(r.ok).toBe(true);
 	});
 	it('fails when a topic points at a sub-topic as parent (no 2-level nesting)', () => {
@@ -79,5 +77,76 @@ describe('validateParentRefs', () => {
 	it('fails on self-reference', () => {
 		const r = validateParentRefs([t(1, 'A', { parentId: 1 })]);
 		expect(r.ok).toBe(false);
+	});
+});
+
+const q = (id: number, topicIds: number[]): Quote => ({
+	id,
+	slug: `q${id}`,
+	authorId: 1,
+	workId: 1,
+	topicIds,
+	fr: 'x',
+	en: 'x',
+	reference: 'x',
+	status: 'ok'
+});
+
+describe('validateParentRefs (with quotes)', () => {
+	it('fails when a theme (topic with children) has direct quote refs', () => {
+		const topics = [t(1, 'Theme'), t(2, 'Aspect', { parentId: 1, primary: true })];
+		const quotes = [q(100, [1])]; // quote refs the theme directly — illegal
+		const r = validateParentRefs(topics, quotes);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/theme/i);
+	});
+	it('passes when theme is referenced 0 times and aspect carries all quotes', () => {
+		const topics = [t(1, 'Theme'), t(2, 'Primary', { parentId: 1, primary: true })];
+		const quotes = [q(100, [2])];
+		expect(validateParentRefs(topics, quotes).ok).toBe(true);
+	});
+	it('fails when a theme has zero primary aspects', () => {
+		const topics = [t(1, 'Theme'), t(2, 'A', { parentId: 1 }), t(3, 'B', { parentId: 1 })];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/primary/i);
+	});
+	it('fails when a theme has two primary aspects', () => {
+		const topics = [
+			t(1, 'Theme'),
+			t(2, 'A', { parentId: 1, primary: true }),
+			t(3, 'B', { parentId: 1, primary: true })
+		];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/primary/i);
+	});
+	it('passes when quotes arg is omitted (back-compat for legacy callers)', () => {
+		const topics = [t(1, 'A'), t(2, 'A1', { parentId: 1, primary: true })];
+		expect(validateParentRefs(topics).ok).toBe(true);
+	});
+	it('fails on duplicate slug among non-themes (aspects + sujets share namespace)', () => {
+		const topics = [t(1, 'A'), t(2, 'B', { slug: 'shared' }), t(3, 'C', { slug: 'shared' })];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/slug/i);
+	});
+	it('passes when theme and its primary aspect share a slug (different namespaces)', () => {
+		const topics = [
+			t(1, 'Theme', { slug: 'le-bapteme' }),
+			t(2, 'Primary', { slug: 'le-bapteme', parentId: 1, primary: true })
+		];
+		expect(validateParentRefs(topics, []).ok).toBe(true);
+	});
+	it('fails on duplicate slug among themes', () => {
+		const topics = [
+			t(1, 'T1', { slug: 'x' }),
+			t(2, 'P1', { parentId: 1, primary: true }),
+			t(3, 'T2', { slug: 'x' }),
+			t(4, 'P2', { parentId: 3, primary: true })
+		];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/slug/i);
 	});
 });
