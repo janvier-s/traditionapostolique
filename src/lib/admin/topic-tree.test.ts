@@ -84,12 +84,12 @@ const q = (id: number, topicIds: number[]): Quote => ({
 	id,
 	slug: `q${id}`,
 	authorId: 1,
-	workId: 1,
 	topicIds,
 	fr: 'x',
 	en: 'x',
 	reference: 'x',
-	status: 'ok'
+	status: 'ok',
+	links: {}
 });
 
 describe('validateParentRefs (with quotes)', () => {

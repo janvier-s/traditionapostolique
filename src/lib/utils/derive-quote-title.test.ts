@@ -10,7 +10,7 @@ const baseQ = (overrides: Partial<Quote>): Quote => ({
 	links: {},
 	...overrides
 });
-const topics: Topic[] = [{ id: 10, slug: 'foi', label: 'La foi', section: 'I', groupe: 'Sources' }];
+const topics: Topic[] = [{ id: 10, slug: 'foi', label: 'La foi' }];
 
 describe('deriveQuoteTitle', () => {
 	it('returns the explicit title when present', () => {

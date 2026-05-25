@@ -395,7 +395,7 @@
 							<li
 								class="inline-flex items-center gap-1 rounded border border-border bg-panel px-2 py-0.5 text-xs"
 							>
-								{t ? `${t.label} (${t.section})` : `#${tid} (inconnu)`}
+								{t ? `${t.label} (${t.pillar ?? '—'})` : `#${tid} (inconnu)`}
 								<button
 									type="button"
 									aria-label="Retirer le sujet"
@@ -412,9 +412,22 @@
 							bind:value={topicPick}
 						>
 							<option value="">Ajouter un sujet…</option>
-							{#each topics as t (t.id)}
-								{#if !selected.topicIds.includes(t.id)}
-									<option value={t.id}>{t.label} ({t.section}) #{t.id}</option>
+							{#each [
+								{ key: 'credo',      label: 'Credo — Profession de la foi (CCC I)' },
+								{ key: 'sacrements', label: 'Sacrements et liturgie (CCC II)' },
+								{ key: 'vie',        label: 'Vie en Christ — Morale (CCC III)' },
+								{ key: 'priere',     label: 'Prière (CCC IV)' },
+								{ key: '',           label: 'Non classé' }
+							] as grp (grp.key)}
+								{@const grpTopics = topics.filter(
+									(t) => (t.pillar ?? '') === grp.key && !selected.topicIds.includes(t.id)
+								)}
+								{#if grpTopics.length > 0}
+									<optgroup label={grp.label}>
+										{#each grpTopics as t (t.id)}
+											<option value={t.id}>{t.label} #{t.id}</option>
+										{/each}
+									</optgroup>
 								{/if}
 							{/each}
 						</select>

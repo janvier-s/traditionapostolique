@@ -9,35 +9,28 @@ const SITE = 'https://traditionapostolique.fr';
 // understand what kind of corpus this is. Generated from the live data
 // so author / work / topic lists never go stale relative to the JSON.
 export function GET() {
-	const sectionLabel = (s: string): string => {
-		switch (s) {
-			case 'I':
-				return 'Dieu';
-			case 'II':
-				return 'La création';
-			case 'III':
-				return 'Le Christ';
-			case 'IV':
-				return "L'Église";
-			case 'V':
-				return 'La morale';
-			case 'VI':
-				return 'Les sacrements et le culte';
-			case 'VII':
-				return 'La fin des temps';
-			case 'VIII':
-				return 'Divers';
+	const pillarLabel = (p: string): string => {
+		switch (p) {
+			case 'credo':
+				return 'Credo — Profession de la foi (CCC I)';
+			case 'sacrements':
+				return 'Sacrements et liturgie (CCC II)';
+			case 'vie':
+				return 'Vie en Christ — Morale (CCC III)';
+			case 'priere':
+				return 'Prière (CCC IV)';
 			default:
-				return s;
+				return 'Non classé';
 		}
 	};
 
-	// Group topics by section for readable navigation.
-	const topicsBySection = new Map<string, typeof topics>();
+	// Group topics by pillar for readable navigation.
+	const topicsByPillar = new Map<string, typeof topics>();
 	for (const t of topics) {
-		const arr = topicsBySection.get(t.section) ?? [];
+		const key = t.pillar ?? '__none__';
+		const arr = topicsByPillar.get(key) ?? [];
 		arr.push(t);
-		topicsBySection.set(t.section, arr);
+		topicsByPillar.set(key, arr);
 	}
 
 	// Headline authors · quote-count sorted so the most-cited Fathers
@@ -80,16 +73,16 @@ export function GET() {
 		`- [Recherche](${SITE}/recherche) — recherche plein-texte dans tout le corpus`,
 		`- [À propos](${SITE}/a-propos) — méthodologie et sources`,
 		'',
-		'## Sujets par section',
+		'## Sujets par pilier',
 		''
 	];
 
-	// Sections in canonical order.
-	const sections: string[] = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
-	for (const s of sections) {
-		const ts = topicsBySection.get(s);
+	// Pillars in canonical order; uncategorised topics last.
+	const pillars: string[] = ['credo', 'sacrements', 'vie', 'priere', '__none__'];
+	for (const p of pillars) {
+		const ts = topicsByPillar.get(p);
 		if (!ts || ts.length === 0) continue;
-		lines.push(`### ${s}. ${sectionLabel(s)}`);
+		lines.push(`### ${pillarLabel(p)}`);
 		lines.push('');
 		for (const t of ts) {
 			lines.push(`- [${t.label}](${SITE}/sujets/${t.slug})`);

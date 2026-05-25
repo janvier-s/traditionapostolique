@@ -12,9 +12,7 @@
 
 	let label = $state('');
 	let slug = $state('');
-	let groupe = $state('');
 	let description = $state('');
-	let section = $state<Topic['section']>('I');
 	let parentId = $state<number | null>(null);
 	let pillar = $state<Pillar | ''>('');
 	let saving = $state(false);
@@ -28,8 +26,6 @@
 		{ value: 'priere', label: 'Prière (CCC IV)' }
 	];
 
-	const SECTIONS: Topic['section'][] = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
-
 	function autoSlug() {
 		slug = label
 			.toLowerCase()
@@ -42,8 +38,8 @@
 
 	async function create() {
 		saveError = '';
-		if (!label.trim() || !slug.trim() || !groupe.trim()) {
-			saveError = 'Libellé, slug et groupe sont requis.';
+		if (!label.trim() || !slug.trim()) {
+			saveError = 'Libellé et slug sont requis.';
 			return;
 		}
 		if (parentId == null && !pillar) {
@@ -57,8 +53,6 @@
 				id: nextId,
 				slug: slug.trim(),
 				label: label.trim(),
-				section,
-				groupe: groupe.trim(),
 				...(description.trim() ? { description: description.trim() } : {}),
 				...(parentId != null ? { parentId } : pillar ? { pillar } : {})
 			};
@@ -128,18 +122,6 @@
 			<label class="block">
 				Slug (URL)
 				<input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={slug} />
-			</label>
-			<label class="block">
-				Groupe
-				<input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={groupe} />
-			</label>
-			<label class="block">
-				Section
-				<select class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={section}>
-					{#each SECTIONS as s (s)}
-						<option value={s}>{s}</option>
-					{/each}
-				</select>
 			</label>
 			<label class="block">
 				Description (optionnelle)
