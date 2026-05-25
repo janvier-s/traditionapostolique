@@ -1,4 +1,4 @@
-import type { Topic, Quote } from '$lib/schema';
+import type { Topic } from '$lib/schema';
 
 export interface TopicNode {
 	topic: Topic;
@@ -64,12 +64,9 @@ export type ValidateResult = { ok: true } | { ok: false; error: string };
  * `buildTopicTree`, which is lenient with malformed parent refs (treats
  * dangling parents as roots) so the UI keeps rendering during edits.
  *
- * When `quotes` is provided (strict mode), also checks:
- *   - Invariant 2: themes (topics with children) have zero direct quote refs
- * When `quotes` is omitted (lenient mode), invariant 2 is silently skipped.
- * Invariants 1, 3, and 4 always run.
+ * Invariant 1: parent refs valid; depth ≤ 1.
  */
-export function validateParentRefs(topics: Topic[], quotes?: Quote[]): ValidateResult {
+export function validateParentRefs(topics: Topic[]): ValidateResult {
 	const byId = new Map<number, Topic>();
 	for (const t of topics) byId.set(t.id, t);
 
@@ -89,69 +86,6 @@ export function validateParentRefs(topics: Topic[], quotes?: Quote[]): ValidateR
 				error: `Topic ${t.id} (${t.slug}) cannot nest under a sub-topic (parent ${parent.id} is itself a sub-topic)`
 			};
 		}
-	}
-
-	// Compute children map
-	const childrenByParent = new Map<number, Topic[]>();
-	for (const t of topics) {
-		if (t.parentId != null) {
-			const arr = childrenByParent.get(t.parentId) ?? [];
-			arr.push(t);
-			childrenByParent.set(t.parentId, arr);
-		}
-	}
-	const themeIds = new Set(childrenByParent.keys());
-
-	// Invariants 2 & 3: end-state invariants — only checked when quotes are provided
-	if (quotes) {
-		// Invariant 2: theme has zero direct quote refs (cross-collection)
-		for (const q of quotes) {
-			for (const tid of q.topicIds) {
-				if (themeIds.has(tid)) {
-					const theme = byId.get(tid)!;
-					return {
-						ok: false,
-						error: `Quote ${q.id} references theme ${theme.id} (${theme.slug}) directly — themes cannot hold quotes; move to an aspect`
-					};
-				}
-			}
-		}
-
-		// Invariant 3: each theme has exactly one primary aspect
-		for (const [themeId, children] of childrenByParent) {
-			const primaries = children.filter((c) => c.primary === true);
-			if (primaries.length === 0) {
-				const theme = byId.get(themeId)!;
-				return {
-					ok: false,
-					error: `Theme ${themeId} (${theme.slug}) has no primary aspect — exactly one child must have primary: true`
-				};
-			}
-			if (primaries.length > 1) {
-				const theme = byId.get(themeId)!;
-				return {
-					ok: false,
-					error: `Theme ${themeId} (${theme.slug}) has ${primaries.length} primary aspects — only one is allowed`
-				};
-			}
-		}
-	}
-
-	// Invariant 4: slug uniqueness within route namespace. Themes are in /themes/;
-	// aspects + standalone sujets are in /sujets/. Within a namespace, slugs must be unique;
-	// a theme MAY share a slug with its primary aspect (different namespaces).
-	const sujetsSlugs = new Set<string>();
-	const themesSlugs = new Set<string>();
-	for (const t of topics) {
-		const inThemes = themeIds.has(t.id);
-		const bucket = inThemes ? themesSlugs : sujetsSlugs;
-		if (bucket.has(t.slug)) {
-			return {
-				ok: false,
-				error: `Duplicate slug "${t.slug}" within ${inThemes ? '/themes/' : '/sujets/'} namespace`
-			};
-		}
-		bucket.add(t.slug);
 	}
 
 	return { ok: true };

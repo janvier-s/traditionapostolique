@@ -10,7 +10,6 @@ export const TopicSchema = z.object({
 	description: z.string().optional(),
 	pillar: PillarSchema.optional(),
 	parentId: z.number().int().nonnegative().optional(),
-	order: z.number().int().nonnegative().optional(),
-	primary: z.boolean().optional()
+	order: z.number().int().nonnegative().optional()
 });
 export type Topic = z.infer<typeof TopicSchema>;

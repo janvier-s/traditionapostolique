@@ -44,6 +44,10 @@ const config = {
 			// (topic detail pages, fathers, works, search). Ignore 404s for
 			// these prefixes until the route handlers land. Any other
 			// same-origin miss still fails the build.
+			// /citation/[id] has prerender=true but entries() returns [] until
+			// citations are enumerated. Suppress the "route not found during crawl"
+			// error — it will self-resolve once citation entries are wired up.
+			handleUnseenRoutes: 'warn',
 			handleHttpError: ({ path, referrer, message }) => {
 				if (
 					path.startsWith('/sujets') ||
@@ -57,11 +61,6 @@ const config = {
 				}
 				throw new Error(`${path} (referrer: ${referrer ?? 'unknown'}): ${message}`);
 			},
-			// Pre-migration: /themes/[slug] and /citation/[id] have prerender=true
-			// but entries() returns [] (no strict themes yet) or the route has no
-			// explicit entries list. Suppress the "route not found during crawl"
-			// error — it will self-resolve once migration converts roots.
-			handleUnseenRoutes: 'warn'
 		},
 		// Emit a per-page <meta http-equiv="Content-Security-Policy"> with
 		// auto-generated hashes for SvelteKit's inline hydration scripts.

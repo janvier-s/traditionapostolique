@@ -112,8 +112,6 @@ export function buildPublicTree(): PublicPillarColumn[] {
 					.slice()
 					.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
 				for (const child of sortedChildren) {
-					// Hide the primary aspect — the theme line above is its click target
-					if (child.primary === true) continue;
 					items.push({
 						id: child.id,
 						slug: child.slug,
@@ -205,16 +203,13 @@ export function buildPublicTreeNested(): PublicPillarNode[] {
 			};
 		}
 
-		// Theme: find primary aspect for href, collect non-primary children
-		const primaryAspect = children.find((c) => c.primary === true);
-		const href = primaryAspect ? `/sujets/${primaryAspect.slug}` : `/sujets/${root.slug}`;
+		const href = `/sujets/${root.slug}`;
 
 		const sortedChildren = children
 			.slice()
 			.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
 
 		const childNodes: PublicTopicNode[] = sortedChildren
-			.filter((c) => c.primary !== true)
 			.map((c) => ({
 				id: c.id,
 				slug: c.slug,

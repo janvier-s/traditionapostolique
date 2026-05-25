@@ -4,7 +4,6 @@
 	import { watchHashSelection } from '../hash-select';
 	import { bindEditorShortcuts } from '../editor-utils.svelte';
 	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
-	import { isTheme as isThemeFn } from '$lib/data/topic-helpers';
 
 	let items = $state<Topic[]>([]);
 	let quotes = $state<Quote[]>([]);
@@ -53,15 +52,6 @@
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
 	const selectedIsTopLevel = $derived(selected?.parentId == null);
-	const selectedIsTheme = $derived(selected ? isThemeFn(selected.id, items) : false);
-	const selectedDirectQuoteCount = $derived(
-		selected ? quotes.filter((q) => q.topicIds.includes(selected.id)).length : 0
-	);
-	const selectedSiblings = $derived(
-		selected?.parentId != null
-			? items.filter((t) => t.parentId === selected!.parentId && t.id !== selected!.id)
-			: []
-	);
 
 	// Available parents: only top-level topics, excluding the current one
 	const parentOptions = $derived.by(() => {
@@ -131,11 +121,6 @@
 						]}
 						style={depth > 0 ? `padding-left: ${0.5 + depth * 1}rem` : ''}
 					>
-						{#if isThemeFn(t.id, items)}
-							<span class="mr-1 rounded bg-subtle/20 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-muted">THÈME</span>
-						{:else if t.primary === true}
-							<span class="mr-1 rounded bg-accent/15 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-accent">PRINCIPAL</span>
-						{/if}
 						<span class="flex items-baseline justify-between gap-2">
 							<span class="min-w-0 truncate" class:text-muted={n === 0}>
 								{#if depth > 0}<span class="mr-1 text-muted" aria-hidden="true">↳</span>{/if}
@@ -193,31 +178,6 @@
 						{/each}
 					</select>
 				</label>
-				{#if selected.parentId != null}
-					<label class="flex items-center gap-2">
-						<input
-							type="checkbox"
-							checked={selected.primary === true}
-							onchange={(e) => {
-								const checked = (e.currentTarget as HTMLInputElement).checked;
-								if (checked) {
-									for (const s of selectedSiblings) {
-										const idx = items.findIndex((t) => t.id === s.id);
-										const sibling = idx >= 0 ? items[idx] : undefined;
-										if (sibling?.primary) {
-											items[idx] = { ...sibling, primary: undefined };
-										}
-									}
-									update('primary', true);
-								} else {
-									update('primary', undefined);
-								}
-								dirty = true;
-							}}
-						/>
-						<span class="text-sm">Aspect principal (porte le nom du thème)</span>
-					</label>
-				{/if}
 				{#if selectedIsTopLevel}
 					<label class="block">
 						Pilier (CCC)
@@ -261,17 +221,6 @@
 							update('description', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
 					></textarea>
 				</label>
-				{#if selectedIsTheme && selectedDirectQuoteCount > 0}
-					<div class="rounded border border-amber-600/40 bg-amber-50/10 p-3 text-sm">
-						<p class="font-semibold text-amber-700">
-							⚠️ Ce thème porte {selectedDirectQuoteCount} citation(s) directe(s).
-						</p>
-						<p class="mt-1 text-amber-700/80">
-							Les thèmes ne doivent pas porter de citations. Déplacez-les vers l'aspect principal via
-							<a href="/admin/migration" class="underline">/admin/migration</a>.
-						</p>
-					</div>
-				{/if}
 				<div
 					class="sticky bottom-0 -mx-4 mt-6 flex items-baseline gap-3 border-t border-border bg-background/95 px-4 py-3 backdrop-blur"
 				>

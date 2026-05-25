@@ -11,7 +11,6 @@
 		<a href="/admin/hierarchie">Hiérarchie</a>
 		<a href="/admin/citations">Citations</a>
 		<a href="/admin/bercot">Bercot</a>
-		<a href="/admin/migration">Migration</a>
 		<a href="/admin/gaps">Gaps</a>
 	</nav>
 	{@render children()}
