@@ -249,6 +249,11 @@
 							</div>
 							<p class="line-clamp-3 leading-snug">{b.en}</p>
 							<p class="mt-2 text-[11px] text-muted">{b.attribution}</p>
+							{#if b.dedupMatch != null && b.status !== 'published'}
+								<p class="mt-1 text-[10px] text-sky-700">
+									~ correspond à quote #{b.dedupMatch}
+								</p>
+							{/if}
 							{#if b.siteQuoteId != null}
 								<p class="mt-1 text-[11px] text-sky-700">
 									→ quote #{b.siteQuoteId}

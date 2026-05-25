@@ -189,6 +189,14 @@
 					Texte original (Bercot, EN)
 				</h3>
 				<p class="mt-2 whitespace-pre-wrap leading-relaxed">{entry.en}</p>
+				{#if entry.dedupMatch != null}
+					<div class="mt-3 rounded border border-sky-500/40 bg-sky-500/10 p-2 text-xs text-sky-800">
+						Cette citation a déjà été identifiée comme correspondant à
+						<a class="underline" href={`/admin/citations#${entry.dedupMatch}`} target="_blank" rel="noopener"
+							>quote #{entry.dedupMatch}</a
+						>.
+					</div>
+				{/if}
 			</section>
 
 			<!-- RIGHT: editable -->
