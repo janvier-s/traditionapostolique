@@ -65,7 +65,47 @@
 
 <section class="mt-6">
   {#if activeBucket === 1}
-    <p class="italic text-muted">Bucket 1 (Profondeur) — implémenté dans Task 13.</p>
+    {@const violations = topics.filter((t) => {
+      if (t.parentId == null) return false;
+      const parent = topics.find((x) => x.id === t.parentId);
+      return parent != null && parent.parentId != null;
+    })}
+    {#if violations.length === 0}
+      <p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
+        ✓ Aucune violation de profondeur ≥ 2.
+      </p>
+    {:else}
+      <p class="text-sm text-muted">{violations.length} violation(s) détectée(s).</p>
+      <ul class="mt-4 space-y-3">
+        {#each violations as v (v.id)}
+          {@const parent = topics.find((x) => x.id === v.parentId)}
+          {@const grandparent = parent ? topics.find((x) => x.id === parent.parentId) : undefined}
+          <li class="rounded border border-border bg-panel/30 p-3">
+            <p class="text-sm">
+              <strong>{v.label}</strong> (id {v.id}) → parent {parent?.label} (id {parent?.id}) →
+              grand-parent {grandparent?.label} (id {grandparent?.id})
+            </p>
+            <p class="mt-1 text-xs text-muted">
+              Proposition : re-parenter <strong>{v.label}</strong> sous {grandparent?.label} (frère
+              de {parent?.label}).
+            </p>
+            <button
+              type="button"
+              disabled={busy}
+              class="mt-2 rounded border border-border bg-accent px-3 py-1 font-ui text-sm text-white disabled:opacity-50"
+              onclick={() =>
+                applyStep({
+                  kind: 'reparent',
+                  topicId: v.id,
+                  newParentId: grandparent?.id ?? null
+                })}
+            >
+              Appliquer
+            </button>
+          </li>
+        {/each}
+      </ul>
+    {/if}
   {:else if activeBucket === 2}
     <p class="italic text-muted">Bucket 2 (Inversions) — implémenté dans Task 14.</p>
   {:else if activeBucket === 3}
