@@ -8,6 +8,8 @@ Spec: docs/superpowers/specs/2026-05-25-bercot-harvest-design.md
 Run: python3 scripts/bercot-harvest.py
 """
 
+import argparse
+import hashlib
 import json
 import re
 import shutil
@@ -25,6 +27,23 @@ EPUB = (
     / "A dictionary of early Christian beliefs _ a reference guide -- David W_ Bercot -- Tyndale House (eBook), Peabody, Mass, 2014 -- Hendrickson Academic -- 9781565633575 -- c2363a8c773dd0eb0b89ba37335c88da -- Anna’s Archive.epub"
 )
 OUT = REPO / "docs/bercot-harvest"
+
+
+def parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(description="Harvest the Bercot dictionary.")
+    p.add_argument("--emit-json", action="store_true",
+                   help="Emit src/lib/data/bercot.json (default if no flags).")
+    p.add_argument("--emit-md", action="store_true",
+                   help="Emit per-topic Markdown to docs/bercot-harvest/.")
+    return p.parse_args()
+
+
+BERCOT_JSON_PATH = REPO / "src/lib/data/bercot.json"
+
+
+def stable_id(entry: str, subsection: str | None, attribution: str, en_text: str) -> str:
+    payload = f"{entry}|{subsection or ''}|{attribution}|{en_text}".encode("utf-8")
+    return hashlib.sha1(payload).hexdigest()[:12]
 
 # -----------------------------------------------------------------------------
 # Topic -> TOC-entry mapping  (confidence: high | medium | low)
@@ -705,16 +724,150 @@ def render_readme(per_topic_stats: dict[str, dict], n_candidates: int) -> str:
 
 
 # -----------------------------------------------------------------------------
+# JSON emission
+# -----------------------------------------------------------------------------
+
+def collect_json_rows(
+    entries: dict,
+    existing_quotes: list[dict],
+    topics_by_slug: dict,
+) -> list[dict]:
+    """Walk MAPPING + CANDIDATES, materialize every harvested quote as a JSON row.
+
+    Each row carries a stable hash id derived from (entry, subsection, attribution,
+    english text). The same row id will reappear on re-runs as long as Bercot's
+    text hasn't changed — user-edited fields can be merged in via merge_json_rows.
+    """
+    rows: list[dict] = []
+    seen: set[str] = set()
+
+    def emit_from(entry_view: dict, source_entry: str, subsection: str | None,
+                  mapped_topic_ids: list[int]) -> None:
+        for q in entry_view["quotes"]:
+            if not q["text"].strip():
+                continue  # skip quotes with empty English text (schema requires min(1))
+            rid = stable_id(source_entry, subsection, q["attribution"], q["text"])
+            if rid in seen:
+                continue
+            seen.add(rid)
+            dedup_match = find_dedup_match(q["text"], existing_quotes)
+            row = {
+                "id": rid,
+                "sourceEntry": source_entry,
+                "attribution": q["attribution"],
+                "en": q["text"],
+                "mappedTopicIds": list(mapped_topic_ids),
+                "status": "pending",
+            }
+            if subsection:
+                row["subsection"] = subsection
+            if dedup_match is not None:
+                row["dedupMatch"] = dedup_match
+                row["siteQuoteId"] = dedup_match
+                row["status"] = "published"
+            rows.append(row)
+
+    for slug, mapped in MAPPING.items():
+        topic = topics_by_slug.get(slug)
+        if topic is None:
+            continue
+        topic_id = topic["id"]
+        for spec, _conf in mapped:
+            display_title, view, _ = resolve_target(spec, entries)
+            if view is None:
+                continue
+            if view["subsections"]:
+                for sub in view["subsections"]:
+                    emit_from({"quotes": sub["quotes"]}, display_title.split(" § ")[0],
+                              sub["title"], [topic_id])
+            else:
+                base = display_title.split(" § ")[0]
+                sub_title = display_title.split(" § ", 1)[1] if " § " in display_title else None
+                emit_from(view, base, sub_title, [topic_id])
+
+    consumed = {t for mapped in MAPPING.values() for t, _ in mapped}
+    consumed_bases = {c.split("§")[0].strip() for c in consumed}
+    for cand_title in CANDIDATES:
+        if cand_title in consumed_bases:
+            continue
+        entry = entries.get(cand_title)
+        if entry is None:
+            continue
+        if entry["subsections"]:
+            for sub in entry["subsections"]:
+                emit_from({"quotes": sub["quotes"]}, cand_title, sub["title"], [])
+        else:
+            emit_from(entry, cand_title, None, [])
+
+    return rows
+
+
+def merge_json_rows(fresh: list[dict], path: Path) -> list[dict]:
+    """If a previous bercot.json exists, preserve user-edited fields per id.
+
+    Preserved fields: fr, authorId, sourceUrl, notes, status (unless previous was
+    'pending'), mappedTopicIds, siteQuoteId. Refreshed fields: sourceEntry,
+    subsection, attribution, en, dedupMatch.
+
+    Orphan preservation: rows present in the previous file but absent from `fresh`
+    (e.g. a MAPPING tweak made them unreachable, or a Bercot text change shifted
+    the stable_id) are kept at the tail of the output, untouched. A user's manual
+    French translation is never lost without a console warning.
+    """
+    if not path.exists():
+        return fresh
+    try:
+        existing = json.loads(path.read_text())
+    except Exception:
+        return fresh
+    by_id = {r["id"]: r for r in existing if isinstance(r, dict) and "id" in r}
+    fresh_ids = {row["id"] for row in fresh}
+    out: list[dict] = []
+    for row in fresh:
+        prev = by_id.get(row["id"])
+        if prev is None:
+            out.append(row)
+            continue
+        merged = dict(row)
+        for field in ("fr", "authorId", "sourceUrl", "notes"):
+            if field in prev:
+                merged[field] = prev[field]
+        if "status" in prev and prev["status"] != "pending":
+            merged["status"] = prev["status"]
+        if "siteQuoteId" in prev:
+            merged["siteQuoteId"] = prev["siteQuoteId"]
+        if "mappedTopicIds" in prev:
+            merged["mappedTopicIds"] = prev["mappedTopicIds"]
+        out.append(merged)
+
+    orphans = [r for r in existing if isinstance(r, dict) and r.get("id") not in fresh_ids]
+    if orphans:
+        edited_orphans = [o for o in orphans if any(o.get(f) for f in ("fr", "authorId", "sourceUrl", "notes"))]
+        print(
+            f"  ! preserved {len(orphans)} orphan row(s) from previous bercot.json "
+            f"(rows in prior file but not in this harvest); "
+            f"{len(edited_orphans)} had user edits"
+        )
+        out.extend(orphans)
+    return out
+
+
+# -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
 
 def main() -> int:
+    args = parse_args()
+    emit_json = args.emit_json or not args.emit_md
+    emit_md = args.emit_md
+
     if not EPUB.exists():
         print(f"EPUB not found: {EPUB}", file=sys.stderr)
         return 1
 
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "topics").mkdir(exist_ok=True)
+    if emit_md:
+        OUT.mkdir(parents=True, exist_ok=True)
+        (OUT / "topics").mkdir(exist_ok=True)
 
     with tempfile.TemporaryDirectory() as td:
         epub_root = Path(td)
@@ -733,42 +886,51 @@ def main() -> int:
         topics = json.loads((REPO / "src/lib/data/topics.json").read_text())
         topics_by_slug = {t["slug"]: t for t in topics}
 
-        print("[5/6] Rendering per-topic Markdown…")
-        per_topic_stats: dict[str, dict] = {}
-        all_missing: list[tuple[str, list[str]]] = []
-        for slug, mapped in MAPPING.items():
-            topic = topics_by_slug.get(slug)
-            if topic is None:
-                print(f"      ! unknown site slug in mapping: {slug}", file=sys.stderr)
-                continue
-            md, stats = render_topic_md(topic, mapped, entries, existing)
-            path = OUT / "topics" / f"{topic['id']:02d}-{slug}.md"
-            path.write_text(md)
-            per_topic_stats[slug] = {**stats, "id": topic["id"], "label": topic["label"]}
-            if stats["missing"]:
-                all_missing.append((slug, stats["missing"]))
+        if emit_md:
+            print("[5/6] Rendering per-topic Markdown…")
+            per_topic_stats: dict[str, dict] = {}
+            all_missing: list[tuple[str, list[str]]] = []
+            for slug, mapped in MAPPING.items():
+                topic = topics_by_slug.get(slug)
+                if topic is None:
+                    print(f"      ! unknown site slug in mapping: {slug}", file=sys.stderr)
+                    continue
+                md, stats = render_topic_md(topic, mapped, entries, existing)
+                path = OUT / "topics" / f"{topic['id']:02d}-{slug}.md"
+                path.write_text(md)
+                per_topic_stats[slug] = {**stats, "id": topic["id"], "label": topic["label"]}
+                if stats["missing"]:
+                    all_missing.append((slug, stats["missing"]))
 
-        # Sort stats by topic id for the README
-        per_topic_stats = dict(sorted(per_topic_stats.items(), key=lambda kv: kv[1]["id"]))
+            # Sort stats by topic id for the README
+            per_topic_stats = dict(sorted(per_topic_stats.items(), key=lambda kv: kv[1]["id"]))
 
-        consumed = {t for mapped in MAPPING.values() for t, _ in mapped}
+            consumed = {t for mapped in MAPPING.values() for t, _ in mapped}
 
-        print("[6/6] Rendering candidates.md and README.md…")
-        candidates_md, n_candidates = render_candidates(entries, consumed)
-        (OUT / "candidates.md").write_text(candidates_md)
-        (OUT / "README.md").write_text(render_readme(per_topic_stats, n_candidates))
+            print("[6/6] Rendering candidates.md and README.md…")
+            candidates_md, n_candidates = render_candidates(entries, consumed)
+            (OUT / "candidates.md").write_text(candidates_md)
+            (OUT / "README.md").write_text(render_readme(per_topic_stats, n_candidates))
 
-        # Diagnostics
-        if all_missing:
-            print("\n  TOC entries referenced in MAPPING but NOT found in EPUB:")
-            for slug, miss in all_missing:
-                print(f"    - {slug}: {', '.join(miss)}")
+            # Diagnostics
+            if all_missing:
+                print("\n  TOC entries referenced in MAPPING but NOT found in EPUB:")
+                for slug, miss in all_missing:
+                    print(f"    - {slug}: {', '.join(miss)}")
 
-        grand_total = sum(s["total"] for s in per_topic_stats.values())
-        grand_matched = sum(s["matched"] for s in per_topic_stats.values())
-        print(f"\nDone. {grand_total} quotes harvested across {len(per_topic_stats)} topics "
-              f"({grand_matched} already on site). {n_candidates} new-topic candidates.")
-        print(f"Output: {OUT}")
+            grand_total = sum(s["total"] for s in per_topic_stats.values())
+            grand_matched = sum(s["matched"] for s in per_topic_stats.values())
+            print(f"\nDone. {grand_total} quotes harvested across {len(per_topic_stats)} topics "
+                  f"({grand_matched} already on site). {n_candidates} new-topic candidates.")
+            print(f"Output: {OUT}")
+
+        if emit_json:
+            rows = collect_json_rows(entries, existing, topics_by_slug)
+            merged = merge_json_rows(rows, BERCOT_JSON_PATH)
+            BERCOT_JSON_PATH.parent.mkdir(parents=True, exist_ok=True)
+            BERCOT_JSON_PATH.write_text(json.dumps(merged, ensure_ascii=False, indent=2) + "\n")
+            print(f"\nEmitted {len(merged)} rows to {BERCOT_JSON_PATH}")
+
     return 0
 
 
