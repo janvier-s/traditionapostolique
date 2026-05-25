@@ -34,27 +34,24 @@ describe('WorkSchema', () => {
 });
 
 describe('TopicSchema', () => {
-	it('accepts roman section', () => {
+	it('accepts minimal topic', () => {
 		expect(
 			TopicSchema.safeParse({
 				id: 1,
 				slug: 'foi',
-				label: 'Foi',
-				section: 'I',
-				groupe: 'Sources'
+				label: 'Foi'
 			}).success
 		).toBe(true);
 	});
-	it('rejects non-roman section', () => {
+	it('accepts primary flag', () => {
 		expect(
 			TopicSchema.safeParse({
 				id: 1,
 				slug: 'foi',
 				label: 'Foi',
-				section: '9',
-				groupe: 'X'
+				primary: true
 			}).success
-		).toBe(false);
+		).toBe(true);
 	});
 });
 
@@ -64,9 +61,7 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 			TopicSchema.safeParse({
 				id: 1,
 				slug: 'a',
-				label: 'A',
-				section: 'I',
-				groupe: 'g'
+				label: 'A'
 			}).success
 		).toBe(true);
 	});
@@ -77,8 +72,6 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 					id: 1,
 					slug: 'a',
 					label: 'A',
-					section: 'I',
-					groupe: 'g',
 					pillar
 				}).success
 			).toBe(true);
@@ -90,8 +83,6 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 				id: 1,
 				slug: 'a',
 				label: 'A',
-				section: 'I',
-				groupe: 'g',
 				pillar: 'dogme'
 			}).success
 		).toBe(false);
@@ -102,8 +93,6 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 				id: 2,
 				slug: 'b',
 				label: 'B',
-				section: 'I',
-				groupe: 'g',
 				parentId: 1,
 				order: 0
 			}).success
@@ -115,8 +104,6 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 				id: 2,
 				slug: 'b',
 				label: 'B',
-				section: 'I',
-				groupe: 'g',
 				parentId: -1
 			}).success
 		).toBe(false);
@@ -127,8 +114,6 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 				id: 2,
 				slug: 'b',
 				label: 'B',
-				section: 'I',
-				groupe: 'g',
 				order: -1
 			}).success
 		).toBe(false);
