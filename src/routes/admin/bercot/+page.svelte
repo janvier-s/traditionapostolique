@@ -2,6 +2,7 @@
 	import type { BercotEntry, BercotStatus, Topic } from '$lib/schema';
 	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
 	import BercotCardEditor from './BercotCardEditor.svelte';
+	import NewTopicFromBercot from './NewTopicFromBercot.svelte';
 
 	let { data } = $props();
 
@@ -87,6 +88,20 @@
 	};
 
 	const STATUSES: (BercotStatus | 'all')[] = ['all', 'pending', 'kept', 'rejected', 'published'];
+
+	let newTopicSource = $state<string | null>(null);
+	const newTopicEntries = $derived(
+		newTopicSource ? data.bercot.filter((b) => b.sourceEntry === newTopicSource) : []
+	);
+
+	function onTopicCreated(newTopic: Topic, updatedEntries: BercotEntry[]) {
+		data.topics = [...data.topics, newTopic];
+		for (const u of updatedEntries) {
+			const i = data.bercot.findIndex((b) => b.id === u.id);
+			if (i !== -1) data.bercot[i] = u;
+		}
+		newTopicSource = null;
+	}
 
 	let activeId = $state<string | null>(null);
 	let lastTrigger = $state<HTMLElement | null>(null);
@@ -289,7 +304,13 @@
 							<li class="text-xs italic text-muted">… +{items.length - 3} de plus</li>
 						{/if}
 					</ul>
-					<!-- TODO T13: "Créer un sujet" button -->
+					<button
+						type="button"
+						onclick={() => (newTopicSource = entry)}
+						class="mt-3 rounded border border-border bg-accent/10 px-3 py-1 text-xs text-accent hover:bg-accent/20"
+					>
+						+ Créer un sujet « {entry} »
+					</button>
 				</li>
 			{/each}
 		</ul>
@@ -310,5 +331,15 @@
 		onSaved={onEditorSaved}
 		onPublished={onEditorPublished}
 		onNavigate={navigate}
+	/>
+{/if}
+
+{#if newTopicSource}
+	<NewTopicFromBercot
+		sourceEntry={newTopicSource}
+		entries={newTopicEntries}
+		topics={data.topics}
+		onClose={() => (newTopicSource = null)}
+		onCreated={onTopicCreated}
 	/>
 {/if}
