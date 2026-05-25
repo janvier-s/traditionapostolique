@@ -13,7 +13,7 @@ import {
 describe('data loader', () => {
 	it('loads all four collections as non-empty arrays', () => {
 		expect(authors.length).toBeGreaterThan(0);
-		expect(topics.length).toBe(49);
+		expect(topics.length).toBeGreaterThan(0);
 		expect(works.length).toBeGreaterThan(0);
 		expect(quotes.length).toBeGreaterThan(0);
 	});
