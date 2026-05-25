@@ -1,8 +1,9 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import { buildPublicTreeNested, topicBySlug } from '$lib/data';
+	import { buildPublicTaxonomy, type PublicTaxonomyNode } from '$lib/data';
 	import JsonLd from '$lib/components/ui/JsonLd.svelte';
+	import type { Pillar } from '$lib/schema';
 
 	let { children } = $props();
 
@@ -27,50 +28,41 @@
 		}
 	};
 
-	const tree = buildPublicTreeNested();
+	const taxonomy = buildPublicTaxonomy();
+	const PILLARS: { value: Pillar; label: string }[] = [
+		{ value: 'credo', label: 'Credo' },
+		{ value: 'sacrements', label: 'Sacrements' },
+		{ value: 'vie', label: 'Vie en Christ' },
+		{ value: 'priere', label: 'Prière' }
+	];
 
-	// Derive the active topic from the URL. Used both to highlight the
-	// current item in the rail and to auto-expand its parent pillar/theme.
+	// Derive the active topic slug from the URL.
 	const activeSlug = $derived.by(() => {
 		const m = page.url.pathname.match(/^\/sujets\/([^/]+)$/);
 		return m ? m[1] : null;
 	});
-	const activeTopic = $derived(activeSlug ? topicBySlug(activeSlug) : null);
-	const activePillar = $derived(activeTopic?.pillar ?? null);
-	// Active theme = the parent topic when the active topic is an aspect
-	const activeThemeId = $derived(activeTopic?.parentId ?? null);
 
-	// Explicit user toggle state. presence = explicit choice (true/false);
-	// absence = auto (follow active pillar / theme). This lets the user close
-	// the currently-active pillar — which was impossible with the old Set model
-	// where activePillar always overrode manual state.
+	// Explicit user toggle state. Presence = explicit choice; absence = default closed.
 	let pillarToggles = $state<Map<string, boolean>>(new Map());
-	let themeToggles = $state<Map<number, boolean>>(new Map());
+	let umbrellaToggles = $state<Map<string, boolean>>(new Map());
 
-	function isPillarOpen(pillar: string): boolean {
-		const explicit = pillarToggles.get(pillar);
-		if (explicit !== undefined) return explicit;
-		return pillar === activePillar;
+	function isPillarOpen(p: string): boolean {
+		const e = pillarToggles.get(p);
+		return e === undefined ? false : e;
 	}
-
-	function togglePillar(pillar: string) {
-		const cur = isPillarOpen(pillar);
+	function togglePillar(p: string) {
 		const m = new Map(pillarToggles);
-		m.set(pillar, !cur);
+		m.set(p, !isPillarOpen(p));
 		pillarToggles = m;
 	}
-
-	function isThemeOpen(themeId: number): boolean {
-		const explicit = themeToggles.get(themeId);
-		if (explicit !== undefined) return explicit;
-		return themeId === activeThemeId;
+	function isUmbrellaOpen(id: string): boolean {
+		const e = umbrellaToggles.get(id);
+		return e === undefined ? false : e;
 	}
-
-	function toggleTheme(themeId: number) {
-		const cur = isThemeOpen(themeId);
-		const m = new Map(themeToggles);
-		m.set(themeId, !cur);
-		themeToggles = m;
+	function toggleUmbrella(id: string) {
+		const m = new Map(umbrellaToggles);
+		m.set(id, !isUmbrellaOpen(id));
+		umbrellaToggles = m;
 	}
 </script>
 
@@ -155,126 +147,29 @@
 			-->
 				<nav aria-label="Sujets" class="font-ui font-light">
 					<ul>
-						{#each tree as col (col.pillar)}
-							{@const pillarOpen = isPillarOpen(col.pillar)}
-							{@const hasActiveChild = col.pillar === activePillar}
+						{#each PILLARS as p (p.value)}
+							{@const nodes = taxonomy[p.value] ?? []}
+							{@const pillarOpen = isPillarOpen(p.value)}
 							<li>
 								<button
 									type="button"
-									onclick={() => togglePillar(col.pillar)}
+									onclick={() => togglePillar(p.value)}
 									aria-expanded={pillarOpen}
-									aria-controls={`pillar-${col.pillar}-children`}
 									class="flex w-full items-baseline justify-between gap-2 py-[9px] text-left uppercase transition-colors hover:text-accent"
-									class:text-accent={hasActiveChild}
-									class:font-medium={hasActiveChild}
 									style="font-size: 1em; line-height: 1.25em; letter-spacing: 0.05em;"
 								>
-									<span>{col.label}</span>
+									<span>{p.label}</span>
 									<span aria-hidden="true" class="font-heading text-[22px] leading-none"
 										>{pillarOpen ? '−' : '+'}</span
 									>
 								</button>
-
 								{#if pillarOpen}
 									<ul
-										id={`pillar-${col.pillar}-children`}
 										class="mb-2 border-l border-foreground/15 pl-4 normal-case tracking-normal"
 										style="font-size: 0.9em;"
 									>
-										{#each col.topics as t (t.id)}
-											<li class="relative">
-												{#if t.isTheme && t.children}
-													{@const themeOpen = isThemeOpen(t.id)}
-													{@const themeActive =
-														t.id === activeTopic?.id || t.id === activeThemeId}
-													<!-- Theme row: label is a real link, +/- is an independent button -->
-													<div class="flex items-baseline gap-2 py-[7px]">
-														{#if themeActive}
-															<!-- Guillemet · oxblood › sits in the rail's
-															     left gutter as a directional marker.
-															     Optical alignment: nudged up 2px from
-															     true center since the › glyph's visual
-															     mass sits below its em-box midline. -->
-															<span
-																aria-hidden="true"
-																class="absolute text-accent leading-none"
-																style="font-size: 22px; right: calc(100% + 4px); top: calc(50% - 1px); transform: translateY(-50%);"
-																>›</span
-															>
-														{/if}
-														<a
-															href={t.href}
-															class="grow transition-colors hover:text-accent"
-															class:text-accent={themeActive}
-															class:font-medium={themeActive}
-														>
-															{t.label}
-														</a>
-														<button
-															type="button"
-															onclick={() => toggleTheme(t.id)}
-															aria-expanded={themeOpen}
-															aria-controls={`theme-${t.id}-children`}
-															aria-label={`${themeOpen ? 'Fermer' : 'Ouvrir'} ${t.label}`}
-															class="shrink-0 transition-colors hover:text-accent"
-														>
-															<span
-																aria-hidden="true"
-																class="font-heading text-[18px] leading-none"
-																>{themeOpen ? '−' : '+'}</span
-															>
-														</button>
-													</div>
-
-													{#if themeOpen}
-														<ul
-															id={`theme-${t.id}-children`}
-															class="mt-0.5 mb-1 border-l border-foreground/15 pl-3"
-															style="font-size: 0.95em;"
-														>
-															{#each t.children as child (child.id)}
-																{@const isActive = child.slug === activeSlug}
-																<li class="relative">
-																	{#if isActive}
-																		<span
-																			aria-hidden="true"
-																			class="absolute text-accent leading-none"
-																			style="font-size: 22px; right: calc(100% + 4px); top: calc(50% - 1px); transform: translateY(-50%);"
-																			>›</span
-																		>
-																	{/if}
-																	<a
-																		href={child.href}
-																		class="block py-[5px] transition-colors hover:text-accent"
-																		class:text-accent={isActive}
-																		class:font-medium={isActive}
-																	>
-																		{child.label}
-																	</a>
-																</li>
-															{/each}
-														</ul>
-													{/if}
-												{:else}
-													{@const isActive = t.slug === activeSlug}
-													{#if isActive}
-														<span
-															aria-hidden="true"
-															class="absolute text-accent leading-none"
-															style="font-size: 22px; right: calc(100% + 4px); top: calc(50% - 1px); transform: translateY(-50%);"
-															>›</span
-														>
-													{/if}
-													<a
-														href={t.href}
-														class="block py-[7px] transition-colors hover:text-accent"
-														class:text-accent={isActive}
-														class:font-medium={isActive}
-													>
-														{t.label}
-													</a>
-												{/if}
-											</li>
+										{#each nodes as n (n.id)}
+											{@render renderNode(n)}
 										{/each}
 									</ul>
 								{/if}
@@ -306,3 +201,54 @@
 		<p class="mt-4 label-meta">Tradition Apostolique &middot; anthologie patristique</p>
 	</footer>
 </div>
+
+{#snippet renderNode(n: PublicTaxonomyNode)}
+	<li class="relative">
+		{#if n.umbrella}
+			{@const open = isUmbrellaOpen(n.id)}
+			<div class="flex items-baseline gap-2 py-[7px]">
+				{#if n.umbrella.primaryHref}
+					<a href={n.umbrella.primaryHref} class="grow transition-colors hover:text-accent"
+						>{n.umbrella.label}</a
+					>
+				{:else}
+					<span class="grow">{n.umbrella.label}</span>
+				{/if}
+				<button
+					type="button"
+					onclick={() => toggleUmbrella(n.id)}
+					aria-expanded={open}
+					aria-label={`${open ? 'Fermer' : 'Ouvrir'} ${n.umbrella.label}`}
+					class="shrink-0 transition-colors hover:text-accent"
+				>
+					<span aria-hidden="true" class="font-heading text-[18px] leading-none"
+						>{open ? '−' : '+'}</span
+					>
+				</button>
+			</div>
+			{#if open && n.children.length > 0}
+				<ul class="border-l border-foreground/15 pl-3 mt-0.5 mb-1" style="font-size: 0.95em;">
+					{#each n.children as c (c.id)}
+						{@render renderNode(c)}
+					{/each}
+				</ul>
+			{/if}
+		{:else if n.topicRef}
+			{@const isActive = n.topicRef.slug === activeSlug}
+			{#if isActive}
+				<span
+					aria-hidden="true"
+					class="absolute text-accent leading-none"
+					style="font-size: 22px; right: calc(100% + 4px); top: calc(50% - 1px); transform: translateY(-50%);"
+					>›</span
+				>
+			{/if}
+			<a
+				href={n.topicRef.href}
+				class="block py-[5px] transition-colors hover:text-accent"
+				class:text-accent={isActive}
+				class:font-medium={isActive}>{n.topicRef.label}</a
+			>
+		{/if}
+	</li>
+{/snippet}

@@ -11,6 +11,7 @@ import {
 	TopicSchema,
 	QuoteSchema,
 	BercotEntrySchema,
+	TaxonomySchema,
 	type Topic
 } from '$lib/schema';
 
@@ -19,7 +20,8 @@ const FILE: Record<string, string> = {
 	works: 'works.json',
 	topics: 'topics.json',
 	quotes: 'quotes.json',
-	bercot: 'bercot.json'
+	bercot: 'bercot.json',
+	taxonomy: 'taxonomy.json'
 };
 
 const SCHEMA: Record<string, z.ZodTypeAny> = {
@@ -27,7 +29,8 @@ const SCHEMA: Record<string, z.ZodTypeAny> = {
 	works: WorkSchema,
 	topics: TopicSchema,
 	quotes: QuoteSchema,
-	bercot: BercotEntrySchema
+	bercot: BercotEntrySchema,
+	taxonomy: TaxonomySchema
 };
 
 function pathFor(entity: string) {
@@ -36,7 +39,7 @@ function pathFor(entity: string) {
 	return join(process.cwd(), 'src/lib/data', file);
 }
 
-function loadAll(entity: string): unknown[] {
+function loadAll(entity: string): unknown {
 	return JSON.parse(readFileSync(pathFor(entity), 'utf-8'));
 }
 
@@ -58,12 +61,15 @@ export async function GET({ params }) {
 export async function PUT({ params, request }) {
 	assertDev();
 	const body = await request.json();
-	const parsed = z.array(schemaFor(params.entity)).safeParse(body);
+	const parsed =
+		params.entity === 'taxonomy'
+			? schemaFor(params.entity).safeParse(body)
+			: z.array(schemaFor(params.entity)).safeParse(body);
 	if (!parsed.success) throw error(400, JSON.stringify(parsed.error.issues));
 	if (params.entity === 'topics') {
 		const refs = validateParentRefs(parsed.data as Topic[]);
 		if (!refs.ok) throw error(400, refs.error);
 	}
 	atomicWriteJson(pathFor(params.entity), parsed.data);
-	return json({ ok: true, count: parsed.data.length });
+	return json({ ok: true });
 }
