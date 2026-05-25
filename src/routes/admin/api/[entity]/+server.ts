@@ -4,20 +4,30 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { z } from 'zod';
 import { atomicWriteJson } from '$lib/admin/atomic-write';
-import { AuthorSchema, WorkSchema, TopicSchema, QuoteSchema } from '$lib/schema';
+import { validateParentRefs } from '$lib/admin/topic-tree';
+import {
+	AuthorSchema,
+	WorkSchema,
+	TopicSchema,
+	QuoteSchema,
+	BercotEntrySchema,
+	type Topic
+} from '$lib/schema';
 
 const FILE: Record<string, string> = {
 	authors: 'authors.json',
 	works: 'works.json',
 	topics: 'topics.json',
-	quotes: 'quotes.json'
+	quotes: 'quotes.json',
+	bercot: 'bercot.json'
 };
 
 const SCHEMA: Record<string, z.ZodTypeAny> = {
 	authors: AuthorSchema,
 	works: WorkSchema,
 	topics: TopicSchema,
-	quotes: QuoteSchema
+	quotes: QuoteSchema,
+	bercot: BercotEntrySchema
 };
 
 function pathFor(entity: string) {
@@ -50,6 +60,10 @@ export async function PUT({ params, request }) {
 	const body = await request.json();
 	const parsed = z.array(schemaFor(params.entity)).safeParse(body);
 	if (!parsed.success) throw error(400, JSON.stringify(parsed.error.issues));
+	if (params.entity === 'topics') {
+		const refs = validateParentRefs(parsed.data as Topic[]);
+		if (!refs.ok) throw error(400, refs.error);
+	}
 	atomicWriteJson(pathFor(params.entity), parsed.data);
 	return json({ ok: true, count: parsed.data.length });
 }
