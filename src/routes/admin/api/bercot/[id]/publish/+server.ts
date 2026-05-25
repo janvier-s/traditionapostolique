@@ -35,7 +35,7 @@ export async function POST({ params }) {
 
 	const idx = bercotAll.findIndex((b) => b.id === params.id);
 	if (idx === -1) throw error(404, `Bercot entry ${params.id} not found`);
-	const entry: BercotEntry = bercotAll[idx];
+	const entry: BercotEntry = bercotAll[idx]!;
 
 	if (!entry.fr || entry.fr.trim() === '') throw error(400, 'French translation required');
 	if (entry.authorId == null) throw error(400, 'authorId required');
