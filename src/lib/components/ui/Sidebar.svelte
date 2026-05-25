@@ -1,20 +1,20 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { sidebar } from '$lib/stores/sidebar.svelte';
-	import { buildTopicTree } from '$lib/data';
+	import { buildPublicTree } from '$lib/data';
 	import SidebarItem from './SidebarItem.svelte';
 
-	const tree = buildTopicTree();
+	const tree = buildPublicTree();
 
 	const filtered = $derived.by(() => {
 		const f = sidebar.filter.trim().toLowerCase();
 		if (!f) return tree;
 		return tree
-			.map((s) => ({
-				...s,
-				topics: s.topics.filter((t) => t.label.toLowerCase().includes(f))
+			.map((col) => ({
+				...col,
+				items: col.items.filter((t) => t.label.toLowerCase().includes(f))
 			}))
-			.filter((s) => s.topics.length > 0);
+			.filter((col) => col.items.length > 0);
 	});
 
 	const currentPath = $derived(page.url.pathname);
@@ -36,15 +36,15 @@
 			/>
 		</div>
 		<nav class="p-2">
-			{#each filtered as section (section.section)}
+			{#each filtered as col (col.pillar)}
 				<details open class="mb-2">
 					<summary
 						class="cursor-pointer rounded px-2 py-1 font-ui font-medium text-foreground hover:bg-subtle/10"
 					>
-						<span class="mr-1 text-muted">{section.section}.</span>{section.groupe}
+						{col.label}
 					</summary>
 					<ul class="ml-3 mt-1 space-y-0.5">
-						{#each section.topics as t (t.id)}
+						{#each col.items as t (t.id)}
 							<SidebarItem
 								href={t.href}
 								label={t.label}

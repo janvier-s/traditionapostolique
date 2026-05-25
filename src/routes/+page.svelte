@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { buildTopicTree, quotes, authors } from '$lib/data';
+	import { topics, quotes, authors } from '$lib/data';
 	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 
-	const tree = buildTopicTree();
-	const totalTopics = tree.reduce((n, s) => n + s.topics.length, 0);
+	const totalTopics = topics.length;
 	const totalQuotes = quotes.length;
 	const totalAuthors = authors.length;
 </script>

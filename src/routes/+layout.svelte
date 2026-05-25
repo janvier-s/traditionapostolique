@@ -1,8 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
-	import { buildTopicTree, topicBySlug } from '$lib/data';
-	import type { Section } from '$lib/schema';
+	import { buildPublicTree, topicBySlug } from '$lib/data';
 	import JsonLd from '$lib/components/ui/JsonLd.svelte';
 
 	let { children } = $props();
@@ -28,33 +27,33 @@
 		}
 	};
 
-	const tree = buildTopicTree();
+	const tree = buildPublicTree();
 
 	// Derive the active topic from the URL. Used both to highlight the
-	// current item in the rail and to auto-expand its parent section.
+	// current item in the rail and to auto-expand its parent pillar.
 	const activeSlug = $derived.by(() => {
 		const m = page.url.pathname.match(/^\/sujets\/([^/]+)$/);
 		return m ? m[1] : null;
 	});
 	const activeTopic = $derived(activeSlug ? topicBySlug(activeSlug) : null);
-	const activeSection = $derived(activeTopic?.section ?? null);
+	const activePillar = $derived(activeTopic?.pillar ?? null);
 
-	// Manually toggled accordion state. A section is considered open if
+	// Manually toggled accordion state. A pillar is considered open if
 	// it's either in `manuallyOpen` OR it contains the current active
-	// topic. We do not write the active section into `manuallyOpen`
+	// topic. We do not write the active pillar into `manuallyOpen`
 	// because we want the auto-open behaviour to track URL changes (e.g.
 	// after navigating between topics) without leaving stale opens behind.
-	let manuallyOpen = $state<Set<Section>>(new Set());
+	let manuallyOpen = $state<Set<string>>(new Set());
 
-	function toggleSection(section: Section) {
+	function togglePillar(pillar: string) {
 		const next = new Set(manuallyOpen);
-		if (next.has(section)) next.delete(section);
-		else next.add(section);
+		if (next.has(pillar)) next.delete(pillar);
+		else next.add(pillar);
 		manuallyOpen = next;
 	}
 
-	function isOpen(section: Section): boolean {
-		return manuallyOpen.has(section) || section === activeSection;
+	function isOpen(pillar: string): boolean {
+		return manuallyOpen.has(pillar) || pillar === activePillar;
 	}
 </script>
 
@@ -139,21 +138,21 @@
 			-->
 				<nav aria-label="Sujets" class="font-ui font-light">
 					<ul>
-						{#each tree as s (s.section)}
-							{@const open = isOpen(s.section)}
-							{@const hasActiveChild = s.section === activeSection}
+						{#each tree as col (col.pillar)}
+							{@const open = isOpen(col.pillar)}
+							{@const hasActiveChild = col.pillar === activePillar}
 							<li>
 								<button
 									type="button"
-									onclick={() => toggleSection(s.section)}
+									onclick={() => togglePillar(col.pillar)}
 									aria-expanded={open}
-									aria-controls={`section-${s.section}-children`}
+									aria-controls={`pillar-${col.pillar}-children`}
 									class="flex w-full items-baseline justify-between gap-2 py-[9px] text-left uppercase transition-colors hover:text-accent"
 									class:text-accent={hasActiveChild}
 									class:font-medium={hasActiveChild}
 									style="font-size: 1em; line-height: 1.25em; letter-spacing: 0.05em;"
 								>
-									<span>{s.groupe}</span>
+									<span>{col.label}</span>
 									<span aria-hidden="true" class="font-heading text-[22px] leading-none"
 										>{open ? '−' : '+'}</span
 									>
@@ -161,11 +160,11 @@
 
 								{#if open}
 									<ul
-										id={`section-${s.section}-children`}
+										id={`pillar-${col.pillar}-children`}
 										class="mb-2 border-l border-foreground/15 pl-4 normal-case tracking-normal"
 										style="font-size: 0.9em;"
 									>
-										{#each s.topics as t (t.id)}
+										{#each col.items as t (t.id)}
 											{@const isActive = t.slug === activeSlug}
 											<li class="relative">
 												{#if isActive}
@@ -187,9 +186,9 @@
 													href={t.href}
 													class="block py-[7px] transition-colors hover:text-accent"
 													class:text-accent={isActive}
-													class:font-medium={isActive}
+													class:font-medium={isActive || t.isTheme}
 												>
-													{t.label}
+													{#if t.parentLabel}<span class="text-muted" aria-hidden="true">↳ </span>{/if}{t.label}
 												</a>
 											</li>
 										{/each}

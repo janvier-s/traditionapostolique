@@ -47,10 +47,6 @@ export const workBySlug = (slug: string) => workBySlug_.get(slug);
 export const topicBySlug = (slug: string) => topicBySlug_.get(slug);
 export const quoteBySlug = (slug: string) => quoteBySlug_.get(slug);
 
-/** @deprecated Replaced by buildPublicTree. Remove once Tasks 7+ rewrite Sidebar, +layout, +page consumers. */
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function buildTopicTree(): any[] { return []; }
-
 export interface PublicAspect {
 	id: number;
 	slug: string;
