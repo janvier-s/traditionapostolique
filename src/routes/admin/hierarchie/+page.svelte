@@ -62,12 +62,9 @@
 							class="block rounded border border-border bg-background px-2 py-1 hover:bg-subtle/10"
 						>
 							<span class="flex items-baseline justify-between gap-2 text-sm">
-								<span class="min-w-0 truncate">{node.topic.label}</span>
+								<span class="min-w-0 truncate">{node.topic.label}{#if node.children.length > 0}<span class="ml-2 rounded bg-subtle/20 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-muted">THÈME</span>{/if}</span>
 								<span class="shrink-0 text-[11px] text-muted">{n || '—'}</span>
 							</span>
-							{#if node.topic.groupe}
-								<span class="text-[10px] uppercase tracking-wider text-muted">{node.topic.groupe}</span>
-							{/if}
 						</a>
 						{#if node.children.length > 0}
 							<ul class="ml-3 mt-1 space-y-1 border-l border-border pl-2">
@@ -79,7 +76,7 @@
 											class="block rounded px-1 py-0.5 hover:bg-subtle/10"
 										>
 											<span class="flex items-baseline justify-between gap-2 text-xs">
-												<span class="min-w-0 truncate"><span aria-hidden="true">↳ </span>{child.topic.label}</span>
+												<span class="min-w-0 truncate"><span aria-hidden="true">↳ </span>{child.topic.label}{#if child.topic.primary === true}<span class="ml-1 rounded bg-accent/15 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-accent">PRINCIPAL</span>{/if}</span>
 												<span class="shrink-0 text-[10px] text-muted">{cn || '—'}</span>
 											</span>
 										</a>
