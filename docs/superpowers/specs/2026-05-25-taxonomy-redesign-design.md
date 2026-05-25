@@ -67,7 +67,7 @@ A topic is a theme iff it has at least one child. A topic is a standalone sujet 
 1. `parentId` references an existing topic, is not self, and points at a root (depth ≤ 1). *(existing, kept)*
 2. **Theme has zero quotes.** No `quote.topicIds` entry equals a topic id that has children. Cross-collection check — validator now receives both arrays.
 3. **Theme has exactly one primary aspect.** For each topic with children, exactly one child has `primary: true`.
-4. **Slugs are globally unique** across all topics.
+4. **Slugs are unique within their route namespace.** Aspects and standalone sujets share the `/sujets/` namespace; themes live in `/themes/`. A theme may share its slug with its primary aspect (default behavior) because they're served from different routes — `/sujets/le-bapteme` (primary aspect's quotes) and `/themes/le-bapteme` (mini-index) coexist cleanly.
 5. *(Soft warning, not error)* Primary aspect's `label` matches its theme's `label`. Allowed to drift, flagged in the editor.
 
 A new helper `validateTopicQuoteCoherence(topics, quotes)` does the cross-array check; the `/admin/api/topics` and `/admin/api/quotes` PUT handlers both call it (because either side can violate invariant #2).
@@ -110,7 +110,7 @@ A separate route for the theme-level meta page. Shows the theme's label, descrip
 
 Slug convention:
 - Primary aspect: clean slug (e.g. `le-bapteme`) → served at `/sujets/le-bapteme`.
-- Theme record: separate slug (e.g. `le-bapteme-theme` or similar — exact convention finalized during migration) → served at `/themes/le-bapteme-theme`. The theme's slug is not user-facing in 99% of navigation.
+- Theme record: same clean slug by default (e.g. `le-bapteme`) → served at `/themes/le-bapteme`. The `/themes/` namespace disambiguates; no decoration suffix needed. The user can override per theme if desired.
 
 ### Quote counts
 
@@ -125,7 +125,7 @@ Sidebar tree stays as today (depth-1 nesting via `flattenTree`). Each row gets a
 Form panel:
 - Remove `section` and `groupe` fields.
 - Add **Aspect principal** checkbox (visible only when the topic has a parent). Toggling it on auto-toggles it off on the previous primary in the same theme — single-primary invariant maintained in the editor, also enforced by the validator.
-- Keep `Description` for everyone (used by the `/themes/{slug}` page when the topic is a theme; ignored for aspects/sujets).
+- Keep `Description` for every topic shape (theme, aspect, standalone sujet). Displayed wherever the topic's page renders it; useful for SEO and as introductory text.
 - When the selected topic is a theme: show a read-only "Citations: 0 (must be 0)" line. If non-zero, show a "Déplacer les citations vers l'aspect principal" button.
 
 ### `/admin/hierarchie` (read-only) — refresh
@@ -251,6 +251,12 @@ Each step in `/admin/migration` records `applied: true` once committed. Re-runni
 
 ## Open questions
 
-- Theme slug convention — `{label-slug}-theme`? Or something else? Decide during migration (UI lets you set it per theme).
-- Whether to keep the `description` field on aspects, or only on themes (and primary aspects inherit theme's description for SEO). Default: keep on all topics, no enforcement.
-- Whether `/admin/migration` ships behind a kill-switch after the migration runs (so it's not accidentally re-opened). Default: leave it in place; idempotent steps make accidental re-runs harmless.
+(None at design time. Settled inline during brainstorming.)
+
+## Post-migration cleanup
+
+The migration is a one-time event. After all steps are applied and committed:
+- The `/admin/migration` route + its `apply-step` endpoint + the `+page.ts` loader are deleted in a follow-up commit.
+- The nav link to "Migration" is removed.
+- The `applied: true` state markers in topics/quotes/bercot (if any) are dropped — the migration UI carries them transiently in memory; nothing persists.
+- The migration commits themselves remain in git history as the audit trail.
