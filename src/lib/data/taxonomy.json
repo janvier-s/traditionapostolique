@@ -1,746 +1,788 @@
 {
 	"credo": [
 		{
-			"id": "ddb3472c-192b-4fa9-8b28-3b40af825b82",
-			"label": "Le seul vrai Dieu",
+			"id": "4e57b6e4-392e-46f8-aa05-8b0f318ba9d8",
+			"label": "Dieu",
 			"children": [
 				{
-					"id": "73285862-0e7c-450b-8791-4f41cefc3f1c",
+					"id": "bc5a1a79-cb4b-4a0a-a375-a8031c05e868",
 					"topicId": 1,
 					"primary": true
 				},
 				{
-					"id": "c6c53fd3-20d2-42b3-8904-26f63e30e32a",
+					"id": "c8181ee6-5939-4549-be14-05a040061a40",
 					"topicId": 2
+				},
+				{
+					"id": "d8bd6f5a-59a6-4a47-ac91-581f70441d2a",
+					"topicId": 146
 				}
 			]
 		},
 		{
-			"id": "d9d23d45-85cc-4ce0-a395-a4d7bf47024f",
+			"id": "cd109191-0cbe-4baf-a478-2562701c3ae2",
 			"label": "La Trinité",
 			"children": [
 				{
-					"id": "b46e5536-65cd-4f69-bafe-8702a4273d14",
+					"id": "c7e34797-b56b-4786-bccc-bec3cf920fdf",
 					"topicId": 3,
 					"primary": true
 				},
 				{
-					"id": "3702e6b8-365a-4bb0-a2f4-ca011e6d8acd",
+					"id": "ac571a09-6824-4543-a074-ebeba8cd88c0",
 					"topicId": 4
 				},
 				{
-					"id": "c7927c6a-9ff8-49cd-9ce8-52b0fbdb56ac",
+					"id": "5c26130d-69cf-42fb-a8d6-26f472c18701",
 					"topicId": 7
 				},
 				{
-					"id": "90275dcd-bc41-4c5a-a771-fce8309642c5",
+					"id": "7a8674ee-4861-497f-93c3-425115900baf",
 					"topicId": 51
 				},
 				{
-					"id": "751ac0ee-0323-4366-8eb7-c7f88fab3fdf",
+					"id": "ae122b35-6303-49c8-b7da-0a2a09f92d71",
 					"topicId": 52
 				}
 			]
 		},
 		{
-			"id": "be30784d-ec24-459c-b838-8c7d293c7e72",
-			"label": "La divinité du Christ",
+			"id": "27023b15-d75e-4d85-a59f-797d75fd7609",
+			"label": "Le Christ",
 			"children": [
 				{
-					"id": "eb9f4309-b8c8-4701-baaa-ab4abc901d0a",
+					"id": "9bec7f68-3cf2-4636-9c52-d8d92d54b9a1",
 					"topicId": 5,
 					"primary": true
 				},
 				{
-					"id": "259705a6-dc33-41a6-b58e-19d366351484",
+					"id": "820e8162-ffa0-49ef-891a-434912200bb2",
 					"topicId": 6
 				},
 				{
-					"id": "98aa5f59-be50-4a49-8142-f7089507ebab",
+					"id": "27af4562-bde2-418e-b066-1f2e5d0b83ea",
 					"topicId": 53
 				},
 				{
-					"id": "a662a359-6e85-4c8d-a071-65e64d9e7e6b",
+					"id": "a868e3bc-0b61-4e4f-a2a2-a8751b39866d",
 					"topicId": 54
 				},
 				{
-					"id": "84f70090-78ae-4781-ba80-e70b89a5d3ba",
+					"id": "b703f5b7-8768-44be-bb6e-a9746522162f",
 					"topicId": 55
 				},
 				{
-					"id": "2e9077ba-da68-41f2-95a9-255042aad403",
+					"id": "ed166bbf-5fe2-4cd4-ab74-455873bd03d8",
 					"topicId": 56
 				},
 				{
-					"id": "57c24118-b425-40ff-a0ce-d7c3ec30e590",
+					"id": "e14d4611-4c37-4535-8c73-ab6f14f03cf2",
 					"topicId": 57
 				},
 				{
-					"id": "916d7c72-6568-422e-911f-75c062c8ca2e",
+					"id": "48ec8c2f-3c8b-461d-8bd2-2cd57fec19dd",
 					"topicId": 58
 				}
 			]
 		},
 		{
-			"id": "7fbef3d9-6ea4-486d-8eae-83d34985eb5b",
-			"label": "La création ex nihilo",
+			"id": "5aab97e3-deb2-4ea2-bc47-5623d30f0063",
+			"label": "La Création",
 			"children": [
 				{
-					"id": "c23316c4-4354-44a2-a72f-781bd5961675",
+					"id": "67b2e5bd-651a-4eee-a810-0e0585ce9bb3",
 					"topicId": 8,
 					"primary": true
 				},
 				{
-					"id": "83c2fddb-04d0-413f-9dd0-1b0ba969412b",
+					"id": "2c14f292-2390-4100-9c13-5aa003105b19",
 					"topicId": 9
 				}
 			]
 		},
 		{
-			"id": "1b66fa79-1fbe-4647-9439-85e607751f73",
-			"label": "Le canon des Écritures",
+			"id": "61e98f9d-0497-4e72-b2ad-5372b6ad46d9",
+			"label": "Les Écritures",
 			"children": [
 				{
-					"id": "2bd17d4e-447c-49f8-a38a-a3fdbed858cc",
-					"topicId": 10,
+					"id": "5137ec5f-c24c-47ec-b0f4-915399df539a",
+					"topicId": 71,
 					"primary": true
 				},
 				{
-					"id": "cada2893-9273-46e0-8342-f6c70acd2538",
-					"topicId": 71
+					"id": "1ec804c9-db14-40be-8aaa-563ea22978e9",
+					"topicId": 10
 				},
 				{
-					"id": "9516e659-b2fd-4196-a775-07c5ad07bff9",
+					"id": "4af5f89b-af69-4e1d-b182-ad1045ee97d8",
 					"topicId": 72
 				},
 				{
-					"id": "3350d206-5c7e-43c5-8a2f-44262bab1065",
+					"id": "d476ddc8-81ec-44be-bb26-225768132309",
 					"topicId": 73
 				},
 				{
-					"id": "360a11b7-4554-4ac5-b8bd-26d8b4b5bd70",
+					"id": "998e8623-7938-4c2a-aa1e-bb86c9840fa5",
 					"topicId": 74
 				}
 			]
 		},
 		{
-			"id": "bf63e4ee-3453-43c4-a1c0-d974b4d23afe",
-			"label": "La Tradition apostolique",
+			"id": "0ef86633-9600-422c-85cc-3669ad3cd7bd",
+			"label": "La Tradition",
 			"children": [
 				{
-					"id": "f7240870-cff8-4faa-82e0-e917963f55b9",
+					"id": "e2b5820d-337b-42cc-b0f8-3c825a63e42a",
 					"topicId": 11,
 					"primary": true
 				},
 				{
-					"id": "3cbf626b-6331-420b-9643-ebe192f638e7",
+					"id": "b28774e6-7fde-4fe9-ae9a-ef1121dd439d",
 					"topicId": 64
+				},
+				{
+					"id": "c0e8eb79-4e37-499b-8e89-b1f93891b429",
+					"topicId": 63
 				}
 			]
 		},
 		{
-			"id": "49d9da37-c685-4535-b6bb-e7b726a35b35",
-			"label": "L'Église catholique",
+			"id": "3f2328c9-884c-4a58-9dce-f0a2bafb1ef1",
+			"label": "L'Église",
 			"children": [
 				{
-					"id": "776676af-c071-4a17-9cf9-98ade5f710da",
+					"id": "23a9eade-2f72-4445-abc4-95ba9b5c424e",
 					"topicId": 12,
 					"primary": true
 				},
 				{
-					"id": "4526479d-f560-4241-af60-448c703a1cfc",
+					"id": "1f158cbd-ebb2-429e-8b38-39f6734ba0b1",
 					"topicId": 13
 				},
 				{
-					"id": "47a6979e-c4ad-4b09-81a3-4db15a4d179e",
+					"id": "36e6b858-e119-47e8-9e2d-5b8aa4b391fc",
 					"topicId": 60
 				},
 				{
-					"id": "a55a4bd1-e359-4689-8e2e-259033b8b11a",
+					"id": "5f880f0a-d4bc-40ac-8eab-05d6bbcc117d",
 					"topicId": 61
 				},
 				{
-					"id": "4a9c4872-a70f-460c-af29-5be6fe9928be",
+					"id": "6084333e-e816-4977-9e18-ab089cd28f2b",
 					"topicId": 62
 				},
 				{
-					"id": "7f449936-20cb-4218-869d-4dd4c70f9698",
-					"topicId": 63
+					"id": "79052e6c-2593-413e-923f-37ebf72890b9",
+					"topicId": 138
 				},
 				{
-					"id": "e2b8928c-0b5d-4b83-88eb-fcd6007c60df",
-					"topicId": 138
+					"id": "64b91789-7d2f-439d-b615-55aeb06f9f11",
+					"label": "La Papauté",
+					"children": [
+						{
+							"id": "88663c90-6f09-4f62-bfce-61af4a8d61fb",
+							"topicId": 14,
+							"primary": true
+						},
+						{
+							"id": "a035681d-ac30-490b-a23c-27e55f5e2a7b",
+							"topicId": 15
+						},
+						{
+							"id": "30217fe8-34a6-416f-8169-741c2655e0ea",
+							"topicId": 16
+						},
+						{
+							"id": "5b6663d6-9e4c-4fb6-a120-97c6af2b9d25",
+							"topicId": 17
+						},
+						{
+							"id": "40c6c4f0-d625-4fe2-ac50-b5d18ea81d66",
+							"topicId": 18
+						},
+						{
+							"id": "924186c2-7de4-4579-b5e1-ba6b9b83aafb",
+							"topicId": 65
+						},
+						{
+							"id": "bf1ad0a6-468e-4baa-ba01-ef1d35f002a2",
+							"topicId": 66
+						},
+						{
+							"id": "2ad159e2-efe6-407f-9ee5-ec9369e498d3",
+							"topicId": 67
+						}
+					]
 				}
 			]
 		},
 		{
-			"id": "53aa3458-669c-4693-8eaa-daeefabef724",
-			"label": "Pierre le roc",
+			"id": "2c017a21-1469-497c-b806-66b67b9b3ba9",
+			"label": "Hérésies",
 			"children": [
 				{
-					"id": "c7bac97c-ad86-465a-9d01-5b540a4d9dcf",
-					"topicId": 14,
+					"id": "50398006-ade3-4534-a1a7-fcba25a036de",
+					"topicId": 93,
 					"primary": true
 				},
 				{
-					"id": "c4076347-dc44-4b4f-92a2-e7286c5d8c8e",
-					"topicId": 15
+					"id": "8aff906c-e541-403c-9ba6-defdf711c744",
+					"topicId": 88
 				},
 				{
-					"id": "71ec6c2f-5eed-421a-9ba1-10d1d181727e",
-					"topicId": 16
+					"id": "9be5297a-5b6e-4111-a829-a5eef05544b5",
+					"topicId": 89
 				},
 				{
-					"id": "d11055ee-3ace-4cb6-9ea1-18d798849396",
-					"topicId": 17
+					"id": "c5095809-3161-479d-af33-22de8765510b",
+					"topicId": 90
 				},
 				{
-					"id": "d9e4eb77-e695-40ec-b076-4e0ddc49f544",
-					"topicId": 18
+					"id": "ebee3194-a8b1-4919-90de-39b5a2496bc9",
+					"topicId": 91
 				},
 				{
-					"id": "8cf7b1bf-b613-4457-861b-a8423a2bf6ff",
-					"topicId": 65
-				},
-				{
-					"id": "bd36641b-e856-490c-aa75-b8c1e91727ee",
-					"topicId": 66
-				},
-				{
-					"id": "ac4eb226-317c-4e4e-9766-52b0cafabc78",
-					"topicId": 67
+					"id": "ebdc8afc-153a-4078-9190-abf4ea51b223",
+					"topicId": 92
 				}
 			]
 		},
 		{
-			"id": "2ca007b1-f112-433f-b458-e871a9b7e651",
-			"label": "Marie pleine de grâce",
+			"id": "0bd7ecc2-0b7a-4a98-941b-8e0262a48475",
+			"label": "Marie",
 			"children": [
 				{
-					"id": "453b24b8-f7b4-4dd4-b2ef-44b727b6ff36",
+					"id": "e526e4fe-70a0-4537-ab1a-994c38938033",
 					"topicId": 37,
 					"primary": true
 				},
 				{
-					"id": "4adf4c67-ded3-4820-b4a1-cf887e9a50ab",
+					"id": "faac2738-c619-4bb7-be03-6ef3acee2309",
 					"topicId": 38
 				},
 				{
-					"id": "590c3511-368a-401c-ae12-91a85a6b915f",
+					"id": "e070e212-b641-4de9-8118-9beb58466314",
 					"topicId": 39
 				},
 				{
-					"id": "e912fad5-42ec-4f02-af37-dcb66ba60df0",
+					"id": "d951da26-0e81-4d2d-968b-a14688f0eed6",
 					"topicId": 59
 				}
 			]
 		},
 		{
-			"id": "f1b3cfd0-4545-4c54-a5a6-23f1f519710c",
-			"topicId": 41
-		},
-		{
-			"id": "6819fe61-62c3-417d-ab5c-2cbad8bc5b80",
-			"topicId": 42
-		},
-		{
-			"id": "e88fd6c4-94e1-4da2-b8b1-a07047b252c3",
-			"label": "Le salut en dehors de l'Église",
+			"id": "f5ccb434-890e-4ba2-98ad-92e6368d1acd",
+			"label": "Les saints et les martyrs",
 			"children": [
 				{
-					"id": "10e081a4-5aae-44b1-8738-5654bcc0a702",
+					"id": "2489a55f-acf6-4d45-aaa8-160ef1c69a1a",
+					"topicId": 68,
+					"primary": true
+				},
+				{
+					"id": "0cf06e48-7d0c-4573-968f-82a264bc8420",
+					"topicId": 69
+				},
+				{
+					"id": "4fed7cee-d84f-42f6-b803-458463e19ee7",
+					"topicId": 70
+				},
+				{
+					"id": "54017a54-9e5d-4892-9c62-56d23fbdea3a",
+					"topicId": 131
+				}
+			]
+		},
+		{
+			"id": "29edfd1b-7087-409a-b766-26419566c835",
+			"label": "Les miracles et la révélation",
+			"children": [
+				{
+					"id": "79bc6b16-51ff-46e1-a028-f47347001aaf",
+					"topicId": 41,
+					"primary": true
+				},
+				{
+					"id": "b877cc46-7ec9-4f2d-a9d5-901dd44f4e50",
+					"topicId": 42
+				}
+			]
+		},
+		{
+			"id": "5b2d0cac-ee46-40fc-b7ee-8b1850e2c904",
+			"label": "Le salut et la grâce",
+			"children": [
+				{
+					"id": "2e26c6bf-75bb-4d55-8671-3f3555689bc3",
 					"topicId": 43,
 					"primary": true
 				},
 				{
-					"id": "7d06e864-02ad-4a24-b801-16d351caf774",
+					"id": "57a85a97-8ec8-4d2c-9ca3-fccc5a1f51d6",
 					"topicId": 81
 				},
 				{
-					"id": "f58e9727-9dfe-4ad4-a73e-7968d8d8649c",
+					"id": "3851b55e-600a-40f8-8de5-6dd55a6bf9ef",
 					"topicId": 83
 				},
 				{
-					"id": "faeb8a95-1aea-4992-9ae8-ff52678a5459",
+					"id": "ae0baf2c-9291-49a9-a947-8d38f9704beb",
 					"topicId": 85
 				},
 				{
-					"id": "803e266c-db7d-4d0e-b288-31cd11a7413c",
+					"id": "2df2f61c-0b4a-4f95-9046-d4dedac84d66",
 					"topicId": 86
-				}
-			]
-		},
-		{
-			"id": "3c505601-6e5a-41b0-9eb1-545f40aab9eb",
-			"label": "La récompense et le mérite",
-			"children": [
-				{
-					"id": "eedb78c7-041b-4016-a18b-c89a23ced2af",
-					"topicId": 44,
-					"primary": true
 				},
 				{
-					"id": "a401cfcc-93f2-4a35-b972-336bf233199c",
+					"id": "594b1b61-35da-4627-81c3-8a7928a063f0",
 					"topicId": 82
+				},
+				{
+					"id": "72d74b5f-4d0a-48f3-8cde-fe32810c956a",
+					"topicId": 44
 				}
 			]
 		},
 		{
-			"id": "1e3f9a97-3b0c-41e8-a4c7-82c27ffa8847",
-			"topicId": 45
-		},
-		{
-			"id": "ace951f9-7490-4f3c-a5e6-2acdd7db0e5e",
-			"label": "L'enfer",
+			"id": "fda8d6ba-4320-40d8-9760-08974a5a4d3e",
+			"label": "Les fins dernières",
 			"children": [
 				{
-					"id": "73ce6982-3e1c-415f-8c32-9030da226dcb",
-					"topicId": 46,
+					"id": "7f532aa8-3d9e-4440-8484-6bf6e6c64001",
+					"topicId": 75,
 					"primary": true
 				},
 				{
-					"id": "3a61320e-1f6d-4e09-b633-8e8c33bbbd6f",
-					"topicId": 75
+					"id": "af16ab72-74af-425f-acf8-10713fccaeb0",
+					"topicId": 45
 				},
 				{
-					"id": "4ec02cef-9223-45ce-920f-82b29fbc0cfe",
+					"id": "c058b330-cda4-4af5-9785-82f6c6dc3dce",
+					"topicId": 46
+				},
+				{
+					"id": "ede633dd-3c41-496d-8f49-c3d69b5f7831",
 					"topicId": 78
 				},
 				{
-					"id": "2e7093db-1358-4030-bcac-b856a266df96",
+					"id": "8dc6602a-4587-4798-a7fa-45063d8c8a1a",
 					"topicId": 79
-				}
-			]
-		},
-		{
-			"id": "e68480fb-4200-4e1c-9a0f-e8bad53d546a",
-			"topicId": 47
-		},
-		{
-			"id": "b2af82a6-4079-4221-9200-1f43ba1da1a6",
-			"label": "La résurrection des corps",
-			"children": [
-				{
-					"id": "e0b6d39f-f022-4aff-a7f6-3f517004d565",
-					"topicId": 48,
-					"primary": true
 				},
 				{
-					"id": "4f297f1d-c4a7-46a2-8875-f7139e5a6c10",
+					"id": "cf98de16-d275-45db-9158-4f178d27508c",
+					"topicId": 47
+				},
+				{
+					"id": "23b85821-a50b-4354-a76a-2139c1f5b843",
+					"topicId": 48
+				},
+				{
+					"id": "b3fb80e2-f595-4b94-ba49-53dbaa24ed31",
 					"topicId": 80
 				}
 			]
 		},
 		{
-			"id": "42fff30c-cf04-4e32-8103-af96cc3f091a",
-			"label": "L'antéchrist",
+			"id": "9466f3f4-13fc-4c8a-a031-84bc83f2ab32",
+			"label": "L'Antéchrist",
 			"children": [
 				{
-					"id": "800c5785-515a-4a0b-a8bf-53cbe0ea2956",
+					"id": "bc0dfa43-9ac2-4109-b1fa-ddba1baa270e",
 					"topicId": 49,
 					"primary": true
 				},
 				{
-					"id": "39389990-487e-4ce7-9ed1-6b59182369ce",
+					"id": "d11df512-e12b-4c2a-bfbc-27a898448538",
 					"topicId": 76
 				},
 				{
-					"id": "ffe2b995-b8ff-402d-8070-499bb902fc87",
+					"id": "9151b70c-5cc3-43d1-9af3-e8d7a59d9c03",
 					"topicId": 77
 				}
 			]
-		},
-		{
-			"id": "c0f3b299-942c-4cf0-9261-ac59d6f26f2c",
-			"topicId": 88
-		},
-		{
-			"id": "2f91fb56-c26a-486d-9eb2-5496766066d8",
-			"topicId": 89
-		},
-		{
-			"id": "1ff5cf2e-75b7-4f19-8337-f16d95b82ebd",
-			"topicId": 90
-		},
-		{
-			"id": "1c41f18b-67d3-4533-8db3-7c07cd5f260e",
-			"topicId": 91
-		},
-		{
-			"id": "b176cead-7f61-477d-9cc6-32b1db1d4526",
-			"topicId": 92
-		},
-		{
-			"id": "8b69bf7c-9b51-4d21-9e5b-d1f2be0933cc",
-			"topicId": 93
-		},
-		{
-			"id": "bc9e77a3-cf38-465b-9969-ab2d27fb854b",
-			"topicId": 131
-		},
-		{
-			"id": "75618382-df6a-4637-ac6a-417ea79966fe",
-			"topicId": 146
 		}
 	],
 	"sacrements": [
 		{
-			"id": "45c7d3e2-8f6a-463e-9486-354c87c57b01",
-			"label": "Le baptême comme moyen de grâce",
+			"id": "08f98e3f-5690-4aa3-8864-2e67be7bdfd4",
+			"label": "Le Baptême",
 			"children": [
 				{
-					"id": "0552cc0d-f1a9-45a2-a4e4-b00750d7923f",
+					"id": "1136f1eb-0057-4f33-a07e-a0bcfcde5118",
 					"topicId": 24,
 					"primary": true
 				},
 				{
-					"id": "adf7e18b-2fcd-425b-84fb-10dfbf1bf8a9",
+					"id": "deca4843-d328-4c52-9b8a-e3c8c4748c1f",
 					"topicId": 25
 				},
 				{
-					"id": "7359b7bb-c91c-4a89-8fde-87e48fe50279",
-					"topicId": 26
-				},
-				{
-					"id": "db6e31a8-5719-4104-a02d-d297b8ef1edc",
-					"topicId": 27
-				},
-				{
-					"id": "bf2fdb4d-3013-4e2d-9b47-e354127df9ef",
-					"topicId": 28
-				},
-				{
-					"id": "5705425f-4e47-416f-8432-684269727ab9",
+					"id": "be94291a-304a-4d21-b971-855b6d054cfa",
 					"topicId": 84
 				},
 				{
-					"id": "b14ef86f-56ce-4101-a736-08966d286cdf",
+					"id": "87fd9832-102b-4034-9333-1f3614832c91",
+					"topicId": 26
+				},
+				{
+					"id": "dc2e709c-7a36-4f29-ab66-e0ce80d0b536",
+					"topicId": 27
+				},
+				{
+					"id": "6e7be444-5ae8-4569-92e8-001871332f82",
+					"topicId": 28
+				},
+				{
+					"id": "89917571-0999-4db1-8203-abe4d2faed5d",
 					"topicId": 139
 				},
 				{
-					"id": "3606a34e-466d-4075-ae92-a3d36c202bba",
+					"id": "a8a4bede-a078-4c0b-b6b2-8e6831a8cd9a",
 					"topicId": 140
 				}
 			]
 		},
 		{
-			"id": "c60f1b7b-a042-4a09-a3df-00a59e0d2912",
-			"label": "La confirmation",
+			"id": "e1db3edd-e71f-42b2-946f-3c9225cf4186",
+			"label": "La Confirmation",
 			"children": [
 				{
-					"id": "d5fb3c9b-e60f-429b-9cf6-af46c6df0ede",
+					"id": "cee250e9-5f83-4163-8a94-bfab7d708c56",
 					"topicId": 29,
 					"primary": true
 				},
 				{
-					"id": "5c395450-e642-4187-a3c7-1cf150b89bc5",
+					"id": "c8ad7b5f-4c28-42ac-865b-c4b4e35ebc21",
 					"topicId": 128
 				},
 				{
-					"id": "2ab6f63d-f3f5-4175-9ed6-809f18c42576",
+					"id": "1c27d3f9-5f86-4a70-b58a-6815848cac3d",
 					"topicId": 129
 				},
 				{
-					"id": "d2877dd3-e27d-4641-9457-8ba197c1cf3a",
+					"id": "a2b6c9cb-e9e2-4390-9048-a9b0f5b50f08",
 					"topicId": 145
 				}
 			]
 		},
 		{
-			"id": "5fb79e01-890a-44e6-9673-5c222a1fc2fa",
-			"label": "La présence réelle",
+			"id": "8d4f285a-6561-4858-b3da-83b2cf93d6bb",
+			"label": "L'Eucharistie",
 			"children": [
 				{
-					"id": "1c9e8e47-cd1e-470b-b5f5-d1a223c356ca",
+					"id": "7a4b28bf-8997-43fc-8815-6ae43cd0e422",
 					"topicId": 30,
 					"primary": true
 				},
 				{
-					"id": "f1c15524-a15d-4c01-8541-1a1d544650d6",
+					"id": "19a01250-57e2-4af5-872d-735ef22bdf82",
 					"topicId": 31
 				},
 				{
-					"id": "b32a9e98-b3a1-4aec-ad86-7af02066c3e6",
+					"id": "10e06f7e-930a-4c73-b235-9e9cc2cca0c2",
 					"topicId": 94
 				},
 				{
-					"id": "26543cfa-6fd1-4be5-9d81-f19b513a82d8",
+					"id": "3e358be0-c016-49f8-8306-9fa9ca29207c",
 					"topicId": 95
 				},
 				{
-					"id": "b46dca18-a74c-4849-aec0-ac1cf15307b9",
+					"id": "5121a87c-66ea-4085-b1d2-76fcd5565223",
 					"topicId": 123
 				},
 				{
-					"id": "e0f7c787-b9f5-4bbc-9cca-bc9e725ddb1f",
+					"id": "136c0d51-7c7e-4d47-b7f8-ddf21b9bb524",
 					"topicId": 141
 				}
 			]
 		},
 		{
-			"id": "4e62cb29-8db7-4e3d-8fd4-0c167ff85619",
-			"label": "La confession",
+			"id": "06ddb1bb-89da-4257-b4a3-d5eb05de42f5",
+			"label": "La Confession",
 			"children": [
 				{
-					"id": "b391617b-6e2f-4e29-a348-a3df2cfe7e99",
+					"id": "0f2768f4-bcc3-48e9-b8c2-96dcb64ae247",
 					"topicId": 32,
 					"primary": true
 				},
 				{
-					"id": "7f3aab75-2b0c-4e02-abd3-8cc58b9bcf30",
-					"topicId": 87
-				},
-				{
-					"id": "33b17c6c-25dd-4cfa-b583-f0f503373088",
+					"id": "0a58fd13-3e83-48ad-80a3-6588620d802f",
 					"topicId": 96
 				},
 				{
-					"id": "7a67647c-1176-4ed9-a51e-fc6c6da3a612",
+					"id": "77886101-e27f-4cd5-98ce-796e0b755460",
+					"topicId": 87
+				},
+				{
+					"id": "89a85f76-3881-4275-a2e2-bb249158352b",
 					"topicId": 98
 				}
 			]
 		},
 		{
-			"id": "1f7b6d61-a1e6-4b61-9b7b-495304bcff7a",
-			"label": "Évêque prêtre et diacre",
+			"id": "ace8b67e-df3b-4874-aa88-22075b13e041",
+			"label": "Le clergé",
 			"children": [
 				{
-					"id": "dcdafd73-eebe-41b2-badd-bdead605fb91",
+					"id": "25502daa-b436-48bb-9fbf-996e93fa3262",
 					"topicId": 33,
 					"primary": true
 				},
 				{
-					"id": "b5ef7406-6497-446a-a260-fcd6c82a1f2d",
-					"topicId": 34
-				},
-				{
-					"id": "447aa70f-7be3-4c6e-b6d1-f4ab20d8f3c1",
-					"topicId": 50
-				},
-				{
-					"id": "37750910-07f9-42ec-9304-f9028bd3d1d1",
+					"id": "92e6a1ca-989f-458d-b1ce-2714abe1f869",
 					"topicId": 99
 				},
 				{
-					"id": "0026aaa4-125c-4f7b-8361-b3632b441f1e",
+					"id": "5ed6cdb9-aa3d-49c0-8594-7420f6f37a2d",
+					"topicId": 50
+				},
+				{
+					"id": "72508912-6d37-4fb1-9e6d-5cdd90e8eec6",
+					"topicId": 34
+				},
+				{
+					"id": "f2b0a123-dea8-475f-a9e8-d1d7d23242c3",
 					"topicId": 100
 				},
 				{
-					"id": "4bf376ec-f975-4729-9069-3b1aa63d4ddf",
+					"id": "48ca4db1-324b-4755-84a7-20e443daad76",
 					"topicId": 101
 				},
 				{
-					"id": "c8703709-c779-4e01-858d-b932b7f7bca5",
+					"id": "d60c6958-4b0d-4a38-bc2b-b2bd08b46afd",
 					"topicId": 102
 				},
 				{
-					"id": "faf8be4a-02be-436f-b260-f2394c72e356",
+					"id": "1118cf8a-b31e-4c44-b3f0-c4e0f6b2e3fe",
 					"topicId": 103
 				},
 				{
-					"id": "86de4ebf-e973-4532-9edc-049f26ca99b5",
+					"id": "1c17e6c5-3ca3-4def-9392-8b1cc3d4ec1a",
 					"topicId": 104
 				},
 				{
-					"id": "0a51e33a-ee69-4fcd-b2b1-fc43a90b87b7",
+					"id": "c582a2a3-17f3-4a76-a5ac-b5a836c4c98f",
 					"topicId": 105
 				},
 				{
-					"id": "8b71e5f1-0d2b-46d7-ae60-2c96e68af741",
+					"id": "72d7fca1-cc01-4984-a40d-8e4fa8ec0c1f",
 					"topicId": 106
 				},
 				{
-					"id": "c495b726-2875-4cbb-9847-12d2a406a775",
+					"id": "53bcc0be-46d7-4e0a-aa57-8cfb37831084",
 					"topicId": 107
 				},
 				{
-					"id": "72dc978a-a49c-4ffe-9ead-eebda1258be9",
+					"id": "5b984b6b-9ede-421a-b3f2-911d43e457bb",
 					"topicId": 108
 				}
 			]
 		},
 		{
-			"id": "fd28d7b3-c5f6-4a15-98fa-53d6e5c859a9",
+			"id": "bcf10ade-2157-4821-9616-4bcc72794ed8",
 			"topicId": 35
 		},
 		{
-			"id": "f2a4af3c-3bcc-4c2e-9000-d8354be98c18",
-			"label": "Sabbat ou dimanche",
+			"id": "6c4bc883-7845-4bfa-a61a-e039c32ba29a",
+			"label": "Le culte et la liturgie",
 			"children": [
 				{
-					"id": "aa7ea34f-5a93-4b63-bc2d-5e345a392a5b",
-					"topicId": 36,
+					"id": "d033eef5-e2c5-44c9-ac2a-7a45f11371ff",
+					"topicId": 124,
 					"primary": true
 				},
 				{
-					"id": "d6450bbd-d22d-434e-ba80-37e1b291ef8b",
+					"id": "d76423c5-5410-4af7-a32d-6ec88420bdbd",
+					"topicId": 36
+				},
+				{
+					"id": "a9eeb56f-3bde-46fb-8e67-a1589c3300a4",
 					"topicId": 109
 				},
 				{
-					"id": "677dfcc2-0a9a-4fe7-aede-df9400407e99",
+					"id": "0c7541c3-aeef-4789-b8e3-ad9237ad6932",
 					"topicId": 110
 				},
 				{
-					"id": "ba1dbd55-5584-4a19-803e-08642057eca4",
-					"topicId": 111
-				},
-				{
-					"id": "f237ef63-9b4e-43a3-98b2-bce4bb268192",
-					"topicId": 112
-				},
-				{
-					"id": "0f166c80-55a8-4282-a2bd-d198afae0117",
-					"topicId": 113
-				},
-				{
-					"id": "cc4b3ba8-692b-4c47-994f-acb4d95bb75a",
-					"topicId": 114
-				},
-				{
-					"id": "c00a07b1-fcb3-483b-a469-8539705ab271",
-					"topicId": 115
-				},
-				{
-					"id": "3f0e0e88-e117-4830-b177-2a25ac2242f1",
-					"topicId": 116
-				},
-				{
-					"id": "5e97b5e8-ae9d-4075-ae40-12243640922a",
-					"topicId": 117
-				},
-				{
-					"id": "02dc9442-6faa-4827-9592-10164a85ab63",
+					"id": "d784eeb3-0912-402f-8981-80ba6911b3e6",
 					"topicId": 118
 				},
 				{
-					"id": "c20c86bd-f358-46d5-919e-428ce35ef633",
+					"id": "443a2a82-4d48-4916-9fec-e91db15da75e",
 					"topicId": 119
 				},
 				{
-					"id": "ca8ece4b-bf77-405a-bbfc-59b3f3d05180",
+					"id": "9965b5d2-0311-43c2-8b85-5c951f1a5e63",
 					"topicId": 120
 				},
 				{
-					"id": "247616ec-0c66-4816-bbf1-0b253420b09f",
+					"id": "4fb92536-c370-4f67-ac0b-9f1c791ccbe7",
 					"topicId": 122
 				},
 				{
-					"id": "f41ebf98-a234-4e8e-a2c7-ff87f1fd6652",
-					"topicId": 124
-				},
-				{
-					"id": "7db7b3df-7099-416d-acb3-ecabf1f80873",
+					"id": "9698eff5-354f-423d-ad7e-69d7261d6456",
 					"topicId": 125
 				},
 				{
-					"id": "1b95bb69-a81d-4c82-a03a-46bd5cb820b6",
-					"topicId": 126
+					"id": "34fbe77a-7320-4fe0-b627-4890d5dea7d3",
+					"topicId": 127
 				},
 				{
-					"id": "f5bf042a-3650-4803-9fa0-aeb70415b08f",
-					"topicId": 127
+					"id": "0d2e30f5-f8d8-492c-81d7-e2d94499ff88",
+					"topicId": 126
 				}
 			]
 		},
 		{
-			"id": "00320e1c-d96d-4cac-b034-34c9fcb5d0ec",
+			"id": "5fffb43e-d033-48c4-818f-8696f555bef7",
+			"label": "Le calendrier liturgique",
+			"children": [
+				{
+					"id": "87203509-1bdb-49a0-961f-6455e3a13f85",
+					"topicId": 117,
+					"primary": true
+				},
+				{
+					"id": "f35afbfe-9814-4b57-863e-9605e4522ed4",
+					"topicId": 111
+				},
+				{
+					"id": "56e20096-634f-4547-a3f2-4ac353085dc2",
+					"topicId": 112
+				},
+				{
+					"id": "6e4c30df-a368-42b4-a554-6ae10f648b7b",
+					"topicId": 113
+				},
+				{
+					"id": "64655fc7-4176-402a-b1d7-58066e572156",
+					"topicId": 114
+				},
+				{
+					"id": "c0febca6-5aa8-4806-b6cf-63231def720f",
+					"topicId": 115
+				},
+				{
+					"id": "15a7a607-81d2-441c-b301-664058df0af5",
+					"topicId": 116
+				}
+			]
+		},
+		{
+			"id": "9f969ebe-16fc-44a5-ad91-457a935a58fe",
 			"topicId": 142
 		}
 	],
 	"vie": [
 		{
-			"id": "682d6c18-c254-4a26-a062-be960e2353d0",
-			"label": "Le péché mortel",
+			"id": "d4a4a312-e465-47c6-aaba-4f6e89eb51a7",
+			"label": "Le péché",
 			"children": [
 				{
-					"id": "737faaf3-cdd8-4fbb-8b50-882f8af07c10",
-					"topicId": 19,
+					"id": "18638276-629c-4eba-8e4e-891bde177983",
+					"topicId": 97,
 					"primary": true
 				},
 				{
-					"id": "05aee425-cfa3-4b31-9b3f-196448a6e33b",
-					"topicId": 97
+					"id": "55c3e4e8-5f2a-439a-99cb-15bfdafbfd2e",
+					"topicId": 19
 				}
 			]
 		},
 		{
-			"id": "61f75e92-512f-4d8d-b0ef-dde824919110",
-			"topicId": 20
+			"id": "629c0c15-d8af-46d1-94eb-03752a274634",
+			"label": "La morale sexuelle",
+			"children": [
+				{
+					"id": "314d8721-aaad-4925-bd36-721b8b456c38",
+					"topicId": 20,
+					"primary": true
+				},
+				{
+					"id": "43cd388f-a418-423b-af35-47b69d1c99fd",
+					"topicId": 21
+				},
+				{
+					"id": "0b982f01-2d8a-490b-b383-978e09b6c610",
+					"topicId": 22
+				}
+			]
 		},
 		{
-			"id": "349810a6-573f-4e86-9971-522c60d67752",
-			"topicId": 21
+			"id": "c2f5d753-ec3c-4ae2-9868-98b94110ab28",
+			"label": "Les fausses pratiques",
+			"children": [
+				{
+					"id": "599a3127-602b-4bcb-80bd-95e35adadc51",
+					"topicId": 130,
+					"primary": true
+				},
+				{
+					"id": "57130ad8-1a36-4d13-b0a8-e83bf42071cd",
+					"topicId": 23
+				}
+			]
 		},
 		{
-			"id": "a8298a13-f868-4d0b-9780-884090b97aee",
-			"topicId": 22
+			"id": "a79ff620-8297-4dcf-9c95-ad5f8dfd3ef8",
+			"label": "La discipline chrétienne",
+			"children": [
+				{
+					"id": "510e48f8-11a0-4502-bc36-5aa31db188a7",
+					"topicId": 136,
+					"primary": true
+				},
+				{
+					"id": "456736c8-a170-40c0-b01f-b4aad640b6f6",
+					"topicId": 137
+				},
+				{
+					"id": "bc21971c-e5be-403c-9980-ab493979703e",
+					"topicId": 135
+				}
+			]
 		},
 		{
-			"id": "fbf5d9f7-896f-4da3-89a5-14dbe9514fa5",
-			"topicId": 23
-		},
-		{
-			"id": "fca45071-6079-49f2-b058-bd251f5c2b80",
-			"topicId": 130
-		},
-		{
-			"id": "c45d0012-ebe3-4dfb-a97f-8d3fb2a265ee",
-			"topicId": 132
-		},
-		{
-			"id": "31f0133d-d691-41c4-aafb-44a1949e74ac",
-			"topicId": 133
-		},
-		{
-			"id": "74f7f185-c27d-428a-97b6-f8023cc51d64",
-			"topicId": 134
-		},
-		{
-			"id": "2045647a-d0ed-4a48-937b-a5bbf2c4d354",
-			"topicId": 135
-		},
-		{
-			"id": "d646908a-22e4-4248-8e21-5f28c4ee8846",
-			"topicId": 136
-		},
-		{
-			"id": "2efc2ce7-e6d0-45ad-bfb5-f41b0ac30d39",
-			"topicId": 137
+			"id": "0c658712-5fa4-4bac-a8b3-161fa6178e13",
+			"label": "La loi et la justice",
+			"children": [
+				{
+					"id": "57b11a37-7b8c-418d-ab73-1ed98528fba8",
+					"topicId": 132,
+					"primary": true
+				},
+				{
+					"id": "bcbde7e5-b02b-43dc-aefd-a87ba307c451",
+					"topicId": 133
+				},
+				{
+					"id": "87c30f80-54d7-458f-a658-95a6bf8090f3",
+					"topicId": 134
+				}
+			]
 		}
 	],
 	"priere": [
 		{
-			"id": "c8f34a4f-9ddf-49eb-a6e5-448d0aa484cc",
-			"label": "L'intercession des saints",
+			"id": "9265a915-1d05-4fa4-bbeb-d0ccbfbac6d4",
+			"label": "La prière",
 			"children": [
 				{
-					"id": "12633e70-c74e-46a1-a5c9-15e31b9cb3a1",
-					"topicId": 40,
+					"id": "87a2dc99-ef6e-4165-9e4e-9643780dcb84",
+					"topicId": 143,
 					"primary": true
 				},
 				{
-					"id": "d92992fa-3e43-49bf-85aa-292a6959caa5",
-					"topicId": 68
+					"id": "20bc4b55-1705-4ebe-8f59-c5ede0581576",
+					"topicId": 144
 				},
 				{
-					"id": "b2be7bb9-dec3-4f84-a65a-29eecaf1ce8d",
-					"topicId": 69
-				},
-				{
-					"id": "f2c818cd-bb10-4b97-bb15-8f25b87fc529",
-					"topicId": 70
-				},
-				{
-					"id": "a10fed80-607b-46bc-b6d4-0a5bf2826e81",
+					"id": "5e83013f-33c3-4f68-90db-55064a3f502e",
 					"topicId": 121
 				},
 				{
-					"id": "5b9df410-7e47-49c1-8c2d-6c97ec0692bb",
-					"topicId": 143
-				},
-				{
-					"id": "d9022c81-864d-4336-8fde-4ca754c14eb9",
-					"topicId": 144
+					"id": "7a7a6eab-647e-4d88-a77a-5c346cb2d8a1",
+					"topicId": 40
 				}
 			]
 		}
