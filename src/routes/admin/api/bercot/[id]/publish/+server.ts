@@ -55,12 +55,21 @@ export async function POST({ params }) {
 		id: newId,
 		slug: `citation-${newId}`,
 		authorId: entry.authorId,
+		workId: entry.workId,
 		topicIds: entry.mappedTopicIds,
 		reference: entry.attribution,
+		studyTitle: entry.studyTitle,
 		fr: entry.fr,
 		en: entry.en,
+		latin: entry.latin,
+		greek: entry.greek,
+		context: entry.context,
+		migne: entry.migne,
 		notes: entry.notes,
-		links: entry.sourceUrl ? { primary: entry.sourceUrl } : {},
+		links: {
+			...(entry.linksPrimary ? { primary: entry.linksPrimary } : {}),
+			...(entry.linksArchive ? { archive: entry.linksArchive } : {})
+		},
 		status: 'draft'
 	});
 

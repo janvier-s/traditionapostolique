@@ -805,7 +805,8 @@ def collect_json_rows(
 def merge_json_rows(fresh: list[dict], path: Path) -> list[dict]:
     """If a previous bercot.json exists, preserve user-edited fields per id.
 
-    Preserved fields: fr, authorId, sourceUrl, notes, status (unless previous was
+    Preserved fields: fr, latin, greek, context, authorId, workId, studyTitle,
+    migne, linksPrimary, linksArchive, notes, status (unless previous was
     'pending'), mappedTopicIds, siteQuoteId. Refreshed fields: sourceEntry,
     subsection, attribution, en, dedupMatch.
 
@@ -829,7 +830,13 @@ def merge_json_rows(fresh: list[dict], path: Path) -> list[dict]:
             out.append(row)
             continue
         merged = dict(row)
-        for field in ("fr", "authorId", "sourceUrl", "notes"):
+        # One-shot rename: sourceUrl → linksPrimary
+        if "sourceUrl" in prev and "linksPrimary" not in prev:
+            merged["linksPrimary"] = prev["sourceUrl"]
+
+        # Preserve user-curated fields (extended list — match the schema's user-editable fields)
+        for field in ("fr", "latin", "greek", "context", "authorId", "workId",
+                      "studyTitle", "migne", "linksPrimary", "linksArchive", "notes"):
             if field in prev:
                 merged[field] = prev[field]
         if "status" in prev and prev["status"] != "pending":
@@ -842,7 +849,7 @@ def merge_json_rows(fresh: list[dict], path: Path) -> list[dict]:
 
     orphans = [r for r in existing if isinstance(r, dict) and r.get("id") not in fresh_ids]
     if orphans:
-        edited_orphans = [o for o in orphans if any(o.get(f) for f in ("fr", "authorId", "sourceUrl", "notes"))]
+        edited_orphans = [o for o in orphans if any(o.get(f) for f in ("fr", "latin", "greek", "context", "authorId", "workId", "studyTitle", "migne", "linksPrimary", "linksArchive", "notes"))]
         print(
             f"  ! preserved {len(orphans)} orphan row(s) from previous bercot.json "
             f"(rows in prior file but not in this harvest); "

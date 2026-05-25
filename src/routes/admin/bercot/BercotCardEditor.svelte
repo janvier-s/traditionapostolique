@@ -269,9 +269,9 @@
 							type="url"
 							placeholder="https://…"
 							class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
-							value={draft.sourceUrl ?? ''}
+							value={draft.linksPrimary ?? ''}
 							oninput={(e) =>
-								update('sourceUrl', (e.currentTarget as HTMLInputElement).value || undefined)}
+								update('linksPrimary', (e.currentTarget as HTMLInputElement).value || undefined)}
 						/>
 					</label>
 

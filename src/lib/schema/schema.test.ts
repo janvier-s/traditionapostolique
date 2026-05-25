@@ -180,7 +180,7 @@ describe('BercotEntrySchema', () => {
 			subsection: 'I. Meaning of baptism',
 			fr: 'Le meurtre…',
 			authorId: 7,
-			sourceUrl: 'https://example.com/x',
+			linksPrimary: 'https://example.com/x',
 			notes: 'check vol 3',
 			mappedTopicIds: [20],
 			siteQuoteId: 142,
@@ -195,14 +195,78 @@ describe('BercotEntrySchema', () => {
 			expect(r.data.dedupMatch).toBe(142);
 		}
 	});
+	it('accepts new optional text fields', () => {
+		const r = BercotEntrySchema.safeParse({
+			...base,
+			latin: 'Semel homicidium prohibitum est.',
+			greek: 'μία φορά',
+			context: 'Written against Marcion.',
+			studyTitle: 'Adversus Marcionem, III'
+		});
+		expect(r.success).toBe(true);
+		if (r.success) {
+			expect(r.data.latin).toBe('Semel homicidium prohibitum est.');
+			expect(r.data.greek).toBe('μία φορά');
+			expect(r.data.context).toBe('Written against Marcion.');
+			expect(r.data.studyTitle).toBe('Adversus Marcionem, III');
+		}
+	});
+	it('accepts workId and migne', () => {
+		const r = BercotEntrySchema.safeParse({ ...base, workId: 3, migne: 'PL 1, 123' });
+		expect(r.success).toBe(true);
+		if (r.success) {
+			expect(r.data.workId).toBe(3);
+			expect(r.data.migne).toBe('PL 1, 123');
+		}
+	});
+	it('accepts linksArchive as a valid URL', () => {
+		const r = BercotEntrySchema.safeParse({
+			...base,
+			linksArchive: 'https://archive.org/details/foo'
+		});
+		expect(r.success).toBe(true);
+	});
+	it('rejects non-url linksPrimary', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, linksPrimary: 'not a url' }).success).toBe(false);
+	});
+	it('rejects non-url linksArchive', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, linksArchive: 'not a url' }).success).toBe(false);
+	});
+	it('rejects negative workId', () => {
+		expect(BercotEntrySchema.safeParse({ ...base, workId: -1 }).success).toBe(false);
+	});
+	it('fully populated entry parses cleanly', () => {
+		const r = BercotEntrySchema.safeParse({
+			...base,
+			subsection: 'I. On murder',
+			fr: 'Le meurtre est interdit.',
+			latin: 'Semel prohibitum est.',
+			greek: 'ἅπαξ',
+			context: 'Against Marcion.',
+			authorId: 7,
+			workId: 3,
+			studyTitle: 'Adv. Marcionem III',
+			migne: 'PL 2, 346',
+			linksPrimary: 'https://example.com/primary',
+			linksArchive: 'https://archive.org/details/bar',
+			notes: 'check vol 3',
+			mappedTopicIds: [20, 21],
+			siteQuoteId: 142,
+			status: 'published',
+			dedupMatch: 142
+		});
+		expect(r.success).toBe(true);
+		if (r.success) {
+			expect(r.data.workId).toBe(3);
+			expect(r.data.linksPrimary).toBe('https://example.com/primary');
+			expect(r.data.linksArchive).toBe('https://archive.org/details/bar');
+		}
+	});
 	it('rejects non-hex id', () => {
 		expect(BercotEntrySchema.safeParse({ ...base, id: 'NOT-A-HASH' }).success).toBe(false);
 	});
 	it('rejects unknown status', () => {
 		expect(BercotEntrySchema.safeParse({ ...base, status: 'foo' }).success).toBe(false);
-	});
-	it('rejects malformed sourceUrl', () => {
-		expect(BercotEntrySchema.safeParse({ ...base, sourceUrl: 'not a url' }).success).toBe(false);
 	});
 	it('rejects negative dedupMatch', () => {
 		expect(BercotEntrySchema.safeParse({ ...base, dedupMatch: -1 }).success).toBe(false);

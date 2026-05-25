@@ -4,20 +4,31 @@ export const BercotStatusSchema = z.enum(['pending', 'kept', 'rejected', 'publis
 export type BercotStatus = z.infer<typeof BercotStatusSchema>;
 
 export const BercotEntrySchema = z.object({
+	// identity / source (from harvest)
 	id: z.string().regex(/^[a-f0-9]{12}$/, 'must be a 12-char hex hash'),
 	sourceEntry: z.string().min(1),
 	subsection: z.string().optional(),
 	attribution: z.string().min(1),
 	en: z.string().min(1),
 
+	// user-curated text
 	fr: z.string().optional(),
+	latin: z.string().optional(),
+	greek: z.string().optional(),
+	context: z.string().optional(),
+
+	// references / metadata
 	authorId: z.number().int().nonnegative().optional(),
-	sourceUrl: z.string().url().optional(),
+	workId: z.number().int().nonnegative().optional(),
+	studyTitle: z.string().optional(),
+	migne: z.string().optional(),
+	linksPrimary: z.string().url().optional(),
+	linksArchive: z.string().url().optional(),
 	notes: z.string().optional(),
 
+	// mapping & lifecycle
 	mappedTopicIds: z.array(z.number().int().nonnegative()).default([]),
 	siteQuoteId: z.number().int().nonnegative().optional(),
-
 	status: BercotStatusSchema.default('pending'),
 	dedupMatch: z.number().int().nonnegative().optional()
 });
