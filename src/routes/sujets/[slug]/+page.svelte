@@ -383,7 +383,7 @@
 							class="inline-flex items-baseline gap-2 label-meta-action"
 						>
 							Index du sujet
-							<span aria-hidden="true">→</span>
+							<span aria-hidden="true" class="no-underline">→</span>
 						</button>
 					{/if}
 				</div>
@@ -656,7 +656,7 @@
 	     closes the other) so they never compete for the same slot. -->
 		<aside
 			aria-label="Index du sujet"
-			class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto rail-scroll"
+			class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:flex lg:flex-col"
 		>
 			<header class="mb-6 flex items-baseline justify-between gap-4">
 				<h2 class="font-heading italic text-accent leading-[1.1]" style="font-size: 1.5rem;">
@@ -718,7 +718,7 @@
 				role="tabpanel"
 				aria-labelledby={`tp-tab-${topicActiveTab}`}
 				tabindex="0"
-				class="font-body text-[14px] leading-[1.5]"
+				class="font-body text-[14px] leading-[1.5] lg:flex-1 lg:min-h-0 lg:overflow-y-auto rail-scroll"
 			>
 				{#if topicActiveTab === 'presentation'}
 					<!-- Description rendered inline under the H1 (visible in both
