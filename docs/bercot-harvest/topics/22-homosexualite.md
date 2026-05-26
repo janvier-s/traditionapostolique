@@ -1,18 +1,17 @@
-# 22 · L'homosexualité  (homosexualite)
+# 22 · L'homosexualité (homosexualite)
 
 **Site group:** La morale  
 **Mapped dictionary entries:** HOMOSEXUALITY, SODOM  
 **Mapping confidence:** high
 **Quotes harvested:** 16 (2 already on site)
 
-
 ---
 
-## from HOMOSEXUALITY  _(confidence: high)_
+## from HOMOSEXUALITY _(confidence: high)_
 
 > Do you not know that the unrighteous will not inherit the kingdom of God? Do not be deceived. Neither fornicators, . . . nor homosexuals, nor sodomites. 1 Cor. 6:9, 10.
 
-### Quote 1  `[already on site → quote #321]`
+### Quote 1 `[already on site → quote #321]`
 
 > You shall not commit adultery; you shall not commit pederasty.
 
@@ -66,7 +65,7 @@
 
 **Attribution:** Clement of Alexandria (c. 195, E), 2.77.
 
-### Quote 10  `[already on site → quote #192]`
+### Quote 10 `[already on site → quote #192]`
 
 > The fate of the Sodomites was judgment to those who had done wrong, and instruction to those who hear. The Sodomites had fallen into uncleanness through much luxury. They practiced adultery shamelessly, and they burned with insane love for boys.
 
@@ -102,10 +101,9 @@
 
 **Attribution:** Apostolic Constitutions (compiled c. 390, E), 7.463.
 
-
 ---
 
-## from SODOM  _(confidence: medium)_
+## from SODOM _(confidence: medium)_
 
 ### Quote 16
 

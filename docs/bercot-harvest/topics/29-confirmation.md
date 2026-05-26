@@ -1,4 +1,4 @@
-# 29 · La confirmation  (confirmation)
+# 29 · La confirmation (confirmation)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** CONFIRMATION, CHRISM, LAYING ON OF HANDS, HANDS, LAYING ON OF  
@@ -7,17 +7,15 @@
 
 _Cross-reference aliases folded in: CONFIRMATION → HANDS, LAYING ON OF / OIL, ANOINTING WITH; LAYING ON OF HANDS → HANDS, LAYING ON OF_
 
-
 ---
 
-## from CHRISM  _(confidence: high)_
+## from CHRISM _(confidence: high)_
 
 _Cross-reference → **OIL, ANOINTING WITH**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from HANDS, LAYING ON OF  _(confidence: medium)_
+## from HANDS, LAYING ON OF _(confidence: medium)_
 
 > And they chose Stephen, a man full of faith and the Holy Spirit, and Philip, . . . whom they set before the apostles; and when they had prayed, they laid hands on them. Acts 6:5, 6.
 >

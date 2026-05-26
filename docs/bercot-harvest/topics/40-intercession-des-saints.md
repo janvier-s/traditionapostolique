@@ -1,4 +1,4 @@
-# 40 · L'intercession des saints  (intercession-des-saints)
+# 40 · L'intercession des saints (intercession-des-saints)
 
 **Site group:** Marie les saints le miraculeux  
 **Mapped dictionary entries:** SAINTS, VENERATION OF, PRAYER § V, PRAYER § VII, DEAD, PRAYERS FOR THE, DEAD, WORSHIP OF THE  
@@ -7,17 +7,15 @@
 
 _Cross-reference aliases folded in: DEAD, PRAYERS FOR THE → PRAYER § VI. SHOULD CHRISTIANS PRAY FOR THE DEAD?_
 
-
 ---
 
-## from SAINTS, VENERATION OF  _(confidence: high)_
+## from SAINTS, VENERATION OF _(confidence: high)_
 
 _Cross-reference → **MARTYRS, MARTYRDOM § IV. MARTYRS, VENERATION OF**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from PRAYER § V. Should Christians pray to angels and saints?  _(confidence: high)_
+## from PRAYER § V. Should Christians pray to angels and saints? _(confidence: high)_
 
 ### Quote 1
 
@@ -43,10 +41,9 @@ _Cross-reference → **MARTYRS, MARTYRDOM § IV. MARTYRS, VENERATION OF**. See t
 
 **Attribution:** Cyprian (c. 250, W), 5.491.
 
-
 ---
 
-## from PRAYER § VII. Should Christians pray to the dead?  _(confidence: high)_
+## from PRAYER § VII. Should Christians pray to the dead? _(confidence: high)_
 
 ### Quote 5
 
@@ -62,10 +59,9 @@ _Cross-reference → **MARTYRS, MARTYRDOM § IV. MARTYRS, VENERATION OF**. See t
 
 _SEE ALSO EAST; HEARING FROM GOD; ONESIPHORUS; WORSHIP, CHRISTIAN (II. WORSHIP CUSTOMS)._
 
-
 ---
 
-## from DEAD, WORSHIP OF THE  _(confidence: medium)_
+## from DEAD, WORSHIP OF THE _(confidence: medium)_
 
 ### Quote 7
 

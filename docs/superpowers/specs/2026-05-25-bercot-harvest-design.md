@@ -18,11 +18,11 @@ The book is an alphabetical dictionary. Each entry has the same shape:
 
 Produce a reviewable corpus the human can curate into the site later. Three deliverables, all under `docs/bercot-harvest/`:
 
-| Part | Deliverable | Purpose |
-| --- | --- | --- |
-| 1 | `topics/NN-slug.md` × 49 | Quotes per existing site topic |
-| 2 | `candidates.md` | TOC entries that could become new site topics |
-| 3 | inline dedup tags in Part 1 files | Show which harvested quotes already exist in `quotes.json` |
+| Part | Deliverable                       | Purpose                                                    |
+| ---- | --------------------------------- | ---------------------------------------------------------- |
+| 1    | `topics/NN-slug.md` × 49          | Quotes per existing site topic                             |
+| 2    | `candidates.md`                   | TOC entries that could become new site topics              |
+| 3    | inline dedup tags in Part 1 files | Show which harvested quotes already exist in `quotes.json` |
 
 ## Non-goals
 
@@ -49,7 +49,7 @@ Numeric prefix matches `id` in `topics.json` so files sort like the site.
 ### Per-topic Markdown shape
 
 ```markdown
-# 20 · L'avortement  (avortement)
+# 20 · L'avortement (avortement)
 
 **Site group:** La morale
 **Mapped dictionary entries:** ABORTION, INFANTICIDE
@@ -62,12 +62,14 @@ Numeric prefix matches `id` in `topics.json` so files sort like the site.
 
 ## from ABORTION, INFANTICIDE
 
-### Quote 1  `[already on site → quote #142]`
+### Quote 1 `[already on site → quote #142]`
+
 > You shall not kill the child by obtaining an abortion. Nor, again, shall you destroy him after he is born.
 
 **Attribution:** Barnabas (c. 70–130, E), 1.148.
 
 ### Quote 2
+
 > ...
 
 **Attribution:** Didache (c. 80–140, E), 1.377.
@@ -88,10 +90,10 @@ _See also: ABRAHAM, ADOPTION OF CHILDREN, ..._
 Generated <date>. Filter: doctrines + Catholic practice/spirituality.
 TOC entries already consumed by the 49 site topics are excluded.
 
-| TOC entry | Quotes | Why it fits | Bercot 1-line intro |
-| --- | ---: | --- | --- |
-| RELICS, VENERATION OF | 8 | Distinctively Catholic devotion ... | Bercot's intro snippet here |
-| SIGN OF THE CROSS | 6 | Early Catholic practice ... | ... |
+| TOC entry             | Quotes | Why it fits                         | Bercot 1-line intro         |
+| --------------------- | -----: | ----------------------------------- | --------------------------- |
+| RELICS, VENERATION OF |      8 | Distinctively Catholic devotion ... | Bercot's intro snippet here |
+| SIGN OF THE CROSS     |      6 | Early Catholic practice ...         | ...                         |
 ```
 
 Candidates are filtered by two hand-built allowlists embedded in the script:

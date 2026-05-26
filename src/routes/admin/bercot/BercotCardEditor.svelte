@@ -42,7 +42,9 @@
 	});
 
 	const topicFlat = $derived(flattenTree(buildTopicTree(topics)));
-	const authorOptions = $derived(authors.slice().sort((a, b) => a.name.localeCompare(b.name, 'fr')));
+	const authorOptions = $derived(
+		authors.slice().sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+	);
 	const workOptions = $derived(works.slice().sort((a, b) => a.title.localeCompare(b.title, 'fr')));
 
 	function update<K extends keyof BercotEntry>(key: K, value: BercotEntry[K]) {
@@ -226,14 +228,18 @@
 			<section class="space-y-4 overflow-y-auto p-5">
 				<!-- ── Group 1: Traductions ── -->
 				<div>
-					<label for="bercot-fr" class="block font-ui text-[10px] uppercase tracking-wider text-muted">
+					<label
+						for="bercot-fr"
+						class="block font-ui text-[10px] uppercase tracking-wider text-muted"
+					>
 						Traduction française
 					</label>
 					<textarea
 						id="bercot-fr"
 						class="mt-2 h-48 w-full rounded border border-border bg-panel px-3 py-2 text-[15px] leading-relaxed text-foreground"
 						value={draft.fr ?? ''}
-						oninput={(e) => update('fr', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
+						oninput={(e) =>
+							update('fr', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
 					></textarea>
 				</div>
 
@@ -381,8 +387,7 @@
 								type="text"
 								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
 								value={draft.sourceEntry}
-								oninput={(e) =>
-									update('sourceEntry', (e.currentTarget as HTMLInputElement).value)}
+								oninput={(e) => update('sourceEntry', (e.currentTarget as HTMLInputElement).value)}
 							/>
 						</label>
 
@@ -407,8 +412,7 @@
 								type="text"
 								class="mt-1 w-full rounded border border-border bg-panel px-2 py-1 text-sm"
 								value={draft.attribution}
-								oninput={(e) =>
-									update('attribution', (e.currentTarget as HTMLInputElement).value)}
+								oninput={(e) => update('attribution', (e.currentTarget as HTMLInputElement).value)}
 							/>
 						</label>
 					</fieldset>

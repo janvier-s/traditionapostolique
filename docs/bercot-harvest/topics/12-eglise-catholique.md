@@ -1,4 +1,4 @@
-# 12 · L'Église catholique  (eglise-catholique)
+# 12 · L'Église catholique (eglise-catholique)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** CATHOLIC CHURCH, CHURCH, THE  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: CATHOLIC CHURCH → CHURCH, THE_
 
-
 ---
 
-## from CHURCH, THE  _(confidence: medium)_
+## from CHURCH, THE _(confidence: medium)_
 
 > I also say to you that you are Peter, and on this rock I will build My church, and the gates of Hades will not prevail against it. Matt. 16:18.
 >
@@ -358,7 +357,7 @@ _Cross-reference aliases folded in: CATHOLIC CHURCH → CHURCH, THE_
 
 **Attribution:** Cyprian (c. 250, W), 5.351.
 
-### Quote 57  `[already on site → quote #264]`
+### Quote 57 `[already on site → quote #264]`
 
 > The house of God is one, and there can be no salvation to anyone except in the church.
 
@@ -400,7 +399,7 @@ _Cross-reference aliases folded in: CATHOLIC CHURCH → CHURCH, THE_
 
 **Attribution:** Cyprian (c. 250, W), 5.388.
 
-### Quote 64  `[already on site → quote #279]`
+### Quote 64 `[already on site → quote #279]`
 
 > Peter himself, showing and vindicating the unity, has commanded and warned us that we cannot be saved except by the one only baptism of the one church. He says, “In the ark of Noah, a few, that is, eight souls, were saved by water. Similarly, baptism will in like manner save you.” . . . In that baptism of the world in which its ancient wickedness was washed away, he who was not in the ark of Noah could not be saved by water. Likewise, neither can he be saved by baptism who has not been baptized in the church.
 
@@ -412,7 +411,7 @@ _Cross-reference aliases folded in: CATHOLIC CHURCH → CHURCH, THE_
 
 **Attribution:** Cyprian (c. 250, W), 5.398.
 
-### Quote 66  `[already on site → quote #280]`
+### Quote 66 `[already on site → quote #280]`
 
 > He who has not been ordained in the church can neither have nor hold to the church in any way. For the faith of the sacred Scripture sets forth that the church is not outside, nor can it be separated and divided against itself. Rather, it maintains the unity of an inseparable and undivided house.
 

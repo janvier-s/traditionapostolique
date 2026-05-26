@@ -1,14 +1,13 @@
-# 43 · Le salut en dehors de l'Église  (salut-en-dehors-de-l-eglise)
+# 43 · Le salut en dehors de l'Église (salut-en-dehors-de-l-eglise)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** SALVATION § I, HERESIES, HERETICS § I  
 **Mapping confidence:** high
 **Quotes harvested:** 64
 
-
 ---
 
-## from SALVATION § I. Salvation through Christ alone  _(confidence: high)_
+## from SALVATION § I. Salvation through Christ alone _(confidence: high)_
 
 ### Quote 1
 
@@ -118,10 +117,9 @@
 
 **Attribution:** Apostolic Constitutions (compiled c. 390, E), 7.449; see also 2.29, 2.36, 2.55.
 
-
 ---
 
-## from HERESIES, HERETICS § I. Heretics and the church’s response  _(confidence: low)_
+## from HERESIES, HERETICS § I. Heretics and the church’s response _(confidence: low)_
 
 ### Quote 19
 

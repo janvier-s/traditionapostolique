@@ -1,4 +1,4 @@
-# 44 · La récompense et le mérite  (recompense-et-le-merite)
+# 44 · La récompense et le mérite (recompense-et-le-merite)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** MERIT, WORKS, SALVATION § III, JUSTIFICATION BY FAITH, OBEDIENCE, ROLE IN SALVATION, ETERNAL PUNISHMENTS AND REWARDS  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: WORKS → SALVATION § III. ROLE OF OBEDIENCE IN SALVATION; JUSTIFICATION BY FAITH → SALVATION § II. ROLE OF GRACE AND FAITH IN SALVATION; OBEDIENCE, ROLE IN SALVATION → SALVATION § III. ROLE OF OBEDIENCE IN SALVATION_
 
-
 ---
 
-## from MERIT  _(confidence: high)_
+## from MERIT _(confidence: high)_
 
 > Do not marvel at this; for the hour is coming in which all who are in the graves will hear His voice and come forth—those who have done good, to the resurrection of life, and those who have done evil, to the resurrection of condemnation. John 5:28, 29.
 >
@@ -28,7 +27,7 @@ _Cross-reference aliases folded in: WORKS → SALVATION § III. ROLE OF OBEDIENC
 
 **Attribution:** Athenagoras (c. 175, E), 2.162.
 
-### Quote 3  `[already on site → quote #767]`
+### Quote 3 `[already on site → quote #767]`
 
 > We affirm that a judgment has been ordained by God according to the merits of every man.
 
@@ -60,12 +59,11 @@ _Cross-reference aliases folded in: WORKS → SALVATION § III. ROLE OF OBEDIENC
 
 _SEE ALSO FREE WILL AND PREDESTINATION; JUDGMENT, LAST; MAN, DOCTRINE OF; SALVATION._
 
-
 ---
 
-## from SALVATION § III. Role of obedience in salvation  _(confidence: high)_
+## from SALVATION § III. Role of obedience in salvation _(confidence: high)_
 
-### Quote 8  `[already on site → quote #593]`
+### Quote 8 `[already on site → quote #593]`
 
 > The way of light, then, is as follows. If anyone desires to travel to the appointed place, he must be zealous in his works.
 
@@ -149,7 +147,7 @@ _SEE ALSO FREE WILL AND PREDESTINATION; JUDGMENT, LAST; MAN, DOCTRINE OF; SALVAT
 
 **Attribution:** Hermas (c. 150, W), 2.25.
 
-### Quote 22  `[already on site → quote #393]`
+### Quote 22 `[already on site → quote #393]`
 
 > Life is the possession of all who keep the commandments of the Lord.
 
@@ -167,7 +165,7 @@ _SEE ALSO FREE WILL AND PREDESTINATION; JUDGMENT, LAST; MAN, DOCTRINE OF; SALVAT
 
 **Attribution:** Justin Martyr (c. 160, E), 1.165.
 
-### Quote 25  `[already on site → quote #546]`
+### Quote 25 `[already on site → quote #546]`
 
 > Each man goes to everlasting punishment or salvation according to the value of his actions.
 
@@ -617,10 +615,9 @@ _SEE ALSO FREE WILL AND PREDESTINATION; JUDGMENT, LAST; MAN, DOCTRINE OF; SALVAT
 
 **Attribution:** Apostolic Constitutions (compiled c. 390, E), 7.391.
 
-
 ---
 
-## from ETERNAL PUNISHMENTS AND REWARDS  _(confidence: medium)_
+## from ETERNAL PUNISHMENTS AND REWARDS _(confidence: medium)_
 
 > Then the King will say to those on His right hand, “Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world.” . . . Then He will also say to those on the left hand, “Depart from Me, you cursed, into the everlasting fire prepared for the devil and his angels.” . . . And these will go away into everlasting punishment, but the righteous into eternal life. Matt. 25:34, 41, 46.
 >
@@ -676,7 +673,7 @@ _SEE ALSO FREE WILL AND PREDESTINATION; JUDGMENT, LAST; MAN, DOCTRINE OF; SALVAT
 
 **Attribution:** Papias (c. 120, E), 1.154, as quoted by Eusebius.
 
-### Quote 107  `[already on site → quote #546]`
+### Quote 107 `[already on site → quote #546]`
 
 > He goes to the everlasting punishment of fire.
 
@@ -730,7 +727,7 @@ _SEE ALSO FREE WILL AND PREDESTINATION; JUDGMENT, LAST; MAN, DOCTRINE OF; SALVAT
 
 **Attribution:** Martyrdom of the Holy Martyrs (c. 160), 1.306.
 
-### Quote 116  `[already on site → quote #65]`
+### Quote 116 `[already on site → quote #65]`
 
 > We are persuaded that when we are removed from the present life we will live another life, better than the present one. It will be a heavenly life, not an earthly one. For we will abide near God, and with God, free from all change or suffering in the soul. We will not abide as flesh (even though we will have flesh), but as heavenly spirit. . . . Or, if they fall with the rest, they will endure a worse [life], one in fire. For God has not made us as sheep or beasts of burden, who are mere by-products. For animals perish and are annihilated. On these grounds, it is not likely that we would wish to do evil.
 

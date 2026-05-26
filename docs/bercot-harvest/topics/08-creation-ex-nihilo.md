@@ -1,14 +1,13 @@
-# 08 · La création ex nihilo  (creation-ex-nihilo)
+# 08 · La création ex nihilo (creation-ex-nihilo)
 
 **Site group:** La Création  
 **Mapped dictionary entries:** CREATION  
 **Mapping confidence:** high
 **Quotes harvested:** 17 (1 already on site)
 
-
 ---
 
-## from CREATION  _(confidence: high)_
+## from CREATION _(confidence: high)_
 
 ### Quote 1
 
@@ -40,7 +39,7 @@
 
 **Attribution:** Clement of Alexandria (c. 195, E), 2.210.
 
-### Quote 6  `[already on site → quote #199]`
+### Quote 6 `[already on site → quote #199]`
 
 > How could creation take place in time, seeing time was born along with things that exist.
 

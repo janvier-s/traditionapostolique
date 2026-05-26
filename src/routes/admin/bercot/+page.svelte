@@ -45,7 +45,7 @@
 	});
 
 	const selectedTopic = $derived(
-		selectedTopicId != null ? data.topics.find((t) => t.id === selectedTopicId) ?? null : null
+		selectedTopicId != null ? (data.topics.find((t) => t.id === selectedTopicId) ?? null) : null
 	);
 
 	const candidatesForTopic = $derived.by(() => {
@@ -106,7 +106,7 @@
 	let activeId = $state<string | null>(null);
 	let lastTrigger = $state<HTMLElement | null>(null);
 	const activeEntry = $derived(
-		activeId ? data.bercot.find((b) => b.id === activeId) ?? null : null
+		activeId ? (data.bercot.find((b) => b.id === activeId) ?? null) : null
 	);
 	const activeSiblings = $derived(view === 'topic' ? candidatesForTopic : ungroupedEntries);
 	const activeIndex = $derived.by(() => {
@@ -214,10 +214,7 @@
 						<ul class="mt-2 max-h-60 space-y-1 overflow-y-auto">
 							{#each siteQuotesForTopic as q (q.id)}
 								<li class="truncate">
-									<a
-										href={`/admin/citations#${q.id}`}
-										class="hover:text-accent hover:underline"
-									>
+									<a href={`/admin/citations#${q.id}`} class="hover:text-accent hover:underline">
 										<span class="text-xs text-muted">#{q.id}</span>
 										{(q.fr ?? q.en ?? '(vide)').replace(/\s+/g, ' ').slice(0, 100)}
 									</a>
@@ -286,8 +283,8 @@
 {:else}
 	<div class="mt-4">
 		<p class="mb-3 text-sm text-muted">
-			Entrées du dictionnaire de Bercot qui ne sont rattachées à aucun sujet existant. Groupées
-			par entrée d'origine — créez un nouveau sujet à partir de chacune si elle vous intéresse.
+			Entrées du dictionnaire de Bercot qui ne sont rattachées à aucun sujet existant. Groupées par
+			entrée d'origine — créez un nouveau sujet à partir de chacune si elle vous intéresse.
 		</p>
 		<ul class="space-y-3">
 			{#each ungroupedBySource as [entry, items] (entry)}

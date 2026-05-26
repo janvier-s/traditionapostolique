@@ -1,4 +1,4 @@
-# 21 · La contraception et la stérilisation  (contraception-et-la-sterilisation)
+# 21 · La contraception et la stérilisation (contraception-et-la-sterilisation)
 
 **Site group:** La morale  
 **Mapped dictionary entries:** BIRTH CONTROL, PROCREATION  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: BIRTH CONTROL → PROCREATION_
 
-
 ---
 
-## from PROCREATION  _(confidence: high)_
+## from PROCREATION _(confidence: high)_
 
 > Be fruitful and multiply; fill the earth and subdue it. Gen. 1:28.
 

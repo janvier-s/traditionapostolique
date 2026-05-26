@@ -1,4 +1,4 @@
-# 09 · La création dans la Genèse  (creation-dans-la-genese)
+# 09 · La création dans la Genèse (creation-dans-la-genese)
 
 **Site group:** La Création  
 **Mapped dictionary entries:** CREATION, CREATIVE DAYS, DAYS OF CREATION, GENESIS, SEVENTH DAY OF CREATION  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: CREATIVE DAYS → DAYS OF CREATION; GENESIS → ADAM / CREATION / EVE / FALL OF MAN / FLOOD, THE / TOWER OF BABEL_
 
-
 ---
 
-## from CREATION  _(confidence: high)_
+## from CREATION _(confidence: high)_
 
 ### Quote 1
 
@@ -42,7 +41,7 @@ _Cross-reference aliases folded in: CREATIVE DAYS → DAYS OF CREATION; GENESIS 
 
 **Attribution:** Clement of Alexandria (c. 195, E), 2.210.
 
-### Quote 6  `[already on site → quote #199]`
+### Quote 6 `[already on site → quote #199]`
 
 > How could creation take place in time, seeing time was born along with things that exist.
 
@@ -116,10 +115,9 @@ _Cross-reference aliases folded in: CREATIVE DAYS → DAYS OF CREATION; GENESIS 
 
 _SEE ALSO ATOMS; DAYS OF CREATION; EVOLUTION; FLOOD, THE; SOVEREIGNTY AND PROVIDENCE OF GOD._
 
-
 ---
 
-## from DAYS OF CREATION  _(confidence: medium)_
+## from DAYS OF CREATION _(confidence: medium)_
 
 > With the Lord one day is as a thousand years, and a thousand years as one day. 2 Pet. 3:8.
 
@@ -165,7 +163,7 @@ _SEE ALSO ATOMS; DAYS OF CREATION; EVOLUTION; FLOOD, THE; SOVEREIGNTY AND PROVID
 
 **Attribution:** Cyprian (c. 250, W), 5.503. [This is not necessarily talking about the days of creation.]
 
-### Quote 25  `[already on site → quote #793]`
+### Quote 25 `[already on site → quote #793]`
 
 > God produced that entire mass for the adornment of His majesty in six days. On the seventh day, He consecrated it with a blessing.
 
@@ -191,10 +189,9 @@ _SEE ALSO ATOMS; DAYS OF CREATION; EVOLUTION; FLOOD, THE; SOVEREIGNTY AND PROVID
 
 _SEE ALSO CREATION; SEVENTH DAY OF CREATION._
 
-
 ---
 
-## from SEVENTH DAY OF CREATION  _(confidence: medium)_
+## from SEVENTH DAY OF CREATION _(confidence: medium)_
 
 > And on the seventh day God ended His work which He had done, and He rested on the seventh day from all His work which he had done. Gen. 2:2.
 >

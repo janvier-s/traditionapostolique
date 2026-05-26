@@ -76,8 +76,7 @@
 			<select
 				class="grow rounded border border-border bg-panel px-2 py-1 text-sm"
 				value={node.topicId ?? 0}
-				onchange={(e) =>
-					update('topicId', Number((e.currentTarget as HTMLSelectElement).value))}
+				onchange={(e) => update('topicId', Number((e.currentTarget as HTMLSelectElement).value))}
 			>
 				{#each topics as t (t.id)}
 					<option value={t.id}>{t.label}</option>

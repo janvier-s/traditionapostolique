@@ -1,4 +1,4 @@
-# 31 · Le sacrifice de la messe  (sacrifice-de-la-messe)
+# 31 · Le sacrifice de la messe (sacrifice-de-la-messe)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** MASS, SACRIFICES, SPIRITUAL, ALTAR, EUCHARIST  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: MASS → EUCHARIST; SACRIFICES, SPIRITUAL → EUCHARIST_
 
-
 ---
 
-## from ALTAR  _(confidence: medium)_
+## from ALTAR _(confidence: medium)_
 
 > If you bring your gift to the altar, and there remember that your brother has something against you, leave your gift there before the altar, and go your way. First be reconciled to your brother, and then come and offer your gift. Matt. 5:23.
 >
@@ -78,10 +77,9 @@ _Cross-reference aliases folded in: MASS → EUCHARIST; SACRIFICES, SPIRITUAL �
 
 _SEE ALSO EUCHARIST; INCENSE; REVELATION, BOOK OF._
 
-
 ---
 
-## from EUCHARIST  _(confidence: medium)_
+## from EUCHARIST _(confidence: medium)_
 
 ### § I. Doctrine of the Eucharist
 
@@ -109,7 +107,7 @@ _SEE ALSO EUCHARIST; INCENSE; REVELATION, BOOK OF._
 
 **Attribution:** Ignatius (c. 105, E), 1.81.
 
-#### Quote 15  `[already on site → quote #447]`
+#### Quote 15 `[already on site → quote #447]`
 
 > They [the Gnostics] abstain from the Eucharist and from prayer, because they do not believe the Eucharist to be the flesh of our Savior Jesus Christ. . . . Those, therefore, who speak against this gift of God, incur death.
 
@@ -309,7 +307,7 @@ _SEE ALSO EUCHARIST; INCENSE; REVELATION, BOOK OF._
 
 **Attribution:** Didache (c. 80–140, E), 1.379, 380.
 
-#### Quote 48  `[already on site → quote #448]`
+#### Quote 48 `[already on site → quote #448]`
 
 > Let that be deemed a proper Eucharist, which is [administered] either by the bishop, or by one to whom he has entrusted it.
 
@@ -409,13 +407,13 @@ _SEE ALSO EUCHARIST; INCENSE; REVELATION, BOOK OF._
 
 ### § IV. The Eucharist as a spiritual sacrifice
 
-#### Quote 64  `[already on site → quote #328]`
+#### Quote 64 `[already on site → quote #328]`
 
 > But every Lord’s Day, gather yourselves together, and break bread, and give thanksgiving after having confessed your transgressions, that your sacrifice may be pure. But let no one that is at variance with his fellow man come together with you, until they are reconciled, so that your sacrifice may not be profaned. For this is the thing that was spoken of by the Lord: “‘In every place and time offer to me a pure sacrifice; for I am a great King,’ the Lord says, ‘and my name is wonderful among the nations.’”
 
 **Attribution:** Didache (c. 80–140, E), 7.381.
 
-#### Quote 65  `[already on site → quote #541]`
+#### Quote 65 `[already on site → quote #541]`
 
 > He then speaks of those Gentiles, namely us, who in every place offer sacrifices to Him, i.e., the bread of the Eucharist, and also the cup of the Eucharist.
 

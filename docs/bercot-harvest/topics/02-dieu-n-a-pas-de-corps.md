@@ -1,4 +1,4 @@
-# 02 · Dieu n'a pas de corps  (dieu-n-a-pas-de-corps)
+# 02 · Dieu n'a pas de corps (dieu-n-a-pas-de-corps)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** ANTHROPOMORPHISMS, ATTRIBUTES OF GOD, GOD, ATTRIBUTES OF  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: ATTRIBUTES OF GOD → GOD, ATTRIBUTES OF_
 
-
 ---
 
-## from ANTHROPOMORPHISMS  _(confidence: high)_
+## from ANTHROPOMORPHISMS _(confidence: high)_
 
 > In theology, an anthropomorphism is the attributing of a human body and human characteristics to God.
 >
@@ -86,10 +85,9 @@ _Cross-reference aliases folded in: ATTRIBUTES OF GOD → GOD, ATTRIBUTES OF_
 
 **Attribution:** Arnobius (c. 305, E), 6.469; see also 3.316–3.317.
 
-
 ---
 
-## from GOD, ATTRIBUTES OF  _(confidence: medium)_
+## from GOD, ATTRIBUTES OF _(confidence: medium)_
 
 ### § I. General attributes
 

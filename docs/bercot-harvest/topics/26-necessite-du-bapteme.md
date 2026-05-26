@@ -1,14 +1,13 @@
-# 26 · La nécessité du baptême  (necessite-du-bapteme)
+# 26 · La nécessité du baptême (necessite-du-bapteme)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** BAPTISM § I  
 **Mapping confidence:** medium
 **Quotes harvested:** 82 (5 already on site)
 
-
 ---
 
-## from BAPTISM § I. Meaning of baptism  _(confidence: medium)_
+## from BAPTISM § I. Meaning of baptism _(confidence: medium)_
 
 ### Quote 1
 
@@ -16,7 +15,7 @@
 
 **Attribution:** Barnabas (c. 70–130, E), 1.144.
 
-### Quote 2  `[already on site → quote #591]`
+### Quote 2 `[already on site → quote #591]`
 
 > Blessed are they who, placing their trust in the cross, have gone down into the water. . . . We indeed descend into the water full of sins and defilement. However, we come up, bearing fruit in our heart, having the fear [of God] and the trust in Jesus in our spirit.
 
@@ -70,7 +69,7 @@
 
 **Attribution:** Justin Martyr (c. 160, E), 1.242.
 
-### Quote 11  `[already on site → quote #784]`
+### Quote 11 `[already on site → quote #784]`
 
 > The things proceeding from the waters were blessed by God, that this also could be a sign of men being destined to receive repentance and remission of sins, through the water and bath of regeneration—as many as come to the truth and are born again.
 
@@ -106,7 +105,7 @@
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.574.
 
-### Quote 17  `[already on site → quote #187]`
+### Quote 17 `[already on site → quote #187]`
 
 > Being baptized, we are illuminated. Illuminated, we become sons. . . . This work is variously called grace, illumination, perfection, and washing. Washing, by which we cleanse away our sins. Grace, by which the penalties accruing to transgressions are remitted. Illumination, by which that holy light of salvation is beheld, that is, by which we see God clearly.
 
@@ -178,7 +177,7 @@
 
 **Attribution:** Tertullian (c. 197, W), 3.170.
 
-### Quote 29  `[already on site → quote #735]`
+### Quote 29 `[already on site → quote #735]`
 
 > Happy is our sacrament of water, in that, by washing away the sins of our early blindness, we are set free and admitted into eternal life. . . . We, like little fishes, after the example of our ichthus, Jesus Christ, are born in water.
 
@@ -322,7 +321,7 @@
 
 **Attribution:** Commodianus (c. 240, W), 4.212.
 
-### Quote 53  `[already on site → quote #286]`
+### Quote 53 `[already on site → quote #286]`
 
 > By the help of the water of new birth, the stain of former years had been washed away, and a light from above—serene and pure—had been infused into my reconciled heart. Then, by the agency of the Spirit breathed from heaven, a second birth had restored me to a new man.
 

@@ -1,14 +1,13 @@
-# 05 · La divinité du Christ  (divinite-du-christ)
+# 05 · La divinité du Christ (divinite-du-christ)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** CHRIST, DIVINITY OF § I  
 **Mapping confidence:** high
 **Quotes harvested:** 114
 
-
 ---
 
-## from CHRIST, DIVINITY OF § I. Divinity of the Son  _(confidence: high)_
+## from CHRIST, DIVINITY OF § I. Divinity of the Son _(confidence: high)_
 
 ### Quote 1
 

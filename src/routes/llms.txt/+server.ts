@@ -51,8 +51,10 @@ export function GET() {
 		return result;
 	}
 
-	const totalTopics =
-		Object.values(taxonomy).reduce((acc, nodes) => acc + collectTopicRefs(nodes).length, 0);
+	const totalTopics = Object.values(taxonomy).reduce(
+		(acc, nodes) => acc + collectTopicRefs(nodes).length,
+		0
+	);
 
 	const lines: string[] = [
 		'# Tradition Apostolique',

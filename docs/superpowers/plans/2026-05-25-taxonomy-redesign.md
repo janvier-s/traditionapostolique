@@ -4,7 +4,7 @@
 
 **Goal:** Replace the current Section/Groupe/Pillar three-axis topic taxonomy with a pure two-level Theme→Aspect model, fix the save-blocking depth-2 violation, and ship a dedicated `/admin/migration` workspace so the user can walk every existing topic through a placement decision in a single editorial pass.
 
-**Architecture:** Schema gets a new `primary?: boolean` field on `Topic`, loses `section` and `groupe`. A topic with children is a *theme* (must have zero direct quote refs and exactly one primary child). A leaf is an *aspect* (or a standalone *sujet* at root). Cross-collection invariants run on every save via an extended `validateParentRefs` that takes both topics and quotes. The migration workspace is a five-bucket walkthrough page that calls a transactional `POST /admin/api/migration/apply-step` endpoint, which rewrites `topics.json` + `quotes.json` + `bercot.json` atomically per step.
+**Architecture:** Schema gets a new `primary?: boolean` field on `Topic`, loses `section` and `groupe`. A topic with children is a _theme_ (must have zero direct quote refs and exactly one primary child). A leaf is an _aspect_ (or a standalone _sujet_ at root). Cross-collection invariants run on every save via an extended `validateParentRefs` that takes both topics and quotes. The migration workspace is a five-bucket walkthrough page that calls a transactional `POST /admin/api/migration/apply-step` endpoint, which rewrites `topics.json` + `quotes.json` + `bercot.json` atomically per step.
 
 **Tech Stack:** Svelte 5 (runes: `$state`/`$props`/`$derived`/`$effect`), SvelteKit 2, TypeScript, Zod for schema, Vitest for unit tests, `atomicWriteJson` helper for safe disk writes.
 
@@ -13,19 +13,23 @@
 ## File structure
 
 **Schema (`src/lib/schema/`)**
+
 - `topic.ts` — drop `SectionSchema`+`section`, drop `groupe`, add `primary: boolean.optional()`
 - `index.ts` — update exports (remove `Section`/`SectionSchema`)
 
 **Data layer (`src/lib/data/`)**
+
 - `index.ts` — rewrite `buildTopicTree` (group by pillar, not by section); add `isTheme`/`primaryAspectOf`/`themeOf`/`aspectsOf` helpers
 - `topics.json` — strip `section`+`groupe` from every record (data cleanup)
 - `quotes.json`, `bercot.json` — untouched here; modified later by migration runs
 
 **Admin lib (`src/lib/admin/`)**
+
 - `topic-tree.ts` — extend `validateParentRefs` to also take quotes and check (theme-has-no-quotes, exactly-one-primary-per-theme)
 - `topic-tree.test.ts` — add cases for the new invariants
 
 **Admin UI (`src/routes/admin/`)**
+
 - `+layout.svelte` — add `<a href="/admin/migration">Migration</a>` to the nav
 - `sujets/+page.svelte` — drop section/groupe form fields, add primary checkbox + badges + theme-quote warning
 - `hierarchie/+page.svelte` — re-render to surface theme/aspect/sujet shapes
@@ -35,6 +39,7 @@
 - `api/migration/apply-step/+server.ts` — new transactional endpoint
 
 **Public UI (`src/routes/`)**
+
 - `sujets/+page.svelte` — switch from section-grouped to pillar-column layout
 - `sujets/[slug]/+page.svelte` — handle leaf vs theme rendering
 - `themes/[slug]/+page.svelte` — new mini-index page
@@ -45,6 +50,7 @@
 ## Task 1: Unblock editing (fix topic 84 depth-2 violation)
 
 **Files:**
+
 - Modify: `src/lib/data/topics.json` (one record only)
 
 - [ ] **Step 1: Tag pre-migration state for rollback**
@@ -60,7 +66,15 @@ Expected: tag created on the current commit. `git tag -l pre-taxonomy-redesign` 
 Use the Edit tool to find the record (`"id": 84` with `"parentId": 25`) and confirm context. Expected current state:
 
 ```json
-{ "id": 84, "slug": "la-nouvelle-naissance", "label": "La nouvelle naissance", "section": "I", "groupe": "Credo", "pillar": "credo", "parentId": 25 }
+{
+	"id": 84,
+	"slug": "la-nouvelle-naissance",
+	"label": "La nouvelle naissance",
+	"section": "I",
+	"groupe": "Credo",
+	"pillar": "credo",
+	"parentId": 25
+}
 ```
 
 - [ ] **Step 3: Re-parent topic 84 from 25 to 24**
@@ -68,7 +82,15 @@ Use the Edit tool to find the record (`"id": 84` with `"parentId": 25`) and conf
 Edit the record so `parentId` is `24` instead of `25`:
 
 ```json
-{ "id": 84, "slug": "la-nouvelle-naissance", "label": "La nouvelle naissance", "section": "I", "groupe": "Credo", "pillar": "credo", "parentId": 24 }
+{
+	"id": 84,
+	"slug": "la-nouvelle-naissance",
+	"label": "La nouvelle naissance",
+	"section": "I",
+	"groupe": "Credo",
+	"pillar": "credo",
+	"parentId": 24
+}
 ```
 
 (Topic 84 becomes a sibling of "régénération baptismale" under the "Le baptême" parent — semantically fine and resolves the validator violation.)
@@ -107,6 +129,7 @@ violation was resolved. 84 is now a sibling of 25 under 24."
 ## Task 2: Schema — drop section/groupe, add primary
 
 **Files:**
+
 - Modify: `src/lib/schema/topic.ts`
 - Modify: `src/lib/schema/index.ts`
 - Modify: `src/lib/schema/schema.test.ts` (if it references section/groupe)
@@ -130,14 +153,14 @@ export const PillarSchema = z.enum(['credo', 'sacrements', 'vie', 'priere']);
 export type Pillar = z.infer<typeof PillarSchema>;
 
 export const TopicSchema = z.object({
-  id: z.number().int().nonnegative(),
-  slug: z.string().min(1),
-  label: z.string().min(1),
-  description: z.string().optional(),
-  pillar: PillarSchema.optional(),
-  parentId: z.number().int().nonnegative().optional(),
-  order: z.number().int().nonnegative().optional(),
-  primary: z.boolean().optional()
+	id: z.number().int().nonnegative(),
+	slug: z.string().min(1),
+	label: z.string().min(1),
+	description: z.string().optional(),
+	pillar: PillarSchema.optional(),
+	parentId: z.number().int().nonnegative().optional(),
+	order: z.number().int().nonnegative().optional(),
+	primary: z.boolean().optional()
 });
 export type Topic = z.infer<typeof TopicSchema>;
 ```
@@ -188,6 +211,7 @@ carries the theme's name and is the click-target from the sidebar."
 ## Task 3: Strip section/groupe from topics.json
 
 **Files:**
+
 - Modify: `src/lib/data/topics.json` (every record)
 
 - [ ] **Step 1: Write a one-shot strip script**
@@ -199,8 +223,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const p = 'src/lib/data/topics.json';
 const data = JSON.parse(readFileSync(p, 'utf-8'));
 for (const t of data) {
-  delete t.section;
-  delete t.groupe;
+	delete t.section;
+	delete t.groupe;
 }
 writeFileSync(p, JSON.stringify(data, null, '\t') + '\n');
 console.log(`Stripped section+groupe from ${data.length} topics`);
@@ -240,6 +264,7 @@ git commit -m "feat(data): strip section+groupe from topics.json (146 records)"
 ## Task 4: Helpers — isTheme, primaryAspectOf, themeOf, aspectsOf
 
 **Files:**
+
 - Create: `src/lib/data/topic-helpers.ts`
 - Create: `src/lib/data/topic-helpers.test.ts`
 
@@ -251,51 +276,56 @@ import type { Topic } from '$lib/schema';
 import { isTheme, primaryAspectOf, themeOf, aspectsOf } from './topic-helpers';
 
 const mk = (id: number, extras: Partial<Topic> = {}): Topic => ({
-  id, slug: `t${id}`, label: `T${id}`, ...extras
+	id,
+	slug: `t${id}`,
+	label: `T${id}`,
+	...extras
 });
 
 describe('isTheme', () => {
-  it('true for a root with children', () => {
-    const all = [mk(1), mk(2, { parentId: 1 })];
-    expect(isTheme(1, all)).toBe(true);
-  });
-  it('false for a standalone root (no children)', () => {
-    expect(isTheme(1, [mk(1)])).toBe(false);
-  });
-  it('false for a child topic', () => {
-    expect(isTheme(2, [mk(1), mk(2, { parentId: 1 })])).toBe(false);
-  });
+	it('true for a root with children', () => {
+		const all = [mk(1), mk(2, { parentId: 1 })];
+		expect(isTheme(1, all)).toBe(true);
+	});
+	it('false for a standalone root (no children)', () => {
+		expect(isTheme(1, [mk(1)])).toBe(false);
+	});
+	it('false for a child topic', () => {
+		expect(isTheme(2, [mk(1), mk(2, { parentId: 1 })])).toBe(false);
+	});
 });
 
 describe('primaryAspectOf', () => {
-  it('returns the child with primary:true', () => {
-    const all = [mk(1), mk(2, { parentId: 1 }), mk(3, { parentId: 1, primary: true })];
-    expect(primaryAspectOf(1, all)?.id).toBe(3);
-  });
-  it('returns undefined when no primary is set', () => {
-    expect(primaryAspectOf(1, [mk(1), mk(2, { parentId: 1 })])).toBeUndefined();
-  });
+	it('returns the child with primary:true', () => {
+		const all = [mk(1), mk(2, { parentId: 1 }), mk(3, { parentId: 1, primary: true })];
+		expect(primaryAspectOf(1, all)?.id).toBe(3);
+	});
+	it('returns undefined when no primary is set', () => {
+		expect(primaryAspectOf(1, [mk(1), mk(2, { parentId: 1 })])).toBeUndefined();
+	});
 });
 
 describe('themeOf', () => {
-  it('returns the parent topic of an aspect', () => {
-    const all = [mk(1), mk(2, { parentId: 1 })];
-    expect(themeOf(2, all)?.id).toBe(1);
-  });
-  it('returns undefined for a root topic', () => {
-    expect(themeOf(1, [mk(1)])).toBeUndefined();
-  });
+	it('returns the parent topic of an aspect', () => {
+		const all = [mk(1), mk(2, { parentId: 1 })];
+		expect(themeOf(2, all)?.id).toBe(1);
+	});
+	it('returns undefined for a root topic', () => {
+		expect(themeOf(1, [mk(1)])).toBeUndefined();
+	});
 });
 
 describe('aspectsOf', () => {
-  it('returns all children of a theme', () => {
-    const all = [mk(1), mk(2, { parentId: 1 }), mk(3, { parentId: 1 }), mk(4)];
-    const result = aspectsOf(1, all).map((t) => t.id).sort();
-    expect(result).toEqual([2, 3]);
-  });
-  it('returns [] for a standalone root', () => {
-    expect(aspectsOf(1, [mk(1)])).toEqual([]);
-  });
+	it('returns all children of a theme', () => {
+		const all = [mk(1), mk(2, { parentId: 1 }), mk(3, { parentId: 1 }), mk(4)];
+		const result = aspectsOf(1, all)
+			.map((t) => t.id)
+			.sort();
+		expect(result).toEqual([2, 3]);
+	});
+	it('returns [] for a standalone root', () => {
+		expect(aspectsOf(1, [mk(1)])).toEqual([]);
+	});
 });
 ```
 
@@ -313,21 +343,21 @@ Expected: FAIL — `topic-helpers.ts` does not exist.
 import type { Topic } from '$lib/schema';
 
 export function isTheme(topicId: number, allTopics: readonly Topic[]): boolean {
-  return allTopics.some((t) => t.parentId === topicId);
+	return allTopics.some((t) => t.parentId === topicId);
 }
 
 export function aspectsOf(themeId: number, allTopics: readonly Topic[]): Topic[] {
-  return allTopics.filter((t) => t.parentId === themeId);
+	return allTopics.filter((t) => t.parentId === themeId);
 }
 
 export function primaryAspectOf(themeId: number, allTopics: readonly Topic[]): Topic | undefined {
-  return allTopics.find((t) => t.parentId === themeId && t.primary === true);
+	return allTopics.find((t) => t.parentId === themeId && t.primary === true);
 }
 
 export function themeOf(aspectId: number, allTopics: readonly Topic[]): Topic | undefined {
-  const aspect = allTopics.find((t) => t.id === aspectId);
-  if (!aspect || aspect.parentId == null) return undefined;
-  return allTopics.find((t) => t.id === aspect.parentId);
+	const aspect = allTopics.find((t) => t.id === aspectId);
+	if (!aspect || aspect.parentId == null) return undefined;
+	return allTopics.find((t) => t.id === aspect.parentId);
 }
 ```
 
@@ -351,6 +381,7 @@ git commit -m "feat(data): topic-helpers — isTheme, primaryAspectOf, themeOf, 
 ## Task 5: Extended validator (cross-collection invariants)
 
 **Files:**
+
 - Modify: `src/lib/admin/topic-tree.ts`
 - Modify: `src/lib/admin/topic-tree.test.ts`
 - Modify: `src/routes/admin/api/[entity]/+server.ts` (call site)
@@ -361,10 +392,10 @@ In `src/lib/admin/topic-tree.test.ts`, update the `t()` helper (line ~5) — rem
 
 ```ts
 const t = (id: number, label: string, extras: Partial<Topic> = {}): Topic => ({
-  id,
-  slug: `t${id}`,
-  label,
-  ...extras
+	id,
+	slug: `t${id}`,
+	label,
+	...extras
 });
 ```
 
@@ -376,75 +407,75 @@ Append to `src/lib/admin/topic-tree.test.ts`:
 import type { Quote } from '$lib/schema';
 
 const q = (id: number, topicIds: number[]): Quote => ({
-  id,
-  slug: `q${id}`,
-  authorId: 1,
-  workId: 1,
-  topicIds,
-  fr: 'x',
-  en: 'x',
-  reference: 'x',
-  status: 'published'
+	id,
+	slug: `q${id}`,
+	authorId: 1,
+	workId: 1,
+	topicIds,
+	fr: 'x',
+	en: 'x',
+	reference: 'x',
+	status: 'published'
 });
 
 describe('validateParentRefs (with quotes)', () => {
-  it('fails when a theme (topic with children) has direct quote refs', () => {
-    const topics = [t(1, 'Theme'), t(2, 'Aspect', { parentId: 1, primary: true })];
-    const quotes = [q(100, [1])]; // quote refs the theme, not the aspect — illegal
-    const r = validateParentRefs(topics, quotes);
-    expect(r.ok).toBe(false);
-    if (!r.ok) expect(r.error).toMatch(/theme/i);
-  });
-  it('passes when theme is referenced 0 times and aspect carries all quotes', () => {
-    const topics = [t(1, 'Theme'), t(2, 'Primary', { parentId: 1, primary: true })];
-    const quotes = [q(100, [2])];
-    expect(validateParentRefs(topics, quotes).ok).toBe(true);
-  });
-  it('fails when a theme has zero primary aspects', () => {
-    const topics = [t(1, 'Theme'), t(2, 'A', { parentId: 1 }), t(3, 'B', { parentId: 1 })];
-    const r = validateParentRefs(topics, []);
-    expect(r.ok).toBe(false);
-    if (!r.ok) expect(r.error).toMatch(/primary/i);
-  });
-  it('fails when a theme has two primary aspects', () => {
-    const topics = [
-      t(1, 'Theme'),
-      t(2, 'A', { parentId: 1, primary: true }),
-      t(3, 'B', { parentId: 1, primary: true })
-    ];
-    const r = validateParentRefs(topics, []);
-    expect(r.ok).toBe(false);
-    if (!r.ok) expect(r.error).toMatch(/primary/i);
-  });
-  it('passes when quotes arg is omitted (back-compat for legacy callers)', () => {
-    const topics = [t(1, 'A'), t(2, 'A1', { parentId: 1 })];
-    expect(validateParentRefs(topics).ok).toBe(true);
-  });
-  it('fails on duplicate slug among non-themes (aspects + sujets share namespace)', () => {
-    const topics = [t(1, 'A'), t(2, 'B', { slug: 'shared' }), t(3, 'C', { slug: 'shared' })];
-    const r = validateParentRefs(topics, []);
-    expect(r.ok).toBe(false);
-    if (!r.ok) expect(r.error).toMatch(/slug/i);
-  });
-  it('passes when theme and its primary aspect share a slug (different namespaces)', () => {
-    const topics = [
-      t(1, 'Theme', { slug: 'le-bapteme' }),
-      t(2, 'Primary', { slug: 'le-bapteme', parentId: 1, primary: true })
-    ];
-    expect(validateParentRefs(topics, []).ok).toBe(true);
-  });
-  it('fails on duplicate slug among themes', () => {
-    // Two themes with same slug
-    const topics = [
-      t(1, 'T1', { slug: 'x' }),
-      t(2, 'P1', { parentId: 1, primary: true }),
-      t(3, 'T2', { slug: 'x' }),
-      t(4, 'P2', { parentId: 3, primary: true })
-    ];
-    const r = validateParentRefs(topics, []);
-    expect(r.ok).toBe(false);
-    if (!r.ok) expect(r.error).toMatch(/slug/i);
-  });
+	it('fails when a theme (topic with children) has direct quote refs', () => {
+		const topics = [t(1, 'Theme'), t(2, 'Aspect', { parentId: 1, primary: true })];
+		const quotes = [q(100, [1])]; // quote refs the theme, not the aspect — illegal
+		const r = validateParentRefs(topics, quotes);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/theme/i);
+	});
+	it('passes when theme is referenced 0 times and aspect carries all quotes', () => {
+		const topics = [t(1, 'Theme'), t(2, 'Primary', { parentId: 1, primary: true })];
+		const quotes = [q(100, [2])];
+		expect(validateParentRefs(topics, quotes).ok).toBe(true);
+	});
+	it('fails when a theme has zero primary aspects', () => {
+		const topics = [t(1, 'Theme'), t(2, 'A', { parentId: 1 }), t(3, 'B', { parentId: 1 })];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/primary/i);
+	});
+	it('fails when a theme has two primary aspects', () => {
+		const topics = [
+			t(1, 'Theme'),
+			t(2, 'A', { parentId: 1, primary: true }),
+			t(3, 'B', { parentId: 1, primary: true })
+		];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/primary/i);
+	});
+	it('passes when quotes arg is omitted (back-compat for legacy callers)', () => {
+		const topics = [t(1, 'A'), t(2, 'A1', { parentId: 1 })];
+		expect(validateParentRefs(topics).ok).toBe(true);
+	});
+	it('fails on duplicate slug among non-themes (aspects + sujets share namespace)', () => {
+		const topics = [t(1, 'A'), t(2, 'B', { slug: 'shared' }), t(3, 'C', { slug: 'shared' })];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/slug/i);
+	});
+	it('passes when theme and its primary aspect share a slug (different namespaces)', () => {
+		const topics = [
+			t(1, 'Theme', { slug: 'le-bapteme' }),
+			t(2, 'Primary', { slug: 'le-bapteme', parentId: 1, primary: true })
+		];
+		expect(validateParentRefs(topics, []).ok).toBe(true);
+	});
+	it('fails on duplicate slug among themes', () => {
+		// Two themes with same slug
+		const topics = [
+			t(1, 'T1', { slug: 'x' }),
+			t(2, 'P1', { parentId: 1, primary: true }),
+			t(3, 'T2', { slug: 'x' }),
+			t(4, 'P2', { parentId: 3, primary: true })
+		];
+		const r = validateParentRefs(topics, []);
+		expect(r.ok).toBe(false);
+		if (!r.ok) expect(r.error).toMatch(/slug/i);
+	});
 });
 ```
 
@@ -466,90 +497,90 @@ import type { Topic, Quote } from '$lib/schema';
 // (keep existing siblingSort, buildTopicTree, flattenTree, ValidateResult — unchanged)
 
 export function validateParentRefs(topics: Topic[], quotes?: Quote[]): ValidateResult {
-  const byId = new Map<number, Topic>();
-  for (const t of topics) byId.set(t.id, t);
+	const byId = new Map<number, Topic>();
+	for (const t of topics) byId.set(t.id, t);
 
-  // Invariant 1: parent refs and depth ≤ 1
-  for (const t of topics) {
-    if (t.parentId == null) continue;
-    if (t.parentId === t.id) {
-      return { ok: false, error: `Topic ${t.id} (${t.slug}) cannot be its own parent` };
-    }
-    const parent = byId.get(t.parentId);
-    if (!parent) {
-      return { ok: false, error: `Topic ${t.id} (${t.slug}) has unknown parentId ${t.parentId}` };
-    }
-    if (parent.parentId != null) {
-      return {
-        ok: false,
-        error: `Topic ${t.id} (${t.slug}) cannot nest under a sub-topic (parent ${parent.id} is itself a sub-topic)`
-      };
-    }
-  }
+	// Invariant 1: parent refs and depth ≤ 1
+	for (const t of topics) {
+		if (t.parentId == null) continue;
+		if (t.parentId === t.id) {
+			return { ok: false, error: `Topic ${t.id} (${t.slug}) cannot be its own parent` };
+		}
+		const parent = byId.get(t.parentId);
+		if (!parent) {
+			return { ok: false, error: `Topic ${t.id} (${t.slug}) has unknown parentId ${t.parentId}` };
+		}
+		if (parent.parentId != null) {
+			return {
+				ok: false,
+				error: `Topic ${t.id} (${t.slug}) cannot nest under a sub-topic (parent ${parent.id} is itself a sub-topic)`
+			};
+		}
+	}
 
-  // Compute which topics are themes (have children)
-  const childrenByParent = new Map<number, Topic[]>();
-  for (const t of topics) {
-    if (t.parentId != null) {
-      const arr = childrenByParent.get(t.parentId) ?? [];
-      arr.push(t);
-      childrenByParent.set(t.parentId, arr);
-    }
-  }
-  const themeIds = new Set(childrenByParent.keys());
+	// Compute which topics are themes (have children)
+	const childrenByParent = new Map<number, Topic[]>();
+	for (const t of topics) {
+		if (t.parentId != null) {
+			const arr = childrenByParent.get(t.parentId) ?? [];
+			arr.push(t);
+			childrenByParent.set(t.parentId, arr);
+		}
+	}
+	const themeIds = new Set(childrenByParent.keys());
 
-  // Invariant 2: theme has zero direct quote refs (cross-collection check)
-  if (quotes) {
-    for (const q of quotes) {
-      for (const tid of q.topicIds) {
-        if (themeIds.has(tid)) {
-          const theme = byId.get(tid)!;
-          return {
-            ok: false,
-            error: `Quote ${q.id} references theme ${theme.id} (${theme.slug}) directly — themes cannot hold quotes; move to an aspect`
-          };
-        }
-      }
-    }
-  }
+	// Invariant 2: theme has zero direct quote refs (cross-collection check)
+	if (quotes) {
+		for (const q of quotes) {
+			for (const tid of q.topicIds) {
+				if (themeIds.has(tid)) {
+					const theme = byId.get(tid)!;
+					return {
+						ok: false,
+						error: `Quote ${q.id} references theme ${theme.id} (${theme.slug}) directly — themes cannot hold quotes; move to an aspect`
+					};
+				}
+			}
+		}
+	}
 
-  // Invariant 3: each theme has exactly one primary aspect
-  for (const [themeId, children] of childrenByParent) {
-    const primaries = children.filter((c) => c.primary === true);
-    if (primaries.length === 0) {
-      const theme = byId.get(themeId)!;
-      return {
-        ok: false,
-        error: `Theme ${themeId} (${theme.slug}) has no primary aspect — exactly one child must have primary: true`
-      };
-    }
-    if (primaries.length > 1) {
-      const theme = byId.get(themeId)!;
-      return {
-        ok: false,
-        error: `Theme ${themeId} (${theme.slug}) has ${primaries.length} primary aspects — only one is allowed`
-      };
-    }
-  }
+	// Invariant 3: each theme has exactly one primary aspect
+	for (const [themeId, children] of childrenByParent) {
+		const primaries = children.filter((c) => c.primary === true);
+		if (primaries.length === 0) {
+			const theme = byId.get(themeId)!;
+			return {
+				ok: false,
+				error: `Theme ${themeId} (${theme.slug}) has no primary aspect — exactly one child must have primary: true`
+			};
+		}
+		if (primaries.length > 1) {
+			const theme = byId.get(themeId)!;
+			return {
+				ok: false,
+				error: `Theme ${themeId} (${theme.slug}) has ${primaries.length} primary aspects — only one is allowed`
+			};
+		}
+	}
 
-  // Invariant 4: slug uniqueness within route namespace. Themes live in /themes/;
-  // aspects + standalone sujets live in /sujets/. A theme MAY share its slug with
-  // its primary aspect (different namespaces). Within a namespace, slugs must be unique.
-  const sujetsSlugs = new Set<string>();
-  const themesSlugs = new Set<string>();
-  for (const t of topics) {
-    const inThemes = themeIds.has(t.id);
-    const bucket = inThemes ? themesSlugs : sujetsSlugs;
-    if (bucket.has(t.slug)) {
-      return {
-        ok: false,
-        error: `Duplicate slug "${t.slug}" within ${inThemes ? '/themes/' : '/sujets/'} namespace`
-      };
-    }
-    bucket.add(t.slug);
-  }
+	// Invariant 4: slug uniqueness within route namespace. Themes live in /themes/;
+	// aspects + standalone sujets live in /sujets/. A theme MAY share its slug with
+	// its primary aspect (different namespaces). Within a namespace, slugs must be unique.
+	const sujetsSlugs = new Set<string>();
+	const themesSlugs = new Set<string>();
+	for (const t of topics) {
+		const inThemes = themeIds.has(t.id);
+		const bucket = inThemes ? themesSlugs : sujetsSlugs;
+		if (bucket.has(t.slug)) {
+			return {
+				ok: false,
+				error: `Duplicate slug "${t.slug}" within ${inThemes ? '/themes/' : '/sujets/'} namespace`
+			};
+		}
+		bucket.add(t.slug);
+	}
 
-  return { ok: true };
+	return { ok: true };
 }
 ```
 
@@ -567,8 +598,8 @@ Edit `src/routes/admin/api/[entity]/+server.ts`. The current call at line ~63:
 
 ```ts
 if (params.entity === 'topics') {
-  const refs = validateParentRefs(parsed.data as Topic[]);
-  if (!refs.ok) throw error(400, refs.error);
+	const refs = validateParentRefs(parsed.data as Topic[]);
+	if (!refs.ok) throw error(400, refs.error);
 }
 ```
 
@@ -593,6 +624,7 @@ validateParentRefs now optionally accepts quotes[] and checks:
 ## Task 6: Public `/sujets` — pillar columns
 
 **Files:**
+
 - Modify: `src/lib/data/index.ts` (rewrite `buildTopicTree`)
 - Modify: `src/routes/sujets/+page.svelte`
 
@@ -604,114 +636,117 @@ The existing `buildTopicTree` (at line ~57) references `t.section` and `t.groupe
 import type { Pillar } from '$lib/schema';
 
 export interface PublicAspect {
-  id: number;
-  slug: string;
-  label: string;
-  href: string;
-  count: number;
-  isTheme: boolean;
-  parentLabel?: string; // for indented display: the theme name above
+	id: number;
+	slug: string;
+	label: string;
+	href: string;
+	count: number;
+	isTheme: boolean;
+	parentLabel?: string; // for indented display: the theme name above
 }
 
 export interface PublicPillarColumn {
-  pillar: Pillar | 'none';
-  label: string;
-  subtitle: string;
-  items: PublicAspect[]; // ordered, themes followed by their aspects intermixed by `order`
+	pillar: Pillar | 'none';
+	label: string;
+	subtitle: string;
+	items: PublicAspect[]; // ordered, themes followed by their aspects intermixed by `order`
 }
 
 const PILLAR_META: Record<Pillar, { label: string; subtitle: string }> = {
-  credo: { label: 'Credo', subtitle: 'Profession de la foi (CCC I)' },
-  sacrements: { label: 'Sacrements', subtitle: 'Célébration du mystère chrétien (CCC II)' },
-  vie: { label: 'Vie en Christ', subtitle: 'La vie dans le Christ (CCC III)' },
-  priere: { label: 'Prière', subtitle: 'La prière chrétienne (CCC IV)' }
+	credo: { label: 'Credo', subtitle: 'Profession de la foi (CCC I)' },
+	sacrements: { label: 'Sacrements', subtitle: 'Célébration du mystère chrétien (CCC II)' },
+	vie: { label: 'Vie en Christ', subtitle: 'La vie dans le Christ (CCC III)' },
+	priere: { label: 'Prière', subtitle: 'La prière chrétienne (CCC IV)' }
 };
 
 export function buildPublicTree(): PublicPillarColumn[] {
-  const counts = new Map<number, number>();
-  for (const q of quotes) for (const t of q.topicIds) counts.set(t, (counts.get(t) ?? 0) + 1);
+	const counts = new Map<number, number>();
+	for (const q of quotes) for (const t of q.topicIds) counts.set(t, (counts.get(t) ?? 0) + 1);
 
-  const childrenByParent = new Map<number, typeof topics>();
-  for (const t of topics) {
-    if (t.parentId != null) {
-      const arr = childrenByParent.get(t.parentId) ?? [];
-      arr.push(t);
-      childrenByParent.set(t.parentId, arr);
-    }
-  }
+	const childrenByParent = new Map<number, typeof topics>();
+	for (const t of topics) {
+		if (t.parentId != null) {
+			const arr = childrenByParent.get(t.parentId) ?? [];
+			arr.push(t);
+			childrenByParent.set(t.parentId, arr);
+		}
+	}
 
-  function descendantCount(themeId: number): number {
-    let n = counts.get(themeId) ?? 0;
-    for (const c of childrenByParent.get(themeId) ?? []) n += descendantCount(c.id);
-    return n;
-  }
+	function descendantCount(themeId: number): number {
+		let n = counts.get(themeId) ?? 0;
+		for (const c of childrenByParent.get(themeId) ?? []) n += descendantCount(c.id);
+		return n;
+	}
 
-  const pillars: Array<Pillar | 'none'> = ['credo', 'sacrements', 'vie', 'priere'];
-  const columns: PublicPillarColumn[] = pillars.map((p) => {
-    const roots = topics
-      .filter((t) => t.parentId == null && (t.pillar ?? 'none') === p)
-      .sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
-    const items: PublicAspect[] = [];
-    for (const root of roots) {
-      const children = childrenByParent.get(root.id) ?? [];
-      const isTheme = children.length > 0;
-      items.push({
-        id: root.id,
-        slug: root.slug,
-        label: root.label,
-        href: `/sujets/${root.slug}`,
-        count: isTheme ? descendantCount(root.id) : counts.get(root.id) ?? 0,
-        isTheme
-      });
-      if (isTheme) {
-        const sortedChildren = children
-          .slice()
-          .sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
-        for (const child of sortedChildren) {
-          // Hide the primary aspect from the indented list — clicking the theme line lands on it
-          if (child.primary === true) continue;
-          items.push({
-            id: child.id,
-            slug: child.slug,
-            label: child.label,
-            href: `/sujets/${child.slug}`,
-            count: counts.get(child.id) ?? 0,
-            isTheme: false,
-            parentLabel: root.label
-          });
-        }
-      }
-    }
-    const meta =
-      p === 'none'
-        ? { label: 'Non classé', subtitle: 'Sujets sans pilier' }
-        : PILLAR_META[p];
-    return { pillar: p, ...meta, items };
-  });
+	const pillars: Array<Pillar | 'none'> = ['credo', 'sacrements', 'vie', 'priere'];
+	const columns: PublicPillarColumn[] = pillars.map((p) => {
+		const roots = topics
+			.filter((t) => t.parentId == null && (t.pillar ?? 'none') === p)
+			.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
+		const items: PublicAspect[] = [];
+		for (const root of roots) {
+			const children = childrenByParent.get(root.id) ?? [];
+			const isTheme = children.length > 0;
+			items.push({
+				id: root.id,
+				slug: root.slug,
+				label: root.label,
+				href: `/sujets/${root.slug}`,
+				count: isTheme ? descendantCount(root.id) : (counts.get(root.id) ?? 0),
+				isTheme
+			});
+			if (isTheme) {
+				const sortedChildren = children
+					.slice()
+					.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id);
+				for (const child of sortedChildren) {
+					// Hide the primary aspect from the indented list — clicking the theme line lands on it
+					if (child.primary === true) continue;
+					items.push({
+						id: child.id,
+						slug: child.slug,
+						label: child.label,
+						href: `/sujets/${child.slug}`,
+						count: counts.get(child.id) ?? 0,
+						isTheme: false,
+						parentLabel: root.label
+					});
+				}
+			}
+		}
+		const meta =
+			p === 'none' ? { label: 'Non classé', subtitle: 'Sujets sans pilier' } : PILLAR_META[p];
+		return { pillar: p, ...meta, items };
+	});
 
-  // Add a 'none' column at the end if there are unclassified roots
-  const nonePillar: Pillar | 'none' = 'none';
-  const noneRoots = topics.filter((t) => t.parentId == null && t.pillar == null);
-  if (noneRoots.length > 0) {
-    const items = noneRoots.map((t) => ({
-      id: t.id,
-      slug: t.slug,
-      label: t.label,
-      href: `/sujets/${t.slug}`,
-      count: counts.get(t.id) ?? 0,
-      isTheme: (childrenByParent.get(t.id)?.length ?? 0) > 0
-    }));
-    columns.push({ pillar: nonePillar, label: 'Non classé', subtitle: 'Sujets sans pilier', items });
-  }
+	// Add a 'none' column at the end if there are unclassified roots
+	const nonePillar: Pillar | 'none' = 'none';
+	const noneRoots = topics.filter((t) => t.parentId == null && t.pillar == null);
+	if (noneRoots.length > 0) {
+		const items = noneRoots.map((t) => ({
+			id: t.id,
+			slug: t.slug,
+			label: t.label,
+			href: `/sujets/${t.slug}`,
+			count: counts.get(t.id) ?? 0,
+			isTheme: (childrenByParent.get(t.id)?.length ?? 0) > 0
+		}));
+		columns.push({
+			pillar: nonePillar,
+			label: 'Non classé',
+			subtitle: 'Sujets sans pilier',
+			items
+		});
+	}
 
-  return columns;
+	return columns;
 }
 
 // Keep the legacy buildTopicTree as a thin wrapper for any caller that still imports it.
 // (Removed once all callers migrate.)
 ```
 
-Note: there is a *different* `buildTopicTree` in `src/lib/admin/topic-tree.ts` used by admin routes. That one is unrelated and stays untouched. Only the one in `src/lib/data/index.ts` is replaced here.
+Note: there is a _different_ `buildTopicTree` in `src/lib/admin/topic-tree.ts` used by admin routes. That one is unrelated and stays untouched. Only the one in `src/lib/data/index.ts` is replaced here.
 
 - [ ] **Step 2: Confirm no other consumer of legacy data-side `buildTopicTree`**
 
@@ -727,70 +762,69 @@ Replace the file with:
 
 ```svelte
 <script lang="ts">
-  import { buildPublicTree } from '$lib/data';
-  import MetaTags from '$lib/components/ui/MetaTags.svelte';
+	import { buildPublicTree } from '$lib/data';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 
-  const columns = buildPublicTree();
-  const totalTopics = columns.reduce((n, c) => n + c.items.length, 0);
+	const columns = buildPublicTree();
+	const totalTopics = columns.reduce((n, c) => n + c.items.length, 0);
 </script>
 
 <MetaTags
-  title="Sujets"
-  fullTitle="Les sujets traités dans la Tradition Apostolique"
-  description="Index thématique de la Tradition Apostolique : les principaux articles de la foi chrétienne traités par les Pères de l'Église — Dieu, le Christ, l'Église, les sacrements, la morale, la fin des temps."
+	title="Sujets"
+	fullTitle="Les sujets traités dans la Tradition Apostolique"
+	description="Index thématique de la Tradition Apostolique : les principaux articles de la foi chrétienne traités par les Pères de l'Église — Dieu, le Christ, l'Église, les sacrements, la morale, la fin des temps."
 />
 
 <article style="--author-col: 200px; --quote-gap: 3rem;">
-  <header
-    class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]"
-  >
-    <div></div>
-    <div>
-      <h1
-        class="font-heading italic text-accent leading-[1.1]"
-        style="font-size: clamp(2.25rem, 3.6vw, 3rem);"
-      >
-        Les Sujets
-      </h1>
-      <p class="mt-3 label-meta">{totalTopics} sujets</p>
-      <p class="mt-3 max-w-prose font-body text-base leading-[1.6] text-foreground">
-        Cet index thématique rassemble les principaux articles de la foi chrétienne tels que les ont
-        traités les Pères de l'Église : Dieu, le Christ, l'Église, les sacrements, la morale, la fin
-        des temps.
-      </p>
-    </div>
-  </header>
+	<header
+		class="mb-12 grid grid-cols-1 gap-x-[var(--quote-gap)] md:grid-cols-[var(--author-col)_1fr]"
+	>
+		<div></div>
+		<div>
+			<h1
+				class="font-heading italic text-accent leading-[1.1]"
+				style="font-size: clamp(2.25rem, 3.6vw, 3rem);"
+			>
+				Les Sujets
+			</h1>
+			<p class="mt-3 label-meta">{totalTopics} sujets</p>
+			<p class="mt-3 max-w-prose font-body text-base leading-[1.6] text-foreground">
+				Cet index thématique rassemble les principaux articles de la foi chrétienne tels que les ont
+				traités les Pères de l'Église : Dieu, le Christ, l'Église, les sacrements, la morale, la fin
+				des temps.
+			</p>
+		</div>
+	</header>
 
-  <div class="grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-12 md:grid-cols-2 xl:grid-cols-4">
-    {#each columns as col (col.pillar)}
-      <section id={`pillar-${col.pillar}`}>
-        <h2 class="font-heading italic text-accent leading-[1.1]" style="font-size: 1.5rem;">
-          {col.label}
-        </h2>
-        <p class="label-meta mt-1">{col.subtitle}</p>
-        <ul class="mt-4 space-y-1">
-          {#each col.items as item (item.id)}
-            <li
-              class="flex items-baseline justify-between gap-2"
-              class:pl-4={item.parentLabel}
-            >
-              <a
-                href={item.href}
-                class="min-w-0 font-body text-foreground hover:text-accent"
-                class:font-semibold={item.isTheme}
-              >
-                {#if item.parentLabel}<span class="text-muted" aria-hidden="true">↳ </span>{/if}
-                {item.label}
-              </a>
-              <span class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
-                {item.count || '—'}
-              </span>
-            </li>
-          {/each}
-        </ul>
-      </section>
-    {/each}
-  </div>
+	<div class="grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-12 md:grid-cols-2 xl:grid-cols-4">
+		{#each columns as col (col.pillar)}
+			<section id={`pillar-${col.pillar}`}>
+				<h2 class="font-heading italic text-accent leading-[1.1]" style="font-size: 1.5rem;">
+					{col.label}
+				</h2>
+				<p class="label-meta mt-1">{col.subtitle}</p>
+				<ul class="mt-4 space-y-1">
+					{#each col.items as item (item.id)}
+						<li class="flex items-baseline justify-between gap-2" class:pl-4={item.parentLabel}>
+							<a
+								href={item.href}
+								class="min-w-0 font-body text-foreground hover:text-accent"
+								class:font-semibold={item.isTheme}
+							>
+								{#if item.parentLabel}<span class="text-muted" aria-hidden="true">↳ </span>{/if}
+								{item.label}
+							</a>
+							<span
+								class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
+							>
+								{item.count || '—'}
+							</span>
+						</li>
+					{/each}
+				</ul>
+			</section>
+		{/each}
+	</div>
 </article>
 ```
 
@@ -801,6 +835,7 @@ npm run dev
 ```
 
 Open `http://localhost:5173/sujets`. Expected:
+
 - Four columns (Credo / Sacrements / Vie en Christ / Prière) — possibly a fifth "Non classé" if any root lacks a pillar.
 - Themes (roots with children) appear bold; their non-primary children indent below.
 - Quote counts on the right.
@@ -824,6 +859,7 @@ list — the theme line itself is the click target for the primary."
 ## Task 7: `/themes/{slug}` mini-index route
 
 **Files:**
+
 - Create: `src/routes/themes/[slug]/+page.svelte`
 - Create: `src/routes/themes/[slug]/+page.ts`
 
@@ -839,33 +875,41 @@ import { error } from '@sveltejs/kit';
 export const prerender = true;
 
 export function entries() {
-  return topics.filter((t) => topics.some((x) => x.parentId === t.id)).map((t) => ({ slug: t.slug }));
+	return topics
+		.filter((t) => topics.some((x) => x.parentId === t.id))
+		.map((t) => ({ slug: t.slug }));
 }
 
 export function load({ params }) {
-  const theme = topicBySlug(params.slug);
-  if (!theme || !isTheme(theme.id, topics)) {
-    throw error(404, 'Thème introuvable');
-  }
-  const counts = new Map<number, number>();
-  for (const q of quotes) for (const tid of q.topicIds) counts.set(tid, (counts.get(tid) ?? 0) + 1);
-  const aspects = aspectsOf(theme.id, topics)
-    .slice()
-    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id)
-    .map((a) => ({
-      id: a.id,
-      slug: a.slug,
-      label: a.label,
-      description: a.description,
-      isPrimary: a.primary === true,
-      count: counts.get(a.id) ?? 0
-    }));
-  const primary = primaryAspectOf(theme.id, topics);
-  return {
-    theme: { id: theme.id, slug: theme.slug, label: theme.label, description: theme.description, pillar: theme.pillar },
-    aspects,
-    primarySlug: primary?.slug
-  };
+	const theme = topicBySlug(params.slug);
+	if (!theme || !isTheme(theme.id, topics)) {
+		throw error(404, 'Thème introuvable');
+	}
+	const counts = new Map<number, number>();
+	for (const q of quotes) for (const tid of q.topicIds) counts.set(tid, (counts.get(tid) ?? 0) + 1);
+	const aspects = aspectsOf(theme.id, topics)
+		.slice()
+		.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id)
+		.map((a) => ({
+			id: a.id,
+			slug: a.slug,
+			label: a.label,
+			description: a.description,
+			isPrimary: a.primary === true,
+			count: counts.get(a.id) ?? 0
+		}));
+	const primary = primaryAspectOf(theme.id, topics);
+	return {
+		theme: {
+			id: theme.id,
+			slug: theme.slug,
+			label: theme.label,
+			description: theme.description,
+			pillar: theme.pillar
+		},
+		aspects,
+		primarySlug: primary?.slug
+	};
 }
 ```
 
@@ -875,52 +919,60 @@ export function load({ params }) {
 
 ```svelte
 <script lang="ts">
-  import MetaTags from '$lib/components/ui/MetaTags.svelte';
+	import MetaTags from '$lib/components/ui/MetaTags.svelte';
 
-  let { data } = $props();
-  const totalCount = $derived(data.aspects.reduce((n: number, a: { count: number }) => n + a.count, 0));
+	let { data } = $props();
+	const totalCount = $derived(
+		data.aspects.reduce((n: number, a: { count: number }) => n + a.count, 0)
+	);
 </script>
 
 <MetaTags
-  title={data.theme.label}
-  fullTitle={`${data.theme.label} — aperçu thématique`}
-  description={data.theme.description ?? `Tous les aspects du thème « ${data.theme.label} » traités par les Pères de l'Église.`}
+	title={data.theme.label}
+	fullTitle={`${data.theme.label} — aperçu thématique`}
+	description={data.theme.description ??
+		`Tous les aspects du thème « ${data.theme.label} » traités par les Pères de l'Église.`}
 />
 
 <article class="mx-auto max-w-3xl px-6 py-12">
-  <header class="mb-8">
-    <p class="label-meta">Thème</p>
-    <h1 class="font-heading italic text-accent leading-[1.1]" style="font-size: clamp(2rem, 3.2vw, 2.75rem);">
-      {data.theme.label}
-    </h1>
-    <p class="mt-3 text-sm text-muted">{data.aspects.length} aspects · {totalCount} citations</p>
-    {#if data.theme.description}
-      <p class="mt-4 max-w-prose font-body text-base leading-[1.6] text-foreground">
-        {data.theme.description}
-      </p>
-    {/if}
-  </header>
+	<header class="mb-8">
+		<p class="label-meta">Thème</p>
+		<h1
+			class="font-heading italic text-accent leading-[1.1]"
+			style="font-size: clamp(2rem, 3.2vw, 2.75rem);"
+		>
+			{data.theme.label}
+		</h1>
+		<p class="mt-3 text-sm text-muted">{data.aspects.length} aspects · {totalCount} citations</p>
+		{#if data.theme.description}
+			<p class="mt-4 max-w-prose font-body text-base leading-[1.6] text-foreground">
+				{data.theme.description}
+			</p>
+		{/if}
+	</header>
 
-  <ul class="space-y-3">
-    {#each data.aspects as a (a.id)}
-      <li class="border-b border-border pb-3">
-        <a href={`/sujets/${a.slug}`} class="block hover:text-accent">
-          <span class="flex items-baseline justify-between gap-2">
-            <span class="font-body text-base">
-              {a.label}
-              {#if a.isPrimary}<span class="ml-2 text-[10px] uppercase tracking-wider text-muted">principal</span>{/if}
-            </span>
-            <span class="font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
-              {a.count || '—'}
-            </span>
-          </span>
-          {#if a.description}
-            <span class="mt-1 block text-sm text-muted">{a.description}</span>
-          {/if}
-        </a>
-      </li>
-    {/each}
-  </ul>
+	<ul class="space-y-3">
+		{#each data.aspects as a (a.id)}
+			<li class="border-b border-border pb-3">
+				<a href={`/sujets/${a.slug}`} class="block hover:text-accent">
+					<span class="flex items-baseline justify-between gap-2">
+						<span class="font-body text-base">
+							{a.label}
+							{#if a.isPrimary}<span class="ml-2 text-[10px] uppercase tracking-wider text-muted"
+									>principal</span
+								>{/if}
+						</span>
+						<span class="font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted">
+							{a.count || '—'}
+						</span>
+					</span>
+					{#if a.description}
+						<span class="mt-1 block text-sm text-muted">{a.description}</span>
+					{/if}
+				</a>
+			</li>
+		{/each}
+	</ul>
 </article>
 ```
 
@@ -951,6 +1003,7 @@ discovery without cluttering the main nav."
 ## Task 8: `/sujets/[slug]` — handle theme case
 
 **Files:**
+
 - Modify: `src/routes/sujets/[slug]/+page.ts` (probably exists; check)
 - Modify: `src/routes/sujets/[slug]/+page.svelte`
 
@@ -976,9 +1029,9 @@ import { isTheme, primaryAspectOf } from '$lib/data/topic-helpers';
 // At the top of the load function — before any existing logic:
 const _t = topicBySlug(params.slug);
 if (_t && isTheme(_t.id, topics)) {
-  const primary = primaryAspectOf(_t.id, topics);
-  if (primary) throw redirect(307, `/sujets/${primary.slug}`);
-  throw redirect(307, `/themes/${_t.slug}`);
+	const primary = primaryAspectOf(_t.id, topics);
+	if (primary) throw redirect(307, `/sujets/${primary.slug}`);
+	throw redirect(307, `/themes/${_t.slug}`);
 }
 // ...existing logic continues...
 ```
@@ -1011,6 +1064,7 @@ When a /sujets/{slug} URL resolves to a topic that has children
 ## Task 9: Admin sujets editor — primary checkbox, badges, theme-quote warning
 
 **Files:**
+
 - Modify: `src/routes/admin/sujets/+page.svelte`
 
 - [ ] **Step 1: Remove section/groupe form fields**
@@ -1026,12 +1080,12 @@ import { isTheme as isThemeFn } from '$lib/data/topic-helpers';
 
 const selectedIsTheme = $derived(selected ? isThemeFn(selected.id, items) : false);
 const selectedDirectQuoteCount = $derived(
-  selected ? quotes.filter((q) => q.topicIds.includes(selected.id)).length : 0
+	selected ? quotes.filter((q) => q.topicIds.includes(selected.id)).length : 0
 );
 const selectedSiblings = $derived(
-  selected?.parentId != null
-    ? items.filter((t) => t.parentId === selected!.parentId && t.id !== selected!.id)
-    : []
+	selected?.parentId != null
+		? items.filter((t) => t.parentId === selected!.parentId && t.id !== selected!.id)
+		: []
 );
 ```
 
@@ -1070,9 +1124,15 @@ Find the sidebar row rendering (the `{#each filtered as ...}` block). Inside eac
 
 ```svelte
 {#if isThemeFn(t.id, items)}
-  <span class="mr-1 rounded bg-subtle/20 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-muted">THÈME</span>
+	<span
+		class="mr-1 rounded bg-subtle/20 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-muted"
+		>THÈME</span
+	>
 {:else if t.primary === true}
-  <span class="mr-1 rounded bg-accent/15 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-accent">PRINCIPAL</span>
+	<span
+		class="mr-1 rounded bg-accent/15 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-accent"
+		>PRINCIPAL</span
+	>
 {/if}
 ```
 
@@ -1082,13 +1142,16 @@ After the Description field in the form, add:
 
 ```svelte
 {#if selectedIsTheme && selectedDirectQuoteCount > 0}
-  <div class="rounded border border-amber-600/40 bg-amber-50/10 p-3 text-sm">
-    <p class="font-semibold text-amber-700">⚠️ Ce thème porte {selectedDirectQuoteCount} citation(s) directe(s).</p>
-    <p class="mt-1 text-amber-700/80">
-      Les thèmes ne doivent pas porter de citations. Déplacez-les vers l'aspect principal via la page
-      <a href="/admin/migration" class="underline">/admin/migration</a>.
-    </p>
-  </div>
+	<div class="rounded border border-amber-600/40 bg-amber-50/10 p-3 text-sm">
+		<p class="font-semibold text-amber-700">
+			⚠️ Ce thème porte {selectedDirectQuoteCount} citation(s) directe(s).
+		</p>
+		<p class="mt-1 text-amber-700/80">
+			Les thèmes ne doivent pas porter de citations. Déplacez-les vers l'aspect principal via la
+			page
+			<a href="/admin/migration" class="underline">/admin/migration</a>.
+		</p>
+	</div>
 {/if}
 ```
 
@@ -1099,6 +1162,7 @@ npm run dev
 ```
 
 Open `/admin/sujets`. Expected:
+
 - Section/Groupe fields are gone from the form.
 - Selecting topic 24 ("Le baptême comme moyen de grâce") shows the THÈME badge in the sidebar (because it has children).
 - Selecting a child topic (e.g. topic 25) shows the Aspect Principal checkbox in the form.
@@ -1121,6 +1185,7 @@ Drops section/groupe form fields. Adds:
 ## Task 10: Admin hierarchie — refresh display
 
 **Files:**
+
 - Modify: `src/routes/admin/hierarchie/+page.svelte`
 
 - [ ] **Step 1: Update terminology and badges**
@@ -1133,7 +1198,10 @@ Add a THÈME badge near each node header inside the loop. The relevant block cur
 
 ```svelte
 {#if node.children.length > 0}
-  <span class="ml-2 rounded bg-subtle/20 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-muted">THÈME</span>
+	<span
+		class="ml-2 rounded bg-subtle/20 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-muted"
+		>THÈME</span
+	>
 {/if}
 ```
 
@@ -1141,7 +1209,10 @@ For the child rows (the `{#each node.children}` block), add:
 
 ```svelte
 {#if child.topic.primary === true}
-  <span class="ml-1 rounded bg-accent/15 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-accent">PRINCIPAL</span>
+	<span
+		class="ml-1 rounded bg-accent/15 px-1 py-0.5 font-ui text-[9px] uppercase tracking-wider text-accent"
+		>PRINCIPAL</span
+	>
 {/if}
 ```
 
@@ -1152,6 +1223,7 @@ npm run dev
 ```
 
 Open `/admin/hierarchie`. Expected: same layout as before, but:
+
 - Roots with children get the THÈME badge.
 - After Task 9 + migration, children marked primary get the PRINCIPAL badge.
 
@@ -1167,6 +1239,7 @@ git commit -m "feat(admin/hierarchie): theme/aspect badges, terminology refresh"
 ## Task 11: Migration page scaffolding + nav link
 
 **Files:**
+
 - Create: `src/routes/admin/migration/+page.svelte`
 - Create: `src/routes/admin/migration/+page.ts`
 - Modify: `src/routes/admin/+layout.svelte`
@@ -1186,13 +1259,13 @@ import { dev } from '$app/environment';
 import { error } from '@sveltejs/kit';
 
 export async function load({ fetch }) {
-  if (!dev) throw error(404);
-  const [topics, quotes, bercot] = await Promise.all([
-    fetch('/admin/api/topics').then((r) => r.json()),
-    fetch('/admin/api/quotes').then((r) => r.json()),
-    fetch('/admin/api/bercot').then((r) => r.json())
-  ]);
-  return { topics, quotes, bercot };
+	if (!dev) throw error(404);
+	const [topics, quotes, bercot] = await Promise.all([
+		fetch('/admin/api/topics').then((r) => r.json()),
+		fetch('/admin/api/quotes').then((r) => r.json()),
+		fetch('/admin/api/bercot').then((r) => r.json())
+	]);
+	return { topics, quotes, bercot };
 }
 ```
 
@@ -1200,75 +1273,80 @@ export async function load({ fetch }) {
 
 ```svelte
 <script lang="ts">
-  import type { Topic, Quote } from '$lib/schema';
-  import { isTheme as isThemeFn } from '$lib/data/topic-helpers';
+	import type { Topic, Quote } from '$lib/schema';
+	import { isTheme as isThemeFn } from '$lib/data/topic-helpers';
 
-  let { data } = $props();
-  let topics = $state<Topic[]>(data.topics);
-  let quotes = $state<Quote[]>(data.quotes);
-  let activeBucket = $state<1 | 2 | 3 | 4 | 5>(1);
-  let busy = $state(false);
-  let lastError = $state<string | null>(null);
+	let { data } = $props();
+	let topics = $state<Topic[]>(data.topics);
+	let quotes = $state<Quote[]>(data.quotes);
+	let activeBucket = $state<1 | 2 | 3 | 4 | 5>(1);
+	let busy = $state(false);
+	let lastError = $state<string | null>(null);
 
-  // Apply a single proposed move via the apply-step endpoint
-  async function applyStep(payload: unknown) {
-    busy = true;
-    lastError = null;
-    try {
-      const res = await fetch('/admin/api/migration/apply-step', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      if (!res.ok) {
-        lastError = await res.text();
-        return false;
-      }
-      const next = await res.json();
-      topics = next.topics;
-      quotes = next.quotes;
-      return true;
-    } finally {
-      busy = false;
-    }
-  }
+	// Apply a single proposed move via the apply-step endpoint
+	async function applyStep(payload: unknown) {
+		busy = true;
+		lastError = null;
+		try {
+			const res = await fetch('/admin/api/migration/apply-step', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload)
+			});
+			if (!res.ok) {
+				lastError = await res.text();
+				return false;
+			}
+			const next = await res.json();
+			topics = next.topics;
+			quotes = next.quotes;
+			return true;
+		} finally {
+			busy = false;
+		}
+	}
 </script>
 
 <h1 class="font-heading text-2xl">Migration de la taxonomie</h1>
 <p class="mt-2 text-sm text-muted">
-  Opération éditoriale ponctuelle : transformer le modèle actuel (47 racines + 99 enfants) en
-  arbre Thème → Aspect, en plaçant chaque sujet à sa juste place. Chaque étape est commitable
-  individuellement.
+	Opération éditoriale ponctuelle : transformer le modèle actuel (47 racines + 99 enfants) en arbre
+	Thème → Aspect, en plaçant chaque sujet à sa juste place. Chaque étape est commitable
+	individuellement.
 </p>
 
 <nav class="mt-6 flex gap-2 border-b border-border pb-2 text-sm">
-  {#each [1, 2, 3, 4, 5] as n (n)}
-    <button
-      type="button"
-      class={['rounded px-3 py-1 font-ui', activeBucket === n ? 'bg-accent text-white' : 'hover:bg-subtle/10']}
-      onclick={() => (activeBucket = n as 1 | 2 | 3 | 4 | 5)}
-    >
-      {n}. {['Profondeur', 'Inversions', 'Orphelins', 'Thèmes', 'Piliers'][n - 1]}
-    </button>
-  {/each}
+	{#each [1, 2, 3, 4, 5] as n (n)}
+		<button
+			type="button"
+			class={[
+				'rounded px-3 py-1 font-ui',
+				activeBucket === n ? 'bg-accent text-white' : 'hover:bg-subtle/10'
+			]}
+			onclick={() => (activeBucket = n as 1 | 2 | 3 | 4 | 5)}
+		>
+			{n}. {['Profondeur', 'Inversions', 'Orphelins', 'Thèmes', 'Piliers'][n - 1]}
+		</button>
+	{/each}
 </nav>
 
 {#if lastError}
-  <p class="mt-3 rounded border border-red-500 bg-red-50/10 p-2 text-sm text-red-600">{lastError}</p>
+	<p class="mt-3 rounded border border-red-500 bg-red-50/10 p-2 text-sm text-red-600">
+		{lastError}
+	</p>
 {/if}
 
 <section class="mt-6">
-  {#if activeBucket === 1}
-    <p class="italic text-muted">Bucket 1 — implémenté dans Task 13.</p>
-  {:else if activeBucket === 2}
-    <p class="italic text-muted">Bucket 2 — implémenté dans Task 14.</p>
-  {:else if activeBucket === 3}
-    <p class="italic text-muted">Bucket 3 — implémenté dans Task 15.</p>
-  {:else if activeBucket === 4}
-    <p class="italic text-muted">Bucket 4 — implémenté dans Task 16.</p>
-  {:else}
-    <p class="italic text-muted">Bucket 5 — implémenté dans Task 17.</p>
-  {/if}
+	{#if activeBucket === 1}
+		<p class="italic text-muted">Bucket 1 — implémenté dans Task 13.</p>
+	{:else if activeBucket === 2}
+		<p class="italic text-muted">Bucket 2 — implémenté dans Task 14.</p>
+	{:else if activeBucket === 3}
+		<p class="italic text-muted">Bucket 3 — implémenté dans Task 15.</p>
+	{:else if activeBucket === 4}
+		<p class="italic text-muted">Bucket 4 — implémenté dans Task 16.</p>
+	{:else}
+		<p class="italic text-muted">Bucket 5 — implémenté dans Task 17.</p>
+	{/if}
 </section>
 ```
 
@@ -1300,6 +1378,7 @@ git commit -m "feat(admin/migration): scaffold page with 5-bucket nav, loader, a
 ## Task 12: apply-step endpoint (transactional writer)
 
 **Files:**
+
 - Create: `src/routes/admin/api/migration/apply-step/+server.ts`
 
 - [ ] **Step 1: Create the endpoint**
@@ -1314,136 +1393,144 @@ import { join } from 'node:path';
 import { z } from 'zod';
 import { atomicWriteJson } from '$lib/admin/atomic-write';
 import { validateParentRefs } from '$lib/admin/topic-tree';
-import { TopicSchema, QuoteSchema, BercotEntrySchema, type Topic, type Quote, type BercotEntry } from '$lib/schema';
+import {
+	TopicSchema,
+	QuoteSchema,
+	BercotEntrySchema,
+	type Topic,
+	type Quote,
+	type BercotEntry
+} from '$lib/schema';
 
 const StepSchema = z.discriminatedUnion('kind', [
-  z.object({
-    kind: z.literal('reparent'),
-    topicId: z.number().int(),
-    newParentId: z.number().int().nullable()
-  }),
-  z.object({
-    kind: z.literal('swap-parent-child'),
-    parentId: z.number().int(),
-    childId: z.number().int()
-  }),
-  z.object({
-    kind: z.literal('convert-root-to-theme'),
-    rootId: z.number().int(),
-    primaryAspect: z.object({
-      slug: z.string().min(1),
-      label: z.string().min(1),
-      description: z.string().optional()
-    }),
-    themeSlugOverride: z.string().optional(),
-    themeLabel: z.string().min(1).optional()
-  }),
-  z.object({
-    kind: z.literal('set-pillar'),
-    topicId: z.number().int(),
-    pillar: z.enum(['credo', 'sacrements', 'vie', 'priere']).nullable()
-  })
+	z.object({
+		kind: z.literal('reparent'),
+		topicId: z.number().int(),
+		newParentId: z.number().int().nullable()
+	}),
+	z.object({
+		kind: z.literal('swap-parent-child'),
+		parentId: z.number().int(),
+		childId: z.number().int()
+	}),
+	z.object({
+		kind: z.literal('convert-root-to-theme'),
+		rootId: z.number().int(),
+		primaryAspect: z.object({
+			slug: z.string().min(1),
+			label: z.string().min(1),
+			description: z.string().optional()
+		}),
+		themeSlugOverride: z.string().optional(),
+		themeLabel: z.string().min(1).optional()
+	}),
+	z.object({
+		kind: z.literal('set-pillar'),
+		topicId: z.number().int(),
+		pillar: z.enum(['credo', 'sacrements', 'vie', 'priere']).nullable()
+	})
 ]);
 
 function loadAll<T>(file: string, schema: z.ZodTypeAny): T[] {
-  const raw = JSON.parse(readFileSync(join(process.cwd(), 'src/lib/data', file), 'utf-8'));
-  const parsed = z.array(schema).safeParse(raw);
-  if (!parsed.success) throw error(500, `data/${file} invalid: ${JSON.stringify(parsed.error.issues)}`);
-  return parsed.data as T[];
+	const raw = JSON.parse(readFileSync(join(process.cwd(), 'src/lib/data', file), 'utf-8'));
+	const parsed = z.array(schema).safeParse(raw);
+	if (!parsed.success)
+		throw error(500, `data/${file} invalid: ${JSON.stringify(parsed.error.issues)}`);
+	return parsed.data as T[];
 }
 
 function nextId(arr: { id: number }[]): number {
-  return arr.reduce((m, x) => Math.max(m, x.id), 0) + 1;
+	return arr.reduce((m, x) => Math.max(m, x.id), 0) + 1;
 }
 
 export async function POST({ request }) {
-  if (!dev) throw error(404);
+	if (!dev) throw error(404);
 
-  const body = await request.json();
-  const step = StepSchema.safeParse(body);
-  if (!step.success) throw error(400, JSON.stringify(step.error.issues));
+	const body = await request.json();
+	const step = StepSchema.safeParse(body);
+	if (!step.success) throw error(400, JSON.stringify(step.error.issues));
 
-  let topics = loadAll<Topic>('topics.json', TopicSchema);
-  let quotes = loadAll<Quote>('quotes.json', QuoteSchema);
-  let bercot = loadAll<BercotEntry>('bercot.json', BercotEntrySchema);
+	let topics = loadAll<Topic>('topics.json', TopicSchema);
+	let quotes = loadAll<Quote>('quotes.json', QuoteSchema);
+	let bercot = loadAll<BercotEntry>('bercot.json', BercotEntrySchema);
 
-  switch (step.data.kind) {
-    case 'reparent': {
-      const { topicId, newParentId } = step.data;
-      const idx = topics.findIndex((t) => t.id === topicId);
-      if (idx < 0) throw error(400, `topic ${topicId} not found`);
-      topics[idx] = { ...topics[idx], parentId: newParentId ?? undefined };
-      break;
-    }
-    case 'swap-parent-child': {
-      const { parentId, childId } = step.data;
-      const pi = topics.findIndex((t) => t.id === parentId);
-      const ci = topics.findIndex((t) => t.id === childId);
-      if (pi < 0 || ci < 0) throw error(400, 'topic not found');
-      // Child becomes the new parent (no parent), parent becomes child of child
-      const oldParent = topics[pi];
-      const oldChild = topics[ci];
-      topics[pi] = { ...oldParent, parentId: oldChild.id };
-      topics[ci] = { ...oldChild, parentId: undefined };
-      // Any other children of oldParent re-parent to oldChild
-      for (let i = 0; i < topics.length; i++) {
-        if (i === pi || i === ci) continue;
-        if (topics[i].parentId === parentId) topics[i] = { ...topics[i], parentId: oldChild.id };
-      }
-      break;
-    }
-    case 'convert-root-to-theme': {
-      const { rootId, primaryAspect, themeSlugOverride, themeLabel } = step.data;
-      const ri = topics.findIndex((t) => t.id === rootId);
-      if (ri < 0) throw error(400, `root ${rootId} not found`);
-      const root = topics[ri];
-      // 1. Create primary aspect (new id)
-      const newId = nextId(topics);
-      const primary: Topic = {
-        id: newId,
-        slug: primaryAspect.slug,
-        label: primaryAspect.label,
-        description: primaryAspect.description,
-        parentId: rootId,
-        primary: true,
-        pillar: undefined // inherits
-      };
-      topics.push(primary);
-      // 2. Optionally rename theme
-      if (themeLabel) topics[ri] = { ...topics[ri], label: themeLabel };
-      if (themeSlugOverride) topics[ri] = { ...topics[ri], slug: themeSlugOverride };
-      // 3. Rewrite all quote.topicIds: rootId → newId
-      quotes = quotes.map((q) => {
-        if (!q.topicIds.includes(rootId)) return q;
-        return { ...q, topicIds: q.topicIds.map((id) => (id === rootId ? newId : id)) };
-      });
-      // 4. Rewrite bercot.mappedTopicIds: rootId → newId
-      bercot = bercot.map((b) => {
-        if (!b.mappedTopicIds.includes(rootId)) return b;
-        return { ...b, mappedTopicIds: b.mappedTopicIds.map((id) => (id === rootId ? newId : id)) };
-      });
-      break;
-    }
-    case 'set-pillar': {
-      const { topicId, pillar } = step.data;
-      const idx = topics.findIndex((t) => t.id === topicId);
-      if (idx < 0) throw error(400, `topic ${topicId} not found`);
-      topics[idx] = { ...topics[idx], pillar: pillar ?? undefined };
-      break;
-    }
-  }
+	switch (step.data.kind) {
+		case 'reparent': {
+			const { topicId, newParentId } = step.data;
+			const idx = topics.findIndex((t) => t.id === topicId);
+			if (idx < 0) throw error(400, `topic ${topicId} not found`);
+			topics[idx] = { ...topics[idx], parentId: newParentId ?? undefined };
+			break;
+		}
+		case 'swap-parent-child': {
+			const { parentId, childId } = step.data;
+			const pi = topics.findIndex((t) => t.id === parentId);
+			const ci = topics.findIndex((t) => t.id === childId);
+			if (pi < 0 || ci < 0) throw error(400, 'topic not found');
+			// Child becomes the new parent (no parent), parent becomes child of child
+			const oldParent = topics[pi];
+			const oldChild = topics[ci];
+			topics[pi] = { ...oldParent, parentId: oldChild.id };
+			topics[ci] = { ...oldChild, parentId: undefined };
+			// Any other children of oldParent re-parent to oldChild
+			for (let i = 0; i < topics.length; i++) {
+				if (i === pi || i === ci) continue;
+				if (topics[i].parentId === parentId) topics[i] = { ...topics[i], parentId: oldChild.id };
+			}
+			break;
+		}
+		case 'convert-root-to-theme': {
+			const { rootId, primaryAspect, themeSlugOverride, themeLabel } = step.data;
+			const ri = topics.findIndex((t) => t.id === rootId);
+			if (ri < 0) throw error(400, `root ${rootId} not found`);
+			const root = topics[ri];
+			// 1. Create primary aspect (new id)
+			const newId = nextId(topics);
+			const primary: Topic = {
+				id: newId,
+				slug: primaryAspect.slug,
+				label: primaryAspect.label,
+				description: primaryAspect.description,
+				parentId: rootId,
+				primary: true,
+				pillar: undefined // inherits
+			};
+			topics.push(primary);
+			// 2. Optionally rename theme
+			if (themeLabel) topics[ri] = { ...topics[ri], label: themeLabel };
+			if (themeSlugOverride) topics[ri] = { ...topics[ri], slug: themeSlugOverride };
+			// 3. Rewrite all quote.topicIds: rootId → newId
+			quotes = quotes.map((q) => {
+				if (!q.topicIds.includes(rootId)) return q;
+				return { ...q, topicIds: q.topicIds.map((id) => (id === rootId ? newId : id)) };
+			});
+			// 4. Rewrite bercot.mappedTopicIds: rootId → newId
+			bercot = bercot.map((b) => {
+				if (!b.mappedTopicIds.includes(rootId)) return b;
+				return { ...b, mappedTopicIds: b.mappedTopicIds.map((id) => (id === rootId ? newId : id)) };
+			});
+			break;
+		}
+		case 'set-pillar': {
+			const { topicId, pillar } = step.data;
+			const idx = topics.findIndex((t) => t.id === topicId);
+			if (idx < 0) throw error(400, `topic ${topicId} not found`);
+			topics[idx] = { ...topics[idx], pillar: pillar ?? undefined };
+			break;
+		}
+	}
 
-  // Validate strict (cross-collection) on the new state
-  const v = validateParentRefs(topics, quotes);
-  if (!v.ok) throw error(400, `validation failed: ${v.error}`);
+	// Validate strict (cross-collection) on the new state
+	const v = validateParentRefs(topics, quotes);
+	if (!v.ok) throw error(400, `validation failed: ${v.error}`);
 
-  // Atomic writes
-  const root = process.cwd();
-  atomicWriteJson(join(root, 'src/lib/data/topics.json'), topics);
-  atomicWriteJson(join(root, 'src/lib/data/quotes.json'), quotes);
-  atomicWriteJson(join(root, 'src/lib/data/bercot.json'), bercot);
+	// Atomic writes
+	const root = process.cwd();
+	atomicWriteJson(join(root, 'src/lib/data/topics.json'), topics);
+	atomicWriteJson(join(root, 'src/lib/data/quotes.json'), quotes);
+	atomicWriteJson(join(root, 'src/lib/data/bercot.json'), bercot);
 
-  return json({ ok: true, topics, quotes, bercot });
+	return json({ ok: true, topics, quotes, bercot });
 }
 ```
 
@@ -1477,6 +1564,7 @@ runs strict (cross-collection) on the new state. Endpoint is dev-only."
 ## Task 13: Bucket 1 — depth-2 violation step
 
 **Files:**
+
 - Modify: `src/routes/admin/migration/+page.svelte`
 
 - [ ] **Step 1: Detect depth-2 violations and render bucket 1 UI**
@@ -1485,44 +1573,48 @@ Replace the bucket-1 placeholder with:
 
 ```svelte
 {#if activeBucket === 1}
-  {@const violations = topics.filter((t) => {
-    if (t.parentId == null) return false;
-    const parent = topics.find((x) => x.id === t.parentId);
-    return parent != null && parent.parentId != null;
-  })}
-  {#if violations.length === 0}
-    <p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
-      ✓ Aucune violation de profondeur ≥ 2.
-    </p>
-  {:else}
-    <p class="text-sm text-muted">{violations.length} violation(s) détectée(s).</p>
-    <ul class="mt-4 space-y-3">
-      {#each violations as v (v.id)}
-        {@const parent = topics.find((x) => x.id === v.parentId)}
-        {@const grandparent = parent ? topics.find((x) => x.id === parent.parentId) : undefined}
-        <li class="rounded border border-border bg-panel/30 p-3">
-          <p class="text-sm">
-            <strong>{v.label}</strong> (id {v.id}) → parent {parent?.label} (id {parent?.id})
-            → grand-parent {grandparent?.label} (id {grandparent?.id})
-          </p>
-          <p class="mt-1 text-xs text-muted">
-            Proposition : re-parenter <strong>{v.label}</strong> sous {grandparent?.label} (frère de {parent?.label}).
-          </p>
-          <button
-            type="button"
-            disabled={busy}
-            class="mt-2 rounded border border-border bg-accent px-3 py-1 font-ui text-sm text-white disabled:opacity-50"
-            onclick={async () => {
-              const ok = await applyStep({ kind: 'reparent', topicId: v.id, newParentId: grandparent?.id ?? null });
-              if (ok) console.log('reparent applied for', v.id);
-            }}
-          >
-            Appliquer
-          </button>
-        </li>
-      {/each}
-    </ul>
-  {/if}
+	{@const violations = topics.filter((t) => {
+		if (t.parentId == null) return false;
+		const parent = topics.find((x) => x.id === t.parentId);
+		return parent != null && parent.parentId != null;
+	})}
+	{#if violations.length === 0}
+		<p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
+			✓ Aucune violation de profondeur ≥ 2.
+		</p>
+	{:else}
+		<p class="text-sm text-muted">{violations.length} violation(s) détectée(s).</p>
+		<ul class="mt-4 space-y-3">
+			{#each violations as v (v.id)}
+				{@const parent = topics.find((x) => x.id === v.parentId)}
+				{@const grandparent = parent ? topics.find((x) => x.id === parent.parentId) : undefined}
+				<li class="rounded border border-border bg-panel/30 p-3">
+					<p class="text-sm">
+						<strong>{v.label}</strong> (id {v.id}) → parent {parent?.label} (id {parent?.id}) →
+						grand-parent {grandparent?.label} (id {grandparent?.id})
+					</p>
+					<p class="mt-1 text-xs text-muted">
+						Proposition : re-parenter <strong>{v.label}</strong> sous {grandparent?.label} (frère de {parent?.label}).
+					</p>
+					<button
+						type="button"
+						disabled={busy}
+						class="mt-2 rounded border border-border bg-accent px-3 py-1 font-ui text-sm text-white disabled:opacity-50"
+						onclick={async () => {
+							const ok = await applyStep({
+								kind: 'reparent',
+								topicId: v.id,
+								newParentId: grandparent?.id ?? null
+							});
+							if (ok) console.log('reparent applied for', v.id);
+						}}
+					>
+						Appliquer
+					</button>
+				</li>
+			{/each}
+		</ul>
+	{/if}
 {/if}
 ```
 
@@ -1546,6 +1638,7 @@ git commit -m "feat(migration/bucket-1): depth-2 violation surface + one-click r
 ## Task 14: Bucket 2 — inverted parent/child
 
 **Files:**
+
 - Modify: `src/routes/admin/migration/+page.svelte`
 
 - [ ] **Step 1: Define the known inversions and render bucket 2 UI**
@@ -1612,6 +1705,7 @@ git commit -m "feat(migration/bucket-2): surface known parent/child inversions"
 ## Task 15: Bucket 3 — orphan placement
 
 **Files:**
+
 - Modify: `src/routes/admin/migration/+page.svelte`
 
 - [ ] **Step 1: Define orphan→theme proposals and render bucket 3 UI**
@@ -1686,6 +1780,7 @@ git commit -m "feat(migration/bucket-3): surface orphan placement proposals (rea
 ## Task 16: Bucket 4 — theme designation (the main work)
 
 **Files:**
+
 - Modify: `src/routes/admin/migration/+page.svelte`
 
 - [ ] **Step 1: Render bucket 4 — list of roots-with-quotes-and-children**
@@ -1694,44 +1789,47 @@ Replace the bucket-4 placeholder with:
 
 ```svelte
 {#if activeBucket === 4}
-  {@const rootsToConvert = topics
-    .filter((t) => {
-      if (t.parentId != null) return false;
-      const hasChildren = topics.some((x) => x.parentId === t.id);
-      const directQuoteCount = quotes.filter((q) => q.topicIds.includes(t.id)).length;
-      return hasChildren && directQuoteCount > 0;
-    })
-    .sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id)}
-  <p class="text-sm text-muted">
-    {rootsToConvert.length} racines avec enfants ET citations directes — à convertir en thèmes.
-    Chaque conversion crée un « aspect principal » qui prendra les citations directes du parent.
-  </p>
-  <ul class="mt-4 space-y-4">
-    {#each rootsToConvert as root (root.id)}
-      {@const directQuoteCount = quotes.filter((q) => q.topicIds.includes(root.id)).length}
-      {@const childCount = topics.filter((t) => t.parentId === root.id).length}
-      <li class="rounded border border-border bg-panel/30 p-3">
-        <p class="font-semibold">{root.label} <span class="text-xs font-normal text-muted">(id {root.id})</span></p>
-        <p class="mt-1 text-xs text-muted">
-          {directQuoteCount} citation(s) directe(s) · {childCount} enfant(s) actuel(s)
-        </p>
-        <ThemeConversionForm
-          {root}
-          onApply={async (form) => applyStep({
-            kind: 'convert-root-to-theme',
-            rootId: root.id,
-            primaryAspect: {
-              slug: form.primarySlug,
-              label: form.primaryLabel,
-              description: undefined
-            },
-            themeSlugOverride: form.themeSlug !== root.slug ? form.themeSlug : undefined,
-            themeLabel: form.themeLabel !== root.label ? form.themeLabel : undefined
-          })}
-        />
-      </li>
-    {/each}
-  </ul>
+	{@const rootsToConvert = topics
+		.filter((t) => {
+			if (t.parentId != null) return false;
+			const hasChildren = topics.some((x) => x.parentId === t.id);
+			const directQuoteCount = quotes.filter((q) => q.topicIds.includes(t.id)).length;
+			return hasChildren && directQuoteCount > 0;
+		})
+		.sort((a, b) => (a.order ?? 999) - (b.order ?? 999) || a.id - b.id)}
+	<p class="text-sm text-muted">
+		{rootsToConvert.length} racines avec enfants ET citations directes — à convertir en thèmes. Chaque
+		conversion crée un « aspect principal » qui prendra les citations directes du parent.
+	</p>
+	<ul class="mt-4 space-y-4">
+		{#each rootsToConvert as root (root.id)}
+			{@const directQuoteCount = quotes.filter((q) => q.topicIds.includes(root.id)).length}
+			{@const childCount = topics.filter((t) => t.parentId === root.id).length}
+			<li class="rounded border border-border bg-panel/30 p-3">
+				<p class="font-semibold">
+					{root.label} <span class="text-xs font-normal text-muted">(id {root.id})</span>
+				</p>
+				<p class="mt-1 text-xs text-muted">
+					{directQuoteCount} citation(s) directe(s) · {childCount} enfant(s) actuel(s)
+				</p>
+				<ThemeConversionForm
+					{root}
+					onApply={async (form) =>
+						applyStep({
+							kind: 'convert-root-to-theme',
+							rootId: root.id,
+							primaryAspect: {
+								slug: form.primarySlug,
+								label: form.primaryLabel,
+								description: undefined
+							},
+							themeSlugOverride: form.themeSlug !== root.slug ? form.themeSlug : undefined,
+							themeLabel: form.themeLabel !== root.label ? form.themeLabel : undefined
+						})}
+				/>
+			</li>
+		{/each}
+	</ul>
 {/if}
 ```
 
@@ -1747,58 +1845,81 @@ import ThemeConversionForm from './ThemeConversionForm.svelte';
 
 ```svelte
 <script lang="ts">
-  import type { Topic } from '$lib/schema';
+	import type { Topic } from '$lib/schema';
 
-  let { root, onApply }: { root: Topic; onApply: (form: { themeLabel: string; themeSlug: string; primaryLabel: string; primarySlug: string }) => Promise<boolean | void> } = $props();
+	let {
+		root,
+		onApply
+	}: {
+		root: Topic;
+		onApply: (form: {
+			themeLabel: string;
+			themeSlug: string;
+			primaryLabel: string;
+			primarySlug: string;
+		}) => Promise<boolean | void>;
+	} = $props();
 
-  // Defaults: theme keeps its slug/label; primary aspect inherits both
-  let themeLabel = $state(root.label);
-  let themeSlug = $state(root.slug);
-  let primaryLabel = $state(root.label);
-  let primarySlug = $state(root.slug + '-general');
-  let busy = $state(false);
-  let applied = $state(false);
+	// Defaults: theme keeps its slug/label; primary aspect inherits both
+	let themeLabel = $state(root.label);
+	let themeSlug = $state(root.slug);
+	let primaryLabel = $state(root.label);
+	let primarySlug = $state(root.slug + '-general');
+	let busy = $state(false);
+	let applied = $state(false);
 
-  async function apply() {
-    busy = true;
-    try {
-      const ok = await onApply({ themeLabel, themeSlug, primaryLabel, primarySlug });
-      if (ok !== false) applied = true;
-    } finally {
-      busy = false;
-    }
-  }
+	async function apply() {
+		busy = true;
+		try {
+			const ok = await onApply({ themeLabel, themeSlug, primaryLabel, primarySlug });
+			if (ok !== false) applied = true;
+		} finally {
+			busy = false;
+		}
+	}
 </script>
 
 {#if applied}
-  <p class="mt-2 text-sm text-emerald-700">✓ Conversion appliquée</p>
+	<p class="mt-2 text-sm text-emerald-700">✓ Conversion appliquée</p>
 {:else}
-  <div class="mt-3 grid grid-cols-2 gap-3 text-sm">
-    <label class="block">
-      Label du thème
-      <input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={themeLabel} />
-    </label>
-    <label class="block">
-      Slug du thème
-      <input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={themeSlug} />
-    </label>
-    <label class="block">
-      Label de l'aspect principal
-      <input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={primaryLabel} />
-    </label>
-    <label class="block">
-      Slug de l'aspect principal
-      <input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={primarySlug} />
-    </label>
-  </div>
-  <button
-    type="button"
-    disabled={busy}
-    class="mt-3 rounded border border-border bg-accent px-3 py-1 font-ui text-sm text-white disabled:opacity-50"
-    onclick={apply}
-  >
-    {busy ? 'Application…' : 'Convertir en thème'}
-  </button>
+	<div class="mt-3 grid grid-cols-2 gap-3 text-sm">
+		<label class="block">
+			Label du thème
+			<input
+				class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+				bind:value={themeLabel}
+			/>
+		</label>
+		<label class="block">
+			Slug du thème
+			<input
+				class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+				bind:value={themeSlug}
+			/>
+		</label>
+		<label class="block">
+			Label de l'aspect principal
+			<input
+				class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+				bind:value={primaryLabel}
+			/>
+		</label>
+		<label class="block">
+			Slug de l'aspect principal
+			<input
+				class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+				bind:value={primarySlug}
+			/>
+		</label>
+	</div>
+	<button
+		type="button"
+		disabled={busy}
+		class="mt-3 rounded border border-border bg-accent px-3 py-1 font-ui text-sm text-white disabled:opacity-50"
+		onclick={apply}
+	>
+		{busy ? 'Application…' : 'Convertir en thème'}
+	</button>
 {/if}
 ```
 
@@ -1822,6 +1943,7 @@ git commit -m "feat(migration/bucket-4): theme designation form — convert root
 ## Task 17: Bucket 5 — pillar review
 
 **Files:**
+
 - Modify: `src/routes/admin/migration/+page.svelte`
 
 - [ ] **Step 1: Render bucket 5 — roots without a pillar, or with ambiguous pillar**
@@ -1830,37 +1952,37 @@ Replace the bucket-5 placeholder with:
 
 ```svelte
 {#if activeBucket === 5}
-  {@const PILLARS = [
-    { value: 'credo', label: 'Credo' },
-    { value: 'sacrements', label: 'Sacrements' },
-    { value: 'vie', label: 'Vie en Christ' },
-    { value: 'priere', label: 'Prière' }
-  ]}
-  {@const noPillar = topics.filter((t) => t.parentId == null && t.pillar == null)}
-  {#if noPillar.length === 0}
-    <p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
-      ✓ Toutes les racines ont un pilier.
-    </p>
-  {:else}
-    <p class="text-sm text-muted">{noPillar.length} racine(s) sans pilier.</p>
-    <ul class="mt-4 space-y-2">
-      {#each noPillar as t (t.id)}
-        <li class="flex items-center gap-3 rounded border border-border bg-panel/30 p-2 text-sm">
-          <span class="grow">{t.label}</span>
-          {#each PILLARS as p (p.value)}
-            <button
-              type="button"
-              disabled={busy}
-              class="rounded border border-border px-2 py-1 text-xs hover:bg-subtle/10 disabled:opacity-50"
-              onclick={() => applyStep({ kind: 'set-pillar', topicId: t.id, pillar: p.value })}
-            >
-              {p.label}
-            </button>
-          {/each}
-        </li>
-      {/each}
-    </ul>
-  {/if}
+	{@const PILLARS = [
+		{ value: 'credo', label: 'Credo' },
+		{ value: 'sacrements', label: 'Sacrements' },
+		{ value: 'vie', label: 'Vie en Christ' },
+		{ value: 'priere', label: 'Prière' }
+	]}
+	{@const noPillar = topics.filter((t) => t.parentId == null && t.pillar == null)}
+	{#if noPillar.length === 0}
+		<p class="rounded border border-emerald-600/40 bg-emerald-50/10 p-3 text-sm text-emerald-700">
+			✓ Toutes les racines ont un pilier.
+		</p>
+	{:else}
+		<p class="text-sm text-muted">{noPillar.length} racine(s) sans pilier.</p>
+		<ul class="mt-4 space-y-2">
+			{#each noPillar as t (t.id)}
+				<li class="flex items-center gap-3 rounded border border-border bg-panel/30 p-2 text-sm">
+					<span class="grow">{t.label}</span>
+					{#each PILLARS as p (p.value)}
+						<button
+							type="button"
+							disabled={busy}
+							class="rounded border border-border px-2 py-1 text-xs hover:bg-subtle/10 disabled:opacity-50"
+							onclick={() => applyStep({ kind: 'set-pillar', topicId: t.id, pillar: p.value })}
+						>
+							{p.label}
+						</button>
+					{/each}
+				</li>
+			{/each}
+		</ul>
+	{/if}
 {/if}
 ```
 

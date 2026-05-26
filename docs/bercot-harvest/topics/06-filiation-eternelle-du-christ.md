@@ -1,4 +1,4 @@
-# 06 · La filiation éternelle du Christ  (filiation-eternelle-du-christ)
+# 06 · La filiation éternelle du Christ (filiation-eternelle-du-christ)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** CHRIST, DIVINITY OF § II, ONLY BEGOTTEN, LOGOS, WORD OF GOD (CHRIST), SON OF GOD  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: ONLY BEGOTTEN → CHRIST, DIVINITY OF § II. BEGETTING OF THE SON; SON OF GOD → CHRIST, DIVINITY OF / TRINITY_
 
-
 ---
 
-## from CHRIST, DIVINITY OF § II. Begetting of the Son  _(confidence: high)_
+## from CHRIST, DIVINITY OF § II. Begetting of the Son _(confidence: high)_
 
 ### Quote 1
 
@@ -24,7 +23,7 @@ _Cross-reference aliases folded in: ONLY BEGOTTEN → CHRIST, DIVINITY OF § II.
 
 **Attribution:** Justin Martyr (c. 160, E), 1.170.
 
-### Quote 3  `[already on site → quote #550]`
+### Quote 3 `[already on site → quote #550]`
 
 > Jesus Christ is the only proper Son who has been begotten by God, being His Word, His First-Begotten, and His Power.
 
@@ -528,10 +527,9 @@ _Cross-reference aliases folded in: ONLY BEGOTTEN → CHRIST, DIVINITY OF § II.
 
 **Attribution:** Apostolic Constitutions (compiled c. 390, E), 7.496.
 
-
 ---
 
-## from LOGOS  _(confidence: high)_
+## from LOGOS _(confidence: high)_
 
 > The Greek word logos is usually translated in English Bibles as “word.” Although this is one of the meanings of logos, it also means “reason” and “mind.” Where English-speaking persons think of the Son as being the Word of God, the early Christians were often thinking of Him as being the Reason of God.
 >
@@ -577,10 +575,9 @@ _Cross-reference aliases folded in: ONLY BEGOTTEN → CHRIST, DIVINITY OF § II.
 
 _SEE ALSO CHRIST, DIVINITY OF; JESUS CHRIST; TRINITY; WISDOM; WORD OF GOD (CHRIST)._
 
-
 ---
 
-## from WORD OF GOD (CHRIST)  _(confidence: high)_
+## from WORD OF GOD (CHRIST) _(confidence: high)_
 
 > My heart has uttered a good word. Ps. 45:1 [LXX].
 >

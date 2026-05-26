@@ -41,7 +41,8 @@ export async function POST({ params }) {
 	if (entry.authorId == null) throw error(400, 'authorId required');
 	if (entry.mappedTopicIds.length === 0) throw error(400, 'at least one topic required');
 	if (entry.status !== 'kept') throw error(400, 'entry must be in status "kept" before publishing');
-	if (entry.siteQuoteId != null) throw error(400, `already published as quote ${entry.siteQuoteId}`);
+	if (entry.siteQuoteId != null)
+		throw error(400, `already published as quote ${entry.siteQuoteId}`);
 
 	let quotes: Quote[];
 	try {

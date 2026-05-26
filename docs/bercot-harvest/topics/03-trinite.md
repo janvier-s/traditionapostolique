@@ -1,14 +1,13 @@
-# 03 · La Trinité  (trinite)
+# 03 · La Trinité (trinite)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** TRINITY  
 **Mapping confidence:** high
 **Quotes harvested:** 59 (1 already on site)
 
-
 ---
 
-## from TRINITY  _(confidence: high)_
+## from TRINITY _(confidence: high)_
 
 > Go therefore and make disciples of all the nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit. Matt. 28:19.
 >
@@ -168,7 +167,7 @@
 
 **Attribution:** Tertullian (c. 213, W), 3.619.
 
-### Quote 25  `[already on site → quote #723]`
+### Quote 25 `[already on site → quote #723]`
 
 > Thus the connection of the Father in the Son, and of the Son in the Paraclete, produces three coherent Persons, distinct one from another. These Three are one in essence—not one in Person. For it is said, “I and my Father are One,” in respect of unity of substance, not singularity of number.
 

@@ -43,16 +43,6 @@ describe('TopicSchema', () => {
 			}).success
 		).toBe(true);
 	});
-	it('accepts primary flag', () => {
-		expect(
-			TopicSchema.safeParse({
-				id: 1,
-				slug: 'foi',
-				label: 'Foi',
-				primary: true
-			}).success
-		).toBe(true);
-	});
 });
 
 describe('TopicSchema (parentId/order)', () => {

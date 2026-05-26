@@ -73,7 +73,10 @@
 				saveError = await bercotRes.text();
 				return;
 			}
-			onCreated(newTopic, updated.filter((b) => entries.some((e) => e.id === b.id)));
+			onCreated(
+				newTopic,
+				updated.filter((b) => entries.some((e) => e.id === b.id))
+			);
 		} finally {
 			saving = false;
 		}
@@ -96,7 +99,8 @@
 	>
 		<h2 class="font-heading text-lg">Créer un sujet à partir de « {sourceEntry} »</h2>
 		<p class="mt-1 text-xs text-muted">
-			Le nouveau sujet sera créé puis les {entries.length} citation(s) de cette entrée Bercot y seront rattachées.
+			Le nouveau sujet sera créé puis les {entries.length} citation(s) de cette entrée Bercot y seront
+			rattachées.
 		</p>
 
 		<div class="mt-4 space-y-3 text-sm">
@@ -110,7 +114,10 @@
 			</label>
 			<label class="block">
 				Slug (URL)
-				<input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={slug} />
+				<input
+					class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+					bind:value={slug}
+				/>
 			</label>
 			<label class="block">
 				Description (optionnelle)
@@ -120,7 +127,9 @@
 				></textarea>
 			</label>
 			<fieldset class="rounded border border-border p-3">
-				<legend class="px-1 text-xs uppercase tracking-wider text-muted">Place dans la hiérarchie</legend>
+				<legend class="px-1 text-xs uppercase tracking-wider text-muted"
+					>Place dans la hiérarchie</legend
+				>
 				<label class="block text-sm">
 					Parent
 					<select

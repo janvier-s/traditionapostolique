@@ -1,4 +1,4 @@
-# 45 · Le purgatoire  (purgatoire)
+# 45 · Le purgatoire (purgatoire)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** PURGATORY, DEAD, INTERMEDIATE STATE OF THE, INTERMEDIATE STATE, DEAD, PRAYERS FOR THE, PRAYER § VI  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: PURGATORY → DEAD, INTERMEDIATE STATE OF THE / PRAYER § VI. SHOULD CHRISTIANS PRAY FOR THE DEAD?; INTERMEDIATE STATE → DEAD, INTERMEDIATE STATE OF THE; DEAD, PRAYERS FOR THE → PRAYER § VI. SHOULD CHRISTIANS PRAY FOR THE DEAD?_
 
-
 ---
 
-## from DEAD, INTERMEDIATE STATE OF THE  _(confidence: high)_
+## from DEAD, INTERMEDIATE STATE OF THE _(confidence: high)_
 
 > The intermediate state of the dead refers to the condition of the dead between the time of death and the resurrection from the dead.
 >
@@ -276,7 +275,7 @@ _Cross-reference aliases folded in: PURGATORY → DEAD, INTERMEDIATE STATE OF TH
 
 **Attribution:** Cyprian (c. 250, W), 5.331.
 
-### Quote 43  `[already on site → quote #255]`
+### Quote 43 `[already on site → quote #255]`
 
 > Do not think, dearest brother, that either the courage of the brethren will be lessened, or that martyrdoms will fail for this cause—that repentance is relaxed to the lapsed. . . . It is one thing to stand for pardon. It is another thing to attain to glory. It is one thing, when cast into prison, not to go out from it until one has paid the last coin. It is another thing at once to receive the wages of faith and courage. It is one thing, tortured by long suffering for sins, to be cleansed and long purged by fire. It is another to have all sins purged by suffering. It is one thing to be in suspense until the sentence of God at the day of judgment. It is another to be crowned at once by the Lord.
 
@@ -338,10 +337,9 @@ _Cross-reference aliases folded in: PURGATORY → DEAD, INTERMEDIATE STATE OF TH
 
 _SEE ALSO DEATH; DESCENT INTO HADES; ESCHATOLOGY; ETERNAL PUNISHMENTS AND REWARDS; RESURRECTION OF THE DEAD._
 
-
 ---
 
-## from PRAYER § VI. Should Christians pray for the dead?  _(confidence: high)_
+## from PRAYER § VI. Should Christians pray for the dead? _(confidence: high)_
 
 ### Quote 53
 

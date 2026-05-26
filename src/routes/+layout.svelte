@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/state';
+	import { SvelteMap } from 'svelte/reactivity';
 	import { buildPublicTaxonomy, type PublicTaxonomyNode } from '$lib/data';
 	import JsonLd from '$lib/components/ui/JsonLd.svelte';
 	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';
@@ -46,32 +47,26 @@
 	});
 
 	// Explicit user toggle state. Presence = explicit choice; absence = default closed.
-	let pillarToggles = $state<Map<string, boolean>>(new Map());
-	let umbrellaToggles = $state<Map<string, boolean>>(new Map());
+	const pillarToggles = new SvelteMap<string, boolean>();
+	const umbrellaToggles = new SvelteMap<string, boolean>();
 
 	function isPillarOpen(p: string): boolean {
 		const e = pillarToggles.get(p);
 		return e === undefined ? false : e;
 	}
 	function togglePillar(p: string) {
-		const m = new Map(pillarToggles);
-		m.set(p, !isPillarOpen(p));
-		pillarToggles = m;
+		pillarToggles.set(p, !isPillarOpen(p));
 	}
 	function isUmbrellaOpen(id: string): boolean {
 		const e = umbrellaToggles.get(id);
 		return e === undefined ? false : e;
 	}
 	function toggleUmbrella(id: string) {
-		const m = new Map(umbrellaToggles);
-		m.set(id, !isUmbrellaOpen(id));
-		umbrellaToggles = m;
+		umbrellaToggles.set(id, !isUmbrellaOpen(id));
 	}
 	function openUmbrella(id: string) {
 		if (umbrellaToggles.get(id) === true) return;
-		const m = new Map(umbrellaToggles);
-		m.set(id, true);
-		umbrellaToggles = m;
+		umbrellaToggles.set(id, true);
 	}
 </script>
 

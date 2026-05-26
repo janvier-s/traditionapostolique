@@ -1,14 +1,13 @@
-# 18 · L'autorité du Pape  (autorite-du-pape)
+# 18 · L'autorité du Pape (autorite-du-pape)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** BISHOP § II, VICAR OF CHRIST, ROME, CHURCH AT  
 **Mapping confidence:** high
 **Quotes harvested:** 28
 
-
 ---
 
-## from BISHOP § II. Bishop of Rome  _(confidence: high)_
+## from BISHOP § II. Bishop of Rome _(confidence: high)_
 
 ### Quote 1
 
@@ -168,10 +167,9 @@
 
 _SEE ALSO APOSTOLIC SUCCESSION; CHURCH GOVERNMENT; CHURCHES, APOSTOLIC; MONARCHIANISM; PRESBYTER._
 
-
 ---
 
-## from VICAR OF CHRIST  _(confidence: high)_
+## from VICAR OF CHRIST _(confidence: high)_
 
 > A vicar is a person who acts in the place of someone else.
 
@@ -187,9 +185,8 @@ _SEE ALSO APOSTOLIC SUCCESSION; CHURCH GOVERNMENT; CHURCHES, APOSTOLIC; MONARCHI
 
 **Attribution:** Tertullian (c. 207, W), 4.27.
 
-
 ---
 
-## from ROME, CHURCH AT  _(confidence: medium)_
+## from ROME, CHURCH AT _(confidence: medium)_
 
 _Cross-reference → **CHURCHES, APOSTOLIC § VI. CHURCH AT ROME**. See that/those entries in Bercot directly._

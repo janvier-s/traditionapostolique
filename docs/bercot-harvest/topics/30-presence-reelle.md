@@ -1,4 +1,4 @@
-# 30 · La présence réelle  (presence-reelle)
+# 30 · La présence réelle (presence-reelle)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** REAL PRESENCE, EUCHARIST, COMMUNION, LORD’S SUPPER, TRANSUBSTANTIATION  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: REAL PRESENCE → EUCHARIST; COMMUNION → EUCHARIST; LORD’S SUPPER → EUCHARIST / LOVE FEAST; TRANSUBSTANTIATION → EUCHARIST_
 
-
 ---
 
-## from EUCHARIST  _(confidence: high)_
+## from EUCHARIST _(confidence: high)_
 
 ### § I. Doctrine of the Eucharist
 
@@ -38,7 +37,7 @@ _Cross-reference aliases folded in: REAL PRESENCE → EUCHARIST; COMMUNION → E
 
 **Attribution:** Ignatius (c. 105, E), 1.81.
 
-#### Quote 5  `[already on site → quote #447]`
+#### Quote 5 `[already on site → quote #447]`
 
 > They [the Gnostics] abstain from the Eucharist and from prayer, because they do not believe the Eucharist to be the flesh of our Savior Jesus Christ. . . . Those, therefore, who speak against this gift of God, incur death.
 
@@ -238,7 +237,7 @@ _Cross-reference aliases folded in: REAL PRESENCE → EUCHARIST; COMMUNION → E
 
 **Attribution:** Didache (c. 80–140, E), 1.379, 380.
 
-#### Quote 38  `[already on site → quote #448]`
+#### Quote 38 `[already on site → quote #448]`
 
 > Let that be deemed a proper Eucharist, which is [administered] either by the bishop, or by one to whom he has entrusted it.
 
@@ -338,13 +337,13 @@ _Cross-reference aliases folded in: REAL PRESENCE → EUCHARIST; COMMUNION → E
 
 ### § IV. The Eucharist as a spiritual sacrifice
 
-#### Quote 54  `[already on site → quote #328]`
+#### Quote 54 `[already on site → quote #328]`
 
 > But every Lord’s Day, gather yourselves together, and break bread, and give thanksgiving after having confessed your transgressions, that your sacrifice may be pure. But let no one that is at variance with his fellow man come together with you, until they are reconciled, so that your sacrifice may not be profaned. For this is the thing that was spoken of by the Lord: “‘In every place and time offer to me a pure sacrifice; for I am a great King,’ the Lord says, ‘and my name is wonderful among the nations.’”
 
 **Attribution:** Didache (c. 80–140, E), 7.381.
 
-#### Quote 55  `[already on site → quote #541]`
+#### Quote 55 `[already on site → quote #541]`
 
 > He then speaks of those Gentiles, namely us, who in every place offer sacrifices to Him, i.e., the bread of the Eucharist, and also the cup of the Eucharist.
 

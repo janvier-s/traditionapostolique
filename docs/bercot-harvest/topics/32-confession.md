@@ -1,14 +1,13 @@
-# 32 · La confession  (confession)
+# 32 · La confession (confession)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** CONFESSION OF SINS, EXOMOLOGESIS, PENANCE, ABSOLUTION  
 **Mapping confidence:** high
 **Quotes harvested:** 20 (2 already on site)
 
-
 ---
 
-## from CONFESSION OF SINS  _(confidence: high)_
+## from CONFESSION OF SINS _(confidence: high)_
 
 > Confess your trespasses to one another, and pray for one another, that you may be healed. Jas. 5:16.
 >
@@ -50,7 +49,7 @@
 
 **Attribution:** Cyprian (c. 250, W), 5.290.
 
-### Quote 7  `[already on site → quote #249]`
+### Quote 7 `[already on site → quote #249]`
 
 > I entreat you, beloved brethren, that each one should confess his own sins while he is still in this world—while his confession can still be received and while the satisfaction and remission made by the priests are still pleasing to the Lord.
 
@@ -58,24 +57,21 @@
 
 _SEE ALSO ABSOLUTION; DISCIPLINE, CHURCH (III. PENITENTIAL DISCIPLINE); FORGIVENESS OF SINS._
 
-
 ---
 
-## from EXOMOLOGESIS  _(confidence: high)_
+## from EXOMOLOGESIS _(confidence: high)_
 
 _Cross-reference → **DISCIPLINE, CHURCH § II. PENITENTIAL DISCIPLINE**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from PENANCE  _(confidence: high)_
+## from PENANCE _(confidence: high)_
 
 _Cross-reference → **DISCIPLINE, CHURCH § II. PENITENTIAL DISCIPLINE**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from ABSOLUTION  _(confidence: high)_
+## from ABSOLUTION _(confidence: high)_
 
 > In the early church, absolution was the formal act of a bishop or presbyter in pronouncing forgiveness of sin to a repentant Christian.
 >
@@ -143,7 +139,7 @@ _Cross-reference → **DISCIPLINE, CHURCH § II. PENITENTIAL DISCIPLINE**. See t
 
 **Attribution:** Cyprian (c. 250, W), 5.441.
 
-### Quote 18  `[already on site → quote #249]`
+### Quote 18 `[already on site → quote #249]`
 
 > I entreat you, beloved brethren, that each one should confess his own sins while he is still in this world—while his confession can still be received and while the satisfaction and remission made by the priests are still pleasing to the Lord.
 

@@ -1,4 +1,4 @@
-# 16 · Pierre à Rome  (pierre-a-rome)
+# 16 · Pierre à Rome (pierre-a-rome)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** PETER, ROME, ROME, CHURCH AT, CHURCHES, APOSTOLIC § VI  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: ROME, CHURCH AT → CHURCHES, APOSTOLIC § VI. CHURCH AT ROME_
 
-
 ---
 
-## from PETER  _(confidence: medium)_
+## from PETER _(confidence: medium)_
 
 > Simon Peter answered and said, “You are the Christ, the Son of the living God.” Jesus answered and said to him, “Blessed are you, Simon Bar-Jonah, for flesh and blood has not revealed this to you, but My Father who is in heaven. And I also say to you that you are Peter, and on this rock I will build My church, and the gates of Hades shall not prevail against it. And I will give you the keys of the kingdom of heaven, and whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.” Matt. 16:16–19.
 >
@@ -208,17 +207,15 @@ _Cross-reference aliases folded in: ROME, CHURCH AT → CHURCHES, APOSTOLIC § V
 
 _SEE ALSO APOSTLES, TWELVE; BINDING AND LOOSING; KEYS OF THE KINGDOM; PAUL, APOSTLE; SIMON MAGUS._
 
-
 ---
 
-## from ROME  _(confidence: medium)_
+## from ROME _(confidence: medium)_
 
 _Cross-reference → **ROMAN EMPIRE, ROMANS**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from CHURCHES, APOSTOLIC § VI. Church at Rome  _(confidence: high)_
+## from CHURCHES, APOSTOLIC § VI. Church at Rome _(confidence: high)_
 
 ### Quote 32
 
@@ -226,7 +223,7 @@ _Cross-reference → **ROMAN EMPIRE, ROMANS**. See that/those entries in Bercot 
 
 **Attribution:** Clement of Rome (c. 96, W), 1.5.
 
-### Quote 33  `[already on site → quote #442]`
+### Quote 33 `[already on site → quote #442]`
 
 > . . . to the church that has obtained mercy, through the majesty of the Most High Father and Jesus Christ, His Only-Begotten Son. To the church that is beloved and enlightened by the will of Him who wills all things, . . . which also presides in the place of the region of the Romans, worthy of God, worthy of honor, worthy of the highest happiness, worthy of praise, worthy of obtaining her every desire, worthy of being deemed holy, and which presides over love.
 
@@ -250,7 +247,7 @@ _Cross-reference → **ROMAN EMPIRE, ROMANS**. See that/those entries in Bercot 
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.415, 416.
 
-### Quote 37  `[already on site → quote #467]`
+### Quote 37 `[already on site → quote #467]`
 
 > In the third place from the apostles, Clement was allotted the bishopric. This man, as he had seen the blessed apostles, and had been conversant with them, might be said to have the preaching of the apostles still echoing and their traditions before his eyes. Nor was he alone, for there were many still remaining who had received instructions from the apostles. In the time of this Clement, no small dissension occurred among the brethren at Corinth. The church in Rome dispatched a most powerful letter to the Corinthians, exhorting them to peace, renewing their faith, and declaring the tradition which it had lately received from the apostles.
 

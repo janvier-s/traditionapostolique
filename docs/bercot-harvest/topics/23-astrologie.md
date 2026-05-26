@@ -1,4 +1,4 @@
-# 23 · L'astrologie  (astrologie)
+# 23 · L'astrologie (astrologie)
 
 **Site group:** La morale  
 **Mapped dictionary entries:** ASTROLOGY, HOROSCOPE, ZODIAC  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: HOROSCOPE → ASTROLOGY; ZODIAC → ASTROLOGY_
 
-
 ---
 
-## from ASTROLOGY  _(confidence: high)_
+## from ASTROLOGY _(confidence: high)_
 
 > Do not learn the way of the Gentiles; do not be dismayed at the signs of heaven. Jer. 10:2.
 

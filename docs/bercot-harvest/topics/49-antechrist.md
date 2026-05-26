@@ -1,4 +1,4 @@
-# 49 · L'antéchrist  (antechrist)
+# 49 · L'antéchrist (antechrist)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** ANTICHRIST, BEAST, THE, MARK OF THE BEAST, SIX HUNDRED SIXTY-SIX, 144, 000, ONE HUNDRED AND FORTY-FOUR THOUSAND, HUNDRED AND FORTY-FOUR THOUSAND  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: BEAST, THE → ANTICHRIST / MARK OF THE BEAST / REVELATION, BOOK OF; SIX HUNDRED SIXTY-SIX → MARK OF THE BEAST_
 
-
 ---
 
-## from ANTICHRIST  _(confidence: high)_
+## from ANTICHRIST _(confidence: high)_
 
 > He shall speak pompous words against the Most High, shall persecute the saints of the Most High, and shall intend to change times and law. Then the saints shall be given into his hands for a time and times and half a time. Dan. 7:25.
 >
@@ -50,7 +49,7 @@ _Cross-reference aliases folded in: BEAST, THE → ANTICHRIST / MARK OF THE BEAS
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.560.
 
-### Quote 6  `[already on site → quote #399]`
+### Quote 6 `[already on site → quote #399]`
 
 > The deceiver seeks to liken himself in all things to the Son of God. . . . Christ is a king, so the Antichrist is also a king. The Savior appeared as a lamb. So he, too, in like manner, will appear as a lamb, though within he is a wolf. The Savior came into the world in the circumcision, and the Antichrist will come in the same manner. The Lord sent apostles among all the nations, and he in like manner will send false apostles. The Savior gathered together the sheep that were scattered abroad. And he, in like manner, will bring together a people who are scattered abroad. . . . The Savior raised up and showed His holy flesh like a temple, and he will raise a temple of stone in Jerusalem.
 
@@ -154,10 +153,9 @@ _Cross-reference aliases folded in: BEAST, THE → ANTICHRIST / MARK OF THE BEAS
 
 _SEE ALSO DANIEL, BOOK OF; ESCHATOLOGY; GREAT TRIBULATION; MARK OF THE BEAST; REVELATION, BOOK OF._
 
-
 ---
 
-## from MARK OF THE BEAST  _(confidence: high)_
+## from MARK OF THE BEAST _(confidence: high)_
 
 > In both the Greek and Roman systems of letters and numbers, there were no special characters (such as 1, 2, or 3) for numbers. Rather, letters of the alphabet served also as numbers. For example, in the Roman system, “I” represented a character of the alphabet; yet, it also represented the number one. Similarly, “V” was both a letter of the alphabet and also the number five. Accordingly, every person’s name had a numerical equivalent. It was in this sense, then, that the early Christians understood the passage of Revelation that speaks of the “number of [the beast’s] name.”
 >
@@ -207,23 +205,20 @@ _SEE ALSO DANIEL, BOOK OF; ESCHATOLOGY; GREAT TRIBULATION; MARK OF THE BEAST; RE
 
 _SEE ALSO ANTICHRIST; ESCHATOLOGY; GREAT TRIBULATION; RAPTURE; REVELATION, BOOK OF._
 
-
 ---
 
-## from 144, 000  _(confidence: low)_
+## from 144, 000 _(confidence: low)_
 
 _Cross-reference → **REVELATION, BOOK OF**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from ONE HUNDRED AND FORTY-FOUR THOUSAND  _(confidence: low)_
+## from ONE HUNDRED AND FORTY-FOUR THOUSAND _(confidence: low)_
 
 _Cross-reference → **REVELATION, BOOK OF**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from HUNDRED AND FORTY-FOUR THOUSAND  _(confidence: low)_
+## from HUNDRED AND FORTY-FOUR THOUSAND _(confidence: low)_
 
 _Cross-reference → **REVELATION, BOOK OF**. See that/those entries in Bercot directly._

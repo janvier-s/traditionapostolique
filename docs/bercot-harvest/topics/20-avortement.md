@@ -1,4 +1,4 @@
-# 20 · L'avortement  (avortement)
+# 20 · L'avortement (avortement)
 
 **Site group:** La morale  
 **Mapped dictionary entries:** ABORTION, INFANTICIDE, INFANTICIDE, ABANDONMENT OF INFANTS, INFANTS, ABANDONMENT OF, INFANTS, EXPOSURE OF  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: INFANTICIDE → ABORTION, INFANTICIDE; ABANDONMENT OF INFANTS → ABORTION, INFANTICIDE; INFANTS, ABANDONMENT OF → ABORTION, INFANTICIDE; INFANTS, EXPOSURE OF → ABORTION, INFANTICIDE_
 
-
 ---
 
-## from ABORTION, INFANTICIDE  _(confidence: high)_
+## from ABORTION, INFANTICIDE _(confidence: high)_
 
 > The term “exposing infants” refers to the practice of abandoning infant children along roadsides, leaving them either to die of exposure or to be taken by someone, usually to be raised as a slave or a prostitute.
 >
@@ -34,7 +33,7 @@ _Cross-reference aliases folded in: INFANTICIDE → ABORTION, INFANTICIDE; ABAND
 
 **Attribution:** Letter to Diognetus (c. 125–200), 1.27.
 
-### Quote 4  `[already on site → quote #66]`
+### Quote 4 `[already on site → quote #66]`
 
 > We say that those women who use drugs to bring on abortion commit murder. And we also say they will have to give an account to God for the abortion. So on what basis could we commit murder? For it does not belong to the same person to regard the very fetus in the womb as a created being (and therefore an object of God’s care)—yet, when he has passed into life, to kill him. We also teach that it is wrong to expose an infant. For those who expose them are guilty of child murder.
 
@@ -100,7 +99,7 @@ _Cross-reference aliases folded in: INFANTICIDE → ABORTION, INFANTICIDE; ABAND
 
 **Attribution:** Tertullian (c. 212, W), 4.78.
 
-### Quote 15  `[already on site → quote #610]`
+### Quote 15 `[already on site → quote #610]`
 
 > There are some women who, by drinking medical preparations, extinguish the source of the future man in their very bowels. So they commit murder before they bring forth. And these things assuredly come down from the teaching of your gods.
 

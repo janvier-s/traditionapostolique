@@ -16,6 +16,9 @@ module.exports = {
 				border: 'var(--color-border)',
 				heading: 'var(--color-heading)'
 			},
+			borderColor: {
+				DEFAULT: 'var(--color-border)'
+			},
 			fontFamily: {
 				body: 'var(--font-body)',
 				ui: 'var(--font-ui)',

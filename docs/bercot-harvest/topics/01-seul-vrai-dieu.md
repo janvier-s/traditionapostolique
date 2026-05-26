@@ -1,4 +1,4 @@
-# 01 · Le seul vrai Dieu  (seul-vrai-dieu)
+# 01 · Le seul vrai Dieu (seul-vrai-dieu)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** GOD, GOD, ATTRIBUTES OF, ATTRIBUTES OF GOD  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: ATTRIBUTES OF GOD → GOD, ATTRIBUTES OF_
 
-
 ---
 
-## from GOD  _(confidence: high)_
+## from GOD _(confidence: high)_
 
 ### Quote 1
 
@@ -18,7 +17,7 @@ _Cross-reference aliases folded in: ATTRIBUTES OF GOD → GOD, ATTRIBUTES OF_
 
 **Attribution:** Aristides (c. 125, E), 9.264.
 
-### Quote 2  `[already on site → quote #703]`
+### Quote 2 `[already on site → quote #703]`
 
 > Our God did not begin to be in time. He alone is without beginning, and He Himself is the beginning of all things.
 
@@ -176,10 +175,9 @@ _Cross-reference aliases folded in: ATTRIBUTES OF GOD → GOD, ATTRIBUTES OF_
 
 _SEE ALSO ANTHROPOMORPHISMS; CHRIST, DIVINITY OF; FATHER, GOD THE; GOD, ATTRIBUTES OF; GOD, NAME OF; HOLY SPIRIT; TRINITY._
 
-
 ---
 
-## from GOD, ATTRIBUTES OF  _(confidence: high)_
+## from GOD, ATTRIBUTES OF _(confidence: high)_
 
 ### § I. General attributes
 

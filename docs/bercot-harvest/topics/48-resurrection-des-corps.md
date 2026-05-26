@@ -1,14 +1,13 @@
-# 48 · La résurrection des corps  (resurrection-des-corps)
+# 48 · La résurrection des corps (resurrection-des-corps)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** RESURRECTION OF THE DEAD, UNCORRUPTED BODIES  
 **Mapping confidence:** high
 **Quotes harvested:** 70 (2 already on site)
 
-
 ---
 
-## from RESURRECTION OF THE DEAD  _(confidence: high)_
+## from RESURRECTION OF THE DEAD _(confidence: high)_
 
 > Do not marvel at this; for the hour is coming in which all who are in the graves will hear His voice and come forth—those who have done good, to the resurrection of life, and those who have done evil, to the resurrection of condemnation. John 5:28, 29.
 >
@@ -112,7 +111,7 @@
 
 **Attribution:** Athenagoras (c. 175, E), 2.162.
 
-### Quote 16  `[already on site → quote #778]`
+### Quote 16 `[already on site → quote #778]`
 
 > God will raise your flesh immortal with your soul; and then, having become immortal, you will see the Immortal, if you now believe on Him.
 
@@ -310,7 +309,7 @@
 
 **Attribution:** Mark Minucius Felix (c. 200, W), 4.194.
 
-### Quote 49  `[already on site → quote #611]`
+### Quote 49 `[already on site → quote #611]`
 
 > For our consolation, all nature suggests a future resurrection. The sun sinks down and arises, the stars pass away and return, the flowers die and revive again.
 
@@ -438,10 +437,9 @@
 
 _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; ESCHATOLOGY; ETERNAL PUNISHMENTS AND REWARDS; JUDGMENT, LAST; MILLENNIUM; RAPTURE; RESURRECTION OF CHRIST; SECOND COMING OF CHRIST._
 
-
 ---
 
-## from UNCORRUPTED BODIES  _(confidence: medium)_
+## from UNCORRUPTED BODIES _(confidence: medium)_
 
 > An uncorrupted body is a corpse that, because of miraculous or natural reasons, does not decay.
 

@@ -1,4 +1,4 @@
-# 42 · La révélation privée  (revelation-privee)
+# 42 · La révélation privée (revelation-privee)
 
 **Site group:** Marie les saints le miraculeux  
 **Mapped dictionary entries:** VISIONS, PROPHECY, PROPHETS, HEARING FROM GOD, DREAMS  
@@ -7,10 +7,9 @@
 
 > ⚠️ Review mapping — contains low-confidence entries.
 
-
 ---
 
-## from VISIONS  _(confidence: medium)_
+## from VISIONS _(confidence: medium)_
 
 ### Quote 1
 
@@ -98,10 +97,9 @@
 
 _SEE ALSO DREAMS; GIFTS OF THE SPIRIT; HEARING FROM GOD; MIRACLES; MONTANISTS; PROPHECY, PROPHETS._
 
-
 ---
 
-## from PROPHECY, PROPHETS  _(confidence: medium)_
+## from PROPHECY, PROPHETS _(confidence: medium)_
 
 ### § I. Prophecy in the early church
 
@@ -285,10 +283,9 @@ _SEE ALSO DREAMS; GIFTS OF THE SPIRIT; HEARING FROM GOD; MIRACLES; MONTANISTS; P
 
 _SEE ALSO GIFTS OF THE SPIRIT; HEARING FROM GOD; MONTANISTS; ORACLES, PAGAN; SCRIPTURE; SIBYL; VISIONS._
 
-
 ---
 
-## from HEARING FROM GOD  _(confidence: medium)_
+## from HEARING FROM GOD _(confidence: medium)_
 
 ### Quote 44
 
@@ -322,10 +319,9 @@ _SEE ALSO GIFTS OF THE SPIRIT; HEARING FROM GOD; MONTANISTS; ORACLES, PAGAN; SCR
 
 _SEE ALSO DREAMS; PROPHECY, PROPHETS; VISIONS._
 
-
 ---
 
-## from DREAMS  _(confidence: low)_
+## from DREAMS _(confidence: low)_
 
 > In the ancient world, most persons believed that dreams were caused by the wandering of the soul while the body was sleeping. The early Christians generally held to the common view of their day.
 

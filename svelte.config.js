@@ -60,7 +60,7 @@ const config = {
 					return;
 				}
 				throw new Error(`${path} (referrer: ${referrer ?? 'unknown'}): ${message}`);
-			},
+			}
 		},
 		// Emit a per-page <meta http-equiv="Content-Security-Policy"> with
 		// auto-generated hashes for SvelteKit's inline hydration scripts.

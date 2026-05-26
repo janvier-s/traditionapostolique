@@ -1,4 +1,4 @@
-# 19 · Le péché mortel  (peche-mortel)
+# 19 · Le péché mortel (peche-mortel)
 
 **Site group:** La morale  
 **Mapped dictionary entries:** SIN § I, SIN § II, UNFORGIVABLE SIN  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: UNFORGIVABLE SIN → SIN § II. UNFORGIVABLE SIN_
 
-
 ---
 
-## from SIN § I. Classes of sin  _(confidence: high)_
+## from SIN § I. Classes of sin _(confidence: high)_
 
 ### Quote 1
 
@@ -66,10 +65,9 @@ _Cross-reference aliases folded in: UNFORGIVABLE SIN → SIN § II. UNFORGIVABLE
 
 **Attribution:** Cyprian (c. 250, W), 5.488.
 
-
 ---
 
-## from SIN § II. Unforgivable sin  _(confidence: high)_
+## from SIN § II. Unforgivable sin _(confidence: high)_
 
 ### Quote 10
 

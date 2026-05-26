@@ -1,14 +1,13 @@
-# 13 · La succession apostolique  (succession-apostolique)
+# 13 · La succession apostolique (succession-apostolique)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** APOSTOLIC SUCCESSION, CHURCHES, APOSTOLIC § I  
 **Mapping confidence:** high
 **Quotes harvested:** 31 (2 already on site)
 
-
 ---
 
-## from APOSTOLIC SUCCESSION  _(confidence: high)_
+## from APOSTOLIC SUCCESSION _(confidence: high)_
 
 > Many professing Christians view apostolic succession as a fundamental principle of Christianity. Other professing Christians deem apostolic succession to be a corruption and perversion of the gospel. Both sides may be surprised to discover what the term originally did—and did not—mean.
 
@@ -62,7 +61,7 @@
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.547.
 
-#### Quote 9  `[already on site → quote #756]`
+#### Quote 9 `[already on site → quote #756]`
 
 > Let them [the heretics] produce the original records of their churches. Let them unfold the roll of their bishops, running down in due succession from the beginning in such a manner that the first bishop of theirs can show for his ordainer and predecessor one of the apostles or apostolic men—a man, moreover, who continued steadfast with the apostles. For this is the manner in which the apostolic churches transmit their registers. For example, the church of Smyrna records that Polycarp was placed there by John. Likewise, the church of Rome demonstrates Clement to have been ordained in like manner by Peter. In exactly the same way, the other churches similarly exhibit [their list of bishops], whom, as having been appointed to their episcopal places by apostles, they regard as transmitters of the apostolic seed.
 
@@ -158,10 +157,9 @@
 
 _SEE ALSO APOSTOLIC FAITH; CHURCHES, APOSTOLIC; ORDINATION; TRADITION (II. APOSTOLIC TRADITION)._
 
-
 ---
 
-## from CHURCHES, APOSTOLIC § I. Definition, function, and importance  _(confidence: medium)_
+## from CHURCHES, APOSTOLIC § I. Definition, function, and importance _(confidence: medium)_
 
 ### Quote 24
 
@@ -169,7 +167,7 @@ _SEE ALSO APOSTOLIC FAITH; CHURCHES, APOSTOLIC; ORDINATION; TRADITION (II. APOST
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.417.
 
-### Quote 25  `[already on site → quote #752]`
+### Quote 25 `[already on site → quote #752]`
 
 > [The apostles] founded churches in every city, from which all the other churches—one after another—derived the tradition of the faith, and the seeds of doctrine. In fact, they are every day deriving them, so that they may become churches. Indeed, it is only on this account that they will be able to deem themselves apostolic—as being the offspring of apostolic churches. . . . Therefore, although the churches are so many and so great, they comprise but the one primitive church of the apostles.
 

@@ -1,7 +1,7 @@
 # Admin Hiérarchie + Bercot — design
 
 **Status:** drafted 2026-05-25, awaiting user review.
-**Scope:** two new dev-only admin sections — a pillar classifier for the existing 49 topics (modelled on the four parts of the *Catechism of the Catholic Church*), and a curation workspace for the 2,746 harvested Bercot quotes. No public-facing UI changes.
+**Scope:** two new dev-only admin sections — a pillar classifier for the existing 49 topics (modelled on the four parts of the _Catechism of the Catholic Church_), and a curation workspace for the 2,746 harvested Bercot quotes. No public-facing UI changes.
 
 ## Goal
 
@@ -18,10 +18,10 @@ export const PillarSchema = z.enum(['credo', 'sacrements', 'vie', 'priere']);
 export type Pillar = z.infer<typeof PillarSchema>;
 
 export const TopicSchema = z.object({
-  // … existing fields …
-  pillar: PillarSchema.optional(),       // top-level only; sub-topics inherit from their root ancestor
-  parentId: z.number().int().nonnegative().optional(),  // null/undef = top-level
-  order: z.number().int().optional(),    // display ordering among siblings; falls back to id
+	// … existing fields …
+	pillar: PillarSchema.optional(), // top-level only; sub-topics inherit from their root ancestor
+	parentId: z.number().int().nonnegative().optional(), // null/undef = top-level
+	order: z.number().int().optional() // display ordering among siblings; falls back to id
 });
 ```
 
@@ -29,14 +29,14 @@ Validation rule (enforced in the API write path): a topic with `parentId` set mu
 
 A sub-topic's effective pillar is its parent's `pillar`. Setting `pillar` on a sub-topic is allowed by the schema but the UI hides the field for sub-topics.
 
-The four pillars are the four parts of the *Catechism of the Catholic Church*:
+The four pillars are the four parts of the _Catechism of the Catholic Church_:
 
-| Pillar | French label | CCC part | Meaning |
-| --- | --- | --- | --- |
-| `credo` | Credo | I. La profession de la foi | What we believe — Trinity, Christ, Église, sources de la foi, Marie, fins dernières (most of the current site) |
-| `sacrements` | Sacrements et liturgie | II. La célébration du mystère chrétien | How we celebrate — baptême, eucharistie, ordres, mariage, sabbat/dimanche |
-| `vie` | Vie en Christ | III. La vie dans le Christ | How we live — morale, péché, vertus, vocations, lois |
-| `priere` | Prière | IV. La prière chrétienne | How we pray — intercession des saints, prière pour les morts, Notre Père, postures et discipline |
+| Pillar       | French label           | CCC part                               | Meaning                                                                                                        |
+| ------------ | ---------------------- | -------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `credo`      | Credo                  | I. La profession de la foi             | What we believe — Trinity, Christ, Église, sources de la foi, Marie, fins dernières (most of the current site) |
+| `sacrements` | Sacrements et liturgie | II. La célébration du mystère chrétien | How we celebrate — baptême, eucharistie, ordres, mariage, sabbat/dimanche                                      |
+| `vie`        | Vie en Christ          | III. La vie dans le Christ             | How we live — morale, péché, vertus, vocations, lois                                                           |
+| `priere`     | Prière                 | IV. La prière chrétienne               | How we pray — intercession des saints, prière pour les morts, Notre Père, postures et discipline               |
 
 ### UI
 
@@ -44,11 +44,11 @@ The four pillars are the four parts of the *Catechism of the Catholic Church*:
   - **Parent topic** select (autocomplete against top-level topics; "_(racine)_" option = top-level)
   - **Pillar** select (only shown when parent is unset / topic is top-level): Credo / Sacrements / Vie / Prière / _(non classé)_
   - **Ordre** number input (small)
-  The sidebar list switches from flat alphabetical to a **tree view**: top-level topics in display order, sub-topics indented under their parent. Existing search still works (matches at any depth).
+    The sidebar list switches from flat alphabetical to a **tree view**: top-level topics in display order, sub-topics indented under their parent. Existing search still works (matches at any depth).
 - `/admin/hierarchie` (new): read-only visualization.
   - Four columns (Credo / Sacrements / Vie / Prière) + a fifth `Non classé` pool.
   - Each column shows top-level topics as cards; sub-topics nest under their parent with a left rule indent. Cards show label + groupe + quote count (own + descendants).
-  - Column header shows pillar name + CCC reference (e.g. "Credo — *Profession de la foi* (CCC I)").
+  - Column header shows pillar name + CCC reference (e.g. "Credo — _Profession de la foi_ (CCC I)").
   - Click a card → jumps to `/admin/sujets#row-{id}`.
   - No drag-and-drop in v1.
 - Sidebar nav adds "Hiérarchie" between Sujets and Citations.
@@ -57,10 +57,10 @@ The four pillars are the four parts of the *Catechism of the Catholic Church*:
 
 - All 49 existing topics start with no pillar set and no parent (they're top-level). User assigns pillars by walking through `/admin/sujets`.
 - Rough expected distribution (for the user's reference, not auto-applied):
-  - **Credo** (~38 topics): everything in *Dieu*, *La Création*, *Les sources de la foi*, *L'Église et le Pape*, *Marie les saints le miraculeux* (except intercession), *Les fins dernières*.
-  - **Sacrements** (~12 topics): everything in *Les sacrements et le culte*, plus *régénération baptismale* etc.
-  - **Vie** (~5 topics): everything in *La morale* (avortement, contraception, homosexualité, astrologie, péché mortel).
-  - **Prière** (~1-2 topics today): *intercession des saints*, possibly *révélation privée*. The Bercot harvest will significantly populate this pillar via candidates (PRAYER, LORD'S PRAYER, MORNING AND EVENING PRAYER, KNEELING, FASTING, etc.).
+  - **Credo** (~38 topics): everything in _Dieu_, _La Création_, _Les sources de la foi_, _L'Église et le Pape_, _Marie les saints le miraculeux_ (except intercession), _Les fins dernières_.
+  - **Sacrements** (~12 topics): everything in _Les sacrements et le culte_, plus _régénération baptismale_ etc.
+  - **Vie** (~5 topics): everything in _La morale_ (avortement, contraception, homosexualité, astrologie, péché mortel).
+  - **Prière** (~1-2 topics today): _intercession des saints_, possibly _révélation privée_. The Bercot harvest will significantly populate this pillar via candidates (PRAYER, LORD'S PRAYER, MORNING AND EVENING PRAYER, KNEELING, FASTING, etc.).
 - New sub-topics get created by the user as needed — either through `/admin/sujets` (manual creation, pick a parent) or through the Bercot **Ungrouped view** (the "Créer un sujet" flow gains a "Parent" picker).
 - The existing `groupe` field is kept untouched for backward compatibility. Over time `pillar` + `parentId` will supersede `groupe`, but no migration in v1 — the user decides per-topic when to remove the old grouping.
 
@@ -80,25 +80,25 @@ Re-runs are **idempotent** in identity: each Bercot quote has a stable `id` deri
 export const BercotStatusSchema = z.enum(['pending', 'kept', 'rejected', 'published']);
 
 export const BercotEntrySchema = z.object({
-  id: z.string().regex(/^[a-f0-9]{12}$/),     // sha1 prefix, stable across re-runs
-  sourceEntry: z.string(),                     // e.g. "BAPTISM"
-  subsection: z.string().optional(),           // e.g. "I. Meaning of baptism"
-  attribution: z.string(),                     // raw "Tertullian (c. 197, W), 3.156" line
-  en: z.string(),                              // English text (Bercot)
+	id: z.string().regex(/^[a-f0-9]{12}$/), // sha1 prefix, stable across re-runs
+	sourceEntry: z.string(), // e.g. "BAPTISM"
+	subsection: z.string().optional(), // e.g. "I. Meaning of baptism"
+	attribution: z.string(), // raw "Tertullian (c. 197, W), 3.156" line
+	en: z.string(), // English text (Bercot)
 
-  // user-curated fields
-  fr: z.string().optional(),                   // French translation
-  authorId: z.number().int().nonnegative().optional(),   // resolved against authors.json
-  sourceUrl: z.string().url().optional(),      // CCEL / wikisource / archive.org link
-  notes: z.string().optional(),
+	// user-curated fields
+	fr: z.string().optional(), // French translation
+	authorId: z.number().int().nonnegative().optional(), // resolved against authors.json
+	sourceUrl: z.string().url().optional(), // CCEL / wikisource / archive.org link
+	notes: z.string().optional(),
 
-  // mapping
-  mappedTopicIds: z.array(z.number().int().nonnegative()).default([]),  // pre-filled from MAPPING
-  siteQuoteId: z.number().int().nonnegative().optional(),  // populated on publish or dedup hit
+	// mapping
+	mappedTopicIds: z.array(z.number().int().nonnegative()).default([]), // pre-filled from MAPPING
+	siteQuoteId: z.number().int().nonnegative().optional(), // populated on publish or dedup hit
 
-  // lifecycle
-  status: BercotStatusSchema.default('pending'),
-  dedupMatch: z.number().int().nonnegative().optional(),   // populated by harvest dedup
+	// lifecycle
+	status: BercotStatusSchema.default('pending'),
+	dedupMatch: z.number().int().nonnegative().optional() // populated by harvest dedup
 });
 export type BercotEntry = z.infer<typeof BercotEntrySchema>;
 ```
@@ -128,18 +128,20 @@ pending  ─┬─→ rejected   (user decides not to use)
   - Action per group: **"Créer un sujet à partir de cette entrée"** — opens a new-topic form pre-filled with the entry name. The form lets the user choose either:
     - **Top-level** topic — must pick a pillar + groupe + write French label/description; or
     - **Sub-topic** of an existing top-level topic — picks a parent (pillar is inherited).
-    After save, all quotes in the group get the new topic id appended to their `mappedTopicIds`.
+      After save, all quotes in the group get the new topic id appended to their `mappedTopicIds`.
 
 ### Detail editor (card → editor flow)
 
 Layout: 2 columns inside a side-panel or modal.
 
 **Left column (read-only context):**
+
 - `sourceEntry` and `subsection` (e.g. "BAPTISM § III. The question of infant baptism")
 - Raw `attribution` (e.g. "Cyprian (c. 250, W), 5.343")
 - English text in full
 
 **Right column (editable):**
+
 - French textarea (large, prominent — the main work surface)
 - Author dropdown (autocomplete against `authors.json`; pre-filtered by name match if Bercot's attribution starts with a known last name)
 - Source URL field (single text input)
@@ -148,6 +150,7 @@ Layout: 2 columns inside a side-panel or modal.
 - Status radio: pending / kept / rejected / published
 
 **Footer actions:**
+
 - `← Précédent` / `Suivant →` — navigate within the current topic's filtered list (preserves filters)
 - `Enregistrer` (⌘/Ctrl-S)
 - `Publier sur le site` — only enabled when: French is non-empty, author is selected, status is `kept`. Creates a new `Quote` in `quotes.json` with `status: 'draft'`, copies `fr` / `en` / `authorId` / `topicIds` / `sourceUrl → links.primary` / `attribution → reference`, sets the Bercot entry's `status: 'published'` and `siteQuoteId` to the new quote's id.
@@ -155,6 +158,7 @@ Layout: 2 columns inside a side-panel or modal.
 ### Filters and counts in sidebar
 
 Above the topic picker on `/admin/bercot`:
+
 - Stats: total candidates / pending / kept / rejected / published (links toggle filter)
 - Status filter chip row
 - Free-text search across EN text
@@ -182,6 +186,7 @@ Sub-topics are first-class in v1 (see Hiérarchie data model). The intended work
 ## Files touched
 
 **New:**
+
 - `src/routes/admin/hierarchie/+page.svelte` — pillar visualization
 - `src/routes/admin/bercot/+page.svelte` — curation workspace
 - `src/routes/admin/bercot/+page.ts` — load bercot.json + topics + authors
@@ -190,6 +195,7 @@ Sub-topics are first-class in v1 (see Hiérarchie data model). The intended work
 - `src/lib/data/bercot.json` — ingested data (generated by harvest script)
 
 **Modified:**
+
 - `src/routes/admin/+layout.svelte` — add 2 nav links
 - `src/routes/admin/sujets/+page.svelte` — add Pillar / Parent / Ordre fields, tree-view sidebar
 - `src/routes/admin/api/[entity]/+server.ts` — register `bercot` entity
@@ -198,6 +204,7 @@ Sub-topics are first-class in v1 (see Hiérarchie data model). The intended work
 - `scripts/bercot-harvest.py` — add `--emit-json` (default), `--emit-md` (opt-in), idempotent merge that preserves user fields on re-run
 
 **New endpoint:**
+
 - `src/routes/admin/api/bercot/[id]/publish/+server.ts` — promote to quotes.json
 
 ## Non-goals

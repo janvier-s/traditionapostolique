@@ -1,4 +1,4 @@
-# 11 · La Tradition apostolique  (tradition-apostolique)
+# 11 · La Tradition apostolique (tradition-apostolique)
 
 **Site group:** Les sources de la foi  
 **Mapped dictionary entries:** TRADITION § II, APOSTOLIC FAITH, RULE OF FAITH  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: RULE OF FAITH → APOSTOLIC FAITH / CREEDS, EARLY_
 
-
 ---
 
-## from TRADITION § II. Apostolic tradition  _(confidence: high)_
+## from TRADITION § II. Apostolic tradition _(confidence: high)_
 
 ### Quote 1
 
@@ -24,7 +23,7 @@ _Cross-reference aliases folded in: RULE OF FAITH → APOSTOLIC FAITH / CREEDS, 
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.330, 331.
 
-### Quote 3  `[already on site → quote #455]`
+### Quote 3 `[already on site → quote #455]`
 
 > Nor, on the other hand, will he who is deficient in power of expression inflict injury on the tradition. For the faith is ever one and the same. Accordingly, neither does he who is able at great length to discourse regarding it, make any addition to it. Nor does one who can say but little, diminish it.
 
@@ -42,7 +41,7 @@ _Cross-reference aliases folded in: RULE OF FAITH → APOSTOLIC FAITH / CREEDS, 
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.415.
 
-### Quote 6  `[already on site → quote #467]`
+### Quote 6 `[already on site → quote #467]`
 
 > In the third place from the apostles, Clement was allotted the bishopric. This man had seen the blessed apostles and had been conversant with them. Therefore, he might be said to have the preaching of the apostles still echoing [in his ears] and their traditions before his eyes. Nor was he alone in this. For there were many persons still remaining who had received instructions from the apostles.
 
@@ -230,10 +229,9 @@ _Cross-reference aliases folded in: RULE OF FAITH → APOSTOLIC FAITH / CREEDS, 
 
 _SEE ALSO CHURCHES, APOSTOLIC; CREEDS, EARLY; APOSTOLIC FAITH._
 
-
 ---
 
-## from APOSTOLIC FAITH  _(confidence: high)_
+## from APOSTOLIC FAITH _(confidence: high)_
 
 > When He, the Spirit of truth, has come, He will guide you into all truth. John 16:13.
 >
@@ -255,7 +253,7 @@ _SEE ALSO CHURCHES, APOSTOLIC; CREEDS, EARLY; APOSTOLIC FAITH._
 
 **Attribution:** Clement of Rome (c. 96, W), 1.17.
 
-### Quote 38  `[already on site → quote #433]`
+### Quote 38 `[already on site → quote #433]`
 
 > Study, therefore, to be established in the doctrines of the Lord and the apostles.
 

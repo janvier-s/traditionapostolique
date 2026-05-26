@@ -1,4 +1,4 @@
-# 27 · Le baptême trinitaire  (bapteme-trinitaire)
+# 27 · Le baptême trinitaire (bapteme-trinitaire)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** BAPTISM § II, REBAPTISM  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: REBAPTISM → BAPTISM § V. BAPTISM BY HERETICS_
 
-
 ---
 
-## from BAPTISM § II. Mode and description of baptism  _(confidence: high)_
+## from BAPTISM § II. Mode and description of baptism _(confidence: high)_
 
 ### Quote 1
 

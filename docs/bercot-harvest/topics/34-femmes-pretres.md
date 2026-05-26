@@ -1,14 +1,13 @@
-# 34 · Les femmes prêtres  (femmes-pretres)
+# 34 · Les femmes prêtres (femmes-pretres)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** WOMEN § V, DEACONESS  
 **Mapping confidence:** high
 **Quotes harvested:** 12
 
-
 ---
 
-## from WOMEN § V. Role in the church  _(confidence: high)_
+## from WOMEN § V. Role in the church _(confidence: high)_
 
 ### Quote 1
 
@@ -52,10 +51,9 @@
 
 **Attribution:** Apostolic Constitutions (compiled c. 390, E), 7.429.
 
-
 ---
 
-## from DEACONESS  _(confidence: high)_
+## from DEACONESS _(confidence: high)_
 
 ### Quote 8
 

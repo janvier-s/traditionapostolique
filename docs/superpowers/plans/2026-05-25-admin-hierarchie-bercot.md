@@ -5,6 +5,7 @@
 **Goal:** Build two dev-only admin sections — `/admin/hierarchie` (CCC four-pillar visualization) and `/admin/bercot` (curation workspace for the 2,746 harvested patristic quotes) — so the user can re-architect the topic taxonomy and curate Bercot quotes one at a time over the coming months.
 
 **Architecture:**
+
 - JSON-backed data (extend Topic schema with `pillar` / `parentId` / `order`; new `bercot.json` ingested by the Python harvest script). All edits go through the existing `/admin/api/[entity]` REST pattern with Zod validation and atomic writes.
 - Topic tree (one level of nesting) shared across Sujets editor, Hiérarchie viz, and Bercot topic picker via a small `topic-tree.ts` helper.
 - Bercot lifecycle (`pending → kept → rejected → published`) drives a topic-centric workspace; publishing creates a new `Quote` in `quotes.json` with `status: 'draft'` linked back via `siteQuoteId`.
@@ -18,20 +19,24 @@
 ## File Map
 
 **Schema (new + modified):**
+
 - `src/lib/schema/topic.ts` — extend with `pillar` / `parentId` / `order`
 - `src/lib/schema/bercot.ts` — new
 - `src/lib/schema/index.ts` — export new types
 - `src/lib/schema/schema.test.ts` — new test blocks
 
 **Data utilities (new):**
+
 - `src/lib/admin/topic-tree.ts` — build & traverse a one-level topic tree
 - `src/lib/admin/topic-tree.test.ts`
 
 **API (modified + new):**
+
 - `src/routes/admin/api/[entity]/+server.ts` — register `bercot`, add topic parentId validation
 - `src/routes/admin/api/bercot/[id]/publish/+server.ts` — new endpoint to promote a Bercot entry to a site Quote
 
 **Pages (modified + new):**
+
 - `src/routes/admin/+layout.svelte` — add 2 nav links
 - `src/routes/admin/sujets/+page.svelte` — Pillar / Parent / Ordre fields, tree-view sidebar
 - `src/routes/admin/hierarchie/+page.svelte` — new, read-only 4-column viz
@@ -42,13 +47,16 @@
 - `src/routes/admin/bercot/NewTopicFromBercot.svelte` — "Créer un sujet" modal
 
 **Harvest script (modified):**
+
 - `scripts/bercot-harvest.py` — add `--emit-json` (default) and `--emit-md` (opt-in); stable hash IDs; idempotent merge
 
 **Data files:**
+
 - `src/lib/data/topics.json` — passes new schema unchanged (`pillar` / `parentId` / `order` are all optional)
 - `src/lib/data/bercot.json` — new (generated)
 
 **Layout (modified):**
+
 - `src/routes/admin/+layout.svelte` — nav additions
 
 ---
@@ -56,6 +64,7 @@
 ## Task 1: Extend Topic schema with pillar / parentId / order
 
 **Files:**
+
 - Modify: `src/lib/schema/topic.ts`
 - Modify: `src/lib/schema/schema.test.ts`
 
@@ -187,6 +196,7 @@ git commit -m "feat(schema): add pillar, parentId, order to TopicSchema"
 ## Task 2: Create BercotEntry schema
 
 **Files:**
+
 - Create: `src/lib/schema/bercot.ts`
 - Modify: `src/lib/schema/index.ts`
 - Modify: `src/lib/schema/schema.test.ts`
@@ -304,6 +314,7 @@ git commit -m "feat(schema): add BercotEntry schema for the curation workspace"
 ## Task 3: Topic tree utility
 
 **Files:**
+
 - Create: `src/lib/admin/topic-tree.ts`
 - Create: `src/lib/admin/topic-tree.test.ts`
 
@@ -499,6 +510,7 @@ git commit -m "feat(admin): topic-tree utility for nested topic display"
 ## Task 4: Extend harvest script with --emit-json + stable IDs + idempotent merge
 
 **Files:**
+
 - Modify: `scripts/bercot-harvest.py`
 
 - [ ] **Step 1: Add CLI argument parsing**
@@ -679,6 +691,7 @@ Expected: same byte count on the second run (no churn).
 - [ ] **Step 6: Verify merge preserves user edits**
 
 Run in shell:
+
 ```bash
 python3 - <<'PY'
 import json, pathlib
@@ -697,9 +710,11 @@ assert data[0]["notes"] == "TEST NOTE", data[0].get("notes")
 print("merge OK")
 PY
 ```
+
 Expected: prints "merge OK".
 
 Then revert the test edit:
+
 ```bash
 python3 - <<'PY'
 import json, pathlib
@@ -723,6 +738,7 @@ git commit -m "feat(harvest): emit bercot.json with stable IDs + idempotent merg
 ## Task 5: Register `bercot` entity in the admin API + topic parent validation
 
 **Files:**
+
 - Modify: `src/routes/admin/api/[entity]/+server.ts`
 
 - [ ] **Step 1: Read the current file**
@@ -772,10 +788,10 @@ const SCHEMA: Record<string, z.ZodTypeAny> = {
 Find the `PUT` export. After the line `if (!parsed.success) throw error(400, JSON.stringify(parsed.error.issues));`, insert:
 
 ```ts
-	if (params.entity === 'topics') {
-		const refs = validateParentRefs(parsed.data as Topic[]);
-		if (!refs.ok) throw error(400, refs.error);
-	}
+if (params.entity === 'topics') {
+	const refs = validateParentRefs(parsed.data as Topic[]);
+	if (!refs.ok) throw error(400, refs.error);
+}
 ```
 
 - [ ] **Step 4: Sanity-check dev mode**
@@ -796,6 +812,7 @@ git commit -m "feat(admin/api): register bercot entity + validate topic parent r
 ## Task 6: Bercot → Quote publication endpoint
 
 **Files:**
+
 - Create: `src/routes/admin/api/bercot/[id]/publish/+server.ts`
 
 - [ ] **Step 1: Create the file**
@@ -828,8 +845,7 @@ function nextQuoteId(quotes: Quote[]): number {
 
 export async function POST({ params }) {
 	assertDev();
-	const bercotAll = readJson<unknown[]>('bercot.json')
-		.map((row) => BercotEntrySchema.parse(row));
+	const bercotAll = readJson<unknown[]>('bercot.json').map((row) => BercotEntrySchema.parse(row));
 	const idx = bercotAll.findIndex((b) => b.id === params.id);
 	if (idx === -1) throw error(404, `Bercot entry ${params.id} not found`);
 	const entry: BercotEntry = bercotAll[idx];
@@ -838,7 +854,8 @@ export async function POST({ params }) {
 	if (entry.authorId == null) throw error(400, 'authorId required');
 	if (entry.mappedTopicIds.length === 0) throw error(400, 'at least one topic required');
 	if (entry.status !== 'kept') throw error(400, 'entry must be in status "kept" before publishing');
-	if (entry.siteQuoteId != null) throw error(400, `already published as quote ${entry.siteQuoteId}`);
+	if (entry.siteQuoteId != null)
+		throw error(400, `already published as quote ${entry.siteQuoteId}`);
 
 	const quotes = readJson<unknown[]>('quotes.json').map((q) => QuoteSchema.parse(q));
 	const newId = nextQuoteId(quotes);
@@ -889,6 +906,7 @@ git commit -m "feat(admin/api): publish Bercot entry as a draft Quote"
 ## Task 7: Admin layout nav additions
 
 **Files:**
+
 - Modify: `src/routes/admin/+layout.svelte`
 
 - [ ] **Step 1: Replace the nav**
@@ -927,6 +945,7 @@ git commit -m "feat(admin): add Hiérarchie and Bercot nav links"
 ## Task 8: Sujets editor — Pillar / Parent / Ordre fields + tree-view sidebar
 
 **Files:**
+
 - Modify: `src/routes/admin/sujets/+page.svelte`
 
 - [ ] **Step 1: Replace the script section**
@@ -1122,6 +1141,7 @@ Inside the `<form>` block, after the existing **Groupe** input but before **Desc
 - [ ] **Step 4: Manually verify**
 
 Run `npm run dev`, visit `http://localhost:5173/admin/sujets`. Check:
+
 - Sidebar renders as a tree (all flat for now, since no topic has a parent yet — should match current behaviour).
 - Selecting a topic shows the new Parent / Pilier / Ordre fields.
 - Setting Parent on a topic and saving works without error.
@@ -1142,6 +1162,7 @@ git commit -m "feat(admin/sujets): pillar + parent + order fields, tree sidebar"
 ## Task 9: Hiérarchie visualization page
 
 **Files:**
+
 - Create: `src/routes/admin/hierarchie/+page.svelte`
 - Create: `src/routes/admin/hierarchie/+page.ts`
 
@@ -1211,8 +1232,9 @@ export async function load({ fetch }) {
 
 <h1 class="font-heading text-2xl">Hiérarchie ({data.topics.length} sujets)</h1>
 <p class="mt-2 text-sm text-muted">
-	Vue par les quatre piliers du <em>Catéchisme de l'Église catholique</em>. Lecture seule —
-	modifiez le pilier d'un sujet depuis <a class="underline-offset-4 hover:underline" href="/admin/sujets">Sujets</a>.
+	Vue par les quatre piliers du <em>Catéchisme de l'Église catholique</em>. Lecture seule — modifiez
+	le pilier d'un sujet depuis
+	<a class="underline-offset-4 hover:underline" href="/admin/sujets">Sujets</a>.
 </p>
 
 <div class="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-5">
@@ -1234,7 +1256,9 @@ export async function load({ fetch }) {
 								<span class="shrink-0 text-[11px] text-muted">{n || '—'}</span>
 							</span>
 							{#if node.topic.groupe}
-								<span class="text-[10px] uppercase tracking-wider text-muted">{node.topic.groupe}</span>
+								<span class="text-[10px] uppercase tracking-wider text-muted"
+									>{node.topic.groupe}</span
+								>
 							{/if}
 						</a>
 						{#if node.children.length > 0}
@@ -1303,6 +1327,7 @@ git commit -m "feat(admin): /admin/hierarchie — CCC four-pillar visualization"
 ## Task 10: Bercot workspace — page scaffold + topic picker + counts
 
 **Files:**
+
 - Create: `src/routes/admin/bercot/+page.ts`
 - Create: `src/routes/admin/bercot/+page.svelte`
 
@@ -1375,7 +1400,7 @@ export async function load({ fetch }) {
 	});
 
 	const selectedTopic = $derived(
-		selectedTopicId != null ? data.topics.find((t) => t.id === selectedTopicId) ?? null : null
+		selectedTopicId != null ? (data.topics.find((t) => t.id === selectedTopicId) ?? null) : null
 	);
 
 	const candidatesForTopic = $derived.by(() => {
@@ -1497,10 +1522,7 @@ export async function load({ fetch }) {
 					<ul class="mt-2 max-h-60 space-y-1 overflow-y-auto">
 						{#each siteQuotesForTopic as q (q.id)}
 							<li class="truncate">
-								<a
-									href={`/admin/citations#${q.id}`}
-									class="hover:text-accent hover:underline"
-								>
+								<a href={`/admin/citations#${q.id}`} class="hover:text-accent hover:underline">
 									<span class="text-xs text-muted">#{q.id}</span>
 									{(q.fr ?? q.en ?? '(vide)').replace(/\s+/g, ' ').slice(0, 100)}
 								</a>
@@ -1539,7 +1561,9 @@ export async function load({ fetch }) {
 							<p class="mt-2 text-[11px] text-muted">{b.attribution}</p>
 							{#if b.siteQuoteId != null}
 								<p class="mt-1 text-[11px] text-sky-700">
-									→ <a class="underline" href={`/admin/citations#${b.siteQuoteId}`}>quote #{b.siteQuoteId}</a>
+									→ <a class="underline" href={`/admin/citations#${b.siteQuoteId}`}
+										>quote #{b.siteQuoteId}</a
+									>
 								</p>
 							{/if}
 						</article>
@@ -1554,8 +1578,8 @@ export async function load({ fetch }) {
 {:else}
 	<div class="mt-4">
 		<p class="mb-3 text-sm text-muted">
-			Entrées du dictionnaire de Bercot qui ne sont rattachées à aucun sujet existant. Groupées
-			par entrée d'origine — créez un nouveau sujet à partir de chacune si elle vous intéresse.
+			Entrées du dictionnaire de Bercot qui ne sont rattachées à aucun sujet existant. Groupées par
+			entrée d'origine — créez un nouveau sujet à partir de chacune si elle vous intéresse.
 		</p>
 		<ul class="space-y-3">
 			{#each ungroupedBySource as [entry, items] (entry)}
@@ -1583,6 +1607,7 @@ export async function load({ fetch }) {
 - [ ] **Step 3: Smoke-test**
 
 Run `npm run dev`, visit `/admin/bercot`. Verify:
+
 - Top stats show non-zero numbers.
 - Topic sidebar lists all 49 topics with Bercot candidate counts.
 - Selecting a topic shows existing site quotes (collapsible) and Bercot candidate cards.
@@ -1601,6 +1626,7 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 ## Task 11: Bercot detail editor (card → side-panel)
 
 **Files:**
+
 - Create: `src/routes/admin/bercot/BercotCardEditor.svelte`
 - Modify: `src/routes/admin/bercot/+page.svelte`
 
@@ -1615,7 +1641,7 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 
 	type Props = {
 		entry: BercotEntry;
-		entries: BercotEntry[];           // siblings (for prev/next within current filter)
+		entries: BercotEntry[]; // siblings (for prev/next within current filter)
 		topics: Topic[];
 		authors: Author[];
 		onClose: () => void;
@@ -1623,7 +1649,8 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 		onPublished: (updated: BercotEntry, newQuoteId: number) => void;
 		onNavigate: (delta: -1 | 1) => void;
 	};
-	let { entry, entries, topics, authors, onClose, onSaved, onPublished, onNavigate }: Props = $props();
+	let { entry, entries, topics, authors, onClose, onSaved, onPublished, onNavigate }: Props =
+		$props();
 
 	// Local mutable copy
 	let draft = $state({ ...entry });
@@ -1639,7 +1666,9 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 	});
 
 	const topicFlat = $derived(flattenTree(buildTopicTree(topics)));
-	const authorOptions = $derived(authors.slice().sort((a, b) => a.name.localeCompare(b.name, 'fr')));
+	const authorOptions = $derived(
+		authors.slice().sort((a, b) => a.name.localeCompare(b.name, 'fr'))
+	);
 
 	function update<K extends keyof BercotEntry>(key: K, value: BercotEntry[K]) {
 		draft = { ...draft, [key]: value };
@@ -1728,7 +1757,11 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 	};
 </script>
 
-<div class="fixed inset-0 z-40 flex items-stretch justify-end bg-black/30" onclick={onClose} role="presentation">
+<div
+	class="fixed inset-0 z-40 flex items-stretch justify-end bg-black/30"
+	onclick={onClose}
+	role="presentation"
+>
 	<div
 		class="flex h-full w-full max-w-5xl flex-col bg-background shadow-xl"
 		onclick={(e) => e.stopPropagation()}
@@ -1769,23 +1802,30 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 		<div class="grid flex-1 grid-cols-2 gap-6 overflow-y-auto p-4">
 			<!-- LEFT: read-only context -->
 			<section>
-				<h3 class="font-ui text-xs uppercase tracking-wider text-muted">Texte original (Bercot, EN)</h3>
+				<h3 class="font-ui text-xs uppercase tracking-wider text-muted">
+					Texte original (Bercot, EN)
+				</h3>
 				<p class="mt-2 whitespace-pre-wrap leading-relaxed">{entry.en}</p>
 			</section>
 
 			<!-- RIGHT: editable -->
 			<section class="space-y-3">
 				<label class="block">
-					<span class="font-ui text-xs uppercase tracking-wider text-muted">Traduction française</span>
+					<span class="font-ui text-xs uppercase tracking-wider text-muted"
+						>Traduction française</span
+					>
 					<textarea
 						class="mt-1 h-48 w-full rounded border border-border bg-panel px-2 py-1 leading-relaxed"
 						value={draft.fr ?? ''}
-						oninput={(e) => update('fr', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
+						oninput={(e) =>
+							update('fr', (e.currentTarget as HTMLTextAreaElement).value || undefined)}
 					></textarea>
 				</label>
 
 				<label class="block">
-					<span class="font-ui text-xs uppercase tracking-wider text-muted">Auteur (auteurs.json)</span>
+					<span class="font-ui text-xs uppercase tracking-wider text-muted"
+						>Auteur (auteurs.json)</span
+					>
 					<select
 						class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
 						value={draft.authorId ?? ''}
@@ -1802,7 +1842,9 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 				</label>
 
 				<label class="block">
-					<span class="font-ui text-xs uppercase tracking-wider text-muted">Source originale (URL)</span>
+					<span class="font-ui text-xs uppercase tracking-wider text-muted"
+						>Source originale (URL)</span
+					>
 					<input
 						type="url"
 						placeholder="https://…"
@@ -1817,7 +1859,10 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 					<p class="font-ui text-xs uppercase tracking-wider text-muted">Sujets rattachés</p>
 					<div class="mt-1 max-h-48 overflow-y-auto rounded border border-border bg-panel p-2">
 						{#each topicFlat as { topic: t, depth } (t.id)}
-							<label class="flex items-center gap-2 py-0.5 text-sm" style={`padding-left: ${depth * 1}rem`}>
+							<label
+								class="flex items-center gap-2 py-0.5 text-sm"
+								style={`padding-left: ${depth * 1}rem`}
+							>
 								<input
 									type="checkbox"
 									checked={draft.mappedTopicIds.includes(t.id)}
@@ -1875,7 +1920,9 @@ git commit -m "feat(admin/bercot): topic-centric workspace scaffold"
 				onclick={publish}
 				disabled={!canPublish || saving || draft.status === 'published'}
 				class="rounded border border-border bg-emerald-700 px-4 py-1 font-ui text-sm text-white disabled:opacity-40"
-				title={canPublish ? 'Crée un Quote en draft' : 'Requis : traduction, auteur, sujet(s), statut « retenu »'}
+				title={canPublish
+					? 'Crée un Quote en draft'
+					: 'Requis : traduction, auteur, sujet(s), statut « retenu »'}
 			>
 				Publier sur le site
 			</button>
@@ -1903,7 +1950,7 @@ Add state below the existing state declarations:
 ```ts
 let activeId = $state<string | null>(null);
 const activeEntry = $derived(
-	activeId ? data.bercot.find((b) => b.id === activeId) ?? null : null
+	activeId ? (data.bercot.find((b) => b.id === activeId) ?? null) : null
 );
 const activeSiblings = $derived(view === 'topic' ? candidatesForTopic : ungroupedEntries);
 const activeIndex = $derived.by(() => {
@@ -1941,8 +1988,8 @@ In the `<article>` card markup inside `{#each candidatesForTopic as b ...}`, wra
 		topics={data.topics}
 		authors={data.authors}
 		onClose={() => (activeId = null)}
-		onSaved={onSaved}
-		onPublished={onPublished}
+		{onSaved}
+		{onPublished}
 		onNavigate={navigate}
 	/>
 {/if}
@@ -1951,6 +1998,7 @@ In the `<article>` card markup inside `{#each candidatesForTopic as b ...}`, wra
 - [ ] **Step 3: Smoke-test**
 
 Run `npm run dev`. Pick a topic (e.g. "L'avortement"), click a card → editor slides in. Verify:
+
 - English text on the left, all fields on the right.
 - Editing French + setting status to "Retenu" + checking a topic → Save enables. Cmd-S saves.
 - Cmd-→ / Cmd-← navigate within the topic.
@@ -1969,6 +2017,7 @@ git commit -m "feat(admin/bercot): detail editor with French / author / topics /
 ## Task 12: Bercot publish flow + dedup hint
 
 **Files:**
+
 - Modify: `src/routes/admin/bercot/+page.svelte` (badge on cards already shown, add dedup visual)
 - Modify: `src/routes/admin/bercot/BercotCardEditor.svelte` (dedup callout)
 
@@ -2017,6 +2066,7 @@ git commit -m "feat(admin/bercot): surface dedup matches on cards and in editor"
 ## Task 13: "Créer un sujet à partir de cette entrée" flow
 
 **Files:**
+
 - Create: `src/routes/admin/bercot/NewTopicFromBercot.svelte`
 - Modify: `src/routes/admin/bercot/+page.svelte`
 
@@ -2030,7 +2080,7 @@ git commit -m "feat(admin/bercot): surface dedup matches on cards and in editor"
 
 	type Props = {
 		sourceEntry: string;
-		entries: BercotEntry[];     // all Bercot rows from this entry, to attach after save
+		entries: BercotEntry[]; // all Bercot rows from this entry, to attach after save
 		topics: Topic[];
 		onClose: () => void;
 		onCreated: (newTopic: Topic, updatedEntries: BercotEntry[]) => void;
@@ -2115,14 +2165,21 @@ git commit -m "feat(admin/bercot): surface dedup matches on cards and in editor"
 				saveError = await bercotRes.text();
 				return;
 			}
-			onCreated(newTopic, updated.filter((b) => entries.some((e) => e.id === b.id)));
+			onCreated(
+				newTopic,
+				updated.filter((b) => entries.some((e) => e.id === b.id))
+			);
 		} finally {
 			saving = false;
 		}
 	}
 </script>
 
-<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40" onclick={onClose} role="presentation">
+<div
+	class="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
+	onclick={onClose}
+	role="presentation"
+>
 	<div
 		class="w-full max-w-xl rounded-lg border border-border bg-background p-5 shadow-xl"
 		onclick={(e) => e.stopPropagation()}
@@ -2131,7 +2188,8 @@ git commit -m "feat(admin/bercot): surface dedup matches on cards and in editor"
 	>
 		<h2 class="font-heading text-lg">Créer un sujet à partir de « {sourceEntry} »</h2>
 		<p class="mt-1 text-xs text-muted">
-			Le nouveau sujet sera créé puis les {entries.length} citation(s) de cette entrée Bercot y seront rattachées.
+			Le nouveau sujet sera créé puis les {entries.length} citation(s) de cette entrée Bercot y seront
+			rattachées.
 		</p>
 
 		<div class="mt-4 space-y-3 text-sm">
@@ -2145,15 +2203,24 @@ git commit -m "feat(admin/bercot): surface dedup matches on cards and in editor"
 			</label>
 			<label class="block">
 				Slug (URL)
-				<input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={slug} />
+				<input
+					class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+					bind:value={slug}
+				/>
 			</label>
 			<label class="block">
 				Groupe
-				<input class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={groupe} />
+				<input
+					class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+					bind:value={groupe}
+				/>
 			</label>
 			<label class="block">
 				Section
-				<select class="mt-1 w-full rounded border border-border bg-panel px-2 py-1" bind:value={section}>
+				<select
+					class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
+					bind:value={section}
+				>
 					{#each ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'] as s (s)}
 						<option value={s}>{s}</option>
 					{/each}
@@ -2167,7 +2234,9 @@ git commit -m "feat(admin/bercot): surface dedup matches on cards and in editor"
 				></textarea>
 			</label>
 			<fieldset class="rounded border border-border p-3">
-				<legend class="px-1 text-xs uppercase tracking-wider text-muted">Place dans la hiérarchie</legend>
+				<legend class="px-1 text-xs uppercase tracking-wider text-muted"
+					>Place dans la hiérarchie</legend
+				>
 				<label class="block text-sm">
 					Parent
 					<select
@@ -2281,6 +2350,7 @@ At the bottom of the template, after the existing `{#if activeEntry}…{/if}` bl
 - [ ] **Step 3: Smoke-test**
 
 Visit `/admin/bercot?view=ungrouped` (or click the "Non rattachés" tab). Pick e.g. "HYPOSTATIC UNION" → click "Créer un sujet" → fill label/slug/groupe, leave parent as racine, pick "Credo" pillar → Create. Verify:
+
 - A new topic appears (refresh `/admin/sujets` if needed).
 - All HYPOSTATIC UNION Bercot entries now show that new topic in their `mappedTopicIds` (visit `/admin/bercot`, pick the new topic — its cards are there).
 
@@ -2377,4 +2447,4 @@ git commit -m "fix(admin): smoke-test fixups"
 - **Pillar inheritance:** sub-topics inherit their parent's pillar in the UI (Sujets editor hides the field; Hiérarchie groups by parent's pillar). The schema allows `pillar` on a sub-topic but the UI never sets it.
 - **`mappedTopicIds` semantics:** independent assignments — selecting a sub-topic does NOT also select its parent. The user decides which level each quote lives at.
 - **Dedup matches:** auto-set `status: 'published'` on first ingestion of a row whose EN text matched an existing quote. The `siteQuoteId` points at the matched quote.
-- **The harvest script's `MAPPING` and `CANDIDATES` tables remain the source of truth for *initial* topic assignment.** Re-runs of the script regenerate row identities (hashes) and refresh the pre-filled `mappedTopicIds`. User edits via the admin override at the per-row level via the merge step.
+- **The harvest script's `MAPPING` and `CANDIDATES` tables remain the source of truth for _initial_ topic assignment.** Re-runs of the script regenerate row identities (hashes) and refresh the pre-filled `mappedTopicIds`. User edits via the admin override at the per-row level via the merge step.

@@ -8,7 +8,7 @@
 Two related problems prompted this redesign:
 
 1. **Save-blocking bug.** Topic 84 (`la-nouvelle-naissance`) currently sits at depth 2 under 25 (`la-regeneration-baptismale`) under 24 (`bapteme-comme-moyen-de-grace`). The save validator `validateParentRefs` (`src/lib/admin/topic-tree.ts:67`) enforces depth ≤ 1, and it runs against the entire topics array on every PUT — so any edit to any topic fails until #84 is resolved. It's the only depth-2 offender in the file.
-2. **Drifted taxonomy.** 47 root topics, three parallel grouping axes (`section`, `groupe`, `pillar`), ~32 roots holding direct quotes alongside their own sub-topics (curator friction: "parent or child?" for every new quote), 16 orphan roots from recent Cyril/Théophile/Aelred imports landing under generic `section: I` / `groupe: Credo`, a handful of inverted parent/child relationships (`Les Saintes Écritures` listed as a *child* of `Le canon des Écritures`; `Le péché` as a child of `Le péché mortel`), and a public `/sujets` index that dumps 104 topics under a single "Dieu" header because section I has become the catch-all.
+2. **Drifted taxonomy.** 47 root topics, three parallel grouping axes (`section`, `groupe`, `pillar`), ~32 roots holding direct quotes alongside their own sub-topics (curator friction: "parent or child?" for every new quote), 16 orphan roots from recent Cyril/Théophile/Aelred imports landing under generic `section: I` / `groupe: Credo`, a handful of inverted parent/child relationships (`Les Saintes Écritures` listed as a _child_ of `Le canon des Écritures`; `Le péché` as a child of `Le péché mortel`), and a public `/sujets` index that dumps 104 topics under a single "Dieu" header because section I has become the catch-all.
 
 The fix for both is the same: rebuild the model so every quote has exactly one obvious home, and walk every existing topic through a placement decision in one editorial pass.
 
@@ -36,14 +36,14 @@ Schema after the redesign (`src/lib/schema/topic.ts`):
 export const PillarSchema = z.enum(['credo', 'sacrements', 'vie', 'priere']);
 
 export const TopicSchema = z.object({
-  id: z.number().int().nonnegative(),
-  slug: z.string().min(1),
-  label: z.string().min(1),
-  description: z.string().optional(),
-  pillar: PillarSchema.optional(),     // present on roots only; aspects inherit
-  parentId: z.number().int().nonnegative().optional(),  // null/undef = root
-  order: z.number().int().nonnegative().optional(),
-  primary: z.boolean().optional()      // children only; exactly one primary per theme
+	id: z.number().int().nonnegative(),
+	slug: z.string().min(1),
+	label: z.string().min(1),
+	description: z.string().optional(),
+	pillar: PillarSchema.optional(), // present on roots only; aspects inherit
+	parentId: z.number().int().nonnegative().optional(), // null/undef = root
+	order: z.number().int().nonnegative().optional(),
+	primary: z.boolean().optional() // children only; exactly one primary per theme
 });
 ```
 
@@ -51,12 +51,12 @@ Removed fields: `section` (replaced by pillar), `groupe` (replaced by theme memb
 
 The three derived topic shapes — not stored on the record, derived at read time:
 
-| Shape | Predicate | UI label |
-|---|---|---|
-| Theme | `parentId == null && hasChildren` | « Thème » |
-| Aspect — primary | `parentId != null && primary === true` | « Aspect principal » |
-| Aspect — specific | `parentId != null && !primary` | « Aspect » |
-| Sujet standalone | `parentId == null && !hasChildren` | « Sujet » |
+| Shape             | Predicate                              | UI label             |
+| ----------------- | -------------------------------------- | -------------------- |
+| Theme             | `parentId == null && hasChildren`      | « Thème »            |
+| Aspect — primary  | `parentId != null && primary === true` | « Aspect principal » |
+| Aspect — specific | `parentId != null && !primary`         | « Aspect »           |
+| Sujet standalone  | `parentId == null && !hasChildren`     | « Sujet »            |
 
 A topic is a theme iff it has at least one child. A topic is a standalone sujet iff it has no parent and no children. These shapes evolve as the topics array changes — no schema migration required to flip.
 
@@ -64,11 +64,11 @@ A topic is a theme iff it has at least one child. A topic is a standalone sujet 
 
 `validateParentRefs` is extended to take both the topics array and the quotes array, and check:
 
-1. `parentId` references an existing topic, is not self, and points at a root (depth ≤ 1). *(existing, kept)*
+1. `parentId` references an existing topic, is not self, and points at a root (depth ≤ 1). _(existing, kept)_
 2. **Theme has zero quotes.** No `quote.topicIds` entry equals a topic id that has children. Cross-collection check — validator now receives both arrays.
 3. **Theme has exactly one primary aspect.** For each topic with children, exactly one child has `primary: true`.
 4. **Slugs are unique within their route namespace.** Aspects and standalone sujets share the `/sujets/` namespace; themes live in `/themes/`. A theme may share its slug with its primary aspect (default behavior) because they're served from different routes — `/sujets/le-bapteme` (primary aspect's quotes) and `/themes/le-bapteme` (mini-index) coexist cleanly.
-5. *(Soft warning, not error)* Primary aspect's `label` matches its theme's `label`. Allowed to drift, flagged in the editor.
+5. _(Soft warning, not error)_ Primary aspect's `label` matches its theme's `label`. Allowed to drift, flagged in the editor.
 
 A new helper `validateTopicQuoteCoherence(topics, quotes)` does the cross-array check; the `/admin/api/topics` and `/admin/api/quotes` PUT handlers both call it (because either side can violate invariant #2).
 
@@ -109,6 +109,7 @@ The "umbrella" terminology is replaced by **theme** everywhere user-visible (adm
 A separate route for the theme-level meta page. Shows the theme's label, description, and a list of its aspects with quote counts. Not linked from sidebar nav — reachable by direct URL or by a "Voir tous les aspects de [theme]" link from any of its aspects.
 
 Slug convention:
+
 - Primary aspect: clean slug (e.g. `le-bapteme`) → served at `/sujets/le-bapteme`.
 - Theme record: same clean slug by default (e.g. `le-bapteme`) → served at `/themes/le-bapteme`. The `/themes/` namespace disambiguates; no decoration suffix needed. The user can override per theme if desired.
 
@@ -123,6 +124,7 @@ The umbrella-line count is **total of all descendant aspects**, so a reader can 
 Sidebar tree stays as today (depth-1 nesting via `flattenTree`). Each row gets a small badge: « THÈME », « ASPECT PRINCIPAL », or unbadged for specific aspects / standalone sujets. A ⚠️ marker appears on rows that violate the invariants (theme with quotes, theme missing a primary, etc.).
 
 Form panel:
+
 - Remove `section` and `groupe` fields.
 - Add **Aspect principal** checkbox (visible only when the topic has a parent). Toggling it on auto-toggles it off on the previous primary in the same theme — single-primary invariant maintained in the editor, also enforced by the validator.
 - Keep `Description` for every topic shape (theme, aspect, standalone sujet). Displayed wherever the topic's page renders it; useful for SEO and as introductory text.
@@ -134,9 +136,9 @@ Four pillar columns + a "Non classé" pool, as today. Cards now render as themes
 
 ### `/admin/migration` (new) — the one-shot workspace
 
-A dev-only page driving the cleanup-as-redesign. It walks through five buckets of work, each surface a *proposed* move with a confirm/override button:
+A dev-only page driving the cleanup-as-redesign. It walks through five buckets of work, each surface a _proposed_ move with a confirm/override button:
 
-1. **Depth-2 violation.** Surface topic 84 (`la-nouvelle-naissance`) with proposed action "promote to sibling of 25 under 24". One button. *(Unblocks editing immediately on apply.)*
+1. **Depth-2 violation.** Surface topic 84 (`la-nouvelle-naissance`) with proposed action "promote to sibling of 25 under 24". One button. _(Unblocks editing immediately on apply.)_
 2. **Inverted parent/child.** Detect the 2-3 obvious inversions (Saintes Écritures / canon; péché / péché mortel; etc.) and propose swap. One button per case.
 3. **Orphan placement.** For each of the ~16 orphan roots (gnosticisme, Marcion, montanisme, novatianisme, arianisme, idolâtrie, jeûne, ascèse, l'âme, etc.) propose a target theme (creating the theme if it doesn't exist yet). Dropdown to override.
 4. **Theme designation (the bulk of the work).** For each of the ~32 roots currently holding direct quotes, propose:
@@ -149,6 +151,7 @@ A dev-only page driving the cleanup-as-redesign. It walks through five buckets o
 Each step records `applied: true` and is skipped on subsequent runs. Reverting a step is `git checkout` on the affected JSON files (or `git reset` on the whole migration commit).
 
 Each apply is a single transaction through a new `POST /admin/api/migration/apply-step/+server.ts` endpoint that:
+
 1. Reads the current topics + quotes + bercot.
 2. Computes the modified arrays in memory.
 3. Runs the extended `validateParentRefs(topics, quotes)`.
@@ -165,12 +168,12 @@ The migration UI carries its own suggestions inline; there's no companion `MIGRA
 
 The migration will produce approximately:
 
-| Pillar | Themes | Notes |
-|---|---|---|
-| Credo | ~14 | Dieu, Trinité, Christ, Création, Écriture, Tradition, Église, Papauté, Hérésies, Marie, Saints/martyrs, Miracles, Salut/grâce, Mort/Jugement, Antéchrist |
-| Sacrements | ~8 | Baptême, Confirmation, Eucharistie, Confession, Ordre, Mariage, Liturgie, Calendrier |
-| Vie en Christ | ~4 | Morale sexuelle, Superstition, Discipline chrétienne, Loi morale & justice |
-| Prière | ~2 | Prière, Intercession des saints |
+| Pillar        | Themes | Notes                                                                                                                                                    |
+| ------------- | ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Credo         | ~14    | Dieu, Trinité, Christ, Création, Écriture, Tradition, Église, Papauté, Hérésies, Marie, Saints/martyrs, Miracles, Salut/grâce, Mort/Jugement, Antéchrist |
+| Sacrements    | ~8     | Baptême, Confirmation, Eucharistie, Confession, Ordre, Mariage, Liturgie, Calendrier                                                                     |
+| Vie en Christ | ~4     | Morale sexuelle, Superstition, Discipline chrétienne, Loi morale & justice                                                                               |
+| Prière        | ~2     | Prière, Intercession des saints                                                                                                                          |
 
 Total: ~28 themes. With ~110-120 aspects underneath (incl. ~25 new "primary aspect" children created from current parent quotes), the topics array grows from 146 to ~140-150 records.
 
@@ -209,21 +212,25 @@ Each step in `/admin/migration` records `applied: true` once committed. Re-runni
 ## Files touched
 
 **Schema:**
+
 - `src/lib/schema/topic.ts` — drop `section`, `groupe`; add `primary`; remove `SectionSchema` export.
 - `src/lib/schema/index.ts` — update exports.
 - `src/lib/schema/schema.test.ts` — adjust fixtures.
 
 **Data layer:**
+
 - `src/lib/data/index.ts` — rewrite `buildTopicTree` to group by pillar (no section axis); add helpers `isTheme(topicId)` / `aspectsOf(themeId)` / `primaryAspectOf(themeId)` / `themeOf(aspectId)`.
 - `src/lib/data/topics.json` — content edited by the migration.
 - `src/lib/data/quotes.json` — `topicIds` rewrites by the migration.
 - `src/lib/data/bercot.json` — `mappedTopicIds` rewrites by the migration.
 
 **Admin validation:**
+
 - `src/lib/admin/topic-tree.ts` — extend `validateParentRefs` to take `(topics, quotes)`; add invariants 2-4 above; add `validateTopicQuoteCoherence` helper.
 - `src/lib/admin/topic-tree.test.ts` — new test cases.
 
 **Admin UI:**
+
 - `src/routes/admin/sujets/+page.svelte` — remove section/groupe, add primary checkbox + badges + theme-quotes warning.
 - `src/routes/admin/hierarchie/+page.svelte` — render new theme/aspect shape.
 - `src/routes/admin/migration/+page.svelte` — new workspace.
@@ -233,12 +240,14 @@ Each step in `/admin/migration` records `applied: true` once committed. Re-runni
 - `src/routes/admin/api/migration/apply-step/+server.ts` — new endpoint, transactional step applier.
 
 **Public UI:**
+
 - `src/routes/sujets/+page.svelte` — switch from section-grouped to pillar-column layout.
 - `src/routes/sujets/[slug]/+page.svelte` — pass-through; behavior already matches leaf semantics.
 - `src/routes/themes/[slug]/+page.svelte` — new mini-index page.
 - `src/routes/themes/[slug]/+page.ts` — new loader.
 
 **Tests:**
+
 - `src/lib/admin/topic-tree.test.ts` — invariants 2, 3, 4 coverage.
 - New: `e2e` (Playwright) flow for the migration UI walkthrough.
 
@@ -256,6 +265,7 @@ Each step in `/admin/migration` records `applied: true` once committed. Re-runni
 ## Post-migration cleanup
 
 The migration is a one-time event. After all steps are applied and committed:
+
 - The `/admin/migration` route + its `apply-step` endpoint + the `+page.ts` loader are deleted in a follow-up commit.
 - The nav link to "Migration" is removed.
 - The `applied: true` state markers in topics/quotes/bercot (if any) are dropped — the migration UI carries them transiently in memory; nothing persists.

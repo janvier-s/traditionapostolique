@@ -58,10 +58,7 @@
 	function addRootTopicRef(pillar: (typeof PILLARS)[number]) {
 		taxonomy = {
 			...taxonomy,
-			[pillar]: [
-				...taxonomy[pillar],
-				{ id: crypto.randomUUID(), topicId: data.topics[0]?.id ?? 0 }
-			]
+			[pillar]: [...taxonomy[pillar], { id: crypto.randomUUID(), topicId: data.topics[0]?.id ?? 0 }]
 		};
 		dirty = true;
 	}

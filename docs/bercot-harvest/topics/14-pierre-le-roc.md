@@ -1,14 +1,13 @@
-# 14 · Pierre le roc  (pierre-le-roc)
+# 14 · Pierre le roc (pierre-le-roc)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** PETER, BINDING AND LOOSING, KEYS OF THE KINGDOM  
 **Mapping confidence:** high
 **Quotes harvested:** 44
 
-
 ---
 
-## from PETER  _(confidence: high)_
+## from PETER _(confidence: high)_
 
 > Simon Peter answered and said, “You are the Christ, the Son of the living God.” Jesus answered and said to him, “Blessed are you, Simon Bar-Jonah, for flesh and blood has not revealed this to you, but My Father who is in heaven. And I also say to you that you are Peter, and on this rock I will build My church, and the gates of Hades shall not prevail against it. And I will give you the keys of the kingdom of heaven, and whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.” Matt. 16:16–19.
 >
@@ -206,10 +205,9 @@
 
 _SEE ALSO APOSTLES, TWELVE; BINDING AND LOOSING; KEYS OF THE KINGDOM; PAUL, APOSTLE; SIMON MAGUS._
 
-
 ---
 
-## from BINDING AND LOOSING  _(confidence: high)_
+## from BINDING AND LOOSING _(confidence: high)_
 
 > I will give you the keys of the kingdom of heaven, and whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven. Matt. 16:19.
 >
@@ -279,10 +277,9 @@ _SEE ALSO APOSTLES, TWELVE; BINDING AND LOOSING; KEYS OF THE KINGDOM; PAUL, APOS
 
 _SEE ALSO DISCIPLINE, CHURCH; PETER._
 
-
 ---
 
-## from KEYS OF THE KINGDOM  _(confidence: high)_
+## from KEYS OF THE KINGDOM _(confidence: high)_
 
 > I will give you the keys of the kingdom of heaven, and whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven. Matt. 16:19.
 

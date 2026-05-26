@@ -1,4 +1,4 @@
-# 04 · Les trois Personnes de la Trinité  (trois-personnes-de-la-trinite)
+# 04 · Les trois Personnes de la Trinité (trois-personnes-de-la-trinite)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** TRINITY, FATHER, GOD THE, SON OF GOD, HOLY SPIRIT, SPIRIT, HOLY, PARACLETE  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: SON OF GOD → CHRIST, DIVINITY OF / TRINITY; SPIRIT, HOLY → HOLY SPIRIT; PARACLETE → HOLY SPIRIT / MONTANISTS_
 
-
 ---
 
-## from TRINITY  _(confidence: high)_
+## from TRINITY _(confidence: high)_
 
 > Go therefore and make disciples of all the nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit. Matt. 28:19.
 >
@@ -170,7 +169,7 @@ _Cross-reference aliases folded in: SON OF GOD → CHRIST, DIVINITY OF / TRINITY
 
 **Attribution:** Tertullian (c. 213, W), 3.619.
 
-### Quote 25  `[already on site → quote #723]`
+### Quote 25 `[already on site → quote #723]`
 
 > Thus the connection of the Father in the Son, and of the Son in the Paraclete, produces three coherent Persons, distinct one from another. These Three are one in essence—not one in Person. For it is said, “I and my Father are One,” in respect of unity of substance, not singularity of number.
 
@@ -382,10 +381,9 @@ _Cross-reference aliases folded in: SON OF GOD → CHRIST, DIVINITY OF / TRINITY
 
 _SEE ALSO CHRIST, DIVINITY OF; FATHER, GOD THE; FILIOQUE; GOD; HOLY SPIRIT; JESUS CHRIST; MONARCHIANISM; THEOPHANIES; WISDOM; WORD OF GOD (CHRIST)._
 
-
 ---
 
-## from FATHER, GOD THE  _(confidence: high)_
+## from FATHER, GOD THE _(confidence: high)_
 
 > His greatness is unsearchable. Ps. 145:3.
 >
@@ -433,7 +431,7 @@ _SEE ALSO CHRIST, DIVINITY OF; FATHER, GOD THE; FILIOQUE; GOD; HOLY SPIRIT; JESU
 
 **Attribution:** Theophilus (c. 180, E), 2.90.
 
-### Quote 66  `[already on site → quote #777]`
+### Quote 66 `[already on site → quote #777]`
 
 > He is without beginning, because He is unbegotten. And He is unchangeable, because He is immortal. And He is called God.
 
@@ -489,10 +487,9 @@ _SEE ALSO CHRIST, DIVINITY OF; FATHER, GOD THE; FILIOQUE; GOD; HOLY SPIRIT; JESU
 
 _SEE ALSO CHRIST, DIVINITY OF (III. RELATIONSHIP OF THE SON TO THE FATHER); GOD; TRINITY._
 
-
 ---
 
-## from HOLY SPIRIT  _(confidence: high)_
+## from HOLY SPIRIT _(confidence: high)_
 
 ### § I. Work and operation of the Holy Spirit
 
@@ -666,7 +663,7 @@ _SEE ALSO CHRIST, DIVINITY OF (III. RELATIONSHIP OF THE SON TO THE FATHER); GOD;
 
 **Attribution:** Tertullian (c. 213, W), 3.627.
 
-#### Quote 103  `[already on site → quote #645]`
+#### Quote 103 `[already on site → quote #645]`
 
 > The apostles related that the Holy Spirit was associated in honor and dignity with the Father and the Son. But in His case it is not clearly distinguished whether He is to be regarded as born or unborn—or also as a Son of God or not.
 

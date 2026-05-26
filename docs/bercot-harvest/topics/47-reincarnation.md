@@ -1,4 +1,4 @@
-# 47 · La réincarnation  (reincarnation)
+# 47 · La réincarnation (reincarnation)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** REINCARNATION, TRANSMIGRATION OF SOULS  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: TRANSMIGRATION OF SOULS → REINCARNATION_
 
-
 ---
 
-## from REINCARNATION  _(confidence: high)_
+## from REINCARNATION _(confidence: high)_
 
 ### Quote 1
 

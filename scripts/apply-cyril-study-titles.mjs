@@ -42,7 +42,8 @@ let touched = 0;
 for (const q of quotes) {
 	const u = updates[q.id];
 	if (!u) continue;
-	if (q.workId !== 110) throw new Error(`Quote ${q.id} is not workId 110 (Conférences catéchétiques)`);
+	if (q.workId !== 110)
+		throw new Error(`Quote ${q.id} is not workId 110 (Conférences catéchétiques)`);
 	if (q.studyTitle) throw new Error(`Quote ${q.id} already has a studyTitle: ${q.studyTitle}`);
 	if (u.notes && q.notes) throw new Error(`Quote ${q.id} already has notes: ${q.notes}`);
 	q.studyTitle = u.studyTitle;

@@ -1,4 +1,4 @@
-# 25 · La régénération baptismale  (regeneration-baptismale)
+# 25 · La régénération baptismale (regeneration-baptismale)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** BAPTISM § I, REGENERATION, NEW BIRTH, BORN AGAIN  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN AGAIN → BAPTISM / NEW BIRTH_
 
-
 ---
 
-## from BAPTISM § I. Meaning of baptism  _(confidence: high)_
+## from BAPTISM § I. Meaning of baptism _(confidence: high)_
 
 ### Quote 1
 
@@ -18,7 +17,7 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Barnabas (c. 70–130, E), 1.144.
 
-### Quote 2  `[already on site → quote #591]`
+### Quote 2 `[already on site → quote #591]`
 
 > Blessed are they who, placing their trust in the cross, have gone down into the water. . . . We indeed descend into the water full of sins and defilement. However, we come up, bearing fruit in our heart, having the fear [of God] and the trust in Jesus in our spirit.
 
@@ -72,7 +71,7 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Justin Martyr (c. 160, E), 1.242.
 
-### Quote 11  `[already on site → quote #784]`
+### Quote 11 `[already on site → quote #784]`
 
 > The things proceeding from the waters were blessed by God, that this also could be a sign of men being destined to receive repentance and remission of sins, through the water and bath of regeneration—as many as come to the truth and are born again.
 
@@ -108,7 +107,7 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.574.
 
-### Quote 17  `[already on site → quote #187]`
+### Quote 17 `[already on site → quote #187]`
 
 > Being baptized, we are illuminated. Illuminated, we become sons. . . . This work is variously called grace, illumination, perfection, and washing. Washing, by which we cleanse away our sins. Grace, by which the penalties accruing to transgressions are remitted. Illumination, by which that holy light of salvation is beheld, that is, by which we see God clearly.
 
@@ -180,7 +179,7 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Tertullian (c. 197, W), 3.170.
 
-### Quote 29  `[already on site → quote #735]`
+### Quote 29 `[already on site → quote #735]`
 
 > Happy is our sacrament of water, in that, by washing away the sins of our early blindness, we are set free and admitted into eternal life. . . . We, like little fishes, after the example of our ichthus, Jesus Christ, are born in water.
 
@@ -324,7 +323,7 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Commodianus (c. 240, W), 4.212.
 
-### Quote 53  `[already on site → quote #286]`
+### Quote 53 `[already on site → quote #286]`
 
 > By the help of the water of new birth, the stain of former years had been washed away, and a light from above—serene and pure—had been infused into my reconciled heart. Then, by the agency of the Spirit breathed from heaven, a second birth had restored me to a new man.
 
@@ -504,10 +503,9 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Apostolic Constitutions (compiled c. 390, E), 7.414.
 
-
 ---
 
-## from NEW BIRTH  _(confidence: high)_
+## from NEW BIRTH _(confidence: high)_
 
 > Jesus answered and said to him, “Most assuredly, I say to you, unless one is born again, he cannot see the kingdom of God. . . . Most assuredly, I say to you, unless one is born of water and the Spirit, he cannot enter the kingdom of God.” John 3:3, 5.
 >
@@ -563,7 +561,7 @@ _Cross-reference aliases folded in: REGENERATION → BAPTISM / NEW BIRTH; BORN A
 
 **Attribution:** Hippolytus (c. 225, W), 5.92.
 
-### Quote 91  `[already on site → quote #417]`
+### Quote 91 `[already on site → quote #417]`
 
 > Christ is the God above all, and He has arranged to wash away sin from human beings, regenerating the old man.
 

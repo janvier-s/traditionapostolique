@@ -1,4 +1,4 @@
-# 41 · Les miracles continus  (miracles-continus)
+# 41 · Les miracles continus (miracles-continus)
 
 **Site group:** Marie les saints le miraculeux  
 **Mapped dictionary entries:** MIRACLES, HEALING, DIVINE, GIFTS OF THE SPIRIT, SPIRITUAL GIFTS  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: SPIRITUAL GIFTS → GIFTS OF THE SPIRIT_
 
-
 ---
 
-## from MIRACLES  _(confidence: high)_
+## from MIRACLES _(confidence: high)_
 
 > Papias relates that he had received a wonderful narrative from the daughters of Philip. For he reports that a dead man was raised to life in his day. He also mentions another miracle relating to Justus, surnamed Barsabas, how he swallowed a deadly poison, and received no harm, because of the grace of the Lord. Eusebius, citing Papias (c. 120, E), 1.154.
 
@@ -58,10 +57,9 @@ _Cross-reference aliases folded in: SPIRITUAL GIFTS → GIFTS OF THE SPIRIT_
 
 _SEE ALSO GIFTS OF THE SPIRIT; UNCORRUPTED BODIES._
 
-
 ---
 
-## from HEALING, DIVINE  _(confidence: high)_
+## from HEALING, DIVINE _(confidence: high)_
 
 > These twelve Jesus sent out and commanded them, saying . . . “Heal the sick, cleanse the lepers, raise the dead, cast out demons. Matt. 10:5.
 >
@@ -121,10 +119,9 @@ _SEE ALSO GIFTS OF THE SPIRIT; UNCORRUPTED BODIES._
 
 _SEE ALSO GIFTS OF THE SPIRIT; MEDICINE, MEDICAL SCIENCE._
 
-
 ---
 
-## from GIFTS OF THE SPIRIT  _(confidence: high)_
+## from GIFTS OF THE SPIRIT _(confidence: high)_
 
 > And it will come to pass afterward that I will pour out My Spirit on all flesh; your sons and your daughters will prophesy, your old men will dream dreams, your young men will see visions. Joel 2:28.
 >
@@ -168,7 +165,7 @@ _SEE ALSO GIFTS OF THE SPIRIT; MEDICINE, MEDICAL SCIENCE._
 
 **Attribution:** Justin Martyr (c. 160, E), 1.214.
 
-### Quote 21  `[already on site → quote #544]`
+### Quote 21 `[already on site → quote #544]`
 
 > The prophetical gifts remain with us, even to the present time. And hence you should understand that [the gifts] formerly among your nation have been transferred to us.
 

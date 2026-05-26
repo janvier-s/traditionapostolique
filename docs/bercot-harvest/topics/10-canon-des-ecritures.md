@@ -1,4 +1,4 @@
-# 10 · Le canon des Écritures  (canon-des-ecritures)
+# 10 · Le canon des Écritures (canon-des-ecritures)
 
 **Site group:** Les sources de la foi  
 **Mapped dictionary entries:** CANON, NEW TESTAMENT, CANON, OLD TESTAMENT, SCRIPTURES § II, SCRIPTURES § III, APOCRYPHA, NEW TESTAMENT, APOCRYPHA, OLD TESTAMENT, DEUTEROCANONICAL BOOKS, MURATORIAN FRAGMENT  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: APOCRYPHA, OLD TESTAMENT → DEUTEROCANONICAL BOOKS; MURATORIAN FRAGMENT → CANON, NEW TESTAMENT_
 
-
 ---
 
-## from CANON, NEW TESTAMENT  _(confidence: high)_
+## from CANON, NEW TESTAMENT _(confidence: high)_
 
 ### Quote 1
 
@@ -116,10 +115,9 @@ _Cross-reference aliases folded in: APOCRYPHA, OLD TESTAMENT → DEUTEROCANONICA
 
 _SEE ALSO BARNABAS, EPISTLE OF; CANON, OLD TESTAMENT; GOSPEL ACCORDING TO THE HEBREWS; HEBREWS, EPISTLE TO; HERMAS, SHEPHERD OF; PSEUDEPIGRAPHA, NEW TESTAMENT._
 
-
 ---
 
-## from CANON, OLD TESTAMENT  _(confidence: high)_
+## from CANON, OLD TESTAMENT _(confidence: high)_
 
 ### Quote 18
 
@@ -153,10 +151,9 @@ _SEE ALSO BARNABAS, EPISTLE OF; CANON, OLD TESTAMENT; GOSPEL ACCORDING TO THE HE
 
 _SEE ALSO CANON, NEW TESTAMENT; DEUTEROCANONICAL BOOKS; ENOCH, BOOK OF; PSEUDEPIGRAPHA, OLD TESTAMENT._
 
-
 ---
 
-## from SCRIPTURES § II. Antiquity and authority of the Scriptures  _(confidence: medium)_
+## from SCRIPTURES § II. Antiquity and authority of the Scriptures _(confidence: medium)_
 
 ### Quote 23
 
@@ -380,10 +377,9 @@ _SEE ALSO CANON, NEW TESTAMENT; DEUTEROCANONICAL BOOKS; ENOCH, BOOK OF; PSEUDEPI
 
 **Attribution:** Lactantius (c. 304–313, W), 7.211.
 
-
 ---
 
-## from SCRIPTURES § III. Inspiration of the Scriptures  _(confidence: medium)_
+## from SCRIPTURES § III. Inspiration of the Scriptures _(confidence: medium)_
 
 ### Quote 60
 
@@ -529,17 +525,15 @@ _SEE ALSO CANON, NEW TESTAMENT; DEUTEROCANONICAL BOOKS; ENOCH, BOOK OF; PSEUDEPI
 
 **Attribution:** Cyprian (c. 250, W), 5.361.
 
-
 ---
 
-## from APOCRYPHA, NEW TESTAMENT  _(confidence: medium)_
+## from APOCRYPHA, NEW TESTAMENT _(confidence: medium)_
 
 _Cross-reference → **PSEUDEPIGRAPHA, NEW TESTAMENT**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from DEUTEROCANONICAL BOOKS  _(confidence: high)_
+## from DEUTEROCANONICAL BOOKS _(confidence: high)_
 
 > The deuterocanonical books (often called the Apocrypha) are the books of the Old Testament that were included in the Septuagint but that the Jews deleted from their canon at the close of the first century.
 

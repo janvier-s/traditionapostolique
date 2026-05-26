@@ -1,14 +1,13 @@
-# 17 · Les successeurs de Pierre  (successeurs-de-pierre)
+# 17 · Les successeurs de Pierre (successeurs-de-pierre)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** BISHOP § II, LINUS, CHURCHES, APOSTOLIC § VI  
 **Mapping confidence:** high
 **Quotes harvested:** 40 (3 already on site)
 
-
 ---
 
-## from BISHOP § II. Bishop of Rome  _(confidence: high)_
+## from BISHOP § II. Bishop of Rome _(confidence: high)_
 
 ### Quote 1
 
@@ -168,16 +167,15 @@
 
 _SEE ALSO APOSTOLIC SUCCESSION; CHURCH GOVERNMENT; CHURCHES, APOSTOLIC; MONARCHIANISM; PRESBYTER._
 
-
 ---
 
-## from LINUS  _(confidence: high)_
+## from LINUS _(confidence: high)_
 
 > Linus was the first man appointed by the apostles to serve as bishop of the church in Rome.
 >
 > Do your utmost to come before winter. Eubulus greets you, as well as Pudens, Linus, Claudia, and all the brethren. 2 Tim. 4:21.
 
-### Quote 27  `[already on site → quote #467]`
+### Quote 27 `[already on site → quote #467]`
 
 > The blessed apostles, then, having founded and built up the church, committed into the hands of Linus the office of the bishop. Of this Linus, Paul makes mention in the epistles to Timothy.
 
@@ -185,10 +183,9 @@ _SEE ALSO APOSTOLIC SUCCESSION; CHURCH GOVERNMENT; CHURCHES, APOSTOLIC; MONARCHI
 
 _SEE ALSO CLEMENT OF ROME; CHURCHES, APOSTOLIC (VI. CHURCH AT ROME)._
 
-
 ---
 
-## from CHURCHES, APOSTOLIC § VI. Church at Rome  _(confidence: medium)_
+## from CHURCHES, APOSTOLIC § VI. Church at Rome _(confidence: medium)_
 
 ### Quote 28
 
@@ -196,7 +193,7 @@ _SEE ALSO CLEMENT OF ROME; CHURCHES, APOSTOLIC (VI. CHURCH AT ROME)._
 
 **Attribution:** Clement of Rome (c. 96, W), 1.5.
 
-### Quote 29  `[already on site → quote #442]`
+### Quote 29 `[already on site → quote #442]`
 
 > . . . to the church that has obtained mercy, through the majesty of the Most High Father and Jesus Christ, His Only-Begotten Son. To the church that is beloved and enlightened by the will of Him who wills all things, . . . which also presides in the place of the region of the Romans, worthy of God, worthy of honor, worthy of the highest happiness, worthy of praise, worthy of obtaining her every desire, worthy of being deemed holy, and which presides over love.
 
@@ -220,7 +217,7 @@ _SEE ALSO CLEMENT OF ROME; CHURCHES, APOSTOLIC (VI. CHURCH AT ROME)._
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.415, 416.
 
-### Quote 33  `[already on site → quote #467]`
+### Quote 33 `[already on site → quote #467]`
 
 > In the third place from the apostles, Clement was allotted the bishopric. This man, as he had seen the blessed apostles, and had been conversant with them, might be said to have the preaching of the apostles still echoing and their traditions before his eyes. Nor was he alone, for there were many still remaining who had received instructions from the apostles. In the time of this Clement, no small dissension occurred among the brethren at Corinth. The church in Rome dispatched a most powerful letter to the Corinthians, exhorting them to peace, renewing their faith, and declaring the tradition which it had lately received from the apostles.
 

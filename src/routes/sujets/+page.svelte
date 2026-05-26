@@ -6,7 +6,11 @@
 	const taxonomy = buildPublicTaxonomy();
 	const PILLARS: { value: Pillar; label: string; subtitle: string }[] = [
 		{ value: 'dieu', label: 'Dieu, Trinité, Christ', subtitle: 'Le mystère de Dieu' },
-		{ value: 'eglise', label: "L'Église et ses sources", subtitle: "L'Église, la Tradition, l'Écriture" },
+		{
+			value: 'eglise',
+			label: "L'Église et ses sources",
+			subtitle: "L'Église, la Tradition, l'Écriture"
+		},
 		{ value: 'saints', label: 'Marie, les saints, miracles', subtitle: 'La communion des saints' },
 		{ value: 'sacrements', label: 'Sacrements et liturgie', subtitle: 'Le culte chrétien' },
 		{ value: 'vie', label: 'Vie chrétienne et prière', subtitle: 'Morale, ascèse, prière' },
@@ -79,8 +83,7 @@
 				{:else}
 					<span class="font-body font-semibold">{n.umbrella.label}</span>
 				{/if}
-				<span
-					class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
+				<span class="shrink-0 font-ui text-[11px] font-light uppercase tracking-[0.05em] text-muted"
 					>{totalCount(n) || '—'}</span
 				>
 			</div>
@@ -89,10 +92,7 @@
 			{@render renderListNode(c, depth + 1)}
 		{/each}
 	{:else if n.topicRef}
-		<li
-			style:padding-left={`${depth * 0.75}rem`}
-			class="flex items-baseline justify-between gap-2"
-		>
+		<li style:padding-left={`${depth * 0.75}rem`} class="flex items-baseline justify-between gap-2">
 			<a href={n.topicRef.href} class="min-w-0 font-body text-foreground hover:text-accent"
 				>{n.topicRef.label}</a
 			>

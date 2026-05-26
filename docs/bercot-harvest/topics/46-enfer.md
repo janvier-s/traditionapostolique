@@ -1,4 +1,4 @@
-# 46 · L'enfer  (enfer)
+# 46 · L'enfer (enfer)
 
 **Site group:** Les fins dernières  
 **Mapped dictionary entries:** HELL, GEHENNA, LAKE OF FIRE, PUNISHMENT, ETERNAL, ETERNAL PUNISHMENTS AND REWARDS, TARTARUS, HADES  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: HELL → DEAD, INTERMEDIATE STATE OF THE / ETERNAL PUNISHMENTS AND REWARDS / GEHENNA; LAKE OF FIRE → ETERNAL PUNISHMENTS AND REWARDS / GEHENNA; PUNISHMENT, ETERNAL → ETERNAL PUNISHMENTS AND REWARDS_
 
-
 ---
 
-## from GEHENNA  _(confidence: high)_
+## from GEHENNA _(confidence: high)_
 
 > Geenna is one of three Greek words that are translated as “hell” in the King James Version. The other two are hades and tartaros. This confusion of terms in the King James Version has led to a considerable amount of misunderstanding as to what the Scriptures teach about the afterlife. To the early church, Gehenna and Hades were two very different places. Gehenna is the lake of fire, the place of eternal punishment after the resurrection. Hades is the intermediate place where souls await the resurrection.
 >
@@ -56,10 +55,9 @@ _Cross-reference aliases folded in: HELL → DEAD, INTERMEDIATE STATE OF THE / E
 
 _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; ETERNAL PUNISHMENTS AND REWARDS._
 
-
 ---
 
-## from ETERNAL PUNISHMENTS AND REWARDS  _(confidence: medium)_
+## from ETERNAL PUNISHMENTS AND REWARDS _(confidence: medium)_
 
 > Then the King will say to those on His right hand, “Come, you blessed of My Father, inherit the kingdom prepared for you from the foundation of the world.” . . . Then He will also say to those on the left hand, “Depart from Me, you cursed, into the everlasting fire prepared for the devil and his angels.” . . . And these will go away into everlasting punishment, but the righteous into eternal life. Matt. 25:34, 41, 46.
 >
@@ -115,7 +113,7 @@ _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; ETERNAL PUNISHMENTS AND REWARDS._
 
 **Attribution:** Papias (c. 120, E), 1.154, as quoted by Eusebius.
 
-### Quote 14  `[already on site → quote #546]`
+### Quote 14 `[already on site → quote #546]`
 
 > He goes to the everlasting punishment of fire.
 
@@ -169,7 +167,7 @@ _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; ETERNAL PUNISHMENTS AND REWARDS._
 
 **Attribution:** Martyrdom of the Holy Martyrs (c. 160), 1.306.
 
-### Quote 23  `[already on site → quote #65]`
+### Quote 23 `[already on site → quote #65]`
 
 > We are persuaded that when we are removed from the present life we will live another life, better than the present one. It will be a heavenly life, not an earthly one. For we will abide near God, and with God, free from all change or suffering in the soul. We will not abide as flesh (even though we will have flesh), but as heavenly spirit. . . . Or, if they fall with the rest, they will endure a worse [life], one in fire. For God has not made us as sheep or beasts of burden, who are mere by-products. For animals perish and are annihilated. On these grounds, it is not likely that we would wish to do evil.
 
@@ -645,10 +643,9 @@ _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; ETERNAL PUNISHMENTS AND REWARDS._
 
 _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; DEIFICATION OF MAN; ESCHATOLOGY; ETERNAL PUNISHMENTS AND REWARDS; GEHENNA; JUDGMENT, LAST._
 
-
 ---
 
-## from TARTARUS  _(confidence: medium)_
+## from TARTARUS _(confidence: medium)_
 
 > God did not spare the angels who sinned, but cast them down to hell [Tartarus] and delivered them into chains of darkness, to be reserved for judgment. 2 Pet. 2:4.
 
@@ -672,9 +669,8 @@ _SEE ALSO DEAD, INTERMEDIATE STATE OF THE; DEIFICATION OF MAN; ESCHATOLOGY; ETER
 
 _SEE ALSO ANGEL, ANGELS (III.WICKED ANGELS); ETERNAL PUNISHMENTS AND REWARDS._
 
-
 ---
 
-## from HADES  _(confidence: medium)_
+## from HADES _(confidence: medium)_
 
 _Cross-reference → **DEAD, INTERMEDIATE STATE OF THE**. See that/those entries in Bercot directly._

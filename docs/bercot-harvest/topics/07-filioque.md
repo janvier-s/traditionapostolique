@@ -1,20 +1,19 @@
-# 07 · Le Filioque  (filioque)
+# 07 · Le Filioque (filioque)
 
 **Site group:** Dieu  
 **Mapped dictionary entries:** FILIOQUE  
 **Mapping confidence:** high
 **Quotes harvested:** 10 (1 already on site)
 
-
 ---
 
-## from FILIOQUE  _(confidence: high)_
+## from FILIOQUE _(confidence: high)_
 
 > Filioque is Latin for “and the Son.” It refers to the addition made in the sixth century in the West to the Nicene-Constantinopolitan Creed, saying that the Holy Spirit proceeds from the Father and the Son. The eastern church has vigorously opposed this addition, as it implies two sources of the Trinity.
 >
 > When the Helper comes, whom I will send to you from the Father, the Spirit of truth who proceeds from the Father, He will testify of Me. John 15:26.
 
-### Quote 1  `[already on site → quote #719]`
+### Quote 1 `[already on site → quote #719]`
 
 > I believe the Spirit to proceed from no other source than from the Father through the Son.
 

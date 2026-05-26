@@ -1,4 +1,4 @@
-# 28 · Le baptême des enfants  (bapteme-des-enfants)
+# 28 · Le baptême des enfants (bapteme-des-enfants)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** INFANT BAPTISM, BAPTISM § III  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: INFANT BAPTISM → BAPTISM § III. THE QUESTION OF INFANT BAPTISM_
 
-
 ---
 
-## from BAPTISM § III. The question of infant baptism  _(confidence: high)_
+## from BAPTISM § III. The question of infant baptism _(confidence: high)_
 
 ### Quote 1
 

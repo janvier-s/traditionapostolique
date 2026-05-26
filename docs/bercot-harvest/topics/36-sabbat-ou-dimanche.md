@@ -1,14 +1,13 @@
-# 36 · Sabbat ou dimanche  (sabbat-ou-dimanche)
+# 36 · Sabbat ou dimanche (sabbat-ou-dimanche)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** SABBATH, LORD’S DAY, EIGHTH DAY  
 **Mapping confidence:** high
 **Quotes harvested:** 50 (4 already on site)
 
-
 ---
 
-## from SABBATH  _(confidence: high)_
+## from SABBATH _(confidence: high)_
 
 > Bring no more futile sacrifices; incense is an abomination to Me. The New Moons, the Sabbaths, and the calling of assemblies—I cannot endure iniquity and the sacred meeting. Your New Moons and your appointed feasts My soul hates. Isa. 1:13, 14.
 >
@@ -18,7 +17,7 @@
 >
 > . . . having wiped out the handwriting of requirements that was against us. . . . Therefore let no one judge you in food or in drink, or regarding a festival or a new moon or sabbaths. Col. 2:14, 16.
 
-### Quote 1  `[already on site → quote #432]`
+### Quote 1 `[already on site → quote #432]`
 
 > . . . no longer observing the Sabbath, but living in the observance of the Lord’s Day.
 
@@ -158,10 +157,9 @@
 
 _SEE ALSO EIGHTH DAY; LAW, MOSAIC; LORD’S DAY._
 
-
 ---
 
-## from LORD’S DAY  _(confidence: high)_
+## from LORD’S DAY _(confidence: high)_
 
 > What today is commonly referred to as Sunday was usually called the Lord’s Day by the early Christians.
 >
@@ -171,13 +169,13 @@ _SEE ALSO EIGHTH DAY; LAW, MOSAIC; LORD’S DAY._
 >
 > I was in the Spirit on the Lord’s Day. Rev. 1:10.
 
-### Quote 24  `[already on site → quote #328]`
+### Quote 24 `[already on site → quote #328]`
 
 > But every Lord’s Day, gather yourselves together, and break bread, and give thanksgiving after having confessed your transgressions, so that your sacrifice may be pure.
 
 **Attribution:** Didache (c. 80–140, E), 7.381.
 
-### Quote 25  `[already on site → quote #432]`
+### Quote 25 `[already on site → quote #432]`
 
 > No longer observing the Sabbath, but living in the observance of the Lord’s Day.
 
@@ -255,7 +253,7 @@ _SEE ALSO EIGHTH DAY; LAW, MOSAIC; LORD’S DAY._
 
 **Attribution:** Peter of Alexandria (c. 310, E), 6.278.
 
-### Quote 38  `[already on site → quote #33]`
+### Quote 38 `[already on site → quote #33]`
 
 > On the day of our Lord’s resurrection, which is the Lord’s Day, you should meet more diligently, sending praise to God who made the universe by Jesus. . . . Otherwise, what apology will a person make to God who does not assemble on that day to hear the saving Word concerning the resurrection? On this day, we pray three times, standing in memory of Him who rose in three days. On this day, there is the reading of the Prophets, the preaching of the Gospel, the oblation of the sacrifice, and the gift of the holy food.
 
@@ -299,10 +297,9 @@ _SEE ALSO EIGHTH DAY; LAW, MOSAIC; LORD’S DAY._
 
 _SEE ALSO EIGHTH DAY; EUCHARIST; LITURGY; SABBATH._
 
-
 ---
 
-## from EIGHTH DAY  _(confidence: medium)_
+## from EIGHTH DAY _(confidence: medium)_
 
 > Sunday, the first day of the week, was also referred to as the “eighth day” by Christians.
 

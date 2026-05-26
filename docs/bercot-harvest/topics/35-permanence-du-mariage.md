@@ -1,14 +1,13 @@
-# 35 · La permanence du mariage  (permanence-du-mariage)
+# 35 · La permanence du mariage (permanence-du-mariage)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** MARRIAGE, DIVORCE, REMARRIAGE, TWICE-MARRIED  
 **Mapping confidence:** high
 **Quotes harvested:** 75 (2 already on site)
 
-
 ---
 
-## from MARRIAGE  _(confidence: high)_
+## from MARRIAGE _(confidence: high)_
 
 ### § I. Admonition and counsel on marriage
 
@@ -172,10 +171,9 @@
 
 _SEE ALSO CELIBACY; DIVORCE; POLYGAMY; PROCREATION; REMARRIAGE; TWICE-MARRIED; UNBELIEVING SPOUSE; VIRGINS, ORDER OF; WIDOWS, ORDER OF._
 
-
 ---
 
-## from DIVORCE  _(confidence: high)_
+## from DIVORCE _(confidence: high)_
 
 > For the Lord God of Israel says that He hates divorce. Mal. 2:16.
 >
@@ -209,7 +207,7 @@ _SEE ALSO CELIBACY; DIVORCE; POLYGAMY; PROCREATION; REMARRIAGE; TWICE-MARRIED; U
 
 **Attribution:** Irenaeus (c. 180, E/ W), 1.480.
 
-### Quote 31  `[already on site → quote #196]`
+### Quote 31 `[already on site → quote #196]`
 
 > That the Scripture counsels marriage and allows no release from the union is expressly contained in the law, “You will not put away your wife, except for the cause of fornication.” And it regards as fornication the marriage of those separated while the other is alive. . . . ”He who takes a woman who has been put away commits adultery.”
 
@@ -325,10 +323,9 @@ _SEE ALSO CELIBACY; DIVORCE; POLYGAMY; PROCREATION; REMARRIAGE; TWICE-MARRIED; U
 
 _SEE ALSO REMARRIAGE; TWICE-MARRIED._
 
-
 ---
 
-## from REMARRIAGE  _(confidence: high)_
+## from REMARRIAGE _(confidence: high)_
 
 > Moses, because of the hardness of your hearts, permitted you to divorce your wives, but from the beginning it was not so. And I say to you, whoever divorces his wife, except for sexual immorality, and marries another, commits adultery; and whoever marries her who is divorced commits adultery. Matt. 19:8, 9.
 >
@@ -396,7 +393,7 @@ _SEE ALSO REMARRIAGE; TWICE-MARRIED._
 
 **Attribution:** Origen (c. 245, E), 9.510.
 
-### Quote 60  `[already on site → quote #641]`
+### Quote 60 `[already on site → quote #641]`
 
 > A woman is an adulteress—even though she seems to be married to a man—if the former husband is still living. Likewise, also, the man who seems to marry the woman who has been put away, does not so much marry her as commit adultery with her—according to the declaration of our Savior.
 
@@ -416,10 +413,9 @@ _SEE ALSO REMARRIAGE; TWICE-MARRIED._
 
 _SEE ALSO HEROD; MONTANISTS; TWICE-MARRIED; WIDOWS, ORDER OF._
 
-
 ---
 
-## from TWICE-MARRIED  _(confidence: medium)_
+## from TWICE-MARRIED _(confidence: medium)_
 
 > A bishop then must be blameless, the husband of one wife. 1 Tim. 3:2.
 >

@@ -1,14 +1,13 @@
-# 15 · La primauté de Pierre  (primaute-de-pierre)
+# 15 · La primauté de Pierre (primaute-de-pierre)
 
 **Site group:** L'Église et le Pape  
 **Mapped dictionary entries:** PETER  
 **Mapping confidence:** medium
 **Quotes harvested:** 31
 
-
 ---
 
-## from PETER  _(confidence: medium)_
+## from PETER _(confidence: medium)_
 
 > Simon Peter answered and said, “You are the Christ, the Son of the living God.” Jesus answered and said to him, “Blessed are you, Simon Bar-Jonah, for flesh and blood has not revealed this to you, but My Father who is in heaven. And I also say to you that you are Peter, and on this rock I will build My church, and the gates of Hades shall not prevail against it. And I will give you the keys of the kingdom of heaven, and whatever you bind on earth will be bound in heaven, and whatever you loose on earth will be loosed in heaven.” Matt. 16:16–19.
 >

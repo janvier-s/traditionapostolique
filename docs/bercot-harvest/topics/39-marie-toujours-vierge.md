@@ -1,14 +1,13 @@
-# 39 · Marie toujours vierge  (marie-toujours-vierge)
+# 39 · Marie toujours vierge (marie-toujours-vierge)
 
 **Site group:** Marie les saints le miraculeux  
 **Mapped dictionary entries:** MARY, VIRGIN BIRTH, BROTHERS OF JESUS, JESUS, BROTHERS OF  
 **Mapping confidence:** high
 **Quotes harvested:** 54 (2 already on site)
 
-
 ---
 
-## from MARY  _(confidence: high)_
+## from MARY _(confidence: high)_
 
 > While He was still talking to the multitudes, behold, His mother and brothers stood outside, seeking to speak with Him. Then one said to Him, “Look, Your mother and Your brothers are standing outside, seeking to speak with You.” But He answered and said to the one who told Him, “Who is My mother and who are My brothers?” And he stretched out His hand toward His disciples and said, “Here are My mother and My brothers! For whoever does the will of My Father in heaven is My brother and sister and mother.” Matt. 12:46–50.
 >
@@ -52,13 +51,13 @@
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.443.
 
-### Quote 6  `[already on site → quote #471]`
+### Quote 6 `[already on site → quote #471]`
 
 > Mary the virgin is found obedient, saying, “Behold the handmaiden of the Lord; be it unto me according to your word.” In contrast, Eve was disobedient. For she did not obey when she was still a virgin. . . . Having become disobedient, she was made the cause of death, both to herself and to the entire human race. Correspondingly, Mary, who was also a virgin (although betrothed to a man), by yielding obedience, became the cause of salvation, both to herself and the whole human race. . . . This demonstrates the corresponding reference from Mary back to Eve. . . . So it was that the knot of Eve’s disobedience was loosed by the obedience of Mary. For what the virgin Eve had bound fast through unbelief, this did the virgin Mary set free through faith.
 
 **Attribution:** Irenaeus (c. 180, E/W), 1.455.
 
-### Quote 7  `[already on site → quote #476]`
+### Quote 7 `[already on site → quote #476]`
 
 > The Lord then was manifestly coming to His own things, and was sustaining them by means of that creation that is supported by Himself. He was making a recapitulation of that disobedience that had occurred in connection with a tree, through the obedience that was upon a tree [i.e., the cross]. Furthermore, the original deception was to be done away with—the deception by which that virgin Eve (who was already espoused to a man) was unhappily misled. That this was to be overturned was happily announced through means of the truth by the angel to the virgin Mary (who was also [espoused] to a man). . . . So if Eve disobeyed God, yet Mary was persuaded to be obedient to God. In this way, the virgin Mary might become the advocate of the virgin Eve. And thus, as the human race fell into bondage to death by means of a virgin, so is it rescued by a virgin. Virginal disobedience has been balanced in the opposite scale by virginal obedience. For in the same way, the sin of the first created man received amendment by the correction of the First-Begotten, and the cunning of the serpent was conquered by the harmlessness of the dove.
 
@@ -192,10 +191,9 @@
 
 _SEE ALSO JESUS CHRIST (IV. MEDIATOR BETWEEN GOD AND MAN; VI. BROTHERS OF JESUS); MOTHER, SPIRITUAL; SINLESSNESS; THEOTOKOS; VIRGIN BIRTH; WOMAN CLOTHED WITH THE SUN._
 
-
 ---
 
-## from VIRGIN BIRTH  _(confidence: medium)_
+## from VIRGIN BIRTH _(confidence: medium)_
 
 > Therefore the Lord Himself will give you a sign: Behold, the virgin shall conceive and bear a Son, and shall call His name Immanuel. Isa. 7:14.
 >
@@ -361,16 +359,14 @@ _SEE ALSO JESUS CHRIST (IV. MEDIATOR BETWEEN GOD AND MAN; VI. BROTHERS OF JESUS)
 
 _SEE ALSO CHRIST, DIVINITY OF; INCARNATION; JESUS CHRIST; MARY._
 
-
 ---
 
-## from BROTHERS OF JESUS  _(confidence: high)_
+## from BROTHERS OF JESUS _(confidence: high)_
 
 _Cross-reference → **JESUS CHRIST § VI. BROTHERS OF JESUS**. See that/those entries in Bercot directly._
 
-
 ---
 
-## from JESUS, BROTHERS OF  _(confidence: medium)_
+## from JESUS, BROTHERS OF _(confidence: medium)_
 
 _Cross-reference → **JESUS CHRIST § VI. BROTHERS OF JESUS**. See that/those entries in Bercot directly._

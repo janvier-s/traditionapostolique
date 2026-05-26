@@ -14,7 +14,8 @@
 	function onClick(e: MouseEvent) {
 		const next = theme.value === 'dark' ? 'light' : 'dark';
 		// Fallback for browsers without View Transitions (Firefox, older Safari).
-		const supportsViewTransitions = typeof document !== 'undefined' && 'startViewTransition' in document;
+		const supportsViewTransitions =
+			typeof document !== 'undefined' && 'startViewTransition' in document;
 		if (!supportsViewTransitions) {
 			setTheme(next);
 			return;
@@ -28,7 +29,6 @@
 		document.documentElement.style.setProperty('--ripple-x', `${x}px`);
 		document.documentElement.style.setProperty('--ripple-y', `${y}px`);
 		document.documentElement.style.setProperty('--ripple-r', `${endRadius}px`);
-		// @ts-expect-error — View Transitions API not in lib.dom yet across all targets
 		document.startViewTransition(() => setTheme(next));
 	}
 </script>

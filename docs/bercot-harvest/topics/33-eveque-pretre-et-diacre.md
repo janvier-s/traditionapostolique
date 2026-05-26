@@ -1,4 +1,4 @@
-# 33 · Évêque prêtre et diacre  (eveque-pretre-et-diacre)
+# 33 · Évêque prêtre et diacre (eveque-pretre-et-diacre)
 
 **Site group:** Les sacrements et le culte  
 **Mapped dictionary entries:** BISHOP § I, PRESBYTER, DEACON, CLERGY, OFFICERS, CHURCH, ORDERS, HOLY, ORDINATION, CHURCH GOVERNMENT  
@@ -7,10 +7,9 @@
 
 _Cross-reference aliases folded in: CLERGY → CHURCH GOVERNMENT; OFFICERS, CHURCH → CHURCH GOVERNMENT; ORDERS, HOLY → CHURCH GOVERNMENT / ORDINATION_
 
-
 ---
 
-## from BISHOP § I. Position, qualifications, and authority  _(confidence: high)_
+## from BISHOP § I. Position, qualifications, and authority _(confidence: high)_
 
 ### Quote 1
 
@@ -24,7 +23,7 @@ _Cross-reference aliases folded in: CLERGY → CHURCH GOVERNMENT; OFFICERS, CHUR
 
 **Attribution:** Clement of Rome (c. 96, W), 1.16.
 
-### Quote 3  `[already on site → quote #177]`
+### Quote 3 `[already on site → quote #177]`
 
 > Our apostles also knew, through our Lord Jesus Christ, that there would be strife on account of the office of oversight. For this reason, therefore, inasmuch as they had obtained a perfect foreknowledge of this, they appointed those already mentioned. Afterwards, they gave instructions, that when those men should fall asleep, other approved men should succeed them in their ministry. We are of opinion, therefore, that those appointed by the apostles, or afterwards by other eminent men, with the consent of the whole church, and who have blamelessly served the flock of Christ in a humble, peaceable, and disinterested spirit, and have for a long time possessed the good opinion of all, cannot be justly dismissed from the ministry.
 
@@ -320,10 +319,9 @@ _Cross-reference aliases folded in: CLERGY → CHURCH GOVERNMENT; OFFICERS, CHUR
 
 _SEE ALSO CHURCH GOVERNMENT; COUNCILS, CHURCH; DEACON; PRESBYTER; TWICE-MARRIED._
 
-
 ---
 
-## from PRESBYTER  _(confidence: high)_
+## from PRESBYTER _(confidence: high)_
 
 > Do not neglect the gift that is in you, which was given to you by prophecy with the laying on of the hands of the presbytery. 1 Tim. 4:14.
 >
@@ -525,10 +523,9 @@ _SEE ALSO CHURCH GOVERNMENT; COUNCILS, CHURCH; DEACON; PRESBYTER; TWICE-MARRIED.
 
 _SEE ALSO BISHOP; CHURCH GOVERNMENT; DEACON._
 
-
 ---
 
-## from DEACON  _(confidence: high)_
+## from DEACON _(confidence: high)_
 
 > Therefore, brethren, seek out from among you seven men of good reputation, full of the Holy Spirit and wisdom, whom we may appoint over this business. Acts 6:3.
 >
@@ -542,7 +539,7 @@ _SEE ALSO BISHOP; CHURCH GOVERNMENT; DEACON._
 
 **Attribution:** Didache (c. 80–140, E), 7.381.
 
-### Quote 85  `[already on site → quote #177]`
+### Quote 85 `[already on site → quote #177]`
 
 > And thus preaching through countries and cities, they appointed the first-fruits [of their labors], having first tested them by the Spirit, to be bishops and deacons of those who would afterwards believe.
 
@@ -604,10 +601,9 @@ _SEE ALSO BISHOP; CHURCH GOVERNMENT; DEACON._
 
 _SEE ALSO BISHOP; CHURCH GOVERNMENT; PRESBYTER._
 
-
 ---
 
-## from ORDINATION  _(confidence: medium)_
+## from ORDINATION _(confidence: medium)_
 
 > And the saying pleased the whole multitude. And they chose Stephen, a man full of faith and the Holy Spirit, and Philip, . . . whom they set before the apostles; and when they had prayed, they laid hands on them. Acts 6:5, 6.
 >
@@ -697,10 +693,9 @@ _SEE ALSO BISHOP; CHURCH GOVERNMENT; PRESBYTER._
 
 _SEE ALSO BISHOP; CHURCH, THE; CHURCH GOVERNMENT; PRESBYTER._
 
-
 ---
 
-## from CHURCH GOVERNMENT  _(confidence: medium)_
+## from CHURCH GOVERNMENT _(confidence: medium)_
 
 ### § I. References to twofold order of leadership
 
@@ -724,7 +719,7 @@ _SEE ALSO BISHOP; CHURCH, THE; CHURCH GOVERNMENT; PRESBYTER._
 
 ### § II. References to threefold order of leadership
 
-#### Quote 111  `[already on site → quote #428]`
+#### Quote 111 `[already on site → quote #428]`
 
 > I have had the privilege of seeing you, through Damas, your most worthy bishop, and through your worthy presbyters, Bassus and Apollonius, and through my fellow servant, the deacon Sotio.
 

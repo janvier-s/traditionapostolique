@@ -51,7 +51,9 @@
 				</ul>
 			{/if}
 		{:else if n.topicRef}
-			<a href={`/admin/sujets#row-${n.topicRef.topicId}`} class="text-sm hover:text-accent">{n.topicRef.label}</a>
+			<a href={`/admin/sujets#row-${n.topicRef.topicId}`} class="text-sm hover:text-accent"
+				>{n.topicRef.label}</a
+			>
 			<span class="ml-2 text-xs text-muted">{n.topicRef.count}</span>
 		{/if}
 	</li>
