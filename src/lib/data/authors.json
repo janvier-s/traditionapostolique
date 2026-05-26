@@ -7,9 +7,7 @@
 		"dates": "?-167",
 		"feastDay": "4 novembre",
 		"function": "Évêque",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"groups": [],
 		"disciples": [],
 		"sources": {
@@ -26,13 +24,9 @@
 		"dates": "339-397",
 		"feastDay": "7 décembre",
 		"function": "Évêque,Écrivain,Philosophe,Theologien,Politicien",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Ambroise_de_Milan",
@@ -50,13 +44,9 @@
 		"dates": "250-280",
 		"feastDay": "3 juillet",
 		"function": "Évêque",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Tuquie Mediterranéenne",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Anatole_de_Laodic%C3%A9e",
@@ -73,13 +63,9 @@
 		"dates": "251-357",
 		"feastDay": "13 janvier",
 		"function": "Moine,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Antoine_le_Grand",
@@ -97,13 +83,9 @@
 		"dates": "?-134",
 		"feastDay": "13 septembre",
 		"function": "Philosophe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Grèce",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Aristide_d%27Ath%C3%A8nes",
@@ -120,13 +102,9 @@
 		"era": "nicene",
 		"dates": "240-327",
 		"function": "Écrivain,Philosophe",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Tunisie,Algérie",
-		"groups": [
-			"Afrique du Nord"
-		],
+		"groups": ["Afrique du Nord"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Arnobe",
@@ -144,13 +122,9 @@
 		"dates": "297-373",
 		"feastDay": "2 mai",
 		"function": "Évêque,Theologien,Hagiographe,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Athanase_d%27Alexandrie",
@@ -168,13 +142,9 @@
 		"dates": "133-190",
 		"feastDay": "24 juillet",
 		"function": "Philosophe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Grèce",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Ath%C3%A9nagoras_d%27Ath%C3%A8nes",
@@ -191,13 +161,9 @@
 		"dates": "345-430",
 		"feastDay": "29 août",
 		"function": "Évêque,Philosophe,Theologien,Écrivain,Poète,Historien,Prêcheur",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Algérie",
-		"groups": [
-			"Afrique du Nord"
-		],
+		"groups": ["Afrique du Nord"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Augustin_d'Hippone",
@@ -215,13 +181,9 @@
 		"dates": "?-61",
 		"feastDay": "11 juin",
 		"function": "Évêque,Archévêque",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Chypre,Israël/Palestine",
-		"groups": [
-			"Textes scripturaires et apocryphes"
-		],
+		"groups": ["Textes scripturaires et apocryphes"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Barnab%C3%A9",
@@ -239,13 +201,9 @@
 		"dates": "329-379",
 		"feastDay": "2 janvier",
 		"function": "Évêque,Theologien,Philosophe,Écrivain,Archévêque",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie centrale",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Basile_de_C%C3%A9sar%C3%A9e",
@@ -262,13 +220,9 @@
 		"era": "ante-nicene",
 		"dates": "?-296",
 		"function": "Pape",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Ca%C3%AFus_(pape)",
@@ -286,13 +240,9 @@
 		"dates": "150-215",
 		"feastDay": "4 décembre",
 		"function": "Theologien,Écrivain,Philosophe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_d%27Alexandrie",
@@ -310,13 +260,9 @@
 		"dates": "17-98",
 		"feastDay": "23 Novembre",
 		"function": "Pape,Theologien",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Italie",
-		"groups": [
-			"Occident hellénophone"
-		],
+		"groups": ["Occident hellénophone"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_de_Rome",
@@ -333,12 +279,8 @@
 		"era": "ante-nicene",
 		"dates": "250",
 		"function": "Poète",
-		"language": [
-			"Latin"
-		],
-		"groups": [
-			"Afrique du Nord"
-		],
+		"language": ["Latin"],
+		"groups": ["Afrique du Nord"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Commodien",
@@ -355,13 +297,9 @@
 		"dates": "200-258",
 		"feastDay": "16 septembre",
 		"function": "Évêque,Philosophe,Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Algérie",
-		"groups": [
-			"Carthage"
-		],
+		"groups": ["Carthage"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Cyprien_de_Carthage",
@@ -379,13 +317,9 @@
 		"dates": "375-444",
 		"feastDay": "27 juin",
 		"function": "Évêque",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Cyrille_d%27Alexandrie",
@@ -403,13 +337,9 @@
 		"dates": "315-387",
 		"feastDay": "18 mars",
 		"function": "Évêque,Theologien",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Israël/Palestine",
-		"groups": [
-			"Palestine - Chypre"
-		],
+		"groups": ["Palestine - Chypre"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Cyrille_de_J%C3%A9rusalem",
@@ -427,13 +357,9 @@
 		"dates": "190-264",
 		"feastDay": "8 avril",
 		"function": "Évêque,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Denys_d%27Alexandrie",
@@ -449,12 +375,8 @@
 		"originalName": "Διδαχή",
 		"era": "apostolic",
 		"dates": "50-90",
-		"language": [
-			"Grec"
-		],
-		"groups": [
-			"Anonyme"
-		],
+		"language": ["Grec"],
+		"groups": ["Anonyme"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Didach%C3%A8",
@@ -471,13 +393,9 @@
 		"dates": "313-398",
 		"feastDay": "18 octobre",
 		"function": "Écrivain,Prêtre,Theologien",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Didyme_l%27Aveugle",
@@ -493,13 +411,9 @@
 		"era": "nicene",
 		"dates": "330-394",
 		"function": "Évêque,Écrivain,Apologète",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Tuquie Mediterranéenne",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Diodore_de_Tarse",
@@ -516,13 +430,9 @@
 		"dates": "306-373",
 		"feastDay": "8 juin",
 		"function": "Diacre,Theologien,Poète,Écrivain",
-		"language": [
-			"Syriaque"
-		],
+		"language": ["Syriaque"],
 		"region": "Turquie Sud-Est",
-		"groups": [
-			"Monde Syriaque"
-		],
+		"groups": ["Monde Syriaque"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/%C3%89phrem_le_Syriaque",
@@ -540,13 +450,9 @@
 		"dates": "315-403",
 		"feastDay": "12 mai",
 		"function": "Évêque,Archévêque,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Israël/Palestine",
-		"groups": [
-			"Palestine - Chypre"
-		],
+		"groups": ["Palestine - Chypre"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/%C3%89piphane_de_Salamine",
@@ -563,13 +469,9 @@
 		"era": "nicene",
 		"dates": "265-340",
 		"function": "Évêque,Theologien,Écrivain,Historien,Hagiographe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Israël/Palestine",
-		"groups": [
-			"Palestine - Chypre"
-		],
+		"groups": ["Palestine - Chypre"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Eus%C3%A8be_de_C%C3%A9sar%C3%A9e",
@@ -584,9 +486,7 @@
 		"name": "Flavius Josèphe",
 		"era": "post-nicene",
 		"function": "Historien",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"groups": [],
 		"disciples": [],
 		"sources": {
@@ -602,13 +502,9 @@
 		"dates": "329-390",
 		"feastDay": "2 janvier",
 		"function": "Évêque,Prêtre,Prêcheur,Poète",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie centrale",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_de_Nazianze",
@@ -626,13 +522,9 @@
 		"dates": "335-395",
 		"feastDay": "10 janvier",
 		"function": "Évêque,Theologien,Prêtre",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie centrale",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Gr%C3%A9goire_de_Nysse",
@@ -650,13 +542,9 @@
 		"dates": "540-604",
 		"feastDay": "12 mars",
 		"function": "Pape,Écrivain,Politicien",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_Ier",
@@ -674,13 +562,9 @@
 		"dates": "213-270",
 		"feastDay": "17 novembre",
 		"function": "Évêque,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie Région de la mer Noire",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Gr%C3%A9goire_le_Thaumaturge",
@@ -697,9 +581,7 @@
 		"era": "post-nicene",
 		"language": [],
 		"region": "Italie",
-		"groups": [
-			"Occident hellénophone"
-		],
+		"groups": ["Occident hellénophone"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Hermas",
@@ -717,13 +599,9 @@
 		"dates": "315-367",
 		"feastDay": "13 janvier",
 		"function": "Évêque,Theologien,Prêtre,Philosophe,Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "France",
-		"groups": [
-			"Gaule"
-		],
+		"groups": ["Gaule"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Hilaire_de_Poitiers",
@@ -741,13 +619,9 @@
 		"dates": "?-170",
 		"feastDay": "13 août",
 		"function": "Évêque,Theologien,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Italie",
-		"groups": [
-			"Occident hellénophone"
-		],
+		"groups": ["Occident hellénophone"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Hippolyte_de_Rome",
@@ -765,13 +639,9 @@
 		"dates": "35-110",
 		"feastDay": "17 février",
 		"function": "Évêque,Theologien",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Tuquie Mediterranéenne",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Ignace_d%27Antioche",
@@ -789,13 +659,9 @@
 		"dates": "130-202",
 		"feastDay": "28 juin",
 		"function": "Évêque,Theologien,Philosophe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "France",
-		"groups": [
-			"Occident hellénophone"
-		],
+		"groups": ["Occident hellénophone"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Ir%C3%A9n%C3%A9e_de_Lyon",
@@ -813,13 +679,9 @@
 		"dates": "360-433",
 		"feastDay": "23 juillet",
 		"function": "Moine,Theologien,Écrivain,Prêtre",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "France",
-		"groups": [
-			"Gaule"
-		],
+		"groups": ["Gaule"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Jean_Cassien",
@@ -837,13 +699,9 @@
 		"dates": "344-407",
 		"feastDay": "13 septembre",
 		"function": "Évêque,Theologien,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie Région de la mer Noire",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:Jean_Chrysostome",
@@ -861,13 +719,9 @@
 		"dates": "675-749",
 		"feastDay": "4 decembre",
 		"function": "Theologien,Écrivain,Prêtre,Philosophe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Syrie",
-		"groups": [
-			"Palestine - Chypre"
-		],
+		"groups": ["Palestine - Chypre"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Jean_Damasc%C3%A8ne",
@@ -885,13 +739,9 @@
 		"dates": "345-420",
 		"feastDay": "30 septembre",
 		"function": "Traducteur,Écrivain,Theologien,Poète,Moine,Apologète,Bibliste",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikisource.org/wiki/Auteur:J%C3%A9r%C3%B4me_de_Stridon",
@@ -908,13 +758,9 @@
 		"era": "ante-nicene",
 		"dates": "160-240",
 		"function": "Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Israël/Palestine",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Sextus_Julius_Africanus",
@@ -931,13 +777,9 @@
 		"dates": "100-160",
 		"feastDay": "1e Juin",
 		"function": "Philosophe,Theologien,Apologète",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Italie,Turquie",
-		"groups": [
-			"Occident hellénophone"
-		],
+		"groups": ["Occident hellénophone"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Justin_de_Naplouse",
@@ -954,13 +796,9 @@
 		"era": "ante-nicene",
 		"dates": "240-325",
 		"function": "Apologète,Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "France",
-		"groups": [
-			"Afrique du Nord"
-		],
+		"groups": ["Afrique du Nord"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Lactance",
@@ -976,13 +814,9 @@
 		"dates": "c. 400-461",
 		"feastDay": "10 novembre",
 		"function": "Pape,Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=L%C3%A9on_Ier_(pape)",
@@ -1012,13 +846,9 @@
 		"dates": "100-180",
 		"feastDay": "1 avril",
 		"function": "Évêque,Écrivain,Philosophe",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Tuquie Mediterranéenne",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9liton_de_Sardes",
@@ -1036,13 +866,9 @@
 		"dates": "260-311",
 		"feastDay": "20 juin",
 		"function": "Évêque,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Grèce",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/M%C3%A9thode_d%27Olympe",
@@ -1059,13 +885,9 @@
 		"era": "ante-nicene",
 		"dates": "?-250",
 		"function": "Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Algérie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Minucius_F%C3%A9lix",
@@ -1081,13 +903,9 @@
 		"era": "ante-nicene",
 		"dates": "220-258",
 		"function": "Theologien",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/w/index.php?title=Novatien",
@@ -1104,12 +922,8 @@
 		"dates": "341-397",
 		"feastDay": "4 juin",
 		"function": "Évêque,Theologien,Écrivain",
-		"language": [
-			"Latin"
-		],
-		"groups": [
-			"Afrique du Nord"
-		],
+		"language": ["Latin"],
+		"groups": ["Afrique du Nord"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Optat_de_Mil%C3%A8ve",
@@ -1126,13 +940,9 @@
 		"era": "ante-nicene",
 		"dates": "185-254",
 		"function": "Theologien,Écrivain,Traducteur,Philosophe",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Orig%C3%A8ne",
@@ -1149,13 +959,9 @@
 		"dates": "240-309",
 		"feastDay": "16 fevrier",
 		"function": "Prêtre,Bibliste",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Israël/Palestine",
-		"groups": [
-			"Palestine - Chypre"
-		],
+		"groups": ["Palestine - Chypre"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Pamphile_de_C%C3%A9sar%C3%A9e",
@@ -1173,13 +979,9 @@
 		"dates": "60-140",
 		"feastDay": "22 février",
 		"function": "Évêque,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie Égéenne",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Papias_d%27Hi%C3%A9rapolis",
@@ -1197,13 +999,9 @@
 		"dates": "69-155",
 		"feastDay": "23 février",
 		"function": "Évêque,Theologien,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Turquie Égéenne",
-		"groups": [
-			"Grèce - Asie mineure"
-		],
+		"groups": ["Grèce - Asie mineure"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Polycarpe_de_Smyrne",
@@ -1219,13 +1017,9 @@
 		"originalName": "Διονύσιος ο Αρεοπαγίτης",
 		"era": "post-nicene",
 		"function": "Theologien,Philosophe,Historien",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Egypte",
-		"groups": [
-			"Alexandrie"
-		],
+		"groups": ["Alexandrie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Denys_l%27Ar%C3%A9opagite",
@@ -1238,9 +1032,7 @@
 		"slug": "pierre-d-alexandrie",
 		"name": "St. Pierre d'Alexandrie",
 		"era": "ante-nicene",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"groups": [],
 		"disciples": [],
 		"sources": {},
@@ -1257,13 +1049,9 @@
 		"dates": "363-429",
 		"feastDay": "29 janvier",
 		"function": "Prêtre,Hagiographe,Écrivain,Historien",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "France",
-		"groups": [
-			"Gaule"
-		],
+		"groups": ["Gaule"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Sulpice_S%C3%A9v%C3%A8re",
@@ -1280,13 +1068,9 @@
 		"era": "ante-nicene",
 		"dates": "120-185",
 		"function": "Theologien",
-		"language": [
-			"Syriaque"
-		],
+		"language": ["Syriaque"],
 		"region": "Syrie",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Tatien_le_Syrien",
@@ -1302,13 +1086,9 @@
 		"era": "ante-nicene",
 		"dates": "160-220",
 		"function": "Theologien,Écrivain,Philosophe",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Tunisie",
-		"groups": [
-			"Carthage"
-		],
+		"groups": ["Carthage"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Tertullien",
@@ -1325,13 +1105,9 @@
 		"era": "post-nicene",
 		"dates": "393-457",
 		"function": "Prêtre,Historien,Écrivain",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Tuquie Mediterranéenne",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9odoret_de_Cyr",
@@ -1349,13 +1125,9 @@
 		"dates": "169-183",
 		"feastDay": "13 octobre",
 		"function": "Évêque",
-		"language": [
-			"Grec"
-		],
+		"language": ["Grec"],
 		"region": "Tuquie Mediterranéenne",
-		"groups": [
-			"Antioche"
-		],
+		"groups": ["Antioche"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Th%C3%A9ophile_d%27Antioche",
@@ -1373,13 +1145,9 @@
 		"dates": "250-303",
 		"feastDay": "2 novembre",
 		"function": "Évêque,Écrivain,Theologien,Bibliste,Philosophe,Pape",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "Italie",
-		"groups": [
-			"Italie"
-		],
+		"groups": ["Italie"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Victorin_de_Pettau",
@@ -1397,13 +1165,9 @@
 		"dates": "?-450",
 		"feastDay": "24 mai",
 		"function": "Prêtre,Moine,Écrivain",
-		"language": [
-			"Latin"
-		],
+		"language": ["Latin"],
 		"region": "France",
-		"groups": [
-			"Gaule"
-		],
+		"groups": ["Gaule"],
 		"disciples": [],
 		"sources": {
 			"wikipedia": "https://fr.wikipedia.org/wiki/Vincent_de_L%C3%A9rins",

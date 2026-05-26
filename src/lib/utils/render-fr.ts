@@ -16,13 +16,10 @@ export function renderFr(text: string | undefined | null): string {
 	if (!text) return '';
 	const esc = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 	let result = esc.replace(/\*(\S(?:[^*\n]*\S)?)\*/g, '<em>$1</em>');
-	result = result.replace(
-		/CEC §(\d+)(-\d+)?/g,
-		(_, n: string, range: string | undefined) => {
-			const suffix = range ?? '';
-			return `<a href="https://catechismecatholique.fr/cec/${n}${suffix}" target="_blank" rel="noopener" class="underline-offset-4 hover:underline hover:text-accent">CEC §${n}${suffix}</a>`;
-		}
-	);
+	result = result.replace(/CEC §(\d+)(-\d+)?/g, (_, n: string, range: string | undefined) => {
+		const suffix = range ?? '';
+		return `<a href="https://catechismecatholique.fr/cec/${n}${suffix}" target="_blank" rel="noopener" class="underline-offset-4 hover:underline hover:text-accent">CEC §${n}${suffix}</a>`;
+	});
 	return result;
 }
 
