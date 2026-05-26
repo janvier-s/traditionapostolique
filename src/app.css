@@ -145,8 +145,8 @@
 		--color-fg: #e8ddd0;
 		--color-muted: #a5a4a6;
 		--color-subtle: #a09ca8;
-		--color-accent: #d45050;
-		--color-accent-text: #e15e5e;
+		--color-accent: #c08a73;
+		--color-accent-text: #d49e84;
 		--color-border: #2e2b32;
 		--color-bg-glass: rgba(17, 17, 19, 0.94);
 		--color-heading: #c5bbb0;
@@ -169,6 +169,19 @@
 	   prototype. The dark/sepia/oled tokens above are preserved so the
 	   theme switching machinery (archived from v0.1-maximal) can be
 	   resurrected later without re-deriving palettes. */
+
+	/* Smooth theme transition. Animates the properties that depend on
+	   --color-* tokens whenever the theme class on <html> changes. */
+	*,
+	*::before,
+	*::after {
+		transition:
+			background-color 280ms ease,
+			color 280ms ease,
+			border-color 280ms ease,
+			fill 280ms ease,
+			stroke 280ms ease;
+	}
 
 	html {
 		background: var(--color-bg);
