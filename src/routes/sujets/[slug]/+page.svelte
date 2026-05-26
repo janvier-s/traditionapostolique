@@ -393,7 +393,7 @@
 					{@const teaserEnd = cut > 0 && cut < 320 ? cut : Math.min(280, desc.length)}
 					{@const teaser = desc.slice(0, teaserEnd).trim()}
 					{@const hasMore = desc.length > teaser.length}
-					<div class="mt-4 max-w-prose font-body text-[14px] leading-[1.6] text-muted">
+					<div class="mt-4 max-w-prose font-body text-[14px] leading-[1.6] text-muted [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-accent">
 						{#if descExpanded || !hasMore}
 							<p style="white-space: pre-line;">{@html renderFr(desc)}</p>
 						{:else}

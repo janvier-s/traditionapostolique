@@ -279,6 +279,10 @@
 			"label": "Les saints et les martyrs",
 			"children": [
 				{
+					"id": "6d724282-b632-4ff5-8288-6dab65dc8a91",
+					"topicId": 40
+				},
+				{
 					"id": "4e563dd3-badc-45d0-b5d0-23e1ed61c2f6",
 					"topicId": 68,
 					"primary": true
@@ -716,10 +720,6 @@
 				{
 					"id": "2e4a8b36-ed92-4c59-b436-109ead1f22d9",
 					"topicId": 121
-				},
-				{
-					"id": "6d724282-b632-4ff5-8288-6dab65dc8a91",
-					"topicId": 40
 				}
 			]
 		}

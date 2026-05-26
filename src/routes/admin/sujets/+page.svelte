@@ -1,12 +1,22 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Quote, Topic } from '$lib/schema';
+	import type { Quote, Topic, Taxonomy } from '$lib/schema';
 	import { watchHashSelection } from '../hash-select';
 	import { bindEditorShortcuts } from '../editor-utils.svelte';
-	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
+
+	const PILLAR_LABELS: Record<string, string> = {
+		dieu: 'Dieu, Trinité, Christ',
+		eglise: "L'Église et ses sources",
+		saints: 'Marie, les saints, miracles',
+		sacrements: 'Sacrements et liturgie',
+		vie: 'Vie chrétienne et prière',
+		fin: 'Les fins dernières'
+	};
+	const PILLARS = ['dieu', 'eglise', 'saints', 'sacrements', 'vie', 'fin'];
 
 	let items = $state<Topic[]>([]);
 	let quotes = $state<Quote[]>([]);
+	let taxonomy = $state<Taxonomy | null>(null);
 	let selectedIdx = $state(-1);
 	let dirty = $state(false);
 	let search = $state('');
@@ -14,15 +24,19 @@
 	let saving = $state(false);
 
 	onMount(async () => {
-		const [t, q] = await Promise.all([
+		const [t, q, tx] = await Promise.all([
 			fetch('/admin/api/topics').then((r) => r.json()),
-			fetch('/admin/api/quotes').then((r) => r.json())
+			fetch('/admin/api/quotes').then((r) => r.json()),
+			fetch('/admin/api/taxonomy').then((r) => r.json())
 		]);
 		items = t;
 		quotes = q;
+		taxonomy = tx;
 	});
 
 	$effect(() => watchHashSelection(items, (idx) => (selectedIdx = idx)));
+
+	const topicById = $derived(new Map(items.map((t) => [t.id, t])));
 
 	const quoteCountByTopic = $derived.by(() => {
 		const m = new Map<number, number>();
@@ -30,26 +44,47 @@
 		return m;
 	});
 
-	// Sidebar list: tree-flattened, search filters at any depth
-	const flat = $derived.by(() =>
-		flattenTree(buildTopicTree(items)).map((n) => ({
-			...n,
-			idx: items.findIndex((t) => t.id === n.topic.id)
-		}))
-	);
+	// Sidebar entries derived from taxonomy structure (matches the site nav exactly)
+	type SidebarEntry =
+		| { kind: 'pillar'; label: string }
+		| { kind: 'umbrella'; label: string }
+		| { kind: 'topic'; topicId: number; idx: number };
+
+	const navEntries = $derived.by((): SidebarEntry[] => {
+		if (!taxonomy) return [];
+		const out: SidebarEntry[] = [];
+		for (const pillar of PILLARS) {
+			const nodes = (taxonomy as Record<string, unknown[]>)[pillar] ?? [];
+			if (!nodes.length) continue;
+			out.push({ kind: 'pillar', label: PILLAR_LABELS[pillar] ?? pillar });
+			for (const node of nodes as Array<{ topicId?: number; label?: string; children?: Array<{ topicId?: number }> }>) {
+				if (node.label != null) {
+					out.push({ kind: 'umbrella', label: node.label });
+					for (const child of node.children ?? []) {
+						if (child.topicId != null) {
+							const idx = items.findIndex((t) => t.id === child.topicId);
+							if (idx >= 0) out.push({ kind: 'topic', topicId: child.topicId, idx });
+						}
+					}
+				} else if (node.topicId != null) {
+					const idx = items.findIndex((t) => t.id === node.topicId);
+					if (idx >= 0) out.push({ kind: 'topic', topicId: node.topicId, idx });
+				}
+			}
+		}
+		return out;
+	});
+
 	const filtered = $derived.by(() => {
 		const q = search.trim().toLowerCase();
-		if (!q) return flat;
-		return flat.filter((n) => n.topic.label.toLowerCase().includes(q));
+		if (!q) return navEntries;
+		// In search mode: only show matching topics (no pillar/umbrella headers)
+		return navEntries.filter(
+			(e) => e.kind === 'topic' && topicById.get(e.topicId)?.label.toLowerCase().includes(q)
+		);
 	});
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
-
-	// Available parents: only top-level topics, excluding the current one
-	const parentOptions = $derived.by(() => {
-		if (!selected) return items.filter((t) => t.parentId == null);
-		return items.filter((t) => t.parentId == null && t.id !== selected.id);
-	});
 
 	const selectedQuotes = $derived(
 		selected ? quotes.filter((q) => q.topicIds.includes(selected.id)) : []
@@ -99,29 +134,36 @@
 			class="w-full rounded border border-border bg-panel px-2 py-1"
 		/>
 		<ul class="mt-2 max-h-[70vh] overflow-y-auto">
-			{#each filtered as { topic: t, depth, idx } (t.id)}
-				{@const n = quoteCountByTopic.get(t.id) ?? 0}
-				<li id={`row-${t.id}`}>
-					<button
-						type="button"
-						onclick={() => {
-							selectedIdx = idx;
-						}}
-						class={[
-							'block w-full rounded px-2 py-1 text-left hover:bg-subtle/10',
-							selectedIdx === idx && 'bg-subtle/20'
-						]}
-						style={depth > 0 ? `padding-left: ${0.5 + depth * 1}rem` : ''}
-					>
-						<span class="flex items-baseline justify-between gap-2">
-							<span class="min-w-0 truncate" class:text-muted={n === 0}>
-								{#if depth > 0}<span class="mr-1 text-muted" aria-hidden="true">↳</span>{/if}
-								{t.label}
-							</span>
-							<span class="shrink-0 font-ui text-[11px] font-light text-muted">{n || '—'}</span>
-						</span>
-					</button>
-				</li>
+			{#each filtered as entry}
+				{#if entry.kind === 'pillar'}
+					<li class="mt-3 first:mt-0 px-2 pb-1 pt-2">
+						<span class="font-ui text-[10px] uppercase tracking-[0.1em] text-muted">{entry.label}</span>
+					</li>
+				{:else if entry.kind === 'umbrella'}
+					<li class="px-2 py-0.5">
+						<span class="font-ui text-[11px] text-muted italic">{entry.label}</span>
+					</li>
+				{:else}
+					{@const t = topicById.get(entry.topicId)}
+					{@const n = quoteCountByTopic.get(entry.topicId) ?? 0}
+					{#if t}
+						<li id={`row-${t.id}`}>
+							<button
+								type="button"
+								onclick={() => (selectedIdx = entry.idx)}
+								class={[
+									'block w-full rounded px-2 py-1 pl-4 text-left hover:bg-subtle/10',
+									selectedIdx === entry.idx && 'bg-subtle/20'
+								]}
+							>
+								<span class="flex items-baseline justify-between gap-2">
+									<span class="min-w-0 truncate" class:text-muted={n === 0}>{t.label}</span>
+									<span class="shrink-0 font-ui text-[11px] font-light text-muted">{n || '—'}</span>
+								</span>
+							</button>
+						</li>
+					{/if}
+				{/if}
 			{/each}
 		</ul>
 	</aside>
@@ -155,34 +197,6 @@
 					/>
 				</label>
 				<label class="block">
-					Parent
-					<select
-						class={INPUT}
-						value={selected.parentId ?? ''}
-						onchange={(e) => {
-							const v = (e.currentTarget as HTMLSelectElement).value;
-							update('parentId', v === '' ? undefined : Number(v));
-						}}
-					>
-						<option value="">(racine — sujet de premier niveau)</option>
-						{#each parentOptions as p (p.id)}
-							<option value={p.id}>{p.label}</option>
-						{/each}
-					</select>
-				</label>
-				<label class="block">
-					Ordre
-					<input
-						type="number"
-						class={INPUT}
-						value={selected.order ?? ''}
-						oninput={(e) => {
-							const v = (e.currentTarget as HTMLInputElement).value;
-							update('order', v === '' ? undefined : Number(v));
-						}}
-					/>
-				</label>
-				<label class="block">
 					Description
 					<textarea
 						class="mt-1 h-32 w-full rounded border border-border bg-panel px-2 py-1"
@@ -202,8 +216,7 @@
 						{saving ? 'Enregistrement…' : 'Enregistrer'}
 					</button>
 					<span class="text-xs text-muted">⌘/Ctrl + S</span>
-					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span
-						>{/if}
+					{#if dirty}<span class="text-xs text-amber-600">● Modifications non enregistrées</span>{/if}
 					{#if savedFlash}<span class="text-xs text-emerald-600">✓ Enregistré</span>{/if}
 				</div>
 				{#if saveError}<p class="mt-2 text-sm text-red-600">{saveError}</p>{/if}

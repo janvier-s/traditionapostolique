@@ -1,0 +1,53 @@
+# CI — runs on every push and PR.
+# Validates types, unit tests, and that the Cloudflare-adapter build completes.
+# Does not deploy. Deploys live in deploy.yml.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Type-check · Test · Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type-check
+        run: npm run check
+
+      - name: Unit tests
+        run: npm run test:unit -- --run
+
+      - name: Build (Cloudflare adapter)
+        run: npm run build
+
+      - name: Bundle summary
+        if: always()
+        run: |
+          {
+            echo "## Build output"
+            echo
+            echo '```'
+            du -sh .svelte-kit/cloudflare 2>/dev/null || true
+            find .svelte-kit/cloudflare -maxdepth 2 -type d 2>/dev/null | head -10
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"

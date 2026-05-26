@@ -52,6 +52,7 @@
 </script>
 
 {#if author}
+<div class="lg:flex lg:flex-col lg:min-h-0 lg:flex-1">
 	<header class="mb-6">
 		<div class="flex items-baseline justify-between gap-4">
 			<h2 class="font-heading italic text-accent leading-[1.1]" style="font-size: 1.5rem;">
@@ -68,7 +69,7 @@
 			type="button"
 			onclick={() =>
 				copy(`${window.location.origin}${window.location.pathname}#q-${quote.id}`, 'permalink')}
-			class="mt-1 inline-flex items-baseline gap-1 font-ui text-[10px] font-light uppercase tracking-[0.1em] text-muted hover:text-accent"
+			class="mt-[9px] inline-flex items-baseline gap-1 font-ui text-[10px] font-light uppercase tracking-[0.1em] text-muted hover:text-accent"
 		>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +82,7 @@
 				stroke-width="2"
 				stroke-linecap="round"
 				stroke-linejoin="round"
+				class="translate-y-[2px]"
 			>
 				<path
 					d="M7 9.667A2.667 2.667 0 0 1 9.667 7h8.666A2.667 2.667 0 0 1 21 9.667v8.666A2.667 2.667 0 0 1 18.333 21H9.667A2.667 2.667 0 0 1 7 18.333z"
@@ -139,7 +141,7 @@
 		role="tabpanel"
 		aria-labelledby={`qp-tab-${activeTab}`}
 		tabindex="0"
-		class="font-body text-[15px] leading-[1.6]"
+		class="font-body text-[15px] leading-[1.6] lg:flex-1 lg:min-h-0 lg:overflow-y-auto rail-scroll"
 	>
 		{#if activeTab === 'auteur'}
 			<dl class="space-y-4">
@@ -349,4 +351,5 @@
 			</div>
 		{/if}
 	</div>
+</div>
 {/if}

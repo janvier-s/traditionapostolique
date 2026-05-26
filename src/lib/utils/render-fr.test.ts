@@ -38,17 +38,17 @@ describe('renderFr', () => {
 	it('links a single CEC paragraph reference', () => {
 		const out = renderFr('voir CEC §1554 pour plus de détails');
 		expect(out).toContain('href="https://catechismecatholique.fr/cec/1554"');
-		expect(out).toContain('CEC §1554</a>');
+		expect(out).toContain('CEC 1554</a>');
 	});
 
 	it('includes the full range in the CEC href', () => {
 		const out = renderFr('cf. CEC §1430-1431');
 		expect(out).toContain('href="https://catechismecatholique.fr/cec/1430-1431"');
-		expect(out).toContain('CEC §1430-1431</a>');
+		expect(out).toContain('CEC 1430-1431</a>');
 	});
 
 	it('leaves surrounding parentheses outside the link', () => {
-		expect(renderFr('(CEC §1013)')).toMatch(/^\(<a [^>]+>CEC §1013<\/a>\)$/);
+		expect(renderFr('(CEC §1013)')).toMatch(/^\(<a [^>]+>CEC 1013<\/a>\)$/);
 	});
 });
 

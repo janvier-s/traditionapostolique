@@ -5,6 +5,7 @@ export const TopicSchema = z.object({
 	slug: z.string().min(1),
 	label: z.string().min(1),
 	description: z.string().optional(),
+	tier: z.string().optional(),
 	parentId: z.number().int().nonnegative().optional(),
 	order: z.number().int().nonnegative().optional()
 });
