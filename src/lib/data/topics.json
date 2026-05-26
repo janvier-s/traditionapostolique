@@ -835,14 +835,14 @@
 		"slug": "le-lavement-des-pieds",
 		"label": "Le lavement des pieds",
 		"parentId": 36,
-		"description": "*Le lavement des pieds* — *mandatum* — geste accompli par le Christ au soir du Jeudi Saint (Jn 13, 4-17), est intégré à la liturgie de ce jour depuis l'Antiquité. Saint Ambroise, à Milan, le pratiquait comme rite post-baptismal ; saint Augustin l'évoque dans plusieurs sermons ; les *Constitutions apostoliques* le mentionnent. La liturgie romaine l'a conservé comme acte symbolique du sacerdoce-service. Le Catéchisme enseigne : « Le Christ, qui s'est anéanti pour nous, doit demeurer notre modèle. Ses disciples sont aussi appelés à se \"laver les pieds\" mutuellement » (cf. CEC §1336)."
+		"description": "*Le lavement des pieds* — *mandatum* — geste accompli par le Christ au soir du Jeudi Saint (Jn 13, 4-17), est intégré à la liturgie de ce jour depuis l'Antiquité. Saint Ambroise, à Milan, le pratiquait comme rite post-baptismal ; saint Augustin l'évoque dans plusieurs sermons ; les *Constitutions apostoliques* le mentionnent. La liturgie romaine l'a conservé comme acte symbolique du sacerdoce-service. Le Catéchisme rappelle que le Christ, « ayant aimé les siens, les aima jusqu'à la fin », lava les pieds de ses disciples au cours du dernier repas et leur donna « le commandement de l'amour » (cf. CEC §1337)."
 	},
 	{
 		"id": 126,
 		"slug": "les-rites-funeraires",
 		"label": "Les rites funéraires",
 		"parentId": 36,
-		"description": "*Les rites funéraires* chrétiens, dès l'Antiquité, expriment la foi en la résurrection des corps : le défunt est traité avec respect, son corps lavé, oint, enveloppé de lin et déposé dans une tombe avec prière. Saint Augustin (*De cura pro mortuis gerenda*) en expose la théologie : ces soins, bien que ne touchant pas l'âme désormais séparée, témoignent de la foi en la dignité du corps appelé à la résurrection. Tertullien et saint Jean Chrysostome dénoncent les excès funéraires païens. Le Catéchisme enseigne : « Les funérailles chrétiennes confèrent au défunt ni un sacrement ni un sacramental, puisqu'il est désormais \"hors\" de l'économie sacramentelle (...) elles sont cependant une célébration liturgique » (CEC §1684)."
+		"description": "*Les rites funéraires* chrétiens, dès l'Antiquité, expriment la foi en la résurrection des corps : le défunt est traité avec respect, son corps lavé, oint, enveloppé de lin et déposé dans une tombe avec prière. Saint Augustin (*De cura pro mortuis gerenda*) en expose la théologie : ces soins, bien que ne touchant pas l'âme désormais séparée, témoignent de la foi en la dignité du corps appelé à la résurrection. Tertullien et saint Jean Chrysostome dénoncent les excès funéraires païens. Le Catéchisme enseigne : « Les funérailles chrétiennes sont une célébration liturgique de l'Église » par laquelle le ministère ecclésial exprime la communion avec le défunt et annonce la vie éternelle à la communauté rassemblée (CEC §1684)."
 	},
 	{
 		"id": 127,
@@ -918,7 +918,7 @@
 		"slug": "la-discipline-de-leglise",
 		"label": "La discipline de l'Église",
 		"parentId": 12,
-		"description": "*La discipline de l'Église* — *disciplina ecclesiastica* — désigne l'ensemble des règles, des coutumes liturgiques et pénitentielles qui structurent la vie chrétienne sous l'autorité hiérarchique. Distincte du dogme (qui ne change pas) tout en lui étant ordonnée, la discipline a évolué au cours des siècles (forme du baptême, jeûne, célibat, peine canonique, etc.). Saint Hippolyte (*Tradition apostolique*), les conciles de Nicée, d'Elvire, de Carthage, les lettres de saint Cyprien et saint Léon le Grand en sont les sources antiques majeures. Le Catéchisme enseigne : « Le code de droit canonique est l'expression juridique de la discipline ecclésiastique » (cf. CEC §1739)."
+		"description": "*La discipline de l'Église* — *disciplina ecclesiastica* — désigne l'ensemble des règles, des coutumes liturgiques et pénitentielles qui structurent la vie chrétienne sous l'autorité hiérarchique. Distincte du dogme (qui ne change pas) tout en lui étant ordonnée, la discipline a évolué au cours des siècles (forme du baptême, jeûne, célibat, peine canonique, etc.). Saint Hippolyte (*Tradition apostolique*), les conciles de Nicée, d'Elvire, de Carthage, les lettres de saint Cyprien et saint Léon le Grand en sont les sources antiques majeures."
 	},
 	{
 		"id": 139,
