@@ -127,7 +127,7 @@
 		--z-modal: 70;
 	}
 
-	[data-theme='sepia'] {
+	.sepia {
 		--color-bg: #f2e8d8;
 		--color-panel: #f9f2e6;
 		--color-fg: #2c1e10;
@@ -139,7 +139,7 @@
 		--color-bg-glass: rgba(242, 232, 216, 0.94);
 	}
 
-	[data-theme='dark'] {
+	.dark {
 		--color-bg: #111113;
 		--color-panel: #1c1c1f;
 		--color-fg: #e8ddd0;
@@ -152,7 +152,7 @@
 		--color-heading: #c5bbb0;
 	}
 
-	[data-theme='oled'] {
+	.amoled {
 		--color-bg: #000000;
 		--color-panel: #0f0f0f;
 		--color-fg: #e0e0e0;

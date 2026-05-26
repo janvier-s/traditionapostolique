@@ -78,7 +78,7 @@
 <JsonLd data={websiteSchema} />
 
 <ThemeToggle
-	class="fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-panel/80 text-[1.25rem] text-foreground backdrop-blur transition-colors hover:bg-subtle/20 hover:text-accent"
+	class="fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-panel/80 text-[1.25rem] text-accent backdrop-blur transition-colors hover:bg-subtle/20"
 />
 
 <div class="min-h-screen bg-background font-body text-foreground">
