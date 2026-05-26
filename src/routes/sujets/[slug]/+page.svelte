@@ -339,8 +339,8 @@
 />
 
 <article
-	class={anyPanelOpen ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] lg:gap-x-12' : ''}
-	style={`--author-col: ${anyPanelOpen ? '140px' : '200px'}; --quote-gap: ${anyPanelOpen ? '0px' : '1rem'}; --author-name-size: ${anyPanelOpen ? '20px' : '24px'};`}
+	class={anyPanelOpen ? 'lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(320px,380px)] lg:gap-x-8' : ''}
+	style={`--author-col: ${anyPanelOpen ? '140px' : '200px'}; --quote-gap: 1rem; --author-name-size: ${anyPanelOpen ? '20px' : '24px'};`}
 >
 	<div class="min-w-0">
 		<!-- Description intentionally omitted · the topic label and the
