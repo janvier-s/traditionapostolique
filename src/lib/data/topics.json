@@ -209,7 +209,8 @@
 	{
 		"id": 33,
 		"slug": "eveque-pretre-et-diacre",
-		"label": "Évêque prêtre et diacre"
+		"label": "Évêque prêtre et diacre",
+		"description": "*L'évêque, le prêtre et le diacre* forment la triple hiérarchie ministérielle de l'Église, organisation que les Pères attestent dès le début du IIe siècle. Saint Ignace d'Antioche († vers 110), dans les lettres rédigées sur le chemin du martyre, présente cette structure comme déjà universellement reçue : « Que tous révèrent les diacres comme les ministres de Jésus Christ, l'évêque comme Jésus Christ, le Fils même du Père, et les presbytres comme le conseil de Dieu et le collège des apôtres » (*Aux Tralliens*). Le plus ancien rituel d'ordination qui nous soit parvenu, la *Tradition apostolique* de saint Hippolyte de Rome (vers 215), distingue déjà nettement les trois ordres : l'évêque imposait seul les mains au diacre, tandis qu'il était entouré du presbyterium pour ordonner les prêtres. Clément d'Alexandrie y voit le reflet ici-bas des hiérarchies célestes ; Origène en tire les exigences morales du candidat ; les conciles d'Elvire et de Nicée légifèrent sur leur discipline. Le Catéchisme rappelle que « le ministère ecclésial d'institution divine est exercé dans des ordres différents par ceux qui dès l'antiquité sont appelés évêques, prêtres, diacres » (CEC §1554). Cette page rassemble le témoignage patristique sur l'origine apostolique, les fonctions propres et la dignité de chacun de ces trois ordres."
 	},
 	{
 		"id": 34,
@@ -295,7 +296,8 @@
 	{
 		"id": 47,
 		"slug": "reincarnation",
-		"label": "La réincarnation"
+		"label": "La réincarnation",
+		"description": "La doctrine de *la réincarnation* — l'idée que l'âme, après la mort, transmigre dans un autre corps humain ou animal — est étrangère à la foi chrétienne, et les Pères de l'Église l'ont combattue dès les premiers siècles. Saint Irénée de Lyon († 202) y consacre tout un chapitre de son *Contre les hérésies* (Livre II) où il la réfute par plusieurs arguments tirés du témoignage de l'âme elle-même. Tertullien tourne en dérision les prétentions pythagoriciennes ; Lactance rappelle qu'aucun fondement scripturaire ne soutient cette opinion. Origène, parfois associé à tort à la doctrine, distingue avec soin la résurrection chrétienne de la *métempsomatose* qu'il qualifie d'« étrangère à l'Église de Dieu, ni transmise par les apôtres ni soutenue par les Écritures ». Saint Ambroise de Milan, saint Grégoire de Nysse, saint Jean Chrysostome et Arnobe développent tous des critiques convergentes, l'ancrant dans le dogme de la résurrection des corps et de l'unité personnelle de l'homme. Le Catéchisme l'enseigne sans ambiguïté : « Il n'y a pas de \"réincarnation\" après la mort » (CEC §1013). Cette page rassemble le témoignage des Pères sur l'incompatibilité radicale de la transmigration des âmes avec l'eschatologie chrétienne."
 	},
 	{
 		"id": 48,
@@ -313,566 +315,663 @@
 		"id": 50,
 		"slug": "la-predication",
 		"label": "La prédication",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*La prédication* est l'une des fonctions essentielles du ministère apostolique : annoncer la foi, expliquer les Écritures et exhorter la communauté chrétienne. Dès l'Antiquité, elle est réservée aux ministres ordonnés — évêques en premier lieu, puis prêtres et, plus tard, diacres pour certaines parties de la liturgie. Origène, Jean Chrysostome et Augustin nous ont laissé des recueils d'homélies qui montrent à quel point la *predicatio verbi Dei* tenait une place centrale dans la pastorale ancienne. Le Concile de Trente puis Vatican II ont réaffirmé que la prédication appartient au munus regendi des évêques (CEC §888). Cette page rassemble le témoignage patristique sur l'art, la fonction et les conditions de la prédication chrétienne authentique."
 	},
 	{
 		"id": 51,
 		"slug": "le-saint-esprit",
 		"label": "Le Saint-Esprit",
-		"parentId": 3
+		"parentId": 3,
+		"description": "*Le Saint-Esprit* est la troisième Personne de la Sainte Trinité, vrai Dieu avec le Père et le Fils, procédant de l'un et de l'autre. Les Pères de l'Église ont longuement médité la révélation pneumatologique : saint Basile de Césarée († 379) consacre tout un traité *Sur le Saint-Esprit* pour défendre sa pleine divinité contre les pneumatomaques. Saint Athanase, saint Hilaire et saint Augustin développent la doctrine de l'Esprit consubstantiel au Père et au Fils, principe de sanctification, donateur des charismes, âme de l'Église. Le Concile de Constantinople I (381) inscrit cette foi dans le symbole de Nicée-Constantinople. Le Catéchisme rappelle : « Personne ne peut dire : \"Jésus est Seigneur\", sinon dans l'Esprit Saint » (CEC §683). Cette page rassemble le témoignage des Pères sur l'identité, l'action et les dons de l'Esprit Saint."
 	},
 	{
 		"id": 52,
 		"slug": "le-monarchianisme",
 		"label": "Le monarchianisme",
-		"parentId": 3
+		"parentId": 3,
+		"description": "*Le monarchianisme* désigne une famille d'erreurs trinitaires apparues aux IIe et IIIe siècles, qui cherchaient à préserver l'unité (la *monarchia*) divine au prix de la distinction réelle des Personnes. Le monarchianisme modaliste — illustré par Sabellius — soutenait que Père, Fils et Esprit ne sont que des modes ou rôles successifs d'une seule Personne. Le monarchianisme adoptianiste — Paul de Samosate, Théodote — niait quant à lui la divinité éternelle du Christ. Les Pères, en particulier Tertullien, Hippolyte de Rome et Denys d'Alexandrie, réfutent ces positions en élaborant le vocabulaire trinitaire classique : une seule substance (*ousia*), trois Personnes (*hypostases*). Cette page rassemble les arguments patristiques qui ont conduit à la clarification trinitaire fixée par les conciles de Nicée et de Constantinople."
 	},
 	{
 		"id": 53,
 		"slug": "lincarnation",
 		"label": "L'Incarnation",
-		"parentId": 5
+		"parentId": 5,
+		"description": "*L'Incarnation* — « le Verbe s'est fait chair » (Jn 1, 14) — est le mystère central de la foi chrétienne : le Fils éternel de Dieu a assumé la nature humaine dans le sein de la Vierge Marie. Les Pères, en particulier saint Irénée, saint Athanase et saint Cyrille d'Alexandrie, ont défendu ce dogme contre les docètes (qui niaient la réalité de la chair du Christ), les ariens (qui niaient sa divinité) et les nestoriens (qui divisaient les natures). La formule du Concile de Chalcédoine (451) — une seule Personne en deux natures, divine et humaine, « sans confusion, sans changement, sans division, sans séparation » — synthétise leur effort. Le Catéchisme enseigne : « En devenant homme, le Fils de Dieu ne s'est pas confondu avec l'humanité, mais Il l'a assumée » (CEC §470). Cette page rassemble le témoignage patristique sur ce mystère insondable."
 	},
 	{
 		"id": 54,
 		"slug": "le-verbe-parole-de-dieu",
 		"label": "Le Verbe — Parole de Dieu",
-		"parentId": 5
+		"parentId": 5,
+		"description": "*Le Verbe* (Logos en grec, *Verbum* en latin) est le titre par lequel saint Jean ouvre son Évangile : « Au commencement était le Verbe, et le Verbe était auprès de Dieu, et le Verbe était Dieu » (Jn 1, 1). Les Pères apologistes du IIe siècle — saint Justin, Athénagore, Théophile d'Antioche — ont fait du Logos la pierre angulaire de leur dialogue avec la philosophie grecque, montrant que le Christ est la Sagesse divine éternelle qui éclaire tout homme. Saint Irénée et saint Athanase développent la doctrine du Verbe consubstantiel au Père. Le Catéchisme rappelle : « Le Verbe s'est fait chair pour être notre modèle de sainteté » (CEC §459). Cette page rassemble le témoignage patristique sur la divinité du Verbe et sa mission révélatrice."
 	},
 	{
 		"id": 55,
 		"slug": "le-sang-du-christ",
 		"label": "Le sang du Christ",
-		"parentId": 5
+		"parentId": 5,
+		"description": "*Le sang du Christ* versé sur la Croix est, selon l'enseignement constant de l'Église, le prix de notre rédemption et la matière du sacrement de l'Eucharistie. Les Pères y voient à la fois le sceau de la nouvelle Alliance — « Ceci est mon Sang, le Sang de l'Alliance, qui est versé pour la multitude » (Mc 14, 24) — et la source de toute grâce sanctifiante. Saint Ignace d'Antioche, saint Justin et saint Cyrille de Jérusalem soulignent la réalité de la présence du Sang dans la coupe eucharistique. Le Catéchisme l'enseigne : « Dans le Sacrifice eucharistique, tout le Christ, Corps et Sang, âme et divinité, nous est offert » (CEC §1413). Cette page rassemble le témoignage patristique sur la valeur rédemptrice et sacramentelle du Sang précieux."
 	},
 	{
 		"id": 56,
 		"slug": "la-resurrection-du-christ",
 		"label": "La résurrection du Christ",
-		"parentId": 5
+		"parentId": 5,
+		"description": "*La résurrection du Christ* est l'événement fondateur du christianisme : « Si le Christ n'est pas ressuscité, vide est notre message, vide aussi votre foi » (1 Co 15, 14). Les Pères ont défendu la réalité corporelle de la Résurrection contre les docètes et les gnostiques qui la spiritualisaient. Saint Ignace d'Antioche, sur le chemin du martyre, insiste sur la chair ressuscitée du Seigneur. Saint Irénée, saint Athanase, saint Augustin développent les conséquences sotériologiques : le Christ ressuscité est les prémices de notre propre résurrection. Le Catéchisme enseigne : « La Résurrection du Christ est l'événement culminant de notre foi dans le Christ » (CEC §638). Cette page rassemble le témoignage patristique sur la victoire pascale du Christ sur la mort."
 	},
 	{
 		"id": 57,
 		"slug": "la-descente-aux-enfers",
 		"label": "La descente aux enfers",
-		"parentId": 5
+		"parentId": 5,
+		"description": "*La descente aux enfers* — affirmée par le Symbole des Apôtres — désigne le séjour de l'âme du Christ, entre sa mort et sa résurrection, dans le shéol où attendaient les justes de l'Ancienne Alliance, pour leur annoncer le salut accompli. Les Pères, dès saint Ignace, saint Méliton de Sardes et saint Irénée, méditent cet article : le Christ « est descendu aux enfers » non pour souffrir, mais pour libérer les âmes des justes (Adam, Abel, Abraham, Moïse, David, les prophètes). Le Catéchisme l'enseigne : « Jésus a connu la mort comme tous les hommes, et il les a rejoints, par son âme, au séjour des morts. Mais il y est descendu en Sauveur » (CEC §632). Cette page rassemble le témoignage patristique sur ce mystère du *triduum pascal*."
 	},
 	{
 		"id": 58,
 		"slug": "la-redemption-l-uvre-du-christ",
 		"label": "La Rédemption — l'œuvre du Christ",
-		"parentId": 5
+		"parentId": 5,
+		"description": "*La Rédemption*, l'œuvre du Christ par laquelle il nous a rachetés du péché et de la mort, est le centre de la sotériologie chrétienne. Les Pères ont décliné ce mystère selon plusieurs registres : saint Irénée parle de *récapitulation* (le Christ reprend en lui toute l'humanité et la restaure) ; saint Athanase formule l'admirable échange (« Dieu s'est fait homme pour que l'homme soit fait Dieu ») ; saint Anselme, plus tard, développera la doctrine de la satisfaction. Le Catéchisme synthétise : « Jésus a donné le sens définitif de sa vie en se livrant à la mort pour le salut de la multitude » (CEC §601). Cette page rassemble le témoignage patristique sur la croix, la rançon, le sacrifice et l'amour rédempteur du Christ."
 	},
 	{
 		"id": 59,
 		"slug": "la-maternite-spirituelle-eglise-marie",
 		"label": "La maternité spirituelle (Église / Marie)",
-		"parentId": 37
+		"parentId": 37,
+		"description": "*La maternité spirituelle* attribue à la Vierge Marie un rôle maternel à l'égard de tous les disciples du Christ — « Voici ton fils ; voici ta mère » (Jn 19, 26-27). Les Pères, dès Origène et saint Ambroise, voient en Marie la figure de l'Église, mère des fidèles dans l'ordre de la grâce, comme Ève l'avait été dans l'ordre de la nature. Saint Augustin développe le parallèle : « Marie a engendré dans son sein la Tête de ce Corps ; l'Église engendre les membres de cette Tête. » Le Catéchisme l'enseigne : « Cette maternité de Marie dans l'économie de la grâce perdure sans interruption (...) jusqu'à la consommation éternelle de tous les élus » (CEC §969). Cette page rassemble le témoignage patristique sur l'unique maternité de Marie et de l'Église."
 	},
 	{
 		"id": 60,
 		"slug": "les-eglises-apostoliques",
 		"label": "Les Églises apostoliques",
-		"parentId": 12
+		"parentId": 12,
+		"description": "*Les Églises apostoliques* — Rome, Antioche, Alexandrie, Jérusalem, Éphèse, Corinthe — sont les communautés fondées directement par les Apôtres et leurs disciples immédiats. Pour saint Irénée († 202), elles constituent le critère privilégié de la vraie foi : « C'est avec cette Église, en raison de sa principauté plus excellente, que doit nécessairement s'accorder toute Église » (*Adversus Haereses*, III, 3, 2, à propos de Rome). Tertullien, dans le *De Praescriptione*, fait le même raisonnement : la doctrine reçue de telles Églises est la doctrine reçue des Apôtres. Cette page rassemble le témoignage patristique sur le rôle normatif des sièges apostoliques dans la transmission de la foi."
 	},
 	{
 		"id": 61,
 		"slug": "le-schisme",
 		"label": "Le schisme",
-		"parentId": 12
+		"parentId": 12,
+		"description": "*Le schisme* — du grec *schisma*, déchirure — désigne la rupture de la communion ecclésiale, distincte de l'hérésie (qui touche la foi) tout en lui étant souvent liée. Saint Cyprien de Carthage († 258), dans son traité *De l'unité de l'Église*, formule les principes classiques : « Hors de l'Église, point de salut » ; « Nul ne peut avoir Dieu pour Père s'il n'a l'Église pour mère ». Saint Optat de Milève et saint Augustin développent cette doctrine contre le donatisme. Le Catéchisme l'enseigne : « Le schisme est le refus de la soumission au Souverain Pontife ou de la communion avec les membres de l'Église qui lui sont soumis » (CEC §2089). Cette page rassemble le témoignage patristique sur la gravité du schisme et la nécessité de l'unité visible."
 	},
 	{
 		"id": 62,
 		"slug": "les-conciles",
 		"label": "Les conciles",
-		"parentId": 12
+		"parentId": 12,
+		"description": "*Les conciles* — assemblées d'évêques convoquées pour traiter de questions doctrinales ou disciplinaires — sont depuis le concile de Jérusalem (Ac 15) un instrument privilégié du gouvernement ecclésial. Les Pères font particulièrement référence aux conciles œcuméniques de Nicée (325), Constantinople I (381), Éphèse (431) et Chalcédoine (451), où furent fixés les dogmes trinitaires et christologiques. Saint Athanase défend Nicée pendant tout son ministère ; saint Cyrille d'Alexandrie prépare Éphèse ; saint Léon le Grand inspire Chalcédoine par son *Tome*. Le Catéchisme enseigne : « Le Collège des Évêques exerce le pouvoir suprême sur l'Église entière de façon solennelle dans le Concile œcuménique » (CEC §884). Cette page rassemble le témoignage patristique sur l'autorité conciliaire."
 	},
 	{
 		"id": 63,
 		"slug": "les-credos-primitifs",
 		"label": "Les Credos primitifs",
-		"parentId": 12
+		"parentId": 12,
+		"description": "*Les Credos primitifs* — formules brèves de profession de foi utilisées dans la catéchèse et la liturgie baptismale — précèdent les grands symboles conciliaires et nous attestent la foi de l'Église dès le IIe siècle. Saint Irénée parle de la « règle de la vérité » reçue au baptême ; Tertullien évoque la *regula fidei* ; saint Hippolyte de Rome conserve dans la *Tradition apostolique* la triple interrogation baptismale qui est l'ancêtre direct du Symbole des Apôtres. Saint Ambroise et saint Augustin ont laissé des commentaires complets de cette formule. Le Catéchisme rappelle : « Les premières formules de foi qu'a élaborées l'Église, articulées dès l'origine, sont les credos baptismaux » (CEC §189). Cette page rassemble le témoignage patristique sur les formes anciennes du Symbole."
 	},
 	{
 		"id": 64,
 		"slug": "la-foi-apostolique",
 		"label": "La foi apostolique",
-		"parentId": 11
+		"parentId": 11,
+		"description": "*La foi apostolique* — celle que les Apôtres ont reçue du Christ et transmise à leurs successeurs — constitue le canon vivant de la doctrine chrétienne. Saint Irénée parle d'une *paradosis* (tradition) ininterrompue, qu'il oppose aux innovations des gnostiques. Saint Vincent de Lérins († vers 445), dans son *Commonitorium*, en donne la formule restée classique : « Ce qui a été cru partout, toujours et par tous » (*quod ubique, quod semper, quod ab omnibus*). Le Catéchisme enseigne : « Par cette Tradition, l'Église, dans sa doctrine, sa vie et son culte, perpétue et transmet à toutes les générations tout ce qu'elle est, tout ce qu'elle croit » (CEC §78). Cette page rassemble le témoignage patristique sur l'identité et la fidélité de la foi reçue des Apôtres."
 	},
 	{
 		"id": 65,
 		"slug": "le-pouvoir-de-lier-et-delier",
 		"label": "Le pouvoir de lier et délier",
-		"parentId": 14
+		"parentId": 14,
+		"description": "*Le pouvoir de lier et délier* — accordé d'abord à Pierre seul (Mt 16, 19) puis à tous les Apôtres réunis avec lui (Mt 18, 18) — fonde l'autorité disciplinaire et sacramentelle de l'Église : excommunication, absolution sacramentelle, magistère. Saint Cyprien de Carthage en tire la doctrine de l'unité épiscopale ; les Pères latins (Tertullien, Optat, Augustin) le rattachent particulièrement à la primauté pétrinienne. Le Catéchisme enseigne : « Les paroles \"lier et délier\" signifient : celui que vous excluez de votre communion sera exclu de la communion avec Dieu ; celui que vous accueillez de nouveau dans votre communion, Dieu l'accueillera aussi dans la sienne » (CEC §1445). Cette page rassemble le témoignage patristique sur cette autorité confiée par le Christ."
 	},
 	{
 		"id": 66,
 		"slug": "les-cles-du-royaume",
 		"label": "Les clés du Royaume",
-		"parentId": 14
+		"parentId": 14,
+		"description": "*Les clés du Royaume* — promises au seul Pierre à Césarée de Philippe (Mt 16, 19) — symbolisent l'autorité plénière sur la maison de Dieu, conformément à l'imagerie d'Isaïe 22, 22. Saint Cyprien, saint Optat, saint Léon le Grand et saint Augustin voient dans ce don à Pierre le fondement scripturaire de la primauté romaine. Léon le Grand, dans ses sermons sur l'anniversaire de son ordination, développe la doctrine d'une primauté reçue de Pierre et exercée par ses successeurs sur le siège de Rome. Le Catéchisme l'enseigne : « Confier les clés signifie remettre l'administration de la maison à quelqu'un, principalement avec un pouvoir d'autorité » (CEC §553). Cette page rassemble le témoignage patristique sur le sens et la portée de cette image scripturaire."
 	},
 	{
 		"id": 67,
 		"slug": "saint-lin-successeur-immediat",
 		"label": "Saint Lin (successeur immédiat)",
-		"parentId": 14
+		"parentId": 14,
+		"description": "*Saint Lin*, successeur immédiat de saint Pierre sur le siège de Rome, est mentionné par saint Paul à la fin de la seconde lettre à Timothée (2 Tm 4, 21). Saint Irénée († 202), dans son *Adversus Haereses* (III, 3, 3), conserve la liste continue des évêques de Rome depuis les Apôtres : Pierre et Paul, Lin, Anaclet, Clément, et ainsi de suite. Cette succession ininterrompue est, pour les Pères du IIe siècle, le sceau de l'authenticité apostolique de l'Église romaine. Eusèbe de Césarée la reprend dans son *Histoire ecclésiastique*. Cette page rassemble les attestations patristiques de saint Lin comme premier successeur de saint Pierre et témoin de la continuité de l'épiscopat romain."
 	},
 	{
 		"id": 68,
 		"slug": "le-martyre",
 		"label": "Le martyre",
-		"parentId": 40
+		"parentId": 40,
+		"description": "*Le martyre* — du grec *martus*, témoin — est, selon l'enseignement constant de l'Église, la forme la plus haute du témoignage chrétien : « Plus ils nous moissonnaient, plus nous nous multipliions » (Tertullien). Saint Ignace d'Antioche, sur le chemin du Colisée, écrit aux Romains : « Laissez-moi être la pâture des bêtes ; c'est par elles qu'il me sera donné d'arriver à Dieu. Je suis le froment de Dieu, et je suis moulu par les dents des bêtes pour devenir le pur pain du Christ. » Saint Polycarpe, sainte Perpétue, saint Cyprien témoignent de la même paix devant la mort. Le Catéchisme enseigne : « Le martyre est le suprême témoignage rendu à la vérité de la foi » (CEC §2473). Cette page rassemble le témoignage patristique sur la dignité, le sens et la grâce du martyre chrétien."
 	},
 	{
 		"id": 69,
 		"slug": "les-reliques",
 		"label": "Les reliques",
-		"parentId": 40
+		"parentId": 40,
+		"description": "*Les reliques* — restes corporels des martyrs et des saints, ou objets ayant été en contact avec eux — sont vénérés par l'Église dès les premiers siècles. Le *Martyre de saint Polycarpe* (vers 156) atteste déjà le culte rendu aux ossements de l'évêque de Smyrne, « plus précieux que des pierres précieuses et plus éprouvés que l'or ». Saint Ambroise transfère solennellement les corps des saints Gervais et Protais ; saint Augustin et saint Jean Chrysostome prêchent sur les miracles obtenus par leur intercession. Le Concile de Trente confirmera la pratique séculaire. Le Catéchisme enseigne : « Les ossements sacrés des martyrs et des saints sont l'objet d'un culte religieux » (cf. CEC §1674). Cette page rassemble le témoignage patristique sur la vénération des reliques."
 	},
 	{
 		"id": 70,
 		"slug": "la-persecution",
 		"label": "La persécution",
-		"parentId": 40
+		"parentId": 40,
+		"description": "*La persécution* a marqué les trois premiers siècles du christianisme : de Néron à Dioclétien, les chrétiens ont versé leur sang pour le nom du Christ. Les Pères apologistes (saint Justin, Athénagore, Tertullien) ont rédigé des apologies adressées aux empereurs pour défendre la foi calomniée. Tertullien forge la formule devenue célèbre : « Le sang des chrétiens est une semence » (*Apologétique*, 50). Saint Cyprien de Carthage écrit pendant la persécution de Dèce et meurt sous celle de Valérien ; saint Eusèbe de Césarée laissera l'*Histoire ecclésiastique* qui en conserve la mémoire. Cette page rassemble le témoignage des Pères sur le sens chrétien de la persécution, la fidélité des confesseurs et la grâce qui accompagne l'épreuve."
 	},
 	{
 		"id": 71,
 		"slug": "les-saintes-ecritures",
 		"label": "Les Saintes Écritures",
-		"parentId": 10
+		"parentId": 10,
+		"description": "*Les Saintes Écritures* — l'Ancien et le Nouveau Testament — sont, selon la foi catholique, inspirées par le Saint-Esprit et reconnues par l'Église comme Parole de Dieu. Les Pères en attestent la lecture continue dans la liturgie dès le IIe siècle (saint Justin) et l'autorité normative pour la doctrine (saint Irénée, Tertullien, Origène). Saint Jérôme consacre sa vie à la *Vulgate*, traduction latine qui restera l'édition de référence pendant un millénaire et demi. Le Catéchisme enseigne : « L'Écriture sainte est la parole de Dieu en tant que, sous l'inspiration de l'Esprit divin, elle est consignée par écrit » (CEC §81). Cette page rassemble le témoignage patristique sur l'inspiration, l'autorité et l'interprétation des Saintes Écritures."
 	},
 	{
 		"id": 72,
 		"slug": "le-canon-du-nouveau-testament",
 		"label": "Le canon du Nouveau Testament",
-		"parentId": 10
+		"parentId": 10,
+		"description": "*Le canon du Nouveau Testament* — la liste des vingt-sept livres reconnus comme inspirés — se constitue progressivement aux IIe-IVe siècles. Le canon de Muratori (vers 170) en témoigne pour Rome ; saint Irénée fixe les quatre Évangiles ; Origène, saint Athanase (dans sa *Lettre festale* de 367) et saint Augustin présentent la liste définitive. Les conciles régionaux d'Hippone (393) et de Carthage (397, 419) la confirment, puis le concile œcuménique de Trente (1546). Le Catéchisme l'enseigne : « C'est la Tradition apostolique qui a fait discerner à l'Église quels écrits doivent être comptés dans la liste des Livres saints » (CEC §120). Cette page rassemble le témoignage patristique sur la formation et la reconnaissance du canon néotestamentaire."
 	},
 	{
 		"id": 73,
 		"slug": "le-canon-de-lancien-testament",
 		"label": "Le canon de l'Ancien Testament",
-		"parentId": 10
+		"parentId": 10,
+		"description": "*Le canon de l'Ancien Testament* — quarante-six livres dans la tradition catholique — correspond à la *Septante*, version grecque utilisée par les Apôtres et l'Église primitive, plus large que le canon hébreu massorétique fixé après le concile de Yamnia. Saint Augustin défend la pleine inspiration de la Septante (*De la doctrine chrétienne*, II, 8) ; saint Jérôme, plus réticent à propos des deutérocanoniques, traduira néanmoins ces livres dans la Vulgate. Le concile de Trente (1546) fixe définitivement la liste catholique. Le Catéchisme rappelle : « L'Ancien Testament est une partie inamissible de la Sainte Écriture » (CEC §123). Cette page rassemble le témoignage patristique sur le contenu et la valeur normative du canon vétérotestamentaire reçu par l'Église."
 	},
 	{
 		"id": 74,
 		"slug": "les-livres-deuterocanoniques",
 		"label": "Les livres deutérocanoniques",
-		"parentId": 10
+		"parentId": 10,
+		"description": "*Les livres deutérocanoniques* — Tobie, Judith, 1-2 Maccabées, Sagesse, Siracide, Baruch et certaines parties d'Esther et de Daniel — sont reçus comme inspirés par l'Église catholique mais écartés par le canon protestant à la suite de Luther. Les Pères latins (saint Augustin, saint Optat) et les conciles d'Hippone (393) et de Carthage (397) les comptent sans réserve parmi les Écritures. Saint Jérôme exprime un avis plus nuancé mais les traduit. La citation explicite des Maccabées par les premiers Pères, et l'usage liturgique constant de la Sagesse et du Siracide, attestent leur autorité dans l'Église ancienne. Cette page rassemble le témoignage patristique sur l'inspiration et la valeur des livres deutérocanoniques."
 	},
 	{
 		"id": 75,
 		"slug": "le-jugement-dernier",
 		"label": "Le Jugement dernier",
-		"parentId": 46
+		"parentId": 46,
+		"description": "*Le Jugement dernier* — la seconde venue glorieuse du Christ pour juger les vivants et les morts — est affirmé par tous les symboles de foi. Les Pères, en particulier saint Augustin dans *La Cité de Dieu* (livres XX-XXII), développent ce dogme à partir des grandes péricopes évangéliques (Mt 25 : les brebis et les boucs ; le grand discours eschatologique). Saint Cyrille de Jérusalem y consacre sa quinzième catéchèse. Le Catéchisme enseigne : « Devant le Christ qui est la Vérité, sera définitivement mise à nu la vérité du rapport de chaque homme à Dieu (...) Le Jugement dernier viendra lors du retour glorieux du Christ » (CEC §1039-1040). Cette page rassemble le témoignage patristique sur la parousie, la résurrection universelle et la sentence définitive."
 	},
 	{
 		"id": 76,
 		"slug": "la-bete-de-lapocalypse",
 		"label": "La Bête de l'Apocalypse",
-		"parentId": 49
+		"parentId": 49,
+		"description": "*La Bête de l'Apocalypse* (Ap 13) — figure de l'opposition antichrétienne par excellence — a fait l'objet de multiples lectures dans la tradition patristique. Saint Irénée († 202), saint Hippolyte de Rome et saint Victorin de Pettau y voient l'instrument de l'Antéchrist final ; saint Augustin, dans son interprétation plus spirituelle de l'Apocalypse, identifie la Bête à la cité terrestre qui persécute la cité de Dieu à travers les âges. Tous s'accordent à reconnaître dans cette vision johannique une dénonciation du pouvoir politique idolâtrique et un appel à la persévérance des saints. Cette page rassemble le témoignage patristique sur la signification symbolique et eschatologique de la première Bête de l'Apocalypse."
 	},
 	{
 		"id": 77,
 		"slug": "la-marque-de-la-bete",
 		"label": "La marque de la Bête",
-		"parentId": 49
+		"parentId": 49,
+		"description": "*La marque de la Bête* (Ap 13, 16-18) — caractère imprimé sur la main ou le front, et le nombre 666 — a inspiré aux Pères diverses interprétations symboliques. Saint Irénée († 202), dans le livre V d'*Adversus Haereses*, propose plusieurs lectures du nombre (*Lateinos*, *Teitan*) tout en soulignant que l'identification précise relève de la prudence : il vaut mieux attendre la manifestation que se précipiter dans la spéculation. Saint Hippolyte, saint Victorin et saint Andrée de Césarée maintiennent une lecture eschatologique : la marque représente l'adhésion publique à l'Antéchrist, opposée au signe de la croix imprimé au baptême. Cette page rassemble le témoignage patristique sur cette image apocalyptique et son sens spirituel."
 	},
 	{
 		"id": 78,
 		"slug": "la-gehenne",
 		"label": "La géhenne",
-		"parentId": 46
+		"parentId": 46,
+		"description": "*La géhenne* — du grec *geenna*, transcription de l'hébreu *Gê-Hinnom* (vallée de Hinnom, près de Jérusalem, ancien lieu de sacrifices idolâtres) — est le terme employé par Jésus pour désigner le lieu du châtiment éternel : « la géhenne du feu » (Mt 5, 22), « la géhenne de feu inextinguible » (Mc 9, 43). Les Pères, à la suite de l'enseignement évangélique, identifient la géhenne à l'enfer définitif, distinct du shéol (séjour intermédiaire des morts). Saint Augustin (*Cité de Dieu*, XXI) et saint Jean Chrysostome insistent sur la réalité et l'éternité de ce châtiment. Cette page rassemble le témoignage patristique sur la géhenne comme synonyme scripturaire de l'enfer éternel."
 	},
 	{
 		"id": 79,
 		"slug": "le-tartare",
 		"label": "Le Tartare",
-		"parentId": 46
+		"parentId": 46,
+		"description": "*Le Tartare* — du grec *tartaros*, partie la plus profonde du shéol dans la mythologie grecque — apparaît dans la seconde épître de Pierre : « Dieu n'a pas épargné les anges qui avaient péché, mais les a précipités dans le Tartare » (2 P 2, 4). Les Pères, en particulier saint Justin et saint Augustin, utilisent ce terme pour désigner le lieu de châtiment des anges déchus, distinct de la géhenne destinée aux damnés à la fin des temps. Cette page rassemble le témoignage patristique sur le Tartare comme nom du lieu où sont enchaînés les démons jusqu'au Jugement dernier."
 	},
 	{
 		"id": 80,
 		"slug": "les-corps-incorruptibles",
 		"label": "Les corps incorruptibles",
-		"parentId": 48
+		"parentId": 48,
+		"description": "*Les corps incorruptibles* des saints — préservation miraculeuse de la décomposition après la mort — sont attestés dès l'Antiquité chrétienne comme un signe possible de sainteté. Le *Martyre de saint Polycarpe* (vers 156) note déjà la vénération particulière des restes. Saint Augustin (*Cité de Dieu*, XXII, 8) recense les guérisons opérées par les reliques de saint Étienne. Saint Grégoire de Tours et saint Grégoire le Grand multiplieront les récits d'incorruptibilité comme preuve de la puissance divine agissant à travers ses serviteurs. Cette page rassemble le témoignage patristique sur ce phénomène mystique, signe anticipé de la résurrection glorieuse promise à tous les corps des saints."
 	},
 	{
 		"id": 81,
 		"slug": "la-foi",
 		"label": "La foi",
-		"parentId": 43
+		"parentId": 43,
+		"description": "*La foi* — vertu théologale par laquelle l'homme adhère à Dieu et à tout ce qu'il a révélé — est, selon saint Paul, « le fondement des biens que nous espérons » (He 11, 1). Les Pères ont médité ce don : saint Justin présente la foi comme un assentiment raisonnable à la vérité révélée ; saint Augustin, dans *De la prédestination des saints*, l'analyse comme un don de Dieu qui ne prive cependant pas l'homme de sa liberté ; saint Léon le Grand insiste sur la dimension christologique de l'acte de foi. Le Catéchisme enseigne : « La foi est une grâce » (CEC §153), « un acte humain » (CEC §154) et « il ne peut y avoir de contradiction entre la foi et la raison » (CEC §159). Cette page rassemble le témoignage patristique sur cette vertu première de la vie chrétienne."
 	},
 	{
 		"id": 82,
 		"slug": "libre-arbitre-et-predestination",
 		"label": "Libre arbitre et prédestination",
-		"parentId": 44
+		"parentId": 44,
+		"description": "*Libre arbitre et prédestination* — la coexistence du dessein éternel de Dieu et de la liberté humaine — constitue l'un des plus grands défis de la théologie chrétienne. Saint Augustin, dans sa controverse avec les pélagiens (*De la grâce et du libre arbitre*, *De la prédestination des saints*), pose les bases : la liberté est réelle mais la grâce la précède et la rend efficace. Saint Jean Chrysostome insiste plus fortement sur la liberté humaine, saint Cyrille d'Alexandrie sur la primauté de la grâce. Cassien et Faustus de Riez prolongeront le débat. Le Concile d'Orange (529) et plus tard celui de Trente fixeront l'équilibre catholique. Le Catéchisme enseigne : « Dieu prédestine personne à aller en enfer » (CEC §1037). Cette page rassemble le témoignage patristique sur cet équilibre délicat entre grâce et liberté."
 	},
 	{
 		"id": 83,
 		"slug": "la-divinisation-theosis",
 		"label": "La divinisation (théosis)",
-		"parentId": 43
+		"parentId": 43,
+		"description": "*La divinisation* — la *theosis* des Pères grecs — désigne la participation de l'homme à la nature divine par la grâce du Christ : « Dieu s'est fait homme pour que l'homme soit fait Dieu » (saint Athanase, *De l'Incarnation*, 54). Les Pères grecs, en particulier saint Irénée, saint Athanase, saint Grégoire de Nazianze, saint Maxime le Confesseur, ont fait de cet « admirable échange » le cœur de la sotériologie. Saint Pierre le résumera : « participants de la nature divine » (2 P 1, 4). Le Catéchisme enseigne : « Le Fils unique de Dieu, voulant nous rendre participants de sa divinité, a assumé notre nature, afin que, devenu homme, Il fît les hommes dieux » (CEC §460). Cette page rassemble le témoignage patristique sur ce mystère central."
 	},
 	{
 		"id": 84,
 		"slug": "la-nouvelle-naissance",
 		"label": "La nouvelle naissance",
-		"parentId": 24
+		"parentId": 24,
+		"description": "*La nouvelle naissance* — « il faut renaître d'en haut » (Jn 3, 3-7) — désigne le passage de l'homme à l'état de fils adoptif de Dieu par le baptême. Les Pères y reconnaissent unanimement le sacrement de l'initiation chrétienne : saint Justin l'appelle « illumination » et « bain de régénération » ; saint Cyrille de Jérusalem y consacre ses catéchèses mystagogiques ; saint Augustin lutte contre les pélagiens en défendant la nécessité absolue de cette renaissance, y compris pour les nouveau-nés. Le Catéchisme l'enseigne : « Par le Baptême tous les péchés sont remis (...) il ne reste plus rien qui empêche l'entrée dans le Royaume de Dieu » (CEC §1263). Cette page rassemble le témoignage patristique sur la nature, les effets et la nécessité de cette régénération baptismale."
 	},
 	{
 		"id": 85,
 		"slug": "la-perfection-chretienne",
 		"label": "La perfection chrétienne",
-		"parentId": 43
+		"parentId": 43,
+		"description": "*La perfection chrétienne* — « Soyez parfaits comme votre Père céleste est parfait » (Mt 5, 48) — est l'horizon de toute vie chrétienne, et non pas seulement de quelques élites. Les Pères, en particulier saint Grégoire de Nysse (*Vie de Moïse*) et saint Jean Cassien (*Conférences*), ont décrit la croissance dans la charité comme un progrès continuel : « Ne pas avancer dans la vertu, c'est rétrograder. » Saint Augustin développe une théologie de la perfection comme amour croissant de Dieu. Le Catéchisme l'enseigne : « Tous les fidèles, de quelque état ou rang qu'ils soient, sont appelés à la plénitude de la vie chrétienne et à la perfection de la charité » (CEC §2013). Cette page rassemble le témoignage patristique sur cet appel universel à la sainteté."
 	},
 	{
 		"id": 86,
 		"slug": "limpeccabilite",
 		"label": "L'impeccabilité",
-		"parentId": 43
+		"parentId": 43,
+		"description": "*L'impeccabilité* — l'impossibilité de pécher — n'est attribuée par les Pères qu'au Christ, à la Vierge Marie (par privilège singulier), et aux bienheureux dans la gloire céleste. Pour les chrétiens en pèlerinage ici-bas, l'enseignement catholique constant rejette la prétention à une impeccabilité totale : « Si nous disons que nous n'avons pas de péché, nous nous abusons » (1 Jn 1, 8). Saint Augustin combat sur ce point les pélagiens, qui revendiquaient pour la nature humaine non blessée une possibilité d'impeccabilité. Le Concile de Carthage (418) et celui d'Orange (529) confirment la position augustinienne. Cette page rassemble le témoignage patristique sur les limites de la sainteté terrestre et la nécessité permanente de la grâce."
 	},
 	{
 		"id": 87,
 		"slug": "la-penitence-repentir",
 		"label": "La pénitence — repentir",
-		"parentId": 32
+		"parentId": 32,
+		"description": "*La pénitence* — du grec *metanoia*, retournement du cœur — est le retour à Dieu après le péché, accompagné de douleur sincère, de confession et d'œuvres de réparation. Les Pères présentent la pénitence comme une « seconde planche » après le naufrage (Tertullien, *De la pénitence*) : le baptême est la première, la confession sacramentelle la seconde. Saint Cyprien organise la pénitence publique pour les *lapsi* ; saint Ambroise admet Théodose à la pénitence après le massacre de Thessalonique. Le Catéchisme enseigne : « La conversion du cœur, le repentir intérieur, est le mouvement par lequel le pécheur retourne à Dieu » (CEC §1430-1431). Cette page rassemble le témoignage patristique sur la conversion, le repentir et le sacrement de pénitence."
 	},
 	{
 		"id": 88,
 		"slug": "le-gnosticisme",
-		"label": "Le gnosticisme"
+		"label": "Le gnosticisme",
+		"description": "*Le gnosticisme* — courant religieux composite des IIe-IIIe siècles — prétendait offrir un salut par la *gnosis*, connaissance ésotérique réservée à des initiés. Mêlant éléments chrétiens, juifs, platoniciens et orientaux, il opposait un Dieu suprême inconnaissable au Démiurge créateur (mauvais ou imparfait), méprisait la matière et niait la réalité de l'Incarnation. Saint Irénée de Lyon (*Adversus Haereses*, vers 180) en livre la réfutation la plus complète, suivi par Tertullien (*Contre les Valentiniens*), saint Hippolyte de Rome et Clément d'Alexandrie. Les Pères y voient le prototype de toute hérésie cherchant à substituer la spéculation à la foi reçue des Apôtres. Cette page rassemble le témoignage patristique sur la nature, les variantes et la réfutation du gnosticisme."
 	},
 	{
 		"id": 89,
 		"slug": "marcion",
-		"label": "Marcion"
+		"label": "Marcion",
+		"description": "*Marcion* († vers 160), riche armateur du Pont, est l'auteur d'une des plus dangereuses hérésies du IIe siècle. Il opposait radicalement le Dieu créateur de l'Ancien Testament (juste mais mauvais) au Dieu de Jésus (bon et inconnu jusque-là). Il rejetait l'Ancien Testament en bloc et amputait le Nouveau Testament pour ne garder qu'une version expurgée de l'Évangile de Luc et dix lettres pauliniennes. Saint Justin, saint Irénée, Tertullien (*Contre Marcion*, en cinq livres) lui répondent en défendant l'unité des deux Testaments et l'identité du Dieu unique, créateur et rédempteur. La réaction antimarcionite contribue à la fixation du canon des Écritures. Cette page rassemble le témoignage patristique sur Marcion et la doctrine marcionite."
 	},
 	{
 		"id": 90,
 		"slug": "le-montanisme",
-		"label": "Le montanisme"
+		"label": "Le montanisme",
+		"description": "*Le montanisme* — du nom de Montan, prophète de Phrygie vers 170 — proclamait une « nouvelle prophétie » et annonçait la fin imminente du monde et la descente de la Jérusalem céleste à Pepuza. Mouvement rigoriste, il refusait toute pénitence après le baptême, imposait des jeûnes sévères, exaltait le martyre et glorifiait le célibat. Tertullien, dans la dernière période de sa vie, s'y ralliera. Saint Hippolyte de Rome, saint Épiphane et saint Cyprien dénoncent l'illuminisme charismatique qui refuse la médiation hiérarchique de l'Église. Cette page rassemble le témoignage patristique sur le montanisme, premier exemple historique d'un faux prophétisme cherchant à supplanter la révélation apostolique close avec les Apôtres."
 	},
 	{
 		"id": 91,
 		"slug": "novatien-et-les-novatianistes",
-		"label": "Novatien et les novatianistes"
+		"label": "Novatien et les novatianistes",
+		"description": "*Novatien* († vers 258), prêtre romain érudit, est l'auteur d'un traité orthodoxe *Sur la Trinité* mais aussi le fondateur d'un schisme rigoriste qui refusait la réadmission des *lapsi* (chrétiens ayant sacrifié aux idoles pendant la persécution de Dèce) dans la communion ecclésiale, même après une longue pénitence. Saint Cyprien de Carthage, saint Corneille de Rome et saint Denys d'Alexandrie défendent la miséricorde sacramentelle de l'Église contre cette rigueur. Les novatianistes formeront une Église parallèle qui subsistera plusieurs siècles. Cette page rassemble le témoignage patristique sur Novatien, son schisme et le principe ecclésial fondamental qu'aucun péché, fût-il public, ne place le pécheur repenti hors d'atteinte de la miséricorde sacramentelle."
 	},
 	{
 		"id": 92,
 		"slug": "arius-et-larianisme",
-		"label": "Arius et l'arianisme"
+		"label": "Arius et l'arianisme",
+		"description": "*Arius* († 336), prêtre d'Alexandrie, est l'auteur de la plus grande crise christologique de l'Antiquité chrétienne. Il enseignait que le Fils, bien qu'éminemment supérieur à toute créature, n'est pas véritablement Dieu : « Il fut un temps où il n'était pas. » Le Concile de Nicée (325), convoqué par Constantin, condamne cette doctrine et promulgue le terme *homoousios* (« consubstantiel ») pour affirmer la pleine divinité du Fils. Saint Athanase d'Alexandrie défendra cette foi pendant un demi-siècle d'exils répétés ; les Cappadociens (saint Basile, saint Grégoire de Nazianze, saint Grégoire de Nysse) achèveront la victoire sur l'arianisme au Concile de Constantinople I (381). Cette page rassemble le témoignage patristique sur la controverse arienne, fondatrice de la christologie nicéenne."
 	},
 	{
 		"id": 93,
 		"slug": "heresies-et-heretiques",
-		"label": "Hérésies et hérétiques"
+		"label": "Hérésies et hérétiques",
+		"description": "*Hérésies et hérétiques* — du grec *hairesis*, choix particulier opposé à la foi commune — désignent dans la tradition patristique les déviations doctrinales qui rompent avec la *regula fidei* reçue des Apôtres. Saint Irénée (*Adversus Haereses*), saint Hippolyte (*Philosophoumena*), saint Épiphane (*Panarion*) ont composé de vastes réfutations qui classent les hérésies par familles. Tertullien, dans son *De Praescriptione*, formule un principe procédural : il faut écarter d'avance les hérétiques par le seul fait qu'ils s'écartent de l'enseignement reçu des Apôtres, conservé dans les Églises apostoliques. Le Catéchisme enseigne : « L'hérésie est la négation obstinée, après la réception du Baptême, d'une vérité qui doit être crue de foi divine et catholique » (CEC §2089). Cette page rassemble le témoignage patristique général sur le phénomène hérétique."
 	},
 	{
 		"id": 94,
 		"slug": "lautel",
 		"label": "L'autel",
-		"parentId": 30
+		"parentId": 30,
+		"description": "*L'autel* — table sacrée sur laquelle est offert le sacrifice eucharistique — est le centre de l'édifice ecclésial dès la plus haute antiquité chrétienne. Saint Ignace d'Antioche évoque déjà un autel unique par communauté, symbole de l'unité autour de l'évêque. Saint Cyprien parle de la *mensa Domini*. Avec la paix de l'Église, les autels deviennent fixes, en pierre, contenant des reliques de martyrs — pratique liée à la lecture d'Ap 6, 9 : « Sous l'autel, les âmes de ceux qui avaient été immolés. » Le Catéchisme l'enseigne : « L'autel de la Nouvelle Alliance, c'est la Croix du Seigneur (...) Sur l'autel, qui est centre de l'église, est rendu présent le Sacrifice de la Croix » (CEC §1182). Cette page rassemble le témoignage patristique sur le sens, l'usage et la dignité de l'autel chrétien."
 	},
 	{
 		"id": 95,
 		"slug": "les-vases-sacres",
 		"label": "Les vases sacrés",
-		"parentId": 30
+		"parentId": 30,
+		"description": "*Les vases sacrés* — calice, patène, ciboire, ostensoir — sont réservés au service du sacrifice eucharistique. Dès l'Antiquité, la Tradition impose qu'ils soient faits de matière noble et consacrés par l'évêque. Le pape saint Léon le Grand légifère sur leur usage exclusivement liturgique ; saint Optat de Milève et saint Augustin mentionnent les vases d'or et d'argent dans la pratique africaine. Saint Cyprien organise la collecte et la conservation des vases sacrés pendant les persécutions. Le droit canonique a précisé les règles relatives à leur consécration et à leur usage. Cette page rassemble le témoignage patristique sur la dignité particulière reconnue, dès les premiers siècles, aux vases destinés à contenir le Corps et le Sang du Seigneur."
 	},
 	{
 		"id": 96,
 		"slug": "labsolution",
 		"label": "L'absolution",
-		"parentId": 32
+		"parentId": 32,
+		"description": "*L'absolution* — parole sacramentelle par laquelle le prêtre, au nom du Christ, remet les péchés — est attestée dans la pratique pénitentielle de l'Église dès l'Antiquité. Tertullien décrit la *paenitentia secunda* qui s'achève par la réconciliation de l'évêque ; saint Cyprien organise les degrés de la pénitence publique aboutissant à la *pax* sacramentelle ; saint Léon le Grand fixe la doctrine de la nécessité d'une confession aux ministres ordonnés. La forme indicative actuelle (« Je t'absous ») s'est généralisée au Moyen Âge. Le Catéchisme enseigne : « Pardonner les péchés (...) le Christ a confié ce pouvoir à des hommes pour qu'ils l'exercent en son nom » (CEC §1441). Cette page rassemble le témoignage patristique sur le pouvoir absoutoire confié à l'Église."
 	},
 	{
 		"id": 97,
 		"slug": "le-peche",
 		"label": "Le péché",
-		"parentId": 19
+		"parentId": 19,
+		"description": "*Le péché* — désobéissance volontaire à la loi de Dieu, transgression de la charité — est une réalité dont les Pères ont longuement médité la nature, l'origine et les conséquences. Saint Augustin (*Du libre arbitre*, *Confessions*, *Cité de Dieu*) en analyse l'enracinement dans le cœur humain blessé par la chute originelle. Saint Jean Chrysostome insiste sur la liberté coupable ; les Cappadociens sur la dégradation de la nature. Le Catéchisme enseigne : « Le péché est une offense à Dieu (...) Le péché s'élève ainsi contre l'amour de Dieu pour nous et en détourne nos cœurs » (CEC §1850). Cette page rassemble le témoignage patristique sur la définition, les espèces et la gravité du péché, ainsi que sur la grâce qui en libère."
 	},
 	{
 		"id": 98,
 		"slug": "les-lapsi-apostats-sous-persecution",
 		"label": "Les lapsi (apostats sous persécution)",
-		"parentId": 32
+		"parentId": 32,
+		"description": "*Les lapsi* — chrétiens « tombés » qui, pendant les persécutions de Dèce (250) puis de Dioclétien (303-311), avaient sacrifié aux idoles ou s'étaient procuré de faux certificats — posèrent à l'Église ancienne un délicat problème pastoral. Saint Cyprien de Carthage, dans son traité *De lapsis*, organise une pénitence graduée pour les réintégrer sans céder au laxisme ni au rigorisme schismatique de Novatien et de Felicissimus. Le concile de Carthage (251) fixe la discipline. Saint Pierre d'Alexandrie fait de même pour l'Égypte avec sa *Lettre canonique*. Cette page rassemble le témoignage patristique sur la question des *lapsi*, qui fonda la doctrine catholique de la possibilité d'une pénitence pour les péchés graves commis après le baptême."
 	},
 	{
 		"id": 99,
 		"slug": "lordination",
 		"label": "L'ordination",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*L'ordination* — sacrement par lequel un baptisé reçoit l'épiscopat, le presbytérat ou le diaconat — est attestée dès l'Antiquité chrétienne par l'imposition des mains accompagnée de la prière de consécration. La *Tradition apostolique* de saint Hippolyte de Rome (vers 215) conserve les rituels les plus anciens. Saint Ignace d'Antioche insiste sur l'unité autour de l'évêque comme principe de la communion ecclésiale ; saint Cyprien sur la collégialité épiscopale. Les conciles d'Elvire, de Nicée et d'Antioche légifèrent sur les conditions et la discipline du clergé. Le Catéchisme enseigne : « L'Ordre est le sacrement grâce auquel la mission confiée par le Christ à ses Apôtres continue à être exercée dans l'Église » (CEC §1536). Cette page rassemble le témoignage patristique sur l'institution divine et la transmission de l'Ordre."
 	},
 	{
 		"id": 100,
 		"slug": "lacolyte",
 		"label": "L'acolyte",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*L'acolyte* — du grec *akolouthos*, « suivant » — est, dans la tradition latine, un ministre institué qui assiste le diacre et le prêtre à l'autel, prépare les saintes espèces et porte le cierge. Le pape Corneille (251), dans une lettre conservée par Eusèbe, mentionne 42 acolytes parmi le clergé de Rome. Saint Cyprien, dans plusieurs lettres, mentionne lui aussi les acolytes comme membres ordinaires du clergé urbain. Le ministère perdure dans l'Église latine jusqu'à aujourd'hui, désormais reçu comme institution liturgique et non comme ordre sacré (motu proprio *Ministeria quaedam*, Paul VI, 1972). Cette page rassemble le témoignage patristique sur ce ministère d'assistance à l'autel."
 	},
 	{
 		"id": 101,
 		"slug": "le-sous-diacre",
 		"label": "Le sous-diacre",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*Le sous-diacre* est, dans la tradition latine ancienne, un ministre qui sert immédiatement le diacre à l'autel, chante l'épître à la messe et transporte les offrandes. Le pape Corneille (251) mentionne sept sous-diacres dans la *Lettre à Fabius*. Saint Cyprien, le concile d'Elvire, la *Tradition apostolique* attestent leur existence dès la première moitié du IIIe siècle. Au Moyen Âge, ils seront promus au rang d'ordres majeurs ; Paul VI, en 1972 (*Ministeria quaedam*), les supprimera dans l'Église latine. Cette page rassemble le témoignage patristique sur ce ministère intermédiaire entre le diacre et les ordres mineurs."
 	},
 	{
 		"id": 102,
 		"slug": "le-lecteur",
 		"label": "Le lecteur",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*Le lecteur* — *lector*, *anagnostes* — est, depuis l'Antiquité chrétienne, le ministre qui proclame les lectures de l'Écriture pendant la liturgie (excepté l'Évangile, réservé au diacre). Saint Justin (vers 150) décrit déjà la lecture des « mémoires des Apôtres » et des « écrits des prophètes » par un lecteur désigné. Tertullien et saint Cyprien mentionnent les *lectores* comme ordre établi ; le pape Corneille en compte 52 à Rome en 251. L'institution subsiste aujourd'hui, conférée comme ministère laïc institué (Paul VI, *Ministeria quaedam*, 1972). Cette page rassemble le témoignage patristique sur la fonction et la dignité du lecteur dans la liturgie de la Parole."
 	},
 	{
 		"id": 103,
 		"slug": "les-ordres-mineurs",
 		"label": "Les ordres mineurs",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*Les ordres mineurs* — portier, lecteur, exorciste, acolyte — constituaient, dans la tradition latine, les degrés inférieurs du clergé, en deçà du sous-diaconat et des trois ordres majeurs (diaconat, presbytérat, épiscopat). Le pape Corneille (251) en énumère la composition du clergé romain. Saint Cyprien, saint Cornelius, saint Damase légifèrent sur leur conférement. Le motu proprio *Ministeria quaedam* (Paul VI, 1972) réorganise la tradition : seuls subsistent comme *ministeria* laïcs institués le lectorat et l'acolytat ; les autres ordres mineurs sont supprimés. Cette page rassemble le témoignage patristique sur la structure des ordres mineurs dans le clergé ancien."
 	},
 	{
 		"id": 104,
 		"slug": "la-femme-dans-leglise",
 		"label": "La femme dans l'Église",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*La femme dans l'Église* occupe, dès les origines, une place que les Pères ont décrite avec nuance. Saint Paul reconnaît le ministère des femmes dans l'évangélisation (Phébée diaconesse, Priscille, Junias), tout en réservant la prédication doctrinale à l'assemblée. Saint Clément d'Alexandrie, saint Jean Chrysostome, saint Augustin développent une théologie de l'égale dignité baptismale dans la complémentarité des vocations. La tradition reçoit l'institution des veuves consacrées, des vierges, des diaconesses, sans pour autant ordonner sacramentellement les femmes. Saint Jean-Paul II (*Ordinatio sacerdotalis*, 1994) confirme cette tradition apostolique. Cette page rassemble le témoignage patristique sur la dignité, les ministères et les vocations féminines dans l'Église ancienne."
 	},
 	{
 		"id": 105,
 		"slug": "lordre-des-veuves",
 		"label": "L'ordre des veuves",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*L'ordre des veuves* — *viduae* — est, dès le Ier siècle, une institution ecclésiale attestée par la première épître à Timothée (1 Tm 5, 3-16) qui fixe les critères d'admission. La *Tradition apostolique* de saint Hippolyte, la *Didascalie des Apôtres* et les *Constitutions apostoliques* détaillent les fonctions de prière, de pénitence, de service caritatif et d'assistance pastorale aux femmes que ces veuves consacrées exerçaient sous l'autorité de l'évêque. Tertullien et saint Polycarpe en parlent comme d'un ordre établi. Cette page rassemble le témoignage patristique sur cette vocation féminine ancienne, témoin d'une ecclésiologie ministérielle complexe et diversifiée."
 	},
 	{
 		"id": 106,
 		"slug": "lordre-des-vierges-consacrees",
 		"label": "L'ordre des vierges consacrées",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*L'ordre des vierges consacrées* — institution attestée dès le IIe siècle — réunit les femmes qui, par vœu public, se vouent au Christ dans la chasteté perpétuelle, demeurant dans le monde au service de l'Église. Saint Cyprien (*De habitu virginum*), saint Ambroise (*De virginibus*), saint Méthode d'Olympe (*Banquet*) ont consacré de longs traités à leur dignité. Le rite de la *consecratio virginum*, dont les formes anciennes remontent à saint Léon le Grand, n'a jamais été interrompu et a été restauré par Vatican II. Le Catéchisme enseigne : « L'Église accueille à nouveau ces personnes en cohérence avec une noble tradition antique » (cf. CEC §922-924). Cette page rassemble le témoignage patristique sur cette première forme de vie consacrée féminine."
 	},
 	{
 		"id": 107,
 		"slug": "le-celibat",
 		"label": "Le célibat",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*Le célibat* — état de vie choisi pour le Royaume selon l'invitation du Christ (Mt 19, 12) et de saint Paul (1 Co 7, 32-35) — est dès l'Antiquité chrétienne considéré comme une voie de perfection. Origène, saint Méthode, saint Ambroise (*De virginibus*), saint Augustin (*De sancta virginitate*) en exposent les fondements théologiques. Le concile d'Elvire (vers 305) interdit le mariage aux clercs déjà ordonnés ; cette discipline se généralisera progressivement dans l'Église latine. Le Catéchisme enseigne : « Tous les ministres ordonnés de l'Église latine, à l'exception des diacres permanents, sont normalement choisis parmi des hommes croyants qui vivent en célibataires et qui ont la volonté de garder le célibat \"à cause du Royaume des Cieux\" » (CEC §1579). Cette page rassemble le témoignage patristique sur le célibat continent comme don de Dieu et signe eschatologique."
 	},
 	{
 		"id": 108,
 		"slug": "la-simonie",
 		"label": "La simonie",
-		"parentId": 33
+		"parentId": 33,
+		"description": "*La simonie* — du nom de Simon le Magicien (Ac 8, 9-24) qui voulut acheter le don de l'Esprit aux Apôtres — désigne le trafic des choses saintes : conférement des ordres, des sacrements ou des bénéfices ecclésiastiques moyennant argent. Les conciles de Chalcédoine (451), du Latran (1059), de Latran IV (1215) la condamnent solennellement. Saint Pierre Damien et saint Grégoire VII en feront l'un des grands chevaux de bataille de la réforme grégorienne au XIe siècle. Le Catéchisme enseigne : « Il est impossible de s'approprier les biens spirituels et de se comporter à leur égard comme un possesseur ou un maître, car ils ont leur source en Dieu » (CEC §2121). Cette page rassemble le témoignage patristique sur cette grave perversion ecclésiale."
 	},
 	{
 		"id": 109,
 		"slug": "la-liturgie",
 		"label": "La liturgie",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*La liturgie* — du grec *leitourgia*, action commune — est, depuis l'Antiquité chrétienne, l'ensemble organisé du culte public que l'Église rend à Dieu. Saint Justin (*Première Apologie*, vers 150) en donne déjà une description structurée : assemblée dominicale, lecture des Écritures, homélie, intercessions, offertoire, anaphore, communion. Saint Hippolyte de Rome (*Tradition apostolique*, vers 215) transmet le plus ancien formulaire anaphorique connu. Les Pères latins (Tertullien, saint Augustin, saint Léon) et grecs (saint Cyrille de Jérusalem, saint Jean Chrysostome) en commentent les rites et le sens spirituel. Le Catéchisme enseigne : « La liturgie est célébration du Mystère du Christ et spécialement de son Mystère pascal » (CEC §1067). Cette page rassemble le témoignage patristique sur la structure et l'esprit du culte chrétien."
 	},
 	{
 		"id": 110,
 		"slug": "lencens",
 		"label": "L'encens",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*L'encens* — usage rituel passé de l'Ancien Testament (Ex 30, 7-8) à la liturgie chrétienne dès les premiers siècles — symbolise la prière qui monte vers Dieu (Ps 141, 2 ; Ap 8, 3-4) et l'adoration. Bien que Tertullien et certains apologistes aient initialement refusé l'usage de l'encens à cause de sa connotation païenne, son emploi liturgique chrétien se généralise dès le IVe siècle, notamment en Orient. Le concile *in Trullo* (692) et les anciens sacramentaires latins témoignent de son intégration dans les rites de la messe, des funérailles et des consécrations. Cette page rassemble le témoignage patristique sur le sens et l'usage progressif de l'encens dans la liturgie chrétienne."
 	},
 	{
 		"id": 111,
 		"slug": "paques",
 		"label": "Pâques",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Pâques* — la *Pascha* chrétienne, célébration de la mort et de la résurrection du Christ — est la plus ancienne et la plus importante fête de l'année liturgique. Saint Méliton de Sardes (vers 165), dans son *Homélie sur la Pâque*, en livre le plus ancien commentaire complet ; saint Irénée, saint Hippolyte, Origène et les Cappadociens en méditent le sens typologique (l'agneau pascal, la sortie d'Égypte, accomplis dans le Christ). Saint Augustin parle de la *trium dierum sacratissimum* — le saint Triduum pascal qui culmine la liturgie chrétienne. Le Catéchisme enseigne : « Pâques n'est pas simplement une fête parmi d'autres : c'est la \"Fête des fêtes\", la \"Solennité des solennités\" » (CEC §1169). Cette page rassemble le témoignage patristique sur cette fête centrale."
 	},
 	{
 		"id": 112,
 		"slug": "la-controverse-pascale",
 		"label": "La controverse pascale",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*La controverse pascale* — désaccord sur la date de la célébration de Pâques entre les Églises d'Asie (qui suivaient la date juive du 14 Nisan) et celles de Rome et d'Occident (qui célébraient toujours un dimanche) — a marqué les IIe et IIIe siècles. Saint Polycarpe, lors de sa visite au pape Anicet, défend l'usage asiatique reçu de saint Jean. Le pape Victor envisage d'excommunier les quartodécimans ; saint Irénée intervient pour la paix. Le Concile de Nicée (325) fixe enfin la règle universelle : Pâques sera célébrée le dimanche suivant la première pleine lune après l'équinoxe de printemps. Cette page rassemble le témoignage patristique sur cette dispute liturgique fondatrice et sa résolution conciliaire."
 	},
 	{
 		"id": 113,
 		"slug": "le-careme",
 		"label": "Le carême",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Le carême* — *quadragesima*, les quarante jours de jeûne, de pénitence et de catéchèse qui précèdent Pâques — est attesté dès le IVe siècle dans sa forme actuelle. Saint Athanase, dans ses *Lettres festales*, encourage les fidèles d'Alexandrie à observer le grand jeûne ; saint Jérôme et saint Léon le Grand lui consacrent de nombreuses homélies. Le carême reproduit liturgiquement les quarante jours du Christ au désert et prépare les catéchumènes au baptême pascal. Le Catéchisme enseigne : « L'Église s'unit chaque année, durant les quarante jours du grand Carême, au mystère de Jésus au désert » (CEC §540). Cette page rassemble le témoignage patristique sur l'origine, le sens et la pratique du carême chrétien."
 	},
 	{
 		"id": 114,
 		"slug": "la-semaine-sainte",
 		"label": "La Semaine Sainte",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*La Semaine Sainte* — semaine de la Passion qui ouvre le grand Triduum pascal — récapitule liturgiquement les derniers jours du Christ : entrée à Jérusalem (dimanche des Rameaux), institution de l'Eucharistie (Jeudi Saint), Passion et mort (Vendredi Saint), descente aux enfers et veille de la Résurrection (Samedi Saint), aboutissant à la Vigile pascale. Égérie, pèlerine du IVe siècle, décrit en détail la liturgie de la Semaine Sainte telle qu'elle se célébrait alors à Jérusalem. Saint Cyrille de Jérusalem, saint Ambroise et saint Augustin lui consacrent leurs plus belles homélies. Cette page rassemble le témoignage patristique sur la structure et le sens spirituel de la Semaine Sainte."
 	},
 	{
 		"id": 115,
 		"slug": "la-pentecote",
 		"label": "La Pentecôte",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*La Pentecôte* — du grec *pentekostè*, cinquantième jour — clôture le temps pascal en célébrant la descente du Saint-Esprit sur les Apôtres et la naissance publique de l'Église (Ac 2). Tertullien (*De Baptismo*) atteste son usage liturgique dès la fin du IIe siècle ; saint Grégoire de Nazianze et saint Léon le Grand lui consacrent des homélies majeures. Pendant longtemps, la Pentecôte fut aussi un jour privilégié pour le baptême. Le Catéchisme enseigne : « Au jour de la Pentecôte, le Mystère pascal s'accomplit dans l'envoi de l'Esprit Saint, manifesté, donné et communiqué comme Personne divine » (CEC §731). Cette page rassemble le témoignage patristique sur cette grande solennité, mémorial du don de l'Esprit."
 	},
 	{
 		"id": 116,
 		"slug": "lepiphanie",
 		"label": "L'Épiphanie",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*L'Épiphanie* — *theophania*, manifestation — est, dans la tradition orientale, l'une des plus anciennes fêtes chrétiennes, plus ancienne même que Noël en certaines régions. Elle célèbre la triple manifestation du Christ : aux mages païens (Mt 2), au Jourdain lors du Baptême (Mt 3) et aux disciples à Cana (Jn 2). Saint Clément d'Alexandrie en signale la célébration dès la fin du IIe siècle ; saint Grégoire de Nazianze et saint Jean Chrysostome lui consacrent des sermons majeurs. En Occident, l'accent porte surtout sur l'adoration des mages, première manifestation du Christ aux nations. Cette page rassemble le témoignage patristique sur le sens et la célébration de l'Épiphanie."
 	},
 	{
 		"id": 117,
 		"slug": "le-calendrier-chretien",
 		"label": "Le calendrier chrétien",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Le calendrier chrétien* — structure liturgique de l'année autour des fêtes du Seigneur, de la Vierge et des saints — s'est constitué progressivement à partir du noyau pascal hebdomadaire (le dimanche) et annuel (Pâques). Le calendrier philocalien de Rome (354) atteste déjà une structure complexe avec les *natalitia* des martyrs. Saint Augustin, saint Léon le Grand et le sacramentaire grégorien organisent le sanctoral. Vatican II a redonné au temporal sa primauté sur le sanctoral. Le Catéchisme enseigne : « L'Église, qui est \"le Corps du Christ\", participe à l'œuvre liturgique de son Chef » (CEC §1187), notamment par le cycle annuel des fêtes. Cette page rassemble le témoignage patristique sur l'organisation du temps liturgique chrétien."
 	},
 	{
 		"id": 118,
 		"slug": "les-vetements-liturgiques",
 		"label": "Les vêtements liturgiques",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Les vêtements liturgiques* — aube, étole, chasuble, dalmatique, chape — distinguent les ministres pendant les célébrations sacrées. À l'origine simple costume civil noble de l'Antiquité tardive (toga, paenula), ces vêtements ont conservé une forme antique alors même que l'usage profane évoluait, devenant ainsi spécifiquement liturgiques. Saint Isidore de Séville (*De ecclesiasticis officiis*) en donne au VIIe siècle la première synthèse symbolique. Les Pères latins (saint Jérôme, saint Augustin) défendent l'usage de vêtements particuliers pour la liturgie. Cette page rassemble le témoignage patristique sur l'origine, le sens et la signification symbolique des vêtements liturgiques."
 	},
 	{
 		"id": 119,
 		"slug": "les-cierges",
 		"label": "Les cierges",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Les cierges* — symbole du Christ « lumière du monde » (Jn 8, 12) et de la veille des disciples dans l'attente du Seigneur — sont employés dès l'Antiquité chrétienne dans la liturgie, à la fois pour des raisons pratiques (les premières célébrations se tenaient parfois la nuit, dans les catacombes) et symboliques. Le *Lucernaire* — bénédiction de la lampe du soir — est attesté par saint Hippolyte et la *Tradition apostolique*. Saint Jérôme, contre Vigilance, défend l'usage des cierges devant les reliques des martyrs. Le cierge pascal, allumé à la Vigile, est le symbole par excellence du Christ ressuscité. Cette page rassemble le témoignage patristique sur la signification spirituelle du feu et de la lumière dans la liturgie."
 	},
 	{
 		"id": 120,
 		"slug": "le-voile",
 		"label": "Le voile",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Le voile* — *velamen*, *epikalumma* — désigne plusieurs réalités dans la tradition chrétienne : le voile des vierges consacrées (saint Cyprien, *De habitu virginum* ; saint Ambroise, *De virginibus*), le voile sur les femmes pendant la prière liturgique (1 Co 11, 5 ; Tertullien, *De virginibus velandis*), enfin le voile qui dissimule les saintes espèces ou le tabernacle. Saint Paul fonde l'usage féminin sur des raisons symboliques liées à l'ordre de la création et à la dignité des anges qui assistent à la liturgie. Cette page rassemble le témoignage patristique sur l'usage et la portée symbolique du voile dans la pratique chrétienne ancienne."
 	},
 	{
 		"id": 121,
 		"slug": "la-priere-du-matin-et-du-soir",
 		"label": "La prière du matin et du soir",
-		"parentId": 40
+		"parentId": 40,
+		"description": "*La prière du matin et du soir* — *lauds* et *vêpres* — constitue depuis les origines chrétiennes les deux pôles de la prière quotidienne, accomplissant le précepte paulinien : « Priez sans cesse » (1 Th 5, 17). Saint Hippolyte (*Tradition apostolique*) prescrit une prière à plusieurs heures du jour ; saint Basile et saint Benoît structureront l'office monastique en sept moments quotidiens. La *Liturgie des Heures* hérite directement de cette pratique. Le Catéchisme enseigne : « Selon la tradition apostolique qui remonte à l'origine même du christianisme, le Mystère pascal est célébré par l'Église, chaque jour, principalement dans la prière des Heures » (CEC §1174). Cette page rassemble le témoignage patristique sur cette prière liturgique régulière."
 	},
 	{
 		"id": 122,
 		"slug": "l-amen",
 		"label": "L'« Amen »",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*L'« Amen »* — mot hébreu signifiant « ainsi soit-il », « c'est vrai », « j'y crois » — conclut depuis l'Antiquité juive et chrétienne les prières liturgiques de la communauté. Saint Justin (vers 150) décrit déjà la coutume : à la fin de l'anaphore eucharistique, tout le peuple répond par l'Amen, scellant son adhésion au sacrifice offert. Saint Jérôme évoque les Amen de la basilique romaine « comme le tonnerre du ciel ». Le Catéchisme enseigne : « L'\"Amen\" final du Notre Père exprime de manière performative le \"fiat\" des sept premières demandes : \"Qu'il soit fait ainsi\" » (cf. CEC §2856). Cette page rassemble le témoignage patristique sur la signification et l'importance liturgique de l'Amen."
 	},
 	{
 		"id": 123,
 		"slug": "sursum-corda",
 		"label": "Sursum corda",
-		"parentId": 30
+		"parentId": 30,
+		"description": "*Sursum corda* — « Élevons notre cœur » — est, depuis l'Antiquité chrétienne, le dialogue d'ouverture de la grande prière eucharistique (anaphore). Saint Hippolyte (*Tradition apostolique*) en conserve la forme la plus ancienne ; saint Cyprien (*De Dominica oratione*, 31) commente déjà ses termes ; saint Augustin lui consacre des passages magnifiques dans ses *Sermons* sur l'Eucharistie : « Et nous répondons : Nous l'avons élevé vers le Seigneur. » Cette page rassemble le témoignage patristique sur ce moment d'élévation spirituelle qui prélude au Sanctus et à la consécration, invitant l'assemblée à fixer son cœur sur le Mystère qui va se dérouler."
 	},
 	{
 		"id": 124,
 		"slug": "le-culte-chretien",
 		"label": "Le culte chrétien",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Le culte chrétien* — *latreia* — est, selon l'enseignement constant de l'Église, l'adoration souveraine due au seul Dieu, distincte de la *dulie* (vénération des saints) et de l'*hyperdulie* (vénération particulière de la Vierge Marie). Saint Justin, dans ses *Apologies*, distingue le culte authentique des Romains du culte chrétien authentique offert au seul Père par le Christ dans l'Esprit. Saint Augustin et saint Jean Damascène développent la doctrine théologique : « Nous adorons le Père, par le Fils, dans l'Esprit Saint. » Le Catéchisme enseigne : « Adorer Dieu, c'est, dans le respect et la soumission absolue, reconnaître le \"néant de la créature\" qui n'est que par Dieu » (CEC §2097). Cette page rassemble le témoignage patristique sur le culte authentique dû à Dieu seul."
 	},
 	{
 		"id": 125,
 		"slug": "le-lavement-des-pieds",
 		"label": "Le lavement des pieds",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Le lavement des pieds* — *mandatum* — geste accompli par le Christ au soir du Jeudi Saint (Jn 13, 4-17), est intégré à la liturgie de ce jour depuis l'Antiquité. Saint Ambroise, à Milan, le pratiquait comme rite post-baptismal ; saint Augustin l'évoque dans plusieurs sermons ; les *Constitutions apostoliques* le mentionnent. La liturgie romaine l'a conservé comme acte symbolique du sacerdoce-service. Le Catéchisme enseigne : « Le Christ, qui s'est anéanti pour nous, doit demeurer notre modèle. Ses disciples sont aussi appelés à se \"laver les pieds\" mutuellement » (cf. CEC §1336). Cette page rassemble le témoignage patristique sur le sens spirituel et la pratique liturgique du lavement des pieds."
 	},
 	{
 		"id": 126,
 		"slug": "les-rites-funeraires",
 		"label": "Les rites funéraires",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Les rites funéraires* chrétiens, dès l'Antiquité, expriment la foi en la résurrection des corps : le défunt est traité avec respect, son corps lavé, oint, enveloppé de lin et déposé dans une tombe avec prière. Saint Augustin (*De cura pro mortuis gerenda*) en expose la théologie : ces soins, bien que ne touchant pas l'âme désormais séparée, témoignent de la foi en la dignité du corps appelé à la résurrection. Tertullien et saint Jean Chrysostome dénoncent les excès funéraires païens. Le Catéchisme enseigne : « Les funérailles chrétiennes confèrent au défunt ni un sacrement ni un sacramental, puisqu'il est désormais \"hors\" de l'économie sacramentelle (...) elles sont cependant une célébration liturgique » (CEC §1684). Cette page rassemble le témoignage patristique sur la sépulture chrétienne."
 	},
 	{
 		"id": 127,
 		"slug": "les-edifices-deglise",
 		"label": "Les édifices d'église",
-		"parentId": 36
+		"parentId": 36,
+		"description": "*Les édifices d'église* — *basilica*, *ecclesia* — construits spécifiquement pour le culte chrétien apparaissent surtout après l'édit de Milan (313), bien que des *domus ecclesiae* (maisons-églises adaptées) soient attestées dès le IIIe siècle (Doura-Europos). Eusèbe de Césarée (*Histoire ecclésiastique*) décrit les constructions constantiniennes ; saint Ambroise consacre la basilique de Milan et y dépose les reliques de saint Gervais et saint Protais. Le Catéchisme enseigne : « L'église est la maison de prière où l'Eucharistie est célébrée et conservée, où les fidèles se rassemblent, et où l'on adore la présence du Fils de Dieu sauveur, offert pour nous sur l'autel sacrificiel » (CEC §1181). Cette page rassemble le témoignage patristique sur le bâtiment ecclésial et sa signification spirituelle."
 	},
 	{
 		"id": 128,
 		"slug": "limposition-des-mains",
 		"label": "L'imposition des mains",
-		"parentId": 29
+		"parentId": 29,
+		"description": "*L'imposition des mains* — geste fondamental de la tradition apostolique — confère la grâce dans plusieurs sacrements : la confirmation, l'ordre, et autrefois l'absolution. Les Actes des Apôtres l'attestent à plusieurs reprises (Ac 8, 17 ; 13, 3 ; 19, 6 ; 28, 8). Saint Hippolyte (*Tradition apostolique*) en décrit l'usage rituel détaillé pour les ordinations et la confirmation post-baptismale. Tertullien, saint Cyprien et saint Jérôme en commentent la signification : transmission de l'Esprit Saint et investiture de la mission. Le Catéchisme enseigne : « Dans l'imposition des mains, on reconnaît \"le signe efficace de cette ordination\" » (cf. CEC §1556). Cette page rassemble le témoignage patristique sur ce geste sacramentel."
 	},
 	{
 		"id": 129,
 		"slug": "lonction-huile-sainte",
 		"label": "L'onction (huile sainte)",
-		"parentId": 29
+		"parentId": 29,
+		"description": "*L'onction d'huile sainte* — geste sacramentel à la suite de plusieurs préceptes scripturaires (Jc 5, 14-15 ; Mc 6, 13) — figure dans le rituel de plusieurs sacrements : confirmation, baptême, ordre, onction des malades. Le saint chrême (mélange d'huile d'olive et de baume) est consacré par l'évêque le Jeudi Saint dès l'Antiquité ; saint Hippolyte (*Tradition apostolique*) atteste l'usage de trois huiles distinctes. Saint Cyrille de Jérusalem (*Catéchèses mystagogiques*) commente le sens spirituel de l'onction post-baptismale. Le Catéchisme enseigne : « L'onction avec l'huile sainte (...) le caractère christique de cette onction (...) signifie le don de l'Esprit Saint » (CEC §1241). Cette page rassemble le témoignage patristique sur les onctions liturgiques."
 	},
 	{
 		"id": 130,
 		"slug": "lidolatrie",
-		"label": "L'idolâtrie"
+		"label": "L'idolâtrie",
+		"description": "*L'idolâtrie* — adoration rendue à une créature à la place du Créateur — est, dans la perspective biblique et patristique, le péché radical par excellence : « N'auras pas d'autres dieux face à moi » (Ex 20, 3). Saint Justin, Athénagore, Tertullien et saint Augustin (*Cité de Dieu*) consacrent de longs développements à la réfutation de l'idolâtrie païenne. Tertullien (*De idolatria*) en étend le concept à toutes les formes de divinisation des biens créés : richesse, pouvoir, plaisir. Le Catéchisme enseigne : « L'idolâtrie ne concerne pas seulement les cultes faux du paganisme. Elle reste une tentation constante de la foi (...) \"L'idole, c'est le mammon, c'est le ventre, c'est le sexe\" » (CEC §2113). Cette page rassemble le témoignage patristique sur le premier commandement."
 	},
 	{
 		"id": 131,
 		"slug": "les-images-saintes",
-		"label": "Les images saintes"
+		"label": "Les images saintes",
+		"description": "*Les images saintes* — icônes, fresques, statues — sont admises dans le culte chrétien dès l'Antiquité, comme l'attestent les fresques des catacombes et de Doura-Europos (IIIe siècle). Saint Basile de Césarée formule le principe théologique fondateur : « L'honneur rendu à l'image remonte au modèle. » Saint Jean Damascène et saint Théodore Studite défendent la légitimité des images pendant la crise iconoclaste byzantine ; le concile de Nicée II (787) en proclame la licéité. Le Catéchisme enseigne : « Le christianisme du fait de l'Incarnation du Fils de Dieu inaugure une nouvelle \"économie\" des images » (CEC §2131). Cette page rassemble le témoignage patristique sur la vénération des images saintes et son fondement christologique."
 	},
 	{
 		"id": 132,
 		"slug": "la-loi-naturelle",
-		"label": "La loi naturelle"
+		"label": "La loi naturelle",
+		"description": "*La loi naturelle* — loi inscrite dans le cœur de tout homme et discernable par la raison sans révélation particulière — est, selon les Pères, le fondement de la morale universelle. Saint Justin parle déjà du *Logos spermatikos* présent en toute personne ; saint Paul l'évoque en Rm 2, 14-15. Saint Ambroise et saint Augustin (*De libero arbitrio*) en développent la doctrine ; saint Thomas en donnera la formulation classique. Le Catéchisme enseigne : « La loi naturelle, présente dans le cœur de chaque homme et établie par la raison, est universelle dans ses prescriptions et son autorité s'étend à tous les hommes » (CEC §1956). Cette page rassemble le témoignage patristique sur cette loi inscrite par Dieu dans la nature même de l'homme."
 	},
 	{
 		"id": 133,
 		"slug": "les-serments",
-		"label": "Les serments"
+		"label": "Les serments",
+		"description": "*Les serments* — invocations du nom de Dieu comme témoin de la vérité d'une parole — ont fait l'objet d'une réflexion patristique nuancée. Le Christ semble les interdire absolument (Mt 5, 33-37), mais saint Paul lui-même use de formules de serment dans ses lettres. Saint Augustin, saint Basile et saint Jean Chrysostome distinguent le serment licite (en justice, sous obligation grave) du serment fréquent et frivole, qui est péché. La tradition catholique a précisé : « Tu prendras au sérieux le nom du Seigneur ton Dieu » (CEC §2153). Le serment est licite mais doit être rare, vrai et sérieux. Cette page rassemble le témoignage patristique sur la licéité, les limites et la gravité du serment chrétien."
 	},
 	{
 		"id": 134,
 		"slug": "lusure",
-		"label": "L'usure"
+		"label": "L'usure",
+		"description": "*L'usure* — prêt à intérêt — a été constamment condamnée par la tradition patristique et conciliaire, sur le fondement scripturaire (Ex 22, 24 ; Lv 25, 36-37 ; Dt 23, 20-21 ; Ps 14, 5 ; Lc 6, 35). Saint Basile, saint Grégoire de Nysse, saint Ambroise (*De Tobia*), saint Jérôme et saint Augustin y consacrent des sermons sévères ; les conciles de Nicée I (325), du Latran III (1179), de Lyon II (1274) et de Vienne (1311) l'interdisent au clergé puis aux laïcs. La distinction entre intérêt légitime (titres extrinsèques) et usure réelle s'est précisée à partir du XVIe siècle. Cette page rassemble le témoignage patristique sur cette interdiction morale fondatrice de la doctrine sociale chrétienne."
 	},
 	{
 		"id": 135,
 		"slug": "la-dime",
-		"label": "La dîme"
+		"label": "La dîme",
+		"description": "*La dîme* — versement à Dieu (et à son Église) du dixième de ses revenus — est, dans l'Ancien Testament, une obligation cultuelle et caritative (Gn 14, 20 ; Lv 27, 30-32 ; Dt 14, 22). Le Christ ne l'abolit pas mais la subordonne à la justice (Mt 23, 23). Les Pères (saint Cyprien, saint Augustin, saint Jérôme) l'évoquent comme une mesure pratique minimale pour le soutien du culte, du clergé et des pauvres. Les conciles francs et carolingiens en font une obligation civile, abolie à la Révolution française. Le Catéchisme enseigne : « Les fidèles ont l'obligation de subvenir aux besoins matériels de l'Église, chacun selon ses possibilités » (CEC §2043). Cette page rassemble le témoignage patristique sur le devoir chrétien d'offrande."
 	},
 	{
 		"id": 136,
 		"slug": "le-jeune",
-		"label": "Le jeûne"
+		"label": "Le jeûne",
+		"description": "*Le jeûne* — abstention totale ou partielle de nourriture pour des motifs religieux — est une pratique pénitentielle attestée dans toutes les générations chrétiennes. Le Christ jeûne quarante jours au désert (Mt 4) et déclare : « Quand vous jeûnez... » (Mt 6, 16). Saint Hippolyte (*Tradition apostolique*) atteste les jeûnes du mercredi et du vendredi dès le IIe siècle ; saint Athanase, saint Basile, saint Jean Chrysostome et saint Léon le Grand consacrent au jeûne quadragésimal de nombreuses homélies. Le Catéchisme enseigne : « Le jeûne et l'abstinence (...) préparent à la liturgie pénitentielle et à l'effort de la conversion » (cf. CEC §1438). Cette page rassemble le témoignage patristique sur le jeûne comme expression du repentir et libération intérieure."
 	},
 	{
 		"id": 137,
 		"slug": "lascese",
-		"label": "L'ascèse"
+		"label": "L'ascèse",
+		"description": "*L'ascèse* — du grec *askèsis*, exercice — désigne l'effort spirituel et la discipline corporelle entrepris pour purifier l'âme, combattre les passions et progresser dans la vertu. Origène (*Sur la prière*), saint Athanase (*Vie d'Antoine*), saint Basile (*Règle*) et saint Jean Cassien (*Institutions cénobitiques*) en ont systématisé la pratique, donnant à la tradition monastique sa forme classique : prière, lecture, jeûne, veilles, travail, obéissance, virginité. Saint Évagre le Pontique et saint Jean Climaque (*L'Échelle sainte*) en cartographient les étapes intérieures. Le Catéchisme enseigne : « Sur la voie de la perfection, l'Esprit Saint et le Verbe procèdent à l'action divine en l'homme » (cf. CEC §2015). Cette page rassemble le témoignage patristique sur le combat spirituel et l'ascèse chrétienne."
 	},
 	{
 		"id": 138,
 		"slug": "la-discipline-de-leglise",
 		"label": "La discipline de l'Église",
-		"parentId": 12
+		"parentId": 12,
+		"description": "*La discipline de l'Église* — *disciplina ecclesiastica* — désigne l'ensemble des règles, des coutumes liturgiques et pénitentielles qui structurent la vie chrétienne sous l'autorité hiérarchique. Distincte du dogme (qui ne change pas) tout en lui étant ordonnée, la discipline a évolué au cours des siècles (forme du baptême, jeûne, célibat, peine canonique, etc.). Saint Hippolyte (*Tradition apostolique*), les conciles de Nicée, d'Elvire, de Carthage, les lettres de saint Cyprien et saint Léon le Grand en sont les sources antiques majeures. Le Catéchisme enseigne : « Le code de droit canonique est l'expression juridique de la discipline ecclésiastique » (cf. CEC §1739). Cette page rassemble le témoignage patristique sur les fondements et les évolutions de la discipline ecclésiale."
 	},
 	{
 		"id": 139,
 		"slug": "les-catechumenes",
 		"label": "Les catéchumènes",
-		"parentId": 24
+		"parentId": 24,
+		"description": "*Les catéchumènes* — candidats au baptême en cours de préparation — formaient dans l'Antiquité chrétienne un ordre ecclésial distinct, avec son cursus de catéchèse, ses étapes liturgiques (admission, scrutins, exorcismes) et ses devoirs propres. La *Tradition apostolique* de saint Hippolyte (vers 215) décrit en détail le catéchuménat romain ; saint Cyrille de Jérusalem livre dans ses *Catéchèses* le programme complet ; saint Augustin lui consacre son *De catechizandis rudibus*. Le Catéchisme enseigne : « Dès les origines de l'Église, il y a eu des adultes voulant recevoir le Baptême : un long temps de catéchuménat. (...) Vatican II l'a restauré » (CEC §1247). Cette page rassemble le témoignage patristique sur le catéchuménat ancien."
 	},
 	{
 		"id": 140,
 		"slug": "les-parrains-et-marraines",
 		"label": "Les parrains et marraines",
-		"parentId": 24
+		"parentId": 24,
+		"description": "*Les parrains et marraines* — *patrini* — assistent au baptême comme garants de la foi du candidat et s'engagent à l'accompagner dans la vie chrétienne. Saint Hippolyte (*Tradition apostolique*) en atteste l'usage dès le IIIe siècle. Le rôle s'est progressivement clarifié, distinct des parents naturels, exigeant une vie chrétienne authentique. Tertullien et saint Augustin en parlent comme d'un engagement grave. Le Catéchisme enseigne : « Pour aider sur sa route le baptisé (...) il faut qu'il ait un parrain ou une marraine, solides croyants, capables et prêts à aider le nouveau baptisé, enfant ou adulte, sur sa route de vie chrétienne » (CEC §1255). Cette page rassemble le témoignage patristique sur cette charge ecclésiale."
 	},
 	{
 		"id": 141,
 		"slug": "lagape",
 		"label": "L'agape",
-		"parentId": 30
+		"parentId": 30,
+		"description": "*L'agape* — du grec *agapè*, charité — était, dans l'Église primitive, un repas fraternel partagé par la communauté, prolongement social de l'Eucharistie ou parfois associé à elle. Saint Paul mentionne déjà les abus à Corinthe (1 Co 11, 17-22) ; saint Ignace d'Antioche évoque l'agape sous l'autorité de l'évêque ; Tertullien (*Apologétique*, 39) en livre la plus belle description : repas frugal, ouvert aux pauvres, conclu par la prière et le chant. À mesure que les communautés grandirent et que les abus se multiplièrent, l'agape se sépara de l'Eucharistie puis disparut. Cette page rassemble le témoignage patristique sur cette ancienne pratique de communion fraternelle chrétienne."
 	},
 	{
 		"id": 142,
 		"slug": "les-sacrements-general",
-		"label": "Les sacrements (général)"
+		"label": "Les sacrements (général)",
+		"description": "*Les sacrements* — *mysteria*, *sacramenta* — sont, dans l'enseignement constant de l'Église, les signes sensibles efficaces de la grâce, institués par le Christ et confiés à l'Église. Les Pères grecs parlent de *mystères* ; saint Augustin systématise la notion latine de *sacrement* (*signum sacrum*). Saint Cyrille de Jérusalem (*Catéchèses mystagogiques*), saint Ambroise (*De mysteriis*, *De sacramentis*) et saint Jean Chrysostome en exposent la doctrine et la pratique. Le Concile de Trente fixera définitivement le nombre à sept. Le Catéchisme enseigne : « Les sacrements sont des signes efficaces de la grâce, institués par le Christ et confiés à l'Église, par lesquels la vie divine nous est dispensée » (CEC §1131). Cette page rassemble le témoignage patristique général sur les sacrements."
 	},
 	{
 		"id": 143,
 		"slug": "la-priere-general",
 		"label": "La prière (général)",
-		"parentId": 40
+		"parentId": 40,
+		"description": "*La prière* — élévation de l'âme vers Dieu — est, selon les Pères, la respiration de la vie chrétienne. Origène (*Sur la prière*), saint Cyprien (*De Dominica oratione*), saint Augustin (*Lettre à Proba*), saint Jean Cassien (*Conférences*) et saint Jean Climaque ont composé sur ce thème des traités fondateurs. Saint Paul exhorte : « Priez sans cesse » (1 Th 5, 17). Les Pères distinguent plusieurs formes (vocale, méditative, contemplative) et plusieurs registres (adoration, louange, action de grâce, supplication, intercession). Le Catéchisme enseigne : « La prière est élévation de l'âme vers Dieu ou demande à Dieu de biens convenables » (CEC §2559, citant saint Jean Damascène). Cette page rassemble le témoignage patristique général sur la prière chrétienne."
 	},
 	{
 		"id": 144,
 		"slug": "le-notre-pere",
 		"label": "Le Notre Père",
-		"parentId": 40
+		"parentId": 40,
+		"description": "*Le Notre Père* — *Oratio dominica* — prière donnée par Jésus à ses disciples (Mt 6, 9-13 ; Lc 11, 2-4), est la première et la plus parfaite des prières chrétiennes. Tertullien (*De oratione*), saint Cyprien (*De Dominica oratione*), Origène, saint Cyrille de Jérusalem, saint Grégoire de Nysse, saint Augustin et saint Maxime le Confesseur lui ont consacré des commentaires majeurs. La *Didachè* (vers 100) en recommande la récitation trois fois par jour. Le Catéchisme enseigne : « Le Notre Père est vraiment le résumé de tout l'Évangile » (CEC §2761, citant Tertullien). Cette page rassemble le témoignage patristique sur les sept demandes du Notre Père et leur richesse spirituelle."
 	},
 	{
 		"id": 145,
 		"slug": "lexorcisme",
 		"label": "L'exorcisme",
-		"parentId": 29
+		"parentId": 29,
+		"description": "*L'exorcisme* — invocation du Nom de Jésus pour libérer une personne ou un lieu de l'emprise diabolique — s'enracine dans le ministère même du Christ (Mc 1, 21-28 ; Mc 5, 1-20). La *Tradition apostolique* de saint Hippolyte mentionne l'ordre des exorcistes parmi les ministres mineurs ; les exorcismes des catéchumènes faisaient partie intégrante de la préparation baptismale. Saint Cyrille de Jérusalem (*Procatéchèse*) en commente la signification spirituelle. Le Catéchisme enseigne : « Quand l'Église demande publiquement et avec autorité, au nom de Jésus-Christ, qu'une personne ou un objet soit protégé contre l'emprise du Malin et soustrait à son empire, on parle d'exorcisme » (CEC §1673). Cette page rassemble le témoignage patristique sur ce ministère."
 	},
 	{
 		"id": 146,
 		"slug": "lame",
-		"label": "L'âme"
+		"label": "L'âme",
+		"description": "*L'âme* — *anima*, *psychè* — est, selon l'anthropologie chrétienne, le principe spirituel et immortel de l'homme, créé directement par Dieu (CEC §366), uni au corps pour former une unité substantielle. Saint Augustin (*De anima et eius origine*), saint Grégoire de Nysse (*De la création de l'homme*), saint Léon le Grand et saint Maxime le Confesseur ont approfondi cette doctrine contre le matérialisme stoïcien et la préexistence des âmes (origénisme condamné en 553). Le Catéchisme enseigne : « L'unité de l'âme et du corps est si profonde que l'on doit considérer l'âme comme la \"forme\" du corps » (CEC §365). Cette page rassemble le témoignage patristique sur l'origine, la nature et la destinée de l'âme humaine."
 	}
 ]

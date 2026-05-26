@@ -68,6 +68,14 @@
 		if (umbrellaToggles.get(id) === true) return;
 		umbrellaToggles.set(id, true);
 	}
+
+	// Hide nav entries with zero quotes attached: empty topic-refs are
+	// dropped entirely; umbrellas whose descendants are all empty are
+	// dropped too (otherwise expanding reveals nothing).
+	function hasContent(n: PublicTaxonomyNode): boolean {
+		if (n.topicRef) return n.topicRef.count > 0;
+		return n.children.some(hasContent);
+	}
 </script>
 
 <JsonLd data={websiteSchema} />
@@ -156,32 +164,34 @@
 				<nav aria-label="Sujets" class="font-ui font-light">
 					<ul>
 						{#each PILLARS as p (p.value)}
-							{@const nodes = taxonomy[p.value] ?? []}
+							{@const visibleNodes = (taxonomy[p.value] ?? []).filter(hasContent)}
 							{@const pillarOpen = isPillarOpen(p.value)}
-							<li>
-								<button
-									type="button"
-									onclick={() => togglePillar(p.value)}
-									aria-expanded={pillarOpen}
-									class="flex w-full items-baseline justify-between gap-2 py-[9px] text-left uppercase transition-colors hover:text-accent"
-									style="font-size: 1em; line-height: 1.25em; letter-spacing: 0.05em;"
-								>
-									<span>{p.label}</span>
-									<span aria-hidden="true" class="font-heading text-[22px] leading-none"
-										>{pillarOpen ? '−' : '+'}</span
+							{#if visibleNodes.length > 0}
+								<li>
+									<button
+										type="button"
+										onclick={() => togglePillar(p.value)}
+										aria-expanded={pillarOpen}
+										class="flex w-full items-baseline justify-between gap-2 py-[9px] text-left uppercase transition-colors hover:text-accent"
+										style="font-size: 1em; line-height: 1.25em; letter-spacing: 0.05em;"
 									>
-								</button>
-								{#if pillarOpen}
-									<ul
-										class="mb-2 border-l border-foreground/15 pl-4 normal-case tracking-normal"
-										style="font-size: 0.9em;"
-									>
-										{#each nodes as n (n.id)}
-											{@render renderNode(n)}
-										{/each}
-									</ul>
-								{/if}
-							</li>
+										<span>{p.label}</span>
+										<span aria-hidden="true" class="font-heading text-[22px] leading-none"
+											>{pillarOpen ? '−' : '+'}</span
+										>
+									</button>
+									{#if pillarOpen}
+										<ul
+											class="mb-2 border-l border-foreground/15 pl-4 normal-case tracking-normal"
+											style="font-size: 0.9em;"
+										>
+											{#each visibleNodes as n (n.id)}
+												{@render renderNode(n)}
+											{/each}
+										</ul>
+									{/if}
+								</li>
+							{/if}
 						{/each}
 					</ul>
 				</nav>
@@ -211,52 +221,48 @@
 </div>
 
 {#snippet renderNode(n: PublicTaxonomyNode)}
-	<li class="relative">
-		{#if n.umbrella}
-			{@const open = isUmbrellaOpen(n.id)}
-			<div class="flex items-baseline gap-2 py-[7px]">
-				{#if n.umbrella.primaryHref}
-					<a
-						href={n.umbrella.primaryHref}
-						onclick={() => openUmbrella(n.id)}
-						class="grow transition-colors hover:text-accent">{n.umbrella.label}</a
-					>
-				{:else}
-					<button
-						type="button"
-						onclick={() => toggleUmbrella(n.id)}
-						class="grow text-left transition-colors hover:text-accent">{n.umbrella.label}</button
-					>
+	{#if hasContent(n)}
+		<li class="relative">
+			{#if n.umbrella}
+				{@const open = isUmbrellaOpen(n.id)}
+				{@const visibleChildren = n.children.filter(hasContent)}
+				<div class="flex items-baseline gap-2 py-[7px]">
+					{#if n.umbrella.primaryHref}
+						<a
+							href={n.umbrella.primaryHref}
+							onclick={() => openUmbrella(n.id)}
+							class="grow transition-colors hover:text-accent">{n.umbrella.label}</a
+						>
+					{:else}
+						<button
+							type="button"
+							onclick={() => toggleUmbrella(n.id)}
+							class="grow text-left transition-colors hover:text-accent">{n.umbrella.label}</button
+						>
+					{/if}
+					{#if visibleChildren.length > 0}
+						<button
+							type="button"
+							onclick={() => toggleUmbrella(n.id)}
+							aria-expanded={open}
+							aria-label={`${open ? 'Fermer' : 'Ouvrir'} ${n.umbrella.label}`}
+							class="shrink-0 transition-colors hover:text-accent"
+						>
+							<span aria-hidden="true" class="font-heading text-[18px] leading-none"
+								>{open ? '−' : '+'}</span
+							>
+						</button>
+					{/if}
+				</div>
+				{#if open && visibleChildren.length > 0}
+					<ul class="border-l border-foreground/15 pl-3 mt-0.5 mb-1" style="font-size: 0.95em;">
+						{#each visibleChildren as c (c.id)}
+							{@render renderNode(c)}
+						{/each}
+					</ul>
 				{/if}
-				<button
-					type="button"
-					onclick={() => toggleUmbrella(n.id)}
-					aria-expanded={open}
-					aria-label={`${open ? 'Fermer' : 'Ouvrir'} ${n.umbrella.label}`}
-					class="shrink-0 transition-colors hover:text-accent"
-				>
-					<span aria-hidden="true" class="font-heading text-[18px] leading-none"
-						>{open ? '−' : '+'}</span
-					>
-				</button>
-			</div>
-			{#if open && n.children.length > 0}
-				<ul class="border-l border-foreground/15 pl-3 mt-0.5 mb-1" style="font-size: 0.95em;">
-					{#each n.children as c (c.id)}
-						{@render renderNode(c)}
-					{/each}
-				</ul>
-			{/if}
-		{:else if n.topicRef}
-			{@const isActive = n.topicRef.slug === activeSlug}
-			{@const isEmpty = n.topicRef.count === 0}
-			{#if isEmpty}
-				<span
-					class="block cursor-default py-[5px] text-foreground/35"
-					aria-disabled="true"
-					title="Aucune citation pour ce sujet">{n.topicRef.label}</span
-				>
-			{:else}
+			{:else if n.topicRef}
+				{@const isActive = n.topicRef.slug === activeSlug}
 				<a
 					href={n.topicRef.href}
 					class="block py-[5px] transition-colors hover:text-accent"
@@ -264,6 +270,6 @@
 					class:font-medium={isActive}>{n.topicRef.label}</a
 				>
 			{/if}
-		{/if}
-	</li>
+		</li>
+	{/if}
 {/snippet}
