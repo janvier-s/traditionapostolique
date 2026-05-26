@@ -105,7 +105,7 @@
 						src="/logo-dark.png"
 						alt=""
 						aria-hidden="true"
-						class="hidden dark:block h-20 w-[3.3rem] object-contain object-bottom"
+						class="hidden dark:block h-20 w-[3.3rem] object-contain object-bottom -translate-y-[3px]"
 					/>
 					<div
 						class="pb-1 font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent"
