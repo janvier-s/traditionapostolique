@@ -187,8 +187,15 @@
 
 	/* Circular ripple wiping from the click point on the theme toggle.
 	   Origin coords + max-radius set by ThemeToggle.svelte before invoking
-	   document.startViewTransition. The new theme snapshot is revealed
-	   inside an expanding circle; the old theme remains beneath it. */
+	   document.startViewTransition. The new theme is revealed through a
+	   radial mask-gradient whose radius animates from 0 to --ripple-r;
+	   a 220px feather band between opaque and transparent gives the edge
+	   a soft fade rather than a hard circular cut. */
+	@property --ripple-radius {
+		syntax: '<length>';
+		initial-value: 0px;
+		inherits: false;
+	}
 	::view-transition-old(root),
 	::view-transition-new(root) {
 		animation: none;
@@ -199,14 +206,24 @@
 	}
 	::view-transition-new(root) {
 		z-index: 1;
-		animation: theme-ripple 780ms cubic-bezier(0.16, 1, 0.3, 1);
+		mask-image: radial-gradient(
+			circle at var(--ripple-x) var(--ripple-y),
+			black calc(var(--ripple-radius) - 220px),
+			transparent var(--ripple-radius)
+		);
+		-webkit-mask-image: radial-gradient(
+			circle at var(--ripple-x) var(--ripple-y),
+			black calc(var(--ripple-radius) - 220px),
+			transparent var(--ripple-radius)
+		);
+		animation: theme-ripple 780ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 	}
 	@keyframes theme-ripple {
 		from {
-			clip-path: circle(0 at var(--ripple-x) var(--ripple-y));
+			--ripple-radius: 0px;
 		}
 		to {
-			clip-path: circle(var(--ripple-r) at var(--ripple-x) var(--ripple-y));
+			--ripple-radius: var(--ripple-r);
 		}
 	}
 	/* During the ripple, suppress the element-level color fades so the
