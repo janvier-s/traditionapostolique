@@ -216,7 +216,7 @@
 			black calc(var(--ripple-radius) - 220px),
 			transparent var(--ripple-radius)
 		);
-		animation: theme-ripple 780ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+		animation: theme-ripple 600ms cubic-bezier(0.33, 1, 0.68, 1) forwards;
 	}
 	@keyframes theme-ripple {
 		from {
