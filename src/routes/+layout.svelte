@@ -97,10 +97,16 @@
 			<a href="/" class="block" aria-label="Tradition Apostolique · Accueil">
 				<div class="flex items-end gap-3">
 					<div
-						class="h-20 flex-shrink-0 bg-accent"
+						class="dark:hidden h-20 flex-shrink-0 bg-accent"
 						style="width:3.3rem;mask:url(/logo.svg) center/contain no-repeat;-webkit-mask:url(/logo.svg) center/contain no-repeat"
 						aria-hidden="true"
 					></div>
+					<img
+						src="/logo-dark.png"
+						alt=""
+						aria-hidden="true"
+						class="hidden dark:block h-20 w-auto"
+					/>
 					<div
 						class="pb-1 font-heading text-base uppercase leading-tight tracking-[0.28em] text-accent"
 					>
