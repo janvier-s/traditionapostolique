@@ -2,23 +2,11 @@
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-		<!-- Synchronous theme bootstrap. Runs BEFORE any paint so the
-		     correct theme class lands on <html> before the browser
-		     renders. Without this, a stored dark/sepia/amoled theme
-		     would flash light for a frame on each load. Mirrors the
-		     load() logic in src/lib/stores/theme.svelte.ts. -->
-		<script>
-			(function () {
-				try {
-					var t = localStorage.getItem('theme');
-					if (t === 'sepia' || t === 'dark' || t === 'amoled') {
-						document.documentElement.classList.add(t);
-					}
-				} catch (e) {
-					/* localStorage may be unavailable (privacy mode); fall through to light */
-				}
-			})();
-		</script>
+		<!-- External (not inline) theme bootstrap so it's allowed under
+		     the page CSP via the 'self' src directive. Must run before
+		     anything else in <head> so the theme class + inline bg/fg
+		     land on <html> before the browser's first paint. -->
+		<script src="/theme-init.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="apple-mobile-web-app-title" content="Tradition Apostolique" />

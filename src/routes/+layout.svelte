@@ -249,14 +249,6 @@
 			{/if}
 		{:else if n.topicRef}
 			{@const isActive = n.topicRef.slug === activeSlug}
-			{#if isActive}
-				<span
-					aria-hidden="true"
-					class="absolute text-accent leading-none"
-					style="font-size: 22px; right: calc(100% + 4px); top: calc(50% - 1px); transform: translateY(-50%);"
-					>›</span
-				>
-			{/if}
 			<a
 				href={n.topicRef.href}
 				class="block py-[5px] transition-colors hover:text-accent"
