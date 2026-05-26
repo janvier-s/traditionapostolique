@@ -66,6 +66,12 @@
 		m.set(id, !isUmbrellaOpen(id));
 		umbrellaToggles = m;
 	}
+	function openUmbrella(id: string) {
+		if (umbrellaToggles.get(id) === true) return;
+		const m = new Map(umbrellaToggles);
+		m.set(id, true);
+		umbrellaToggles = m;
+	}
 </script>
 
 <JsonLd data={websiteSchema} />
@@ -210,11 +216,17 @@
 			{@const open = isUmbrellaOpen(n.id)}
 			<div class="flex items-baseline gap-2 py-[7px]">
 				{#if n.umbrella.primaryHref}
-					<a href={n.umbrella.primaryHref} class="grow transition-colors hover:text-accent"
-						>{n.umbrella.label}</a
+					<a
+						href={n.umbrella.primaryHref}
+						onclick={() => openUmbrella(n.id)}
+						class="grow transition-colors hover:text-accent">{n.umbrella.label}</a
 					>
 				{:else}
-					<span class="grow">{n.umbrella.label}</span>
+					<button
+						type="button"
+						onclick={() => toggleUmbrella(n.id)}
+						class="grow text-left transition-colors hover:text-accent">{n.umbrella.label}</button
+					>
 				{/if}
 				<button
 					type="button"
