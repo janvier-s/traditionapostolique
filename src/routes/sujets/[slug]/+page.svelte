@@ -380,10 +380,10 @@
 							type="button"
 							onclick={openTopicPanel}
 							aria-expanded={topicPanelOpen}
-							class="inline-flex items-baseline gap-2 label-meta-action"
+							class="inline-flex items-baseline gap-2 label-meta transition-colors hover:text-accent"
 						>
-							Index du sujet
-							<span aria-hidden="true" class="no-underline">→</span>
+							<span class="underline decoration-subtle underline-offset-4 hover:decoration-accent">Index du sujet</span>
+							<span aria-hidden="true">→</span>
 						</button>
 					{/if}
 				</div>
@@ -656,7 +656,7 @@
 	     closes the other) so they never compete for the same slot. -->
 		<aside
 			aria-label="Index du sujet"
-			class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:flex lg:flex-col"
+			class="mt-12 border-t border-border pt-8 lg:mt-0 lg:border-t-0 lg:border-l lg:border-border lg:pl-8 lg:pt-0 lg:sticky lg:top-10 lg:max-h-[calc(100vh-5rem)] lg:flex lg:flex-col lg:overflow-hidden"
 		>
 			<header class="mb-6 flex items-baseline justify-between gap-4">
 				<h2 class="font-heading italic text-accent leading-[1.1]" style="font-size: 1.5rem;">
