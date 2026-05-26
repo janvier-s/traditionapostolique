@@ -3,7 +3,8 @@
 // Supported grammar:
 //   *foo*           →  <em>foo</em>
 //   CEC §123        →  <a href="https://catechismecatholique.fr/cec/123">CEC §123</a>
-//   CEC §123-125    →  same, href points at the first paragraph of the range
+//   CEC §123-125    →  <a href="https://catechismecatholique.fr/cec/123-125">CEC §123-125</a>
+//                       (the upstream site handles ranged URLs natively)
 //
 // Rules:
 //   - The italic contents must start and end with a non-whitespace
@@ -17,8 +18,10 @@ export function renderFr(text: string | undefined | null): string {
 	let result = esc.replace(/\*(\S(?:[^*\n]*\S)?)\*/g, '<em>$1</em>');
 	result = result.replace(
 		/CEC §(\d+)(-\d+)?/g,
-		(_, n: string, range: string | undefined) =>
-			`<a href="https://catechismecatholique.fr/cec/${n}" target="_blank" rel="noopener" class="underline-offset-4 hover:underline hover:text-accent">CEC §${n}${range ?? ''}</a>`
+		(_, n: string, range: string | undefined) => {
+			const suffix = range ?? '';
+			return `<a href="https://catechismecatholique.fr/cec/${n}${suffix}" target="_blank" rel="noopener" class="underline-offset-4 hover:underline hover:text-accent">CEC §${n}${suffix}</a>`;
+		}
 	);
 	return result;
 }

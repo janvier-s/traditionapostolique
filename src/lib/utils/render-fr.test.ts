@@ -41,9 +41,9 @@ describe('renderFr', () => {
 		expect(out).toContain('CEC §1554</a>');
 	});
 
-	it('links a CEC range to the first paragraph in href but keeps the range in the label', () => {
+	it('includes the full range in the CEC href', () => {
 		const out = renderFr('cf. CEC §1430-1431');
-		expect(out).toContain('href="https://catechismecatholique.fr/cec/1430"');
+		expect(out).toContain('href="https://catechismecatholique.fr/cec/1430-1431"');
 		expect(out).toContain('CEC §1430-1431</a>');
 	});
 
