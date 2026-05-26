@@ -14,6 +14,7 @@
 		class="rounded-full px-3 py-1 transition-colors hover:text-accent"
 		class:bg-active={mode.value === 'read'}
 		class:text-white={mode.value === 'read'}
+		class:dark:text-black={mode.value === 'read'}
 		class:text-muted={mode.value !== 'read'}
 	>
 		Lecture
@@ -25,6 +26,7 @@
 		class="rounded-full px-3 py-1 transition-colors hover:text-accent"
 		class:bg-active={mode.value === 'study'}
 		class:text-white={mode.value === 'study'}
+		class:dark:text-black={mode.value === 'study'}
 		class:text-muted={mode.value !== 'study'}
 	>
 		Étude
