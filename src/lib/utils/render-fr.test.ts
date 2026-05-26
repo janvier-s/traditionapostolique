@@ -34,6 +34,22 @@ describe('renderFr', () => {
 	it('does not span newlines', () => {
 		expect(renderFr('*a\nb*')).toBe('*a\nb*');
 	});
+
+	it('links a single CEC paragraph reference', () => {
+		const out = renderFr('voir CEC §1554 pour plus de détails');
+		expect(out).toContain('href="https://catechismecatholique.fr/cec/1554"');
+		expect(out).toContain('CEC §1554</a>');
+	});
+
+	it('links a CEC range to the first paragraph in href but keeps the range in the label', () => {
+		const out = renderFr('cf. CEC §1430-1431');
+		expect(out).toContain('href="https://catechismecatholique.fr/cec/1430"');
+		expect(out).toContain('CEC §1430-1431</a>');
+	});
+
+	it('leaves surrounding parentheses outside the link', () => {
+		expect(renderFr('(CEC §1013)')).toMatch(/^\(<a [^>]+>CEC §1013<\/a>\)$/);
+	});
 });
 
 describe('escapeHtml', () => {

@@ -1,18 +1,26 @@
 // Convert quote text with minimal markdown into HTML for `{@html}` use.
 //
 // Supported grammar:
-//   *foo*        →  <em>foo</em>
+//   *foo*           →  <em>foo</em>
+//   CEC §123        →  <a href="https://catechismecatholique.fr/cec/123">CEC §123</a>
+//   CEC §123-125    →  same, href points at the first paragraph of the range
 //
 // Rules:
-//   - The contents must start and end with a non-whitespace character,
-//     so `*a *b*` does NOT half-match (no `<em>a </em>b*` mess).
-//   - The contents cannot span a newline.
-//   - All input is HTML-escaped before italic substitution, so the
-//     output is safe to inject via `{@html}`.
+//   - The italic contents must start and end with a non-whitespace
+//     character, so `*a *b*` does NOT half-match.
+//   - Italic contents cannot span a newline.
+//   - All input is HTML-escaped before substitution, so the output is
+//     safe to inject via `{@html}`.
 export function renderFr(text: string | undefined | null): string {
 	if (!text) return '';
 	const esc = text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-	return esc.replace(/\*(\S(?:[^*\n]*\S)?)\*/g, '<em>$1</em>');
+	let result = esc.replace(/\*(\S(?:[^*\n]*\S)?)\*/g, '<em>$1</em>');
+	result = result.replace(
+		/CEC §(\d+)(-\d+)?/g,
+		(_, n: string, range: string | undefined) =>
+			`<a href="https://catechismecatholique.fr/cec/${n}" target="_blank" rel="noopener" class="underline-offset-4 hover:underline hover:text-accent">CEC §${n}${range ?? ''}</a>`
+	);
+	return result;
 }
 
 // HTML-escape an arbitrary string so it's safe to compose into an
