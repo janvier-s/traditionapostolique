@@ -3,6 +3,7 @@
 	import { page } from '$app/state';
 	import { buildPublicTaxonomy, type PublicTaxonomyNode } from '$lib/data';
 	import JsonLd from '$lib/components/ui/JsonLd.svelte';
+	import ThemeToggle from '$lib/components/ui/ThemeToggle.svelte';
 	import type { Pillar } from '$lib/schema';
 
 	let { children } = $props();
@@ -75,6 +76,10 @@
 </script>
 
 <JsonLd data={websiteSchema} />
+
+<ThemeToggle
+	class="fixed top-4 right-4 z-50 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-panel/80 text-[1.25rem] text-foreground backdrop-blur transition-colors hover:bg-subtle/20 hover:text-accent"
+/>
 
 <div class="min-h-screen bg-background font-body text-foreground">
 	<div
