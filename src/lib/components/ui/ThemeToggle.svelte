@@ -58,7 +58,7 @@
 		/>
 		<path
 			d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5z"
-			class="[transform-origin:center] [transition:transform_var(--toggles-within--duration)_cubic-bezier(0,0,0,1.25)] dark:[transform:translate3d(3px,-3px,0)_scale(1.2)]"
+			class="[transform-origin:center] [transform:scale(0.7)] [transition:transform_var(--toggles-within--duration)_cubic-bezier(0,0,0,1.25)] dark:[transform:translate3d(3px,-3px,0)_scale(1.2)]"
 		/>
 	</svg>
 </button>
