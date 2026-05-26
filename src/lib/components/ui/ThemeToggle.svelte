@@ -1,27 +1,35 @@
-<script module lang="ts">
-	let nextId = 0;
-</script>
-
 <script lang="ts">
 	import { theme, setTheme } from '$lib/stores/theme.svelte';
 
 	let {
-		duration = 500,
 		title = 'Basculer le thème',
 		ariaLabel = 'Basculer le thème',
 		class: className = ''
 	}: {
-		duration?: number;
 		title?: string;
 		ariaLabel?: string;
 		class?: string;
 	} = $props();
 
-	const toggleId = `within-${++nextId}`;
-	const clipMainId = `toggles-within-main-${toggleId}`;
-
-	function onClick() {
-		setTheme(theme.value === 'dark' ? 'light' : 'dark');
+	function onClick(e: MouseEvent) {
+		const next = theme.value === 'dark' ? 'light' : 'dark';
+		// Fallback for browsers without View Transitions (Firefox, older Safari).
+		const supportsViewTransitions = typeof document !== 'undefined' && 'startViewTransition' in document;
+		if (!supportsViewTransitions) {
+			setTheme(next);
+			return;
+		}
+		const x = e.clientX;
+		const y = e.clientY;
+		const endRadius = Math.hypot(
+			Math.max(x, window.innerWidth - x),
+			Math.max(y, window.innerHeight - y)
+		);
+		document.documentElement.style.setProperty('--ripple-x', `${x}px`);
+		document.documentElement.style.setProperty('--ripple-y', `${y}px`);
+		document.documentElement.style.setProperty('--ripple-r', `${endRadius}px`);
+		// @ts-expect-error — View Transitions API not in lib.dom yet across all targets
+		document.startViewTransition(() => setTheme(next));
 	}
 </script>
 
@@ -33,32 +41,43 @@
 	class={className}
 	onclick={onClick}
 >
-	<svg
-		width="1em"
-		height="1em"
-		viewBox="0 0 32 32"
-		aria-hidden="true"
-		fill="currentColor"
-		style={`--toggles-within--duration: ${duration}ms`}
-	>
-		<defs>
-			<clipPath id={clipMainId}>
-				<path d="M0 0h32v32h-32ZM6 16A1 1 0 0026 16 1 1 0 006 16" />
-			</clipPath>
-		</defs>
-		<g clip-path={`url(#${clipMainId})`}>
-			<path
-				d="M30.7 21.3 27.1 16l3.7-5.3c.4-.5.1-1.3-.6-1.4l-6.3-1.1-1.1-6.3c-.1-.6-.8-.9-1.4-.6L16 5l-5.4-3.7c-.5-.4-1.3-.1-1.4.6l-1 6.3-6.4 1.1c-.6.1-.9.9-.6 1.3L4.9 16l-3.7 5.3c-.4.5-.1 1.3.6 1.4l6.3 1.1 1.1 6.3c.1.6.8.9 1.4.6l5.3-3.7 5.3 3.7c.5.4 1.3.1 1.4-.6l1.1-6.3 6.3-1.1c.8-.1 1.1-.8.7-1.4zM16 25.1c-5.1 0-9.1-4.1-9.1-9.1 0-5.1 4.1-9.1 9.1-9.1s9.1 4.1 9.1 9.1c0 5.1-4 9.1-9.1 9.1z"
-				class="[transform-origin:center] [transition:transform_var(--toggles-within--duration)_cubic-bezier(0,0,0,1.25)] dark:[transform:scale(0.65)]"
-			/>
-		</g>
-		<path
-			d="M16 7.7c-4.6 0-8.2 3.7-8.2 8.2s3.6 8.4 8.2 8.4 8.2-3.7 8.2-8.2-3.6-8.4-8.2-8.4zm0 14.4c-3.4 0-6.1-2.9-6.1-6.2s2.7-6.1 6.1-6.1c3.4 0 6.1 2.9 6.1 6.2s-2.7 6.1-6.1 6.1z"
-			class="[transform-origin:center] [transition:transform_var(--toggles-within--duration)_cubic-bezier(0,0,0,1.25)] dark:[transform:scale(1.5)]"
-		/>
-		<path
-			d="M16 9.5c-3.6 0-6.4 2.9-6.4 6.4s2.8 6.5 6.4 6.5 6.4-2.9 6.4-6.4-2.8-6.5-6.4-6.5z"
-			class="[transform-origin:center] [transform:scale(0.7)] [transition:transform_var(--toggles-within--duration)_cubic-bezier(0,0,0,1.25)] dark:[transform:translate3d(3px,-3px,0)_scale(1.2)]"
-		/>
-	</svg>
+	{#if theme.value === 'dark'}
+		<!-- Moon (shown in dark mode) -->
+		<svg
+			width="1em"
+			height="1em"
+			viewBox="0 0 24 24"
+			aria-hidden="true"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.4"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+		</svg>
+	{:else}
+		<!-- Sun (shown in light mode) -->
+		<svg
+			width="1em"
+			height="1em"
+			viewBox="0 0 24 24"
+			aria-hidden="true"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="1.4"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+		>
+			<circle cx="12" cy="12" r="3.5" />
+			<path d="M12 2.5v2.5" />
+			<path d="M12 19v2.5" />
+			<path d="M4.5 4.5l1.8 1.8" />
+			<path d="M17.7 17.7l1.8 1.8" />
+			<path d="M2.5 12h2.5" />
+			<path d="M19 12h2.5" />
+			<path d="M4.5 19.5l1.8-1.8" />
+			<path d="M17.7 6.3l1.8-1.8" />
+		</svg>
+	{/if}
 </button>
