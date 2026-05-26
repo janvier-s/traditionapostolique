@@ -142,14 +142,15 @@
 	.dark {
 		--color-bg: #111113;
 		--color-panel: #1c1c1f;
-		--color-fg: #e8ddd0;
+		--color-fg: #e0e0e0;
 		--color-muted: #a5a4a6;
 		--color-subtle: #a09ca8;
 		--color-accent: #b8807a;
 		--color-accent-text: #c99490;
+		--color-active: #b8807a;
 		--color-border: #2e2b32;
 		--color-bg-glass: rgba(17, 17, 19, 0.94);
-		--color-heading: #c5bbb0;
+		--color-heading: #c8c8c8;
 	}
 
 	.amoled {
