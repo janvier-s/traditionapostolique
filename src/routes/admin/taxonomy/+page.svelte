@@ -10,12 +10,14 @@
 	let saveError = $state('');
 	let savedFlash = $state(false);
 
-	const PILLARS = ['credo', 'sacrements', 'vie', 'priere'] as const;
+	const PILLARS = ['dieu', 'eglise', 'saints', 'sacrements', 'vie', 'fin'] as const;
 	const PILLAR_LABELS: Record<(typeof PILLARS)[number], string> = {
-		credo: 'Credo',
-		sacrements: 'Sacrements',
-		vie: 'Vie en Christ',
-		priere: 'Prière'
+		dieu: 'Dieu, Trinité, Christ',
+		eglise: "L'Église et ses sources",
+		saints: 'Marie, les saints, miracles',
+		sacrements: 'Sacrements et liturgie',
+		vie: 'Vie chrétienne et prière',
+		fin: 'Les fins dernières'
 	};
 
 	function updateRoot(pillar: (typeof PILLARS)[number], idx: number, next: TaxonomyNode | null) {

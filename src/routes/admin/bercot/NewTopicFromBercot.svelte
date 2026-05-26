@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { BercotEntry, Pillar, Topic } from '$lib/schema';
+	import type { BercotEntry, Topic } from '$lib/schema';
 
 	type Props = {
 		sourceEntry: string;
@@ -14,17 +14,10 @@
 	let slug = $state('');
 	let description = $state('');
 	let parentId = $state<number | null>(null);
-	let pillar = $state<Pillar | ''>('');
 	let saving = $state(false);
 	let saveError = $state('');
 
 	const topLevel = $derived(topics.filter((t) => t.parentId == null));
-	const PILLARS: { value: Pillar; label: string }[] = [
-		{ value: 'credo', label: 'Credo (CCC I)' },
-		{ value: 'sacrements', label: 'Sacrements (CCC II)' },
-		{ value: 'vie', label: 'Vie en Christ (CCC III)' },
-		{ value: 'priere', label: 'Prière (CCC IV)' }
-	];
 
 	function autoSlug() {
 		slug = label
@@ -42,10 +35,6 @@
 			saveError = 'Libellé et slug sont requis.';
 			return;
 		}
-		if (parentId == null && !pillar) {
-			saveError = 'Pour un sujet de premier niveau, choisissez un pilier.';
-			return;
-		}
 		saving = true;
 		try {
 			const nextId = Math.max(0, ...topics.map((t) => t.id)) + 1;
@@ -54,7 +43,7 @@
 				slug: slug.trim(),
 				label: label.trim(),
 				...(description.trim() ? { description: description.trim() } : {}),
-				...(parentId != null ? { parentId } : pillar ? { pillar } : {})
+				...(parentId != null ? { parentId } : {})
 			};
 
 			const nextTopics = [...topics, newTopic];
@@ -148,24 +137,6 @@
 						{/each}
 					</select>
 				</label>
-				{#if parentId == null}
-					<label class="mt-3 block text-sm">
-						Pilier (CCC)
-						<select
-							class="mt-1 w-full rounded border border-border bg-panel px-2 py-1"
-							value={pillar}
-							onchange={(e) =>
-								(pillar = (e.currentTarget as HTMLSelectElement).value as Pillar | '')}
-						>
-							<option value="">(non classé)</option>
-							{#each PILLARS as p (p.value)}
-								<option value={p.value}>{p.label}</option>
-							{/each}
-						</select>
-					</label>
-				{:else}
-					<p class="mt-2 text-xs italic text-muted">Pilier hérité du sujet parent.</p>
-				{/if}
 			</fieldset>
 		</div>
 

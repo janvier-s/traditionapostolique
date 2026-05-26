@@ -7,10 +7,12 @@
 
 	const taxonomy = buildPublicTaxonomy();
 	const PILLARS: { value: Pillar; label: string }[] = [
-		{ value: 'credo', label: 'Credo' },
-		{ value: 'sacrements', label: 'Sacrements' },
-		{ value: 'vie', label: 'Vie en Christ' },
-		{ value: 'priere', label: 'Prière' }
+		{ value: 'dieu', label: 'Dieu, Trinité, Christ' },
+		{ value: 'eglise', label: "L'Église et ses sources" },
+		{ value: 'saints', label: 'Marie, les saints, miracles' },
+		{ value: 'sacrements', label: 'Sacrements et liturgie' },
+		{ value: 'vie', label: 'Vie chrétienne et prière' },
+		{ value: 'fin', label: 'Les fins dernières' }
 	];
 
 	// Flatten all topic refs from a node tree for sidebar display + filtering

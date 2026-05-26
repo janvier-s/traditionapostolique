@@ -5,10 +5,12 @@
 
 	const taxonomy = buildPublicTaxonomy();
 	const PILLARS: { value: Pillar; label: string; subtitle: string }[] = [
-		{ value: 'credo', label: 'Credo', subtitle: 'Profession de la foi (CCC I)' },
-		{ value: 'sacrements', label: 'Sacrements', subtitle: 'Célébration du mystère chrétien (CCC II)' },
-		{ value: 'vie', label: 'Vie en Christ', subtitle: 'La vie dans le Christ (CCC III)' },
-		{ value: 'priere', label: 'Prière', subtitle: 'La prière chrétienne (CCC IV)' }
+		{ value: 'dieu', label: 'Dieu, Trinité, Christ', subtitle: 'Le mystère de Dieu' },
+		{ value: 'eglise', label: "L'Église et ses sources", subtitle: "L'Église, la Tradition, l'Écriture" },
+		{ value: 'saints', label: 'Marie, les saints, miracles', subtitle: 'La communion des saints' },
+		{ value: 'sacrements', label: 'Sacrements et liturgie', subtitle: 'Le culte chrétien' },
+		{ value: 'vie', label: 'Vie chrétienne et prière', subtitle: 'Morale, ascèse, prière' },
+		{ value: 'fin', label: 'Les fins dernières', subtitle: 'Eschatologie' }
 	];
 
 	function totalCount(node: PublicTaxonomyNode): number {
@@ -48,7 +50,7 @@
 		</div>
 	</header>
 
-	<div class="grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-12 md:grid-cols-2 xl:grid-cols-4">
+	<div class="grid grid-cols-1 gap-x-[var(--quote-gap)] gap-y-12 md:grid-cols-2 xl:grid-cols-3">
 		{#each PILLARS as p (p.value)}
 			<section>
 				<h2 class="font-heading italic text-accent leading-[1.1]" style="font-size: 1.5rem;">

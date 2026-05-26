@@ -1,4 +1,4 @@
-import { topics, authors, works, quotes } from '$lib/data';
+import { authors, works, quotes, taxonomy, topicById } from '$lib/data';
 
 export const prerender = true;
 
@@ -9,29 +9,14 @@ const SITE = 'https://traditionapostolique.fr';
 // understand what kind of corpus this is. Generated from the live data
 // so author / work / topic lists never go stale relative to the JSON.
 export function GET() {
-	const pillarLabel = (p: string): string => {
-		switch (p) {
-			case 'credo':
-				return 'Credo — Profession de la foi (CCC I)';
-			case 'sacrements':
-				return 'Sacrements et liturgie (CCC II)';
-			case 'vie':
-				return 'Vie en Christ — Morale (CCC III)';
-			case 'priere':
-				return 'Prière (CCC IV)';
-			default:
-				return 'Non classé';
-		}
+	const PILLAR_LABELS: Record<string, string> = {
+		dieu: 'Dieu, Trinité, Christ',
+		eglise: "L'Église et ses sources",
+		saints: 'Marie, les saints, miracles',
+		sacrements: 'Sacrements et liturgie',
+		vie: 'Vie chrétienne et prière',
+		fin: 'Les fins dernières'
 	};
-
-	// Group topics by pillar for readable navigation.
-	const topicsByPillar = new Map<string, typeof topics>();
-	for (const t of topics) {
-		const key = t.pillar ?? '__none__';
-		const arr = topicsByPillar.get(key) ?? [];
-		arr.push(t);
-		topicsByPillar.set(key, arr);
-	}
 
 	// Headline authors · quote-count sorted so the most-cited Fathers
 	// surface first in the index. Capped to keep llms.txt readable.
@@ -53,16 +38,32 @@ export function GET() {
 		.sort((x, y) => y.n - x.n)
 		.slice(0, 30);
 
+	// Collect all topic refs from a taxonomy subtree (depth-first)
+	function collectTopicRefs(nodes: typeof taxonomy.dieu): { label: string; slug: string }[] {
+		const result: { label: string; slug: string }[] = [];
+		for (const n of nodes) {
+			if (n.topicId != null) {
+				const t = topicById(n.topicId);
+				if (t) result.push({ label: t.label, slug: t.slug });
+			}
+			if (n.children) result.push(...collectTopicRefs(n.children));
+		}
+		return result;
+	}
+
+	const totalTopics =
+		Object.values(taxonomy).reduce((acc, nodes) => acc + collectTopicRefs(nodes).length, 0);
+
 	const lines: string[] = [
 		'# Tradition Apostolique',
 		'',
 		"> Anthologie française du témoignage des Pères de l'Église, organisée par sujets. " +
 			'Chaque citation est traduite directement du grec, du latin ou du syriaque, souvent ' +
 			'pour la première fois en français, et reliée à son auteur, à son œuvre source et ' +
-			'aux sujets théologiques qu’elle éclaire.',
+			"aux sujets théologiques qu'elle éclaire.",
 		'',
 		`Corpus actuel : **${authors.length} auteurs**, **${works.length} œuvres**, ` +
-			`**${quotes.length} citations**, **${topics.length} sujets**.`,
+			`**${quotes.length} citations**, **${totalTopics} sujets**.`,
 		'',
 		'## Entrées principales',
 		'',
@@ -73,19 +74,18 @@ export function GET() {
 		`- [Recherche](${SITE}/recherche) — recherche plein-texte dans tout le corpus`,
 		`- [À propos](${SITE}/a-propos) — méthodologie et sources`,
 		'',
-		'## Sujets par pilier',
+		'## Sujets par pilier théologique',
 		''
 	];
 
-	// Pillars in canonical order; uncategorised topics last.
-	const pillars: string[] = ['credo', 'sacrements', 'vie', 'priere', '__none__'];
+	const pillars = ['dieu', 'eglise', 'saints', 'sacrements', 'vie', 'fin'] as const;
 	for (const p of pillars) {
-		const ts = topicsByPillar.get(p);
-		if (!ts || ts.length === 0) continue;
-		lines.push(`### ${pillarLabel(p)}`);
+		const topicRefs = collectTopicRefs(taxonomy[p]);
+		if (topicRefs.length === 0) continue;
+		lines.push(`### ${PILLAR_LABELS[p]}`);
 		lines.push('');
-		for (const t of ts) {
-			lines.push(`- [${t.label}](${SITE}/sujets/${t.slug})`);
+		for (const { label, slug } of topicRefs) {
+			lines.push(`- [${label}](${SITE}/sujets/${slug})`);
 		}
 		lines.push('');
 	}

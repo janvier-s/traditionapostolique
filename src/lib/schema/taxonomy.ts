@@ -1,5 +1,8 @@
 import { z } from 'zod';
 
+export const PillarSchema = z.enum(['dieu', 'eglise', 'saints', 'sacrements', 'vie', 'fin']);
+export type Pillar = z.infer<typeof PillarSchema>;
+
 export type TaxonomyNode = {
 	id: string;
 	label?: string;
@@ -23,9 +26,11 @@ export const TaxonomyNodeSchema: z.ZodType<TaxonomyNode> = z.lazy(() =>
 );
 
 export const TaxonomySchema = z.object({
-	credo: z.array(TaxonomyNodeSchema),
+	dieu: z.array(TaxonomyNodeSchema),
+	eglise: z.array(TaxonomyNodeSchema),
+	saints: z.array(TaxonomyNodeSchema),
 	sacrements: z.array(TaxonomyNodeSchema),
 	vie: z.array(TaxonomyNodeSchema),
-	priere: z.array(TaxonomyNodeSchema)
+	fin: z.array(TaxonomyNodeSchema)
 });
 export type Taxonomy = z.infer<typeof TaxonomySchema>;

@@ -55,8 +55,8 @@ describe('TopicSchema', () => {
 	});
 });
 
-describe('TopicSchema (pillar/parentId/order)', () => {
-	it('accepts a topic with no pillar/parent/order', () => {
+describe('TopicSchema (parentId/order)', () => {
+	it('accepts a topic with no parent/order', () => {
 		expect(
 			TopicSchema.safeParse({
 				id: 1,
@@ -64,28 +64,6 @@ describe('TopicSchema (pillar/parentId/order)', () => {
 				label: 'A'
 			}).success
 		).toBe(true);
-	});
-	it('accepts pillar credo|sacrements|vie|priere', () => {
-		for (const pillar of ['credo', 'sacrements', 'vie', 'priere'] as const) {
-			expect(
-				TopicSchema.safeParse({
-					id: 1,
-					slug: 'a',
-					label: 'A',
-					pillar
-				}).success
-			).toBe(true);
-		}
-	});
-	it('rejects unknown pillar', () => {
-		expect(
-			TopicSchema.safeParse({
-				id: 1,
-				slug: 'a',
-				label: 'A',
-				pillar: 'dogme'
-			}).success
-		).toBe(false);
 	});
 	it('accepts parentId and order as non-negative ints', () => {
 		expect(

@@ -95,7 +95,7 @@ export function buildPublicTaxonomy(): Record<Pillar, PublicTaxonomyNode[]> {
 		return out;
 	}
 
-	const pillars: Pillar[] = ['credo', 'sacrements', 'vie', 'priere'];
+	const pillars: Pillar[] = ['dieu', 'eglise', 'saints', 'sacrements', 'vie', 'fin'];
 	const result = {} as Record<Pillar, PublicTaxonomyNode[]>;
 	for (const p of pillars) result[p] = (taxonomy[p] ?? []).map(resolve);
 	return result;

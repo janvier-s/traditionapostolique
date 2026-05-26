@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import type { Quote, Topic, Pillar } from '$lib/schema';
+	import type { Quote, Topic } from '$lib/schema';
 	import { watchHashSelection } from '../hash-select';
 	import { bindEditorShortcuts } from '../editor-utils.svelte';
 	import { buildTopicTree, flattenTree } from '$lib/admin/topic-tree';
@@ -12,13 +12,6 @@
 	let search = $state('');
 	let saveError = $state('');
 	let saving = $state(false);
-
-	const PILLARS: { value: Pillar; label: string }[] = [
-		{ value: 'credo', label: 'Credo — Profession de la foi (CCC I)' },
-		{ value: 'sacrements', label: 'Sacrements et liturgie (CCC II)' },
-		{ value: 'vie', label: 'Vie en Christ — Morale (CCC III)' },
-		{ value: 'priere', label: 'Prière (CCC IV)' }
-	];
 
 	onMount(async () => {
 		const [t, q] = await Promise.all([
@@ -51,7 +44,6 @@
 	});
 
 	const selected = $derived(selectedIdx >= 0 ? items[selectedIdx] : null);
-	const selectedIsTopLevel = $derived(selected?.parentId == null);
 
 	// Available parents: only top-level topics, excluding the current one
 	const parentOptions = $derived.by(() => {
@@ -178,28 +170,6 @@
 						{/each}
 					</select>
 				</label>
-				{#if selectedIsTopLevel}
-					<label class="block">
-						Pilier (CCC)
-						<select
-							class={INPUT}
-							value={selected.pillar ?? ''}
-							onchange={(e) => {
-								const v = (e.currentTarget as HTMLSelectElement).value as Pillar | '';
-								update('pillar', v === '' ? undefined : v);
-							}}
-						>
-							<option value="">(non classé)</option>
-							{#each PILLARS as p (p.value)}
-								<option value={p.value}>{p.label}</option>
-							{/each}
-						</select>
-					</label>
-				{:else}
-					<p class="text-xs italic text-muted">
-						Pilier hérité du sujet parent.
-					</p>
-				{/if}
 				<label class="block">
 					Ordre
 					<input
