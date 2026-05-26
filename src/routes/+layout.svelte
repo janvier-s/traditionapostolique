@@ -249,12 +249,21 @@
 			{/if}
 		{:else if n.topicRef}
 			{@const isActive = n.topicRef.slug === activeSlug}
-			<a
-				href={n.topicRef.href}
-				class="block py-[5px] transition-colors hover:text-accent"
-				class:text-accent={isActive}
-				class:font-medium={isActive}>{n.topicRef.label}</a
-			>
+			{@const isEmpty = n.topicRef.count === 0}
+			{#if isEmpty}
+				<span
+					class="block cursor-default py-[5px] text-foreground/35"
+					aria-disabled="true"
+					title="Aucune citation pour ce sujet">{n.topicRef.label}</span
+				>
+			{:else}
+				<a
+					href={n.topicRef.href}
+					class="block py-[5px] transition-colors hover:text-accent"
+					class:text-accent={isActive}
+					class:font-medium={isActive}>{n.topicRef.label}</a
+				>
+			{/if}
 		{/if}
 	</li>
 {/snippet}
